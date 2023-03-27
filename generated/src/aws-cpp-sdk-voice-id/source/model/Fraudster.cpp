@@ -21,14 +21,16 @@ namespace Model
 Fraudster::Fraudster() : 
     m_createdAtHasBeenSet(false),
     m_domainIdHasBeenSet(false),
-    m_generatedFraudsterIdHasBeenSet(false)
+    m_generatedFraudsterIdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
 }
 
 Fraudster::Fraudster(JsonView jsonValue) : 
     m_createdAtHasBeenSet(false),
     m_domainIdHasBeenSet(false),
-    m_generatedFraudsterIdHasBeenSet(false)
+    m_generatedFraudsterIdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,16 @@ Fraudster& Fraudster::operator =(JsonView jsonValue)
     m_generatedFraudsterIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WatchlistIds"))
+  {
+    Aws::Utils::Array<JsonView> watchlistIdsJsonList = jsonValue.GetArray("WatchlistIds");
+    for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+    {
+      m_watchlistIds.push_back(watchlistIdsJsonList[watchlistIdsIndex].AsString());
+    }
+    m_watchlistIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +89,17 @@ JsonValue Fraudster::Jsonize() const
   if(m_generatedFraudsterIdHasBeenSet)
   {
    payload.WithString("GeneratedFraudsterId", m_generatedFraudsterId);
+
+  }
+
+  if(m_watchlistIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> watchlistIdsJsonList(m_watchlistIds.size());
+   for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+   {
+     watchlistIdsJsonList[watchlistIdsIndex].AsString(m_watchlistIds[watchlistIdsIndex]);
+   }
+   payload.WithArray("WatchlistIds", std::move(watchlistIdsJsonList));
 
   }
 

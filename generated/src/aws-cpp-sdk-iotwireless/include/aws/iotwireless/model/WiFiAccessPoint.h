@@ -79,22 +79,22 @@ namespace Model
 
 
     /**
-     * <p>Recived signal strength of the WLAN measurement data.</p>
+     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
      */
     inline int GetRss() const{ return m_rss; }
 
     /**
-     * <p>Recived signal strength of the WLAN measurement data.</p>
+     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
      */
     inline bool RssHasBeenSet() const { return m_rssHasBeenSet; }
 
     /**
-     * <p>Recived signal strength of the WLAN measurement data.</p>
+     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
      */
     inline void SetRss(int value) { m_rssHasBeenSet = true; m_rss = value; }
 
     /**
-     * <p>Recived signal strength of the WLAN measurement data.</p>
+     * <p>Received signal strength (dBm) of the WLAN measurement data.</p>
      */
     inline WiFiAccessPoint& WithRss(int value) { SetRss(value); return *this;}
 

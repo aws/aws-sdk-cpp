@@ -439,120 +439,210 @@ namespace Model
 
     /**
      * <p>The total duration of the newly started chat session. If not specified, the
-     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * chat session duration defaults to 25 hour. The minimum configurable time is 60
      * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
      */
     inline int GetChatDurationInMinutes() const{ return m_chatDurationInMinutes; }
 
     /**
      * <p>The total duration of the newly started chat session. If not specified, the
-     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * chat session duration defaults to 25 hour. The minimum configurable time is 60
      * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
      */
     inline bool ChatDurationInMinutesHasBeenSet() const { return m_chatDurationInMinutesHasBeenSet; }
 
     /**
      * <p>The total duration of the newly started chat session. If not specified, the
-     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * chat session duration defaults to 25 hour. The minimum configurable time is 60
      * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
      */
     inline void SetChatDurationInMinutes(int value) { m_chatDurationInMinutesHasBeenSet = true; m_chatDurationInMinutes = value; }
 
     /**
      * <p>The total duration of the newly started chat session. If not specified, the
-     * chat session duration defaults to 25 hour. The minumum configurable time is 60
+     * chat session duration defaults to 25 hour. The minimum configurable time is 60
      * minutes. The maximum configurable time is 10,080 minutes (7 days).</p>
      */
     inline StartChatContactRequest& WithChatDurationInMinutes(int value) { SetChatDurationInMinutes(value); return *this;}
 
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetSupportedMessagingContentTypes() const{ return m_supportedMessagingContentTypes; }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline bool SupportedMessagingContentTypesHasBeenSet() const { return m_supportedMessagingContentTypesHasBeenSet; }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline void SetSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = value; }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline void SetSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes = std::move(value); }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline StartChatContactRequest& WithSupportedMessagingContentTypes(const Aws::Vector<Aws::String>& value) { SetSupportedMessagingContentTypes(value); return *this;}
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline StartChatContactRequest& WithSupportedMessagingContentTypes(Aws::Vector<Aws::String>&& value) { SetSupportedMessagingContentTypes(std::move(value)); return *this;}
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(const Aws::String& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(Aws::String&& value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The supported chat message content types. Content types must always contain
-     * <code>text/plain</code>. You can then put any other supported type in the list.
-     * For example, all the following lists are valid because they contain
-     * <code>text/plain</code>: <code>[text/plain, text/markdown,
-     * application/json]</code>, <code>[text/markdown, text/plain]</code>,
-     * <code>[text/plain, application/json]</code>.</p>
+     * <p>The supported chat message content types. Supported types are
+     * <code>text/plain</code>, <code>text/markdown</code>,
+     * <code>application/json</code>,
+     * <code>application/vnd.amazonaws.connect.message.interactive</code>, and
+     * <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
+     * </p> <p>Content types must always contain <code>text/plain</code>. You can then
+     * put any other supported type in the list. For example, all the following lists
+     * are valid because they contain <code>text/plain</code>: <code>[text/plain,
+     * text/markdown, application/json]</code>, <code>[text/markdown,
+     * text/plain]</code>, <code>[text/plain, application/json,
+     * application/vnd.amazonaws.connect.message.interactive.response]</code>. </p>
+     *  <p>The type
+     * <code>application/vnd.amazonaws.connect.message.interactive</code> is required
+     * to use the <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/show-view-block.html">Show
+     * view</a> flow block.</p> 
      */
     inline StartChatContactRequest& AddSupportedMessagingContentTypes(const char* value) { m_supportedMessagingContentTypesHasBeenSet = true; m_supportedMessagingContentTypes.push_back(value); return *this; }
 
@@ -605,6 +695,63 @@ namespace Model
      */
     inline StartChatContactRequest& WithPersistentChat(PersistentChat&& value) { SetPersistentChat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline const Aws::String& GetRelatedContactId() const{ return m_relatedContactId; }
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline bool RelatedContactIdHasBeenSet() const { return m_relatedContactIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline void SetRelatedContactId(const Aws::String& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = value; }
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline void SetRelatedContactId(Aws::String&& value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId = std::move(value); }
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline void SetRelatedContactId(const char* value) { m_relatedContactIdHasBeenSet = true; m_relatedContactId.assign(value); }
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline StartChatContactRequest& WithRelatedContactId(const Aws::String& value) { SetRelatedContactId(value); return *this;}
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline StartChatContactRequest& WithRelatedContactId(Aws::String&& value) { SetRelatedContactId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique identifier for an Amazon Connect contact. This identifier is
+     * related to the chat starting.</p>  <p>You cannot provide data for both
+     * RelatedContactId and PersistentChat. </p> 
+     */
+    inline StartChatContactRequest& WithRelatedContactId(const char* value) { SetRelatedContactId(value); return *this;}
+
   private:
 
     Aws::String m_instanceId;
@@ -633,6 +780,9 @@ namespace Model
 
     PersistentChat m_persistentChat;
     bool m_persistentChatHasBeenSet = false;
+
+    Aws::String m_relatedContactId;
+    bool m_relatedContactIdHasBeenSet = false;
   };
 
 } // namespace Model

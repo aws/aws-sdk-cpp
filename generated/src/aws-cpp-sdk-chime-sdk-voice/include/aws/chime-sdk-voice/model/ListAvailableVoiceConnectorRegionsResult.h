@@ -34,25 +34,39 @@ namespace Model
     AWS_CHIMESDKVOICE_API ListAvailableVoiceConnectorRegionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline const Aws::Vector<VoiceConnectorAwsRegion>& GetVoiceConnectorRegions() const{ return m_voiceConnectorRegions; }
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline void SetVoiceConnectorRegions(const Aws::Vector<VoiceConnectorAwsRegion>& value) { m_voiceConnectorRegions = value; }
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline void SetVoiceConnectorRegions(Aws::Vector<VoiceConnectorAwsRegion>&& value) { m_voiceConnectorRegions = std::move(value); }
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline ListAvailableVoiceConnectorRegionsResult& WithVoiceConnectorRegions(const Aws::Vector<VoiceConnectorAwsRegion>& value) { SetVoiceConnectorRegions(value); return *this;}
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline ListAvailableVoiceConnectorRegionsResult& WithVoiceConnectorRegions(Aws::Vector<VoiceConnectorAwsRegion>&& value) { SetVoiceConnectorRegions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline ListAvailableVoiceConnectorRegionsResult& AddVoiceConnectorRegions(const VoiceConnectorAwsRegion& value) { m_voiceConnectorRegions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The list of AWS Regions.</p>
+     */
     inline ListAvailableVoiceConnectorRegionsResult& AddVoiceConnectorRegions(VoiceConnectorAwsRegion&& value) { m_voiceConnectorRegions.push_back(std::move(value)); return *this; }
 
 

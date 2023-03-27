@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline const Aws::String& GetNotebookId() const{ return m_notebookId; }
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline void SetNotebookId(const Aws::String& value) { m_notebookId = value; }
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline void SetNotebookId(Aws::String&& value) { m_notebookId = std::move(value); }
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline void SetNotebookId(const char* value) { m_notebookId.assign(value); }
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline ImportNotebookResult& WithNotebookId(const Aws::String& value) { SetNotebookId(value); return *this;}
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline ImportNotebookResult& WithNotebookId(Aws::String&& value) { SetNotebookId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the notebook to import.</p>
+     * <p>The ID assigned to the imported notebook.</p>
      */
     inline ImportNotebookResult& WithNotebookId(const char* value) { SetNotebookId(value); return *this;}
 

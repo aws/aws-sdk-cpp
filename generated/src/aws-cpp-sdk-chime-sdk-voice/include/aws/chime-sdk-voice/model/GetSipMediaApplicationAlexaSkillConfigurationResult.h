@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetSipMediaApplicationAlexaSkillConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Returns the Alexa Skill configuration.</p>
+     */
     inline const SipMediaApplicationAlexaSkillConfiguration& GetSipMediaApplicationAlexaSkillConfiguration() const{ return m_sipMediaApplicationAlexaSkillConfiguration; }
 
-    
+    /**
+     * <p>Returns the Alexa Skill configuration.</p>
+     */
     inline void SetSipMediaApplicationAlexaSkillConfiguration(const SipMediaApplicationAlexaSkillConfiguration& value) { m_sipMediaApplicationAlexaSkillConfiguration = value; }
 
-    
+    /**
+     * <p>Returns the Alexa Skill configuration.</p>
+     */
     inline void SetSipMediaApplicationAlexaSkillConfiguration(SipMediaApplicationAlexaSkillConfiguration&& value) { m_sipMediaApplicationAlexaSkillConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>Returns the Alexa Skill configuration.</p>
+     */
     inline GetSipMediaApplicationAlexaSkillConfigurationResult& WithSipMediaApplicationAlexaSkillConfiguration(const SipMediaApplicationAlexaSkillConfiguration& value) { SetSipMediaApplicationAlexaSkillConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>Returns the Alexa Skill configuration.</p>
+     */
     inline GetSipMediaApplicationAlexaSkillConfigurationResult& WithSipMediaApplicationAlexaSkillConfiguration(SipMediaApplicationAlexaSkillConfiguration&& value) { SetSipMediaApplicationAlexaSkillConfiguration(std::move(value)); return *this;}
 
 

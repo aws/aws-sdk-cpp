@@ -18,7 +18,9 @@ using namespace Aws::Http;
 ListDeviceProfilesRequest::ListDeviceProfilesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_deviceProfileType(DeviceProfileType::NOT_SET),
+    m_deviceProfileTypeHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,13 @@ void ListDeviceProfilesRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_deviceProfileTypeHasBeenSet)
+    {
+      ss << DeviceProfileTypeMapper::GetNameForDeviceProfileType(m_deviceProfileType);
+      uri.AddQueryStringParameter("deviceProfileType", ss.str());
       ss.str("");
     }
 

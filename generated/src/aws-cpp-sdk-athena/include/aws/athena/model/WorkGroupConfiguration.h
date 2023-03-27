@@ -28,12 +28,13 @@ namespace Model
 
   /**
    * <p>The configuration of the workgroup, which includes the location in Amazon S3
-   * where query results are stored, the encryption option, if any, used for query
-   * results, whether the Amazon CloudWatch Metrics are enabled for the workgroup and
-   * whether workgroup settings override query settings, and the data usage limits
-   * for the amount of data scanned per query or per workgroup. The workgroup
-   * settings override is specified in <code>EnforceWorkGroupConfiguration</code>
-   * (true/false) in the <code>WorkGroupConfiguration</code>. See
+   * where query and calculation results are stored, the encryption option, if any,
+   * used for query and calculation results, whether the Amazon CloudWatch Metrics
+   * are enabled for the workgroup and whether workgroup settings override query
+   * settings, and the data usage limits for the amount of data scanned per query or
+   * per workgroup. The workgroup settings override is specified in
+   * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+   * <code>WorkGroupConfiguration</code>. See
    * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfiguration">AWS
@@ -50,79 +51,79 @@ namespace Model
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline const ResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline void SetResultConfiguration(ResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline WorkGroupConfiguration& WithResultConfiguration(const ResultConfiguration& value) { SetResultConfiguration(value); return *this;}
 
     /**
      * <p>The configuration for the workgroup, which includes the location in Amazon S3
-     * where query results are stored and the encryption option, if any, used for query
-     * results. To run the query, you must specify the query results location using one
-     * of the ways: either in the workgroup using this setting, or for individual
-     * queries (client-side), using <a>ResultConfiguration$OutputLocation</a>. If none
-     * of them is set, Athena issues an error that no output location is provided. For
-     * more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a>.</p>
+     * where query and calculation results are stored and the encryption option, if
+     * any, used for query and calculation results. To run the query, you must specify
+     * the query results location using one of the ways: either in the workgroup using
+     * this setting, or for individual queries (client-side), using
+     * <a>ResultConfiguration$OutputLocation</a>. If none of them is set, Athena issues
+     * an error that no output location is provided. For more information, see <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+     * query results, recent queries, and output files</a>.</p>
      */
     inline WorkGroupConfiguration& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
 
@@ -360,42 +361,42 @@ namespace Model
 
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
 
     /**
-     * <p>Role used in a notebook session for accessing the user's resources.</p>
+     * <p>Role used in a session for accessing the user's resources.</p>
      */
     inline WorkGroupConfiguration& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
 
@@ -436,6 +437,59 @@ namespace Model
      */
     inline WorkGroupConfiguration& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries.</p> <p>The <code>EnforceWorkGroupConfiguration</code>
+     * setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline bool GetEnableMinimumEncryptionConfiguration() const{ return m_enableMinimumEncryptionConfiguration; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries.</p> <p>The <code>EnforceWorkGroupConfiguration</code>
+     * setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline bool EnableMinimumEncryptionConfigurationHasBeenSet() const { return m_enableMinimumEncryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries.</p> <p>The <code>EnforceWorkGroupConfiguration</code>
+     * setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline void SetEnableMinimumEncryptionConfiguration(bool value) { m_enableMinimumEncryptionConfigurationHasBeenSet = true; m_enableMinimumEncryptionConfiguration = value; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries.</p> <p>The <code>EnforceWorkGroupConfiguration</code>
+     * setting takes precedence over the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag. This means that if
+     * <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline WorkGroupConfiguration& WithEnableMinimumEncryptionConfiguration(bool value) { SetEnableMinimumEncryptionConfiguration(value); return *this;}
+
   private:
 
     ResultConfiguration m_resultConfiguration;
@@ -464,6 +518,9 @@ namespace Model
 
     CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
     bool m_customerContentEncryptionConfigurationHasBeenSet = false;
+
+    bool m_enableMinimumEncryptionConfiguration;
+    bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

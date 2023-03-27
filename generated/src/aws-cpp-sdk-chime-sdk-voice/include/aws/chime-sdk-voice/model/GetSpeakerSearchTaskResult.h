@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetSpeakerSearchTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The details of the speaker search task.</p>
+     */
     inline const SpeakerSearchTask& GetSpeakerSearchTask() const{ return m_speakerSearchTask; }
 
-    
+    /**
+     * <p>The details of the speaker search task.</p>
+     */
     inline void SetSpeakerSearchTask(const SpeakerSearchTask& value) { m_speakerSearchTask = value; }
 
-    
+    /**
+     * <p>The details of the speaker search task.</p>
+     */
     inline void SetSpeakerSearchTask(SpeakerSearchTask&& value) { m_speakerSearchTask = std::move(value); }
 
-    
+    /**
+     * <p>The details of the speaker search task.</p>
+     */
     inline GetSpeakerSearchTaskResult& WithSpeakerSearchTask(const SpeakerSearchTask& value) { SetSpeakerSearchTask(value); return *this;}
 
-    
+    /**
+     * <p>The details of the speaker search task.</p>
+     */
     inline GetSpeakerSearchTaskResult& WithSpeakerSearchTask(SpeakerSearchTask&& value) { SetSpeakerSearchTask(std::move(value)); return *this;}
 
 

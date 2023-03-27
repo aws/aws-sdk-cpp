@@ -81,7 +81,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
@@ -105,7 +105,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
@@ -113,7 +113,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListFraudsterRegistrationJobsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -121,7 +121,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListFraudsterRegistrationJobsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -129,7 +129,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListFraudsterRegistrationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

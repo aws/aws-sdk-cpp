@@ -17,7 +17,8 @@ namespace VoiceID
 {
   /**
    * <p>Amazon Connect Voice ID provides real-time caller authentication and fraud
-   * screening. This guide describes the APIs used for this service. </p>
+   * risk detection, which make voice interactions in contact centers more secure and
+   * efficient.</p>
    */
   class AWS_VOICEID_API VoiceIDClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<VoiceIDClient>
   {
@@ -75,9 +76,36 @@ namespace VoiceID
         virtual ~VoiceIDClient();
 
         /**
+         * <p>Associates the fraudsters with the watchlist specified in the same domain.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/AssociateFraudster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateFraudsterOutcome AssociateFraudster(const Model::AssociateFraudsterRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateFraudster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateFraudsterRequestT = Model::AssociateFraudsterRequest>
+        Model::AssociateFraudsterOutcomeCallable AssociateFraudsterCallable(const AssociateFraudsterRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::AssociateFraudster, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateFraudster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateFraudsterRequestT = Model::AssociateFraudsterRequest>
+        void AssociateFraudsterAsync(const AssociateFraudsterRequestT& request, const AssociateFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::AssociateFraudster, request, handler, context);
+        }
+
+        /**
          * <p>Creates a domain that contains all Amazon Connect Voice ID data, such as
-         * speakers, fraudsters, customer audio, and voiceprints. </p><p><h3>See Also:</h3>
-         * <a
+         * speakers, fraudsters, customer audio, and voiceprints. Every domain is created
+         * with a default watchlist that fraudsters can be a part of.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateDomain">AWS
          * API Reference</a></p>
          */
@@ -99,6 +127,32 @@ namespace VoiceID
         void CreateDomainAsync(const CreateDomainRequestT& request, const CreateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&VoiceIDClient::CreateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a watchlist that fraudsters can be a part of.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/CreateWatchlist">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateWatchlistOutcome CreateWatchlist(const Model::CreateWatchlistRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateWatchlist that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateWatchlistRequestT = Model::CreateWatchlistRequest>
+        Model::CreateWatchlistOutcomeCallable CreateWatchlistCallable(const CreateWatchlistRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::CreateWatchlist, request);
+        }
+
+        /**
+         * An Async wrapper for CreateWatchlist that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateWatchlistRequestT = Model::CreateWatchlistRequest>
+        void CreateWatchlistAsync(const CreateWatchlistRequestT& request, const CreateWatchlistResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::CreateWatchlist, request, handler, context);
         }
 
         /**
@@ -127,7 +181,8 @@ namespace VoiceID
         }
 
         /**
-         * <p>Deletes the specified fraudster from Voice ID.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes the specified fraudster from Voice ID. This action disassociates the
+         * fraudster from any watchlists it is a part of.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteFraudster">AWS
          * API Reference</a></p>
          */
@@ -174,6 +229,34 @@ namespace VoiceID
         void DeleteSpeakerAsync(const DeleteSpeakerRequestT& request, const DeleteSpeakerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&VoiceIDClient::DeleteSpeaker, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified watchlist from Voice ID. This API throws an exception
+         * when there are fraudsters in the watchlist that you are trying to delete. You
+         * must delete the fraudsters, and then delete the watchlist. Every domain has a
+         * default watchlist which cannot be deleted. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DeleteWatchlist">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWatchlistOutcome DeleteWatchlist(const Model::DeleteWatchlistRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWatchlist that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWatchlistRequestT = Model::DeleteWatchlistRequest>
+        Model::DeleteWatchlistOutcomeCallable DeleteWatchlistCallable(const DeleteWatchlistRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::DeleteWatchlist, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWatchlist that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWatchlistRequestT = Model::DeleteWatchlistRequest>
+        void DeleteWatchlistAsync(const DeleteWatchlistRequestT& request, const DeleteWatchlistResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::DeleteWatchlist, request, handler, context);
         }
 
         /**
@@ -303,6 +386,59 @@ namespace VoiceID
         }
 
         /**
+         * <p>Describes the specified watchlist.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DescribeWatchlist">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeWatchlistOutcome DescribeWatchlist(const Model::DescribeWatchlistRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeWatchlist that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeWatchlistRequestT = Model::DescribeWatchlistRequest>
+        Model::DescribeWatchlistOutcomeCallable DescribeWatchlistCallable(const DescribeWatchlistRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::DescribeWatchlist, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeWatchlist that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeWatchlistRequestT = Model::DescribeWatchlistRequest>
+        void DescribeWatchlistAsync(const DescribeWatchlistRequestT& request, const DescribeWatchlistResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::DescribeWatchlist, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates the fraudsters from the watchlist specified. Voice ID always
+         * expects a fraudster to be a part of at least one watchlist. If you try to
+         * disassociate a fraudster from its only watchlist, a
+         * <code>ValidationException</code> is thrown. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/DisassociateFraudster">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateFraudsterOutcome DisassociateFraudster(const Model::DisassociateFraudsterRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateFraudster that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateFraudsterRequestT = Model::DisassociateFraudsterRequest>
+        Model::DisassociateFraudsterOutcomeCallable DisassociateFraudsterCallable(const DisassociateFraudsterRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::DisassociateFraudster, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateFraudster that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateFraudsterRequestT = Model::DisassociateFraudsterRequest>
+        void DisassociateFraudsterAsync(const DisassociateFraudsterRequestT& request, const DisassociateFraudsterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::DisassociateFraudster, request, handler, context);
+        }
+
+        /**
          * <p>Evaluates a specified session based on audio data accumulated during a
          * streaming Amazon Connect Voice ID call.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EvaluateSession">AWS
@@ -383,6 +519,32 @@ namespace VoiceID
         }
 
         /**
+         * <p>Lists all fraudsters in a specified watchlist or domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListFraudsters">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFraudstersOutcome ListFraudsters(const Model::ListFraudstersRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFraudsters that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFraudstersRequestT = Model::ListFraudstersRequest>
+        Model::ListFraudstersOutcomeCallable ListFraudstersCallable(const ListFraudstersRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::ListFraudsters, request);
+        }
+
+        /**
+         * An Async wrapper for ListFraudsters that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFraudstersRequestT = Model::ListFraudstersRequest>
+        void ListFraudstersAsync(const ListFraudstersRequestT& request, const ListFraudstersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::ListFraudsters, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the speaker enrollment jobs in the domain with the specified
          * <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists
          * all jobs with all possible speaker enrollment job statuses.</p><p><h3>See
@@ -459,6 +621,31 @@ namespace VoiceID
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&VoiceIDClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all watchlists in a specified domain.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/ListWatchlists">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWatchlistsOutcome ListWatchlists(const Model::ListWatchlistsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWatchlists that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWatchlistsRequestT = Model::ListWatchlistsRequest>
+        Model::ListWatchlistsOutcomeCallable ListWatchlistsCallable(const ListWatchlistsRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::ListWatchlists, request);
+        }
+
+        /**
+         * An Async wrapper for ListWatchlists that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWatchlistsRequestT = Model::ListWatchlistsRequest>
+        void ListWatchlistsAsync(const ListWatchlistsRequestT& request, const ListWatchlistsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::ListWatchlists, request, handler, context);
         }
 
         /**
@@ -621,6 +808,32 @@ namespace VoiceID
         void UpdateDomainAsync(const UpdateDomainRequestT& request, const UpdateDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&VoiceIDClient::UpdateDomain, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the specified watchlist. Every domain has a default watchlist which
+         * cannot be updated. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/UpdateWatchlist">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWatchlistOutcome UpdateWatchlist(const Model::UpdateWatchlistRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWatchlist that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWatchlistRequestT = Model::UpdateWatchlistRequest>
+        Model::UpdateWatchlistOutcomeCallable UpdateWatchlistCallable(const UpdateWatchlistRequestT& request) const
+        {
+            return SubmitCallable(&VoiceIDClient::UpdateWatchlist, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWatchlist that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWatchlistRequestT = Model::UpdateWatchlistRequest>
+        void UpdateWatchlistAsync(const UpdateWatchlistRequestT& request, const UpdateWatchlistResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&VoiceIDClient::UpdateWatchlist, request, handler, context);
         }
 
 

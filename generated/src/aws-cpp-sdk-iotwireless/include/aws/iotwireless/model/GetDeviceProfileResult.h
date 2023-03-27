@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANDeviceProfile.h>
+#include <aws/iotwireless/model/SidewalkGetDeviceProfile.h>
 #include <utility>
 
 namespace Aws
@@ -167,6 +168,32 @@ namespace Model
     inline GetDeviceProfileResult& WithLoRaWAN(LoRaWANDeviceProfile&& value) { SetLoRaWAN(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Information about the Sidewalk parameters in the device profile.</p>
+     */
+    inline const SidewalkGetDeviceProfile& GetSidewalk() const{ return m_sidewalk; }
+
+    /**
+     * <p>Information about the Sidewalk parameters in the device profile.</p>
+     */
+    inline void SetSidewalk(const SidewalkGetDeviceProfile& value) { m_sidewalk = value; }
+
+    /**
+     * <p>Information about the Sidewalk parameters in the device profile.</p>
+     */
+    inline void SetSidewalk(SidewalkGetDeviceProfile&& value) { m_sidewalk = std::move(value); }
+
+    /**
+     * <p>Information about the Sidewalk parameters in the device profile.</p>
+     */
+    inline GetDeviceProfileResult& WithSidewalk(const SidewalkGetDeviceProfile& value) { SetSidewalk(value); return *this;}
+
+    /**
+     * <p>Information about the Sidewalk parameters in the device profile.</p>
+     */
+    inline GetDeviceProfileResult& WithSidewalk(SidewalkGetDeviceProfile&& value) { SetSidewalk(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -197,6 +224,8 @@ namespace Model
     Aws::String m_id;
 
     LoRaWANDeviceProfile m_loRaWAN;
+
+    SidewalkGetDeviceProfile m_sidewalk;
 
     Aws::String m_requestId;
   };

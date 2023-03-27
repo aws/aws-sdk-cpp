@@ -28,6 +28,8 @@ namespace Aws
         static const int SPEAKER_OPTED_OUT_HASH = HashingUtils::HashString("SPEAKER_OPTED_OUT");
         static const int CONCURRENT_CHANGES_HASH = HashingUtils::HashString("CONCURRENT_CHANGES");
         static const int DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES_HASH = HashingUtils::HashString("DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES");
+        static const int CANNOT_DELETE_NON_EMPTY_WATCHLIST_HASH = HashingUtils::HashString("CANNOT_DELETE_NON_EMPTY_WATCHLIST");
+        static const int FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST_HASH = HashingUtils::HashString("FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST");
 
 
         ConflictType GetConflictTypeForName(const Aws::String& name)
@@ -65,6 +67,14 @@ namespace Aws
           {
             return ConflictType::DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES;
           }
+          else if (hashCode == CANNOT_DELETE_NON_EMPTY_WATCHLIST_HASH)
+          {
+            return ConflictType::CANNOT_DELETE_NON_EMPTY_WATCHLIST;
+          }
+          else if (hashCode == FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST_HASH)
+          {
+            return ConflictType::FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +105,10 @@ namespace Aws
             return "CONCURRENT_CHANGES";
           case ConflictType::DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES:
             return "DOMAIN_LOCKED_FROM_ENCRYPTION_UPDATES";
+          case ConflictType::CANNOT_DELETE_NON_EMPTY_WATCHLIST:
+            return "CANNOT_DELETE_NON_EMPTY_WATCHLIST";
+          case ConflictType::FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST:
+            return "FRAUDSTER_MUST_BELONG_TO_AT_LEAST_ONE_WATCHLIST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

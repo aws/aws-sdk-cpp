@@ -88,6 +88,7 @@
 #include <aws/securityhub/model/AwsSageMakerNotebookInstanceDetails.h>
 #include <aws/securityhub/model/AwsWafv2WebAclDetails.h>
 #include <aws/securityhub/model/AwsWafv2RuleGroupDetails.h>
+#include <aws/securityhub/model/AwsEc2RouteTableDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2856,6 +2857,49 @@ namespace Model
     
     inline ResourceDetails& WithAwsWafv2RuleGroup(AwsWafv2RuleGroupDetails&& value) { SetAwsWafv2RuleGroup(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline const AwsEc2RouteTableDetails& GetAwsEc2RouteTable() const{ return m_awsEc2RouteTable; }
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline bool AwsEc2RouteTableHasBeenSet() const { return m_awsEc2RouteTableHasBeenSet; }
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline void SetAwsEc2RouteTable(const AwsEc2RouteTableDetails& value) { m_awsEc2RouteTableHasBeenSet = true; m_awsEc2RouteTable = value; }
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline void SetAwsEc2RouteTable(AwsEc2RouteTableDetails&& value) { m_awsEc2RouteTableHasBeenSet = true; m_awsEc2RouteTable = std::move(value); }
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline ResourceDetails& WithAwsEc2RouteTable(const AwsEc2RouteTableDetails& value) { SetAwsEc2RouteTable(value); return *this;}
+
+    /**
+     * <p> Provides details about a route table. A route table contains a set of rules,
+     * called routes, that determine where to direct network traffic from your subnet
+     * or gateway. </p>
+     */
+    inline ResourceDetails& WithAwsEc2RouteTable(AwsEc2RouteTableDetails&& value) { SetAwsEc2RouteTable(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3106,6 +3150,9 @@ namespace Model
 
     AwsWafv2RuleGroupDetails m_awsWafv2RuleGroup;
     bool m_awsWafv2RuleGroupHasBeenSet = false;
+
+    AwsEc2RouteTableDetails m_awsEc2RouteTable;
+    bool m_awsEc2RouteTableHasBeenSet = false;
   };
 
 } // namespace Model

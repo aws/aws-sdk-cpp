@@ -15,6 +15,13 @@ namespace Aws
 {
 namespace ChimeSDKVoice
 {
+  /**
+   * <p>The Amazon Chime SDK telephony APIs in this section enable developers to
+   * create PSTN calling solutions that use Amazon Chime SDK Voice Connectors, and
+   * Amazon Chime SDK SIP media applications. Developers can also order and manage
+   * phone numbers, create and manage Voice Connectors and SIP media applications,
+   * and run voice analytics.</p>
+   */
   class AWS_CHIMESDKVOICE_API ChimeSDKVoiceClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<ChimeSDKVoiceClient>
   {
     public:
@@ -71,7 +78,10 @@ namespace ChimeSDKVoice
         virtual ~ChimeSDKVoiceClient();
 
         /**
-         * 
+         * <p>Associates phone numbers with the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociatePhoneNumbersWithVoiceConnectorOutcome AssociatePhoneNumbersWithVoiceConnector(const Model::AssociatePhoneNumbersWithVoiceConnectorRequest& request) const;
 
@@ -94,7 +104,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Associates phone numbers with the specified Amazon Chime SDK Voice Connector
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/AssociatePhoneNumbersWithVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::AssociatePhoneNumbersWithVoiceConnectorGroupOutcome AssociatePhoneNumbersWithVoiceConnectorGroup(const Model::AssociatePhoneNumbersWithVoiceConnectorGroupRequest& request) const;
 
@@ -117,7 +130,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p> Moves phone numbers into the <b>Deletion queue</b>. Phone numbers must be
+         * disassociated from any users or Amazon Chime SDK Voice Connectors before they
+         * can be deleted. </p> <p> Phone numbers remain in the <b>Deletion queue</b> for 7
+         * days before they are deleted permanently. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchDeletePhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchDeletePhoneNumberOutcome BatchDeletePhoneNumber(const Model::BatchDeletePhoneNumberRequest& request) const;
 
@@ -140,7 +158,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates one or more phone numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/BatchUpdatePhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::BatchUpdatePhoneNumberOutcome BatchUpdatePhoneNumber(const Model::BatchUpdatePhoneNumberRequest& request) const;
 
@@ -163,7 +183,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates an order for phone numbers to be provisioned. For numbers outside the
+         * U.S., you must use the Amazon Chime SDK SIP media application dial-in product
+         * type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreatePhoneNumberOrder">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreatePhoneNumberOrderOutcome CreatePhoneNumberOrder(const Model::CreatePhoneNumberOrderRequest& request) const;
 
@@ -186,7 +210,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates a proxy session for the specified Amazon Chime SDK Voice Connector
+         * for the specified participant phone numbers.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateProxySessionOutcome CreateProxySession(const Model::CreateProxySessionRequest& request) const;
 
@@ -209,7 +236,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates a SIP media application. For more information about SIP media
+         * applications, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
+         * SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSipMediaApplicationOutcome CreateSipMediaApplication(const Model::CreateSipMediaApplicationRequest& request) const;
 
@@ -232,7 +265,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates an outbound call to a phone number from the phone number specified in
+         * the request, and it invokes the endpoint of the specified
+         * <code>sipMediaApplicationId</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipMediaApplicationCall">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSipMediaApplicationCallOutcome CreateSipMediaApplicationCall(const Model::CreateSipMediaApplicationCallRequest& request) const;
 
@@ -255,7 +292,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates a SIP rule, which can be used to run a SIP media application as a
+         * target for a specific trigger type. For more information about SIP rules, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing
+         * SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateSipRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateSipRuleOutcome CreateSipRule(const Model::CreateSipRuleRequest& request) const;
 
@@ -278,7 +321,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates an Amazon Chime SDK Voice Connector. For more information about Voice
+         * Connectors, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/ag/voice-connector-groups.html">Managing
+         * Amazon Chime SDK Voice Connector groups</a> in the <i>Amazon Chime SDK
+         * Administrator Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateVoiceConnectorOutcome CreateVoiceConnector(const Model::CreateVoiceConnectorRequest& request) const;
 
@@ -301,7 +350,14 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates an Amazon Chime SDK Voice Connector group under the administrator's
+         * AWS account. You can associate Amazon Chime SDK Voice Connectors with the Voice
+         * Connector group by including <code>VoiceConnectorItems</code> in the request.
+         * </p> <p>You can include Voice Connectors from different AWS Regions in your
+         * group. This creates a fault tolerant mechanism for fallback in case of
+         * availability events.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateVoiceConnectorGroupOutcome CreateVoiceConnectorGroup(const Model::CreateVoiceConnectorGroupRequest& request) const;
 
@@ -324,7 +380,18 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates a voice profile, which consists of an enrolled user and their latest
+         * voice print.</p>  <p>Before creating any voice profiles, you must
+         * provide all notices and obtain all consents from the speaker as required under
+         * applicable privacy and biometrics laws, and as required under the <a
+         * href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the
+         * Amazon Chime SDK.</p>  <p>For more information about voice profiles
+         * and voice analytics, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+         * Amazon Chime SDK Voice Analytics</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateVoiceProfileOutcome CreateVoiceProfile(const Model::CreateVoiceProfileRequest& request) const;
 
@@ -347,7 +414,18 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Creates a voice profile domain, a collection of voice profiles, their voice
+         * prints, and encrypted enrollment audio.</p>  <p>Before creating any
+         * voice profiles, you must provide all notices and obtain all consents from the
+         * speaker as required under applicable privacy and biometrics laws, and as
+         * required under the <a href="https://aws.amazon.com/service-terms/">AWS service
+         * terms</a> for the Amazon Chime SDK.</p>  <p>For more information
+         * about voice profile domains, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+         * Amazon Chime SDK Voice Analytics</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/CreateVoiceProfileDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::CreateVoiceProfileDomainOutcome CreateVoiceProfileDomain(const Model::CreateVoiceProfileDomainRequest& request) const;
 
@@ -370,7 +448,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone
+         * number must be disassociated from any users or Amazon Chime SDK Voice Connectors
+         * before it can be deleted.</p> <p>Deleted phone numbers remain in the <b>Deletion
+         * queue</b> queue for 7 days before they are deleted permanently.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeletePhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeletePhoneNumberOutcome DeletePhoneNumber(const Model::DeletePhoneNumberRequest& request) const;
 
@@ -393,7 +477,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the specified proxy session from the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteProxySessionOutcome DeleteProxySession(const Model::DeleteProxySessionRequest& request) const;
 
@@ -416,7 +503,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes a SIP media application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipMediaApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSipMediaApplicationOutcome DeleteSipMediaApplication(const Model::DeleteSipMediaApplicationRequest& request) const;
 
@@ -439,7 +528,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes a SIP rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteSipRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteSipRuleOutcome DeleteSipRule(const Model::DeleteSipRuleRequest& request) const;
 
@@ -462,7 +553,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes an Amazon Chime SDK Voice Connector. Any phone numbers associated
+         * with the Amazon Chime SDK Voice Connector must be disassociated from it before
+         * it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorOutcome DeleteVoiceConnector(const Model::DeleteVoiceConnectorRequest& request) const;
 
@@ -485,7 +580,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the emergency calling details from the specified Amazon Chime SDK
+         * Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorEmergencyCallingConfigurationOutcome DeleteVoiceConnectorEmergencyCallingConfiguration(const Model::DeleteVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
 
@@ -508,7 +606,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes an Amazon Chime SDK Voice Connector group. Any
+         * <code>VoiceConnectorItems</code> and phone numbers associated with the group
+         * must be removed before it can be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorGroupOutcome DeleteVoiceConnectorGroup(const Model::DeleteVoiceConnectorGroupRequest& request) const;
 
@@ -531,7 +633,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the origination settings for the specified Amazon Chime SDK Voice
+         * Connector. </p>  <p>If emergency calling is configured for the Voice
+         * Connector, it must be deleted prior to deleting the origination settings.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorOrigination">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorOriginationOutcome DeleteVoiceConnectorOrigination(const Model::DeleteVoiceConnectorOriginationRequest& request) const;
 
@@ -554,7 +661,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the proxy configuration from the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorProxyOutcome DeleteVoiceConnectorProxy(const Model::DeleteVoiceConnectorProxyRequest& request) const;
 
@@ -577,7 +687,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes a Voice Connector's streaming configuration.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorStreamingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorStreamingConfigurationOutcome DeleteVoiceConnectorStreamingConfiguration(const Model::DeleteVoiceConnectorStreamingConfigurationRequest& request) const;
 
@@ -600,7 +713,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the termination settings for the specified Amazon Chime SDK Voice
+         * Connector.</p>  <p>If emergency calling is configured for the Voice
+         * Connector, it must be deleted prior to deleting the termination settings.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTermination">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorTerminationOutcome DeleteVoiceConnectorTermination(const Model::DeleteVoiceConnectorTerminationRequest& request) const;
 
@@ -623,7 +741,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes the specified SIP credentials used by your equipment to authenticate
+         * during call termination.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceConnectorTerminationCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceConnectorTerminationCredentialsOutcome DeleteVoiceConnectorTerminationCredentials(const Model::DeleteVoiceConnectorTerminationCredentialsRequest& request) const;
 
@@ -646,7 +767,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes a voice profile, including its voice print and enrollment data.
+         * WARNING: This action is not reversible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceProfileOutcome DeleteVoiceProfile(const Model::DeleteVoiceProfileRequest& request) const;
 
@@ -669,7 +793,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Deletes all voice profiles in the domain. WARNING: This action is not
+         * reversible.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DeleteVoiceProfileDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::DeleteVoiceProfileDomainOutcome DeleteVoiceProfileDomain(const Model::DeleteVoiceProfileDomainRequest& request) const;
 
@@ -692,7 +819,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Disassociates the specified phone numbers from the specified Amazon Chime SDK
+         * Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociatePhoneNumbersFromVoiceConnectorOutcome DisassociatePhoneNumbersFromVoiceConnector(const Model::DisassociatePhoneNumbersFromVoiceConnectorRequest& request) const;
 
@@ -715,7 +845,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Disassociates the specified phone numbers from the specified Amazon Chime SDK
+         * Voice Connector group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/DisassociatePhoneNumbersFromVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::DisassociatePhoneNumbersFromVoiceConnectorGroupOutcome DisassociatePhoneNumbersFromVoiceConnectorGroup(const Model::DisassociatePhoneNumbersFromVoiceConnectorGroupRequest& request) const;
 
@@ -738,7 +871,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the global settings for the Amazon Chime SDK Voice Connectors in an
+         * AWS account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetGlobalSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetGlobalSettingsOutcome GetGlobalSettings() const;
 
@@ -760,7 +896,10 @@ namespace ChimeSDKVoice
             return SubmitAsync(&ChimeSDKVoiceClient::GetGlobalSettings, handler, context);
         }
         /**
-         * 
+         * <p>Retrieves details for the specified phone number ID, such as associations,
+         * capabilities, and product type.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPhoneNumberOutcome GetPhoneNumber(const Model::GetPhoneNumberRequest& request) const;
 
@@ -783,7 +922,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves details for the specified phone number order, such as the order
+         * creation timestamp, phone numbers in E.164 format, product type, and order
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberOrder">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPhoneNumberOrderOutcome GetPhoneNumberOrder(const Model::GetPhoneNumberOrderRequest& request) const;
 
@@ -806,7 +949,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the phone number settings for the administrator's AWS account, such
+         * as the default outbound calling name.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetPhoneNumberSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetPhoneNumberSettingsOutcome GetPhoneNumberSettings() const;
 
@@ -828,7 +974,10 @@ namespace ChimeSDKVoice
             return SubmitAsync(&ChimeSDKVoiceClient::GetPhoneNumberSettings, handler, context);
         }
         /**
-         * 
+         * <p>Retrieves the specified proxy session details for the specified Amazon Chime
+         * SDK Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetProxySessionOutcome GetProxySession(const Model::GetProxySessionRequest& request) const;
 
@@ -851,7 +1000,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the information for a SIP media application, including name, AWS
+         * Region, and endpoints.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSipMediaApplicationOutcome GetSipMediaApplication(const Model::GetSipMediaApplicationRequest& request) const;
 
@@ -874,7 +1026,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Gets the Alexa Skill configuration for the SIP media
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationAlexaSkillConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSipMediaApplicationAlexaSkillConfigurationOutcome GetSipMediaApplicationAlexaSkillConfiguration(const Model::GetSipMediaApplicationAlexaSkillConfigurationRequest& request) const;
 
@@ -897,7 +1052,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the logging configuration for the specified SIP media
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipMediaApplicationLoggingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSipMediaApplicationLoggingConfigurationOutcome GetSipMediaApplicationLoggingConfiguration(const Model::GetSipMediaApplicationLoggingConfigurationRequest& request) const;
 
@@ -920,7 +1078,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and
+         * target endpoints.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSipRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSipRuleOutcome GetSipRule(const Model::GetSipRuleRequest& request) const;
 
@@ -943,7 +1104,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the details of the specified speaker search task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetSpeakerSearchTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetSpeakerSearchTaskOutcome GetSpeakerSearchTask(const Model::GetSpeakerSearchTaskRequest& request) const;
 
@@ -966,7 +1130,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves details for the specified Amazon Chime SDK Voice Connector, such as
+         * timestamps,name, outbound host, and encryption requirements.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorOutcome GetVoiceConnector(const Model::GetVoiceConnectorRequest& request) const;
 
@@ -989,7 +1157,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the emergency calling configuration details for the specified Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorEmergencyCallingConfigurationOutcome GetVoiceConnectorEmergencyCallingConfiguration(const Model::GetVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
 
@@ -1012,7 +1183,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves details for the specified Amazon Chime SDK Voice Connector group,
+         * such as timestamps,name, and associated
+         * <code>VoiceConnectorItems</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorGroupOutcome GetVoiceConnectorGroup(const Model::GetVoiceConnectorGroupRequest& request) const;
 
@@ -1035,7 +1210,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the logging configuration settings for the specified Voice
+         * Connector. Shows whether SIP message logs are enabled for sending to Amazon
+         * CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorLoggingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorLoggingConfigurationOutcome GetVoiceConnectorLoggingConfiguration(const Model::GetVoiceConnectorLoggingConfigurationRequest& request) const;
 
@@ -1058,7 +1237,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the origination settings for the specified Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorOrigination">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorOriginationOutcome GetVoiceConnectorOrigination(const Model::GetVoiceConnectorOriginationRequest& request) const;
 
@@ -1081,7 +1263,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the proxy configuration details for the specified Amazon Chime SDK
+         * Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorProxyOutcome GetVoiceConnectorProxy(const Model::GetVoiceConnectorProxyRequest& request) const;
 
@@ -1104,7 +1289,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the streaming configuration details for the specified Amazon Chime
+         * SDK Voice Connector. Shows whether media streaming is enabled for sending to
+         * Amazon Kinesis. It also shows the retention period, in hours, for the Amazon
+         * Kinesis data.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorStreamingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorStreamingConfigurationOutcome GetVoiceConnectorStreamingConfiguration(const Model::GetVoiceConnectorStreamingConfigurationRequest& request) const;
 
@@ -1127,7 +1317,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the termination setting details for the specified Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTermination">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorTerminationOutcome GetVoiceConnectorTermination(const Model::GetVoiceConnectorTerminationRequest& request) const;
 
@@ -1150,7 +1343,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves information about the last time a <code>SIP OPTIONS</code> ping was
+         * received from your SIP infrastructure for the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceConnectorTerminationHealth">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceConnectorTerminationHealthOutcome GetVoiceConnectorTerminationHealth(const Model::GetVoiceConnectorTerminationHealthRequest& request) const;
 
@@ -1173,7 +1370,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the details of the specified voice profile.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceProfileOutcome GetVoiceProfile(const Model::GetVoiceProfileRequest& request) const;
 
@@ -1196,7 +1396,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the details of the specified voice profile domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceProfileDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceProfileDomainOutcome GetVoiceProfileDomain(const Model::GetVoiceProfileDomainRequest& request) const;
 
@@ -1219,7 +1422,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Retrieves the details of a voice tone analysis task.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/GetVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::GetVoiceToneAnalysisTaskOutcome GetVoiceToneAnalysisTask(const Model::GetVoiceToneAnalysisTaskRequest& request) const;
 
@@ -1242,7 +1448,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the available AWS Regions in which you can create an Amazon Chime SDK
+         * Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListAvailableVoiceConnectorRegions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListAvailableVoiceConnectorRegionsOutcome ListAvailableVoiceConnectorRegions() const;
 
@@ -1264,7 +1473,10 @@ namespace ChimeSDKVoice
             return SubmitAsync(&ChimeSDKVoiceClient::ListAvailableVoiceConnectorRegions, handler, context);
         }
         /**
-         * 
+         * <p>Lists the phone numbers for an administrator's Amazon Chime SDK
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumberOrders">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPhoneNumberOrdersOutcome ListPhoneNumberOrders(const Model::ListPhoneNumberOrdersRequest& request) const;
 
@@ -1287,7 +1499,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the phone numbers for the specified Amazon Chime SDK account, Amazon
+         * Chime SDK user, Amazon Chime SDK Voice Connector, or Amazon Chime SDK Voice
+         * Connector group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListPhoneNumbers">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListPhoneNumbersOutcome ListPhoneNumbers(const Model::ListPhoneNumbersRequest& request) const;
 
@@ -1310,7 +1526,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the proxy sessions for the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListProxySessions">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListProxySessionsOutcome ListProxySessions(const Model::ListProxySessionsRequest& request) const;
 
@@ -1333,7 +1552,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the SIP media applications under the administrator's AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipMediaApplications">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSipMediaApplicationsOutcome ListSipMediaApplications(const Model::ListSipMediaApplicationsRequest& request) const;
 
@@ -1356,7 +1578,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the SIP rules under the administrator's AWS account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSipRules">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSipRulesOutcome ListSipRules(const Model::ListSipRulesRequest& request) const;
 
@@ -1379,7 +1604,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the countries that you can order phone numbers from.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListSupportedPhoneNumberCountries">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListSupportedPhoneNumberCountriesOutcome ListSupportedPhoneNumberCountries(const Model::ListSupportedPhoneNumberCountriesRequest& request) const;
 
@@ -1402,7 +1630,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Returns a list of the tags in a given resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListTagsForResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
 
@@ -1425,7 +1655,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the Amazon Chime SDK Voice Connector groups in the administrator's AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorGroups">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVoiceConnectorGroupsOutcome ListVoiceConnectorGroups(const Model::ListVoiceConnectorGroupsRequest& request) const;
 
@@ -1448,7 +1681,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the SIP credentials for the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectorTerminationCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVoiceConnectorTerminationCredentialsOutcome ListVoiceConnectorTerminationCredentials(const Model::ListVoiceConnectorTerminationCredentialsRequest& request) const;
 
@@ -1471,7 +1707,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the Amazon Chime SDK Voice Connectors in the administrators AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceConnectors">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVoiceConnectorsOutcome ListVoiceConnectors(const Model::ListVoiceConnectorsRequest& request) const;
 
@@ -1494,7 +1733,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the specified voice profile domains in the administrator's AWS account.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfileDomains">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVoiceProfileDomainsOutcome ListVoiceProfileDomains(const Model::ListVoiceProfileDomainsRequest& request) const;
 
@@ -1517,7 +1759,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Lists the voice profiles in a voice profile domain.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ListVoiceProfiles">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListVoiceProfilesOutcome ListVoiceProfiles(const Model::ListVoiceProfilesRequest& request) const;
 
@@ -1540,7 +1785,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the Alexa Skill configuration for the SIP media
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationAlexaSkillConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutSipMediaApplicationAlexaSkillConfigurationOutcome PutSipMediaApplicationAlexaSkillConfiguration(const Model::PutSipMediaApplicationAlexaSkillConfigurationRequest& request) const;
 
@@ -1563,7 +1811,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the logging configuration for the specified SIP media
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutSipMediaApplicationLoggingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutSipMediaApplicationLoggingConfigurationOutcome PutSipMediaApplicationLoggingConfiguration(const Model::PutSipMediaApplicationLoggingConfigurationRequest& request) const;
 
@@ -1586,7 +1837,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's emergency calling configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorEmergencyCallingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorEmergencyCallingConfigurationOutcome PutVoiceConnectorEmergencyCallingConfiguration(const Model::PutVoiceConnectorEmergencyCallingConfigurationRequest& request) const;
 
@@ -1609,7 +1863,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's logging configuration.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorLoggingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorLoggingConfigurationOutcome PutVoiceConnectorLoggingConfiguration(const Model::PutVoiceConnectorLoggingConfigurationRequest& request) const;
 
@@ -1632,7 +1889,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's origination settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorOrigination">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorOriginationOutcome PutVoiceConnectorOrigination(const Model::PutVoiceConnectorOriginationRequest& request) const;
 
@@ -1655,7 +1915,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Puts the specified proxy configuration to the specified Amazon Chime SDK
+         * Voice Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorProxy">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorProxyOutcome PutVoiceConnectorProxy(const Model::PutVoiceConnectorProxyRequest& request) const;
 
@@ -1678,7 +1941,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's streaming configuration settings.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorStreamingConfiguration">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorStreamingConfigurationOutcome PutVoiceConnectorStreamingConfiguration(const Model::PutVoiceConnectorStreamingConfigurationRequest& request) const;
 
@@ -1701,7 +1967,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's termination settings.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTermination">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorTerminationOutcome PutVoiceConnectorTermination(const Model::PutVoiceConnectorTerminationRequest& request) const;
 
@@ -1724,7 +1993,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates a Voice Connector's termination credentials.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/PutVoiceConnectorTerminationCredentials">AWS
+         * API Reference</a></p>
          */
         virtual Model::PutVoiceConnectorTerminationCredentialsOutcome PutVoiceConnectorTerminationCredentials(const Model::PutVoiceConnectorTerminationCredentialsRequest& request) const;
 
@@ -1747,7 +2019,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Restores a deleted phone number.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/RestorePhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::RestorePhoneNumberOutcome RestorePhoneNumber(const Model::RestorePhoneNumberRequest& request) const;
 
@@ -1770,7 +2044,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Searches the provisioned phone numbers in an organization.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SearchAvailablePhoneNumbers">AWS
+         * API Reference</a></p>
          */
         virtual Model::SearchAvailablePhoneNumbersOutcome SearchAvailablePhoneNumbers(const Model::SearchAvailablePhoneNumbersRequest& request) const;
 
@@ -1793,7 +2070,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Starts a speaker search task.</p>  <p>Before starting any speaker
+         * search tasks, you must provide all notices and obtain all consents from the
+         * speaker as required under applicable privacy and biometrics laws, and as
+         * required under the <a href="https://aws.amazon.com/service-terms/">AWS service
+         * terms</a> for the Amazon Chime SDK.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartSpeakerSearchTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartSpeakerSearchTaskOutcome StartSpeakerSearchTask(const Model::StartSpeakerSearchTaskRequest& request) const;
 
@@ -1816,7 +2099,17 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Starts a voice tone analysis task. For more information about voice tone
+         * analysis, see <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using
+         * Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p>  <p>Before starting any voice tone analysis tasks, you
+         * must provide all notices and obtain all consents from the speaker as required
+         * under applicable privacy and biometrics laws, and as required under the <a
+         * href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the
+         * Amazon Chime SDK.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StartVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StartVoiceToneAnalysisTaskOutcome StartVoiceToneAnalysisTask(const Model::StartVoiceToneAnalysisTaskRequest& request) const;
 
@@ -1839,7 +2132,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Stops a speaker search task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopSpeakerSearchTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopSpeakerSearchTaskOutcome StopSpeakerSearchTask(const Model::StopSpeakerSearchTaskRequest& request) const;
 
@@ -1862,7 +2157,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Stops a voice tone analysis task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/StopVoiceToneAnalysisTask">AWS
+         * API Reference</a></p>
          */
         virtual Model::StopVoiceToneAnalysisTaskOutcome StopVoiceToneAnalysisTask(const Model::StopVoiceToneAnalysisTaskRequest& request) const;
 
@@ -1885,7 +2182,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Adds a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/TagResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
 
@@ -1908,7 +2207,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Removes tags from a resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UntagResource">AWS
+         * API Reference</a></p>
          */
         virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
 
@@ -1931,7 +2232,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates global settings for the Amazon Chime SDK Voice Connectors in an AWS
+         * account.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateGlobalSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateGlobalSettingsOutcome UpdateGlobalSettings(const Model::UpdateGlobalSettingsRequest& request) const;
 
@@ -1954,7 +2258,16 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates phone number details, such as product type or calling name, for the
+         * specified phone number ID. You can update one phone number detail at a time. For
+         * example, you can update either the product type or the calling name in one
+         * action.</p> <p>For numbers outside the U.S., you must use the Amazon Chime SDK
+         * SIP Media Application Dial-In product type.</p> <p>Updates to outbound calling
+         * names can take 72 hours to complete. Pending updates to outbound calling names
+         * must be complete before you can request another update.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumber">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePhoneNumberOutcome UpdatePhoneNumber(const Model::UpdatePhoneNumberRequest& request) const;
 
@@ -1977,7 +2290,12 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the phone number settings for the administrator's AWS account, such
+         * as the default outbound calling name. You can update the default outbound
+         * calling name once every seven days. Outbound calling names can take up to 72
+         * hours to update.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdatePhoneNumberSettings">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdatePhoneNumberSettingsOutcome UpdatePhoneNumberSettings(const Model::UpdatePhoneNumberSettingsRequest& request) const;
 
@@ -2000,7 +2318,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the specified proxy session details, such as voice or SMS
+         * capabilities.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateProxySession">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateProxySessionOutcome UpdateProxySession(const Model::UpdateProxySessionRequest& request) const;
 
@@ -2023,7 +2344,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the details of the specified SIP media application.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplication">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSipMediaApplicationOutcome UpdateSipMediaApplication(const Model::UpdateSipMediaApplicationRequest& request) const;
 
@@ -2046,7 +2370,11 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Invokes the AWS Lambda function associated with the SIP media application and
+         * transaction ID in an update request. The Lambda function can then return a new
+         * set of actions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipMediaApplicationCall">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSipMediaApplicationCallOutcome UpdateSipMediaApplicationCall(const Model::UpdateSipMediaApplicationCallRequest& request) const;
 
@@ -2069,7 +2397,9 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the details of the specified SIP rule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateSipRule">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateSipRuleOutcome UpdateSipRule(const Model::UpdateSipRuleRequest& request) const;
 
@@ -2092,7 +2422,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the details for the specified Amazon Chime SDK Voice
+         * Connector.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnector">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVoiceConnectorOutcome UpdateVoiceConnector(const Model::UpdateVoiceConnectorRequest& request) const;
 
@@ -2115,7 +2448,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the settings for the specified Amazon Chime SDK Voice Connector
+         * group.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceConnectorGroup">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVoiceConnectorGroupOutcome UpdateVoiceConnectorGroup(const Model::UpdateVoiceConnectorGroupRequest& request) const;
 
@@ -2138,7 +2474,19 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the specified voice profile’s voice print and refreshes its
+         * expiration timestamp.</p>  <p>As a condition of using this feature,
+         * you acknowledge that the collection, use, storage, and retention of your
+         * caller’s biometric identifiers and biometric information (“biometric data”) in
+         * the form of a digital voiceprint requires the caller’s informed consent via a
+         * written release. Such consent is required under various state laws, including
+         * biometrics laws in Illinois, Texas, Washington and other state privacy laws.</p>
+         * <p>You must provide a written release to each caller through a process that
+         * clearly reflects each caller��s informed consent before using Amazon Chime SDK
+         * Voice Insights service, as required under the terms of your agreement with AWS
+         * governing your use of the service.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfile">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVoiceProfileOutcome UpdateVoiceProfile(const Model::UpdateVoiceProfileRequest& request) const;
 
@@ -2161,7 +2509,10 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Updates the settings for the specified voice profile domain.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/UpdateVoiceProfileDomain">AWS
+         * API Reference</a></p>
          */
         virtual Model::UpdateVoiceProfileDomainOutcome UpdateVoiceProfileDomain(const Model::UpdateVoiceProfileDomainRequest& request) const;
 
@@ -2184,7 +2535,13 @@ namespace ChimeSDKVoice
         }
 
         /**
-         * 
+         * <p>Validates an address to be used for 911 calls made with Amazon Chime SDK
+         * Voice Connectors. You can use validated addresses in a Presence Information Data
+         * Format Location Object file that you include in SIP requests. That helps ensure
+         * that addresses are routed to the appropriate Public Safety Answering
+         * Point.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/ValidateE911Address">AWS
+         * API Reference</a></p>
          */
         virtual Model::ValidateE911AddressOutcome ValidateE911Address(const Model::ValidateE911AddressRequest& request) const;
 

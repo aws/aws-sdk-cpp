@@ -142,22 +142,26 @@ namespace Model
 
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline int GetParentPid() const{ return m_parentPid; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline bool ParentPidHasBeenSet() const { return m_parentPidHasBeenSet; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline void SetParentPid(int value) { m_parentPidHasBeenSet = true; m_parentPid = value; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline ProcessDetails& WithParentPid(int value) { SetParentPid(value); return *this;}
 

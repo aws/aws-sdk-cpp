@@ -24,6 +24,12 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
+  /**
+   * <p>The emergency calling configuration details associated with an Amazon Chime
+   * SDK Voice Connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/EmergencyCallingConfiguration">AWS
+   * API Reference</a></p>
+   */
   class EmergencyCallingConfiguration
   {
   public:
@@ -33,28 +39,52 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline const Aws::Vector<DNISEmergencyCallingConfiguration>& GetDNIS() const{ return m_dNIS; }
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline bool DNISHasBeenSet() const { return m_dNISHasBeenSet; }
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline void SetDNIS(const Aws::Vector<DNISEmergencyCallingConfiguration>& value) { m_dNISHasBeenSet = true; m_dNIS = value; }
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline void SetDNIS(Aws::Vector<DNISEmergencyCallingConfiguration>&& value) { m_dNISHasBeenSet = true; m_dNIS = std::move(value); }
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline EmergencyCallingConfiguration& WithDNIS(const Aws::Vector<DNISEmergencyCallingConfiguration>& value) { SetDNIS(value); return *this;}
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline EmergencyCallingConfiguration& WithDNIS(Aws::Vector<DNISEmergencyCallingConfiguration>&& value) { SetDNIS(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline EmergencyCallingConfiguration& AddDNIS(const DNISEmergencyCallingConfiguration& value) { m_dNISHasBeenSet = true; m_dNIS.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The Dialed Number Identification Service (DNIS) emergency calling
+     * configuration details.</p>
+     */
     inline EmergencyCallingConfiguration& AddDNIS(DNISEmergencyCallingConfiguration&& value) { m_dNISHasBeenSet = true; m_dNIS.push_back(std::move(value)); return *this; }
 
   private:

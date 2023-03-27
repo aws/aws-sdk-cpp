@@ -22,7 +22,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains statistics for a notebook session.</p><p><h3>See Also:</h3>   <a
+   * <p>Contains statistics for a session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionStatistics">AWS
    * API Reference</a></p>
    */

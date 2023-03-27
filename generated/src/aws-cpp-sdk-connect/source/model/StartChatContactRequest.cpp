@@ -23,7 +23,8 @@ StartChatContactRequest::StartChatContactRequest() :
     m_chatDurationInMinutes(0),
     m_chatDurationInMinutesHasBeenSet(false),
     m_supportedMessagingContentTypesHasBeenSet(false),
-    m_persistentChatHasBeenSet(false)
+    m_persistentChatHasBeenSet(false),
+    m_relatedContactIdHasBeenSet(false)
 {
 }
 
@@ -92,6 +93,12 @@ Aws::String StartChatContactRequest::SerializePayload() const
   if(m_persistentChatHasBeenSet)
   {
    payload.WithObject("PersistentChat", m_persistentChat.Jsonize());
+
+  }
+
+  if(m_relatedContactIdHasBeenSet)
+  {
+   payload.WithString("RelatedContactId", m_relatedContactId);
 
   }
 

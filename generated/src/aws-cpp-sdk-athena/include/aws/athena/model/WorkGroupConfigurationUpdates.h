@@ -28,11 +28,12 @@ namespace Model
 
   /**
    * <p>The configuration information that will be updated for this workgroup, which
-   * includes the location in Amazon S3 where query results are stored, the
-   * encryption option, if any, used for query results, whether the Amazon CloudWatch
-   * Metrics are enabled for the workgroup, whether the workgroup settings override
-   * the client-side settings, and the data usage limit for the amount of bytes
-   * scanned per query, if it is specified.</p><p><h3>See Also:</h3>   <a
+   * includes the location in Amazon S3 where query and calculation results are
+   * stored, the encryption option, if any, used for query results, whether the
+   * Amazon CloudWatch Metrics are enabled for the workgroup, whether the workgroup
+   * settings override the client-side settings, and the data usage limit for the
+   * amount of bytes scanned per query, if it is specified.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/WorkGroupConfigurationUpdates">AWS
    * API Reference</a></p>
    */
@@ -437,6 +438,59 @@ namespace Model
     
     inline WorkGroupConfigurationUpdates& WithCustomerContentEncryptionConfiguration(CustomerContentEncryptionConfiguration&& value) { SetCustomerContentEncryptionConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries. This setting does not apply to Spark-enabled
+     * workgroups.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes
+     * precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This
+     * means that if <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline bool GetEnableMinimumEncryptionConfiguration() const{ return m_enableMinimumEncryptionConfiguration; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries. This setting does not apply to Spark-enabled
+     * workgroups.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes
+     * precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This
+     * means that if <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline bool EnableMinimumEncryptionConfigurationHasBeenSet() const { return m_enableMinimumEncryptionConfigurationHasBeenSet; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries. This setting does not apply to Spark-enabled
+     * workgroups.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes
+     * precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This
+     * means that if <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline void SetEnableMinimumEncryptionConfiguration(bool value) { m_enableMinimumEncryptionConfigurationHasBeenSet = true; m_enableMinimumEncryptionConfiguration = value; }
+
+    /**
+     * <p>Enforces a minimal level of encryption for the workgroup for query and
+     * calculation results that are written to Amazon S3. When enabled, workgroup users
+     * can set encryption only to the minimum level set by the administrator or higher
+     * when they submit queries. This setting does not apply to Spark-enabled
+     * workgroups.</p> <p>The <code>EnforceWorkGroupConfiguration</code> setting takes
+     * precedence over the <code>EnableMinimumEncryptionConfiguration</code> flag. This
+     * means that if <code>EnforceWorkGroupConfiguration</code> is true, the
+     * <code>EnableMinimumEncryptionConfiguration</code> flag is ignored, and the
+     * workgroup configuration for encryption is used.</p>
+     */
+    inline WorkGroupConfigurationUpdates& WithEnableMinimumEncryptionConfiguration(bool value) { SetEnableMinimumEncryptionConfiguration(value); return *this;}
+
   private:
 
     bool m_enforceWorkGroupConfiguration;
@@ -471,6 +525,9 @@ namespace Model
 
     CustomerContentEncryptionConfiguration m_customerContentEncryptionConfiguration;
     bool m_customerContentEncryptionConfigurationHasBeenSet = false;
+
+    bool m_enableMinimumEncryptionConfiguration;
+    bool m_enableMinimumEncryptionConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

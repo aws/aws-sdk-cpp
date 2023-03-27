@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The termination setting details.</p>
+     */
     inline const Termination& GetTermination() const{ return m_termination; }
 
-    
+    /**
+     * <p>The termination setting details.</p>
+     */
     inline void SetTermination(const Termination& value) { m_termination = value; }
 
-    
+    /**
+     * <p>The termination setting details.</p>
+     */
     inline void SetTermination(Termination&& value) { m_termination = std::move(value); }
 
-    
+    /**
+     * <p>The termination setting details.</p>
+     */
     inline GetVoiceConnectorTerminationResult& WithTermination(const Termination& value) { SetTermination(value); return *this;}
 
-    
+    /**
+     * <p>The termination setting details.</p>
+     */
     inline GetVoiceConnectorTerminationResult& WithTermination(Termination&& value) { SetTermination(std::move(value)); return *this;}
 
 

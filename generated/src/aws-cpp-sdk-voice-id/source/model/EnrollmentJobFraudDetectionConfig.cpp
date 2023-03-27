@@ -22,7 +22,8 @@ EnrollmentJobFraudDetectionConfig::EnrollmentJobFraudDetectionConfig() :
     m_fraudDetectionAction(FraudDetectionAction::NOT_SET),
     m_fraudDetectionActionHasBeenSet(false),
     m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false)
+    m_riskThresholdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ EnrollmentJobFraudDetectionConfig::EnrollmentJobFraudDetectionConfig(JsonView js
     m_fraudDetectionAction(FraudDetectionAction::NOT_SET),
     m_fraudDetectionActionHasBeenSet(false),
     m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false)
+    m_riskThresholdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ EnrollmentJobFraudDetectionConfig& EnrollmentJobFraudDetectionConfig::operator =
     m_riskThresholdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WatchlistIds"))
+  {
+    Aws::Utils::Array<JsonView> watchlistIdsJsonList = jsonValue.GetArray("WatchlistIds");
+    for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+    {
+      m_watchlistIds.push_back(watchlistIdsJsonList[watchlistIdsIndex].AsString());
+    }
+    m_watchlistIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue EnrollmentJobFraudDetectionConfig::Jsonize() const
   if(m_riskThresholdHasBeenSet)
   {
    payload.WithInteger("RiskThreshold", m_riskThreshold);
+
+  }
+
+  if(m_watchlistIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> watchlistIdsJsonList(m_watchlistIds.size());
+   for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+   {
+     watchlistIdsJsonList[watchlistIdsIndex].AsString(m_watchlistIds[watchlistIdsIndex]);
+   }
+   payload.WithArray("WatchlistIds", std::move(watchlistIdsJsonList));
 
   }
 

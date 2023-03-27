@@ -46,32 +46,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline SpeakerEnrollmentJob& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing the creation of the speaker enrollment job.</p>
+     * <p>A timestamp of when the speaker enrollment job was created.</p>
      */
     inline SpeakerEnrollmentJob& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -175,32 +175,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline SpeakerEnrollmentJob& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing when the speaker enrollment job ended. </p>
+     * <p>A timestamp of when the speaker enrollment job ended. </p>
      */
     inline SpeakerEnrollmentJob& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
 

@@ -26,6 +26,7 @@ namespace Aws
         static const int FRAUDSTER_HASH = HashingUtils::HashString("FRAUDSTER");
         static const int SESSION_HASH = HashingUtils::HashString("SESSION");
         static const int SPEAKER_HASH = HashingUtils::HashString("SPEAKER");
+        static const int WATCHLIST_HASH = HashingUtils::HashString("WATCHLIST");
 
 
         ResourceType GetResourceTypeForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return ResourceType::SPEAKER;
           }
+          else if (hashCode == WATCHLIST_HASH)
+          {
+            return ResourceType::WATCHLIST;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "SESSION";
           case ResourceType::SPEAKER:
             return "SPEAKER";
+          case ResourceType::WATCHLIST:
+            return "WATCHLIST";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -2199,7 +2199,7 @@ namespace Connect
          * the previous version of this API. It has new metrics, offers filtering at a
          * metric level, and offers the ability to filter and group data by channels,
          * queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
-         * historical data for last the 14 days, in 24-hour intervals.</p> <p>For a
+         * historical data for the last 14 days, in 24-hour intervals.</p> <p>For a
          * description of the historical metrics that are supported by
          * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical

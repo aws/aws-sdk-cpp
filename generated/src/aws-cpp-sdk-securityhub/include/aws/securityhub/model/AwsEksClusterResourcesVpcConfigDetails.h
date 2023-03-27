@@ -148,6 +148,39 @@ namespace Model
      */
     inline AwsEksClusterResourcesVpcConfigDetails& AddSubnetIds(const char* value) { m_subnetIdsHasBeenSet = true; m_subnetIds.push_back(value); return *this; }
 
+
+    /**
+     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
+     * the Amazon EKS public API server endpoint is turned off, your cluster's
+     * Kubernetes API server can only receive requests that originate from within the
+     * cluster VPC. </p>
+     */
+    inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
+
+    /**
+     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
+     * the Amazon EKS public API server endpoint is turned off, your cluster's
+     * Kubernetes API server can only receive requests that originate from within the
+     * cluster VPC. </p>
+     */
+    inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
+
+    /**
+     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
+     * the Amazon EKS public API server endpoint is turned off, your cluster's
+     * Kubernetes API server can only receive requests that originate from within the
+     * cluster VPC. </p>
+     */
+    inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
+
+    /**
+     * <p> Indicates whether the Amazon EKS public API server endpoint is turned on. If
+     * the Amazon EKS public API server endpoint is turned off, your cluster's
+     * Kubernetes API server can only receive requests that originate from within the
+     * cluster VPC. </p>
+     */
+    inline AwsEksClusterResourcesVpcConfigDetails& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_securityGroupIds;
@@ -155,6 +188,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_subnetIds;
     bool m_subnetIdsHasBeenSet = false;
+
+    bool m_endpointPublicAccess;
+    bool m_endpointPublicAccessHasBeenSet = false;
   };
 
 } // namespace Model

@@ -356,6 +356,42 @@ namespace Model
     inline GetAttributeGroupResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdBy = value; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdBy = std::move(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdBy.assign(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline GetAttributeGroupResult& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline GetAttributeGroupResult& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline GetAttributeGroupResult& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -394,6 +430,8 @@ namespace Model
     Aws::Utils::DateTime m_lastUpdateTime;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
+
+    Aws::String m_createdBy;
 
     Aws::String m_requestId;
   };

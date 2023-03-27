@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/WirelessDeviceSidewalkStatus.h>
 #include <aws/iotwireless/model/CertificateList.h>
 #include <utility>
 
@@ -186,6 +187,168 @@ namespace Model
      */
     inline SidewalkDevice& AddDeviceCertificates(CertificateList&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline const Aws::Vector<CertificateList>& GetPrivateKeys() const{ return m_privateKeys; }
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline bool PrivateKeysHasBeenSet() const { return m_privateKeysHasBeenSet; }
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline void SetPrivateKeys(const Aws::Vector<CertificateList>& value) { m_privateKeysHasBeenSet = true; m_privateKeys = value; }
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline void SetPrivateKeys(Aws::Vector<CertificateList>&& value) { m_privateKeysHasBeenSet = true; m_privateKeys = std::move(value); }
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline SidewalkDevice& WithPrivateKeys(const Aws::Vector<CertificateList>& value) { SetPrivateKeys(value); return *this;}
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline SidewalkDevice& WithPrivateKeys(Aws::Vector<CertificateList>&& value) { SetPrivateKeys(std::move(value)); return *this;}
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline SidewalkDevice& AddPrivateKeys(const CertificateList& value) { m_privateKeysHasBeenSet = true; m_privateKeys.push_back(value); return *this; }
+
+    /**
+     * <p>The Sidewalk device private keys that will be used for onboarding the
+     * device.</p>
+     */
+    inline SidewalkDevice& AddPrivateKeys(CertificateList&& value) { m_privateKeysHasBeenSet = true; m_privateKeys.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
+
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the Sidewalk device profile.</p>
+     */
+    inline SidewalkDevice& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
+
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline const WirelessDeviceSidewalkStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline void SetStatus(const WirelessDeviceSidewalkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline void SetStatus(WirelessDeviceSidewalkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline SidewalkDevice& WithStatus(const WirelessDeviceSidewalkStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The Sidewalk device status, such as provisioned or registered.</p>
+     */
+    inline SidewalkDevice& WithStatus(WirelessDeviceSidewalkStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_amazonId;
@@ -199,6 +362,18 @@ namespace Model
 
     Aws::Vector<CertificateList> m_deviceCertificates;
     bool m_deviceCertificatesHasBeenSet = false;
+
+    Aws::Vector<CertificateList> m_privateKeys;
+    bool m_privateKeysHasBeenSet = false;
+
+    Aws::String m_deviceProfileId;
+    bool m_deviceProfileIdHasBeenSet = false;
+
+    Aws::String m_certificateId;
+    bool m_certificateIdHasBeenSet = false;
+
+    WirelessDeviceSidewalkStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

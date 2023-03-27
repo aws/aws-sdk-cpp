@@ -11,6 +11,7 @@
 #include <aws/iotwireless/model/LoRaWANDevice.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/model/PositioningConfigStatus.h>
+#include <aws/iotwireless/model/SidewalkCreateWirelessDevice.h>
 #include <aws/iotwireless/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -379,6 +380,43 @@ namespace Model
      */
     inline CreateWirelessDeviceRequest& WithPositioning(PositioningConfigStatus&& value) { SetPositioning(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline const SidewalkCreateWirelessDevice& GetSidewalk() const{ return m_sidewalk; }
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline void SetSidewalk(const SidewalkCreateWirelessDevice& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline void SetSidewalk(SidewalkCreateWirelessDevice&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline CreateWirelessDeviceRequest& WithSidewalk(const SidewalkCreateWirelessDevice& value) { SetSidewalk(value); return *this;}
+
+    /**
+     * <p>The device configuration information to use to create the Sidewalk
+     * device.</p>
+     */
+    inline CreateWirelessDeviceRequest& WithSidewalk(SidewalkCreateWirelessDevice&& value) { SetSidewalk(std::move(value)); return *this;}
+
   private:
 
     WirelessDeviceType m_type;
@@ -404,6 +442,9 @@ namespace Model
 
     PositioningConfigStatus m_positioning;
     bool m_positioningHasBeenSet = false;
+
+    SidewalkCreateWirelessDevice m_sidewalk;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

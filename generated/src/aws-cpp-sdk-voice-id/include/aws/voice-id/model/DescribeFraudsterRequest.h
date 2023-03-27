@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline DescribeFraudsterRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline DescribeFraudsterRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline DescribeFraudsterRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 

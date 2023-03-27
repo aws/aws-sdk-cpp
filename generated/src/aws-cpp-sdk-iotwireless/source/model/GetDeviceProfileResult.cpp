@@ -53,6 +53,12 @@ GetDeviceProfileResult& GetDeviceProfileResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("Sidewalk"))
+  {
+    m_sidewalk = jsonValue.GetObject("Sidewalk");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

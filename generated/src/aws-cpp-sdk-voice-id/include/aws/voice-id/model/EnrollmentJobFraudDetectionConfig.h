@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/FraudDetectionAction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -24,9 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration defining the action to take when a speaker is flagged by
-   * the fraud detection system during a batch speaker enrollment job, and the risk
-   * threshold to use for identification.</p><p><h3>See Also:</h3>   <a
+   * <p>The fraud detection configuration to be used during the batch speaker
+   * enrollment job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/EnrollmentJobFraudDetectionConfig">AWS
    * API Reference</a></p>
    */
@@ -116,6 +117,52 @@ namespace Model
      */
     inline EnrollmentJobFraudDetectionConfig& WithRiskThreshold(int value) { SetRiskThreshold(value); return *this;}
 
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWatchlistIds() const{ return m_watchlistIds; }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline bool WatchlistIdsHasBeenSet() const { return m_watchlistIdsHasBeenSet; }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline void SetWatchlistIds(const Aws::Vector<Aws::String>& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = value; }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline void SetWatchlistIds(Aws::Vector<Aws::String>&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = std::move(value); }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline EnrollmentJobFraudDetectionConfig& WithWatchlistIds(const Aws::Vector<Aws::String>& value) { SetWatchlistIds(value); return *this;}
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline EnrollmentJobFraudDetectionConfig& WithWatchlistIds(Aws::Vector<Aws::String>&& value) { SetWatchlistIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(const Aws::String& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(Aws::String&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The identifier of watchlists against which fraud detection is performed. </p>
+     */
+    inline EnrollmentJobFraudDetectionConfig& AddWatchlistIds(const char* value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
   private:
 
     FraudDetectionAction m_fraudDetectionAction;
@@ -123,6 +170,9 @@ namespace Model
 
     int m_riskThreshold;
     bool m_riskThresholdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_watchlistIds;
+    bool m_watchlistIdsHasBeenSet = false;
   };
 
 } // namespace Model

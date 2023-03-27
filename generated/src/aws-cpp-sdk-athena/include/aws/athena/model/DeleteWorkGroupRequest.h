@@ -77,25 +77,25 @@ namespace Model
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries or query executions.</p>
+     * contains any named queries, query executions, or notebooks.</p>
      */
     inline bool GetRecursiveDeleteOption() const{ return m_recursiveDeleteOption; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries or query executions.</p>
+     * contains any named queries, query executions, or notebooks.</p>
      */
     inline bool RecursiveDeleteOptionHasBeenSet() const { return m_recursiveDeleteOptionHasBeenSet; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries or query executions.</p>
+     * contains any named queries, query executions, or notebooks.</p>
      */
     inline void SetRecursiveDeleteOption(bool value) { m_recursiveDeleteOptionHasBeenSet = true; m_recursiveDeleteOption = value; }
 
     /**
      * <p>The option to delete the workgroup and its contents even if the workgroup
-     * contains any named queries or query executions.</p>
+     * contains any named queries, query executions, or notebooks.</p>
      */
     inline DeleteWorkGroupRequest& WithRecursiveDeleteOption(bool value) { SetRecursiveDeleteOption(value); return *this;}
 

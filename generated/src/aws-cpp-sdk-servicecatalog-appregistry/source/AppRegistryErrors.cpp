@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/servicecatalog-appregistry/AppRegistryErrors.h>
+#include <aws/servicecatalog-appregistry/model/ThrottlingException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::AppRegistry;
+using namespace Aws::AppRegistry::Model;
 
 namespace Aws
 {
 namespace AppRegistry
 {
+template<> AWS_APPREGISTRY_API ThrottlingException AppRegistryError::GetModeledError()
+{
+  assert(this->GetErrorType() == AppRegistryErrors::THROTTLING);
+  return ThrottlingException(this->GetJsonPayload().View());
+}
+
 namespace AppRegistryErrorMapper
 {
 

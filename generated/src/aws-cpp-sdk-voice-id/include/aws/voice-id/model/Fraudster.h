@@ -7,6 +7,7 @@
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -39,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline Fraudster& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when Voice ID identified the fraudster.</p>
+     * <p>The timestamp of when Voice ID identified the fraudster.</p>
      */
     inline Fraudster& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline Fraudster& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline Fraudster& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the domain containing the fraudster.</p>
+     * <p>The identifier of the domain that contains the fraudster.</p>
      */
     inline Fraudster& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
@@ -150,6 +151,52 @@ namespace Model
      */
     inline Fraudster& WithGeneratedFraudsterId(const char* value) { SetGeneratedFraudsterId(value); return *this;}
 
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWatchlistIds() const{ return m_watchlistIds; }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline bool WatchlistIdsHasBeenSet() const { return m_watchlistIdsHasBeenSet; }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline void SetWatchlistIds(const Aws::Vector<Aws::String>& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = value; }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline void SetWatchlistIds(Aws::Vector<Aws::String>&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = std::move(value); }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline Fraudster& WithWatchlistIds(const Aws::Vector<Aws::String>& value) { SetWatchlistIds(value); return *this;}
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline Fraudster& WithWatchlistIds(Aws::Vector<Aws::String>&& value) { SetWatchlistIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline Fraudster& AddWatchlistIds(const Aws::String& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline Fraudster& AddWatchlistIds(Aws::String&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The identifier of the watchlists the fraudster is a part of.</p>
+     */
+    inline Fraudster& AddWatchlistIds(const char* value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
   private:
 
     Aws::Utils::DateTime m_createdAt;
@@ -160,6 +207,9 @@ namespace Model
 
     Aws::String m_generatedFraudsterId;
     bool m_generatedFraudsterIdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_watchlistIds;
+    bool m_watchlistIdsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorTerminationHealthResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The termination health details.</p>
+     */
     inline const TerminationHealth& GetTerminationHealth() const{ return m_terminationHealth; }
 
-    
+    /**
+     * <p>The termination health details.</p>
+     */
     inline void SetTerminationHealth(const TerminationHealth& value) { m_terminationHealth = value; }
 
-    
+    /**
+     * <p>The termination health details.</p>
+     */
     inline void SetTerminationHealth(TerminationHealth&& value) { m_terminationHealth = std::move(value); }
 
-    
+    /**
+     * <p>The termination health details.</p>
+     */
     inline GetVoiceConnectorTerminationHealthResult& WithTerminationHealth(const TerminationHealth& value) { SetTerminationHealth(value); return *this;}
 
-    
+    /**
+     * <p>The termination health details.</p>
+     */
     inline GetVoiceConnectorTerminationHealthResult& WithTerminationHealth(TerminationHealth&& value) { SetTerminationHealth(std::move(value)); return *this;}
 
 

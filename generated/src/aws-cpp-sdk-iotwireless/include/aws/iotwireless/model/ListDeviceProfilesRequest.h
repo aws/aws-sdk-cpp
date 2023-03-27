@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iotwireless/model/DeviceProfileType.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +116,43 @@ namespace Model
      */
     inline ListDeviceProfilesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline const DeviceProfileType& GetDeviceProfileType() const{ return m_deviceProfileType; }
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline bool DeviceProfileTypeHasBeenSet() const { return m_deviceProfileTypeHasBeenSet; }
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline void SetDeviceProfileType(const DeviceProfileType& value) { m_deviceProfileTypeHasBeenSet = true; m_deviceProfileType = value; }
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline void SetDeviceProfileType(DeviceProfileType&& value) { m_deviceProfileTypeHasBeenSet = true; m_deviceProfileType = std::move(value); }
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline ListDeviceProfilesRequest& WithDeviceProfileType(const DeviceProfileType& value) { SetDeviceProfileType(value); return *this;}
+
+    /**
+     * <p>A filter to list only device profiles that use this type, which can be
+     * <code>LoRaWAN</code> or <code>Sidewalk</code>.</p>
+     */
+    inline ListDeviceProfilesRequest& WithDeviceProfileType(DeviceProfileType&& value) { SetDeviceProfileType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -122,6 +160,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    DeviceProfileType m_deviceProfileType;
+    bool m_deviceProfileTypeHasBeenSet = false;
   };
 
 } // namespace Model

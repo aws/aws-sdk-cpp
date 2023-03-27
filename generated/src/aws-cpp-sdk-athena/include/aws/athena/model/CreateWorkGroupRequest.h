@@ -79,8 +79,9 @@ namespace Model
 
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether
@@ -91,8 +92,9 @@ namespace Model
     inline const WorkGroupConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether
@@ -103,8 +105,9 @@ namespace Model
     inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether
@@ -115,8 +118,9 @@ namespace Model
     inline void SetConfiguration(const WorkGroupConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether
@@ -127,8 +131,9 @@ namespace Model
     inline void SetConfiguration(WorkGroupConfiguration&& value) { m_configurationHasBeenSet = true; m_configuration = std::move(value); }
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether
@@ -139,8 +144,9 @@ namespace Model
     inline CreateWorkGroupRequest& WithConfiguration(const WorkGroupConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>Contains configuration information for creating an Athena SQL workgroup,
-     * which includes the location in Amazon S3 where query results are stored, the
+     * <p>Contains configuration information for creating an Athena SQL workgroup or
+     * Spark enabled Athena workgroup. Athena SQL workgroup configuration includes the
+     * location in Amazon S3 where query and calculation results are stored, the
      * encryption configuration, if any, used for encrypting query results, whether the
      * Amazon CloudWatch Metrics are enabled for the workgroup, the limit for the
      * amount of bytes scanned (cutoff) per query, if it is specified, and whether

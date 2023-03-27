@@ -106,8 +106,9 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Associates a resource with an application. Both the resource and the
-         * application can be specified either by ID or name.</p><p><h3>See Also:</h3>   <a
+         * <p> Associates a resource with an application. The resource can be specified by
+         * its ARN or name. The application can be specified by ARN, ID, or name.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AssociateResource">AWS
          * API Reference</a></p>
          */
@@ -186,8 +187,8 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Deletes an application that is specified either by its application ID or
-         * name. All associated attribute groups and resources must be disassociated from
+         * <p>Deletes an application that is specified either by its application ID, name,
+         * or ARN. All associated attribute groups and resources must be disassociated from
          * it before deleting an application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteApplication">AWS
          * API Reference</a></p>
@@ -213,8 +214,8 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Deletes an attribute group, specified either by its attribute group ID or
-         * name.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an attribute group, specified either by its attribute group ID, name,
+         * or ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/DeleteAttributeGroup">AWS
          * API Reference</a></p>
          */
@@ -293,12 +294,12 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Retrieves metadata information about one of your applications. The
-         * application can be specified either by its unique ID or by its name (which is
-         * unique within one account in one region at a given point in time). Specify by ID
-         * in automated workflows if you want to make sure that the exact same application
-         * is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the
-         * ABA addressing problem.</p><p><h3>See Also:</h3>   <a
+         * <p> Retrieves metadata information about one of your applications. The
+         * application can be specified by its ARN, ID, or name (which is unique within one
+         * account in one region at a given point in time). Specify by ARN or ID in
+         * automated workflows if you want to make sure that the exact same application is
+         * returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA
+         * addressing problem. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetApplication">AWS
          * API Reference</a></p>
          */
@@ -349,9 +350,8 @@ namespace AppRegistry
         }
 
         /**
-         * <p>Retrieves an attribute group, either by its name or its ID. The attribute
-         * group can be specified either by its unique ID or by its name.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p> Retrieves an attribute group by its ARN, ID, or name. The attribute group
+         * can be specified by its ARN, ID, or name. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/GetAttributeGroup">AWS
          * API Reference</a></p>
          */

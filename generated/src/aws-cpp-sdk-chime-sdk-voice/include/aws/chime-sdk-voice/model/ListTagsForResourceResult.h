@@ -34,25 +34,39 @@ namespace Model
     AWS_CHIMESDKVOICE_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tags = value; }
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tags = std::move(value); }
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline ListTagsForResourceResult& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline ListTagsForResourceResult& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline ListTagsForResourceResult& AddTags(const Tag& value) { m_tags.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The tags in the list.</p>
+     */
     inline ListTagsForResourceResult& AddTags(Tag&& value) { m_tags.push_back(std::move(value)); return *this; }
 
 

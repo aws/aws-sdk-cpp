@@ -80,6 +80,12 @@ GetAttributeGroupResult& GetAttributeGroupResult::operator =(const Aws::AmazonWe
     }
   }
 
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

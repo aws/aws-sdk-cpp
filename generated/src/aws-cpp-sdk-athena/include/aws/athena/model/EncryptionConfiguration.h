@@ -25,9 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>If query results are encrypted in Amazon S3, indicates the encryption option
-   * used (for example, <code>SSE_KMS</code> or <code>CSE_KMS</code>) and key
-   * information.</p><p><h3>See Also:</h3>   <a
+   * <p>If query and calculation results are encrypted in Amazon S3, indicates the
+   * encryption option used (for example, <code>SSE_KMS</code> or
+   * <code>CSE_KMS</code>) and key information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/EncryptionConfiguration">AWS
    * API Reference</a></p>
    */

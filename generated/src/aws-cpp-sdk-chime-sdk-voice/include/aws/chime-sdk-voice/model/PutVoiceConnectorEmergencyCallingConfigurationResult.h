@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API PutVoiceConnectorEmergencyCallingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The updated configuration.</p>
+     */
     inline const EmergencyCallingConfiguration& GetEmergencyCallingConfiguration() const{ return m_emergencyCallingConfiguration; }
 
-    
+    /**
+     * <p>The updated configuration.</p>
+     */
     inline void SetEmergencyCallingConfiguration(const EmergencyCallingConfiguration& value) { m_emergencyCallingConfiguration = value; }
 
-    
+    /**
+     * <p>The updated configuration.</p>
+     */
     inline void SetEmergencyCallingConfiguration(EmergencyCallingConfiguration&& value) { m_emergencyCallingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The updated configuration.</p>
+     */
     inline PutVoiceConnectorEmergencyCallingConfigurationResult& WithEmergencyCallingConfiguration(const EmergencyCallingConfiguration& value) { SetEmergencyCallingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The updated configuration.</p>
+     */
     inline PutVoiceConnectorEmergencyCallingConfigurationResult& WithEmergencyCallingConfiguration(EmergencyCallingConfiguration&& value) { SetEmergencyCallingConfiguration(std::move(value)); return *this;}
 
 

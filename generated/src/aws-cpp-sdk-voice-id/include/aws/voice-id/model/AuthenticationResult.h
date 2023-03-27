@@ -42,74 +42,74 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline const Aws::Utils::DateTime& GetAudioAggregationEndedAt() const{ return m_audioAggregationEndedAt; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline bool AudioAggregationEndedAtHasBeenSet() const { return m_audioAggregationEndedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline void SetAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = value; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline void SetAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { m_audioAggregationEndedAtHasBeenSet = true; m_audioAggregationEndedAt = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline AuthenticationResult& WithAudioAggregationEndedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationEndedAt(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when audio aggregation ended for this authentication
+     * <p>A timestamp of when audio aggregation ended for this authentication
      * result.</p>
      */
     inline AuthenticationResult& WithAudioAggregationEndedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationEndedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline const Aws::Utils::DateTime& GetAudioAggregationStartedAt() const{ return m_audioAggregationStartedAt; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline bool AudioAggregationStartedAtHasBeenSet() const { return m_audioAggregationStartedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline void SetAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = value; }
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline void SetAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { m_audioAggregationStartedAtHasBeenSet = true; m_audioAggregationStartedAt = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline AuthenticationResult& WithAudioAggregationStartedAt(const Aws::Utils::DateTime& value) { SetAudioAggregationStartedAt(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when audio aggregation started for this authentication
+     * <p>A timestamp of when audio aggregation started for this authentication
      * result.</p>
      */
     inline AuthenticationResult& WithAudioAggregationStartedAt(Aws::Utils::DateTime&& value) { SetAudioAggregationStartedAt(std::move(value)); return *this;}

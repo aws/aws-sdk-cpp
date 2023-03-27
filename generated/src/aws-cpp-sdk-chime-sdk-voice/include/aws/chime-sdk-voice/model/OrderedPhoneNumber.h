@@ -24,6 +24,12 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
+  /**
+   * <p>A phone number for which an order has been placed.</p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/OrderedPhoneNumber">AWS
+   * API Reference</a></p>
+   */
   class OrderedPhoneNumber
   {
   public:
@@ -33,47 +39,75 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline const Aws::String& GetE164PhoneNumber() const{ return m_e164PhoneNumber; }
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline bool E164PhoneNumberHasBeenSet() const { return m_e164PhoneNumberHasBeenSet; }
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline void SetE164PhoneNumber(const Aws::String& value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber = value; }
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline void SetE164PhoneNumber(Aws::String&& value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber = std::move(value); }
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline void SetE164PhoneNumber(const char* value) { m_e164PhoneNumberHasBeenSet = true; m_e164PhoneNumber.assign(value); }
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline OrderedPhoneNumber& WithE164PhoneNumber(const Aws::String& value) { SetE164PhoneNumber(value); return *this;}
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline OrderedPhoneNumber& WithE164PhoneNumber(Aws::String&& value) { SetE164PhoneNumber(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The phone number, in E.164 format.</p>
+     */
     inline OrderedPhoneNumber& WithE164PhoneNumber(const char* value) { SetE164PhoneNumber(value); return *this;}
 
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline const OrderedPhoneNumberStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline void SetStatus(const OrderedPhoneNumberStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline void SetStatus(OrderedPhoneNumberStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline OrderedPhoneNumber& WithStatus(const OrderedPhoneNumberStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * <p>The phone number status.</p>
+     */
     inline OrderedPhoneNumber& WithStatus(OrderedPhoneNumberStatus&& value) { SetStatus(std::move(value)); return *this;}
 
   private:

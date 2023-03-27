@@ -290,6 +290,47 @@ namespace Model
      */
     inline AttributeGroupSummary& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupSummary& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupSummary& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupSummary& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -309,6 +350,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

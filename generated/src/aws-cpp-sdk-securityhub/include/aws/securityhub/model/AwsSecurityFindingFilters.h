@@ -1975,42 +1975,50 @@ namespace Model
 
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline const Aws::Vector<NumberFilter>& GetProcessParentPid() const{ return m_processParentPid; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline bool ProcessParentPidHasBeenSet() const { return m_processParentPidHasBeenSet; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline void SetProcessParentPid(const Aws::Vector<NumberFilter>& value) { m_processParentPidHasBeenSet = true; m_processParentPid = value; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline void SetProcessParentPid(Aws::Vector<NumberFilter>&& value) { m_processParentPidHasBeenSet = true; m_processParentPid = std::move(value); }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessParentPid(const Aws::Vector<NumberFilter>& value) { SetProcessParentPid(value); return *this;}
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline AwsSecurityFindingFilters& WithProcessParentPid(Aws::Vector<NumberFilter>&& value) { SetProcessParentPid(std::move(value)); return *this;}
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessParentPid(const NumberFilter& value) { m_processParentPidHasBeenSet = true; m_processParentPid.push_back(value); return *this; }
 
     /**
-     * <p>The parent process ID.</p>
+     * <p>The parent process ID. This field accepts positive integers between
+     * <code>O</code> and <code>2147483647</code>.</p>
      */
     inline AwsSecurityFindingFilters& AddProcessParentPid(NumberFilter&& value) { m_processParentPidHasBeenSet = true; m_processParentPid.push_back(std::move(value)); return *this; }
 

@@ -20,13 +20,15 @@ namespace Model
 
 AttributeGroupDetails::AttributeGroupDetails() : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
 }
 
 AttributeGroupDetails::AttributeGroupDetails(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_arnHasBeenSet(false)
+    m_arnHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ AttributeGroupDetails& AttributeGroupDetails::operator =(JsonView jsonValue)
     m_arnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue AttributeGroupDetails::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
 
   }
 

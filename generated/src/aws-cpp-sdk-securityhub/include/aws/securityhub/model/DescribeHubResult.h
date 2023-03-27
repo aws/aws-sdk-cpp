@@ -140,7 +140,7 @@ namespace Model
      * value for this field in a member account matches the value in the administrator
      * account. For accounts that aren't part of an organization, the default value of
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-     * after February 9, 2023.</p>
+     * after February 23, 2023.</p>
      */
     inline const ControlFindingGenerator& GetControlFindingGenerator() const{ return m_controlFindingGenerator; }
 
@@ -154,7 +154,7 @@ namespace Model
      * value for this field in a member account matches the value in the administrator
      * account. For accounts that aren't part of an organization, the default value of
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-     * after February 9, 2023.</p>
+     * after February 23, 2023.</p>
      */
     inline void SetControlFindingGenerator(const ControlFindingGenerator& value) { m_controlFindingGenerator = value; }
 
@@ -168,7 +168,7 @@ namespace Model
      * value for this field in a member account matches the value in the administrator
      * account. For accounts that aren't part of an organization, the default value of
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-     * after February 9, 2023.</p>
+     * after February 23, 2023.</p>
      */
     inline void SetControlFindingGenerator(ControlFindingGenerator&& value) { m_controlFindingGenerator = std::move(value); }
 
@@ -182,7 +182,7 @@ namespace Model
      * value for this field in a member account matches the value in the administrator
      * account. For accounts that aren't part of an organization, the default value of
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-     * after February 9, 2023.</p>
+     * after February 23, 2023.</p>
      */
     inline DescribeHubResult& WithControlFindingGenerator(const ControlFindingGenerator& value) { SetControlFindingGenerator(value); return *this;}
 
@@ -196,7 +196,7 @@ namespace Model
      * value for this field in a member account matches the value in the administrator
      * account. For accounts that aren't part of an organization, the default value of
      * this field is <code>SECURITY_CONTROL</code> if you enabled Security Hub on or
-     * after February 9, 2023.</p>
+     * after February 23, 2023.</p>
      */
     inline DescribeHubResult& WithControlFindingGenerator(ControlFindingGenerator&& value) { SetControlFindingGenerator(std::move(value)); return *this;}
 

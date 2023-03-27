@@ -144,25 +144,29 @@ namespace Model
 
     /**
      * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * message streaming.</p>
+     * customer participant in message streaming, as well as for agent or manager
+     * participant in non-streaming chats.</p>
      */
     inline bool GetConnectParticipant() const{ return m_connectParticipant; }
 
     /**
      * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * message streaming.</p>
+     * customer participant in message streaming, as well as for agent or manager
+     * participant in non-streaming chats.</p>
      */
     inline bool ConnectParticipantHasBeenSet() const { return m_connectParticipantHasBeenSet; }
 
     /**
      * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * message streaming.</p>
+     * customer participant in message streaming, as well as for agent or manager
+     * participant in non-streaming chats.</p>
      */
     inline void SetConnectParticipant(bool value) { m_connectParticipantHasBeenSet = true; m_connectParticipant = value; }
 
     /**
      * <p>Amazon Connect Participant is used to mark the participant as connected for
-     * message streaming.</p>
+     * customer participant in message streaming, as well as for agent or manager
+     * participant in non-streaming chats.</p>
      */
     inline CreateParticipantConnectionRequest& WithConnectParticipant(bool value) { SetConnectParticipant(value); return *this;}
 

@@ -23,7 +23,8 @@ CreateWirelessDeviceRequest::CreateWirelessDeviceRequest() :
     m_loRaWANHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_positioning(PositioningConfigStatus::NOT_SET),
-    m_positioningHasBeenSet(false)
+    m_positioningHasBeenSet(false),
+    m_sidewalkHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ Aws::String CreateWirelessDeviceRequest::SerializePayload() const
   if(m_positioningHasBeenSet)
   {
    payload.WithString("Positioning", PositioningConfigStatusMapper::GetNameForPositioningConfigStatus(m_positioning));
+  }
+
+  if(m_sidewalkHasBeenSet)
+  {
+   payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

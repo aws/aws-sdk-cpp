@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/WirelessDeviceSidewalkStatus.h>
 #include <aws/iotwireless/model/CertificateList.h>
 #include <utility>
 
@@ -202,6 +203,78 @@ namespace Model
      */
     inline SidewalkListDevice& AddDeviceCertificates(CertificateList&& value) { m_deviceCertificatesHasBeenSet = true; m_deviceCertificates.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline const Aws::String& GetDeviceProfileId() const{ return m_deviceProfileId; }
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline bool DeviceProfileIdHasBeenSet() const { return m_deviceProfileIdHasBeenSet; }
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline void SetDeviceProfileId(const Aws::String& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = value; }
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline void SetDeviceProfileId(Aws::String&& value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId = std::move(value); }
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline void SetDeviceProfileId(const char* value) { m_deviceProfileIdHasBeenSet = true; m_deviceProfileId.assign(value); }
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline SidewalkListDevice& WithDeviceProfileId(const Aws::String& value) { SetDeviceProfileId(value); return *this;}
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline SidewalkListDevice& WithDeviceProfileId(Aws::String&& value) { SetDeviceProfileId(std::move(value)); return *this;}
+
+    /**
+     * <p>Sidewalk object used by list functions.</p>
+     */
+    inline SidewalkListDevice& WithDeviceProfileId(const char* value) { SetDeviceProfileId(value); return *this;}
+
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline const WirelessDeviceSidewalkStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline void SetStatus(const WirelessDeviceSidewalkStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline void SetStatus(WirelessDeviceSidewalkStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline SidewalkListDevice& WithStatus(const WirelessDeviceSidewalkStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the Sidewalk devices, such as provisioned or registered.</p>
+     */
+    inline SidewalkListDevice& WithStatus(WirelessDeviceSidewalkStatus&& value) { SetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_amazonId;
@@ -215,6 +288,12 @@ namespace Model
 
     Aws::Vector<CertificateList> m_deviceCertificates;
     bool m_deviceCertificatesHasBeenSet = false;
+
+    Aws::String m_deviceProfileId;
+    bool m_deviceProfileIdHasBeenSet = false;
+
+    WirelessDeviceSidewalkStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

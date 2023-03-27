@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API UpdateSipMediaApplicationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The updated SIP media application’s details.</p>
+     */
     inline const SipMediaApplication& GetSipMediaApplication() const{ return m_sipMediaApplication; }
 
-    
+    /**
+     * <p>The updated SIP media application’s details.</p>
+     */
     inline void SetSipMediaApplication(const SipMediaApplication& value) { m_sipMediaApplication = value; }
 
-    
+    /**
+     * <p>The updated SIP media application’s details.</p>
+     */
     inline void SetSipMediaApplication(SipMediaApplication&& value) { m_sipMediaApplication = std::move(value); }
 
-    
+    /**
+     * <p>The updated SIP media application’s details.</p>
+     */
     inline UpdateSipMediaApplicationResult& WithSipMediaApplication(const SipMediaApplication& value) { SetSipMediaApplication(value); return *this;}
 
-    
+    /**
+     * <p>The updated SIP media application’s details.</p>
+     */
     inline UpdateSipMediaApplicationResult& WithSipMediaApplication(SipMediaApplication&& value) { SetSipMediaApplication(std::move(value)); return *this;}
 
 

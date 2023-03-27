@@ -29,9 +29,10 @@ namespace Model
   /**
    * <p>A channel is a named input source that training algorithms can consume. The
    * validation dataset size is limited to less than 2 GB. The training dataset size
-   * must be less than 100 GB. For more information, see .</p>  <p>A validation
-   * dataset must contain the same headers as the training dataset.</p> 
-   * <p/><p><h3>See Also:</h3>   <a
+   * must be less than 100 GB. For more information, see <code> <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
+   * Channel</a> </code>.</p>  <p>A validation dataset must contain the same
+   * headers as the training dataset.</p>  <p/><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLChannel">AWS
    * API Reference</a></p>
    */

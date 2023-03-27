@@ -10,6 +10,7 @@
 #include <aws/voice-id/model/DomainStatus.h>
 #include <aws/voice-id/model/ServerSideEncryptionConfiguration.h>
 #include <aws/voice-id/model/ServerSideEncryptionUpdateDetails.h>
+#include <aws/voice-id/model/WatchlistDetails.h>
 #include <utility>
 
 namespace Aws
@@ -84,114 +85,114 @@ namespace Model
 
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline DomainSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp showing when the domain is created.</p>
+     * <p>The timestamp of when the domain was created.</p>
      */
     inline DomainSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline DomainSummary& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline DomainSummary& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The client-provided description of the domain.</p>
+     * <p>The description of the domain.</p>
      */
     inline DomainSummary& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline DomainSummary& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline DomainSummary& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The service-generated identifier for the domain.</p>
+     * <p>The identifier of the domain.</p>
      */
     inline DomainSummary& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
@@ -355,34 +356,71 @@ namespace Model
 
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline DomainSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The timestamp showing the domain's last update.</p>
+     * <p>The timestamp of when the domain was last updated.</p>
      */
     inline DomainSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline const WatchlistDetails& GetWatchlistDetails() const{ return m_watchlistDetails; }
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline bool WatchlistDetailsHasBeenSet() const { return m_watchlistDetailsHasBeenSet; }
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline void SetWatchlistDetails(const WatchlistDetails& value) { m_watchlistDetailsHasBeenSet = true; m_watchlistDetails = value; }
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline void SetWatchlistDetails(WatchlistDetails&& value) { m_watchlistDetailsHasBeenSet = true; m_watchlistDetails = std::move(value); }
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline DomainSummary& WithWatchlistDetails(const WatchlistDetails& value) { SetWatchlistDetails(value); return *this;}
+
+    /**
+     * <p>Provides information about <code>watchlistDetails</code> and
+     * <code>DefaultWatchlistID</code>. </p>
+     */
+    inline DomainSummary& WithWatchlistDetails(WatchlistDetails&& value) { SetWatchlistDetails(std::move(value)); return *this;}
 
   private:
 
@@ -412,6 +450,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    WatchlistDetails m_watchlistDetails;
+    bool m_watchlistDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -17,7 +17,8 @@ CreateDeviceProfileRequest::CreateDeviceProfileRequest() :
     m_loRaWANHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_sidewalkHasBeenSet(false)
 {
 }
 
@@ -51,6 +52,12 @@ Aws::String CreateDeviceProfileRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_sidewalkHasBeenSet)
+  {
+   payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
 
   }
 

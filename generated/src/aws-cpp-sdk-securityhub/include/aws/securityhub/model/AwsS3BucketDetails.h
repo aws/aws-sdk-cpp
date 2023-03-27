@@ -13,6 +13,7 @@
 #include <aws/securityhub/model/AwsS3BucketWebsiteConfiguration.h>
 #include <aws/securityhub/model/AwsS3BucketNotificationConfiguration.h>
 #include <aws/securityhub/model/AwsS3BucketBucketVersioningConfiguration.h>
+#include <aws/securityhub/model/AwsS3BucketObjectLockConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -519,6 +520,43 @@ namespace Model
      */
     inline AwsS3BucketDetails& WithBucketVersioningConfiguration(AwsS3BucketBucketVersioningConfiguration&& value) { SetBucketVersioningConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline const AwsS3BucketObjectLockConfiguration& GetObjectLockConfiguration() const{ return m_objectLockConfiguration; }
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline bool ObjectLockConfigurationHasBeenSet() const { return m_objectLockConfigurationHasBeenSet; }
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline void SetObjectLockConfiguration(const AwsS3BucketObjectLockConfiguration& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = value; }
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline void SetObjectLockConfiguration(AwsS3BucketObjectLockConfiguration&& value) { m_objectLockConfigurationHasBeenSet = true; m_objectLockConfiguration = std::move(value); }
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline AwsS3BucketDetails& WithObjectLockConfiguration(const AwsS3BucketObjectLockConfiguration& value) { SetObjectLockConfiguration(value); return *this;}
+
+    /**
+     * <p> Specifies which rule Amazon S3 applies by default to every new object placed
+     * in the specified bucket. </p>
+     */
+    inline AwsS3BucketDetails& WithObjectLockConfiguration(AwsS3BucketObjectLockConfiguration&& value) { SetObjectLockConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_ownerId;
@@ -556,6 +594,9 @@ namespace Model
 
     AwsS3BucketBucketVersioningConfiguration m_bucketVersioningConfiguration;
     bool m_bucketVersioningConfigurationHasBeenSet = false;
+
+    AwsS3BucketObjectLockConfiguration m_objectLockConfiguration;
+    bool m_objectLockConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

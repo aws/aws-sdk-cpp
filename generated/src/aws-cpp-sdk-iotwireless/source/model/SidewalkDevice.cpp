@@ -22,7 +22,12 @@ SidewalkDevice::SidewalkDevice() :
     m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false)
+    m_deviceCertificatesHasBeenSet(false),
+    m_privateKeysHasBeenSet(false),
+    m_deviceProfileIdHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
+    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -30,7 +35,12 @@ SidewalkDevice::SidewalkDevice(JsonView jsonValue) :
     m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false)
+    m_deviceCertificatesHasBeenSet(false),
+    m_privateKeysHasBeenSet(false),
+    m_deviceProfileIdHasBeenSet(false),
+    m_certificateIdHasBeenSet(false),
+    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +78,37 @@ SidewalkDevice& SidewalkDevice::operator =(JsonView jsonValue)
     m_deviceCertificatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PrivateKeys"))
+  {
+    Aws::Utils::Array<JsonView> privateKeysJsonList = jsonValue.GetArray("PrivateKeys");
+    for(unsigned privateKeysIndex = 0; privateKeysIndex < privateKeysJsonList.GetLength(); ++privateKeysIndex)
+    {
+      m_privateKeys.push_back(privateKeysJsonList[privateKeysIndex].AsObject());
+    }
+    m_privateKeysHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DeviceProfileId"))
+  {
+    m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
+
+    m_deviceProfileIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CertificateId"))
+  {
+    m_certificateId = jsonValue.GetString("CertificateId");
+
+    m_certificateIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = WirelessDeviceSidewalkStatusMapper::GetWirelessDeviceSidewalkStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +143,34 @@ JsonValue SidewalkDevice::Jsonize() const
    }
    payload.WithArray("DeviceCertificates", std::move(deviceCertificatesJsonList));
 
+  }
+
+  if(m_privateKeysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> privateKeysJsonList(m_privateKeys.size());
+   for(unsigned privateKeysIndex = 0; privateKeysIndex < privateKeysJsonList.GetLength(); ++privateKeysIndex)
+   {
+     privateKeysJsonList[privateKeysIndex].AsObject(m_privateKeys[privateKeysIndex].Jsonize());
+   }
+   payload.WithArray("PrivateKeys", std::move(privateKeysJsonList));
+
+  }
+
+  if(m_deviceProfileIdHasBeenSet)
+  {
+   payload.WithString("DeviceProfileId", m_deviceProfileId);
+
+  }
+
+  if(m_certificateIdHasBeenSet)
+  {
+   payload.WithString("CertificateId", m_certificateId);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", WirelessDeviceSidewalkStatusMapper::GetNameForWirelessDeviceSidewalkStatus(m_status));
   }
 
   return payload;

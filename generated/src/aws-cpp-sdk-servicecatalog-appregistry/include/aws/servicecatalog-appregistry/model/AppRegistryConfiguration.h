@@ -24,8 +24,7 @@ namespace Model
 {
 
   /**
-   * <p> Includes all of the Service Catalog AppRegistry settings. </p><p><h3>See
-   * Also:</h3>   <a
+   * <p> Includes all of the AppRegistry settings. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/AWS242AppRegistry-2020-06-24/AppRegistryConfiguration">AWS
    * API Reference</a></p>
    */

@@ -23,6 +23,12 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
+  /**
+   * <p>The Amazon Chime SDK Voice Connector settings. Includes any Amazon S3 buckets
+   * designated for storing call detail records.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/VoiceConnectorSettings">AWS
+   * API Reference</a></p>
+   */
   class VoiceConnectorSettings
   {
   public:
@@ -32,28 +38,44 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline const Aws::String& GetCdrBucket() const{ return m_cdrBucket; }
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline bool CdrBucketHasBeenSet() const { return m_cdrBucketHasBeenSet; }
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline void SetCdrBucket(const Aws::String& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = value; }
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline void SetCdrBucket(Aws::String&& value) { m_cdrBucketHasBeenSet = true; m_cdrBucket = std::move(value); }
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline void SetCdrBucket(const char* value) { m_cdrBucketHasBeenSet = true; m_cdrBucket.assign(value); }
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline VoiceConnectorSettings& WithCdrBucket(const Aws::String& value) { SetCdrBucket(value); return *this;}
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline VoiceConnectorSettings& WithCdrBucket(Aws::String&& value) { SetCdrBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The S3 bucket that stores the Voice Connector's call detail records.</p>
+     */
     inline VoiceConnectorSettings& WithCdrBucket(const char* value) { SetCdrBucket(value); return *this;}
 
   private:
