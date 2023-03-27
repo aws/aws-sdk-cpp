@@ -181,6 +181,7 @@ CreateBatchLoadTaskOutcome TimestreamWriteClient::CreateBatchLoadTask(const Crea
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -231,6 +232,7 @@ CreateDatabaseOutcome TimestreamWriteClient::CreateDatabase(const CreateDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateDatabase", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -281,6 +283,7 @@ CreateTableOutcome TimestreamWriteClient::CreateTable(const CreateTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -331,6 +334,7 @@ DeleteDatabaseOutcome TimestreamWriteClient::DeleteDatabase(const DeleteDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteDatabase", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -381,6 +385,7 @@ DeleteTableOutcome TimestreamWriteClient::DeleteTable(const DeleteTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -431,6 +436,7 @@ DescribeBatchLoadTaskOutcome TimestreamWriteClient::DescribeBatchLoadTask(const 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -481,6 +487,7 @@ DescribeDatabaseOutcome TimestreamWriteClient::DescribeDatabase(const DescribeDa
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeDatabase", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -539,6 +546,7 @@ DescribeTableOutcome TimestreamWriteClient::DescribeTable(const DescribeTableReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -589,6 +597,7 @@ ListBatchLoadTasksOutcome TimestreamWriteClient::ListBatchLoadTasks(const ListBa
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListBatchLoadTasks", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -639,6 +648,7 @@ ListDatabasesOutcome TimestreamWriteClient::ListDatabases(const ListDatabasesReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListDatabases", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -689,6 +699,7 @@ ListTablesOutcome TimestreamWriteClient::ListTables(const ListTablesRequest& req
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTables", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -739,6 +750,7 @@ ListTagsForResourceOutcome TimestreamWriteClient::ListTagsForResource(const List
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsForResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -789,6 +801,7 @@ ResumeBatchLoadTaskOutcome TimestreamWriteClient::ResumeBatchLoadTask(const Resu
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ResumeBatchLoadTask", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -839,6 +852,7 @@ TagResourceOutcome TimestreamWriteClient::TagResource(const TagResourceRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -889,6 +903,7 @@ UntagResourceOutcome TimestreamWriteClient::UntagResource(const UntagResourceReq
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -939,6 +954,7 @@ UpdateDatabaseOutcome TimestreamWriteClient::UpdateDatabase(const UpdateDatabase
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateDatabase", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -989,6 +1005,7 @@ UpdateTableOutcome TimestreamWriteClient::UpdateTable(const UpdateTableRequest& 
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1039,6 +1056,7 @@ WriteRecordsOutcome TimestreamWriteClient::WriteRecords(const WriteRecordsReques
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("WriteRecords", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
