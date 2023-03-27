@@ -94,10 +94,62 @@ namespace Model
      */
     inline HlsId3SegmentTaggingScheduleActionSettings& WithTag(const char* value) { SetTag(value); return *this;}
 
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline const Aws::String& GetId3() const{ return m_id3; }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline bool Id3HasBeenSet() const { return m_id3HasBeenSet; }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline void SetId3(const Aws::String& value) { m_id3HasBeenSet = true; m_id3 = value; }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline void SetId3(Aws::String&& value) { m_id3HasBeenSet = true; m_id3 = std::move(value); }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline void SetId3(const char* value) { m_id3HasBeenSet = true; m_id3.assign(value); }
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(const Aws::String& value) { SetId3(value); return *this;}
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(Aws::String&& value) { SetId3(std::move(value)); return *this;}
+
+    /**
+     * Base64 string formatted according to the ID3 specification:
+     * http://id3.org/id3v2.4.0-structure
+     */
+    inline HlsId3SegmentTaggingScheduleActionSettings& WithId3(const char* value) { SetId3(value); return *this;}
+
   private:
 
     Aws::String m_tag;
     bool m_tagHasBeenSet = false;
+
+    Aws::String m_id3;
+    bool m_id3HasBeenSet = false;
   };
 
 } // namespace Model

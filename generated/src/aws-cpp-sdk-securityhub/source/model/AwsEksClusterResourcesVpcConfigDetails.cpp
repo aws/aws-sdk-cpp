@@ -20,13 +20,17 @@ namespace Model
 
 AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails() : 
     m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_endpointPublicAccess(false),
+    m_endpointPublicAccessHasBeenSet(false)
 {
 }
 
 AwsEksClusterResourcesVpcConfigDetails::AwsEksClusterResourcesVpcConfigDetails(JsonView jsonValue) : 
     m_securityGroupIdsHasBeenSet(false),
-    m_subnetIdsHasBeenSet(false)
+    m_subnetIdsHasBeenSet(false),
+    m_endpointPublicAccess(false),
+    m_endpointPublicAccessHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +55,13 @@ AwsEksClusterResourcesVpcConfigDetails& AwsEksClusterResourcesVpcConfigDetails::
       m_subnetIds.push_back(subnetIdsJsonList[subnetIdsIndex].AsString());
     }
     m_subnetIdsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EndpointPublicAccess"))
+  {
+    m_endpointPublicAccess = jsonValue.GetBool("EndpointPublicAccess");
+
+    m_endpointPublicAccessHasBeenSet = true;
   }
 
   return *this;
@@ -79,6 +90,12 @@ JsonValue AwsEksClusterResourcesVpcConfigDetails::Jsonize() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_endpointPublicAccessHasBeenSet)
+  {
+   payload.WithBool("EndpointPublicAccess", m_endpointPublicAccess);
 
   }
 

@@ -67,37 +67,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainId = value; }
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainId = std::move(value); }
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline void SetDomainId(const char* value) { m_domainId.assign(value); }
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline EvaluateSessionResult& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline EvaluateSessionResult& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the session.</p>
+     * <p>The identifier of the domain that contains the session.</p>
      */
     inline EvaluateSessionResult& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 

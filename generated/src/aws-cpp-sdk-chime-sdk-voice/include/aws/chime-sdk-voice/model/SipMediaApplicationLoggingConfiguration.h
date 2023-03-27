@@ -21,6 +21,12 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
+  /**
+   * <p>The logging configuration of a SIP media application.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/SipMediaApplicationLoggingConfiguration">AWS
+   * API Reference</a></p>
+   */
   class SipMediaApplicationLoggingConfiguration
   {
   public:
@@ -30,16 +36,24 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Enables message logging for the specified SIP media application.</p>
+     */
     inline bool GetEnableSipMediaApplicationMessageLogs() const{ return m_enableSipMediaApplicationMessageLogs; }
 
-    
+    /**
+     * <p>Enables message logging for the specified SIP media application.</p>
+     */
     inline bool EnableSipMediaApplicationMessageLogsHasBeenSet() const { return m_enableSipMediaApplicationMessageLogsHasBeenSet; }
 
-    
+    /**
+     * <p>Enables message logging for the specified SIP media application.</p>
+     */
     inline void SetEnableSipMediaApplicationMessageLogs(bool value) { m_enableSipMediaApplicationMessageLogsHasBeenSet = true; m_enableSipMediaApplicationMessageLogs = value; }
 
-    
+    /**
+     * <p>Enables message logging for the specified SIP media application.</p>
+     */
     inline SipMediaApplicationLoggingConfiguration& WithEnableSipMediaApplicationMessageLogs(bool value) { SetEnableSipMediaApplicationMessageLogs(value); return *this;}
 
   private:

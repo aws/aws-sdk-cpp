@@ -40,32 +40,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline Speaker& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing when the speaker is created. </p>
+     * <p>A timestamp of when the speaker was created. </p>
      */
     inline Speaker& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -194,42 +194,42 @@ namespace Model
 
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessedAt() const{ return m_lastAccessedAt; }
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
     inline bool LastAccessedAtHasBeenSet() const { return m_lastAccessedAtHasBeenSet; }
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
     inline void SetLastAccessedAt(const Aws::Utils::DateTime& value) { m_lastAccessedAtHasBeenSet = true; m_lastAccessedAt = value; }
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
     inline void SetLastAccessedAt(Aws::Utils::DateTime&& value) { m_lastAccessedAtHasBeenSet = true; m_lastAccessedAt = std::move(value); }
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
     inline Speaker& WithLastAccessedAt(const Aws::Utils::DateTime& value) { SetLastAccessedAt(value); return *this;}
 
     /**
-     * <p>The timestamp when the speaker was last accessed for enrollment,
+     * <p>The timestamp of when the speaker was last accessed for enrollment,
      * re-enrollment or a successful authentication. This timestamp is accurate to one
      * hour.</p>
      */
@@ -268,32 +268,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline Speaker& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing the speaker's last update.</p>
+     * <p>A timestamp of the speaker's last update.</p>
      */
     inline Speaker& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

@@ -94,10 +94,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -105,10 +105,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -116,10 +116,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -127,10 +127,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -138,10 +138,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -149,10 +149,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -160,10 +160,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -171,10 +171,10 @@ namespace Model
 
     /**
      * <p>An array of channel objects describing the input data and their location.
-     * Each channel is a named input source. Similar to <a
+     * Each channel is a named input source. Similar to <code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html#sagemaker-CreateAutoMLJob-request-InputDataConfig">InputDataConfig</a>
-     * supported by <code>CreateAutoMLJob</code>. The supported formats depend on the
-     * problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
+     * </code> supported by <code>CreateAutoMLJob</code>. The supported formats depend
+     * on the problem type:</p> <ul> <li> <p>ImageClassification: S3Prefix,
      * <code>ManifestFile</code>, <code>AugmentedManifestFile</code> </p> </li> <li>
      * <p>TextClassification: S3Prefix</p> </li> </ul>
      */
@@ -395,38 +395,50 @@ namespace Model
 
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
-     * <p>Specifies a metric to minimize or maximize as the objective of a job. For ,
-     * only <code>Accuracy</code> is supported.</p>
+     * <p>Specifies a metric to minimize or maximize as the objective of a job. For
+     * <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
+     * </code>, only <code>Accuracy</code> is supported.</p>
      */
     inline CreateAutoMLJobV2Request& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 

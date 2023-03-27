@@ -21,7 +21,8 @@ namespace Model
     DOMAIN_,
     FRAUDSTER,
     SESSION,
-    SPEAKER
+    SPEAKER,
+    WATCHLIST
   };
 
 namespace ResourceTypeMapper

@@ -119,6 +119,47 @@ namespace Model
      */
     inline AttributeGroupDetails& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(Aws::String&& value) { m_createdByHasBeenSet = true; m_createdBy = std::move(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline void SetCreatedBy(const char* value) { m_createdByHasBeenSet = true; m_createdBy.assign(value); }
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupDetails& WithCreatedBy(const Aws::String& value) { SetCreatedBy(value); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupDetails& WithCreatedBy(Aws::String&& value) { SetCreatedBy(std::move(value)); return *this;}
+
+    /**
+     * <p>The service principal that created the attribute group.</p>
+     */
+    inline AttributeGroupDetails& WithCreatedBy(const char* value) { SetCreatedBy(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -126,6 +167,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_createdBy;
+    bool m_createdByHasBeenSet = false;
   };
 
 } // namespace Model

@@ -264,7 +264,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -285,7 +288,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -306,7 +312,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -327,7 +336,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -348,7 +360,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -369,7 +384,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -390,7 +408,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */
@@ -411,7 +432,10 @@ namespace Model
      * <code>AlgorithmsConfig</code> is not provided,
      * <code>AutoMLCandidateGenerationConfig</code> uses the full set of algorithms for
      * the given training mode.</p> </li> </ul> <p>For the list of all algorithms per
-     * training mode, see .</p> <p>For more information on each algorithm, see the <a
+     * training mode, see <code> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">
+     * AutoMLAlgorithmConfig</a> </code>.</p> <p>For more information on each
+     * algorithm, see the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-model-support-validation.html#autopilot-algorithm-support">Algorithm
      * support</a> section in Autopilot developer guide.</p>
      */

@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetProxySessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The proxy session details.</p>
+     */
     inline const ProxySession& GetProxySession() const{ return m_proxySession; }
 
-    
+    /**
+     * <p>The proxy session details.</p>
+     */
     inline void SetProxySession(const ProxySession& value) { m_proxySession = value; }
 
-    
+    /**
+     * <p>The proxy session details.</p>
+     */
     inline void SetProxySession(ProxySession&& value) { m_proxySession = std::move(value); }
 
-    
+    /**
+     * <p>The proxy session details.</p>
+     */
     inline GetProxySessionResult& WithProxySession(const ProxySession& value) { SetProxySession(value); return *this;}
 
-    
+    /**
+     * <p>The proxy session details.</p>
+     */
     inline GetProxySessionResult& WithProxySession(ProxySession&& value) { SetProxySession(std::move(value)); return *this;}
 
 

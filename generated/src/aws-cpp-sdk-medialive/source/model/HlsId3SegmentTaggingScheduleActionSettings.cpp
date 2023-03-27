@@ -19,12 +19,14 @@ namespace Model
 {
 
 HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings() : 
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_id3HasBeenSet(false)
 {
 }
 
 HlsId3SegmentTaggingScheduleActionSettings::HlsId3SegmentTaggingScheduleActionSettings(JsonView jsonValue) : 
-    m_tagHasBeenSet(false)
+    m_tagHasBeenSet(false),
+    m_id3HasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ HlsId3SegmentTaggingScheduleActionSettings& HlsId3SegmentTaggingScheduleActionSe
     m_tagHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("id3"))
+  {
+    m_id3 = jsonValue.GetString("id3");
+
+    m_id3HasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue HlsId3SegmentTaggingScheduleActionSettings::Jsonize() const
   if(m_tagHasBeenSet)
   {
    payload.WithString("tag", m_tag);
+
+  }
+
+  if(m_id3HasBeenSet)
+  {
+   payload.WithString("id3", m_id3);
 
   }
 

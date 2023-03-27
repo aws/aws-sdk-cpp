@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The logging configuration details .</p>
+     */
     inline const LoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
-    
+    /**
+     * <p>The logging configuration details .</p>
+     */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfiguration = value; }
 
-    
+    /**
+     * <p>The logging configuration details .</p>
+     */
     inline void SetLoggingConfiguration(LoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The logging configuration details .</p>
+     */
     inline GetVoiceConnectorLoggingConfigurationResult& WithLoggingConfiguration(const LoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The logging configuration details .</p>
+     */
     inline GetVoiceConnectorLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 
 

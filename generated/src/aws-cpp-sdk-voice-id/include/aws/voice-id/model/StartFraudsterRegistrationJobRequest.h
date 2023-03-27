@@ -39,50 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The idempotency token for starting a new fraudster registration job. If not
-     * provided, Amazon Web Services SDK populates this field.</p>
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request. If not provided, the Amazon Web Services SDK
+     * populates this field. For more information about idempotency, see <a
+     * href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making
+     * retries safe with idempotent APIs</a>.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -169,50 +193,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job and in
-     * which the fraudsters are registered.</p>
+     * <p>The identifier of the domain that contains the fraudster registration job and
+     * in which the fraudsters are registered.</p>
      */
     inline StartFraudsterRegistrationJobRequest& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 

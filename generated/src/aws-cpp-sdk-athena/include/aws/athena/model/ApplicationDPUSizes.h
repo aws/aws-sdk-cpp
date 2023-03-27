@@ -40,50 +40,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline const Aws::String& GetApplicationRuntimeId() const{ return m_applicationRuntimeId; }
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline bool ApplicationRuntimeIdHasBeenSet() const { return m_applicationRuntimeIdHasBeenSet; }
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline void SetApplicationRuntimeId(const Aws::String& value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId = value; }
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline void SetApplicationRuntimeId(Aws::String&& value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId = std::move(value); }
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline void SetApplicationRuntimeId(const char* value) { m_applicationRuntimeIdHasBeenSet = true; m_applicationRuntimeId.assign(value); }
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline ApplicationDPUSizes& WithApplicationRuntimeId(const Aws::String& value) { SetApplicationRuntimeId(value); return *this;}
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline ApplicationDPUSizes& WithApplicationRuntimeId(Aws::String&& value) { SetApplicationRuntimeId(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the supported application runtime (for example, <code>Jupyter
-     * 1.0</code>).</p>
+     * <p>The name of the supported application runtime (for example, <code>Athena
+     * notebook version 1</code>).</p>
      */
     inline ApplicationDPUSizes& WithApplicationRuntimeId(const char* value) { SetApplicationRuntimeId(value); return *this;}
 

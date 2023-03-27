@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline const Aws::String& GetCodeBlock() const{ return m_codeBlock; }
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline void SetCodeBlock(const Aws::String& value) { m_codeBlock = value; }
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline void SetCodeBlock(Aws::String&& value) { m_codeBlock = std::move(value); }
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline void SetCodeBlock(const char* value) { m_codeBlock.assign(value); }
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline GetCalculationExecutionCodeResult& WithCodeBlock(const Aws::String& value) { SetCodeBlock(value); return *this;}
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline GetCalculationExecutionCodeResult& WithCodeBlock(Aws::String&& value) { SetCodeBlock(std::move(value)); return *this;}
 
     /**
-     * <p>A pre-signed URL to the code that executed the calculation.</p>
+     * <p>The unencrypted code that was executed for the calculation.</p>
      */
     inline GetCalculationExecutionCodeResult& WithCodeBlock(const char* value) { SetCodeBlock(value); return *this;}
 

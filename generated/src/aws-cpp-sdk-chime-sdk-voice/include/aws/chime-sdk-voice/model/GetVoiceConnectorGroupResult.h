@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The details of the Voice Connector group.</p>
+     */
     inline const VoiceConnectorGroup& GetVoiceConnectorGroup() const{ return m_voiceConnectorGroup; }
 
-    
+    /**
+     * <p>The details of the Voice Connector group.</p>
+     */
     inline void SetVoiceConnectorGroup(const VoiceConnectorGroup& value) { m_voiceConnectorGroup = value; }
 
-    
+    /**
+     * <p>The details of the Voice Connector group.</p>
+     */
     inline void SetVoiceConnectorGroup(VoiceConnectorGroup&& value) { m_voiceConnectorGroup = std::move(value); }
 
-    
+    /**
+     * <p>The details of the Voice Connector group.</p>
+     */
     inline GetVoiceConnectorGroupResult& WithVoiceConnectorGroup(const VoiceConnectorGroup& value) { SetVoiceConnectorGroup(value); return *this;}
 
-    
+    /**
+     * <p>The details of the Voice Connector group.</p>
+     */
     inline GetVoiceConnectorGroupResult& WithVoiceConnectorGroup(VoiceConnectorGroup&& value) { SetVoiceConnectorGroup(std::move(value)); return *this;}
 
 

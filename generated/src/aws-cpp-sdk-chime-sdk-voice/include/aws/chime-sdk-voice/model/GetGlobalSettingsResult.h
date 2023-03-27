@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetGlobalSettingsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The Voice Connector settings.</p>
+     */
     inline const VoiceConnectorSettings& GetVoiceConnector() const{ return m_voiceConnector; }
 
-    
+    /**
+     * <p>The Voice Connector settings.</p>
+     */
     inline void SetVoiceConnector(const VoiceConnectorSettings& value) { m_voiceConnector = value; }
 
-    
+    /**
+     * <p>The Voice Connector settings.</p>
+     */
     inline void SetVoiceConnector(VoiceConnectorSettings&& value) { m_voiceConnector = std::move(value); }
 
-    
+    /**
+     * <p>The Voice Connector settings.</p>
+     */
     inline GetGlobalSettingsResult& WithVoiceConnector(const VoiceConnectorSettings& value) { SetVoiceConnector(value); return *this;}
 
-    
+    /**
+     * <p>The Voice Connector settings.</p>
+     */
     inline GetGlobalSettingsResult& WithVoiceConnector(VoiceConnectorSettings&& value) { SetVoiceConnector(std::move(value)); return *this;}
 
 

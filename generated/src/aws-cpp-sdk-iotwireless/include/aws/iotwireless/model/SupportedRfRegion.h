@@ -19,7 +19,16 @@ namespace Model
     EU868,
     US915,
     AU915,
-    AS923_1
+    AS923_1,
+    AS923_2,
+    AS923_3,
+    AS923_4,
+    EU433,
+    CN470,
+    CN779,
+    RU864,
+    KR920,
+    IN865
   };
 
 namespace SupportedRfRegionMapper

@@ -35,22 +35,30 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of domains to list per API call.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>NextToken</code> to obtain more pages of results. The default is 100; the
+     * maximum allowed page size is also 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of domains to list per API call.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>NextToken</code> to obtain more pages of results. The default is 100; the
+     * maximum allowed page size is also 100.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of domains to list per API call.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>NextToken</code> to obtain more pages of results. The default is 100; the
+     * maximum allowed page size is also 100.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of domains to list per API call.</p>
+     * <p>The maximum number of results that are returned per call. You can use
+     * <code>NextToken</code> to obtain more pages of results. The default is 100; the
+     * maximum allowed page size is also 100.</p>
      */
     inline ListDomainsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -59,7 +67,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -67,7 +75,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
@@ -75,7 +83,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -83,7 +91,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -91,7 +99,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -99,7 +107,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListDomainsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -107,7 +115,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListDomainsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -115,7 +123,7 @@ namespace Model
      * <p>If <code>NextToken</code> is returned, there are more results available. The
      * value of <code>NextToken</code> is a unique pagination token for each page. Make
      * the call again using the returned token to retrieve the next page. Keep all
-     * other arguments unchanged. Each pagination token expires after 24 hours. </p>
+     * other arguments unchanged. Each pagination token expires after 24 hours.</p>
      */
     inline ListDomainsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

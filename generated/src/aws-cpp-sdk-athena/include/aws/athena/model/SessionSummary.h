@@ -26,8 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains summary information about a notebook session.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains summary information about a session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionSummary">AWS
    * API Reference</a></p>
    */

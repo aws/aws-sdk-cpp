@@ -22,7 +22,10 @@ SidewalkListDevice::SidewalkListDevice() :
     m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false)
+    m_deviceCertificatesHasBeenSet(false),
+    m_deviceProfileIdHasBeenSet(false),
+    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -30,7 +33,10 @@ SidewalkListDevice::SidewalkListDevice(JsonView jsonValue) :
     m_amazonIdHasBeenSet(false),
     m_sidewalkIdHasBeenSet(false),
     m_sidewalkManufacturingSnHasBeenSet(false),
-    m_deviceCertificatesHasBeenSet(false)
+    m_deviceCertificatesHasBeenSet(false),
+    m_deviceProfileIdHasBeenSet(false),
+    m_status(WirelessDeviceSidewalkStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -68,6 +74,20 @@ SidewalkListDevice& SidewalkListDevice::operator =(JsonView jsonValue)
     m_deviceCertificatesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeviceProfileId"))
+  {
+    m_deviceProfileId = jsonValue.GetString("DeviceProfileId");
+
+    m_deviceProfileIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Status"))
+  {
+    m_status = WirelessDeviceSidewalkStatusMapper::GetWirelessDeviceSidewalkStatusForName(jsonValue.GetString("Status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -102,6 +122,17 @@ JsonValue SidewalkListDevice::Jsonize() const
    }
    payload.WithArray("DeviceCertificates", std::move(deviceCertificatesJsonList));
 
+  }
+
+  if(m_deviceProfileIdHasBeenSet)
+  {
+   payload.WithString("DeviceProfileId", m_deviceProfileId);
+
+  }
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("Status", WirelessDeviceSidewalkStatusMapper::GetNameForWirelessDeviceSidewalkStatus(m_status));
   }
 
   return payload;

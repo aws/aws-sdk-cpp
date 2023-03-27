@@ -101,7 +101,8 @@ ResourceDetails::ResourceDetails() :
     m_awsEc2LaunchTemplateHasBeenSet(false),
     m_awsSageMakerNotebookInstanceHasBeenSet(false),
     m_awsWafv2WebAclHasBeenSet(false),
-    m_awsWafv2RuleGroupHasBeenSet(false)
+    m_awsWafv2RuleGroupHasBeenSet(false),
+    m_awsEc2RouteTableHasBeenSet(false)
 {
 }
 
@@ -188,7 +189,8 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsEc2LaunchTemplateHasBeenSet(false),
     m_awsSageMakerNotebookInstanceHasBeenSet(false),
     m_awsWafv2WebAclHasBeenSet(false),
-    m_awsWafv2RuleGroupHasBeenSet(false)
+    m_awsWafv2RuleGroupHasBeenSet(false),
+    m_awsEc2RouteTableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -779,6 +781,13 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsWafv2RuleGroupHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsEc2RouteTable"))
+  {
+    m_awsEc2RouteTable = jsonValue.GetObject("AwsEc2RouteTable");
+
+    m_awsEc2RouteTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1286,6 +1295,12 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsWafv2RuleGroupHasBeenSet)
   {
    payload.WithObject("AwsWafv2RuleGroup", m_awsWafv2RuleGroup.Jsonize());
+
+  }
+
+  if(m_awsEc2RouteTableHasBeenSet)
+  {
+   payload.WithObject("AwsEc2RouteTable", m_awsEc2RouteTable.Jsonize());
 
   }
 

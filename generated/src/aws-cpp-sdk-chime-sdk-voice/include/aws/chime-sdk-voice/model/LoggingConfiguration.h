@@ -21,6 +21,13 @@ namespace ChimeSDKVoice
 namespace Model
 {
 
+  /**
+   * <p>The logging configuration associated with an Amazon Chime SDK Voice
+   * Connector. Specifies whether SIP message logs can be sent to Amazon CloudWatch
+   * Logs.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-voice-2022-08-03/LoggingConfiguration">AWS
+   * API Reference</a></p>
+   */
   class LoggingConfiguration
   {
   public:
@@ -30,29 +37,45 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     */
     inline bool GetEnableSIPLogs() const{ return m_enableSIPLogs; }
 
-    
+    /**
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     */
     inline bool EnableSIPLogsHasBeenSet() const { return m_enableSIPLogsHasBeenSet; }
 
-    
+    /**
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     */
     inline void SetEnableSIPLogs(bool value) { m_enableSIPLogsHasBeenSet = true; m_enableSIPLogs = value; }
 
-    
+    /**
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     */
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
 
 
-    
+    /**
+     * <p>Enables or disables media metrics logging.</p>
+     */
     inline bool GetEnableMediaMetricLogs() const{ return m_enableMediaMetricLogs; }
 
-    
+    /**
+     * <p>Enables or disables media metrics logging.</p>
+     */
     inline bool EnableMediaMetricLogsHasBeenSet() const { return m_enableMediaMetricLogsHasBeenSet; }
 
-    
+    /**
+     * <p>Enables or disables media metrics logging.</p>
+     */
     inline void SetEnableMediaMetricLogs(bool value) { m_enableMediaMetricLogsHasBeenSet = true; m_enableMediaMetricLogs = value; }
 
-    
+    /**
+     * <p>Enables or disables media metrics logging.</p>
+     */
     inline LoggingConfiguration& WithEnableMediaMetricLogs(bool value) { SetEnableMediaMetricLogs(value); return *this;}
 
   private:

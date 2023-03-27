@@ -116,131 +116,131 @@ namespace Model
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalConfigs() const{ return m_additionalConfigs; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline bool AdditionalConfigsHasBeenSet() const { return m_additionalConfigsHasBeenSet; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline void SetAdditionalConfigs(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs = value; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline void SetAdditionalConfigs(Aws::Map<Aws::String, Aws::String>&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs = std::move(value); }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& WithAdditionalConfigs(const Aws::Map<Aws::String, Aws::String>& value) { SetAdditionalConfigs(value); return *this;}
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& WithAdditionalConfigs(Aws::Map<Aws::String, Aws::String>&& value) { SetAdditionalConfigs(std::move(value)); return *this;}
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(const Aws::String& key, const Aws::String& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, value); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, const Aws::String& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(const Aws::String& key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(const char* key, Aws::String&& value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(Aws::String&& key, const char* value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Contains additional notebook engine <code>MAP&lt;string, string&gt;</code>
-     * parameter mappings in the form of key-value pairs. To specify an Amazon S3 URI
+     * parameter mappings in the form of key-value pairs. To specify an Athena notebook
      * that the Jupyter server will download and serve, specify a value for the
      * <a>StartSessionRequest$NotebookVersion</a> field, and then add a key named
-     * <code>NotebookFileURI</code> to <code>AdditionalConfigs</code> that has value of
-     * the Amazon S3 URI.</p>
+     * <code>NotebookId</code> to <code>AdditionalConfigs</code> that has the value of
+     * the Athena notebook ID.</p>
      */
     inline EngineConfiguration& AddAdditionalConfigs(const char* key, const char* value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, value); return *this; }
 

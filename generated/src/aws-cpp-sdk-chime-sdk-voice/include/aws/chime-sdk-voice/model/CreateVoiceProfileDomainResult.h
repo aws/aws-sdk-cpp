@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API CreateVoiceProfileDomainResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The requested voice profile domain.</p>
+     */
     inline const VoiceProfileDomain& GetVoiceProfileDomain() const{ return m_voiceProfileDomain; }
 
-    
+    /**
+     * <p>The requested voice profile domain.</p>
+     */
     inline void SetVoiceProfileDomain(const VoiceProfileDomain& value) { m_voiceProfileDomain = value; }
 
-    
+    /**
+     * <p>The requested voice profile domain.</p>
+     */
     inline void SetVoiceProfileDomain(VoiceProfileDomain&& value) { m_voiceProfileDomain = std::move(value); }
 
-    
+    /**
+     * <p>The requested voice profile domain.</p>
+     */
     inline CreateVoiceProfileDomainResult& WithVoiceProfileDomain(const VoiceProfileDomain& value) { SetVoiceProfileDomain(value); return *this;}
 
-    
+    /**
+     * <p>The requested voice profile domain.</p>
+     */
     inline CreateVoiceProfileDomainResult& WithVoiceProfileDomain(VoiceProfileDomain&& value) { SetVoiceProfileDomain(std::move(value)); return *this;}
 
 

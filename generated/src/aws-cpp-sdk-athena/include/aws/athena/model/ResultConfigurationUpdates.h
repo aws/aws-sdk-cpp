@@ -42,104 +42,112 @@ namespace Model
 
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline const Aws::String& GetOutputLocation() const{ return m_outputLocation; }
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const Aws::String& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(Aws::String&& value) { m_outputLocationHasBeenSet = true; m_outputLocation = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline void SetOutputLocation(const char* value) { m_outputLocationHasBeenSet = true; m_outputLocation.assign(value); }
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfigurationUpdates& WithOutputLocation(const Aws::String& value) { SetOutputLocation(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
     inline ResultConfigurationUpdates& WithOutputLocation(Aws::String&& value) { SetOutputLocation(std::move(value)); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where your query results are stored, such as
-     * <code>s3://path/to/query/bucket/</code>. For more information, see <a
-     * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-     * Results</a> If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup. The "workgroup settings override" is specified
-     * in <code>EnforceWorkGroupConfiguration</code> (true/false) in the
+     * <p>The location in Amazon S3 where your query and calculation results are
+     * stored, such as <code>s3://path/to/query/bucket/</code>. For more information,
+     * see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working
+     * with query results, recent queries, and output files</a>. If workgroup settings
+     * override client-side settings, then the query uses the location for the query
+     * results and the encryption configuration that are specified for the workgroup.
+     * The "workgroup settings override" is specified in
+     * <code>EnforceWorkGroupConfiguration</code> (true/false) in the
      * <code>WorkGroupConfiguration</code>. See
      * <a>WorkGroupConfiguration$EnforceWorkGroupConfiguration</a>.</p>
      */
@@ -200,32 +208,32 @@ namespace Model
 
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline void SetEncryptionConfiguration(const EncryptionConfiguration& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = value; }
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline void SetEncryptionConfiguration(EncryptionConfiguration&& value) { m_encryptionConfigurationHasBeenSet = true; m_encryptionConfiguration = std::move(value); }
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline ResultConfigurationUpdates& WithEncryptionConfiguration(const EncryptionConfiguration& value) { SetEncryptionConfiguration(value); return *this;}
 
     /**
-     * <p>The encryption configuration for the query results.</p>
+     * <p>The encryption configuration for query and calculation results.</p>
      */
     inline ResultConfigurationUpdates& WithEncryptionConfiguration(EncryptionConfiguration&& value) { SetEncryptionConfiguration(std::move(value)); return *this;}
 

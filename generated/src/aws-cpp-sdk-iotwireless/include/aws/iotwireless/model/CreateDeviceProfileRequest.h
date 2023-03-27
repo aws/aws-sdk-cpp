@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iotwireless/model/LoRaWANDeviceProfile.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotwireless/model/SidewalkCreateDeviceProfile.h>
 #include <aws/iotwireless/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -221,6 +222,43 @@ namespace Model
      */
     inline CreateDeviceProfileRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline const SidewalkCreateDeviceProfile& GetSidewalk() const{ return m_sidewalk; }
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline bool SidewalkHasBeenSet() const { return m_sidewalkHasBeenSet; }
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline void SetSidewalk(const SidewalkCreateDeviceProfile& value) { m_sidewalkHasBeenSet = true; m_sidewalk = value; }
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline void SetSidewalk(SidewalkCreateDeviceProfile&& value) { m_sidewalkHasBeenSet = true; m_sidewalk = std::move(value); }
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline CreateDeviceProfileRequest& WithSidewalk(const SidewalkCreateDeviceProfile& value) { SetSidewalk(value); return *this;}
+
+    /**
+     * <p>The Sidewalk-related information for creating the Sidewalk device
+     * profile.</p>
+     */
+    inline CreateDeviceProfileRequest& WithSidewalk(SidewalkCreateDeviceProfile&& value) { SetSidewalk(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -234,6 +272,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    SidewalkCreateDeviceProfile m_sidewalk;
+    bool m_sidewalkHasBeenSet = false;
   };
 
 } // namespace Model

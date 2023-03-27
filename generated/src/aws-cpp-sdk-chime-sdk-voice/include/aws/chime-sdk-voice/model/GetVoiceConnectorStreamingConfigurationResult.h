@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceConnectorStreamingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The details of the streaming configuration.</p>
+     */
     inline const StreamingConfiguration& GetStreamingConfiguration() const{ return m_streamingConfiguration; }
 
-    
+    /**
+     * <p>The details of the streaming configuration.</p>
+     */
     inline void SetStreamingConfiguration(const StreamingConfiguration& value) { m_streamingConfiguration = value; }
 
-    
+    /**
+     * <p>The details of the streaming configuration.</p>
+     */
     inline void SetStreamingConfiguration(StreamingConfiguration&& value) { m_streamingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The details of the streaming configuration.</p>
+     */
     inline GetVoiceConnectorStreamingConfigurationResult& WithStreamingConfiguration(const StreamingConfiguration& value) { SetStreamingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The details of the streaming configuration.</p>
+     */
     inline GetVoiceConnectorStreamingConfigurationResult& WithStreamingConfiguration(StreamingConfiguration&& value) { SetStreamingConfiguration(std::move(value)); return *this;}
 
 

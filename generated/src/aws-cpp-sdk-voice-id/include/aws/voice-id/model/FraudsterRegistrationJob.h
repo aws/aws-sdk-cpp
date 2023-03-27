@@ -46,32 +46,32 @@ namespace Model
 
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline FraudsterRegistrationJob& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing the creation time of the fraudster registration job.</p>
+     * <p>A timestamp of when the fraudster registration job was created.</p>
      */
     inline FraudsterRegistrationJob& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
@@ -134,73 +134,81 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline const Aws::String& GetDomainId() const{ return m_domainId; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline bool DomainIdHasBeenSet() const { return m_domainIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline void SetDomainId(const Aws::String& value) { m_domainIdHasBeenSet = true; m_domainId = value; }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline void SetDomainId(Aws::String&& value) { m_domainIdHasBeenSet = true; m_domainId = std::move(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline void SetDomainId(const char* value) { m_domainIdHasBeenSet = true; m_domainId.assign(value); }
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline FraudsterRegistrationJob& WithDomainId(const Aws::String& value) { SetDomainId(value); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline FraudsterRegistrationJob& WithDomainId(Aws::String&& value) { SetDomainId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the domain containing the fraudster registration job.</p>
+     * <p>The identifier of the domain that contains the fraudster registration
+     * job.</p>
      */
     inline FraudsterRegistrationJob& WithDomainId(const char* value) { SetDomainId(value); return *this;}
 
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndedAt() const{ return m_endedAt; }
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline bool EndedAtHasBeenSet() const { return m_endedAtHasBeenSet; }
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline void SetEndedAt(const Aws::Utils::DateTime& value) { m_endedAtHasBeenSet = true; m_endedAt = value; }
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline void SetEndedAt(Aws::Utils::DateTime&& value) { m_endedAtHasBeenSet = true; m_endedAt = std::move(value); }
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline FraudsterRegistrationJob& WithEndedAt(const Aws::Utils::DateTime& value) { SetEndedAt(value); return *this;}
 
     /**
-     * <p>A timestamp showing when the fraudster registration job ended.</p>
+     * <p>A timestamp of when the fraudster registration job ended.</p>
      */
     inline FraudsterRegistrationJob& WithEndedAt(Aws::Utils::DateTime&& value) { SetEndedAt(std::move(value)); return *this;}
 

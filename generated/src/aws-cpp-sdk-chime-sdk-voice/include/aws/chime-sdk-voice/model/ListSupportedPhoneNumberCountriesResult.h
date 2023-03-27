@@ -34,25 +34,39 @@ namespace Model
     AWS_CHIMESDKVOICE_API ListSupportedPhoneNumberCountriesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline const Aws::Vector<PhoneNumberCountry>& GetPhoneNumberCountries() const{ return m_phoneNumberCountries; }
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline void SetPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { m_phoneNumberCountries = value; }
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline void SetPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { m_phoneNumberCountries = std::move(value); }
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(const Aws::Vector<PhoneNumberCountry>& value) { SetPhoneNumberCountries(value); return *this;}
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline ListSupportedPhoneNumberCountriesResult& WithPhoneNumberCountries(Aws::Vector<PhoneNumberCountry>&& value) { SetPhoneNumberCountries(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(const PhoneNumberCountry& value) { m_phoneNumberCountries.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The supported phone number countries.</p>
+     */
     inline ListSupportedPhoneNumberCountriesResult& AddPhoneNumberCountries(PhoneNumberCountry&& value) { m_phoneNumberCountries.push_back(std::move(value)); return *this; }
 
 

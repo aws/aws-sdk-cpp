@@ -20,13 +20,15 @@ namespace Model
 
 FraudDetectionConfiguration::FraudDetectionConfiguration() : 
     m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false)
+    m_riskThresholdHasBeenSet(false),
+    m_watchlistIdHasBeenSet(false)
 {
 }
 
 FraudDetectionConfiguration::FraudDetectionConfiguration(JsonView jsonValue) : 
     m_riskThreshold(0),
-    m_riskThresholdHasBeenSet(false)
+    m_riskThresholdHasBeenSet(false),
+    m_watchlistIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -40,6 +42,13 @@ FraudDetectionConfiguration& FraudDetectionConfiguration::operator =(JsonView js
     m_riskThresholdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WatchlistId"))
+  {
+    m_watchlistId = jsonValue.GetString("WatchlistId");
+
+    m_watchlistIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -50,6 +59,12 @@ JsonValue FraudDetectionConfiguration::Jsonize() const
   if(m_riskThresholdHasBeenSet)
   {
    payload.WithInteger("RiskThreshold", m_riskThreshold);
+
+  }
+
+  if(m_watchlistIdHasBeenSet)
+  {
+   payload.WithString("WatchlistId", m_watchlistId);
 
   }
 

@@ -297,8 +297,10 @@ namespace Athena
         /**
          * <p>Gets an authentication token and the URL at which the notebook can be
          * accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code>
-         * must be called every 10 minutes to refresh the authentication
-         * token.</p><p><h3>See Also:</h3>   <a
+         * must be called every 10 minutes to refresh the authentication token. For
+         * information about granting programmatic access, see <a
+         * href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant
+         * programmatic access</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreatePresignedNotebookUrl">AWS
          * API Reference</a></p>
          */
@@ -323,11 +325,9 @@ namespace Athena
         }
 
         /**
-         * <p>Creates a workgroup with the specified name. Only one of
-         * <code>Configurations</code> or <code>Configuration</code> can be specified;
-         * <code>Configurations</code> for a workgroup with multi engine support (for
-         * example, an Apache Spark enabled workgroup) or <code>Configuration</code> for an
-         * Athena SQL workgroup.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a workgroup with the specified name. A workgroup can be an Apache
+         * Spark enabled workgroup or an Athena SQL workgroup.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/CreateWorkGroup">AWS
          * API Reference</a></p>
          */
@@ -536,7 +536,7 @@ namespace Athena
         }
 
         /**
-         * <p>Retrieves a pre-signed URL to a copy of the code that was executed for the
+         * <p>Retrieves the unencrypted code that was executed for the
          * calculation.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/GetCalculationExecutionCode">AWS
          * API Reference</a></p>
@@ -747,13 +747,14 @@ namespace Athena
          * <p>Streams the results of a single query execution specified by
          * <code>QueryExecutionId</code> from the Athena query results location in Amazon
          * S3. For more information, see <a
-         * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Query
-         * Results</a> in the <i>Amazon Athena User Guide</i>. This request does not
-         * execute the query but returns results. Use <a>StartQueryExecution</a> to run a
-         * query.</p> <p>To stream query results successfully, the IAM principal with
-         * permission to call <code>GetQueryResults</code> also must have permissions to
-         * the Amazon S3 <code>GetObject</code> action for the Athena query results
-         * location.</p>  <p>IAM principals with permission to the Amazon S3
+         * href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with
+         * query results, recent queries, and output files</a> in the <i>Amazon Athena User
+         * Guide</i>. This request does not execute the query but returns results. Use
+         * <a>StartQueryExecution</a> to run a query.</p> <p>To stream query results
+         * successfully, the IAM principal with permission to call
+         * <code>GetQueryResults</code> also must have permissions to the Amazon S3
+         * <code>GetObject</code> action for the Athena query results location.</p>
+         *  <p>IAM principals with permission to the Amazon S3
          * <code>GetObject</code> action for the query results location are able to
          * retrieve query results from Amazon S3 even if permission to the
          * <code>GetQueryResults</code> action is denied. To restrict user or role access,
@@ -945,7 +946,7 @@ namespace Athena
 
         /**
          * <p>Returns the supported DPU sizes for the supported application runtimes (for
-         * example, <code>Jupyter 1.0</code>). </p><p><h3>See Also:</h3>   <a
+         * example, <code>Athena notebook version 1</code>). </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListApplicationDPUSizes">AWS
          * API Reference</a></p>
          */
@@ -1077,9 +1078,9 @@ namespace Athena
         }
 
         /**
-         * <p>Lists, in descending order, the executors that have been submitted to a
-         * session. Newer executors are listed first; older executors are listed later. The
-         * result can be optionally filtered by state.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists, in descending order, the executors that joined a session. Newer
+         * executors are listed first; older executors are listed later. The result can be
+         * optionally filtered by state.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/ListExecutors">AWS
          * API Reference</a></p>
          */
@@ -1354,8 +1355,7 @@ namespace Athena
 
         /**
          * <p>Submits calculations for execution within a session. You can supply the code
-         * to run as an inline code block within the request or as an Amazon S3
-         * URL.</p><p><h3>See Also:</h3>   <a
+         * to run as an inline code block within the request.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/StartCalculationExecution">AWS
          * API Reference</a></p>
          */
@@ -1507,7 +1507,7 @@ namespace Athena
          * purpose, owner, or environment. Use a consistent set of tag keys to make it
          * easier to search and filter workgroups or data catalogs in your account. For
          * best practices, see <a
-         * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging
+         * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
          * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and
          * tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters
          * and numbers representable in UTF-8, and the following characters: + - = . _ : /
@@ -1722,11 +1722,7 @@ namespace Athena
 
         /**
          * <p>Updates the workgroup with the specified name. The workgroup's name cannot be
-         * changed. Only one of <code>ConfigurationsUpdates</code> or
-         * <code>ConfigurationUpdates</code> can be specified;
-         * <code>ConfigurationsUpdates</code> for a workgroup with multi engine support
-         * (for example, an Apache Spark enabled workgroup) or
-         * <code>ConfigurationUpdates</code> for an Athena SQL workgroup.</p><p><h3>See
+         * changed. Only <code>ConfigurationUpdates</code> can be specified.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/UpdateWorkGroup">AWS
          * API Reference</a></p>

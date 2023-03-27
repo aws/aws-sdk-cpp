@@ -22,7 +22,8 @@ RegistrationConfig::RegistrationConfig() :
     m_duplicateRegistrationAction(DuplicateRegistrationAction::NOT_SET),
     m_duplicateRegistrationActionHasBeenSet(false),
     m_fraudsterSimilarityThreshold(0),
-    m_fraudsterSimilarityThresholdHasBeenSet(false)
+    m_fraudsterSimilarityThresholdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ RegistrationConfig::RegistrationConfig(JsonView jsonValue) :
     m_duplicateRegistrationAction(DuplicateRegistrationAction::NOT_SET),
     m_duplicateRegistrationActionHasBeenSet(false),
     m_fraudsterSimilarityThreshold(0),
-    m_fraudsterSimilarityThresholdHasBeenSet(false)
+    m_fraudsterSimilarityThresholdHasBeenSet(false),
+    m_watchlistIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ RegistrationConfig& RegistrationConfig::operator =(JsonView jsonValue)
     m_fraudsterSimilarityThresholdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WatchlistIds"))
+  {
+    Aws::Utils::Array<JsonView> watchlistIdsJsonList = jsonValue.GetArray("WatchlistIds");
+    for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+    {
+      m_watchlistIds.push_back(watchlistIdsJsonList[watchlistIdsIndex].AsString());
+    }
+    m_watchlistIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue RegistrationConfig::Jsonize() const
   if(m_fraudsterSimilarityThresholdHasBeenSet)
   {
    payload.WithInteger("FraudsterSimilarityThreshold", m_fraudsterSimilarityThreshold);
+
+  }
+
+  if(m_watchlistIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> watchlistIdsJsonList(m_watchlistIds.size());
+   for(unsigned watchlistIdsIndex = 0; watchlistIdsIndex < watchlistIdsJsonList.GetLength(); ++watchlistIdsIndex)
+   {
+     watchlistIdsJsonList[watchlistIdsIndex].AsString(m_watchlistIds[watchlistIdsIndex]);
+   }
+   payload.WithArray("WatchlistIds", std::move(watchlistIdsJsonList));
 
   }
 

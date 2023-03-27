@@ -30,7 +30,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails() :
     m_launchedAtHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_monitoringHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ AwsEc2InstanceDetails::AwsEc2InstanceDetails(JsonView jsonValue) :
     m_launchedAtHasBeenSet(false),
     m_networkInterfacesHasBeenSet(false),
     m_virtualizationTypeHasBeenSet(false),
-    m_metadataOptionsHasBeenSet(false)
+    m_metadataOptionsHasBeenSet(false),
+    m_monitoringHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +148,13 @@ AwsEc2InstanceDetails& AwsEc2InstanceDetails::operator =(JsonView jsonValue)
     m_metadataOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Monitoring"))
+  {
+    m_monitoring = jsonValue.GetObject("Monitoring");
+
+    m_monitoringHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -237,6 +246,12 @@ JsonValue AwsEc2InstanceDetails::Jsonize() const
   if(m_metadataOptionsHasBeenSet)
   {
    payload.WithObject("MetadataOptions", m_metadataOptions.Jsonize());
+
+  }
+
+  if(m_monitoringHasBeenSet)
+  {
+   payload.WithObject("Monitoring", m_monitoring.Jsonize());
 
   }
 

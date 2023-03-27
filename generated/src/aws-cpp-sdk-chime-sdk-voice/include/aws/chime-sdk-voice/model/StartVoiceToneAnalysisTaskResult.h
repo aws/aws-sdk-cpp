@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API StartVoiceToneAnalysisTaskResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The details of the voice tone analysis task.</p>
+     */
     inline const VoiceToneAnalysisTask& GetVoiceToneAnalysisTask() const{ return m_voiceToneAnalysisTask; }
 
-    
+    /**
+     * <p>The details of the voice tone analysis task.</p>
+     */
     inline void SetVoiceToneAnalysisTask(const VoiceToneAnalysisTask& value) { m_voiceToneAnalysisTask = value; }
 
-    
+    /**
+     * <p>The details of the voice tone analysis task.</p>
+     */
     inline void SetVoiceToneAnalysisTask(VoiceToneAnalysisTask&& value) { m_voiceToneAnalysisTask = std::move(value); }
 
-    
+    /**
+     * <p>The details of the voice tone analysis task.</p>
+     */
     inline StartVoiceToneAnalysisTaskResult& WithVoiceToneAnalysisTask(const VoiceToneAnalysisTask& value) { SetVoiceToneAnalysisTask(value); return *this;}
 
-    
+    /**
+     * <p>The details of the voice tone analysis task.</p>
+     */
     inline StartVoiceToneAnalysisTaskResult& WithVoiceToneAnalysisTask(VoiceToneAnalysisTask&& value) { SetVoiceToneAnalysisTask(std::move(value)); return *this;}
 
 

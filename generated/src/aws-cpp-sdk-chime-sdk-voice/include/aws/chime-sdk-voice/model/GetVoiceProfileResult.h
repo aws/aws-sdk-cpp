@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetVoiceProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The voice profile details.</p>
+     */
     inline const VoiceProfile& GetVoiceProfile() const{ return m_voiceProfile; }
 
-    
+    /**
+     * <p>The voice profile details.</p>
+     */
     inline void SetVoiceProfile(const VoiceProfile& value) { m_voiceProfile = value; }
 
-    
+    /**
+     * <p>The voice profile details.</p>
+     */
     inline void SetVoiceProfile(VoiceProfile&& value) { m_voiceProfile = std::move(value); }
 
-    
+    /**
+     * <p>The voice profile details.</p>
+     */
     inline GetVoiceProfileResult& WithVoiceProfile(const VoiceProfile& value) { SetVoiceProfile(value); return *this;}
 
-    
+    /**
+     * <p>The voice profile details.</p>
+     */
     inline GetVoiceProfileResult& WithVoiceProfile(VoiceProfile&& value) { SetVoiceProfile(std::move(value)); return *this;}
 
 

@@ -32,103 +32,175 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline const Aws::String& GetVoiceConnectorId() const{ return m_voiceConnectorId; }
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline bool VoiceConnectorIdHasBeenSet() const { return m_voiceConnectorIdHasBeenSet; }
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline void SetVoiceConnectorId(const Aws::String& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = value; }
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline void SetVoiceConnectorId(Aws::String&& value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId = std::move(value); }
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline void SetVoiceConnectorId(const char* value) { m_voiceConnectorIdHasBeenSet = true; m_voiceConnectorId.assign(value); }
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceConnectorId(const Aws::String& value) { SetVoiceConnectorId(value); return *this;}
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceConnectorId(Aws::String&& value) { SetVoiceConnectorId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The Voice Connector ID.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceConnectorId(const char* value) { SetVoiceConnectorId(value); return *this;}
 
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline const Aws::String& GetTransactionId() const{ return m_transactionId; }
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline bool TransactionIdHasBeenSet() const { return m_transactionIdHasBeenSet; }
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline void SetTransactionId(const Aws::String& value) { m_transactionIdHasBeenSet = true; m_transactionId = value; }
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline void SetTransactionId(Aws::String&& value) { m_transactionIdHasBeenSet = true; m_transactionId = std::move(value); }
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline void SetTransactionId(const char* value) { m_transactionIdHasBeenSet = true; m_transactionId.assign(value); }
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithTransactionId(const Aws::String& value) { SetTransactionId(value); return *this;}
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithTransactionId(Aws::String&& value) { SetTransactionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The transaction ID of the call being analyzed.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithTransactionId(const char* value) { SetTransactionId(value); return *this;}
 
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline const Aws::String& GetVoiceProfileDomainId() const{ return m_voiceProfileDomainId; }
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline bool VoiceProfileDomainIdHasBeenSet() const { return m_voiceProfileDomainIdHasBeenSet; }
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline void SetVoiceProfileDomainId(const Aws::String& value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId = value; }
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline void SetVoiceProfileDomainId(Aws::String&& value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId = std::move(value); }
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline void SetVoiceProfileDomainId(const char* value) { m_voiceProfileDomainIdHasBeenSet = true; m_voiceProfileDomainId.assign(value); }
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainId(const Aws::String& value) { SetVoiceProfileDomainId(value); return *this;}
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainId(Aws::String&& value) { SetVoiceProfileDomainId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The ID of the voice profile domain that will store the voice profile.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithVoiceProfileDomainId(const char* value) { SetVoiceProfileDomainId(value); return *this;}
 
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The unique identifier for the client request. Use a different token for
+     * different speaker search tasks.</p>
+     */
     inline StartSpeakerSearchTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
   private:

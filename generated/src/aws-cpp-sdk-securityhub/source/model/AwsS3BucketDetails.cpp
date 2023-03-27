@@ -30,7 +30,8 @@ AwsS3BucketDetails::AwsS3BucketDetails() :
     m_bucketLoggingConfigurationHasBeenSet(false),
     m_bucketWebsiteConfigurationHasBeenSet(false),
     m_bucketNotificationConfigurationHasBeenSet(false),
-    m_bucketVersioningConfigurationHasBeenSet(false)
+    m_bucketVersioningConfigurationHasBeenSet(false),
+    m_objectLockConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ AwsS3BucketDetails::AwsS3BucketDetails(JsonView jsonValue) :
     m_bucketLoggingConfigurationHasBeenSet(false),
     m_bucketWebsiteConfigurationHasBeenSet(false),
     m_bucketNotificationConfigurationHasBeenSet(false),
-    m_bucketVersioningConfigurationHasBeenSet(false)
+    m_bucketVersioningConfigurationHasBeenSet(false),
+    m_objectLockConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -137,6 +139,13 @@ AwsS3BucketDetails& AwsS3BucketDetails::operator =(JsonView jsonValue)
     m_bucketVersioningConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ObjectLockConfiguration"))
+  {
+    m_objectLockConfiguration = jsonValue.GetObject("ObjectLockConfiguration");
+
+    m_objectLockConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +222,12 @@ JsonValue AwsS3BucketDetails::Jsonize() const
   if(m_bucketVersioningConfigurationHasBeenSet)
   {
    payload.WithObject("BucketVersioningConfiguration", m_bucketVersioningConfiguration.Jsonize());
+
+  }
+
+  if(m_objectLockConfigurationHasBeenSet)
+  {
+   payload.WithObject("ObjectLockConfiguration", m_objectLockConfiguration.Jsonize());
 
   }
 

@@ -741,6 +741,31 @@ namespace IoTWireless
         }
 
         /**
+         * <p>Delete an import task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteWirelessDeviceImportTaskOutcome DeleteWirelessDeviceImportTask(const Model::DeleteWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteWirelessDeviceImportTaskRequestT = Model::DeleteWirelessDeviceImportTaskRequest>
+        Model::DeleteWirelessDeviceImportTaskOutcomeCallable DeleteWirelessDeviceImportTaskCallable(const DeleteWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::DeleteWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteWirelessDeviceImportTaskRequestT = Model::DeleteWirelessDeviceImportTaskRequest>
+        void DeleteWirelessDeviceImportTaskAsync(const DeleteWirelessDeviceImportTaskRequestT& request, const DeleteWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::DeleteWirelessDeviceImportTask, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a wireless gateway.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeleteWirelessGateway">AWS
          * API Reference</a></p>
@@ -815,6 +840,32 @@ namespace IoTWireless
         void DeleteWirelessGatewayTaskDefinitionAsync(const DeleteWirelessGatewayTaskDefinitionRequestT& request, const DeleteWirelessGatewayTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::DeleteWirelessGatewayTaskDefinition, request, handler, context);
+        }
+
+        /**
+         * <p>Deregister a wireless device from AWS IoT Wireless.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/DeregisterWirelessDevice">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterWirelessDeviceOutcome DeregisterWirelessDevice(const Model::DeregisterWirelessDeviceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterWirelessDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeregisterWirelessDeviceRequestT = Model::DeregisterWirelessDeviceRequest>
+        Model::DeregisterWirelessDeviceOutcomeCallable DeregisterWirelessDeviceCallable(const DeregisterWirelessDeviceRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::DeregisterWirelessDevice, request);
+        }
+
+        /**
+         * An Async wrapper for DeregisterWirelessDevice that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeregisterWirelessDeviceRequestT = Model::DeregisterWirelessDeviceRequest>
+        void DeregisterWirelessDeviceAsync(const DeregisterWirelessDeviceRequestT& request, const DeregisterWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::DeregisterWirelessDevice, request, handler, context);
         }
 
         /**
@@ -1418,6 +1469,32 @@ namespace IoTWireless
         }
 
         /**
+         * <p>Get information about an import task and count of device onboarding summary
+         * information for the import task.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWirelessDeviceImportTaskOutcome GetWirelessDeviceImportTask(const Model::GetWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWirelessDeviceImportTaskRequestT = Model::GetWirelessDeviceImportTaskRequest>
+        Model::GetWirelessDeviceImportTaskOutcomeCallable GetWirelessDeviceImportTaskCallable(const GetWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::GetWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for GetWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWirelessDeviceImportTaskRequestT = Model::GetWirelessDeviceImportTaskRequest>
+        void GetWirelessDeviceImportTaskAsync(const GetWirelessDeviceImportTaskRequestT& request, const GetWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::GetWirelessDeviceImportTask, request, handler, context);
+        }
+
+        /**
          * <p>Gets operating information about a wireless device.</p><p><h3>See Also:</h3> 
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/GetWirelessDeviceStatistics">AWS
@@ -1650,6 +1727,32 @@ namespace IoTWireless
         }
 
         /**
+         * <p>List the Sidewalk devices in an import task and their onboarding
+         * status.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListDevicesForWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDevicesForWirelessDeviceImportTaskOutcome ListDevicesForWirelessDeviceImportTask(const Model::ListDevicesForWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDevicesForWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDevicesForWirelessDeviceImportTaskRequestT = Model::ListDevicesForWirelessDeviceImportTaskRequest>
+        Model::ListDevicesForWirelessDeviceImportTaskOutcomeCallable ListDevicesForWirelessDeviceImportTaskCallable(const ListDevicesForWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::ListDevicesForWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for ListDevicesForWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDevicesForWirelessDeviceImportTaskRequestT = Model::ListDevicesForWirelessDeviceImportTaskRequest>
+        void ListDevicesForWirelessDeviceImportTaskAsync(const ListDevicesForWirelessDeviceImportTaskRequestT& request, const ListDevicesForWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::ListDevicesForWirelessDeviceImportTask, request, handler, context);
+        }
+
+        /**
          * <p>List event configurations where at least one event topic has been
          * enabled.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListEventConfigurations">AWS
@@ -1879,6 +1982,32 @@ namespace IoTWireless
         void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::ListTagsForResource, request, handler, context);
+        }
+
+        /**
+         * <p>List wireless devices that have been added to an import task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/ListWirelessDeviceImportTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWirelessDeviceImportTasksOutcome ListWirelessDeviceImportTasks(const Model::ListWirelessDeviceImportTasksRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWirelessDeviceImportTasks that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWirelessDeviceImportTasksRequestT = Model::ListWirelessDeviceImportTasksRequest>
+        Model::ListWirelessDeviceImportTasksOutcomeCallable ListWirelessDeviceImportTasksCallable(const ListWirelessDeviceImportTasksRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::ListWirelessDeviceImportTasks, request);
+        }
+
+        /**
+         * An Async wrapper for ListWirelessDeviceImportTasks that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWirelessDeviceImportTasksRequestT = Model::ListWirelessDeviceImportTasksRequest>
+        void ListWirelessDeviceImportTasksAsync(const ListWirelessDeviceImportTasksRequestT& request, const ListWirelessDeviceImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::ListWirelessDeviceImportTasks, request, handler, context);
         }
 
         /**
@@ -2190,6 +2319,57 @@ namespace IoTWireless
         void StartMulticastGroupSessionAsync(const StartMulticastGroupSessionRequestT& request, const StartMulticastGroupSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::StartMulticastGroupSession, request, handler, context);
+        }
+
+        /**
+         * <p>Start import task for a single wireless device.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartSingleWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSingleWirelessDeviceImportTaskOutcome StartSingleWirelessDeviceImportTask(const Model::StartSingleWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSingleWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSingleWirelessDeviceImportTaskRequestT = Model::StartSingleWirelessDeviceImportTaskRequest>
+        Model::StartSingleWirelessDeviceImportTaskOutcomeCallable StartSingleWirelessDeviceImportTaskCallable(const StartSingleWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::StartSingleWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartSingleWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSingleWirelessDeviceImportTaskRequestT = Model::StartSingleWirelessDeviceImportTaskRequest>
+        void StartSingleWirelessDeviceImportTaskAsync(const StartSingleWirelessDeviceImportTaskRequestT& request, const StartSingleWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::StartSingleWirelessDeviceImportTask, request, handler, context);
+        }
+
+        /**
+         * <p>Start import task for provisioning Sidewalk devices in bulk using an S3 CSV
+         * file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/StartWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartWirelessDeviceImportTaskOutcome StartWirelessDeviceImportTask(const Model::StartWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartWirelessDeviceImportTaskRequestT = Model::StartWirelessDeviceImportTaskRequest>
+        Model::StartWirelessDeviceImportTaskOutcomeCallable StartWirelessDeviceImportTaskCallable(const StartWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::StartWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for StartWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartWirelessDeviceImportTaskRequestT = Model::StartWirelessDeviceImportTaskRequest>
+        void StartWirelessDeviceImportTaskAsync(const StartWirelessDeviceImportTaskRequestT& request, const StartWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::StartWirelessDeviceImportTask, request, handler, context);
         }
 
         /**
@@ -2525,6 +2705,32 @@ namespace IoTWireless
         void UpdateWirelessDeviceAsync(const UpdateWirelessDeviceRequestT& request, const UpdateWirelessDeviceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IoTWirelessClient::UpdateWirelessDevice, request, handler, context);
+        }
+
+        /**
+         * <p>Update an import task to add more devices to the task.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/iotwireless-2020-11-22/UpdateWirelessDeviceImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateWirelessDeviceImportTaskOutcome UpdateWirelessDeviceImportTask(const Model::UpdateWirelessDeviceImportTaskRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateWirelessDeviceImportTask that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateWirelessDeviceImportTaskRequestT = Model::UpdateWirelessDeviceImportTaskRequest>
+        Model::UpdateWirelessDeviceImportTaskOutcomeCallable UpdateWirelessDeviceImportTaskCallable(const UpdateWirelessDeviceImportTaskRequestT& request) const
+        {
+            return SubmitCallable(&IoTWirelessClient::UpdateWirelessDeviceImportTask, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateWirelessDeviceImportTask that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateWirelessDeviceImportTaskRequestT = Model::UpdateWirelessDeviceImportTaskRequest>
+        void UpdateWirelessDeviceImportTaskAsync(const UpdateWirelessDeviceImportTaskRequestT& request, const UpdateWirelessDeviceImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IoTWirelessClient::UpdateWirelessDeviceImportTask, request, handler, context);
         }
 
         /**

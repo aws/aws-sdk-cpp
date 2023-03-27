@@ -33,47 +33,75 @@ namespace Model
     AWS_CHIMESDKVOICE_API Aws::String SerializePayload() const override;
 
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline const Aws::String& GetSipMediaApplicationId() const{ return m_sipMediaApplicationId; }
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline bool SipMediaApplicationIdHasBeenSet() const { return m_sipMediaApplicationIdHasBeenSet; }
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline void SetSipMediaApplicationId(const Aws::String& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = value; }
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline void SetSipMediaApplicationId(Aws::String&& value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId = std::move(value); }
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline void SetSipMediaApplicationId(const char* value) { m_sipMediaApplicationIdHasBeenSet = true; m_sipMediaApplicationId.assign(value); }
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline PutSipMediaApplicationAlexaSkillConfigurationRequest& WithSipMediaApplicationId(const Aws::String& value) { SetSipMediaApplicationId(value); return *this;}
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline PutSipMediaApplicationAlexaSkillConfigurationRequest& WithSipMediaApplicationId(Aws::String&& value) { SetSipMediaApplicationId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The SIP media application ID.</p>
+     */
     inline PutSipMediaApplicationAlexaSkillConfigurationRequest& WithSipMediaApplicationId(const char* value) { SetSipMediaApplicationId(value); return *this;}
 
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline const SipMediaApplicationAlexaSkillConfiguration& GetSipMediaApplicationAlexaSkillConfiguration() const{ return m_sipMediaApplicationAlexaSkillConfiguration; }
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline bool SipMediaApplicationAlexaSkillConfigurationHasBeenSet() const { return m_sipMediaApplicationAlexaSkillConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline void SetSipMediaApplicationAlexaSkillConfiguration(const SipMediaApplicationAlexaSkillConfiguration& value) { m_sipMediaApplicationAlexaSkillConfigurationHasBeenSet = true; m_sipMediaApplicationAlexaSkillConfiguration = value; }
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline void SetSipMediaApplicationAlexaSkillConfiguration(SipMediaApplicationAlexaSkillConfiguration&& value) { m_sipMediaApplicationAlexaSkillConfigurationHasBeenSet = true; m_sipMediaApplicationAlexaSkillConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline PutSipMediaApplicationAlexaSkillConfigurationRequest& WithSipMediaApplicationAlexaSkillConfiguration(const SipMediaApplicationAlexaSkillConfiguration& value) { SetSipMediaApplicationAlexaSkillConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The Alexa Skill configuration.</p>
+     */
     inline PutSipMediaApplicationAlexaSkillConfigurationRequest& WithSipMediaApplicationAlexaSkillConfiguration(SipMediaApplicationAlexaSkillConfiguration&& value) { SetSipMediaApplicationAlexaSkillConfiguration(std::move(value)); return *this;}
 
   private:

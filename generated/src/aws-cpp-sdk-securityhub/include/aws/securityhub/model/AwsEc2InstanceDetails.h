@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/securityhub/model/AwsEc2InstanceMetadataOptions.h>
+#include <aws/securityhub/model/AwsEc2InstanceMonitoringDetails.h>
 #include <aws/securityhub/model/AwsEc2InstanceNetworkInterfacesDetails.h>
 #include <utility>
 
@@ -595,6 +596,37 @@ namespace Model
      */
     inline AwsEc2InstanceDetails& WithMetadataOptions(AwsEc2InstanceMetadataOptions&& value) { SetMetadataOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline const AwsEc2InstanceMonitoringDetails& GetMonitoring() const{ return m_monitoring; }
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline void SetMonitoring(const AwsEc2InstanceMonitoringDetails& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline void SetMonitoring(AwsEc2InstanceMonitoringDetails&& value) { m_monitoringHasBeenSet = true; m_monitoring = std::move(value); }
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithMonitoring(const AwsEc2InstanceMonitoringDetails& value) { SetMonitoring(value); return *this;}
+
+    /**
+     * <p> Describes the type of monitoring that’s turned on for an instance. </p>
+     */
+    inline AwsEc2InstanceDetails& WithMonitoring(AwsEc2InstanceMonitoringDetails&& value) { SetMonitoring(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_type;
@@ -632,6 +664,9 @@ namespace Model
 
     AwsEc2InstanceMetadataOptions m_metadataOptions;
     bool m_metadataOptionsHasBeenSet = false;
+
+    AwsEc2InstanceMonitoringDetails m_monitoring;
+    bool m_monitoringHasBeenSet = false;
   };
 
 } // namespace Model

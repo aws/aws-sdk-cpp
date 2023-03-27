@@ -184,56 +184,56 @@ namespace Model
 
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline const ResultConfiguration& GetResultConfiguration() const{ return m_resultConfiguration; }
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline bool ResultConfigurationHasBeenSet() const { return m_resultConfigurationHasBeenSet; }
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline void SetResultConfiguration(const ResultConfiguration& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = value; }
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline void SetResultConfiguration(ResultConfiguration&& value) { m_resultConfigurationHasBeenSet = true; m_resultConfiguration = std::move(value); }
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline QueryExecution& WithResultConfiguration(const ResultConfiguration& value) { SetResultConfiguration(value); return *this;}
 
     /**
-     * <p>The location in Amazon S3 where query results were stored and the encryption
-     * option, if any, used for query results. These are known as "client-side
-     * settings". If workgroup settings override client-side settings, then the query
-     * uses the location for the query results and the encryption configuration that
-     * are specified for the workgroup.</p>
+     * <p>The location in Amazon S3 where query and calculation results are stored and
+     * the encryption option, if any, used for query results. These are known as
+     * "client-side settings". If workgroup settings override client-side settings,
+     * then the query uses the location for the query results and the encryption
+     * configuration that are specified for the workgroup.</p>
      */
     inline QueryExecution& WithResultConfiguration(ResultConfiguration&& value) { SetResultConfiguration(std::move(value)); return *this;}
 

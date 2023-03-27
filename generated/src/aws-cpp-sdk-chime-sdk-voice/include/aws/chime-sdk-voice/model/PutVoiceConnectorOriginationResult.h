@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API PutVoiceConnectorOriginationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The updated origination settings.</p>
+     */
     inline const Origination& GetOrigination() const{ return m_origination; }
 
-    
+    /**
+     * <p>The updated origination settings.</p>
+     */
     inline void SetOrigination(const Origination& value) { m_origination = value; }
 
-    
+    /**
+     * <p>The updated origination settings.</p>
+     */
     inline void SetOrigination(Origination&& value) { m_origination = std::move(value); }
 
-    
+    /**
+     * <p>The updated origination settings.</p>
+     */
     inline PutVoiceConnectorOriginationResult& WithOrigination(const Origination& value) { SetOrigination(value); return *this;}
 
-    
+    /**
+     * <p>The updated origination settings.</p>
+     */
     inline PutVoiceConnectorOriginationResult& WithOrigination(Origination&& value) { SetOrigination(std::move(value)); return *this;}
 
 

@@ -506,9 +506,11 @@ namespace SecurityHub
         }
 
         /**
-         * <p>Declines invitations to become a member account.</p> <p>This operation is
-         * only used by accounts that are not part of an organization. Organization
-         * accounts do not receive invitations.</p><p><h3>See Also:</h3>   <a
+         * <p>Declines invitations to become a member account.</p> <p>A prospective member
+         * account uses this operation to decline an invitation to become a member.</p>
+         * <p>This operation is only called by member accounts that aren't part of an
+         * organization. Organization accounts don't receive invitations.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeclineInvitations">AWS
          * API Reference</a></p>
          */
@@ -616,8 +618,10 @@ namespace SecurityHub
 
         /**
          * <p>Deletes invitations received by the Amazon Web Services account to become a
-         * member account.</p> <p>This operation is only used by accounts that are not part
-         * of an organization. Organization accounts do not receive
+         * member account.</p> <p>A Security Hub administrator account can use this
+         * operation to delete invitations sent to one or more member accounts.</p> <p>This
+         * operation is only used to delete invitations that are sent to member accounts
+         * that aren't part of an organization. Organization accounts don't receive
          * invitations.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/DeleteInvitations">AWS
          * API Reference</a></p>

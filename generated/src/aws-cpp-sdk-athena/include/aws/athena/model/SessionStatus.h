@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>Contains information about the status of a notebook session.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Contains information about the status of a session.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/athena-2017-05-18/SessionStatus">AWS
    * API Reference</a></p>
    */

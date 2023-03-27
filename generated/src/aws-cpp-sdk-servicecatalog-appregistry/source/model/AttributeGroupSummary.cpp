@@ -24,7 +24,8 @@ AttributeGroupSummary::AttributeGroupSummary() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ AttributeGroupSummary::AttributeGroupSummary(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
-    m_lastUpdateTimeHasBeenSet(false)
+    m_lastUpdateTimeHasBeenSet(false),
+    m_createdByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -83,6 +85,13 @@ AttributeGroupSummary& AttributeGroupSummary::operator =(JsonView jsonValue)
     m_lastUpdateTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("createdBy"))
+  {
+    m_createdBy = jsonValue.GetString("createdBy");
+
+    m_createdByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +131,12 @@ JsonValue AttributeGroupSummary::Jsonize() const
   if(m_lastUpdateTimeHasBeenSet)
   {
    payload.WithString("lastUpdateTime", m_lastUpdateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_createdByHasBeenSet)
+  {
+   payload.WithString("createdBy", m_createdBy);
+
   }
 
   return payload;

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/voice-id/VoiceID_EXPORTS.h>
 #include <aws/voice-id/model/DuplicateRegistrationAction.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -24,10 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>The configuration defining the action to take when a duplicate fraudster is
-   * detected, and the similarity threshold to use for detecting a duplicate
-   * fraudster during a batch fraudster registration job.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>The registration configuration to be used during the batch fraudster
+   * registration job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/voice-id-2021-09-27/RegistrationConfig">AWS
    * API Reference</a></p>
    */
@@ -113,6 +113,70 @@ namespace Model
      */
     inline RegistrationConfig& WithFraudsterSimilarityThreshold(int value) { SetFraudsterSimilarityThreshold(value); return *this;}
 
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline const Aws::Vector<Aws::String>& GetWatchlistIds() const{ return m_watchlistIds; }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline bool WatchlistIdsHasBeenSet() const { return m_watchlistIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline void SetWatchlistIds(const Aws::Vector<Aws::String>& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = value; }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline void SetWatchlistIds(Aws::Vector<Aws::String>&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds = std::move(value); }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline RegistrationConfig& WithWatchlistIds(const Aws::Vector<Aws::String>& value) { SetWatchlistIds(value); return *this;}
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline RegistrationConfig& WithWatchlistIds(Aws::Vector<Aws::String>&& value) { SetWatchlistIds(std::move(value)); return *this;}
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline RegistrationConfig& AddWatchlistIds(const Aws::String& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline RegistrationConfig& AddWatchlistIds(Aws::String&& value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The identifiers of watchlists that a fraudster is registered to. If a
+     * watchlist isn't provided, the fraudsters are registered to the default
+     * watchlist. </p>
+     */
+    inline RegistrationConfig& AddWatchlistIds(const char* value) { m_watchlistIdsHasBeenSet = true; m_watchlistIds.push_back(value); return *this; }
+
   private:
 
     DuplicateRegistrationAction m_duplicateRegistrationAction;
@@ -120,6 +184,9 @@ namespace Model
 
     int m_fraudsterSimilarityThreshold;
     bool m_fraudsterSimilarityThresholdHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_watchlistIds;
+    bool m_watchlistIdsHasBeenSet = false;
   };
 
 } // namespace Model

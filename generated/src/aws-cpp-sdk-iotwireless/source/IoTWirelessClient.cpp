@@ -47,9 +47,11 @@
 #include <aws/iotwireless/model/DeleteQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/DeleteServiceProfileRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessDeviceRequest.h>
+#include <aws/iotwireless/model/DeleteWirelessDeviceImportTaskRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayTaskRequest.h>
 #include <aws/iotwireless/model/DeleteWirelessGatewayTaskDefinitionRequest.h>
+#include <aws/iotwireless/model/DeregisterWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/DisassociateAwsAccountFromPartnerAccountRequest.h>
 #include <aws/iotwireless/model/DisassociateMulticastGroupFromFuotaTaskRequest.h>
 #include <aws/iotwireless/model/DisassociateWirelessDeviceFromFuotaTaskRequest.h>
@@ -73,6 +75,7 @@
 #include <aws/iotwireless/model/GetServiceEndpointRequest.h>
 #include <aws/iotwireless/model/GetServiceProfileRequest.h>
 #include <aws/iotwireless/model/GetWirelessDeviceRequest.h>
+#include <aws/iotwireless/model/GetWirelessDeviceImportTaskRequest.h>
 #include <aws/iotwireless/model/GetWirelessDeviceStatisticsRequest.h>
 #include <aws/iotwireless/model/GetWirelessGatewayRequest.h>
 #include <aws/iotwireless/model/GetWirelessGatewayCertificateRequest.h>
@@ -82,6 +85,7 @@
 #include <aws/iotwireless/model/GetWirelessGatewayTaskDefinitionRequest.h>
 #include <aws/iotwireless/model/ListDestinationsRequest.h>
 #include <aws/iotwireless/model/ListDeviceProfilesRequest.h>
+#include <aws/iotwireless/model/ListDevicesForWirelessDeviceImportTaskRequest.h>
 #include <aws/iotwireless/model/ListEventConfigurationsRequest.h>
 #include <aws/iotwireless/model/ListFuotaTasksRequest.h>
 #include <aws/iotwireless/model/ListMulticastGroupsRequest.h>
@@ -91,6 +95,7 @@
 #include <aws/iotwireless/model/ListQueuedMessagesRequest.h>
 #include <aws/iotwireless/model/ListServiceProfilesRequest.h>
 #include <aws/iotwireless/model/ListTagsForResourceRequest.h>
+#include <aws/iotwireless/model/ListWirelessDeviceImportTasksRequest.h>
 #include <aws/iotwireless/model/ListWirelessDevicesRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewayTaskDefinitionsRequest.h>
 #include <aws/iotwireless/model/ListWirelessGatewaysRequest.h>
@@ -103,6 +108,8 @@
 #include <aws/iotwireless/model/StartBulkDisassociateWirelessDeviceFromMulticastGroupRequest.h>
 #include <aws/iotwireless/model/StartFuotaTaskRequest.h>
 #include <aws/iotwireless/model/StartMulticastGroupSessionRequest.h>
+#include <aws/iotwireless/model/StartSingleWirelessDeviceImportTaskRequest.h>
+#include <aws/iotwireless/model/StartWirelessDeviceImportTaskRequest.h>
 #include <aws/iotwireless/model/TagResourceRequest.h>
 #include <aws/iotwireless/model/TestWirelessDeviceRequest.h>
 #include <aws/iotwireless/model/UntagResourceRequest.h>
@@ -116,6 +123,7 @@
 #include <aws/iotwireless/model/UpdateResourceEventConfigurationRequest.h>
 #include <aws/iotwireless/model/UpdateResourcePositionRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessDeviceRequest.h>
+#include <aws/iotwireless/model/UpdateWirelessDeviceImportTaskRequest.h>
 #include <aws/iotwireless/model/UpdateWirelessGatewayRequest.h>
 
 using namespace Aws;
@@ -589,6 +597,21 @@ DeleteWirelessDeviceOutcome IoTWirelessClient::DeleteWirelessDevice(const Delete
   return DeleteWirelessDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteWirelessDeviceImportTaskOutcome IoTWirelessClient::DeleteWirelessDeviceImportTask(const DeleteWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteWirelessDeviceImportTask", "Required field: Id, is not set");
+    return DeleteWirelessDeviceImportTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return DeleteWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteWirelessGatewayOutcome IoTWirelessClient::DeleteWirelessGateway(const DeleteWirelessGatewayRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteWirelessGateway, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -633,6 +656,22 @@ DeleteWirelessGatewayTaskDefinitionOutcome IoTWirelessClient::DeleteWirelessGate
   endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-gateway-task-definitions/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   return DeleteWirelessGatewayTaskDefinitionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeregisterWirelessDeviceOutcome IoTWirelessClient::DeregisterWirelessDevice(const DeregisterWirelessDeviceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeregisterWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeregisterWirelessDevice", "Required field: Identifier, is not set");
+    return DeregisterWirelessDeviceOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Identifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeregisterWirelessDevice, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-devices/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/deregister");
+  return DeregisterWirelessDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateAwsAccountFromPartnerAccountOutcome IoTWirelessClient::DisassociateAwsAccountFromPartnerAccount(const DisassociateAwsAccountFromPartnerAccountRequest& request) const
@@ -1011,6 +1050,21 @@ GetWirelessDeviceOutcome IoTWirelessClient::GetWirelessDevice(const GetWirelessD
   return GetWirelessDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetWirelessDeviceImportTaskOutcome IoTWirelessClient::GetWirelessDeviceImportTask(const GetWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWirelessDeviceImportTask", "Required field: Id, is not set");
+    return GetWirelessDeviceImportTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return GetWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetWirelessDeviceStatisticsOutcome IoTWirelessClient::GetWirelessDeviceStatistics(const GetWirelessDeviceStatisticsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWirelessDeviceStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1144,6 +1198,20 @@ ListDeviceProfilesOutcome IoTWirelessClient::ListDeviceProfiles(const ListDevice
   return ListDeviceProfilesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListDevicesForWirelessDeviceImportTaskOutcome IoTWirelessClient::ListDevicesForWirelessDeviceImportTask(const ListDevicesForWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevicesForWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDevicesForWirelessDeviceImportTask", "Required field: Id, is not set");
+    return ListDevicesForWirelessDeviceImportTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevicesForWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task");
+  return ListDevicesForWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListEventConfigurationsOutcome IoTWirelessClient::ListEventConfigurations(const ListEventConfigurationsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1247,6 +1315,15 @@ ListTagsForResourceOutcome IoTWirelessClient::ListTagsForResource(const ListTags
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags");
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWirelessDeviceImportTasksOutcome IoTWirelessClient::ListWirelessDeviceImportTasks(const ListWirelessDeviceImportTasksRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWirelessDeviceImportTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWirelessDeviceImportTasks, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_tasks");
+  return ListWirelessDeviceImportTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListWirelessDevicesOutcome IoTWirelessClient::ListWirelessDevices(const ListWirelessDevicesRequest& request) const
@@ -1418,6 +1495,24 @@ StartMulticastGroupSessionOutcome IoTWirelessClient::StartMulticastGroupSession(
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/session");
   return StartMulticastGroupSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSingleWirelessDeviceImportTaskOutcome IoTWirelessClient::StartSingleWirelessDeviceImportTask(const StartSingleWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSingleWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSingleWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_single_device_import_task");
+  return StartSingleWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartWirelessDeviceImportTaskOutcome IoTWirelessClient::StartWirelessDeviceImportTask(const StartWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task");
+  return StartWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome IoTWirelessClient::TagResource(const TagResourceRequest& request) const
@@ -1620,6 +1715,21 @@ UpdateWirelessDeviceOutcome IoTWirelessClient::UpdateWirelessDevice(const Update
   endpointResolutionOutcome.GetResult().AddPathSegments("/wireless-devices/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   return UpdateWirelessDeviceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateWirelessDeviceImportTaskOutcome IoTWirelessClient::UpdateWirelessDeviceImportTask(const UpdateWirelessDeviceImportTaskRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateWirelessDeviceImportTask", "Required field: Id, is not set");
+    return UpdateWirelessDeviceImportTaskOutcome(Aws::Client::AWSError<IoTWirelessErrors>(IoTWirelessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Id]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateWirelessDeviceImportTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/wireless_device_import_task/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
+  return UpdateWirelessDeviceImportTaskOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateWirelessGatewayOutcome IoTWirelessClient::UpdateWirelessGateway(const UpdateWirelessGatewayRequest& request) const

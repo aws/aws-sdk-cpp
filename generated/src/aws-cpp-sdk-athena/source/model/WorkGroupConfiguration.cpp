@@ -31,7 +31,9 @@ WorkGroupConfiguration::WorkGroupConfiguration() :
     m_engineVersionHasBeenSet(false),
     m_additionalConfigurationHasBeenSet(false),
     m_executionRoleHasBeenSet(false),
-    m_customerContentEncryptionConfigurationHasBeenSet(false)
+    m_customerContentEncryptionConfigurationHasBeenSet(false),
+    m_enableMinimumEncryptionConfiguration(false),
+    m_enableMinimumEncryptionConfigurationHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ WorkGroupConfiguration::WorkGroupConfiguration(JsonView jsonValue) :
     m_engineVersionHasBeenSet(false),
     m_additionalConfigurationHasBeenSet(false),
     m_executionRoleHasBeenSet(false),
-    m_customerContentEncryptionConfigurationHasBeenSet(false)
+    m_customerContentEncryptionConfigurationHasBeenSet(false),
+    m_enableMinimumEncryptionConfiguration(false),
+    m_enableMinimumEncryptionConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -118,6 +122,13 @@ WorkGroupConfiguration& WorkGroupConfiguration::operator =(JsonView jsonValue)
     m_customerContentEncryptionConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableMinimumEncryptionConfiguration"))
+  {
+    m_enableMinimumEncryptionConfiguration = jsonValue.GetBool("EnableMinimumEncryptionConfiguration");
+
+    m_enableMinimumEncryptionConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -176,6 +187,12 @@ JsonValue WorkGroupConfiguration::Jsonize() const
   if(m_customerContentEncryptionConfigurationHasBeenSet)
   {
    payload.WithObject("CustomerContentEncryptionConfiguration", m_customerContentEncryptionConfiguration.Jsonize());
+
+  }
+
+  if(m_enableMinimumEncryptionConfigurationHasBeenSet)
+  {
+   payload.WithBool("EnableMinimumEncryptionConfiguration", m_enableMinimumEncryptionConfiguration);
 
   }
 

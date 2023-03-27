@@ -155,58 +155,82 @@ namespace Model
 
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline const Aws::String& GetNotebookVersion() const{ return m_notebookVersion; }
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline bool NotebookVersionHasBeenSet() const { return m_notebookVersionHasBeenSet; }
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline void SetNotebookVersion(const Aws::String& value) { m_notebookVersionHasBeenSet = true; m_notebookVersion = value; }
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline void SetNotebookVersion(Aws::String&& value) { m_notebookVersionHasBeenSet = true; m_notebookVersion = std::move(value); }
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline void SetNotebookVersion(const char* value) { m_notebookVersionHasBeenSet = true; m_notebookVersion.assign(value); }
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline StartSessionRequest& WithNotebookVersion(const Aws::String& value) { SetNotebookVersion(value); return *this;}
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline StartSessionRequest& WithNotebookVersion(Aws::String&& value) { SetNotebookVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The notebook version. This value is required only when requesting that a
-     * notebook server be started for the session. The only valid notebook version is
-     * <code>Jupyter1.0</code>.</p>
+     * <p>The notebook version. This value is supplied automatically for notebook
+     * sessions in the Athena console and is not required for programmatic session
+     * access. The only valid notebook version is <code>Athena notebook version
+     * 1</code>. If you specify a value for <code>NotebookVersion</code>, you must also
+     * specify a value for <code>NotebookId</code>. See
+     * <a>EngineConfiguration$AdditionalConfigs</a>.</p>
      */
     inline StartSessionRequest& WithNotebookVersion(const char* value) { SetNotebookVersion(value); return *this;}
 

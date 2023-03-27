@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API PutVoiceConnectorProxyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The proxy configuration details.</p>
+     */
     inline const Proxy& GetProxy() const{ return m_proxy; }
 
-    
+    /**
+     * <p>The proxy configuration details.</p>
+     */
     inline void SetProxy(const Proxy& value) { m_proxy = value; }
 
-    
+    /**
+     * <p>The proxy configuration details.</p>
+     */
     inline void SetProxy(Proxy&& value) { m_proxy = std::move(value); }
 
-    
+    /**
+     * <p>The proxy configuration details.</p>
+     */
     inline PutVoiceConnectorProxyResult& WithProxy(const Proxy& value) { SetProxy(value); return *this;}
 
-    
+    /**
+     * <p>The proxy configuration details.</p>
+     */
     inline PutVoiceConnectorProxyResult& WithProxy(Proxy&& value) { SetProxy(std::move(value)); return *this;}
 
 

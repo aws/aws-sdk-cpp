@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIMESDKVOICE_API GetPhoneNumberOrderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The phone number order details.</p>
+     */
     inline const PhoneNumberOrder& GetPhoneNumberOrder() const{ return m_phoneNumberOrder; }
 
-    
+    /**
+     * <p>The phone number order details.</p>
+     */
     inline void SetPhoneNumberOrder(const PhoneNumberOrder& value) { m_phoneNumberOrder = value; }
 
-    
+    /**
+     * <p>The phone number order details.</p>
+     */
     inline void SetPhoneNumberOrder(PhoneNumberOrder&& value) { m_phoneNumberOrder = std::move(value); }
 
-    
+    /**
+     * <p>The phone number order details.</p>
+     */
     inline GetPhoneNumberOrderResult& WithPhoneNumberOrder(const PhoneNumberOrder& value) { SetPhoneNumberOrder(value); return *this;}
 
-    
+    /**
+     * <p>The phone number order details.</p>
+     */
     inline GetPhoneNumberOrderResult& WithPhoneNumberOrder(PhoneNumberOrder&& value) { SetPhoneNumberOrder(std::move(value)); return *this;}
 
 

@@ -28,7 +28,8 @@ Domain::Domain() :
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_serverSideEncryptionUpdateDetailsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_watchlistDetailsHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ Domain::Domain(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_serverSideEncryptionUpdateDetailsHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_watchlistDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +114,13 @@ Domain& Domain::operator =(JsonView jsonValue)
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WatchlistDetails"))
+  {
+    m_watchlistDetails = jsonValue.GetObject("WatchlistDetails");
+
+    m_watchlistDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue Domain::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("UpdatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_watchlistDetailsHasBeenSet)
+  {
+   payload.WithObject("WatchlistDetails", m_watchlistDetails.Jsonize());
+
   }
 
   return payload;

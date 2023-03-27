@@ -30,7 +30,7 @@ namespace Model
    * workgroups or data catalogs by purpose, owner, or environment. Use a consistent
    * set of tag keys to make it easier to search and filter workgroups or data
    * catalogs in your account. For best practices, see <a
-   * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">Tagging
+   * href="https://docs.aws.amazon.com/whitepapers/latest/tagging-best-practices/tagging-best-practices.html">Tagging
    * Best Practices</a>. Tag keys can be from 1 to 128 UTF-8 Unicode characters, and
    * tag values can be from 0 to 256 UTF-8 Unicode characters. Tags can use letters
    * and numbers representable in UTF-8, and the following characters: + - = . _ : /
