@@ -25,6 +25,7 @@
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("${operation.name}", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
