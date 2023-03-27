@@ -223,6 +223,7 @@ BatchGetItemOutcome DynamoDBClient::BatchGetItem(const BatchGetItemRequest& requ
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("BatchGetItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -265,6 +266,7 @@ BatchWriteItemOutcome DynamoDBClient::BatchWriteItem(const BatchWriteItemRequest
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("BatchWriteItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -307,6 +309,7 @@ CreateBackupOutcome DynamoDBClient::CreateBackup(const CreateBackupRequest& requ
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateBackup", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -349,6 +352,7 @@ CreateGlobalTableOutcome DynamoDBClient::CreateGlobalTable(const CreateGlobalTab
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateGlobalTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -391,6 +395,7 @@ CreateTableOutcome DynamoDBClient::CreateTable(const CreateTableRequest& request
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("CreateTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -433,6 +438,7 @@ DeleteBackupOutcome DynamoDBClient::DeleteBackup(const DeleteBackupRequest& requ
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteBackup", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -475,6 +481,7 @@ DeleteItemOutcome DynamoDBClient::DeleteItem(const DeleteItemRequest& request) c
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -517,6 +524,7 @@ DeleteTableOutcome DynamoDBClient::DeleteTable(const DeleteTableRequest& request
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DeleteTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -559,6 +567,7 @@ DescribeBackupOutcome DynamoDBClient::DescribeBackup(const DescribeBackupRequest
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeBackup", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -601,6 +610,7 @@ DescribeContinuousBackupsOutcome DynamoDBClient::DescribeContinuousBackups(const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeContinuousBackups", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -667,6 +677,7 @@ DescribeGlobalTableOutcome DynamoDBClient::DescribeGlobalTable(const DescribeGlo
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeGlobalTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -709,6 +720,7 @@ DescribeGlobalTableSettingsOutcome DynamoDBClient::DescribeGlobalTableSettings(c
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeGlobalTableSettings", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -759,6 +771,7 @@ DescribeKinesisStreamingDestinationOutcome DynamoDBClient::DescribeKinesisStream
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -801,6 +814,7 @@ DescribeLimitsOutcome DynamoDBClient::DescribeLimits(const DescribeLimitsRequest
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeLimits", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -843,6 +857,7 @@ DescribeTableOutcome DynamoDBClient::DescribeTable(const DescribeTableRequest& r
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -893,6 +908,7 @@ DescribeTimeToLiveOutcome DynamoDBClient::DescribeTimeToLive(const DescribeTimeT
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DescribeTimeToLive", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -935,6 +951,7 @@ DisableKinesisStreamingDestinationOutcome DynamoDBClient::DisableKinesisStreamin
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("DisableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -977,6 +994,7 @@ EnableKinesisStreamingDestinationOutcome DynamoDBClient::EnableKinesisStreamingD
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("EnableKinesisStreamingDestination", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1043,6 +1061,7 @@ GetItemOutcome DynamoDBClient::GetItem(const GetItemRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("GetItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1093,6 +1112,7 @@ ListBackupsOutcome DynamoDBClient::ListBackups(const ListBackupsRequest& request
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListBackups", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1151,6 +1171,7 @@ ListGlobalTablesOutcome DynamoDBClient::ListGlobalTables(const ListGlobalTablesR
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListGlobalTables", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1201,6 +1222,7 @@ ListTablesOutcome DynamoDBClient::ListTables(const ListTablesRequest& request) c
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTables", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1243,6 +1265,7 @@ ListTagsOfResourceOutcome DynamoDBClient::ListTagsOfResource(const ListTagsOfRes
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("ListTagsOfResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1285,6 +1308,7 @@ PutItemOutcome DynamoDBClient::PutItem(const PutItemRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("PutItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1327,6 +1351,7 @@ QueryOutcome DynamoDBClient::Query(const QueryRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Query", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1369,6 +1394,7 @@ RestoreTableFromBackupOutcome DynamoDBClient::RestoreTableFromBackup(const Resto
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("RestoreTableFromBackup", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1411,6 +1437,7 @@ RestoreTableToPointInTimeOutcome DynamoDBClient::RestoreTableToPointInTime(const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("RestoreTableToPointInTime", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1453,6 +1480,7 @@ ScanOutcome DynamoDBClient::Scan(const ScanRequest& request) const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("Scan", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1495,6 +1523,7 @@ TagResourceOutcome DynamoDBClient::TagResource(const TagResourceRequest& request
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1537,6 +1566,7 @@ TransactGetItemsOutcome DynamoDBClient::TransactGetItems(const TransactGetItemsR
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TransactGetItems", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1579,6 +1609,7 @@ TransactWriteItemsOutcome DynamoDBClient::TransactWriteItems(const TransactWrite
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("TransactWriteItems", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1621,6 +1652,7 @@ UntagResourceOutcome DynamoDBClient::UntagResource(const UntagResourceRequest& r
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UntagResource", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1663,6 +1695,7 @@ UpdateContinuousBackupsOutcome DynamoDBClient::UpdateContinuousBackups(const Upd
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateContinuousBackups", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1713,6 +1746,7 @@ UpdateGlobalTableOutcome DynamoDBClient::UpdateGlobalTable(const UpdateGlobalTab
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateGlobalTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1755,6 +1789,7 @@ UpdateGlobalTableSettingsOutcome DynamoDBClient::UpdateGlobalTableSettings(const
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateGlobalTableSettings", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1797,6 +1832,7 @@ UpdateItemOutcome DynamoDBClient::UpdateItem(const UpdateItemRequest& request) c
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateItem", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1839,6 +1875,7 @@ UpdateTableOutcome DynamoDBClient::UpdateTable(const UpdateTableRequest& request
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTable", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
@@ -1889,6 +1926,7 @@ UpdateTimeToLiveOutcome DynamoDBClient::UpdateTimeToLive(const UpdateTimeToLiveR
     if (m_endpointsCache.Get(endpointKey, endpoint))
     {
       AWS_LOGSTREAM_TRACE("UpdateTimeToLive", "Making request to cached endpoint: " << endpoint);
+      endpoint = Aws::String(SchemeMapper::ToString(m_clientConfiguration.scheme)) + "://" + endpoint;
       endpointResolutionOutcome.GetResult().SetURI(endpoint);
     }
     else
