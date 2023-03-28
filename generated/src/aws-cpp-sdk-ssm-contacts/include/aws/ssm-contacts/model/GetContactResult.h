@@ -150,32 +150,32 @@ namespace Model
 
 
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.
-     * </p>
+     * <p>The type of contact, either <code>PERSONAL</code> or
+     * <code>ESCALATION</code>.</p>
      */
     inline const ContactType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.
-     * </p>
+     * <p>The type of contact, either <code>PERSONAL</code> or
+     * <code>ESCALATION</code>.</p>
      */
     inline void SetType(const ContactType& value) { m_type = value; }
 
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.
-     * </p>
+     * <p>The type of contact, either <code>PERSONAL</code> or
+     * <code>ESCALATION</code>.</p>
      */
     inline void SetType(ContactType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.
-     * </p>
+     * <p>The type of contact, either <code>PERSONAL</code> or
+     * <code>ESCALATION</code>.</p>
      */
     inline GetContactResult& WithType(const ContactType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of contact, either <code>PERSONAL</code> or <code>ESCALATION</code>.
-     * </p>
+     * <p>The type of contact, either <code>PERSONAL</code> or
+     * <code>ESCALATION</code>.</p>
      */
     inline GetContactResult& WithType(ContactType&& value) { SetType(std::move(value)); return *this;}
 

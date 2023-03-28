@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The details that Incident Manager uses when trying to engage the contact
-   * channel. </p><p><h3>See Also:</h3>   <a
+   * channel.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ContactChannelAddress">AWS
    * API Reference</a></p>
    */

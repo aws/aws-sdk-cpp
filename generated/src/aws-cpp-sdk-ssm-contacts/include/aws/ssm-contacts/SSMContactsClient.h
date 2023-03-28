@@ -19,12 +19,12 @@ namespace SSMContacts
    * <p>Systems Manager Incident Manager is an incident management console designed
    * to help users mitigate and recover from incidents affecting their Amazon Web
    * Services-hosted applications. An incident is any unplanned interruption or
-   * reduction in quality of services. </p> <p>Incident Manager increases incident
+   * reduction in quality of services.</p> <p>Incident Manager increases incident
    * resolution by notifying responders of impact, highlighting relevant
    * troubleshooting data, and providing collaboration tools to get services back up
    * and running. To achieve the primary goal of reducing the time-to-resolution of
    * critical incidents, Incident Manager automates response plans and enables
-   * responder team escalation. </p>
+   * responder team escalation.</p>
    */
   class AWS_SSMCONTACTS_API SSMContactsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SSMContactsClient>
   {
@@ -137,7 +137,7 @@ namespace SSMContacts
         /**
          * <p>Contacts are either the contacts that Incident Manager engages during an
          * incident or the escalation plans that Incident Manager uses to engage contacts
-         * in phases during an incident. </p><p><h3>See Also:</h3>   <a
+         * in phases during an incident.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateContact">AWS
          * API Reference</a></p>
          */
@@ -185,6 +185,57 @@ namespace SSMContacts
         void CreateContactChannelAsync(const CreateContactChannelRequestT& request, const CreateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMContactsClient::CreateContactChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a rotation in an on-call schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRotationOutcome CreateRotation(const Model::CreateRotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRotationRequestT = Model::CreateRotationRequest>
+        Model::CreateRotationOutcomeCallable CreateRotationCallable(const CreateRotationRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::CreateRotation, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRotationRequestT = Model::CreateRotationRequest>
+        void CreateRotationAsync(const CreateRotationRequestT& request, const CreateRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::CreateRotation, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an override for a rotation in an on-call schedule.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/CreateRotationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRotationOverrideOutcome CreateRotationOverride(const Model::CreateRotationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRotationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRotationOverrideRequestT = Model::CreateRotationOverrideRequest>
+        Model::CreateRotationOverrideOutcomeCallable CreateRotationOverrideCallable(const CreateRotationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::CreateRotationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRotationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRotationOverrideRequestT = Model::CreateRotationOverrideRequest>
+        void CreateRotationOverrideAsync(const CreateRotationOverrideRequestT& request, const CreateRotationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::CreateRotationOverride, request, handler, context);
         }
 
         /**
@@ -269,6 +320,59 @@ namespace SSMContacts
         void DeleteContactChannelAsync(const DeleteContactChannelRequestT& request, const DeleteContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMContactsClient::DeleteContactChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a rotation from the system. If a rotation belongs to more than one
+         * on-call schedule, this operation deletes it from all of them.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRotationOutcome DeleteRotation(const Model::DeleteRotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRotationRequestT = Model::DeleteRotationRequest>
+        Model::DeleteRotationOutcomeCallable DeleteRotationCallable(const DeleteRotationRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::DeleteRotation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRotationRequestT = Model::DeleteRotationRequest>
+        void DeleteRotationAsync(const DeleteRotationRequestT& request, const DeleteRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::DeleteRotation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an existing override for an on-call rotation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/DeleteRotationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRotationOverrideOutcome DeleteRotationOverride(const Model::DeleteRotationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRotationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRotationOverrideRequestT = Model::DeleteRotationOverrideRequest>
+        Model::DeleteRotationOverrideOutcomeCallable DeleteRotationOverrideCallable(const DeleteRotationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::DeleteRotationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRotationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRotationOverrideRequestT = Model::DeleteRotationOverrideRequest>
+        void DeleteRotationOverrideAsync(const DeleteRotationOverrideRequestT& request, const DeleteRotationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::DeleteRotationOverride, request, handler, context);
         }
 
         /**
@@ -402,6 +506,58 @@ namespace SSMContacts
         }
 
         /**
+         * <p>Retrieves information about an on-call rotation.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRotationOutcome GetRotation(const Model::GetRotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRotationRequestT = Model::GetRotationRequest>
+        Model::GetRotationOutcomeCallable GetRotationCallable(const GetRotationRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::GetRotation, request);
+        }
+
+        /**
+         * An Async wrapper for GetRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRotationRequestT = Model::GetRotationRequest>
+        void GetRotationAsync(const GetRotationRequestT& request, const GetRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::GetRotation, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves information about an override to an on-call rotation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/GetRotationOverride">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetRotationOverrideOutcome GetRotationOverride(const Model::GetRotationOverrideRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetRotationOverride that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetRotationOverrideRequestT = Model::GetRotationOverrideRequest>
+        Model::GetRotationOverrideOutcomeCallable GetRotationOverrideCallable(const GetRotationOverrideRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::GetRotationOverride, request);
+        }
+
+        /**
+         * An Async wrapper for GetRotationOverride that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetRotationOverrideRequestT = Model::GetRotationOverrideRequest>
+        void GetRotationOverrideAsync(const GetRotationOverrideRequestT& request, const GetRotationOverrideResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::GetRotationOverride, request, handler, context);
+        }
+
+        /**
          * <p>Lists all contact channels for the specified contact.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListContactChannels">AWS
@@ -480,8 +636,8 @@ namespace SSMContacts
         }
 
         /**
-         * <p>Lists all of the engagements to contact channels that have been acknowledged.
-         * </p><p><h3>See Also:</h3>   <a
+         * <p>Lists all of the engagements to contact channels that have been
+         * acknowledged.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageReceipts">AWS
          * API Reference</a></p>
          */
@@ -503,6 +659,35 @@ namespace SSMContacts
         void ListPageReceiptsAsync(const ListPageReceiptsRequestT& request, const ListPageReceiptsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMContactsClient::ListPageReceipts, request, handler, context);
+        }
+
+        /**
+         * <p>Returns the resolution path of an engagement. For example, the escalation
+         * plan engaged in an incident might target an on-call schedule that includes
+         * several contacts in a rotation, but just one contact on-call when the incident
+         * starts. The resolution path indicates the hierarchy of <i>escalation plan &gt;
+         * on-call schedule &gt; contact</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPageResolutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPageResolutionsOutcome ListPageResolutions(const Model::ListPageResolutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPageResolutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPageResolutionsRequestT = Model::ListPageResolutionsRequest>
+        Model::ListPageResolutionsOutcomeCallable ListPageResolutionsCallable(const ListPageResolutionsRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::ListPageResolutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListPageResolutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPageResolutionsRequestT = Model::ListPageResolutionsRequest>
+        void ListPageResolutionsAsync(const ListPageResolutionsRequestT& request, const ListPageResolutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::ListPageResolutions, request, handler, context);
         }
 
         /**
@@ -555,6 +740,111 @@ namespace SSMContacts
         void ListPagesByEngagementAsync(const ListPagesByEngagementRequestT& request, const ListPagesByEngagementResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMContactsClient::ListPagesByEngagement, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of shifts based on rotation configuration parameters.</p>
+         *  <p>The Incident Manager primarily uses this operation to populate the
+         * <b>Preview</b> calendar. It is not typically run by end users.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListPreviewRotationShifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListPreviewRotationShiftsOutcome ListPreviewRotationShifts(const Model::ListPreviewRotationShiftsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListPreviewRotationShifts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListPreviewRotationShiftsRequestT = Model::ListPreviewRotationShiftsRequest>
+        Model::ListPreviewRotationShiftsOutcomeCallable ListPreviewRotationShiftsCallable(const ListPreviewRotationShiftsRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::ListPreviewRotationShifts, request);
+        }
+
+        /**
+         * An Async wrapper for ListPreviewRotationShifts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListPreviewRotationShiftsRequestT = Model::ListPreviewRotationShiftsRequest>
+        void ListPreviewRotationShiftsAsync(const ListPreviewRotationShiftsRequestT& request, const ListPreviewRotationShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::ListPreviewRotationShifts, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of overrides currently specified for an on-call
+         * rotation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationOverrides">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRotationOverridesOutcome ListRotationOverrides(const Model::ListRotationOverridesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRotationOverrides that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRotationOverridesRequestT = Model::ListRotationOverridesRequest>
+        Model::ListRotationOverridesOutcomeCallable ListRotationOverridesCallable(const ListRotationOverridesRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::ListRotationOverrides, request);
+        }
+
+        /**
+         * An Async wrapper for ListRotationOverrides that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRotationOverridesRequestT = Model::ListRotationOverridesRequest>
+        void ListRotationOverridesAsync(const ListRotationOverridesRequestT& request, const ListRotationOverridesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::ListRotationOverrides, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of shifts generated by an existing rotation in the
+         * system.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotationShifts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRotationShiftsOutcome ListRotationShifts(const Model::ListRotationShiftsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRotationShifts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRotationShiftsRequestT = Model::ListRotationShiftsRequest>
+        Model::ListRotationShiftsOutcomeCallable ListRotationShiftsCallable(const ListRotationShiftsRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::ListRotationShifts, request);
+        }
+
+        /**
+         * An Async wrapper for ListRotationShifts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRotationShiftsRequestT = Model::ListRotationShiftsRequest>
+        void ListRotationShiftsAsync(const ListRotationShiftsRequestT& request, const ListRotationShiftsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::ListRotationShifts, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of on-call rotations.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/ListRotations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRotationsOutcome ListRotations(const Model::ListRotationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRotations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRotationsRequestT = Model::ListRotationsRequest>
+        Model::ListRotationsOutcomeCallable ListRotationsCallable(const ListRotationsRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::ListRotations, request);
+        }
+
+        /**
+         * An Async wrapper for ListRotations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRotationsRequestT = Model::ListRotationsRequest>
+        void ListRotationsAsync(const ListRotationsRequestT& request, const ListRotationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::ListRotations, request, handler, context);
         }
 
         /**
@@ -695,8 +985,7 @@ namespace SSMContacts
 
         /**
          * <p>Tags a contact or escalation plan. You can tag only contacts and escalation
-         * plans in the first region of your replication set. </p><p><h3>See Also:</h3>  
-         * <a
+         * plans in the first region of your replication set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/TagResource">AWS
          * API Reference</a></p>
          */
@@ -721,7 +1010,7 @@ namespace SSMContacts
         }
 
         /**
-         * <p>Removes tags from the specified resource. </p><p><h3>See Also:</h3>   <a
+         * <p>Removes tags from the specified resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -746,7 +1035,7 @@ namespace SSMContacts
         }
 
         /**
-         * <p>Updates the contact or escalation plan specified. </p><p><h3>See Also:</h3>  
+         * <p>Updates the contact or escalation plan specified.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateContact">AWS
          * API Reference</a></p>
@@ -794,6 +1083,32 @@ namespace SSMContacts
         void UpdateContactChannelAsync(const UpdateContactChannelRequestT& request, const UpdateContactChannelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SSMContactsClient::UpdateContactChannel, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the information specified for an on-call rotation.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-contacts-2021-05-03/UpdateRotation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRotationOutcome UpdateRotation(const Model::UpdateRotationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRotation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRotationRequestT = Model::UpdateRotationRequest>
+        Model::UpdateRotationOutcomeCallable UpdateRotationCallable(const UpdateRotationRequestT& request) const
+        {
+            return SubmitCallable(&SSMContactsClient::UpdateRotation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRotation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRotationRequestT = Model::UpdateRotationRequest>
+        void UpdateRotationAsync(const UpdateRotationRequestT& request, const UpdateRotationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SSMContactsClient::UpdateRotation, request, handler, context);
         }
 
 

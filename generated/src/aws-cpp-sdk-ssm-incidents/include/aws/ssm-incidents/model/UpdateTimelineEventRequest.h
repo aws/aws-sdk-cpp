@@ -37,50 +37,50 @@ namespace Model
 
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline UpdateTimelineEventRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline UpdateTimelineEventRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token ensuring that the operation is called only once with the specified
-     * details.</p>
+     * <p>A token that ensures that a client calls the operation only once with the
+     * specified details.</p>
      */
     inline UpdateTimelineEventRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
@@ -127,163 +127,163 @@ namespace Model
 
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline UpdateTimelineEventRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline UpdateTimelineEventRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline UpdateTimelineEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
 
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline const Aws::Vector<EventReference>& GetEventReferences() const{ return m_eventReferences; }
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline bool EventReferencesHasBeenSet() const { return m_eventReferencesHasBeenSet; }
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline void SetEventReferences(const Aws::Vector<EventReference>& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = value; }
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline void SetEventReferences(Aws::Vector<EventReference>&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences = std::move(value); }
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline UpdateTimelineEventRequest& WithEventReferences(const Aws::Vector<EventReference>& value) { SetEventReferences(value); return *this;}
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline UpdateTimelineEventRequest& WithEventReferences(Aws::Vector<EventReference>&& value) { SetEventReferences(std::move(value)); return *this;}
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline UpdateTimelineEventRequest& AddEventReferences(const EventReference& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(value); return *this; }
 
     /**
      * <p>Updates all existing references in a <code>TimelineEvent</code>. A reference
-     * can be an Amazon Web Services resource involved in the incident or in some way
-     * associated with it. When you specify a reference, you enter the Amazon Resource
-     * Name (ARN) of the resource. You can also specify a related item. As an example,
-     * you could specify the ARN of an Amazon DynamoDB (DynamoDB) table. The table for
-     * this example is the resource. You could also specify a Amazon CloudWatch metric
-     * for that table. The metric is the related item.</p>  <p>This update
-     * action overrides all existing references. If you want to keep existing
-     * references, you must specify them in the call. If you don't, this action removes
-     * them and enters only new references.</p> 
+     * is an Amazon Web Services resource involved or associated with the incident. To
+     * specify a reference, enter its Amazon Resource Name (ARN). You can also specify
+     * a related item associated with that resource. For example, to specify an Amazon
+     * DynamoDB (DynamoDB) table as a resource, use its ARN. You can also specify an
+     * Amazon CloudWatch metric associated with the DynamoDB table as a related
+     * item.</p>  <p>This update action overrides all existing references.
+     * If you want to keep existing references, you must specify them in the call. If
+     * you don't, this action removes any existing references and enters only new
+     * references.</p> 
      */
     inline UpdateTimelineEventRequest& AddEventReferences(EventReference&& value) { m_eventReferencesHasBeenSet = true; m_eventReferences.push_back(std::move(value)); return *this; }
 
@@ -320,49 +320,49 @@ namespace Model
 
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline void SetEventType(Aws::String&& value) { m_eventTypeHasBeenSet = true; m_eventType = std::move(value); }
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline void SetEventType(const char* value) { m_eventTypeHasBeenSet = true; m_eventType.assign(value); }
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline UpdateTimelineEventRequest& WithEventType(const Aws::String& value) { SetEventType(value); return *this;}
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline UpdateTimelineEventRequest& WithEventType(Aws::String&& value) { SetEventType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of the event. You can update events of type <code>Custom
+     * <p>The type of event. You can update events of type <code>Custom
      * Event</code>.</p>
      */
     inline UpdateTimelineEventRequest& WithEventType(const char* value) { SetEventType(value); return *this;}

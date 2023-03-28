@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/ssm-contacts/SSMContacts_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm-contacts/model/DependentEntity.h>
 #include <utility>
 
 namespace Aws
@@ -105,44 +107,93 @@ namespace Model
 
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline ConflictException& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline ConflictException& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * ype of the resource in use
+     * Type of the resource in use
      */
     inline ConflictException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline const Aws::Vector<DependentEntity>& GetDependentEntities() const{ return m_dependentEntities; }
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline bool DependentEntitiesHasBeenSet() const { return m_dependentEntitiesHasBeenSet; }
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline void SetDependentEntities(const Aws::Vector<DependentEntity>& value) { m_dependentEntitiesHasBeenSet = true; m_dependentEntities = value; }
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline void SetDependentEntities(Aws::Vector<DependentEntity>&& value) { m_dependentEntitiesHasBeenSet = true; m_dependentEntities = std::move(value); }
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline ConflictException& WithDependentEntities(const Aws::Vector<DependentEntity>& value) { SetDependentEntities(value); return *this;}
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline ConflictException& WithDependentEntities(Aws::Vector<DependentEntity>&& value) { SetDependentEntities(std::move(value)); return *this;}
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline ConflictException& AddDependentEntities(const DependentEntity& value) { m_dependentEntitiesHasBeenSet = true; m_dependentEntities.push_back(value); return *this; }
+
+    /**
+     * List of dependent entities containing information on relation type and
+     * resourceArns linked to the resource in use
+     */
+    inline ConflictException& AddDependentEntities(DependentEntity&& value) { m_dependentEntitiesHasBeenSet = true; m_dependentEntities.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -154,6 +205,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    Aws::Vector<DependentEntity> m_dependentEntities;
+    bool m_dependentEntitiesHasBeenSet = false;
   };
 
 } // namespace Model

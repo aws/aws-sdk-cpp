@@ -136,10 +136,10 @@ namespace SSMIncidents
 
         /**
          * <p>Creates a custom timeline event on the incident details page of an incident
-         * record. Timeline events are automatically created by Incident Manager, marking
-         * key moment during an incident. You can create custom timeline events to mark
-         * important events that are automatically detected by Incident
-         * Manager.</p><p><h3>See Also:</h3>   <a
+         * record. Incident Manager automatically creates timeline events that mark key
+         * moments during an incident. You can create custom timeline events to mark
+         * important events that Incident Manager can detect automatically.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-incidents-2018-05-10/CreateTimelineEvent">AWS
          * API Reference</a></p>
          */

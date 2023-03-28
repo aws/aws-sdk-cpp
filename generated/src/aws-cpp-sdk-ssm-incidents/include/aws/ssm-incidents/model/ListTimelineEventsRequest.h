@@ -38,7 +38,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -64,7 +64,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -77,7 +77,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -90,7 +90,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -103,7 +103,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -116,7 +116,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -129,7 +129,7 @@ namespace Model
 
     /**
      * <p>Filters the timeline events based on the provided conditional values. You can
-     * filter timeline events using the following keys:</p> <ul> <li> <p>
+     * filter timeline events with the following keys:</p> <ul> <li> <p>
      * <code>eventTime</code> </p> </li> <li> <p> <code>eventType</code> </p> </li>
      * </ul> <p>Note the following when deciding how to use Filters:</p> <ul> <li>
      * <p>If you don't specify a Filter, the response includes all timeline events.</p>
@@ -253,32 +253,32 @@ namespace Model
 
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline const TimelineEventSort& GetSortBy() const{ return m_sortBy; }
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline void SetSortBy(const TimelineEventSort& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline void SetSortBy(TimelineEventSort&& value) { m_sortByHasBeenSet = true; m_sortBy = std::move(value); }
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline ListTimelineEventsRequest& WithSortBy(const TimelineEventSort& value) { SetSortBy(value); return *this;}
 
     /**
-     * <p>Sort by the specified key value pair.</p>
+     * <p>Sort timeline events by the specified key value pair.</p>
      */
     inline ListTimelineEventsRequest& WithSortBy(TimelineEventSort&& value) { SetSortBy(std::move(value)); return *this;}
 

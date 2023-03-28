@@ -128,42 +128,42 @@ namespace Model
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline const Plan& GetPlan() const{ return m_plan; }
 
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline bool PlanHasBeenSet() const { return m_planHasBeenSet; }
 
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline void SetPlan(const Plan& value) { m_planHasBeenSet = true; m_plan = value; }
 
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline void SetPlan(Plan&& value) { m_planHasBeenSet = true; m_plan = std::move(value); }
 
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline UpdateContactRequest& WithPlan(const Plan& value) { SetPlan(value); return *this;}
 
     /**
      * <p>A list of stages. A contact has an engagement plan with stages for specified
      * contact channels. An escalation plan uses these stages to contact specified
-     * contacts. </p>
+     * contacts.</p>
      */
     inline UpdateContactRequest& WithPlan(Plan&& value) { SetPlan(std::move(value)); return *this;}
 

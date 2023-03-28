@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     PERSONAL,
-    ESCALATION
+    ESCALATION,
+    ONCALL_SCHEDULE
   };
 
 namespace ContactTypeMapper

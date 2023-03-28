@@ -22,6 +22,7 @@ namespace Aws
 
         static const int PERSONAL_HASH = HashingUtils::HashString("PERSONAL");
         static const int ESCALATION_HASH = HashingUtils::HashString("ESCALATION");
+        static const int ONCALL_SCHEDULE_HASH = HashingUtils::HashString("ONCALL_SCHEDULE");
 
 
         ContactType GetContactTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ESCALATION_HASH)
           {
             return ContactType::ESCALATION;
+          }
+          else if (hashCode == ONCALL_SCHEDULE_HASH)
+          {
+            return ContactType::ONCALL_SCHEDULE;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "PERSONAL";
           case ContactType::ESCALATION:
             return "ESCALATION";
+          case ContactType::ONCALL_SCHEDULE:
+            return "ONCALL_SCHEDULE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

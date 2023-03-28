@@ -33,50 +33,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(Aws::String&& value) { m_eventIdHasBeenSet = true; m_eventId = std::move(value); }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline void SetEventId(const char* value) { m_eventIdHasBeenSet = true; m_eventId.assign(value); }
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline DeleteTimelineEventRequest& WithEventId(const Aws::String& value) { SetEventId(value); return *this;}
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline DeleteTimelineEventRequest& WithEventId(Aws::String&& value) { SetEventId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the event you are updating. You can find this by using
-     * <code>ListTimelineEvents</code>.</p>
+     * <p>The ID of the event to update. You can use <code>ListTimelineEvents</code> to
+     * find an event's ID.</p>
      */
     inline DeleteTimelineEventRequest& WithEventId(const char* value) { SetEventId(value); return *this;}
 

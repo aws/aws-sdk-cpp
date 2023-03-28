@@ -197,42 +197,42 @@ namespace Model
 
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline const Aws::String& GetAcceptCode() const{ return m_acceptCode; }
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline bool AcceptCodeHasBeenSet() const { return m_acceptCodeHasBeenSet; }
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline void SetAcceptCode(const Aws::String& value) { m_acceptCodeHasBeenSet = true; m_acceptCode = value; }
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline void SetAcceptCode(Aws::String&& value) { m_acceptCodeHasBeenSet = true; m_acceptCode = std::move(value); }
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline void SetAcceptCode(const char* value) { m_acceptCodeHasBeenSet = true; m_acceptCode.assign(value); }
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline AcceptPageRequest& WithAcceptCode(const Aws::String& value) { SetAcceptCode(value); return *this;}
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline AcceptPageRequest& WithAcceptCode(Aws::String&& value) { SetAcceptCode(std::move(value)); return *this;}
 
     /**
-     * <p>The accept code is a 6-digit code used to acknowledge the page.</p>
+     * <p>A 6-digit code used to acknowledge the page.</p>
      */
     inline AcceptPageRequest& WithAcceptCode(const char* value) { SetAcceptCode(value); return *this;}
 

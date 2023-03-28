@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline const Aws::String& GetActivationCode() const{ return m_activationCode; }
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline bool ActivationCodeHasBeenSet() const { return m_activationCodeHasBeenSet; }
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline void SetActivationCode(const Aws::String& value) { m_activationCodeHasBeenSet = true; m_activationCode = value; }
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline void SetActivationCode(Aws::String&& value) { m_activationCodeHasBeenSet = true; m_activationCode = std::move(value); }
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline void SetActivationCode(const char* value) { m_activationCodeHasBeenSet = true; m_activationCode.assign(value); }
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline ActivateContactChannelRequest& WithActivationCode(const Aws::String& value) { SetActivationCode(value); return *this;}
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline ActivateContactChannelRequest& WithActivationCode(Aws::String&& value) { SetActivationCode(std::move(value)); return *this;}
 
     /**
-     * <p>The code sent to the contact channel when it was created in the contact. </p>
+     * <p>The code sent to the contact channel when it was created in the contact.</p>
      */
     inline ActivateContactChannelRequest& WithActivationCode(const char* value) { SetActivationCode(value); return *this;}
 
