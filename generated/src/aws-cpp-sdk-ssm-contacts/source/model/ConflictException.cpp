@@ -21,14 +21,16 @@ namespace Model
 ConflictException::ConflictException() : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_dependentEntitiesHasBeenSet(false)
 {
 }
 
 ConflictException::ConflictException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_dependentEntitiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,16 @@ ConflictException& ConflictException::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DependentEntities"))
+  {
+    Aws::Utils::Array<JsonView> dependentEntitiesJsonList = jsonValue.GetArray("DependentEntities");
+    for(unsigned dependentEntitiesIndex = 0; dependentEntitiesIndex < dependentEntitiesJsonList.GetLength(); ++dependentEntitiesIndex)
+    {
+      m_dependentEntities.push_back(dependentEntitiesJsonList[dependentEntitiesIndex].AsObject());
+    }
+    m_dependentEntitiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +90,17 @@ JsonValue ConflictException::Jsonize() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_dependentEntitiesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dependentEntitiesJsonList(m_dependentEntities.size());
+   for(unsigned dependentEntitiesIndex = 0; dependentEntitiesIndex < dependentEntitiesJsonList.GetLength(); ++dependentEntitiesIndex)
+   {
+     dependentEntitiesJsonList[dependentEntitiesIndex].AsObject(m_dependentEntities[dependentEntitiesIndex].Jsonize());
+   }
+   payload.WithArray("DependentEntities", std::move(dependentEntitiesJsonList));
 
   }
 

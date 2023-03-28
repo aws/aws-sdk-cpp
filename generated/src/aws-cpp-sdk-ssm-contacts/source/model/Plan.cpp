@@ -19,12 +19,14 @@ namespace Model
 {
 
 Plan::Plan() : 
-    m_stagesHasBeenSet(false)
+    m_stagesHasBeenSet(false),
+    m_rotationIdsHasBeenSet(false)
 {
 }
 
 Plan::Plan(JsonView jsonValue) : 
-    m_stagesHasBeenSet(false)
+    m_stagesHasBeenSet(false),
+    m_rotationIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ Plan& Plan::operator =(JsonView jsonValue)
       m_stages.push_back(stagesJsonList[stagesIndex].AsObject());
     }
     m_stagesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RotationIds"))
+  {
+    Aws::Utils::Array<JsonView> rotationIdsJsonList = jsonValue.GetArray("RotationIds");
+    for(unsigned rotationIdsIndex = 0; rotationIdsIndex < rotationIdsJsonList.GetLength(); ++rotationIdsIndex)
+    {
+      m_rotationIds.push_back(rotationIdsJsonList[rotationIdsIndex].AsString());
+    }
+    m_rotationIdsHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue Plan::Jsonize() const
      stagesJsonList[stagesIndex].AsObject(m_stages[stagesIndex].Jsonize());
    }
    payload.WithArray("Stages", std::move(stagesJsonList));
+
+  }
+
+  if(m_rotationIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> rotationIdsJsonList(m_rotationIds.size());
+   for(unsigned rotationIdsIndex = 0; rotationIdsIndex < rotationIdsJsonList.GetLength(); ++rotationIdsIndex)
+   {
+     rotationIdsJsonList[rotationIdsIndex].AsString(m_rotationIds[rotationIdsIndex]);
+   }
+   payload.WithArray("RotationIds", std::move(rotationIdsJsonList));
 
   }
 

@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline StopEngagementRequest& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline StopEngagementRequest& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason that you're stopping the engagement. </p>
+     * <p>The reason that you're stopping the engagement.</p>
      */
     inline StopEngagementRequest& WithReason(const char* value) { SetReason(value); return *this;}
 

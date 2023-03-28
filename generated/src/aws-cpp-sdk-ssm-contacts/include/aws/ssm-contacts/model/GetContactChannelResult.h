@@ -176,31 +176,31 @@ namespace Model
 
     /**
      * <p>The details that Incident Manager uses when trying to engage the contact
-     * channel. </p>
+     * channel.</p>
      */
     inline const ContactChannelAddress& GetDeliveryAddress() const{ return m_deliveryAddress; }
 
     /**
      * <p>The details that Incident Manager uses when trying to engage the contact
-     * channel. </p>
+     * channel.</p>
      */
     inline void SetDeliveryAddress(const ContactChannelAddress& value) { m_deliveryAddress = value; }
 
     /**
      * <p>The details that Incident Manager uses when trying to engage the contact
-     * channel. </p>
+     * channel.</p>
      */
     inline void SetDeliveryAddress(ContactChannelAddress&& value) { m_deliveryAddress = std::move(value); }
 
     /**
      * <p>The details that Incident Manager uses when trying to engage the contact
-     * channel. </p>
+     * channel.</p>
      */
     inline GetContactChannelResult& WithDeliveryAddress(const ContactChannelAddress& value) { SetDeliveryAddress(value); return *this;}
 
     /**
      * <p>The details that Incident Manager uses when trying to engage the contact
-     * channel. </p>
+     * channel.</p>
      */
     inline GetContactChannelResult& WithDeliveryAddress(ContactChannelAddress&& value) { SetDeliveryAddress(std::move(value)); return *this;}
 

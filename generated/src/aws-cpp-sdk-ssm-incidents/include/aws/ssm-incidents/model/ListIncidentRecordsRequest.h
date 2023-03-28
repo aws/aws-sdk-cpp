@@ -35,114 +35,114 @@ namespace Model
 
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline ListIncidentRecordsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline ListIncidentRecordsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline ListIncidentRecordsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>Filters the list of incident records through which you are searching. You can
+     * <p>Filters the list of incident records you want to search through. You can
      * filter on the following keys:</p> <ul> <li> <p> <code>creationTime</code> </p>
      * </li> <li> <p> <code>impact</code> </p> </li> <li> <p> <code>status</code> </p>
      * </li> <li> <p> <code>createdBy</code> </p> </li> </ul> <p>Note the following
-     * when deciding how to use Filters:</p> <ul> <li> <p>If you don't specify a
-     * Filter, the response includes all incident records.</p> </li> <li> <p>If you
-     * specify more than one filter in a single request, the response returns incident
-     * records that match all filters.</p> </li> <li> <p>If you specify a filter with
-     * more than one value, the response returns incident records that match any of the
-     * values provided.</p> </li> </ul>
+     * when when you use Filters:</p> <ul> <li> <p>If you don't specify a Filter, the
+     * response includes all incident records.</p> </li> <li> <p>If you specify more
+     * than one filter in a single request, the response returns incident records that
+     * match all filters.</p> </li> <li> <p>If you specify a filter with more than one
+     * value, the response returns incident records that match any of the values
+     * provided.</p> </li> </ul>
      */
     inline ListIncidentRecordsRequest& AddFilters(Filter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 

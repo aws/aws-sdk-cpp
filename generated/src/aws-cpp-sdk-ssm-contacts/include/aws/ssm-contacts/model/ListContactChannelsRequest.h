@@ -35,42 +35,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline const Aws::String& GetContactId() const{ return m_contactId; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline bool ContactIdHasBeenSet() const { return m_contactIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetContactId(const Aws::String& value) { m_contactIdHasBeenSet = true; m_contactId = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetContactId(Aws::String&& value) { m_contactIdHasBeenSet = true; m_contactId = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline void SetContactId(const char* value) { m_contactIdHasBeenSet = true; m_contactId.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ListContactChannelsRequest& WithContactId(const Aws::String& value) { SetContactId(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ListContactChannelsRequest& WithContactId(Aws::String&& value) { SetContactId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the contact. </p>
+     * <p>The Amazon Resource Name (ARN) of the contact.</p>
      */
     inline ListContactChannelsRequest& WithContactId(const char* value) { SetContactId(value); return *this;}
 

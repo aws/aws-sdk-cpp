@@ -144,57 +144,57 @@ namespace Model
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline const Aws::Vector<RelatedItem>& GetRelatedItems() const{ return m_relatedItems; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline bool RelatedItemsHasBeenSet() const { return m_relatedItemsHasBeenSet; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline void SetRelatedItems(const Aws::Vector<RelatedItem>& value) { m_relatedItemsHasBeenSet = true; m_relatedItems = value; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline void SetRelatedItems(Aws::Vector<RelatedItem>&& value) { m_relatedItemsHasBeenSet = true; m_relatedItems = std::move(value); }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline StartIncidentRequest& WithRelatedItems(const Aws::Vector<RelatedItem>& value) { SetRelatedItems(value); return *this;}
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline StartIncidentRequest& WithRelatedItems(Aws::Vector<RelatedItem>&& value) { SetRelatedItems(std::move(value)); return *this;}
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline StartIncidentRequest& AddRelatedItems(const RelatedItem& value) { m_relatedItemsHasBeenSet = true; m_relatedItems.push_back(value); return *this; }
 
     /**
      * <p>Add related items to the incident for other responders to use. Related items
-     * are AWS resources, external links, or files uploaded to an Amazon S3 bucket.
-     * </p>
+     * are Amazon Web Services resources, external links, or files uploaded to an
+     * Amazon S3 bucket. </p>
      */
     inline StartIncidentRequest& AddRelatedItems(RelatedItem&& value) { m_relatedItemsHasBeenSet = true; m_relatedItems.push_back(std::move(value)); return *this; }
 

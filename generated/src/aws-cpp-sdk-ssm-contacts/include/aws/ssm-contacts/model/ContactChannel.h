@@ -247,42 +247,42 @@ namespace Model
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline const ActivationStatus& GetActivationStatus() const{ return m_activationStatus; }
 
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline bool ActivationStatusHasBeenSet() const { return m_activationStatusHasBeenSet; }
 
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline void SetActivationStatus(const ActivationStatus& value) { m_activationStatusHasBeenSet = true; m_activationStatus = value; }
 
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline void SetActivationStatus(ActivationStatus&& value) { m_activationStatusHasBeenSet = true; m_activationStatus = std::move(value); }
 
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline ContactChannel& WithActivationStatus(const ActivationStatus& value) { SetActivationStatus(value); return *this;}
 
     /**
      * <p>A Boolean value describing if the contact channel has been activated or not.
      * If the contact channel isn't activated, Incident Manager can't engage the
-     * contact through it. </p>
+     * contact through it.</p>
      */
     inline ContactChannel& WithActivationStatus(ActivationStatus&& value) { SetActivationStatus(std::move(value)); return *this;}
 
