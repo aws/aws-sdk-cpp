@@ -604,13 +604,13 @@ namespace Aws
          * two reader DB instances for you, each in a different Availability Zone.</p>
          * <p>You can use the <code>ReplicationSourceIdentifier</code> parameter to create
          * an Amazon Aurora DB cluster as a read replica of another DB cluster or Amazon
-         * RDS MySQL or PostgreSQL DB instance. For more information about Amazon Aurora,
-         * see <a
+         * RDS for MySQL or PostgreSQL DB instance. For more information about Amazon
+         * Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">What
          * is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>You can
          * also use the <code>ReplicationSourceIdentifier</code> parameter to create a
-         * Multi-AZ DB cluster read replica with an RDS for PostgreSQL DB instance as the
-         * source. For more information about Multi-AZ DB clusters, see <a
+         * Multi-AZ DB cluster read replica with an RDS for MySQL or PostgreSQL DB instance
+         * as the source. For more information about Multi-AZ DB clusters, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html">Multi-AZ
          * DB cluster deployments</a> in the <i>Amazon RDS User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
@@ -789,16 +789,21 @@ namespace Aws
 
         /**
          * <p>Creates a new DB instance that acts as a read replica for an existing source
-         * DB instance. You can create a read replica for a DB instance running MySQL,
-         * MariaDB, Oracle, PostgreSQL, or SQL Server. For more information, see <a
+         * DB instance or Multi-AZ DB cluster. You can create a read replica for a DB
+         * instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. You can
+         * create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working
-         * with Read Replicas</a> in the <i>Amazon RDS User Guide</i>.</p> <p>Amazon Aurora
-         * doesn't support this operation. Call the <code>CreateDBInstance</code> operation
-         * to create a DB instance for an Aurora DB cluster.</p> <p>All read replica DB
-         * instances are created with backups disabled. All other DB instance attributes
-         * (including DB security groups and DB parameter groups) are inherited from the
-         * source DB instance, except as specified.</p>  <p>Your source DB
-         * instance must have backup retention enabled.</p> <p><h3>See
+         * with read replicas</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating
+         * from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the
+         * <i>Amazon RDS User Guide</i>.</p> <p>Amazon Aurora doesn't support this
+         * operation. Call the <code>CreateDBInstance</code> operation to create a DB
+         * instance for an Aurora DB cluster.</p> <p>All read replica DB instances are
+         * created with backups disabled. All other attributes (including DB security
+         * groups and DB parameter groups) are inherited from the source DB instance or
+         * cluster, except as specified.</p>  <p>Your source DB instance or
+         * cluster must have backup retention enabled.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CreateDBInstanceReadReplica">AWS
          * API Reference</a></p>
@@ -1196,7 +1201,9 @@ namespace Aws
          * <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When
          * you delete a DB cluster, all automated backups for that DB cluster are deleted
          * and can't be recovered. Manual DB cluster snapshots of the specified DB cluster
-         * are not deleted.</p> <p>For more information on Amazon Aurora, see <a
+         * are not deleted.</p> <p>If you're deleting a Multi-AZ DB cluster with read
+         * replicas, all cluster members are terminated and read replicas are promoted to
+         * standalone instances.</p> <p>For more information on Amazon Aurora, see <a
          * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html">
          * What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <p>For
          * more information on Multi-AZ DB clusters, see <a

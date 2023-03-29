@@ -1012,19 +1012,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1033,19 +1038,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1054,19 +1064,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1075,19 +1090,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1096,19 +1116,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1117,19 +1142,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1138,19 +1168,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */
@@ -1159,19 +1194,24 @@ namespace Model
     /**
      * <p>The version number of the database engine to which you want to upgrade.
      * Changing this parameter results in an outage. The change is applied during the
-     * next maintenance window unless <code>ApplyImmediately</code> is enabled.</p>
-     * <p>To list all of the available engine versions for Aurora MySQL version 2
-     * (5.7-compatible) and version 3 (MySQL 8.0-compatible), use the following
-     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine aurora-mysql
+     * next maintenance window unless <code>ApplyImmediately</code> is enabled. </p>
+     * <p>If the cluster that you're modifying has one or more read replicas, all
+     * replicas must be running an engine version that's the same or later than the
+     * version you specify.</p> <p>To list all of the available engine versions for
+     * Aurora MySQL version 2 (5.7-compatible) and version 3 (MySQL 8.0-compatible),
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p>
+     * <p>To list all of the available engine versions for MySQL 5.6-compatible Aurora,
+     * use the following command:</p> <p> <code>aws rds describe-db-engine-versions
+     * --engine aurora --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for Aurora PostgreSQL, use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-postgresql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To
+     * list all of the available engine versions for RDS for MySQL, use the following
+     * command:</p> <p> <code>aws rds describe-db-engine-versions --engine mysql
      * --query "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the
-     * available engine versions for Aurora PostgreSQL, use the following command:</p>
-     * <p> <code>aws rds describe-db-engine-versions --engine aurora-postgresql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for MySQL, use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p>To list all of the available
-     * engine versions for RDS for PostgreSQL, use the following command:</p> <p>
-     * <code>aws rds describe-db-engine-versions --engine postgres --query
+     * available engine versions for RDS for PostgreSQL, use the following command:</p>
+     * <p> <code>aws rds describe-db-engine-versions --engine postgres --query
      * "DBEngineVersions[].EngineVersion"</code> </p> <p>Valid for: Aurora DB clusters
      * and Multi-AZ DB clusters</p>
      */

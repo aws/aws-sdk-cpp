@@ -131,55 +131,55 @@ namespace Model
 
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResource() const{ return m_resource; }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline void SetResource(const Aws::Vector<Aws::String>& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline void SetResource(Aws::Vector<Aws::String>&& value) { m_resourceHasBeenSet = true; m_resource = std::move(value); }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline ListAccessPoliciesRequest& WithResource(const Aws::Vector<Aws::String>& value) { SetResource(value); return *this;}
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline ListAccessPoliciesRequest& WithResource(Aws::Vector<Aws::String>&& value) { SetResource(std::move(value)); return *this;}
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline ListAccessPoliciesRequest& AddResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource.push_back(value); return *this; }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline ListAccessPoliciesRequest& AddResource(Aws::String&& value) { m_resourceHasBeenSet = true; m_resource.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>Resource filters (can be collection or indexes) that policies can apply
+     * <p>Resource filters (can be collections or indexes) that policies can apply
      * to.</p>
      */
     inline ListAccessPoliciesRequest& AddResource(const char* value) { m_resourceHasBeenSet = true; m_resource.push_back(value); return *this; }

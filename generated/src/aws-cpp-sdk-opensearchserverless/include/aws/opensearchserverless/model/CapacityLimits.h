@@ -25,8 +25,9 @@ namespace Model
    * <p>The maximum capacity limits for all OpenSearch Serverless collections, in
    * OpenSearch Compute Units (OCUs). These limits are used to scale your collections
    * based on the current workload. For more information, see <a
-   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing
+   * capacity limits for Amazon OpenSearch Serverless</a>.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CapacityLimits">AWS
    * API Reference</a></p>
    */

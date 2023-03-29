@@ -1386,56 +1386,56 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetReplicationSourceIdentifier() const{ return m_replicationSourceIdentifier; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline bool ReplicationSourceIdentifierHasBeenSet() const { return m_replicationSourceIdentifierHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline void SetReplicationSourceIdentifier(const Aws::String& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline void SetReplicationSourceIdentifier(Aws::String&& value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline void SetReplicationSourceIdentifier(const char* value) { m_replicationSourceIdentifierHasBeenSet = true; m_replicationSourceIdentifier.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const Aws::String& value) { SetReplicationSourceIdentifier(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(Aws::String&& value) { SetReplicationSourceIdentifier(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the source DB instance or DB cluster if
      * this DB cluster is created as a read replica.</p> <p>Valid for: Aurora DB
-     * clusters and RDS for PostgreSQL Multi-AZ DB clusters</p>
+     * clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithReplicationSourceIdentifier(const char* value) { SetReplicationSourceIdentifier(value); return *this;}
 

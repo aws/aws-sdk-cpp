@@ -65,6 +65,7 @@ CreateDBInstanceReadReplicaRequest::CreateDBInstanceReadReplicaRequest() :
     m_enableCustomerOwnedIpHasBeenSet(false),
     m_allocatedStorage(0),
     m_allocatedStorageHasBeenSet(false),
+    m_sourceDBClusterIdentifierHasBeenSet(false),
     m_sourceRegionHasBeenSet(false)
 {
 }
@@ -278,6 +279,11 @@ Aws::String CreateDBInstanceReadReplicaRequest::SerializePayload() const
   if(m_allocatedStorageHasBeenSet)
   {
     ss << "AllocatedStorage=" << m_allocatedStorage << "&";
+  }
+
+  if(m_sourceDBClusterIdentifierHasBeenSet)
+  {
+    ss << "SourceDBClusterIdentifier=" << StringUtils::URLEncode(m_sourceDBClusterIdentifier.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

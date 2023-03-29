@@ -48,7 +48,9 @@ enum class OpenSearchServerlessErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  INTERNAL_SERVER
+  INTERNAL_SERVER,
+  OCU_LIMIT_EXCEEDED,
+  SERVICE_QUOTA_EXCEEDED
 };
 
 class AWS_OPENSEARCHSERVERLESS_API OpenSearchServerlessError : public Aws::Client::AWSError<OpenSearchServerlessErrors>

@@ -161,32 +161,44 @@ namespace Model
 
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline const SamlConfigOptions& GetSamlOptions() const{ return m_samlOptions; }
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline bool SamlOptionsHasBeenSet() const { return m_samlOptionsHasBeenSet; }
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline void SetSamlOptions(const SamlConfigOptions& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = value; }
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline void SetSamlOptions(SamlConfigOptions&& value) { m_samlOptionsHasBeenSet = true; m_samlOptions = std::move(value); }
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline CreateSecurityConfigRequest& WithSamlOptions(const SamlConfigOptions& value) { SetSamlOptions(value); return *this;}
 
     /**
-     * <p>Describes SAML options in in the form of a key-value map.</p>
+     * <p>Describes SAML options in in the form of a key-value map. This field is
+     * required if you specify <code>saml</code> for the <code>type</code>
+     * parameter.</p>
      */
     inline CreateSecurityConfigRequest& WithSamlOptions(SamlConfigOptions&& value) { SetSamlOptions(std::move(value)); return *this;}
 
