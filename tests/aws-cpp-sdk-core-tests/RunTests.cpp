@@ -13,6 +13,8 @@
 #include <sys/stat.h>
 #endif
 
+Aws::SDKOptions options;
+
 int main(int argc, char** argv)
 {
 #if defined(HAS_UMASK)
@@ -23,12 +25,12 @@ int main(int argc, char** argv)
 
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
-    Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     options.httpOptions.installSigPipeHandler = true;
     AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);
 
     Aws::Testing::InitPlatformTest(options);
+
     Aws::InitAPI(options);
     // Disable EC2 metadata in client configuration to avoid requests retrieving EC2 metadata in unit tests.
     Aws::Testing::SaveEnvironmentVariable("AWS_EC2_METADATA_DISABLED");
@@ -42,4 +44,12 @@ int main(int argc, char** argv)
     Aws::Testing::ShutdownPlatformTest(options);
 
     return retVal;
+}
+
+TEST(InitShutdown, Repeatable)
+{
+    for (unsigned ii = 0; ii < 10; ++ii) {
+        Aws::ShutdownAPI(options);
+        Aws::InitAPI(options);
+    }
 }
