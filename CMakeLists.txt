@@ -61,6 +61,7 @@ if (LEGACY_BUILD)
     option(REGENERATE_DEFAULTS "If set to ON, defaults mode configuration will be regenerated from the JSON definitions, this option involves some setup of python, java 8+, and maven" OFF)
     option(ENABLE_ZLIB_REQUEST_COMPRESSION "For services that support it, request content will be compressed. On by default if dependency available" ON)
     option(DISABLE_INTERNAL_IMDSV1_CALLS "Disables IMDSv1 internal client calls" OFF)
+    option(BUILD_BENCHMARKS "Enables building the benchmark executable" OFF)
 
     set(AWS_USER_AGENT_CUSTOMIZATION "" CACHE STRING "User agent extension")
     set(AWS_TEST_REGION "US_EAST_1" CACHE STRING "Region to target integration tests against")
