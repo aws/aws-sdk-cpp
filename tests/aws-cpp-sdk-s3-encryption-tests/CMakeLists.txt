@@ -47,7 +47,9 @@ set_compiler_warnings(${PROJECT_NAME})
 target_link_libraries(aws-cpp-sdk-s3-encryption-tests ${PROJECT_LIBS})
 
 if (AUTORUN_UNIT_TESTS)
-    ADD_CUSTOM_COMMAND( TARGET aws-cpp-sdk-s3-encryption-tests POST_BUILD COMMAND $<TARGET_FILE:aws-cpp-sdk-s3-encryption-tests>)
+    ADD_CUSTOM_COMMAND( TARGET ${PROJECT_NAME} POST_BUILD
+        COMMAND ${CMAKE_COMMAND} -E env LD_LIBRARY_PATH=$ENV{AWS_AUTORUN_LD_LIBRARY_PATH}:$ENV{LD_LIBRARY_PATH} $<TARGET_FILE:${PROJECT_NAME}>
+        ARGS "--gtest_brief=1")
 endif()
 
 if(NOT CMAKE_CROSSCOMPILING)
