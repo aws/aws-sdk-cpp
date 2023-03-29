@@ -249,7 +249,7 @@ if (LEGACY_BUILD)
         set(CRYPTO_LIBS_ABSTRACT_NAME Bcrypt)
     elseif (ENABLE_OPENSSL_ENCRYPTION)
         set(CRYPTO_LIBS ${OPENSSL_LIBRARIES} ${ZLIB_LIBRARIES})
-        set(CRYPTO_LIBS_ABSTRACT_NAME crypto ssl z)
+        set(CRYPTO_LIBS_ABSTRACT_NAME crypto z)
     endif ()
 
     if (ENABLE_CURL_CLIENT)

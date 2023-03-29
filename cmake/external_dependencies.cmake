@@ -51,7 +51,7 @@ elseif(ENABLE_OPENSSL_ENCRYPTION)
     endif()
     set(CRYPTO_LIBS ${CRYPTO_TARGET_NAME} ${ZLIB_LIBRARIES})
     # ssl depends on libcrypto
-    set(CRYPTO_LIBS_ABSTRACT_NAME ${CRYPTO_TARGET_NAME} ssl z)
+    set(CRYPTO_LIBS_ABSTRACT_NAME ${CRYPTO_TARGET_NAME} z)
 elseif(ENABLE_COMMONCRYPTO_ENCRYPTION)
     add_definitions(-DENABLE_COMMONCRYPTO_ENCRYPTION)
     message(STATUS "Encryption: CommonCrypto")
