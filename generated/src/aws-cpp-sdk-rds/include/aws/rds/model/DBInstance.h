@@ -3831,6 +3831,55 @@ namespace Model
      */
     inline DBInstance& WithCertificateDetails(CertificateDetails&& value) { SetCertificateDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline const Aws::String& GetReadReplicaSourceDBClusterIdentifier() const{ return m_readReplicaSourceDBClusterIdentifier; }
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline bool ReadReplicaSourceDBClusterIdentifierHasBeenSet() const { return m_readReplicaSourceDBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline void SetReadReplicaSourceDBClusterIdentifier(const Aws::String& value) { m_readReplicaSourceDBClusterIdentifierHasBeenSet = true; m_readReplicaSourceDBClusterIdentifier = value; }
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline void SetReadReplicaSourceDBClusterIdentifier(Aws::String&& value) { m_readReplicaSourceDBClusterIdentifierHasBeenSet = true; m_readReplicaSourceDBClusterIdentifier = std::move(value); }
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline void SetReadReplicaSourceDBClusterIdentifier(const char* value) { m_readReplicaSourceDBClusterIdentifierHasBeenSet = true; m_readReplicaSourceDBClusterIdentifier.assign(value); }
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline DBInstance& WithReadReplicaSourceDBClusterIdentifier(const Aws::String& value) { SetReadReplicaSourceDBClusterIdentifier(value); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline DBInstance& WithReadReplicaSourceDBClusterIdentifier(Aws::String&& value) { SetReadReplicaSourceDBClusterIdentifier(std::move(value)); return *this;}
+
+    /**
+     * <p>Contains the identifier of the source DB cluster if this DB instance is a
+     * read replica.</p>
+     */
+    inline DBInstance& WithReadReplicaSourceDBClusterIdentifier(const char* value) { SetReadReplicaSourceDBClusterIdentifier(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4072,6 +4121,9 @@ namespace Model
 
     CertificateDetails m_certificateDetails;
     bool m_certificateDetailsHasBeenSet = false;
+
+    Aws::String m_readReplicaSourceDBClusterIdentifier;
+    bool m_readReplicaSourceDBClusterIdentifierHasBeenSet = false;
   };
 
 } // namespace Model

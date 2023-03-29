@@ -1408,9 +1408,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
@@ -1425,9 +1427,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
@@ -1442,9 +1446,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
@@ -1459,9 +1465,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
@@ -1476,9 +1484,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
@@ -1493,9 +1503,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
@@ -1510,9 +1522,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
@@ -1527,9 +1541,11 @@ namespace Model
      * you specify only a major version, Amazon RDS will update the DB instance to the
      * default minor version if the current minor version is lower. For information
      * about valid engine versions, see <code>CreateDBInstance</code>, or call
-     * <code>DescribeDBEngineVersions</code>.</p> <p>In RDS Custom for Oracle, this
-     * parameter is supported for read replicas only if they are in the
-     * <code>PATCH_DB_FAILURE</code> lifecycle.</p>
+     * <code>DescribeDBEngineVersions</code>.</p> <p>If the instance that you're
+     * modifying is acting as a read replica, the engine version that you specify must
+     * be the same or later than the version that the source DB instance or cluster is
+     * running.</p> <p>In RDS Custom for Oracle, this parameter is supported for read
+     * replicas only if they are in the <code>PATCH_DB_FAILURE</code> lifecycle.</p>
      */
     inline ModifyDBInstanceRequest& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

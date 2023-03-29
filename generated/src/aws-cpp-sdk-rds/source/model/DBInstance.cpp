@@ -124,7 +124,8 @@ DBInstance::DBInstance() :
     m_storageThroughputHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
+    m_certificateDetailsHasBeenSet(false),
+    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false)
 {
 }
 
@@ -232,7 +233,8 @@ DBInstance::DBInstance(const XmlNode& xmlNode) :
     m_storageThroughputHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
     m_masterUserSecretHasBeenSet(false),
-    m_certificateDetailsHasBeenSet(false)
+    m_certificateDetailsHasBeenSet(false),
+    m_readReplicaSourceDBClusterIdentifierHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -801,6 +803,12 @@ DBInstance& DBInstance::operator =(const XmlNode& xmlNode)
       m_certificateDetails = certificateDetailsNode;
       m_certificateDetailsHasBeenSet = true;
     }
+    XmlNode readReplicaSourceDBClusterIdentifierNode = resultNode.FirstChild("ReadReplicaSourceDBClusterIdentifier");
+    if(!readReplicaSourceDBClusterIdentifierNode.IsNull())
+    {
+      m_readReplicaSourceDBClusterIdentifier = Aws::Utils::Xml::DecodeEscapedXmlText(readReplicaSourceDBClusterIdentifierNode.GetText());
+      m_readReplicaSourceDBClusterIdentifierHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1292,6 +1300,11 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location, uns
       m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_readReplicaSourceDBClusterIdentifierHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
+  }
+
 }
 
 void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1699,6 +1712,10 @@ void DBInstance::OutputToStream(Aws::OStream& oStream, const char* location) con
       Aws::String certificateDetailsLocationAndMember(location);
       certificateDetailsLocationAndMember += ".CertificateDetails";
       m_certificateDetails.OutputToStream(oStream, certificateDetailsLocationAndMember.c_str());
+  }
+  if(m_readReplicaSourceDBClusterIdentifierHasBeenSet)
+  {
+      oStream << location << ".ReadReplicaSourceDBClusterIdentifier=" << StringUtils::URLEncode(m_readReplicaSourceDBClusterIdentifier.c_str()) << "&";
   }
 }
 

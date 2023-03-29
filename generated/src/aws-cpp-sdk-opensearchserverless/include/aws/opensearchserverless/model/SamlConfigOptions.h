@@ -121,26 +121,22 @@ namespace Model
 
 
     /**
-     * <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440
-     * minutes (24 hours or 1 day). Default is 60 minutes.</p>
+     * <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
      */
     inline int GetSessionTimeout() const{ return m_sessionTimeout; }
 
     /**
-     * <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440
-     * minutes (24 hours or 1 day). Default is 60 minutes.</p>
+     * <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
      */
     inline bool SessionTimeoutHasBeenSet() const { return m_sessionTimeoutHasBeenSet; }
 
     /**
-     * <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440
-     * minutes (24 hours or 1 day). Default is 60 minutes.</p>
+     * <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
      */
     inline void SetSessionTimeout(int value) { m_sessionTimeoutHasBeenSet = true; m_sessionTimeout = value; }
 
     /**
-     * <p>The session timeout, in minutes. Minimum is 15 minutes and maximum is 1440
-     * minutes (24 hours or 1 day). Default is 60 minutes.</p>
+     * <p>The session timeout, in minutes. Default is 60 minutes (12 hours).</p>
      */
     inline SamlConfigOptions& WithSessionTimeout(int value) { SetSessionTimeout(value); return *this;}
 

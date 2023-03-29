@@ -824,8 +824,9 @@ namespace OpenSearchServerless
         /**
          * <p>Update the OpenSearch Serverless settings for the current Amazon Web Services
          * account. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-overview.html#serverless-scaling">Autoscaling</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-scaling.html">Managing
+         * capacity limits for Amazon OpenSearch Serverless</a>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/UpdateAccountSettings">AWS
          * API Reference</a></p>
          */
