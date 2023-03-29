@@ -279,6 +279,10 @@ function(add_sdks)
         endif()
     endif()
 
+    if (BUILD_BENCHMARKS)
+        add_subdirectory(tests/benchmark)
+    endif ()
+
     # the catch-all config needs to list all the targets in a dependency-sorted order
     include(dependencies)
     sort_links(EXPORTS)
