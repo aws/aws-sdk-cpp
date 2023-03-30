@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing Land Cloud Cover property for Landsat data
+   * collection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/LandsatCloudCoverLandInput">AWS
    * API Reference</a></p>
    */
@@ -36,43 +37,51 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The minimum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover greater than or equal to this value.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
 
     /**
-     * <p/>
+     * <p>The minimum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover greater than or equal to this value.</p>
      */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The minimum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover greater than or equal to this value.</p>
      */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
 
     /**
-     * <p/>
+     * <p>The minimum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover greater than or equal to this value.</p>
      */
     inline LandsatCloudCoverLandInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The maximum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover less than or equal to this value.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
 
     /**
-     * <p/>
+     * <p>The maximum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover less than or equal to this value.</p>
      */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The maximum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover less than or equal to this value.</p>
      */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
 
     /**
-     * <p/>
+     * <p>The maximum value for Land Cloud Cover property filter. This will filter
+     * items having Land Cloud Cover less than or equal to this value.</p>
      */
     inline LandsatCloudCoverLandInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
 

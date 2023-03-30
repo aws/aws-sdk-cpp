@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing input for resampling operation.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ResamplingConfigInput">AWS
    * API Reference</a></p>
    */
@@ -72,78 +73,93 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline const OutputResolutionResamplingInput& GetOutputResolution() const{ return m_outputResolution; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline bool OutputResolutionHasBeenSet() const { return m_outputResolutionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline void SetOutputResolution(const OutputResolutionResamplingInput& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline void SetOutputResolution(OutputResolutionResamplingInput&& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline ResamplingConfigInput& WithOutputResolution(const OutputResolutionResamplingInput& value) { SetOutputResolution(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of resampling operation.</p>
      */
     inline ResamplingConfigInput& WithOutputResolution(OutputResolutionResamplingInput&& value) { SetOutputResolution(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline ResamplingConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline ResamplingConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline ResamplingConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline ResamplingConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>Bands used in the operation. If no target bands are specified, it uses all
+     * bands available in the input.</p>
      */
     inline ResamplingConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 

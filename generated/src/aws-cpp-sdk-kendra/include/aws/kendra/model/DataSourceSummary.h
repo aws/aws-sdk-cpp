@@ -155,63 +155,63 @@ namespace Model
 
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline DataSourceSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the data source was created.</p>
+     * <p>The Unix timestamp when the data source connector was created.</p>
      */
     inline DataSourceSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline DataSourceSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the data source was lasted updated. </p>
+     * <p>The Unix timestamp when the data source connector was last updated.</p>
      */
     inline DataSourceSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

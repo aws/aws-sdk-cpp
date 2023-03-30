@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A GeoJSON object representing the geographic extent in the coordinate
+   * space.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/AreaOfInterestGeometry">AWS
    * API Reference</a></p>
    */
@@ -39,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline const MultiPolygonGeometryInput& GetMultiPolygonGeometry() const{ return m_multiPolygonGeometry; }
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline bool MultiPolygonGeometryHasBeenSet() const { return m_multiPolygonGeometryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline void SetMultiPolygonGeometry(const MultiPolygonGeometryInput& value) { m_multiPolygonGeometryHasBeenSet = true; m_multiPolygonGeometry = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline void SetMultiPolygonGeometry(MultiPolygonGeometryInput&& value) { m_multiPolygonGeometryHasBeenSet = true; m_multiPolygonGeometry = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline AreaOfInterestGeometry& WithMultiPolygonGeometry(const MultiPolygonGeometryInput& value) { SetMultiPolygonGeometry(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing the MultiPolygon Geometry.</p>
      */
     inline AreaOfInterestGeometry& WithMultiPolygonGeometry(MultiPolygonGeometryInput&& value) { SetMultiPolygonGeometry(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline const PolygonGeometryInput& GetPolygonGeometry() const{ return m_polygonGeometry; }
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline bool PolygonGeometryHasBeenSet() const { return m_polygonGeometryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline void SetPolygonGeometry(const PolygonGeometryInput& value) { m_polygonGeometryHasBeenSet = true; m_polygonGeometry = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline void SetPolygonGeometry(PolygonGeometryInput&& value) { m_polygonGeometryHasBeenSet = true; m_polygonGeometry = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline AreaOfInterestGeometry& WithPolygonGeometry(const PolygonGeometryInput& value) { SetPolygonGeometry(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing Polygon Geometry.</p>
      */
     inline AreaOfInterestGeometry& WithPolygonGeometry(PolygonGeometryInput&& value) { SetPolygonGeometry(std::move(value)); return *this;}
 

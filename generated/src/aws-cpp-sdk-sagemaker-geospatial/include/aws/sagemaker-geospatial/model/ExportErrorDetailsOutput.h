@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the errors in an export EarthObservationJob
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportErrorDetailsOutput">AWS
    * API Reference</a></p>
    */
@@ -39,73 +40,81 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline void SetMessage(Aws::String&& value) { m_messageHasBeenSet = true; m_message = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline void SetMessage(const char* value) { m_messageHasBeenSet = true; m_message.assign(value); }
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline ExportErrorDetailsOutput& WithMessage(const Aws::String& value) { SetMessage(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline ExportErrorDetailsOutput& WithMessage(Aws::String&& value) { SetMessage(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A detailed message describing the error in an export EarthObservationJob
+     * operation.</p>
      */
     inline ExportErrorDetailsOutput& WithMessage(const char* value) { SetMessage(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline const ExportErrorType& GetType() const{ return m_type; }
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline void SetType(const ExportErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline void SetType(ExportErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline ExportErrorDetailsOutput& WithType(const ExportErrorType& value) { SetType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The type of error in an export EarthObservationJob operation.</p>
      */
     inline ExportErrorDetailsOutput& WithType(ExportErrorType&& value) { SetType(std::move(value)); return *this;}
 

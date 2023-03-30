@@ -181,53 +181,53 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the FAQ was created.</p>
+     * <p>The Unix timestamp when the FAQ was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The date and time that the FAQ was created.</p>
+     * <p>The Unix timestamp when the FAQ was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>The date and time that the FAQ was created.</p>
+     * <p>The Unix timestamp when the FAQ was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>The date and time that the FAQ was created.</p>
+     * <p>The Unix timestamp when the FAQ was created.</p>
      */
     inline DescribeFaqResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the FAQ was created.</p>
+     * <p>The Unix timestamp when the FAQ was created.</p>
      */
     inline DescribeFaqResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time that the FAQ was last updated.</p>
+     * <p>The Unix timestamp when the FAQ was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The date and time that the FAQ was last updated.</p>
+     * <p>The Unix timestamp when the FAQ was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>The date and time that the FAQ was last updated.</p>
+     * <p>The Unix timestamp when the FAQ was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>The date and time that the FAQ was last updated.</p>
+     * <p>The Unix timestamp when the FAQ was last updated.</p>
      */
     inline DescribeFaqResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The date and time that the FAQ was last updated.</p>
+     * <p>The Unix timestamp when the FAQ was last updated.</p>
      */
     inline DescribeFaqResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

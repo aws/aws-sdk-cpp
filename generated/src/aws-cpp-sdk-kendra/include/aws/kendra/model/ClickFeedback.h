@@ -82,32 +82,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline const Aws::Utils::DateTime& GetClickTime() const{ return m_clickTime; }
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline bool ClickTimeHasBeenSet() const { return m_clickTimeHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline void SetClickTime(const Aws::Utils::DateTime& value) { m_clickTimeHasBeenSet = true; m_clickTime = value; }
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline void SetClickTime(Aws::Utils::DateTime&& value) { m_clickTimeHasBeenSet = true; m_clickTime = std::move(value); }
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline ClickFeedback& WithClickTime(const Aws::Utils::DateTime& value) { SetClickTime(value); return *this;}
 
     /**
-     * <p>The Unix timestamp of the date and time that the result was clicked.</p>
+     * <p>The Unix timestamp when the result was clicked.</p>
      */
     inline ClickFeedback& WithClickTime(Aws::Utils::DateTime&& value) { SetClickTime(std::move(value)); return *this;}
 

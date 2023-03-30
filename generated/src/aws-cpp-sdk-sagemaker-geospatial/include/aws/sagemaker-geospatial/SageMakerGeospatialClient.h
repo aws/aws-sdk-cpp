@@ -127,7 +127,7 @@ namespace SageMakerGeospatial
 
         /**
          * <p>Use this operation to export results of an Earth Observation job and
-         * optionally source images used as input to the EOJ to an S3
+         * optionally source images used as input to the EOJ to an Amazon S3
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportEarthObservationJob">AWS
          * API Reference</a></p>
@@ -153,7 +153,7 @@ namespace SageMakerGeospatial
         }
 
         /**
-         * <p>Use this operation to copy results of a Vector Enrichment job to an S3
+         * <p>Use this operation to copy results of a Vector Enrichment job to an Amazon S3
          * location.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportVectorEnrichmentJob">AWS
          * API Reference</a></p>

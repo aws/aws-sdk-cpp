@@ -40,81 +40,73 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline S3DataInput& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline S3DataInput& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline S3DataInput& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline const MetadataProvider& GetMetadataProvider() const{ return m_metadataProvider; }
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline bool MetadataProviderHasBeenSet() const { return m_metadataProviderHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline void SetMetadataProvider(const MetadataProvider& value) { m_metadataProviderHasBeenSet = true; m_metadataProvider = value; }
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline void SetMetadataProvider(MetadataProvider&& value) { m_metadataProviderHasBeenSet = true; m_metadataProvider = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline S3DataInput& WithMetadataProvider(const MetadataProvider& value) { SetMetadataProvider(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Metadata provider from whom the Amazon S3 data has been acquired.</p>
      */
     inline S3DataInput& WithMetadataProvider(MetadataProvider&& value) { SetMetadataProvider(std::move(value)); return *this;}
 

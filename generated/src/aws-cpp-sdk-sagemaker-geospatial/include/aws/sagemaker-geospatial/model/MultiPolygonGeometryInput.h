@@ -24,7 +24,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing Polygon Geometry based on the <a
+   * href="https://www.rfc-editor.org/rfc/rfc7946#section-3.1.6">GeoJson
+   * spec</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/MultiPolygonGeometryInput">AWS
    * API Reference</a></p>
    */

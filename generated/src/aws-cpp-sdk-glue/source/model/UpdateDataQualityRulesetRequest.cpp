@@ -14,7 +14,6 @@ using namespace Aws::Utils;
 
 UpdateDataQualityRulesetRequest::UpdateDataQualityRulesetRequest() : 
     m_nameHasBeenSet(false),
-    m_updatedNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_rulesetHasBeenSet(false)
 {
@@ -27,12 +26,6 @@ Aws::String UpdateDataQualityRulesetRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
-
-  }
-
-  if(m_updatedNameHasBeenSet)
-  {
-   payload.WithString("UpdatedName", m_updatedName);
 
   }
 

@@ -35,53 +35,53 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Approximate number of results in the response.</p>
      */
     inline int GetApproximateResultCount() const{ return m_approximateResultCount; }
 
     /**
-     * <p/>
+     * <p>Approximate number of results in the response.</p>
      */
     inline void SetApproximateResultCount(int value) { m_approximateResultCount = value; }
 
     /**
-     * <p/>
+     * <p>Approximate number of results in the response.</p>
      */
     inline SearchRasterDataCollectionResult& WithApproximateResultCount(int value) { SetApproximateResultCount(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline const Aws::Vector<ItemSource>& GetItems() const{ return m_items; }
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline void SetItems(const Aws::Vector<ItemSource>& value) { m_items = value; }
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline void SetItems(Aws::Vector<ItemSource>&& value) { m_items = std::move(value); }
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline SearchRasterDataCollectionResult& WithItems(const Aws::Vector<ItemSource>& value) { SetItems(value); return *this;}
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline SearchRasterDataCollectionResult& WithItems(Aws::Vector<ItemSource>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline SearchRasterDataCollectionResult& AddItems(const ItemSource& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>List of items matching the Raster DataCollectionQuery.</p>
      */
     inline SearchRasterDataCollectionResult& AddItems(ItemSource&& value) { m_items.push_back(std::move(value)); return *this; }
 

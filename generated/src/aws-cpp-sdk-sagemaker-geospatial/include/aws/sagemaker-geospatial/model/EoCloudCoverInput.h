@@ -22,7 +22,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the EoCloudCover filter.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/EoCloudCoverInput">AWS
    * API Reference</a></p>
    */
@@ -36,43 +37,43 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Lower bound for EoCloudCover.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
 
     /**
-     * <p/>
+     * <p>Lower bound for EoCloudCover.</p>
      */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Lower bound for EoCloudCover.</p>
      */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
 
     /**
-     * <p/>
+     * <p>Lower bound for EoCloudCover.</p>
      */
     inline EoCloudCoverInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Upper bound for EoCloudCover.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
 
     /**
-     * <p/>
+     * <p>Upper bound for EoCloudCover.</p>
      */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Upper bound for EoCloudCover.</p>
      */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
 
     /**
-     * <p/>
+     * <p>Upper bound for EoCloudCover.</p>
      */
     inline EoCloudCoverInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
 

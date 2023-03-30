@@ -39,83 +39,83 @@ namespace Model
 
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the image recipe.</p>
+     * <p>The name of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p> The description of the image recipe.</p>
+     * <p>The description of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -413,67 +413,67 @@ namespace Model
 
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p> The tags of the image recipe.</p>
+     * <p>The tags of the image recipe.</p>
      */
     inline CreateImageRecipeRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 

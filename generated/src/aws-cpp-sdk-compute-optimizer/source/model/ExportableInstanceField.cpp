@@ -73,6 +73,7 @@ namespace Aws
         static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
         static const int RecommendationOptionsMigrationEffort_HASH = HashingUtils::HashString("RecommendationOptionsMigrationEffort");
         static const int EffectiveRecommendationPreferencesExternalMetricsSource_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesExternalMetricsSource");
+        static const int InstanceState_HASH = HashingUtils::HashString("InstanceState");
 
 
         ExportableInstanceField GetExportableInstanceFieldForName(const Aws::String& name)
@@ -290,6 +291,10 @@ namespace Aws
           {
             return ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource;
           }
+          else if (hashCode == InstanceState_HASH)
+          {
+            return ExportableInstanceField::InstanceState;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -410,6 +415,8 @@ namespace Aws
             return "RecommendationOptionsMigrationEffort";
           case ExportableInstanceField::EffectiveRecommendationPreferencesExternalMetricsSource:
             return "EffectiveRecommendationPreferencesExternalMetricsSource";
+          case ExportableInstanceField::InstanceState:
+            return "InstanceState";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

@@ -29,7 +29,9 @@ VolumeConfiguration::VolumeConfiguration() :
     m_volumeBaselineThroughput(0),
     m_volumeBaselineThroughputHasBeenSet(false),
     m_volumeBurstThroughput(0),
-    m_volumeBurstThroughputHasBeenSet(false)
+    m_volumeBurstThroughputHasBeenSet(false),
+    m_rootVolume(false),
+    m_rootVolumeHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ VolumeConfiguration::VolumeConfiguration(JsonView jsonValue) :
     m_volumeBaselineThroughput(0),
     m_volumeBaselineThroughputHasBeenSet(false),
     m_volumeBurstThroughput(0),
-    m_volumeBurstThroughputHasBeenSet(false)
+    m_volumeBurstThroughputHasBeenSet(false),
+    m_rootVolume(false),
+    m_rootVolumeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -93,6 +97,13 @@ VolumeConfiguration& VolumeConfiguration::operator =(JsonView jsonValue)
     m_volumeBurstThroughputHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("rootVolume"))
+  {
+    m_rootVolume = jsonValue.GetBool("rootVolume");
+
+    m_rootVolumeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -133,6 +144,12 @@ JsonValue VolumeConfiguration::Jsonize() const
   if(m_volumeBurstThroughputHasBeenSet)
   {
    payload.WithInteger("volumeBurstThroughput", m_volumeBurstThroughput);
+
+  }
+
+  if(m_rootVolumeHasBeenSet)
+  {
+   payload.WithBool("rootVolume", m_rootVolume);
 
   }
 

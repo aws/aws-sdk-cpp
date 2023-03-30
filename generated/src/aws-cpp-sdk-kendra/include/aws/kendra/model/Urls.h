@@ -32,7 +32,7 @@ namespace Model
    * selecting websites to index, you must adhere to the <a
    * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
    * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-   * index your own webpages, or webpages that you have authorization to index.</i>
+   * index your own web pages, or web pages that you have authorization to index.</i>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/Urls">AWS API
    * Reference</a></p>
@@ -50,7 +50,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline const SeedUrlConfiguration& GetSeedUrlConfiguration() const{ return m_seedUrlConfiguration; }
@@ -59,7 +59,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline bool SeedUrlConfigurationHasBeenSet() const { return m_seedUrlConfigurationHasBeenSet; }
@@ -68,7 +68,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline void SetSeedUrlConfiguration(const SeedUrlConfiguration& value) { m_seedUrlConfigurationHasBeenSet = true; m_seedUrlConfiguration = value; }
@@ -77,7 +77,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline void SetSeedUrlConfiguration(SeedUrlConfiguration&& value) { m_seedUrlConfigurationHasBeenSet = true; m_seedUrlConfiguration = std::move(value); }
@@ -86,7 +86,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline Urls& WithSeedUrlConfiguration(const SeedUrlConfiguration& value) { SetSeedUrlConfiguration(value); return *this;}
@@ -95,7 +95,7 @@ namespace Model
      * <p>Configuration of the seed or starting point URLs of the websites you want to
      * crawl.</p> <p>You can choose to crawl only the website host names, or the
      * website host names with subdomains, or the website host names with subdomains
-     * and other domains that the webpages link to.</p> <p>You can list up to 100 seed
+     * and other domains that the web pages link to.</p> <p>You can list up to 100 seed
      * URLs.</p>
      */
     inline Urls& WithSeedUrlConfiguration(SeedUrlConfiguration&& value) { SetSeedUrlConfiguration(std::move(value)); return *this;}

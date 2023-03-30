@@ -10,6 +10,7 @@
 #include <aws/imagebuilder/model/ImageTestsConfiguration.h>
 #include <aws/imagebuilder/model/Schedule.h>
 #include <aws/imagebuilder/model/PipelineStatus.h>
+#include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -217,99 +218,107 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline const Aws::String& GetInfrastructureConfigurationArn() const{ return m_infrastructureConfigurationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline bool InfrastructureConfigurationArnHasBeenSet() const { return m_infrastructureConfigurationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline void SetInfrastructureConfigurationArn(const Aws::String& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline void SetInfrastructureConfigurationArn(Aws::String&& value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline void SetInfrastructureConfigurationArn(const char* value) { m_infrastructureConfigurationArnHasBeenSet = true; m_infrastructureConfigurationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline UpdateImagePipelineRequest& WithInfrastructureConfigurationArn(const Aws::String& value) { SetInfrastructureConfigurationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline UpdateImagePipelineRequest& WithInfrastructureConfigurationArn(Aws::String&& value) { SetInfrastructureConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that will
-     * be used to build images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the infrastructure configuration that Image
+     * Builder uses to build images that this image pipeline has updated.</p>
      */
     inline UpdateImagePipelineRequest& WithInfrastructureConfigurationArn(const char* value) { SetInfrastructureConfigurationArn(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline const Aws::String& GetDistributionConfigurationArn() const{ return m_distributionConfigurationArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline bool DistributionConfigurationArnHasBeenSet() const { return m_distributionConfigurationArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline void SetDistributionConfigurationArn(const Aws::String& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline void SetDistributionConfigurationArn(Aws::String&& value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline void SetDistributionConfigurationArn(const char* value) { m_distributionConfigurationArnHasBeenSet = true; m_distributionConfigurationArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline UpdateImagePipelineRequest& WithDistributionConfigurationArn(const Aws::String& value) { SetDistributionConfigurationArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline UpdateImagePipelineRequest& WithDistributionConfigurationArn(Aws::String&& value) { SetDistributionConfigurationArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the distribution configuration that will be
-     * used to configure and distribute images updated by this image pipeline.</p>
+     * <p>The Amazon Resource Name (ARN) of the distribution configuration that Image
+     * Builder uses to configure and distribute images that this image pipeline has
+     * updated.</p>
      */
     inline UpdateImagePipelineRequest& WithDistributionConfigurationArn(const char* value) { SetDistributionConfigurationArn(value); return *this;}
 
@@ -346,7 +355,7 @@ namespace Model
 
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -354,7 +363,7 @@ namespace Model
     inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -362,7 +371,7 @@ namespace Model
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -370,7 +379,7 @@ namespace Model
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -480,6 +489,37 @@ namespace Model
      */
     inline UpdateImagePipelineRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline UpdateImagePipelineRequest& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline UpdateImagePipelineRequest& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_imagePipelineArn;
@@ -514,6 +554,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
+
+    ImageScanningConfiguration m_imageScanningConfiguration;
+    bool m_imageScanningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

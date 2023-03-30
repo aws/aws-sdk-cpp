@@ -69,44 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline const Aws::String& GetComponentBuildVersionArn() const{ return m_componentBuildVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline void SetComponentBuildVersionArn(const Aws::String& value) { m_componentBuildVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline void SetComponentBuildVersionArn(Aws::String&& value) { m_componentBuildVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline void SetComponentBuildVersionArn(const char* value) { m_componentBuildVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline DeleteComponentResult& WithComponentBuildVersionArn(const Aws::String& value) { SetComponentBuildVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline DeleteComponentResult& WithComponentBuildVersionArn(Aws::String&& value) { SetComponentBuildVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the component build version that was
-     * deleted.</p>
+     * <p>The ARN of the component build version that this request deleted.</p>
      */
     inline DeleteComponentResult& WithComponentBuildVersionArn(const char* value) { SetComponentBuildVersionArn(value); return *this;}
 

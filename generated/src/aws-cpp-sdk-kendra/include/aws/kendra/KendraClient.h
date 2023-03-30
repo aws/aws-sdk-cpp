@@ -163,6 +163,34 @@ namespace kendra
         }
 
         /**
+         * <p>Removes one or more sets of featured results. Features results are placed
+         * above all other results for certain queries. If there's an exact match of a
+         * query, then one or more specific documents are featured in the search
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/BatchDeleteFeaturedResultsSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteFeaturedResultsSetOutcome BatchDeleteFeaturedResultsSet(const Model::BatchDeleteFeaturedResultsSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchDeleteFeaturedResultsSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchDeleteFeaturedResultsSetRequestT = Model::BatchDeleteFeaturedResultsSetRequest>
+        Model::BatchDeleteFeaturedResultsSetOutcomeCallable BatchDeleteFeaturedResultsSetCallable(const BatchDeleteFeaturedResultsSetRequestT& request) const
+        {
+            return SubmitCallable(&KendraClient::BatchDeleteFeaturedResultsSet, request);
+        }
+
+        /**
+         * An Async wrapper for BatchDeleteFeaturedResultsSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchDeleteFeaturedResultsSetRequestT = Model::BatchDeleteFeaturedResultsSetRequest>
+        void BatchDeleteFeaturedResultsSetAsync(const BatchDeleteFeaturedResultsSetRequestT& request, const BatchDeleteFeaturedResultsSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KendraClient::BatchDeleteFeaturedResultsSet, request, handler, context);
+        }
+
+        /**
          * <p>Returns the indexing status for one or more documents submitted with the <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/API_BatchPutDocument.html">
          * BatchPutDocument</a> API.</p> <p>When you use the <code>BatchPutDocument</code>
@@ -318,11 +346,8 @@ namespace kendra
          * your data source. You also specify configuration information for the data source
          * connector.</p> <p> <code>CreateDataSource</code> is a synchronous operation. The
          * operation returns 200 if the data source was successfully created. Otherwise, an
-         * exception is raised.</p> <p>Amazon S3 and <a
-         * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-custom.html">custom</a>
-         * data sources are the only supported data sources in the Amazon Web Services
-         * GovCloud (US-West) region.</p> <p>For an example of creating an index and data
-         * source using the Python SDK, see <a
+         * exception is raised.</p> <p>For an example of creating an index and data source
+         * using the Python SDK, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/gs-python.html">Getting
          * started with Python SDK</a>. For an example of creating an index and data source
          * using the Java SDK, see <a
@@ -381,9 +406,10 @@ namespace kendra
         }
 
         /**
-         * <p>Creates an new set of frequently asked question (FAQ) questions and
-         * answers.</p> <p>Adding FAQs to an index is an asynchronous operation.</p> <p>For
-         * an example of adding an FAQ to an index using Python and Java SDKs, see <a
+         * <p>Creates a set of frequently ask questions (FAQs) using a specified FAQ file
+         * stored in an Amazon S3 bucket.</p> <p>Adding FAQs to an index is an asynchronous
+         * operation.</p> <p>For an example of adding an FAQ to an index using Python and
+         * Java SDKs, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/in-creating-faq.html#using-faq-file">Using
          * your FAQ file</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFaq">AWS
@@ -407,6 +433,38 @@ namespace kendra
         void CreateFaqAsync(const CreateFaqRequestT& request, const CreateFaqResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KendraClient::CreateFaq, request, handler, context);
+        }
+
+        /**
+         * <p>Creates a set of featured results to display at the top of the search results
+         * page. Featured results are placed above all other results for certain queries.
+         * You map specific queries to specific documents for featuring in the results. If
+         * a query contains an exact match, then one or more specific documents are
+         * featured in the search results.</p> <p>You can create up to 50 sets of featured
+         * results per index. You can request to increase this limit by contacting <a
+         * href="http://aws.amazon.com/contact-us/">Support</a>.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateFeaturedResultsSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFeaturedResultsSetOutcome CreateFeaturedResultsSet(const Model::CreateFeaturedResultsSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFeaturedResultsSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFeaturedResultsSetRequestT = Model::CreateFeaturedResultsSetRequest>
+        Model::CreateFeaturedResultsSetOutcomeCallable CreateFeaturedResultsSetCallable(const CreateFeaturedResultsSetRequestT& request) const
+        {
+            return SubmitCallable(&KendraClient::CreateFeaturedResultsSet, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFeaturedResultsSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFeaturedResultsSetRequestT = Model::CreateFeaturedResultsSetRequest>
+        void CreateFeaturedResultsSetAsync(const CreateFeaturedResultsSetRequestT& request, const CreateFeaturedResultsSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KendraClient::CreateFeaturedResultsSet, request, handler, context);
         }
 
         /**
@@ -855,6 +913,34 @@ namespace kendra
         }
 
         /**
+         * <p>Gets information about a set of featured results. Features results are placed
+         * above all other results for certain queries. If there's an exact match of a
+         * query, then one or more specific documents are featured in the search
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeFeaturedResultsSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeFeaturedResultsSetOutcome DescribeFeaturedResultsSet(const Model::DescribeFeaturedResultsSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeFeaturedResultsSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeFeaturedResultsSetRequestT = Model::DescribeFeaturedResultsSetRequest>
+        Model::DescribeFeaturedResultsSetOutcomeCallable DescribeFeaturedResultsSetCallable(const DescribeFeaturedResultsSetRequestT& request) const
+        {
+            return SubmitCallable(&KendraClient::DescribeFeaturedResultsSet, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeFeaturedResultsSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeFeaturedResultsSetRequestT = Model::DescribeFeaturedResultsSetRequest>
+        void DescribeFeaturedResultsSetAsync(const DescribeFeaturedResultsSetRequestT& request, const DescribeFeaturedResultsSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KendraClient::DescribeFeaturedResultsSet, request, handler, context);
+        }
+
+        /**
          * <p>Gets information about an existing Amazon Kendra index.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/DescribeIndex">AWS
@@ -1300,6 +1386,34 @@ namespace kendra
         }
 
         /**
+         * <p>Lists all your sets of featured results for a given index. Features results
+         * are placed above all other results for certain queries. If there's an exact
+         * match of a query, then one or more specific documents are featured in the search
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/ListFeaturedResultsSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFeaturedResultsSetsOutcome ListFeaturedResultsSets(const Model::ListFeaturedResultsSetsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListFeaturedResultsSets that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListFeaturedResultsSetsRequestT = Model::ListFeaturedResultsSetsRequest>
+        Model::ListFeaturedResultsSetsOutcomeCallable ListFeaturedResultsSetsCallable(const ListFeaturedResultsSetsRequestT& request) const
+        {
+            return SubmitCallable(&KendraClient::ListFeaturedResultsSets, request);
+        }
+
+        /**
+         * An Async wrapper for ListFeaturedResultsSets that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListFeaturedResultsSetsRequestT = Model::ListFeaturedResultsSetsRequest>
+        void ListFeaturedResultsSetsAsync(const ListFeaturedResultsSetsRequestT& request, const ListFeaturedResultsSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KendraClient::ListFeaturedResultsSets, request, handler, context);
+        }
+
+        /**
          * <p>Provides a list of groups that are mapped to users before a given ordering or
          * timestamp identifier.</p> <p> <code>ListGroupsOlderThanOrderingId</code> is
          * currently not supported in the Amazon Web Services GovCloud (US-West)
@@ -1446,9 +1560,8 @@ namespace kendra
          * access to documents. For more information, see <a
          * href="https://docs.aws.amazon.com/kendra/latest/dg/user-context-filter.html">Filtering
          * on user context</a>.</p> <p>If more than five <code>PUT</code> actions for a
-         * group are currently processing, a validation exception is thrown.</p> <p>
-         * <code>PutPrincipalMapping</code> is currently not supported in the Amazon Web
-         * Services GovCloud (US-West) region.</p><p><h3>See Also:</h3>   <a
+         * group are currently processing, a validation exception is thrown.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/PutPrincipalMapping">AWS
          * API Reference</a></p>
          */
@@ -1738,6 +1851,35 @@ namespace kendra
         void UpdateExperienceAsync(const UpdateExperienceRequestT& request, const UpdateExperienceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&KendraClient::UpdateExperience, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a set of featured results. Features results are placed above all
+         * other results for certain queries. You map specific queries to specific
+         * documents for featuring in the results. If a query contains an exact match of a
+         * query, then one or more specific documents are featured in the search
+         * results.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateFeaturedResultsSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFeaturedResultsSetOutcome UpdateFeaturedResultsSet(const Model::UpdateFeaturedResultsSetRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateFeaturedResultsSet that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateFeaturedResultsSetRequestT = Model::UpdateFeaturedResultsSetRequest>
+        Model::UpdateFeaturedResultsSetOutcomeCallable UpdateFeaturedResultsSetCallable(const UpdateFeaturedResultsSetRequestT& request) const
+        {
+            return SubmitCallable(&KendraClient::UpdateFeaturedResultsSet, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateFeaturedResultsSet that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateFeaturedResultsSetRequestT = Model::UpdateFeaturedResultsSetRequest>
+        void UpdateFeaturedResultsSetAsync(const UpdateFeaturedResultsSetRequestT& request, const UpdateFeaturedResultsSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&KendraClient::UpdateFeaturedResultsSet, request, handler, context);
         }
 
         /**

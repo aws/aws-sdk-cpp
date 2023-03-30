@@ -35,32 +35,32 @@ namespace Model
 
 
     /**
-     * <p>The date-time for the beginning and end of the time window for the search
-     * metrics data.</p>
+     * <p>The Unix timestamp for the beginning and end of the time window for the
+     * search metrics data.</p>
      */
     inline const TimeRange& GetSnapShotTimeFilter() const{ return m_snapShotTimeFilter; }
 
     /**
-     * <p>The date-time for the beginning and end of the time window for the search
-     * metrics data.</p>
+     * <p>The Unix timestamp for the beginning and end of the time window for the
+     * search metrics data.</p>
      */
     inline void SetSnapShotTimeFilter(const TimeRange& value) { m_snapShotTimeFilter = value; }
 
     /**
-     * <p>The date-time for the beginning and end of the time window for the search
-     * metrics data.</p>
+     * <p>The Unix timestamp for the beginning and end of the time window for the
+     * search metrics data.</p>
      */
     inline void SetSnapShotTimeFilter(TimeRange&& value) { m_snapShotTimeFilter = std::move(value); }
 
     /**
-     * <p>The date-time for the beginning and end of the time window for the search
-     * metrics data.</p>
+     * <p>The Unix timestamp for the beginning and end of the time window for the
+     * search metrics data.</p>
      */
     inline GetSnapshotsResult& WithSnapShotTimeFilter(const TimeRange& value) { SetSnapShotTimeFilter(value); return *this;}
 
     /**
-     * <p>The date-time for the beginning and end of the time window for the search
-     * metrics data.</p>
+     * <p>The Unix timestamp for the beginning and end of the time window for the
+     * search metrics data.</p>
      */
     inline GetSnapshotsResult& WithSnapShotTimeFilter(TimeRange&& value) { SetSnapShotTimeFilter(std::move(value)); return *this;}
 

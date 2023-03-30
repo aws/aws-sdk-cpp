@@ -86,11 +86,11 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline const IndexEdition& GetEdition() const{ return m_edition; }
@@ -98,11 +98,11 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline bool EditionHasBeenSet() const { return m_editionHasBeenSet; }
@@ -110,11 +110,11 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetEdition(const IndexEdition& value) { m_editionHasBeenSet = true; m_edition = value; }
@@ -122,11 +122,11 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline void SetEdition(IndexEdition&& value) { m_editionHasBeenSet = true; m_edition = std::move(value); }
@@ -134,11 +134,11 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline CreateIndexRequest& WithEdition(const IndexEdition& value) { SetEdition(value); return *this;}
@@ -146,77 +146,77 @@ namespace Model
     /**
      * <p>The Amazon Kendra edition to use for the index. Choose
      * <code>DEVELOPER_EDITION</code> for indexes intended for development, testing, or
-     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for your production
-     * databases. Once you set the edition for an index, it can't be changed.</p>
-     * <p>The <code>Edition</code> parameter is optional. If you don't supply a value,
-     * the default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on
-     * quota limits for enterprise and developer editions, see <a
+     * proof of concept. Use <code>ENTERPRISE_EDITION</code> for production. Once you
+     * set the edition for an index, it can't be changed.</p> <p>The
+     * <code>Edition</code> parameter is optional. If you don't supply a value, the
+     * default is <code>ENTERPRISE_EDITION</code>.</p> <p>For more information on quota
+     * limits for Enterprise and Developer editions, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/quotas.html">Quotas</a>.</p>
      */
     inline CreateIndexRequest& WithEdition(IndexEdition&& value) { SetEdition(std::move(value)); return *this;}
 
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateIndexRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateIndexRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>An Identity and Access Management (IAM) role that gives Amazon Kendra
-     * permissions to access your Amazon CloudWatch logs and metrics. This is also the
-     * role you use when you call the <code>BatchPutDocument</code> API to index
-     * documents from an Amazon S3 bucket.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * Amazon CloudWatch logs and metrics. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateIndexRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
@@ -363,50 +363,66 @@ namespace Model
 
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline CreateIndexRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline CreateIndexRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline CreateIndexRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of key-value pairs that identify the index. You can use the tags to
-     * identify and organize your resources and to control access to resources.</p>
+     * <p>A list of key-value pairs that identify or categorize the index. You can also
+     * use tags to help control access to the index. Tag keys and values can consist of
+     * Unicode letters, digits, white space, and any of the following symbols: _ . : /
+     * = + - @.</p>
      */
     inline CreateIndexRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
@@ -526,43 +542,43 @@ namespace Model
 
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline const UserGroupResolutionConfiguration& GetUserGroupResolutionConfiguration() const{ return m_userGroupResolutionConfiguration; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline bool UserGroupResolutionConfigurationHasBeenSet() const { return m_userGroupResolutionConfigurationHasBeenSet; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = value; }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline void SetUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { m_userGroupResolutionConfigurationHasBeenSet = true; m_userGroupResolutionConfiguration = std::move(value); }
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(const UserGroupResolutionConfiguration& value) { SetUserGroupResolutionConfiguration(value); return *this;}
 
     /**
-     * <p>Enables fetching access levels of groups and users from an IAM Identity
-     * Center (successor to Single Sign-On) identity source. To configure this, see <a
+     * <p>Gets users and groups from IAM Identity Center (successor to Single Sign-On)
+     * identity source. To configure this, see <a
      * href="https://docs.aws.amazon.com/kendra/latest/dg/API_UserGroupResolutionConfiguration.html">UserGroupResolutionConfiguration</a>.</p>
      */
     inline CreateIndexRequest& WithUserGroupResolutionConfiguration(UserGroupResolutionConfiguration&& value) { SetUserGroupResolutionConfiguration(std::move(value)); return *this;}

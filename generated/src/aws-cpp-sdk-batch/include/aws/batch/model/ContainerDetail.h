@@ -1552,22 +1552,46 @@ namespace Model
     inline ContainerDetail& WithFargatePlatformConfiguration(FargatePlatformConfiguration&& value) { SetFargatePlatformConfiguration(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline ContainerDetail& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
-    
+    /**
+     * <p>The amount of ephemeral storage allocated for the task. This parameter is
+     * used to expand the total amount of ephemeral storage available, beyond the
+     * default amount, for tasks hosted on Fargate.</p>
+     */
     inline ContainerDetail& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 
   private:

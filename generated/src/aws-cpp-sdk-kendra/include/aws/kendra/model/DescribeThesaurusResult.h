@@ -274,53 +274,53 @@ namespace Model
 
 
     /**
-     * <p>The Unix datetime that the thesaurus was created.</p>
+     * <p>The Unix timestamp when the thesaurus was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The Unix datetime that the thesaurus was created.</p>
+     * <p>The Unix timestamp when the thesaurus was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>The Unix datetime that the thesaurus was created.</p>
+     * <p>The Unix timestamp when the thesaurus was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>The Unix datetime that the thesaurus was created.</p>
+     * <p>The Unix timestamp when the thesaurus was created.</p>
      */
     inline DescribeThesaurusResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The Unix datetime that the thesaurus was created.</p>
+     * <p>The Unix timestamp when the thesaurus was created.</p>
      */
     inline DescribeThesaurusResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Unix datetime that the thesaurus was last updated.</p>
+     * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix datetime that the thesaurus was last updated.</p>
+     * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>The Unix datetime that the thesaurus was last updated.</p>
+     * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix datetime that the thesaurus was last updated.</p>
+     * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
     inline DescribeThesaurusResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix datetime that the thesaurus was last updated.</p>
+     * <p>The Unix timestamp when the thesaurus was last updated.</p>
      */
     inline DescribeThesaurusResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

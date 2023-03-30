@@ -644,34 +644,6 @@ namespace drs
         }
 
         /**
-         * <p>Causes the data replication initiation sequence to begin immediately upon
-         * next Handshake for the specified Source Server ID, regardless of when the
-         * previous initiation started. This command will work only if the Source Server is
-         * stalled or is in a DISCONNECTED or STOPPED state.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/RetryDataReplication">AWS
-         * API Reference</a></p>
-         */
-        virtual Model::RetryDataReplicationOutcome RetryDataReplication(const Model::RetryDataReplicationRequest& request) const;
-
-        /**
-         * A Callable wrapper for RetryDataReplication that returns a future to the operation so that it can be executed in parallel to other requests.
-         */
-        template<typename RetryDataReplicationRequestT = Model::RetryDataReplicationRequest>
-        Model::RetryDataReplicationOutcomeCallable RetryDataReplicationCallable(const RetryDataReplicationRequestT& request) const
-        {
-            return SubmitCallable(&DrsClient::RetryDataReplication, request);
-        }
-
-        /**
-         * An Async wrapper for RetryDataReplication that queues the request into a thread executor and triggers associated callback when operation has finished.
-         */
-        template<typename RetryDataReplicationRequestT = Model::RetryDataReplicationRequest>
-        void RetryDataReplicationAsync(const RetryDataReplicationRequestT& request, const RetryDataReplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&DrsClient::RetryDataReplication, request, handler, context);
-        }
-
-        /**
          * <p>Start replication to origin / target region - applies only to protected
          * instances that originated in EC2. For recovery instances on target region -
          * starts replication back to origin region. For failback instances on origin

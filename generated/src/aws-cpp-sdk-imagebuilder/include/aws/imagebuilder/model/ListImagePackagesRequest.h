@@ -82,26 +82,22 @@ namespace Model
 
 
     /**
-     * <p>The maxiumum number of results to return from the ListImagePackages
-     * request.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maxiumum number of results to return from the ListImagePackages
-     * request.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maxiumum number of results to return from the ListImagePackages
-     * request.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maxiumum number of results to return from the ListImagePackages
-     * request.</p>
+     * <p>The maximum items to return in a request.</p>
      */
     inline ListImagePackagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

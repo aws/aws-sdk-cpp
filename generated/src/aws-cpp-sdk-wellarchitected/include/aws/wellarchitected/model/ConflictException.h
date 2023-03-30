@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>The resource already exists.</p><p><h3>See Also:</h3>   <a
+   * <p>The resource has already been processed, was deleted, or is too
+   * large.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ConflictException">AWS
    * API Reference</a></p>
    */

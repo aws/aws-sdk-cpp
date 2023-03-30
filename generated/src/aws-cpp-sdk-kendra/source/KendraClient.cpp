@@ -24,6 +24,7 @@
 #include <aws/kendra/model/AssociateEntitiesToExperienceRequest.h>
 #include <aws/kendra/model/AssociatePersonasToEntitiesRequest.h>
 #include <aws/kendra/model/BatchDeleteDocumentRequest.h>
+#include <aws/kendra/model/BatchDeleteFeaturedResultsSetRequest.h>
 #include <aws/kendra/model/BatchGetDocumentStatusRequest.h>
 #include <aws/kendra/model/BatchPutDocumentRequest.h>
 #include <aws/kendra/model/ClearQuerySuggestionsRequest.h>
@@ -31,6 +32,7 @@
 #include <aws/kendra/model/CreateDataSourceRequest.h>
 #include <aws/kendra/model/CreateExperienceRequest.h>
 #include <aws/kendra/model/CreateFaqRequest.h>
+#include <aws/kendra/model/CreateFeaturedResultsSetRequest.h>
 #include <aws/kendra/model/CreateIndexRequest.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/CreateThesaurusRequest.h>
@@ -46,6 +48,7 @@
 #include <aws/kendra/model/DescribeDataSourceRequest.h>
 #include <aws/kendra/model/DescribeExperienceRequest.h>
 #include <aws/kendra/model/DescribeFaqRequest.h>
+#include <aws/kendra/model/DescribeFeaturedResultsSetRequest.h>
 #include <aws/kendra/model/DescribeIndexRequest.h>
 #include <aws/kendra/model/DescribePrincipalMappingRequest.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListRequest.h>
@@ -62,6 +65,7 @@
 #include <aws/kendra/model/ListExperienceEntitiesRequest.h>
 #include <aws/kendra/model/ListExperiencesRequest.h>
 #include <aws/kendra/model/ListFaqsRequest.h>
+#include <aws/kendra/model/ListFeaturedResultsSetsRequest.h>
 #include <aws/kendra/model/ListGroupsOlderThanOrderingIdRequest.h>
 #include <aws/kendra/model/ListIndicesRequest.h>
 #include <aws/kendra/model/ListQuerySuggestionsBlockListsRequest.h>
@@ -77,6 +81,7 @@
 #include <aws/kendra/model/UpdateAccessControlConfigurationRequest.h>
 #include <aws/kendra/model/UpdateDataSourceRequest.h>
 #include <aws/kendra/model/UpdateExperienceRequest.h>
+#include <aws/kendra/model/UpdateFeaturedResultsSetRequest.h>
 #include <aws/kendra/model/UpdateIndexRequest.h>
 #include <aws/kendra/model/UpdateQuerySuggestionsBlockListRequest.h>
 #include <aws/kendra/model/UpdateQuerySuggestionsConfigRequest.h>
@@ -233,6 +238,14 @@ BatchDeleteDocumentOutcome KendraClient::BatchDeleteDocument(const BatchDeleteDo
   return BatchDeleteDocumentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+BatchDeleteFeaturedResultsSetOutcome KendraClient::BatchDeleteFeaturedResultsSet(const BatchDeleteFeaturedResultsSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchDeleteFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, BatchDeleteFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return BatchDeleteFeaturedResultsSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 BatchGetDocumentStatusOutcome KendraClient::BatchGetDocumentStatus(const BatchGetDocumentStatusRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, BatchGetDocumentStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -287,6 +300,14 @@ CreateFaqOutcome KendraClient::CreateFaq(const CreateFaqRequest& request) const
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFaq, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateFaqOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFeaturedResultsSetOutcome KendraClient::CreateFeaturedResultsSet(const CreateFeaturedResultsSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateFeaturedResultsSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateIndexOutcome KendraClient::CreateIndex(const CreateIndexRequest& request) const
@@ -407,6 +428,14 @@ DescribeFaqOutcome KendraClient::DescribeFaq(const DescribeFaqRequest& request) 
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFaq, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeFaqOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeFeaturedResultsSetOutcome KendraClient::DescribeFeaturedResultsSet(const DescribeFeaturedResultsSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeFeaturedResultsSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeIndexOutcome KendraClient::DescribeIndex(const DescribeIndexRequest& request) const
@@ -537,6 +566,14 @@ ListFaqsOutcome KendraClient::ListFaqs(const ListFaqsRequest& request) const
   return ListFaqsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListFeaturedResultsSetsOutcome KendraClient::ListFeaturedResultsSets(const ListFeaturedResultsSetsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFeaturedResultsSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFeaturedResultsSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return ListFeaturedResultsSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListGroupsOlderThanOrderingIdOutcome KendraClient::ListGroupsOlderThanOrderingId(const ListGroupsOlderThanOrderingIdRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListGroupsOlderThanOrderingId, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -655,6 +692,14 @@ UpdateExperienceOutcome KendraClient::UpdateExperience(const UpdateExperienceReq
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateExperience, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateExperienceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateFeaturedResultsSetOutcome KendraClient::UpdateFeaturedResultsSet(const UpdateFeaturedResultsSetRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateFeaturedResultsSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateFeaturedResultsSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateIndexOutcome KendraClient::UpdateIndex(const UpdateIndexRequest& request) const

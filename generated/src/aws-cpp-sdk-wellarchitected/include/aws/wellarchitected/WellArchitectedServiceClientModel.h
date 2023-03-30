@@ -25,6 +25,7 @@
 #include <aws/wellarchitected/model/CreateWorkloadShareResult.h>
 #include <aws/wellarchitected/model/ExportLensResult.h>
 #include <aws/wellarchitected/model/GetAnswerResult.h>
+#include <aws/wellarchitected/model/GetConsolidatedReportResult.h>
 #include <aws/wellarchitected/model/GetLensResult.h>
 #include <aws/wellarchitected/model/GetLensReviewResult.h>
 #include <aws/wellarchitected/model/GetLensReviewReportResult.h>
@@ -106,6 +107,7 @@ namespace Aws
       class DisassociateLensesRequest;
       class ExportLensRequest;
       class GetAnswerRequest;
+      class GetConsolidatedReportRequest;
       class GetLensRequest;
       class GetLensReviewRequest;
       class GetLensReviewReportRequest;
@@ -151,6 +153,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, WellArchitectedError> DisassociateLensesOutcome;
       typedef Aws::Utils::Outcome<ExportLensResult, WellArchitectedError> ExportLensOutcome;
       typedef Aws::Utils::Outcome<GetAnswerResult, WellArchitectedError> GetAnswerOutcome;
+      typedef Aws::Utils::Outcome<GetConsolidatedReportResult, WellArchitectedError> GetConsolidatedReportOutcome;
       typedef Aws::Utils::Outcome<GetLensResult, WellArchitectedError> GetLensOutcome;
       typedef Aws::Utils::Outcome<GetLensReviewResult, WellArchitectedError> GetLensReviewOutcome;
       typedef Aws::Utils::Outcome<GetLensReviewReportResult, WellArchitectedError> GetLensReviewReportOutcome;
@@ -196,6 +199,7 @@ namespace Aws
       typedef std::future<DisassociateLensesOutcome> DisassociateLensesOutcomeCallable;
       typedef std::future<ExportLensOutcome> ExportLensOutcomeCallable;
       typedef std::future<GetAnswerOutcome> GetAnswerOutcomeCallable;
+      typedef std::future<GetConsolidatedReportOutcome> GetConsolidatedReportOutcomeCallable;
       typedef std::future<GetLensOutcome> GetLensOutcomeCallable;
       typedef std::future<GetLensReviewOutcome> GetLensReviewOutcomeCallable;
       typedef std::future<GetLensReviewReportOutcome> GetLensReviewReportOutcomeCallable;
@@ -244,6 +248,7 @@ namespace Aws
     typedef std::function<void(const WellArchitectedClient*, const Model::DisassociateLensesRequest&, const Model::DisassociateLensesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateLensesResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::ExportLensRequest&, const Model::ExportLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ExportLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetAnswerRequest&, const Model::GetAnswerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAnswerResponseReceivedHandler;
+    typedef std::function<void(const WellArchitectedClient*, const Model::GetConsolidatedReportRequest&, const Model::GetConsolidatedReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConsolidatedReportResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensRequest&, const Model::GetLensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensReviewRequest&, const Model::GetLensReviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensReviewResponseReceivedHandler;
     typedef std::function<void(const WellArchitectedClient*, const Model::GetLensReviewReportRequest&, const Model::GetLensReviewReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLensReviewReportResponseReceivedHandler;

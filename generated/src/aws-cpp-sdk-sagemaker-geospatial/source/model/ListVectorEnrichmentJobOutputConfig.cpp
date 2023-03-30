@@ -58,7 +58,7 @@ ListVectorEnrichmentJobOutputConfig& ListVectorEnrichmentJobOutputConfig::operat
 
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
     m_creationTimeHasBeenSet = true;
   }
@@ -116,7 +116,7 @@ JsonValue ListVectorEnrichmentJobOutputConfig::Jsonize() const
 
   if(m_creationTimeHasBeenSet)
   {
-   payload.WithDouble("CreationTime", m_creationTime.SecondsWithMSPrecision());
+   payload.WithString("CreationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_durationInSecondsHasBeenSet)

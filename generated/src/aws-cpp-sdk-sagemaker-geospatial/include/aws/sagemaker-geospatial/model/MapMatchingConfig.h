@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for Map Matching operation type.</p><p><h3>See Also:</h3>
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/MapMatchingConfig">AWS
    * API Reference</a></p>
    */
@@ -38,42 +39,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline const Aws::String& GetIdAttributeName() const{ return m_idAttributeName; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline bool IdAttributeNameHasBeenSet() const { return m_idAttributeNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline void SetIdAttributeName(const Aws::String& value) { m_idAttributeNameHasBeenSet = true; m_idAttributeName = value; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline void SetIdAttributeName(Aws::String&& value) { m_idAttributeNameHasBeenSet = true; m_idAttributeName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline void SetIdAttributeName(const char* value) { m_idAttributeNameHasBeenSet = true; m_idAttributeName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline MapMatchingConfig& WithIdAttributeName(const Aws::String& value) { SetIdAttributeName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline MapMatchingConfig& WithIdAttributeName(Aws::String&& value) { SetIdAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes the identifier representing a
+     * collection of GPS points belonging to an individual trace.</p>
      */
     inline MapMatchingConfig& WithIdAttributeName(const char* value) { SetIdAttributeName(value); return *this;}
 

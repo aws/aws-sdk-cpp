@@ -81,81 +81,49 @@ namespace Model
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline AttachTrafficSourcesRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline AttachTrafficSourcesRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline AttachTrafficSourcesRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
 
     /**
      * <p>The unique identifiers of one or more traffic sources. You can specify up to
-     * 10 traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * 10 traffic sources.</p>
      */
     inline AttachTrafficSourcesRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
 

@@ -43,7 +43,9 @@ Image::Image() :
     m_buildType(BuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
     m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false)
+    m_imageSourceHasBeenSet(false),
+    m_scanStateHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -72,7 +74,9 @@ Image::Image(JsonView jsonValue) :
     m_buildType(BuildType::NOT_SET),
     m_buildTypeHasBeenSet(false),
     m_imageSource(ImageSource::NOT_SET),
-    m_imageSourceHasBeenSet(false)
+    m_imageSourceHasBeenSet(false),
+    m_scanStateHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -222,6 +226,20 @@ Image& Image::operator =(JsonView jsonValue)
     m_imageSourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanState"))
+  {
+    m_scanState = jsonValue.GetObject("scanState");
+
+    m_scanStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageScanningConfiguration"))
+  {
+    m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
+
+    m_imageScanningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -348,6 +366,18 @@ JsonValue Image::Jsonize() const
   if(m_imageSourceHasBeenSet)
   {
    payload.WithString("imageSource", ImageSourceMapper::GetNameForImageSource(m_imageSource));
+  }
+
+  if(m_scanStateHasBeenSet)
+  {
+   payload.WithObject("scanState", m_scanState.Jsonize());
+
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+
   }
 
   return payload;

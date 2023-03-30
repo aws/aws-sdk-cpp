@@ -46,7 +46,9 @@ TunnelOption::TunnelOption() :
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_ikeVersionsHasBeenSet(false),
     m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false)
+    m_logOptionsHasBeenSet(false),
+    m_enableTunnelLifecycleControl(false),
+    m_enableTunnelLifecycleControlHasBeenSet(false)
 {
 }
 
@@ -76,7 +78,9 @@ TunnelOption::TunnelOption(const XmlNode& xmlNode) :
     m_phase2DHGroupNumbersHasBeenSet(false),
     m_ikeVersionsHasBeenSet(false),
     m_startupActionHasBeenSet(false),
-    m_logOptionsHasBeenSet(false)
+    m_logOptionsHasBeenSet(false),
+    m_enableTunnelLifecycleControl(false),
+    m_enableTunnelLifecycleControlHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -249,6 +253,12 @@ TunnelOption& TunnelOption::operator =(const XmlNode& xmlNode)
       m_logOptions = logOptionsNode;
       m_logOptionsHasBeenSet = true;
     }
+    XmlNode enableTunnelLifecycleControlNode = resultNode.FirstChild("enableTunnelLifecycleControl");
+    if(!enableTunnelLifecycleControlNode.IsNull())
+    {
+      m_enableTunnelLifecycleControl = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enableTunnelLifecycleControlNode.GetText()).c_str()).c_str());
+      m_enableTunnelLifecycleControlHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -400,6 +410,11 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location, u
       m_logOptions.OutputToStream(oStream, logOptionsLocationAndMemberSs.str().c_str());
   }
 
+  if(m_enableTunnelLifecycleControlHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".EnableTunnelLifecycleControl=" << std::boolalpha << m_enableTunnelLifecycleControl << "&";
+  }
+
 }
 
 void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -527,6 +542,10 @@ void TunnelOption::OutputToStream(Aws::OStream& oStream, const char* location) c
       Aws::String logOptionsLocationAndMember(location);
       logOptionsLocationAndMember += ".LogOptions";
       m_logOptions.OutputToStream(oStream, logOptionsLocationAndMember.c_str());
+  }
+  if(m_enableTunnelLifecycleControlHasBeenSet)
+  {
+      oStream << location << ".EnableTunnelLifecycleControl=" << std::boolalpha << m_enableTunnelLifecycleControl << "&";
   }
 }
 

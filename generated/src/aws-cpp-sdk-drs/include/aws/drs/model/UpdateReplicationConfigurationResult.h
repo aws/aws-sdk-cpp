@@ -59,6 +59,25 @@ namespace Model
 
 
     /**
+     * <p>Whether to allow the AWS replication agent to automatically replicate newly
+     * added disks.</p>
+     */
+    inline bool GetAutoReplicateNewDisks() const{ return m_autoReplicateNewDisks; }
+
+    /**
+     * <p>Whether to allow the AWS replication agent to automatically replicate newly
+     * added disks.</p>
+     */
+    inline void SetAutoReplicateNewDisks(bool value) { m_autoReplicateNewDisks = value; }
+
+    /**
+     * <p>Whether to allow the AWS replication agent to automatically replicate newly
+     * added disks.</p>
+     */
+    inline UpdateReplicationConfigurationResult& WithAutoReplicateNewDisks(bool value) { SetAutoReplicateNewDisks(value); return *this;}
+
+
+    /**
      * <p>Configure bandwidth throttling for the outbound data transfer rate of the
      * Source Server in Mbps.</p>
      */
@@ -587,6 +606,8 @@ namespace Model
   private:
 
     bool m_associateDefaultSecurityGroup;
+
+    bool m_autoReplicateNewDisks;
 
     long long m_bandwidthThrottling;
 

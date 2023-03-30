@@ -22,7 +22,9 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for specifying ViewOffNadir property filter. ViewOffNadir
+   * refers to the angle from the sensor between nadir (straight down) and the scene
+   * center. Measured in degrees (0-90).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ViewOffNadirInput">AWS
    * API Reference</a></p>
    */
@@ -36,43 +38,51 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir greater than or equal to this value. </p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir greater than or equal to this value. </p>
      */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir greater than or equal to this value. </p>
      */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir greater than or equal to this value. </p>
      */
     inline ViewOffNadirInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir lesser than or equal to this value.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir lesser than or equal to this value.</p>
      */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir lesser than or equal to this value.</p>
      */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewOffNadir property filter. This filters items having
+     * ViewOffNadir lesser than or equal to this value.</p>
      */
     inline ViewOffNadirInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
 

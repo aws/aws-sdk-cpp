@@ -27,6 +27,7 @@ namespace Aws
         static const int EKS_AUDIT_LOGS_HASH = HashingUtils::HashString("EKS_AUDIT_LOGS");
         static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
         static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
+        static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
 
 
         FreeTrialFeatureResult GetFreeTrialFeatureResultForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return FreeTrialFeatureResult::RDS_LOGIN_EVENTS;
           }
+          else if (hashCode == EKS_RUNTIME_MONITORING_HASH)
+          {
+            return FreeTrialFeatureResult::EKS_RUNTIME_MONITORING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "EBS_MALWARE_PROTECTION";
           case FreeTrialFeatureResult::RDS_LOGIN_EVENTS:
             return "RDS_LOGIN_EVENTS";
+          case FreeTrialFeatureResult::EKS_RUNTIME_MONITORING:
+            return "EKS_RUNTIME_MONITORING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

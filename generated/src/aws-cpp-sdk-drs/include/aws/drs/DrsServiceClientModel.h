@@ -37,7 +37,6 @@
 #include <aws/drs/model/ListExtensibleSourceServersResult.h>
 #include <aws/drs/model/ListStagingAccountsResult.h>
 #include <aws/drs/model/ListTagsForResourceResult.h>
-#include <aws/drs/model/RetryDataReplicationResult.h>
 #include <aws/drs/model/ReverseReplicationResult.h>
 #include <aws/drs/model/StartFailbackLaunchResult.h>
 #include <aws/drs/model/StartRecoveryResult.h>
@@ -109,7 +108,6 @@ namespace Aws
       class ListExtensibleSourceServersRequest;
       class ListStagingAccountsRequest;
       class ListTagsForResourceRequest;
-      class RetryDataReplicationRequest;
       class ReverseReplicationRequest;
       class StartFailbackLaunchRequest;
       class StartRecoveryRequest;
@@ -147,7 +145,6 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListExtensibleSourceServersResult, DrsError> ListExtensibleSourceServersOutcome;
       typedef Aws::Utils::Outcome<ListStagingAccountsResult, DrsError> ListStagingAccountsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, DrsError> ListTagsForResourceOutcome;
-      typedef Aws::Utils::Outcome<RetryDataReplicationResult, DrsError> RetryDataReplicationOutcome;
       typedef Aws::Utils::Outcome<ReverseReplicationResult, DrsError> ReverseReplicationOutcome;
       typedef Aws::Utils::Outcome<StartFailbackLaunchResult, DrsError> StartFailbackLaunchOutcome;
       typedef Aws::Utils::Outcome<StartRecoveryResult, DrsError> StartRecoveryOutcome;
@@ -185,7 +182,6 @@ namespace Aws
       typedef std::future<ListExtensibleSourceServersOutcome> ListExtensibleSourceServersOutcomeCallable;
       typedef std::future<ListStagingAccountsOutcome> ListStagingAccountsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
-      typedef std::future<RetryDataReplicationOutcome> RetryDataReplicationOutcomeCallable;
       typedef std::future<ReverseReplicationOutcome> ReverseReplicationOutcomeCallable;
       typedef std::future<StartFailbackLaunchOutcome> StartFailbackLaunchOutcomeCallable;
       typedef std::future<StartRecoveryOutcome> StartRecoveryOutcomeCallable;
@@ -226,7 +222,6 @@ namespace Aws
     typedef std::function<void(const DrsClient*, const Model::ListExtensibleSourceServersRequest&, const Model::ListExtensibleSourceServersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExtensibleSourceServersResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::ListStagingAccountsRequest&, const Model::ListStagingAccountsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStagingAccountsResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
-    typedef std::function<void(const DrsClient*, const Model::RetryDataReplicationRequest&, const Model::RetryDataReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RetryDataReplicationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::ReverseReplicationRequest&, const Model::ReverseReplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReverseReplicationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::StartFailbackLaunchRequest&, const Model::StartFailbackLaunchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartFailbackLaunchResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::StartRecoveryRequest&, const Model::StartRecoveryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartRecoveryResponseReceivedHandler;

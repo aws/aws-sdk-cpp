@@ -7,8 +7,8 @@
 #include <aws/network-firewall/NetworkFirewall_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/model/StatefulEngineOptions.h>
-#include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/network-firewall/model/CustomAction.h>
 #include <aws/network-firewall/model/StatefulRuleGroupReference.h>
 #include <utility>
@@ -624,6 +624,47 @@ namespace Model
      */
     inline FirewallPolicy& WithStatefulEngineOptions(StatefulEngineOptions&& value) { SetStatefulEngineOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline const Aws::String& GetTLSInspectionConfigurationArn() const{ return m_tLSInspectionConfigurationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline bool TLSInspectionConfigurationArnHasBeenSet() const { return m_tLSInspectionConfigurationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline void SetTLSInspectionConfigurationArn(const Aws::String& value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline void SetTLSInspectionConfigurationArn(Aws::String&& value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline void SetTLSInspectionConfigurationArn(const char* value) { m_tLSInspectionConfigurationArnHasBeenSet = true; m_tLSInspectionConfigurationArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline FirewallPolicy& WithTLSInspectionConfigurationArn(const Aws::String& value) { SetTLSInspectionConfigurationArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline FirewallPolicy& WithTLSInspectionConfigurationArn(Aws::String&& value) { SetTLSInspectionConfigurationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the TLS inspection configuration.</p>
+     */
+    inline FirewallPolicy& WithTLSInspectionConfigurationArn(const char* value) { SetTLSInspectionConfigurationArn(value); return *this;}
+
   private:
 
     Aws::Vector<StatelessRuleGroupReference> m_statelessRuleGroupReferences;
@@ -646,6 +687,9 @@ namespace Model
 
     StatefulEngineOptions m_statefulEngineOptions;
     bool m_statefulEngineOptionsHasBeenSet = false;
+
+    Aws::String m_tLSInspectionConfigurationArn;
+    bool m_tLSInspectionConfigurationArnHasBeenSet = false;
   };
 
 } // namespace Model

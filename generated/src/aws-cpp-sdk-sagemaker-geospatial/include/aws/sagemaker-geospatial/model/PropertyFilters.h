@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>A list of PropertyFilter objects.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/PropertyFilters">AWS
    * API Reference</a></p>
    */
@@ -40,73 +40,73 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline const LogicalOperator& GetLogicalOperator() const{ return m_logicalOperator; }
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline bool LogicalOperatorHasBeenSet() const { return m_logicalOperatorHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline void SetLogicalOperator(const LogicalOperator& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = value; }
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline void SetLogicalOperator(LogicalOperator&& value) { m_logicalOperatorHasBeenSet = true; m_logicalOperator = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline PropertyFilters& WithLogicalOperator(const LogicalOperator& value) { SetLogicalOperator(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Logical Operator used to combine the Property Filters.</p>
      */
     inline PropertyFilters& WithLogicalOperator(LogicalOperator&& value) { SetLogicalOperator(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline const Aws::Vector<PropertyFilter>& GetProperties() const{ return m_properties; }
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline void SetProperties(const Aws::Vector<PropertyFilter>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline void SetProperties(Aws::Vector<PropertyFilter>&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline PropertyFilters& WithProperties(const Aws::Vector<PropertyFilter>& value) { SetProperties(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline PropertyFilters& WithProperties(Aws::Vector<PropertyFilter>&& value) { SetProperties(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline PropertyFilters& AddProperties(const PropertyFilter& value) { m_propertiesHasBeenSet = true; m_properties.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of Property Filters.</p>
      */
     inline PropertyFilters& AddProperties(PropertyFilter&& value) { m_propertiesHasBeenSet = true; m_properties.push_back(std::move(value)); return *this; }
 

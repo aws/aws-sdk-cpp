@@ -21,12 +21,14 @@
 #include <aws/kendra/model/AssociateEntitiesToExperienceResult.h>
 #include <aws/kendra/model/AssociatePersonasToEntitiesResult.h>
 #include <aws/kendra/model/BatchDeleteDocumentResult.h>
+#include <aws/kendra/model/BatchDeleteFeaturedResultsSetResult.h>
 #include <aws/kendra/model/BatchGetDocumentStatusResult.h>
 #include <aws/kendra/model/BatchPutDocumentResult.h>
 #include <aws/kendra/model/CreateAccessControlConfigurationResult.h>
 #include <aws/kendra/model/CreateDataSourceResult.h>
 #include <aws/kendra/model/CreateExperienceResult.h>
 #include <aws/kendra/model/CreateFaqResult.h>
+#include <aws/kendra/model/CreateFeaturedResultsSetResult.h>
 #include <aws/kendra/model/CreateIndexResult.h>
 #include <aws/kendra/model/CreateQuerySuggestionsBlockListResult.h>
 #include <aws/kendra/model/CreateThesaurusResult.h>
@@ -36,6 +38,7 @@
 #include <aws/kendra/model/DescribeDataSourceResult.h>
 #include <aws/kendra/model/DescribeExperienceResult.h>
 #include <aws/kendra/model/DescribeFaqResult.h>
+#include <aws/kendra/model/DescribeFeaturedResultsSetResult.h>
 #include <aws/kendra/model/DescribeIndexResult.h>
 #include <aws/kendra/model/DescribePrincipalMappingResult.h>
 #include <aws/kendra/model/DescribeQuerySuggestionsBlockListResult.h>
@@ -52,6 +55,7 @@
 #include <aws/kendra/model/ListExperienceEntitiesResult.h>
 #include <aws/kendra/model/ListExperiencesResult.h>
 #include <aws/kendra/model/ListFaqsResult.h>
+#include <aws/kendra/model/ListFeaturedResultsSetsResult.h>
 #include <aws/kendra/model/ListGroupsOlderThanOrderingIdResult.h>
 #include <aws/kendra/model/ListIndicesResult.h>
 #include <aws/kendra/model/ListQuerySuggestionsBlockListsResult.h>
@@ -62,6 +66,7 @@
 #include <aws/kendra/model/TagResourceResult.h>
 #include <aws/kendra/model/UntagResourceResult.h>
 #include <aws/kendra/model/UpdateAccessControlConfigurationResult.h>
+#include <aws/kendra/model/UpdateFeaturedResultsSetResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in KendraClient header */
 
@@ -106,6 +111,7 @@ namespace Aws
       class AssociateEntitiesToExperienceRequest;
       class AssociatePersonasToEntitiesRequest;
       class BatchDeleteDocumentRequest;
+      class BatchDeleteFeaturedResultsSetRequest;
       class BatchGetDocumentStatusRequest;
       class BatchPutDocumentRequest;
       class ClearQuerySuggestionsRequest;
@@ -113,6 +119,7 @@ namespace Aws
       class CreateDataSourceRequest;
       class CreateExperienceRequest;
       class CreateFaqRequest;
+      class CreateFeaturedResultsSetRequest;
       class CreateIndexRequest;
       class CreateQuerySuggestionsBlockListRequest;
       class CreateThesaurusRequest;
@@ -128,6 +135,7 @@ namespace Aws
       class DescribeDataSourceRequest;
       class DescribeExperienceRequest;
       class DescribeFaqRequest;
+      class DescribeFeaturedResultsSetRequest;
       class DescribeIndexRequest;
       class DescribePrincipalMappingRequest;
       class DescribeQuerySuggestionsBlockListRequest;
@@ -144,6 +152,7 @@ namespace Aws
       class ListExperienceEntitiesRequest;
       class ListExperiencesRequest;
       class ListFaqsRequest;
+      class ListFeaturedResultsSetsRequest;
       class ListGroupsOlderThanOrderingIdRequest;
       class ListIndicesRequest;
       class ListQuerySuggestionsBlockListsRequest;
@@ -159,6 +168,7 @@ namespace Aws
       class UpdateAccessControlConfigurationRequest;
       class UpdateDataSourceRequest;
       class UpdateExperienceRequest;
+      class UpdateFeaturedResultsSetRequest;
       class UpdateIndexRequest;
       class UpdateQuerySuggestionsBlockListRequest;
       class UpdateQuerySuggestionsConfigRequest;
@@ -169,6 +179,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateEntitiesToExperienceResult, KendraError> AssociateEntitiesToExperienceOutcome;
       typedef Aws::Utils::Outcome<AssociatePersonasToEntitiesResult, KendraError> AssociatePersonasToEntitiesOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteDocumentResult, KendraError> BatchDeleteDocumentOutcome;
+      typedef Aws::Utils::Outcome<BatchDeleteFeaturedResultsSetResult, KendraError> BatchDeleteFeaturedResultsSetOutcome;
       typedef Aws::Utils::Outcome<BatchGetDocumentStatusResult, KendraError> BatchGetDocumentStatusOutcome;
       typedef Aws::Utils::Outcome<BatchPutDocumentResult, KendraError> BatchPutDocumentOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> ClearQuerySuggestionsOutcome;
@@ -176,6 +187,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateDataSourceResult, KendraError> CreateDataSourceOutcome;
       typedef Aws::Utils::Outcome<CreateExperienceResult, KendraError> CreateExperienceOutcome;
       typedef Aws::Utils::Outcome<CreateFaqResult, KendraError> CreateFaqOutcome;
+      typedef Aws::Utils::Outcome<CreateFeaturedResultsSetResult, KendraError> CreateFeaturedResultsSetOutcome;
       typedef Aws::Utils::Outcome<CreateIndexResult, KendraError> CreateIndexOutcome;
       typedef Aws::Utils::Outcome<CreateQuerySuggestionsBlockListResult, KendraError> CreateQuerySuggestionsBlockListOutcome;
       typedef Aws::Utils::Outcome<CreateThesaurusResult, KendraError> CreateThesaurusOutcome;
@@ -191,6 +203,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDataSourceResult, KendraError> DescribeDataSourceOutcome;
       typedef Aws::Utils::Outcome<DescribeExperienceResult, KendraError> DescribeExperienceOutcome;
       typedef Aws::Utils::Outcome<DescribeFaqResult, KendraError> DescribeFaqOutcome;
+      typedef Aws::Utils::Outcome<DescribeFeaturedResultsSetResult, KendraError> DescribeFeaturedResultsSetOutcome;
       typedef Aws::Utils::Outcome<DescribeIndexResult, KendraError> DescribeIndexOutcome;
       typedef Aws::Utils::Outcome<DescribePrincipalMappingResult, KendraError> DescribePrincipalMappingOutcome;
       typedef Aws::Utils::Outcome<DescribeQuerySuggestionsBlockListResult, KendraError> DescribeQuerySuggestionsBlockListOutcome;
@@ -207,6 +220,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListExperienceEntitiesResult, KendraError> ListExperienceEntitiesOutcome;
       typedef Aws::Utils::Outcome<ListExperiencesResult, KendraError> ListExperiencesOutcome;
       typedef Aws::Utils::Outcome<ListFaqsResult, KendraError> ListFaqsOutcome;
+      typedef Aws::Utils::Outcome<ListFeaturedResultsSetsResult, KendraError> ListFeaturedResultsSetsOutcome;
       typedef Aws::Utils::Outcome<ListGroupsOlderThanOrderingIdResult, KendraError> ListGroupsOlderThanOrderingIdOutcome;
       typedef Aws::Utils::Outcome<ListIndicesResult, KendraError> ListIndicesOutcome;
       typedef Aws::Utils::Outcome<ListQuerySuggestionsBlockListsResult, KendraError> ListQuerySuggestionsBlockListsOutcome;
@@ -222,6 +236,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateAccessControlConfigurationResult, KendraError> UpdateAccessControlConfigurationOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateDataSourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateExperienceOutcome;
+      typedef Aws::Utils::Outcome<UpdateFeaturedResultsSetResult, KendraError> UpdateFeaturedResultsSetOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateIndexOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateQuerySuggestionsBlockListOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, KendraError> UpdateQuerySuggestionsConfigOutcome;
@@ -232,6 +247,7 @@ namespace Aws
       typedef std::future<AssociateEntitiesToExperienceOutcome> AssociateEntitiesToExperienceOutcomeCallable;
       typedef std::future<AssociatePersonasToEntitiesOutcome> AssociatePersonasToEntitiesOutcomeCallable;
       typedef std::future<BatchDeleteDocumentOutcome> BatchDeleteDocumentOutcomeCallable;
+      typedef std::future<BatchDeleteFeaturedResultsSetOutcome> BatchDeleteFeaturedResultsSetOutcomeCallable;
       typedef std::future<BatchGetDocumentStatusOutcome> BatchGetDocumentStatusOutcomeCallable;
       typedef std::future<BatchPutDocumentOutcome> BatchPutDocumentOutcomeCallable;
       typedef std::future<ClearQuerySuggestionsOutcome> ClearQuerySuggestionsOutcomeCallable;
@@ -239,6 +255,7 @@ namespace Aws
       typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
       typedef std::future<CreateExperienceOutcome> CreateExperienceOutcomeCallable;
       typedef std::future<CreateFaqOutcome> CreateFaqOutcomeCallable;
+      typedef std::future<CreateFeaturedResultsSetOutcome> CreateFeaturedResultsSetOutcomeCallable;
       typedef std::future<CreateIndexOutcome> CreateIndexOutcomeCallable;
       typedef std::future<CreateQuerySuggestionsBlockListOutcome> CreateQuerySuggestionsBlockListOutcomeCallable;
       typedef std::future<CreateThesaurusOutcome> CreateThesaurusOutcomeCallable;
@@ -254,6 +271,7 @@ namespace Aws
       typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
       typedef std::future<DescribeExperienceOutcome> DescribeExperienceOutcomeCallable;
       typedef std::future<DescribeFaqOutcome> DescribeFaqOutcomeCallable;
+      typedef std::future<DescribeFeaturedResultsSetOutcome> DescribeFeaturedResultsSetOutcomeCallable;
       typedef std::future<DescribeIndexOutcome> DescribeIndexOutcomeCallable;
       typedef std::future<DescribePrincipalMappingOutcome> DescribePrincipalMappingOutcomeCallable;
       typedef std::future<DescribeQuerySuggestionsBlockListOutcome> DescribeQuerySuggestionsBlockListOutcomeCallable;
@@ -270,6 +288,7 @@ namespace Aws
       typedef std::future<ListExperienceEntitiesOutcome> ListExperienceEntitiesOutcomeCallable;
       typedef std::future<ListExperiencesOutcome> ListExperiencesOutcomeCallable;
       typedef std::future<ListFaqsOutcome> ListFaqsOutcomeCallable;
+      typedef std::future<ListFeaturedResultsSetsOutcome> ListFeaturedResultsSetsOutcomeCallable;
       typedef std::future<ListGroupsOlderThanOrderingIdOutcome> ListGroupsOlderThanOrderingIdOutcomeCallable;
       typedef std::future<ListIndicesOutcome> ListIndicesOutcomeCallable;
       typedef std::future<ListQuerySuggestionsBlockListsOutcome> ListQuerySuggestionsBlockListsOutcomeCallable;
@@ -285,6 +304,7 @@ namespace Aws
       typedef std::future<UpdateAccessControlConfigurationOutcome> UpdateAccessControlConfigurationOutcomeCallable;
       typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
       typedef std::future<UpdateExperienceOutcome> UpdateExperienceOutcomeCallable;
+      typedef std::future<UpdateFeaturedResultsSetOutcome> UpdateFeaturedResultsSetOutcomeCallable;
       typedef std::future<UpdateIndexOutcome> UpdateIndexOutcomeCallable;
       typedef std::future<UpdateQuerySuggestionsBlockListOutcome> UpdateQuerySuggestionsBlockListOutcomeCallable;
       typedef std::future<UpdateQuerySuggestionsConfigOutcome> UpdateQuerySuggestionsConfigOutcomeCallable;
@@ -298,6 +318,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::AssociateEntitiesToExperienceRequest&, const Model::AssociateEntitiesToExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateEntitiesToExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::AssociatePersonasToEntitiesRequest&, const Model::AssociatePersonasToEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociatePersonasToEntitiesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchDeleteDocumentRequest&, const Model::BatchDeleteDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteDocumentResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::BatchDeleteFeaturedResultsSetRequest&, const Model::BatchDeleteFeaturedResultsSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteFeaturedResultsSetResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchGetDocumentStatusRequest&, const Model::BatchGetDocumentStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetDocumentStatusResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::BatchPutDocumentRequest&, const Model::BatchPutDocumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchPutDocumentResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ClearQuerySuggestionsRequest&, const Model::ClearQuerySuggestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ClearQuerySuggestionsResponseReceivedHandler;
@@ -305,6 +326,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateExperienceRequest&, const Model::CreateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateFaqRequest&, const Model::CreateFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFaqResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::CreateFeaturedResultsSetRequest&, const Model::CreateFeaturedResultsSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFeaturedResultsSetResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateIndexRequest&, const Model::CreateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateQuerySuggestionsBlockListRequest&, const Model::CreateQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::CreateThesaurusRequest&, const Model::CreateThesaurusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThesaurusResponseReceivedHandler;
@@ -320,6 +342,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeExperienceRequest&, const Model::DescribeExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExperienceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeFaqRequest&, const Model::DescribeFaqOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFaqResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::DescribeFeaturedResultsSetRequest&, const Model::DescribeFeaturedResultsSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFeaturedResultsSetResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeIndexRequest&, const Model::DescribeIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribePrincipalMappingRequest&, const Model::DescribePrincipalMappingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribePrincipalMappingResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::DescribeQuerySuggestionsBlockListRequest&, const Model::DescribeQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeQuerySuggestionsBlockListResponseReceivedHandler;
@@ -336,6 +359,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::ListExperienceEntitiesRequest&, const Model::ListExperienceEntitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperienceEntitiesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListExperiencesRequest&, const Model::ListExperiencesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListExperiencesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListFaqsRequest&, const Model::ListFaqsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFaqsResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::ListFeaturedResultsSetsRequest&, const Model::ListFeaturedResultsSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFeaturedResultsSetsResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListGroupsOlderThanOrderingIdRequest&, const Model::ListGroupsOlderThanOrderingIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGroupsOlderThanOrderingIdResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListIndicesRequest&, const Model::ListIndicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIndicesResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::ListQuerySuggestionsBlockListsRequest&, const Model::ListQuerySuggestionsBlockListsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListQuerySuggestionsBlockListsResponseReceivedHandler;
@@ -351,6 +375,7 @@ namespace Aws
     typedef std::function<void(const KendraClient*, const Model::UpdateAccessControlConfigurationRequest&, const Model::UpdateAccessControlConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateAccessControlConfigurationResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateExperienceRequest&, const Model::UpdateExperienceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateExperienceResponseReceivedHandler;
+    typedef std::function<void(const KendraClient*, const Model::UpdateFeaturedResultsSetRequest&, const Model::UpdateFeaturedResultsSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFeaturedResultsSetResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateIndexRequest&, const Model::UpdateIndexOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIndexResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateQuerySuggestionsBlockListRequest&, const Model::UpdateQuerySuggestionsBlockListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuerySuggestionsBlockListResponseReceivedHandler;
     typedef std::function<void(const KendraClient*, const Model::UpdateQuerySuggestionsConfigRequest&, const Model::UpdateQuerySuggestionsConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateQuerySuggestionsConfigResponseReceivedHandler;

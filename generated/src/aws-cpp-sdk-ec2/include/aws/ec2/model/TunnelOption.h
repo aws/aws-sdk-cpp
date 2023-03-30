@@ -817,6 +817,27 @@ namespace Model
      */
     inline TunnelOption& WithLogOptions(VpnTunnelLogOptions&& value) { SetLogOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Status of tunnel endpoint lifecycle control feature.</p>
+     */
+    inline bool GetEnableTunnelLifecycleControl() const{ return m_enableTunnelLifecycleControl; }
+
+    /**
+     * <p>Status of tunnel endpoint lifecycle control feature.</p>
+     */
+    inline bool EnableTunnelLifecycleControlHasBeenSet() const { return m_enableTunnelLifecycleControlHasBeenSet; }
+
+    /**
+     * <p>Status of tunnel endpoint lifecycle control feature.</p>
+     */
+    inline void SetEnableTunnelLifecycleControl(bool value) { m_enableTunnelLifecycleControlHasBeenSet = true; m_enableTunnelLifecycleControl = value; }
+
+    /**
+     * <p>Status of tunnel endpoint lifecycle control feature.</p>
+     */
+    inline TunnelOption& WithEnableTunnelLifecycleControl(bool value) { SetEnableTunnelLifecycleControl(value); return *this;}
+
   private:
 
     Aws::String m_outsideIpAddress;
@@ -878,6 +899,9 @@ namespace Model
 
     VpnTunnelLogOptions m_logOptions;
     bool m_logOptionsHasBeenSet = false;
+
+    bool m_enableTunnelLifecycleControl;
+    bool m_enableTunnelLifecycleControlHasBeenSet = false;
   };
 
 } // namespace Model

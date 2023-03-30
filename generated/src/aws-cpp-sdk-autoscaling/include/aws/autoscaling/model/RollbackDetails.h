@@ -171,22 +171,46 @@ namespace Model
     inline RollbackDetails& WithInstancesToUpdateOnRollback(int value) { SetInstancesToUpdateOnRollback(value); return *this;}
 
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline const InstanceRefreshProgressDetails& GetProgressDetailsOnRollback() const{ return m_progressDetailsOnRollback; }
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline bool ProgressDetailsOnRollbackHasBeenSet() const { return m_progressDetailsOnRollbackHasBeenSet; }
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline void SetProgressDetailsOnRollback(const InstanceRefreshProgressDetails& value) { m_progressDetailsOnRollbackHasBeenSet = true; m_progressDetailsOnRollback = value; }
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline void SetProgressDetailsOnRollback(InstanceRefreshProgressDetails&& value) { m_progressDetailsOnRollbackHasBeenSet = true; m_progressDetailsOnRollback = std::move(value); }
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline RollbackDetails& WithProgressDetailsOnRollback(const InstanceRefreshProgressDetails& value) { SetProgressDetailsOnRollback(value); return *this;}
 
-    
+    /**
+     * <p>Reports progress on replacing instances in an Auto Scaling group that has a
+     * warm pool. This includes separate details for instances in the warm pool and
+     * instances in the Auto Scaling group (the live pool).</p>
+     */
     inline RollbackDetails& WithProgressDetailsOnRollback(InstanceRefreshProgressDetails&& value) { SetProgressDetailsOnRollback(std::move(value)); return *this;}
 
   private:

@@ -412,82 +412,90 @@ namespace Model
 
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on.</p> <p>The
-     * valid values are <code>EC2</code> (default), <code>ELB</code>, and
-     * <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code> health check type is
-     * reserved for use with VPC Lattice, which is in preview release and is subject to
-     * change.</p>
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
+     * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
+     * Guide</i>.</p>
      */
     inline UpdateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 

@@ -40,63 +40,69 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline const VectorEnrichmentJobDataSourceConfigInput& GetDataSourceConfig() const{ return m_dataSourceConfig; }
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline bool DataSourceConfigHasBeenSet() const { return m_dataSourceConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline void SetDataSourceConfig(const VectorEnrichmentJobDataSourceConfigInput& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = value; }
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline void SetDataSourceConfig(VectorEnrichmentJobDataSourceConfigInput&& value) { m_dataSourceConfigHasBeenSet = true; m_dataSourceConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline VectorEnrichmentJobInputConfig& WithDataSourceConfig(const VectorEnrichmentJobDataSourceConfigInput& value) { SetDataSourceConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure for the data source that represents the storage type of
+     * the input data objects.</p>
      */
     inline VectorEnrichmentJobInputConfig& WithDataSourceConfig(VectorEnrichmentJobDataSourceConfigInput&& value) { SetDataSourceConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline const VectorEnrichmentJobDocumentType& GetDocumentType() const{ return m_documentType; }
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline void SetDocumentType(const VectorEnrichmentJobDocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline void SetDocumentType(VectorEnrichmentJobDocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline VectorEnrichmentJobInputConfig& WithDocumentType(const VectorEnrichmentJobDocumentType& value) { SetDocumentType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure that defines the data source file type.</p>
      */
     inline VectorEnrichmentJobInputConfig& WithDocumentType(VectorEnrichmentJobDocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 

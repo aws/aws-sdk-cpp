@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Image state shows the image status and the reason for that
-   * status.</p><p><h3>See Also:</h3>   <a
+   * <p>Image status and the reason for that status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ImageState">AWS
    * API Reference</a></p>
    */
@@ -71,42 +70,42 @@ namespace Model
 
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline void SetReason(Aws::String&& value) { m_reasonHasBeenSet = true; m_reason = std::move(value); }
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline void SetReason(const char* value) { m_reasonHasBeenSet = true; m_reason.assign(value); }
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline ImageState& WithReason(const Aws::String& value) { SetReason(value); return *this;}
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline ImageState& WithReason(Aws::String&& value) { SetReason(std::move(value)); return *this;}
 
     /**
-     * <p>The reason for the image's status.</p>
+     * <p>The reason for the status of the image.</p>
      */
     inline ImageState& WithReason(const char* value) { SetReason(value); return *this;}
 

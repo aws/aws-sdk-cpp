@@ -193,42 +193,50 @@ namespace Model
 
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline const Aws::String& GetHelpfulResourceDisplayText() const{ return m_helpfulResourceDisplayText; }
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline bool HelpfulResourceDisplayTextHasBeenSet() const { return m_helpfulResourceDisplayTextHasBeenSet; }
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline void SetHelpfulResourceDisplayText(const Aws::String& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = value; }
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline void SetHelpfulResourceDisplayText(Aws::String&& value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText = std::move(value); }
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline void SetHelpfulResourceDisplayText(const char* value) { m_helpfulResourceDisplayTextHasBeenSet = true; m_helpfulResourceDisplayText.assign(value); }
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline Answer& WithHelpfulResourceDisplayText(const Aws::String& value) { SetHelpfulResourceDisplayText(value); return *this;}
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline Answer& WithHelpfulResourceDisplayText(Aws::String&& value) { SetHelpfulResourceDisplayText(std::move(value)); return *this;}
 
     /**
-     * <p>The helpful resource text to be displayed.</p>
+     * <p>The helpful resource text to be displayed for a custom lens.</p> <p>This
+     * field does not apply to Amazon Web Services official lenses.</p>
      */
     inline Answer& WithHelpfulResourceDisplayText(const char* value) { SetHelpfulResourceDisplayText(value); return *this;}
 

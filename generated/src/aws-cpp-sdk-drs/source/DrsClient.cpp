@@ -42,7 +42,6 @@
 #include <aws/drs/model/ListExtensibleSourceServersRequest.h>
 #include <aws/drs/model/ListStagingAccountsRequest.h>
 #include <aws/drs/model/ListTagsForResourceRequest.h>
-#include <aws/drs/model/RetryDataReplicationRequest.h>
 #include <aws/drs/model/ReverseReplicationRequest.h>
 #include <aws/drs/model/StartFailbackLaunchRequest.h>
 #include <aws/drs/model/StartRecoveryRequest.h>
@@ -377,15 +376,6 @@ ListTagsForResourceOutcome DrsClient::ListTagsForResource(const ListTagsForResou
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
-}
-
-RetryDataReplicationOutcome DrsClient::RetryDataReplication(const RetryDataReplicationRequest& request) const
-{
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RetryDataReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
-  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RetryDataReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
-  endpointResolutionOutcome.GetResult().AddPathSegments("/RetryDataReplication");
-  return RetryDataReplicationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ReverseReplicationOutcome DrsClient::ReverseReplication(const ReverseReplicationRequest& request) const

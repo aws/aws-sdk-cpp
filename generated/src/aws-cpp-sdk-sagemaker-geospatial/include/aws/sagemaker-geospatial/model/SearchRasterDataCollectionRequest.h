@@ -124,32 +124,74 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline const RasterDataCollectionQueryWithBandFilterInput& GetRasterDataCollectionQuery() const{ return m_rasterDataCollectionQuery; }
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline bool RasterDataCollectionQueryHasBeenSet() const { return m_rasterDataCollectionQueryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline void SetRasterDataCollectionQuery(const RasterDataCollectionQueryWithBandFilterInput& value) { m_rasterDataCollectionQueryHasBeenSet = true; m_rasterDataCollectionQuery = value; }
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline void SetRasterDataCollectionQuery(RasterDataCollectionQueryWithBandFilterInput&& value) { m_rasterDataCollectionQueryHasBeenSet = true; m_rasterDataCollectionQuery = std::move(value); }
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline SearchRasterDataCollectionRequest& WithRasterDataCollectionQuery(const RasterDataCollectionQueryWithBandFilterInput& value) { SetRasterDataCollectionQuery(value); return *this;}
 
     /**
-     * <p/>
+     * <p>RasterDataCollectionQuery consisting of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_AreaOfInterest.html">AreaOfInterest(AOI)</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_PropertyFilter.html">PropertyFilters</a>
+     * and <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_TimeRangeFilterInput.html">TimeRangeFilterInput</a>
+     * used in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_geospatial_SearchRasterDataCollection.html">SearchRasterDataCollection</a>.</p>
      */
     inline SearchRasterDataCollectionRequest& WithRasterDataCollectionQuery(RasterDataCollectionQueryWithBandFilterInput&& value) { SetRasterDataCollectionQuery(std::move(value)); return *this;}
 

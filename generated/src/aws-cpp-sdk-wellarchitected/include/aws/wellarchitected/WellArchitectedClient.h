@@ -113,9 +113,14 @@ namespace WellArchitected
 
         /**
          * <p>Create a lens share.</p> <p>The owner of a lens can share it with other
-         * Amazon Web Services accounts, IAM users, an organization, and organizational
-         * units (OUs) in the same Amazon Web Services Region. Shared access to a lens is
-         * not removed until the lens invitation is deleted.</p>  <p>
+         * Amazon Web Services accounts, users, an organization, and organizational units
+         * (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web
+         * Services (Amazon Web Services Official Content) cannot be shared.</p> <p> Shared
+         * access to a lens is not removed until the lens invitation is deleted.</p> <p>If
+         * you share a lens with an organization or OU, all accounts in the organization or
+         * OU are granted access to the lens.</p> <p>For more information, see <a
+         * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html">Sharing
+         * a custom lens</a> in the <i>Well-Architected Tool User Guide</i>.</p>  <p>
          * <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web
          * Services accounts, you acknowledge that Amazon Web Services will make your
          * custom lenses available to those other accounts. Those other accounts may
@@ -147,9 +152,10 @@ namespace WellArchitected
 
         /**
          * <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p>
-         * <p>After a lens has been imported, create a new lens version to publish it. The
-         * owner of a lens can share the lens with other Amazon Web Services accounts and
-         * IAM users in the same Amazon Web Services Region. Only the owner of a lens can
+         * <p>Use this operation to publish a new lens version after you have imported a
+         * lens. The <code>LensAlias</code> is used to identify the lens to be published.
+         * The owner of a lens can share the lens with other Amazon Web Services accounts
+         * and users in the same Amazon Web Services Region. Only the owner of a lens can
          * delete it. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateLensVersion">AWS
          * API Reference</a></p>
@@ -201,12 +207,15 @@ namespace WellArchitected
 
         /**
          * <p>Create a new workload.</p> <p>The owner of a workload can share the workload
-         * with other Amazon Web Services accounts, IAM users, an organization, and
+         * with other Amazon Web Services accounts, users, an organization, and
          * organizational units (OUs) in the same Amazon Web Services Region. Only the
          * owner of a workload can delete it.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/define-workload.html">Defining
-         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p> 
+         * <p>Either <code>AwsRegions</code>, <code>NonAwsRegions</code>, or both must be
+         * specified when creating a workload.</p> <p>You also must specify
+         * <code>ReviewOwner</code>, even though the parameter is listed as not being
+         * required in the following section. </p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkload">AWS
          * API Reference</a></p>
          */
@@ -232,11 +241,13 @@ namespace WellArchitected
 
         /**
          * <p>Create a workload share.</p> <p>The owner of a workload can share it with
-         * other Amazon Web Services accounts and IAM users in the same Amazon Web Services
+         * other Amazon Web Services accounts and users in the same Amazon Web Services
          * Region. Shared access to a workload is not removed until the workload invitation
-         * is deleted.</p> <p>For more information, see <a
+         * is deleted.</p> <p>If you share a workload with an organization or OU, all
+         * accounts in the organization or OU are granted access to the workload.</p>
+         * <p>For more information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing
-         * a Workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
+         * a workload</a> in the <i>Well-Architected Tool User Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/CreateWorkloadShare">AWS
          * API Reference</a></p>
@@ -263,15 +274,15 @@ namespace WellArchitected
 
         /**
          * <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After
-         * the lens is deleted, Amazon Web Services accounts and IAM users that you shared
-         * the lens with can continue to use it, but they will no longer be able to apply
-         * it to new workloads. </p>  <p> <b>Disclaimer</b> </p> <p>By sharing your
-         * custom lenses with other Amazon Web Services accounts, you acknowledge that
-         * Amazon Web Services will make your custom lenses available to those other
-         * accounts. Those other accounts may continue to access and use your shared custom
-         * lenses even if you delete the custom lenses from your own Amazon Web Services
-         * account or terminate your Amazon Web Services account.</p> <p><h3>See
-         * Also:</h3>   <a
+         * the lens is deleted, Amazon Web Services accounts and users that you shared the
+         * lens with can continue to use it, but they will no longer be able to apply it to
+         * new workloads. </p>  <p> <b>Disclaimer</b> </p> <p>By sharing your custom
+         * lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web
+         * Services will make your custom lenses available to those other accounts. Those
+         * other accounts may continue to access and use your shared custom lenses even if
+         * you delete the custom lenses from your own Amazon Web Services account or
+         * terminate your Amazon Web Services account.</p> <p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLens">AWS
          * API Reference</a></p>
          */
@@ -297,15 +308,15 @@ namespace WellArchitected
 
         /**
          * <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web
-         * Services accounts, IAM users, organizations, and organizational units (OUs) that
-         * you shared the lens with can continue to use it, but they will no longer be able
-         * to apply it to new workloads.</p>  <p> <b>Disclaimer</b> </p> <p>By
-         * sharing your custom lenses with other Amazon Web Services accounts, you
-         * acknowledge that Amazon Web Services will make your custom lenses available to
-         * those other accounts. Those other accounts may continue to access and use your
-         * shared custom lenses even if you delete the custom lenses from your own Amazon
-         * Web Services account or terminate your Amazon Web Services account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * Services accounts, users, organizations, and organizational units (OUs) that you
+         * shared the lens with can continue to use it, but they will no longer be able to
+         * apply it to new workloads.</p>  <p> <b>Disclaimer</b> </p> <p>By sharing
+         * your custom lenses with other Amazon Web Services accounts, you acknowledge that
+         * Amazon Web Services will make your custom lenses available to those other
+         * accounts. Those other accounts may continue to access and use your shared custom
+         * lenses even if you delete the custom lenses from your own Amazon Web Services
+         * account or terminate your Amazon Web Services account.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/DeleteLensShare">AWS
          * API Reference</a></p>
          */
@@ -409,17 +420,19 @@ namespace WellArchitected
         }
 
         /**
-         * <p>Export an existing lens.</p> <p>Lenses are defined in JSON. For more
-         * information, see <a
+         * <p>Export an existing lens.</p> <p>Only the owner of a lens can export it.
+         * Lenses provided by Amazon Web Services (Amazon Web Services Official Content)
+         * cannot be exported.</p> <p>Lenses are defined in JSON. For more information, see
+         * <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
-         * format specification</a> in the <i>Well-Architected Tool User Guide</i>. Only
-         * the owner of a lens can export it. </p>  <p> <b>Disclaimer</b> </p> <p>Do
-         * not include or gather personal identifiable information (PII) of end users or
-         * other identifiable individuals in or via your custom lenses. If your custom lens
-         * or those shared with you and used in your account do include or collect PII you
-         * are responsible for: ensuring that the included PII is processed in accordance
-         * with applicable law, providing adequate privacy notices, and obtaining necessary
-         * consents for processing such data.</p> <p><h3>See Also:</h3>   <a
+         * format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
+         *  <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal
+         * identifiable information (PII) of end users or other identifiable individuals in
+         * or via your custom lenses. If your custom lens or those shared with you and used
+         * in your account do include or collect PII you are responsible for: ensuring that
+         * the included PII is processed in accordance with applicable law, providing
+         * adequate privacy notices, and obtaining necessary consents for processing such
+         * data.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ExportLens">AWS
          * API Reference</a></p>
          */
@@ -467,6 +480,33 @@ namespace WellArchitected
         void GetAnswerAsync(const GetAnswerRequestT& request, const GetAnswerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WellArchitectedClient::GetAnswer, request, handler, context);
+        }
+
+        /**
+         * <p>Get a consolidated report of your workloads.</p> <p>You can optionally choose
+         * to include workloads that have been shared with you.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/GetConsolidatedReport">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetConsolidatedReportOutcome GetConsolidatedReport(const Model::GetConsolidatedReportRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetConsolidatedReport that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetConsolidatedReportRequestT = Model::GetConsolidatedReportRequest>
+        Model::GetConsolidatedReportOutcomeCallable GetConsolidatedReportCallable(const GetConsolidatedReportRequestT& request) const
+        {
+            return SubmitCallable(&WellArchitectedClient::GetConsolidatedReport, request);
+        }
+
+        /**
+         * An Async wrapper for GetConsolidatedReport that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetConsolidatedReportRequestT = Model::GetConsolidatedReportRequest>
+        void GetConsolidatedReportAsync(const GetConsolidatedReportRequestT& request, const GetConsolidatedReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WellArchitectedClient::GetConsolidatedReport, request, handler, context);
         }
 
         /**
@@ -620,9 +660,12 @@ namespace WellArchitected
         }
 
         /**
-         * <p>Import a new lens.</p> <p>The lens cannot be applied to workloads or shared
-         * with other Amazon Web Services accounts until it's published with
-         * <a>CreateLensVersion</a> </p> <p>Lenses are defined in JSON. For more
+         * <p>Import a new custom lens or update an existing custom lens.</p> <p>To update
+         * an existing custom lens, specify its ARN as the <code>LensAlias</code>. If no
+         * ARN is specified, a new custom lens is created.</p> <p>The new or updated lens
+         * will have a status of <code>DRAFT</code>. The lens cannot be applied to
+         * workloads or shared with other Amazon Web Services accounts until it's published
+         * with <a>CreateLensVersion</a>.</p> <p>Lenses are defined in JSON. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON
          * format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p>
@@ -658,7 +701,8 @@ namespace WellArchitected
         }
 
         /**
-         * <p>List of answers.</p><p><h3>See Also:</h3>   <a
+         * <p>List of answers for a particular workload and lens.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListAnswers">AWS
          * API Reference</a></p>
          */
@@ -760,7 +804,7 @@ namespace WellArchitected
         }
 
         /**
-         * <p>List lens reviews.</p><p><h3>See Also:</h3>   <a
+         * <p>List lens reviews for a particular workload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListLensReviews">AWS
          * API Reference</a></p>
          */
@@ -963,7 +1007,7 @@ namespace WellArchitected
         }
 
         /**
-         * <p>List workloads. Paginated.</p><p><h3>See Also:</h3>   <a
+         * <p>Paginated list of workloads.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ListWorkloads">AWS
          * API Reference</a></p>
          */
@@ -1096,7 +1140,7 @@ namespace WellArchitected
         }
 
         /**
-         * <p>Update lens review.</p><p><h3>See Also:</h3>   <a
+         * <p>Update lens review for a particular workload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateLensReview">AWS
          * API Reference</a></p>
          */
@@ -1199,7 +1243,7 @@ namespace WellArchitected
         }
 
         /**
-         * <p>Upgrade lens review.</p><p><h3>See Also:</h3>   <a
+         * <p>Upgrade lens review for a particular workload.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpgradeLensReview">AWS
          * API Reference</a></p>
          */

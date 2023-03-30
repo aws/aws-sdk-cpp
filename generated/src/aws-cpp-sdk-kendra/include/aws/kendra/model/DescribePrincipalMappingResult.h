@@ -187,91 +187,91 @@ namespace Model
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline const Aws::Vector<GroupOrderingIdSummary>& GetGroupOrderingIdSummaries() const{ return m_groupOrderingIdSummaries; }
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline void SetGroupOrderingIdSummaries(const Aws::Vector<GroupOrderingIdSummary>& value) { m_groupOrderingIdSummaries = value; }
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline void SetGroupOrderingIdSummaries(Aws::Vector<GroupOrderingIdSummary>&& value) { m_groupOrderingIdSummaries = std::move(value); }
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline DescribePrincipalMappingResult& WithGroupOrderingIdSummaries(const Aws::Vector<GroupOrderingIdSummary>& value) { SetGroupOrderingIdSummaries(value); return *this;}
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline DescribePrincipalMappingResult& WithGroupOrderingIdSummaries(Aws::Vector<GroupOrderingIdSummary>&& value) { SetGroupOrderingIdSummaries(std::move(value)); return *this;}
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline DescribePrincipalMappingResult& AddGroupOrderingIdSummaries(const GroupOrderingIdSummary& value) { m_groupOrderingIdSummaries.push_back(value); return *this; }
 
     /**
      * <p>Shows the following information on the processing of <code>PUT</code> and
      * <code>DELETE</code> actions for mapping users to their groups:</p> <ul> <li>
-     * <p>Status – the status can be either <code>PROCESSING</code>,
+     * <p>Status—the status can be either <code>PROCESSING</code>,
      * <code>SUCCEEDED</code>, <code>DELETING</code>, <code>DELETED</code>, or
-     * <code>FAILED</code>.</p> </li> <li> <p>Last updated – the last date-time an
-     * action was updated.</p> </li> <li> <p>Received – the last date-time an action
-     * was received or submitted.</p> </li> <li> <p>Ordering ID – the latest action
-     * that should process and apply after other actions.</p> </li> <li> <p>Failure
-     * reason – the reason an action could not be processed.</p> </li> </ul>
+     * <code>FAILED</code>.</p> </li> <li> <p>Last updated—the last date-time an action
+     * was updated.</p> </li> <li> <p>Received—the last date-time an action was
+     * received or submitted.</p> </li> <li> <p>Ordering ID—the latest action that
+     * should process and apply after other actions.</p> </li> <li> <p>Failure
+     * reason—the reason an action could not be processed.</p> </li> </ul>
      */
     inline DescribePrincipalMappingResult& AddGroupOrderingIdSummaries(GroupOrderingIdSummary&& value) { m_groupOrderingIdSummaries.push_back(std::move(value)); return *this; }
 

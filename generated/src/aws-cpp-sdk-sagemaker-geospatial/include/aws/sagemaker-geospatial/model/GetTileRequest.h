@@ -83,6 +83,47 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline GetTileRequest& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline GetTileRequest& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that you specify.</p>
+     */
+    inline GetTileRequest& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}
+
+
+    /**
      * <p>The particular assets or bands to tile.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageAssets() const{ return m_imageAssets; }
@@ -414,6 +455,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_executionRoleArn;
+    bool m_executionRoleArnHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_imageAssets;
     bool m_imageAssetsHasBeenSet = false;

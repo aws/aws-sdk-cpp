@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker-geospatial/model/ExportVectorEnrichmentJobOutputConfig.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -72,6 +73,47 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the Vector Enrichment job.</p>
      */
     inline ExportVectorEnrichmentJobRequest& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline ExportVectorEnrichmentJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline ExportVectorEnrichmentJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A unique token that guarantees that the call to this API is idempotent.</p>
+     */
+    inline ExportVectorEnrichmentJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -157,6 +199,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_executionRoleArn;
     bool m_executionRoleArnHasBeenSet = false;

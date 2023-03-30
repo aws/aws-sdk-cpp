@@ -30,7 +30,7 @@ namespace Model
    * crawl.</p> <p> <i>When selecting websites to index, you must adhere to the <a
    * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
    * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-   * index your own webpages, or webpages that you have authorization to index.</i>
+   * index your own web pages, or web pages that you have authorization to index.</i>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/SeedUrlConfiguration">AWS
    * API Reference</a></p>
@@ -107,8 +107,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline const WebCrawlerMode& GetWebCrawlerMode() const{ return m_webCrawlerMode; }
 
@@ -120,8 +120,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline bool WebCrawlerModeHasBeenSet() const { return m_webCrawlerModeHasBeenSet; }
 
@@ -133,8 +133,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline void SetWebCrawlerMode(const WebCrawlerMode& value) { m_webCrawlerModeHasBeenSet = true; m_webCrawlerMode = value; }
 
@@ -146,8 +146,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline void SetWebCrawlerMode(WebCrawlerMode&& value) { m_webCrawlerModeHasBeenSet = true; m_webCrawlerMode = std::move(value); }
 
@@ -159,8 +159,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline SeedUrlConfiguration& WithWebCrawlerMode(const WebCrawlerMode& value) { SetWebCrawlerMode(value); return *this;}
 
@@ -172,8 +172,8 @@ namespace Model
      * names with subdomains. For example, if the seed URL is "abc.example.com", then
      * "a.abc.example.com" and "b.abc.example.com" are also crawled.</p> </li> <li> <p>
      * <code>EVERYTHING</code> – crawl the website host names with subdomains and other
-     * domains that the webpages link to.</p> </li> </ul> <p>The default mode is set to
-     * <code>HOST_ONLY</code>.</p>
+     * domains that the web pages link to.</p> </li> </ul> <p>The default mode is set
+     * to <code>HOST_ONLY</code>.</p>
      */
     inline SeedUrlConfiguration& WithWebCrawlerMode(WebCrawlerMode&& value) { SetWebCrawlerMode(std::move(value)); return *this;}
 

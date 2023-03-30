@@ -182,6 +182,31 @@ namespace Model
      */
     inline ModifyVpnTunnelOptionsRequest& WithDryRun(bool value) { SetDryRun(value); return *this;}
 
+
+    /**
+     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
+     * values: <code>True</code> | <code>False</code> </p>
+     */
+    inline bool GetSkipTunnelReplacement() const{ return m_skipTunnelReplacement; }
+
+    /**
+     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
+     * values: <code>True</code> | <code>False</code> </p>
+     */
+    inline bool SkipTunnelReplacementHasBeenSet() const { return m_skipTunnelReplacementHasBeenSet; }
+
+    /**
+     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
+     * values: <code>True</code> | <code>False</code> </p>
+     */
+    inline void SetSkipTunnelReplacement(bool value) { m_skipTunnelReplacementHasBeenSet = true; m_skipTunnelReplacement = value; }
+
+    /**
+     * <p>Choose whether or not to trigger immediate tunnel replacement.</p> <p>Valid
+     * values: <code>True</code> | <code>False</code> </p>
+     */
+    inline ModifyVpnTunnelOptionsRequest& WithSkipTunnelReplacement(bool value) { SetSkipTunnelReplacement(value); return *this;}
+
   private:
 
     Aws::String m_vpnConnectionId;
@@ -195,6 +220,9 @@ namespace Model
 
     bool m_dryRun;
     bool m_dryRunHasBeenSet = false;
+
+    bool m_skipTunnelReplacement;
+    bool m_skipTunnelReplacementHasBeenSet = false;
   };
 
 } // namespace Model

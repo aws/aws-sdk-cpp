@@ -279,12 +279,12 @@ namespace Model
      * number ID, which is the ordering ID, is the latest action you want to process
      * and apply on top of other actions with lower number IDs. This prevents previous
      * actions with lower number IDs from possibly overriding the latest action.</p>
-     * <p>The ordering ID can be the UNIX time of the last update you made to a group
+     * <p>The ordering ID can be the Unix time of the last update you made to a group
      * members list. You would then provide this list when calling
      * <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for
      * that updated group with the latest members list doesn't get overwritten by
      * earlier <code>PUT</code> actions for the same group which are yet to be
-     * processed.</p> <p>The default ordering ID is the current UNIX time in
+     * processed.</p> <p>The default ordering ID is the current Unix time in
      * milliseconds that the action was received by Amazon Kendra.</p>
      */
     inline long long GetOrderingId() const{ return m_orderingId; }
@@ -295,12 +295,12 @@ namespace Model
      * number ID, which is the ordering ID, is the latest action you want to process
      * and apply on top of other actions with lower number IDs. This prevents previous
      * actions with lower number IDs from possibly overriding the latest action.</p>
-     * <p>The ordering ID can be the UNIX time of the last update you made to a group
+     * <p>The ordering ID can be the Unix time of the last update you made to a group
      * members list. You would then provide this list when calling
      * <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for
      * that updated group with the latest members list doesn't get overwritten by
      * earlier <code>PUT</code> actions for the same group which are yet to be
-     * processed.</p> <p>The default ordering ID is the current UNIX time in
+     * processed.</p> <p>The default ordering ID is the current Unix time in
      * milliseconds that the action was received by Amazon Kendra.</p>
      */
     inline bool OrderingIdHasBeenSet() const { return m_orderingIdHasBeenSet; }
@@ -311,12 +311,12 @@ namespace Model
      * number ID, which is the ordering ID, is the latest action you want to process
      * and apply on top of other actions with lower number IDs. This prevents previous
      * actions with lower number IDs from possibly overriding the latest action.</p>
-     * <p>The ordering ID can be the UNIX time of the last update you made to a group
+     * <p>The ordering ID can be the Unix time of the last update you made to a group
      * members list. You would then provide this list when calling
      * <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for
      * that updated group with the latest members list doesn't get overwritten by
      * earlier <code>PUT</code> actions for the same group which are yet to be
-     * processed.</p> <p>The default ordering ID is the current UNIX time in
+     * processed.</p> <p>The default ordering ID is the current Unix time in
      * milliseconds that the action was received by Amazon Kendra.</p>
      */
     inline void SetOrderingId(long long value) { m_orderingIdHasBeenSet = true; m_orderingId = value; }
@@ -327,12 +327,12 @@ namespace Model
      * number ID, which is the ordering ID, is the latest action you want to process
      * and apply on top of other actions with lower number IDs. This prevents previous
      * actions with lower number IDs from possibly overriding the latest action.</p>
-     * <p>The ordering ID can be the UNIX time of the last update you made to a group
+     * <p>The ordering ID can be the Unix time of the last update you made to a group
      * members list. You would then provide this list when calling
      * <code>PutPrincipalMapping</code>. This ensures your <code>PUT</code> action for
      * that updated group with the latest members list doesn't get overwritten by
      * earlier <code>PUT</code> actions for the same group which are yet to be
-     * processed.</p> <p>The default ordering ID is the current UNIX time in
+     * processed.</p> <p>The default ordering ID is the current Unix time in
      * milliseconds that the action was received by Amazon Kendra.</p>
      */
     inline PutPrincipalMappingRequest& WithOrderingId(long long value) { SetOrderingId(value); return *this;}

@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure containing the Amazon S3 path to export the Earth Observation
+   * job output.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ExportS3DataInput">AWS
    * API Reference</a></p>
    */
@@ -38,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline ExportS3DataInput& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline ExportS3DataInput& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline ExportS3DataInput& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

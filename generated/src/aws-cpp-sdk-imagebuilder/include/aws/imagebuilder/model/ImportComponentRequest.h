@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline ImportComponentRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline ImportComponentRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p> The name of the component.</p>
+     * <p>The name of the component.</p>
      */
     inline ImportComponentRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -225,58 +225,58 @@ namespace Model
 
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline const Aws::String& GetChangeDescription() const{ return m_changeDescription; }
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline bool ChangeDescriptionHasBeenSet() const { return m_changeDescriptionHasBeenSet; }
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline void SetChangeDescription(const Aws::String& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = value; }
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline void SetChangeDescription(Aws::String&& value) { m_changeDescriptionHasBeenSet = true; m_changeDescription = std::move(value); }
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline void SetChangeDescription(const char* value) { m_changeDescriptionHasBeenSet = true; m_changeDescription.assign(value); }
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline ImportComponentRequest& WithChangeDescription(const Aws::String& value) { SetChangeDescription(value); return *this;}
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline ImportComponentRequest& WithChangeDescription(Aws::String&& value) { SetChangeDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The change description of the component. Describes what change has been made
-     * in this version, or what makes this version different from other versions of
-     * this component.</p>
+     * <p>The change description of the component. This description indicates the
+     * change that has been made in this version, or what makes this version different
+     * from other versions of this component.</p>
      */
     inline ImportComponentRequest& WithChangeDescription(const char* value) { SetChangeDescription(value); return *this;}
 

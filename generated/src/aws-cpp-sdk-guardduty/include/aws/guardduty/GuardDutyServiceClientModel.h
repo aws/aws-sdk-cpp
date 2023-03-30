@@ -43,6 +43,7 @@
 #include <aws/guardduty/model/DisassociateMembersResult.h>
 #include <aws/guardduty/model/EnableOrganizationAdminAccountResult.h>
 #include <aws/guardduty/model/GetAdministratorAccountResult.h>
+#include <aws/guardduty/model/GetCoverageStatisticsResult.h>
 #include <aws/guardduty/model/GetDetectorResult.h>
 #include <aws/guardduty/model/GetFilterResult.h>
 #include <aws/guardduty/model/GetFindingsResult.h>
@@ -56,6 +57,7 @@
 #include <aws/guardduty/model/GetThreatIntelSetResult.h>
 #include <aws/guardduty/model/GetUsageStatisticsResult.h>
 #include <aws/guardduty/model/InviteMembersResult.h>
+#include <aws/guardduty/model/ListCoverageResult.h>
 #include <aws/guardduty/model/ListDetectorsResult.h>
 #include <aws/guardduty/model/ListFiltersResult.h>
 #include <aws/guardduty/model/ListFindingsResult.h>
@@ -145,6 +147,7 @@ namespace Aws
       class DisassociateMembersRequest;
       class EnableOrganizationAdminAccountRequest;
       class GetAdministratorAccountRequest;
+      class GetCoverageStatisticsRequest;
       class GetDetectorRequest;
       class GetFilterRequest;
       class GetFindingsRequest;
@@ -158,6 +161,7 @@ namespace Aws
       class GetThreatIntelSetRequest;
       class GetUsageStatisticsRequest;
       class InviteMembersRequest;
+      class ListCoverageRequest;
       class ListDetectorsRequest;
       class ListFiltersRequest;
       class ListFindingsRequest;
@@ -210,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DisassociateMembersResult, GuardDutyError> DisassociateMembersOutcome;
       typedef Aws::Utils::Outcome<EnableOrganizationAdminAccountResult, GuardDutyError> EnableOrganizationAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetAdministratorAccountResult, GuardDutyError> GetAdministratorAccountOutcome;
+      typedef Aws::Utils::Outcome<GetCoverageStatisticsResult, GuardDutyError> GetCoverageStatisticsOutcome;
       typedef Aws::Utils::Outcome<GetDetectorResult, GuardDutyError> GetDetectorOutcome;
       typedef Aws::Utils::Outcome<GetFilterResult, GuardDutyError> GetFilterOutcome;
       typedef Aws::Utils::Outcome<GetFindingsResult, GuardDutyError> GetFindingsOutcome;
@@ -223,6 +228,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetThreatIntelSetResult, GuardDutyError> GetThreatIntelSetOutcome;
       typedef Aws::Utils::Outcome<GetUsageStatisticsResult, GuardDutyError> GetUsageStatisticsOutcome;
       typedef Aws::Utils::Outcome<InviteMembersResult, GuardDutyError> InviteMembersOutcome;
+      typedef Aws::Utils::Outcome<ListCoverageResult, GuardDutyError> ListCoverageOutcome;
       typedef Aws::Utils::Outcome<ListDetectorsResult, GuardDutyError> ListDetectorsOutcome;
       typedef Aws::Utils::Outcome<ListFiltersResult, GuardDutyError> ListFiltersOutcome;
       typedef Aws::Utils::Outcome<ListFindingsResult, GuardDutyError> ListFindingsOutcome;
@@ -275,6 +281,7 @@ namespace Aws
       typedef std::future<DisassociateMembersOutcome> DisassociateMembersOutcomeCallable;
       typedef std::future<EnableOrganizationAdminAccountOutcome> EnableOrganizationAdminAccountOutcomeCallable;
       typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
+      typedef std::future<GetCoverageStatisticsOutcome> GetCoverageStatisticsOutcomeCallable;
       typedef std::future<GetDetectorOutcome> GetDetectorOutcomeCallable;
       typedef std::future<GetFilterOutcome> GetFilterOutcomeCallable;
       typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
@@ -288,6 +295,7 @@ namespace Aws
       typedef std::future<GetThreatIntelSetOutcome> GetThreatIntelSetOutcomeCallable;
       typedef std::future<GetUsageStatisticsOutcome> GetUsageStatisticsOutcomeCallable;
       typedef std::future<InviteMembersOutcome> InviteMembersOutcomeCallable;
+      typedef std::future<ListCoverageOutcome> ListCoverageOutcomeCallable;
       typedef std::future<ListDetectorsOutcome> ListDetectorsOutcomeCallable;
       typedef std::future<ListFiltersOutcome> ListFiltersOutcomeCallable;
       typedef std::future<ListFindingsOutcome> ListFindingsOutcomeCallable;
@@ -343,6 +351,7 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::DisassociateMembersRequest&, const Model::DisassociateMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::EnableOrganizationAdminAccountRequest&, const Model::EnableOrganizationAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableOrganizationAdminAccountResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::GetCoverageStatisticsRequest&, const Model::GetCoverageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCoverageStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetDetectorRequest&, const Model::GetDetectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDetectorResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetFilterRequest&, const Model::GetFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFilterResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
@@ -356,6 +365,7 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::GetThreatIntelSetRequest&, const Model::GetThreatIntelSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetThreatIntelSetResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::GetUsageStatisticsRequest&, const Model::GetUsageStatisticsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUsageStatisticsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::InviteMembersRequest&, const Model::InviteMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InviteMembersResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::ListCoverageRequest&, const Model::ListCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCoverageResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListDetectorsRequest&, const Model::ListDetectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDetectorsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListFiltersRequest&, const Model::ListFiltersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFiltersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListFindingsRequest&, const Model::ListFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFindingsResponseReceivedHandler;

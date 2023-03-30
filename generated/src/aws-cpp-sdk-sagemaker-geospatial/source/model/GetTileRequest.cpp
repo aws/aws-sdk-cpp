@@ -17,6 +17,7 @@ using namespace Aws::Http;
 
 GetTileRequest::GetTileRequest() : 
     m_arnHasBeenSet(false),
+    m_executionRoleArnHasBeenSet(false),
     m_imageAssetsHasBeenSet(false),
     m_imageMask(false),
     m_imageMaskHasBeenSet(false),
@@ -48,6 +49,13 @@ void GetTileRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_arn;
       uri.AddQueryStringParameter("Arn", ss.str());
+      ss.str("");
+    }
+
+    if(m_executionRoleArnHasBeenSet)
+    {
+      ss << m_executionRoleArn;
+      uri.AddQueryStringParameter("ExecutionRoleArn", ss.str());
       ss.str("");
     }
 

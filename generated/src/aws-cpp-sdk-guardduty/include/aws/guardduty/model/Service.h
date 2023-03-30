@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/guardduty/model/ServiceAdditionalInfo.h>
 #include <aws/guardduty/model/EbsVolumeScanDetails.h>
+#include <aws/guardduty/model/RuntimeDetails.h>
 #include <utility>
 
 namespace Aws
@@ -518,6 +519,43 @@ namespace Model
      */
     inline Service& WithEbsVolumeScanDetails(EbsVolumeScanDetails&& value) { SetEbsVolumeScanDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline const RuntimeDetails& GetRuntimeDetails() const{ return m_runtimeDetails; }
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline bool RuntimeDetailsHasBeenSet() const { return m_runtimeDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline void SetRuntimeDetails(const RuntimeDetails& value) { m_runtimeDetailsHasBeenSet = true; m_runtimeDetails = value; }
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline void SetRuntimeDetails(RuntimeDetails&& value) { m_runtimeDetailsHasBeenSet = true; m_runtimeDetails = std::move(value); }
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline Service& WithRuntimeDetails(const RuntimeDetails& value) { SetRuntimeDetails(value); return *this;}
+
+    /**
+     * <p>Information about the process and any required context values for a specific
+     * finding</p>
+     */
+    inline Service& WithRuntimeDetails(RuntimeDetails&& value) { SetRuntimeDetails(std::move(value)); return *this;}
+
   private:
 
     Action m_action;
@@ -558,6 +596,9 @@ namespace Model
 
     EbsVolumeScanDetails m_ebsVolumeScanDetails;
     bool m_ebsVolumeScanDetailsHasBeenSet = false;
+
+    RuntimeDetails m_runtimeDetails;
+    bool m_runtimeDetailsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Input structure for Cloud Removal Operation type</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/CloudRemovalConfigInput">AWS
    * API Reference</a></p>
    */
@@ -112,47 +113,47 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline CloudRemovalConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline CloudRemovalConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline CloudRemovalConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline CloudRemovalConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>TargetBands to be returned in the output of CloudRemoval operation.</p>
      */
     inline CloudRemovalConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 

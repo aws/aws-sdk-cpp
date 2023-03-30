@@ -69,44 +69,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline DeleteImageResult& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline DeleteImageResult& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the Image Builder image resource that was
-     * deleted.</p>
+     * <p>The ARN of the Image Builder image resource that this request deleted.</p>
      */
     inline DeleteImageResult& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
 

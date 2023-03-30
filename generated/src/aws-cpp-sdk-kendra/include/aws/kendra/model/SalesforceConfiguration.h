@@ -94,7 +94,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -110,7 +110,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -126,7 +126,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -142,7 +142,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -158,7 +158,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -174,7 +174,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -190,7 +190,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */
@@ -206,7 +206,7 @@ namespace Model
      * <p>consumerSecret - The application private key generated when you created your
      * Salesforce application.</p> </li> <li> <p>password - The password associated
      * with the user logging in to the Salesforce instance.</p> </li> <li>
-     * <p>securityToken - The token associated with the user account logging in to the
+     * <p>securityToken - The token associated with the user logging in to the
      * Salesforce instance.</p> </li> <li> <p>username - The user name of the user
      * logging in to the Salesforce instance.</p> </li> </ul>
      */

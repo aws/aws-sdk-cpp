@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> Define and configure the output AMIs of the pipeline.</p><p><h3>See
+   * <p>Define and configure the output AMIs of the pipeline.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/AmiDistributionConfiguration">AWS
    * API Reference</a></p>
@@ -285,37 +285,37 @@ namespace Model
 
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline const LaunchPermissionConfiguration& GetLaunchPermission() const{ return m_launchPermission; }
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline bool LaunchPermissionHasBeenSet() const { return m_launchPermissionHasBeenSet; }
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline void SetLaunchPermission(const LaunchPermissionConfiguration& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline void SetLaunchPermission(LaunchPermissionConfiguration&& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = std::move(value); }
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline AmiDistributionConfiguration& WithLaunchPermission(const LaunchPermissionConfiguration& value) { SetLaunchPermission(value); return *this;}
 
     /**
-     * <p> Launch permissions can be used to configure which Amazon Web Services
+     * <p>Launch permissions can be used to configure which Amazon Web Services
      * accounts can use the AMI to launch instances.</p>
      */
     inline AmiDistributionConfiguration& WithLaunchPermission(LaunchPermissionConfiguration&& value) { SetLaunchPermission(std::move(value)); return *this;}

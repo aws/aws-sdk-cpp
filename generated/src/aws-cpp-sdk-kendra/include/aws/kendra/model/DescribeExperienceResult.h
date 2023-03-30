@@ -235,53 +235,53 @@ namespace Model
 
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAt = value; }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAt = std::move(value); }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline DescribeExperienceResult& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline DescribeExperienceResult& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAt = value; }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAt = std::move(value); }
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
      */
     inline DescribeExperienceResult& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>Shows the date-time your Amazon Kendra experience was last updated.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was last updated.</p>
      */
     inline DescribeExperienceResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

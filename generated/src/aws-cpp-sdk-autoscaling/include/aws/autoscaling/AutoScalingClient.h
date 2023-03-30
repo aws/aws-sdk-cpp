@@ -125,13 +125,20 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Attaches one or more target groups to the specified Auto Scaling group.</p>
-         * <p>This operation is used with the following load balancer types: </p> <ul> <li>
-         * <p>Application Load Balancer - Operates at the application layer (layer 7) and
-         * supports HTTP and HTTPS. </p> </li> <li> <p>Network Load Balancer - Operates at
-         * the transport layer (layer 4) and supports TCP, TLS, and UDP. </p> </li> <li>
-         * <p>Gateway Load Balancer - Operates at the network layer (layer 3).</p> </li>
-         * </ul> <p>To describe the target groups for an Auto Scaling group, call the
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>AttachTrafficSources</code>) that can attach multiple traffic sources
+         * types. While we continue to support <code>AttachLoadBalancerTargetGroups</code>,
+         * and you can use both the original <code>AttachLoadBalancerTargetGroups</code>
+         * API call and the new <code>AttachTrafficSources</code> API call on the same Auto
+         * Scaling group, we recommend using the new "traffic sources" API call to simplify
+         * how you manage traffic sources.</p>  <p>Attaches one or more target
+         * groups to the specified Auto Scaling group.</p> <p>This operation is used with
+         * the following load balancer types: </p> <ul> <li> <p>Application Load Balancer -
+         * Operates at the application layer (layer 7) and supports HTTP and HTTPS. </p>
+         * </li> <li> <p>Network Load Balancer - Operates at the transport layer (layer 4)
+         * and supports TCP, TLS, and UDP. </p> </li> <li> <p>Gateway Load Balancer -
+         * Operates at the network layer (layer 3).</p> </li> </ul> <p>To describe the
+         * target groups for an Auto Scaling group, call the
          * <a>DescribeLoadBalancerTargetGroups</a> API. To detach the target group from the
          * Auto Scaling group, call the <a>DetachLoadBalancerTargetGroups</a> API.</p>
          * <p>This operation is additive and does not detach existing target groups or
@@ -165,9 +172,13 @@ namespace AutoScaling
         }
 
         /**
-         *  <p>To attach an Application Load Balancer, Network Load Balancer, or
-         * Gateway Load Balancer, use the <a>AttachLoadBalancerTargetGroups</a> API
-         * operation instead.</p>  <p>Attaches one or more Classic Load Balancers to
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>AttachTrafficSources</code>) that can attach multiple traffic sources
+         * types. While we continue to support <code>AttachLoadBalancers</code>, and you
+         * can use both the original <code>AttachLoadBalancers</code> API call and the new
+         * <code>AttachTrafficSources</code> API call on the same Auto Scaling group, we
+         * recommend using the new "traffic sources" API call to simplify how you manage
+         * traffic sources.</p>  <p>Attaches one or more Classic Load Balancers to
          * the specified Auto Scaling group. Amazon EC2 Auto Scaling registers the running
          * instances with these Classic Load Balancers.</p> <p>To describe the load
          * balancers for an Auto Scaling group, call the <a>DescribeLoadBalancers</a> API.
@@ -203,14 +214,17 @@ namespace AutoScaling
         }
 
         /**
-         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
-         * to change. Do not use this API for production workloads. This API is also
-         * subject to change.</b> </p> <p>Attaches one or more traffic sources to the
-         * specified Auto Scaling group.</p> <p>To describe the traffic sources for an Auto
-         * Scaling group, call the <a>DescribeTrafficSources</a> API. To detach a traffic
-         * source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
-         * API.</p> <p>This operation is additive and does not detach existing traffic
-         * sources from the Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Attaches one or more traffic sources to the specified Auto Scaling group.</p>
+         * <p>You can use any of the following as traffic sources for an Auto Scaling
+         * group:</p> <ul> <li> <p>Application Load Balancer</p> </li> <li> <p>Classic Load
+         * Balancer</p> </li> <li> <p>Network Load Balancer</p> </li> <li> <p>Gateway Load
+         * Balancer</p> </li> <li> <p>VPC Lattice</p> </li> </ul> <p>This operation is
+         * additive and does not detach existing traffic sources from the Auto Scaling
+         * group. </p> <p>After the operation completes, use the
+         * <a>DescribeTrafficSources</a> API to return details about the state of the
+         * attachments between traffic sources and your Auto Scaling group. To detach a
+         * traffic source from the Auto Scaling group, call the <a>DetachTrafficSources</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/AttachTrafficSources">AWS
          * API Reference</a></p>
          */
@@ -979,16 +993,24 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Gets information about the Elastic Load Balancing target groups for the
-         * specified Auto Scaling group.</p> <p>To determine the attachment status of the
-         * target group, use the <code>State</code> element in the response. When you
-         * attach a target group to an Auto Scaling group, the initial <code>State</code>
-         * value is <code>Adding</code>. The state transitions to <code>Added</code> after
-         * all Auto Scaling instances are registered with the target group. If Elastic Load
-         * Balancing health checks are enabled for the Auto Scaling group, the state
-         * transitions to <code>InService</code> after at least one Auto Scaling instance
-         * passes the health check. When the target group is in the <code>InService</code>
-         * state, Amazon EC2 Auto Scaling can terminate and replace any instances that are
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>DescribeTrafficSources</code>) that can describe multiple traffic sources
+         * types. While we continue to support
+         * <code>DescribeLoadBalancerTargetGroups</code>, and you can use both the original
+         * <code>DescribeLoadBalancerTargetGroups</code> API call and the new
+         * <code>DescribeTrafficSources</code> API call on the same Auto Scaling group, we
+         * recommend using the new "traffic sources" API call to simplify how you manage
+         * traffic sources.</p>  <p>Gets information about the Elastic Load
+         * Balancing target groups for the specified Auto Scaling group.</p> <p>To
+         * determine the attachment status of the target group, use the <code>State</code>
+         * element in the response. When you attach a target group to an Auto Scaling
+         * group, the initial <code>State</code> value is <code>Adding</code>. The state
+         * transitions to <code>Added</code> after all Auto Scaling instances are
+         * registered with the target group. If Elastic Load Balancing health checks are
+         * enabled for the Auto Scaling group, the state transitions to
+         * <code>InService</code> after at least one Auto Scaling instance passes the
+         * health check. When the target group is in the <code>InService</code> state,
+         * Amazon EC2 Auto Scaling can terminate and replace any instances that are
          * reported as unhealthy. If no registered instances pass the health checks, the
          * target group doesn't enter the <code>InService</code> state. </p> <p>Target
          * groups also have an <code>InService</code> state if you attach them in the
@@ -1030,22 +1052,28 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Gets information about the load balancers for the specified Auto Scaling
-         * group.</p> <p>This operation describes only Classic Load Balancers. If you have
-         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancer,
-         * use the <a>DescribeLoadBalancerTargetGroups</a> API instead.</p> <p>To determine
-         * the attachment status of the load balancer, use the <code>State</code> element
-         * in the response. When you attach a load balancer to an Auto Scaling group, the
-         * initial <code>State</code> value is <code>Adding</code>. The state transitions
-         * to <code>Added</code> after all Auto Scaling instances are registered with the
-         * load balancer. If Elastic Load Balancing health checks are enabled for the Auto
-         * Scaling group, the state transitions to <code>InService</code> after at least
-         * one Auto Scaling instance passes the health check. When the load balancer is in
-         * the <code>InService</code> state, Amazon EC2 Auto Scaling can terminate and
-         * replace any instances that are reported as unhealthy. If no registered instances
-         * pass the health checks, the load balancer doesn't enter the
-         * <code>InService</code> state. </p> <p>Load balancers also have an
-         * <code>InService</code> state if you attach them in the
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>DescribeTrafficSources</code>) that can describe multiple traffic sources
+         * types. While we continue to support <code>DescribeLoadBalancers</code>, and you
+         * can use both the original <code>DescribeLoadBalancers</code> API call and the
+         * new <code>DescribeTrafficSources</code> API call on the same Auto Scaling group,
+         * we recommend using the new "traffic sources" API call to simplify how you manage
+         * traffic sources.</p>  <p>Gets information about the load balancers for
+         * the specified Auto Scaling group.</p> <p>This operation describes only Classic
+         * Load Balancers. If you have Application Load Balancers, Network Load Balancers,
+         * or Gateway Load Balancers, use the <a>DescribeLoadBalancerTargetGroups</a> API
+         * instead.</p> <p>To determine the attachment status of the load balancer, use the
+         * <code>State</code> element in the response. When you attach a load balancer to
+         * an Auto Scaling group, the initial <code>State</code> value is
+         * <code>Adding</code>. The state transitions to <code>Added</code> after all Auto
+         * Scaling instances are registered with the load balancer. If Elastic Load
+         * Balancing health checks are enabled for the Auto Scaling group, the state
+         * transitions to <code>InService</code> after at least one Auto Scaling instance
+         * passes the health check. When the load balancer is in the <code>InService</code>
+         * state, Amazon EC2 Auto Scaling can terminate and replace any instances that are
+         * reported as unhealthy. If no registered instances pass the health checks, the
+         * load balancer doesn't enter the <code>InService</code> state. </p> <p>Load
+         * balancers also have an <code>InService</code> state if you attach them in the
          * <a>CreateAutoScalingGroup</a> API call. If your load balancer state is
          * <code>InService</code>, but it is not working properly, check the scaling
          * activities by calling <a>DescribeScalingActivities</a> and take any corrective
@@ -1314,10 +1342,12 @@ namespace AutoScaling
         }
 
         /**
-         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
-         * to change. Do not use this API for production workloads. This API is also
-         * subject to change.</b> </p> <p>Gets information about the traffic sources for
-         * the specified Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about the traffic sources for the specified Auto Scaling
+         * group.</p> <p>You can optionally provide a traffic source type. If you provide a
+         * traffic source type, then the results only include that traffic source type.</p>
+         * <p>If you do not provide a traffic source type, then the results include all the
+         * traffic sources for the specified Auto Scaling group. </p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DescribeTrafficSources">AWS
          * API Reference</a></p>
          */
@@ -1406,10 +1436,17 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Detaches one or more target groups from the specified Auto Scaling group.</p>
-         * <p>When you detach a target group, it enters the <code>Removing</code> state
-         * while deregistering the instances in the group. When all instances are
-         * deregistered, then you can no longer describe the target group using the
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>DetachTrafficSources</code>) that can detach multiple traffic sources
+         * types. While we continue to support <code>DetachLoadBalancerTargetGroups</code>,
+         * and you can use both the original <code>DetachLoadBalancerTargetGroups</code>
+         * API call and the new <code>DetachTrafficSources</code> API call on the same Auto
+         * Scaling group, we recommend using the new "traffic sources" API call to simplify
+         * how you manage traffic sources.</p>  <p>Detaches one or more target
+         * groups from the specified Auto Scaling group.</p> <p>When you detach a target
+         * group, it enters the <code>Removing</code> state while deregistering the
+         * instances in the group. When all instances are deregistered, then you can no
+         * longer describe the target group using the
          * <a>DescribeLoadBalancerTargetGroups</a> API call. The instances remain
          * running.</p>  <p>You can use this operation to detach target groups that
          * were attached by using <a>AttachLoadBalancerTargetGroups</a>, but not for target
@@ -1439,14 +1476,20 @@ namespace AutoScaling
         }
 
         /**
-         * <p>Detaches one or more Classic Load Balancers from the specified Auto Scaling
-         * group.</p> <p>This operation detaches only Classic Load Balancers. If you have
-         * Application Load Balancers, Network Load Balancers, or Gateway Load Balancer,
-         * use the <a>DetachLoadBalancerTargetGroups</a> API instead.</p> <p>When you
-         * detach a load balancer, it enters the <code>Removing</code> state while
-         * deregistering the instances in the group. When all instances are deregistered,
-         * then you can no longer describe the load balancer using the
-         * <a>DescribeLoadBalancers</a> API call. The instances remain
+         *  <p>This API call has been replaced with a new "traffic sources" API call
+         * (<code>DetachTrafficSources</code>) that can detach multiple traffic sources
+         * types. While we continue to support <code>DetachLoadBalancers</code>, and you
+         * can use both the original <code>DetachLoadBalancers</code> API call and the new
+         * <code>DetachTrafficSources</code> API call on the same Auto Scaling group, we
+         * recommend using the new "traffic sources" API call to simplify how you manage
+         * traffic sources.</p>  <p>Detaches one or more Classic Load Balancers from
+         * the specified Auto Scaling group.</p> <p>This operation detaches only Classic
+         * Load Balancers. If you have Application Load Balancers, Network Load Balancers,
+         * or Gateway Load Balancers, use the <a>DetachLoadBalancerTargetGroups</a> API
+         * instead.</p> <p>When you detach a load balancer, it enters the
+         * <code>Removing</code> state while deregistering the instances in the group. When
+         * all instances are deregistered, then you can no longer describe the load
+         * balancer using the <a>DescribeLoadBalancers</a> API call. The instances remain
          * running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachLoadBalancers">AWS
          * API Reference</a></p>
@@ -1472,10 +1515,12 @@ namespace AutoScaling
         }
 
         /**
-         * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview and subject
-         * to change. Do not use this API for production workloads. This API is also
-         * subject to change.</b> </p> <p>Detaches one or more traffic sources from the
-         * specified Auto Scaling group.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches one or more traffic sources from the specified Auto Scaling
+         * group.</p> <p>When you detach a taffic, it enters the <code>Removing</code>
+         * state while deregistering the instances in the group. When all instances are
+         * deregistered, then you can no longer describe the traffic source using the
+         * <a>DescribeTrafficSources</a> API call. The instances continue to
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/DetachTrafficSources">AWS
          * API Reference</a></p>
          */

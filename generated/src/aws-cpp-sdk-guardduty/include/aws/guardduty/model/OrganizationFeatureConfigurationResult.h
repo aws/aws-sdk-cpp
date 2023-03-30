@@ -7,6 +7,8 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrgFeature.h>
 #include <aws/guardduty/model/OrgFeatureStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/OrganizationAdditionalConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -136,6 +138,55 @@ namespace Model
      */
     inline OrganizationFeatureConfigurationResult& WithAutoEnable(OrgFeatureStatus&& value) { SetAutoEnable(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline const Aws::Vector<OrganizationAdditionalConfigurationResult>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::Vector<OrganizationAdditionalConfigurationResult>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::Vector<OrganizationAdditionalConfigurationResult>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline OrganizationFeatureConfigurationResult& WithAdditionalConfiguration(const Aws::Vector<OrganizationAdditionalConfigurationResult>& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline OrganizationFeatureConfigurationResult& WithAdditionalConfiguration(Aws::Vector<OrganizationAdditionalConfigurationResult>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline OrganizationFeatureConfigurationResult& AddAdditionalConfiguration(const OrganizationAdditionalConfigurationResult& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>The additional configuration that is configured for the member accounts
+     * within the organization.</p>
+     */
+    inline OrganizationFeatureConfigurationResult& AddAdditionalConfiguration(OrganizationAdditionalConfigurationResult&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+
   private:
 
     OrgFeature m_name;
@@ -143,6 +194,9 @@ namespace Model
 
     OrgFeatureStatus m_autoEnable;
     bool m_autoEnableHasBeenSet = false;
+
+    Aws::Vector<OrganizationAdditionalConfigurationResult> m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

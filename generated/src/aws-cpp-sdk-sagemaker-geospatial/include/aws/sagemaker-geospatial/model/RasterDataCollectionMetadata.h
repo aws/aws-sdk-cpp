@@ -207,42 +207,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline const Aws::Vector<Filter>& GetSupportedFilters() const{ return m_supportedFilters; }
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline bool SupportedFiltersHasBeenSet() const { return m_supportedFiltersHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline void SetSupportedFilters(const Aws::Vector<Filter>& value) { m_supportedFiltersHasBeenSet = true; m_supportedFilters = value; }
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline void SetSupportedFilters(Aws::Vector<Filter>&& value) { m_supportedFiltersHasBeenSet = true; m_supportedFilters = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline RasterDataCollectionMetadata& WithSupportedFilters(const Aws::Vector<Filter>& value) { SetSupportedFilters(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline RasterDataCollectionMetadata& WithSupportedFilters(Aws::Vector<Filter>&& value) { SetSupportedFilters(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline RasterDataCollectionMetadata& AddSupportedFilters(const Filter& value) { m_supportedFiltersHasBeenSet = true; m_supportedFilters.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of filters supported by the raster data collection.</p>
      */
     inline RasterDataCollectionMetadata& AddSupportedFilters(Filter&& value) { m_supportedFiltersHasBeenSet = true; m_supportedFilters.push_back(std::move(value)); return *this; }
 

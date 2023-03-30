@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline CreateExperienceResult& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline CreateExperienceResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for your created Amazon Kendra experience.</p>
+     * <p>The identifier of your Amazon Kendra experience.</p>
      */
     inline CreateExperienceResult& WithId(const char* value) { SetId(value); return *this;}
 

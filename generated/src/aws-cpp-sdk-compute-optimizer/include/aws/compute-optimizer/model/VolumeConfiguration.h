@@ -207,6 +207,27 @@ namespace Model
      */
     inline VolumeConfiguration& WithVolumeBurstThroughput(int value) { SetVolumeBurstThroughput(value); return *this;}
 
+
+    /**
+     * <p> Contains the image used to boot the instance during launch. </p>
+     */
+    inline bool GetRootVolume() const{ return m_rootVolume; }
+
+    /**
+     * <p> Contains the image used to boot the instance during launch. </p>
+     */
+    inline bool RootVolumeHasBeenSet() const { return m_rootVolumeHasBeenSet; }
+
+    /**
+     * <p> Contains the image used to boot the instance during launch. </p>
+     */
+    inline void SetRootVolume(bool value) { m_rootVolumeHasBeenSet = true; m_rootVolume = value; }
+
+    /**
+     * <p> Contains the image used to boot the instance during launch. </p>
+     */
+    inline VolumeConfiguration& WithRootVolume(bool value) { SetRootVolume(value); return *this;}
+
   private:
 
     Aws::String m_volumeType;
@@ -226,6 +247,9 @@ namespace Model
 
     int m_volumeBurstThroughput;
     bool m_volumeBurstThroughputHasBeenSet = false;
+
+    bool m_rootVolume;
+    bool m_rootVolumeHasBeenSet = false;
   };
 
 } // namespace Model

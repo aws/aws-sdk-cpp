@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Union representing different data sources to be used as input for an Earth
+   * Observation job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/EojDataSourceConfigInput">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline const S3DataInput& GetS3Data() const{ return m_s3Data; }
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline bool S3DataHasBeenSet() const { return m_s3DataHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline void SetS3Data(const S3DataInput& value) { m_s3DataHasBeenSet = true; m_s3Data = value; }
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline void SetS3Data(S3DataInput&& value) { m_s3DataHasBeenSet = true; m_s3Data = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline EojDataSourceConfigInput& WithS3Data(const S3DataInput& value) { SetS3Data(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure for S3Data; representing the Amazon S3 location of the
+     * input data objects.</p>
      */
     inline EojDataSourceConfigInput& WithS3Data(S3DataInput&& value) { SetS3Data(std::move(value)); return *this;}
 

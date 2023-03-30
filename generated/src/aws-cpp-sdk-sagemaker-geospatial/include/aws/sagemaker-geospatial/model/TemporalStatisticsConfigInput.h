@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing the configuration for Temporal Statistics
+   * operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/TemporalStatisticsConfigInput">AWS
    * API Reference</a></p>
    */
@@ -41,119 +42,119 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline const GroupBy& GetGroupBy() const{ return m_groupBy; }
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline void SetGroupBy(const GroupBy& value) { m_groupByHasBeenSet = true; m_groupBy = value; }
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline void SetGroupBy(GroupBy&& value) { m_groupByHasBeenSet = true; m_groupBy = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline TemporalStatisticsConfigInput& WithGroupBy(const GroupBy& value) { SetGroupBy(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input for the temporal statistics grouping by time frequency option.</p>
      */
     inline TemporalStatisticsConfigInput& WithGroupBy(GroupBy&& value) { SetGroupBy(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline const Aws::Vector<TemporalStatistics>& GetStatistics() const{ return m_statistics; }
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline void SetStatistics(const Aws::Vector<TemporalStatistics>& value) { m_statisticsHasBeenSet = true; m_statistics = value; }
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline void SetStatistics(Aws::Vector<TemporalStatistics>&& value) { m_statisticsHasBeenSet = true; m_statistics = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline TemporalStatisticsConfigInput& WithStatistics(const Aws::Vector<TemporalStatistics>& value) { SetStatistics(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline TemporalStatisticsConfigInput& WithStatistics(Aws::Vector<TemporalStatistics>&& value) { SetStatistics(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline TemporalStatisticsConfigInput& AddStatistics(const TemporalStatistics& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of the statistics method options.</p>
      */
     inline TemporalStatisticsConfigInput& AddStatistics(TemporalStatistics&& value) { m_statisticsHasBeenSet = true; m_statistics.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline TemporalStatisticsConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline TemporalStatisticsConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline TemporalStatisticsConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline TemporalStatisticsConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of target band names for the temporal statistic to calculate.</p>
      */
     inline TemporalStatisticsConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 

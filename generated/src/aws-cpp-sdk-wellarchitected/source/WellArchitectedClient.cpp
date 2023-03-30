@@ -34,6 +34,7 @@
 #include <aws/wellarchitected/model/DisassociateLensesRequest.h>
 #include <aws/wellarchitected/model/ExportLensRequest.h>
 #include <aws/wellarchitected/model/GetAnswerRequest.h>
+#include <aws/wellarchitected/model/GetConsolidatedReportRequest.h>
 #include <aws/wellarchitected/model/GetLensRequest.h>
 #include <aws/wellarchitected/model/GetLensReviewRequest.h>
 #include <aws/wellarchitected/model/GetLensReviewReportRequest.h>
@@ -438,6 +439,20 @@ GetAnswerOutcome WellArchitectedClient::GetAnswer(const GetAnswerRequest& reques
   endpointResolutionOutcome.GetResult().AddPathSegments("/answers/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetQuestionId());
   return GetAnswerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetConsolidatedReportOutcome WellArchitectedClient::GetConsolidatedReport(const GetConsolidatedReportRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetConsolidatedReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FormatHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConsolidatedReport", "Required field: Format, is not set");
+    return GetConsolidatedReportOutcome(Aws::Client::AWSError<WellArchitectedErrors>(WellArchitectedErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetConsolidatedReport, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/consolidatedReport");
+  return GetConsolidatedReportOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetLensOutcome WellArchitectedClient::GetLens(const GetLensRequest& request) const

@@ -29,7 +29,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Represents a single searchable property to search on.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/Property">AWS
    * API Reference</a></p>
    */
@@ -43,187 +44,223 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline const EoCloudCoverInput& GetEoCloudCover() const{ return m_eoCloudCover; }
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline bool EoCloudCoverHasBeenSet() const { return m_eoCloudCoverHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetEoCloudCover(const EoCloudCoverInput& value) { m_eoCloudCoverHasBeenSet = true; m_eoCloudCover = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetEoCloudCover(EoCloudCoverInput&& value) { m_eoCloudCoverHasBeenSet = true; m_eoCloudCover = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithEoCloudCover(const EoCloudCoverInput& value) { SetEoCloudCover(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing EoCloudCover property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithEoCloudCover(EoCloudCoverInput&& value) { SetEoCloudCover(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline const LandsatCloudCoverLandInput& GetLandsatCloudCoverLand() const{ return m_landsatCloudCoverLand; }
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline bool LandsatCloudCoverLandHasBeenSet() const { return m_landsatCloudCoverLandHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline void SetLandsatCloudCoverLand(const LandsatCloudCoverLandInput& value) { m_landsatCloudCoverLandHasBeenSet = true; m_landsatCloudCoverLand = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline void SetLandsatCloudCoverLand(LandsatCloudCoverLandInput&& value) { m_landsatCloudCoverLandHasBeenSet = true; m_landsatCloudCoverLand = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline Property& WithLandsatCloudCoverLand(const LandsatCloudCoverLandInput& value) { SetLandsatCloudCoverLand(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing Land Cloud Cover property filter for Landsat
+     * collection containing a lower bound and upper bound.</p>
      */
     inline Property& WithLandsatCloudCoverLand(LandsatCloudCoverLandInput&& value) { SetLandsatCloudCoverLand(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline const PlatformInput& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline void SetPlatform(const PlatformInput& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline void SetPlatform(PlatformInput&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline Property& WithPlatform(const PlatformInput& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing Platform property filter consisting of value and
+     * comparison operator.</p>
      */
     inline Property& WithPlatform(PlatformInput&& value) { SetPlatform(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline const ViewOffNadirInput& GetViewOffNadir() const{ return m_viewOffNadir; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline bool ViewOffNadirHasBeenSet() const { return m_viewOffNadirHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetViewOffNadir(const ViewOffNadirInput& value) { m_viewOffNadirHasBeenSet = true; m_viewOffNadir = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetViewOffNadir(ViewOffNadirInput&& value) { m_viewOffNadirHasBeenSet = true; m_viewOffNadir = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithViewOffNadir(const ViewOffNadirInput& value) { SetViewOffNadir(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing ViewOffNadir property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithViewOffNadir(ViewOffNadirInput&& value) { SetViewOffNadir(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline const ViewSunAzimuthInput& GetViewSunAzimuth() const{ return m_viewSunAzimuth; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline bool ViewSunAzimuthHasBeenSet() const { return m_viewSunAzimuthHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetViewSunAzimuth(const ViewSunAzimuthInput& value) { m_viewSunAzimuthHasBeenSet = true; m_viewSunAzimuth = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline void SetViewSunAzimuth(ViewSunAzimuthInput&& value) { m_viewSunAzimuthHasBeenSet = true; m_viewSunAzimuth = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithViewSunAzimuth(const ViewSunAzimuthInput& value) { SetViewSunAzimuth(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunAzimuth property filter containing a lower
+     * bound and upper bound.</p>
      */
     inline Property& WithViewSunAzimuth(ViewSunAzimuthInput&& value) { SetViewSunAzimuth(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline const ViewSunElevationInput& GetViewSunElevation() const{ return m_viewSunElevation; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline bool ViewSunElevationHasBeenSet() const { return m_viewSunElevationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline void SetViewSunElevation(const ViewSunElevationInput& value) { m_viewSunElevationHasBeenSet = true; m_viewSunElevation = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline void SetViewSunElevation(ViewSunElevationInput&& value) { m_viewSunElevationHasBeenSet = true; m_viewSunElevation = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline Property& WithViewSunElevation(const ViewSunElevationInput& value) { SetViewSunElevation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing ViewSunElevation property filter containing a
+     * lower bound and upper bound.</p>
      */
     inline Property& WithViewSunElevation(ViewSunElevationInput&& value) { SetViewSunElevation(std::move(value)); return *this;}
 

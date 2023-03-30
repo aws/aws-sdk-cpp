@@ -26,7 +26,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Input structure for the BandMath operation type. Defines Predefined and
+   * CustomIndices to be computed using BandMath.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/BandMathConfigInput">AWS
    * API Reference</a></p>
    */
@@ -40,78 +41,96 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline const CustomIndicesInput& GetCustomIndices() const{ return m_customIndices; }
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline bool CustomIndicesHasBeenSet() const { return m_customIndicesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline void SetCustomIndices(const CustomIndicesInput& value) { m_customIndicesHasBeenSet = true; m_customIndices = value; }
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline void SetCustomIndices(CustomIndicesInput&& value) { m_customIndicesHasBeenSet = true; m_customIndices = std::move(value); }
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline BandMathConfigInput& WithCustomIndices(const CustomIndicesInput& value) { SetCustomIndices(value); return *this;}
 
     /**
-     * <p/>
+     * <p>CustomIndices that are computed.</p>
      */
     inline BandMathConfigInput& WithCustomIndices(CustomIndicesInput&& value) { SetCustomIndices(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPredefinedIndices() const{ return m_predefinedIndices; }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline bool PredefinedIndicesHasBeenSet() const { return m_predefinedIndicesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline void SetPredefinedIndices(const Aws::Vector<Aws::String>& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices = value; }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline void SetPredefinedIndices(Aws::Vector<Aws::String>&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices = std::move(value); }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline BandMathConfigInput& WithPredefinedIndices(const Aws::Vector<Aws::String>& value) { SetPredefinedIndices(value); return *this;}
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline BandMathConfigInput& WithPredefinedIndices(Aws::Vector<Aws::String>&& value) { SetPredefinedIndices(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline BandMathConfigInput& AddPredefinedIndices(const Aws::String& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline BandMathConfigInput& AddPredefinedIndices(Aws::String&& value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>One or many of the supported predefined indices to compute. Allowed values:
+     * <code>NDVI</code>, <code>EVI2</code>, <code>MSAVI</code>, <code>NDWI</code>,
+     * <code>NDMI</code>, <code>NDSI</code>, and <code>WDRVI</code>.</p>
      */
     inline BandMathConfigInput& AddPredefinedIndices(const char* value) { m_predefinedIndicesHasBeenSet = true; m_predefinedIndices.push_back(value); return *this; }
 

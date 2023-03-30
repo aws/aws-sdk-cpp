@@ -23,7 +23,8 @@ MemberFeaturesConfigurationResult::MemberFeaturesConfigurationResult() :
     m_nameHasBeenSet(false),
     m_status(FeatureStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ MemberFeaturesConfigurationResult::MemberFeaturesConfigurationResult(JsonView js
     m_nameHasBeenSet(false),
     m_status(FeatureStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updatedAtHasBeenSet(false)
+    m_updatedAtHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,16 @@ MemberFeaturesConfigurationResult& MemberFeaturesConfigurationResult::operator =
     m_updatedAtHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
+    for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
+    {
+      m_additionalConfiguration.push_back(additionalConfigurationJsonList[additionalConfigurationIndex].AsObject());
+    }
+    m_additionalConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -80,6 +92,17 @@ JsonValue MemberFeaturesConfigurationResult::Jsonize() const
   if(m_updatedAtHasBeenSet)
   {
    payload.WithDouble("updatedAt", m_updatedAt.SecondsWithMSPrecision());
+  }
+
+  if(m_additionalConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalConfigurationJsonList(m_additionalConfiguration.size());
+   for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
+   {
+     additionalConfigurationJsonList[additionalConfigurationIndex].AsObject(m_additionalConfiguration[additionalConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("additionalConfiguration", std::move(additionalConfigurationJsonList));
+
   }
 
   return payload;

@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> Details of an Amazon EC2 AMI.</p><p><h3>See Also:</h3>   <a
+   * <p>Details of an Amazon EC2 AMI.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Ami">AWS
    * API Reference</a></p>
    */

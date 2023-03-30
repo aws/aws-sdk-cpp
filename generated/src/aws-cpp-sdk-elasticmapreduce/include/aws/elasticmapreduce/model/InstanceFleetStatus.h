@@ -52,7 +52,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
@@ -70,7 +70,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
@@ -88,7 +88,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
@@ -106,7 +106,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
@@ -124,7 +124,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>
@@ -142,7 +142,7 @@ namespace Model
      * <code>RESIZING</code>—A resize operation is underway. EC2 instances are either
      * being added or removed.</p> </li> <li> <p> <code>SUSPENDED</code>—A resize
      * operation could not complete. Existing EC2 instances are running, but instances
-     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>—The
+     * can't be added or removed.</p> </li> <li> <p> <code>TERMINATING</code>��The
      * instance fleet is terminating EC2 instances.</p> </li> <li> <p>
      * <code>TERMINATED</code>—The instance fleet is no longer active, and all EC2
      * instances have been terminated.</p> </li> </ul>

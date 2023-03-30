@@ -41,7 +41,7 @@ ExportEarthObservationJobResult& ExportEarthObservationJobResult::operator =(con
 
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
   }
 

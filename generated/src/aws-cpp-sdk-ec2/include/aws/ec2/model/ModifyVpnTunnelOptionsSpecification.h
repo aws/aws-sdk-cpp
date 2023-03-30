@@ -1077,6 +1077,27 @@ namespace Model
      */
     inline ModifyVpnTunnelOptionsSpecification& WithLogOptions(VpnTunnelLogOptionsSpecification&& value) { SetLogOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+     */
+    inline bool GetEnableTunnelLifecycleControl() const{ return m_enableTunnelLifecycleControl; }
+
+    /**
+     * <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+     */
+    inline bool EnableTunnelLifecycleControlHasBeenSet() const { return m_enableTunnelLifecycleControlHasBeenSet; }
+
+    /**
+     * <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+     */
+    inline void SetEnableTunnelLifecycleControl(bool value) { m_enableTunnelLifecycleControlHasBeenSet = true; m_enableTunnelLifecycleControl = value; }
+
+    /**
+     * <p>Turn on or off tunnel endpoint lifecycle control feature.</p>
+     */
+    inline ModifyVpnTunnelOptionsSpecification& WithEnableTunnelLifecycleControl(bool value) { SetEnableTunnelLifecycleControl(value); return *this;}
+
   private:
 
     Aws::String m_tunnelInsideCidr;
@@ -1135,6 +1156,9 @@ namespace Model
 
     VpnTunnelLogOptionsSpecification m_logOptions;
     bool m_logOptionsHasBeenSet = false;
+
+    bool m_enableTunnelLifecycleControl;
+    bool m_enableTunnelLifecycleControlHasBeenSet = false;
   };
 
 } // namespace Model

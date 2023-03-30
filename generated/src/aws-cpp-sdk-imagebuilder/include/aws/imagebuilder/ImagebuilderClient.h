@@ -185,7 +185,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Creates a new image. This request will create a new image along with all of
+         * <p>Creates a new image. This request will create a new image along with all of
          * the configured output resources defined in the distribution configuration. You
          * must specify exactly one recipe for your image, using either a
          * ContainerRecipeArn or an ImageRecipeArn.</p><p><h3>See Also:</h3>   <a
@@ -213,7 +213,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Creates a new image pipeline. Image pipelines enable you to automate the
+         * <p>Creates a new image pipeline. Image pipelines enable you to automate the
          * creation and distribution of images.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImagePipeline">AWS
          * API Reference</a></p>
@@ -239,7 +239,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Creates a new image recipe. Image recipes define how images are configured,
+         * <p>Creates a new image recipe. Image recipes define how images are configured,
          * tested, and assessed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateImageRecipe">AWS
          * API Reference</a></p>
@@ -265,7 +265,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Creates a new infrastructure configuration. An infrastructure configuration
+         * <p>Creates a new infrastructure configuration. An infrastructure configuration
          * defines the environment in which your image will be built and
          * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/CreateInfrastructureConfiguration">AWS
@@ -292,7 +292,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Deletes a component build version.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a component build version.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteComponent">AWS
          * API Reference</a></p>
          */
@@ -342,7 +342,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteDistributionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -405,7 +405,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImagePipeline">AWS
          * API Reference</a></p>
          */
@@ -430,7 +430,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Deletes an image recipe.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteImageRecipe">AWS
          * API Reference</a></p>
          */
@@ -455,7 +455,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Deletes an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/DeleteInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
@@ -480,7 +480,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets a component object.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a component object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponent">AWS
          * API Reference</a></p>
          */
@@ -505,7 +505,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets a component policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a component policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetComponentPolicy">AWS
          * API Reference</a></p>
          */
@@ -580,7 +580,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a distribution configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetDistributionConfiguration">AWS
          * API Reference</a></p>
          */
@@ -605,7 +605,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an image.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an image.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImage">AWS
          * API Reference</a></p>
          */
@@ -630,7 +630,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an image pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePipeline">AWS
          * API Reference</a></p>
          */
@@ -655,7 +655,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an image policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an image policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImagePolicy">AWS
          * API Reference</a></p>
          */
@@ -680,7 +680,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an image recipe.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an image recipe.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipe">AWS
          * API Reference</a></p>
          */
@@ -705,7 +705,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an image recipe policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetImageRecipePolicy">AWS
          * API Reference</a></p>
          */
@@ -730,7 +730,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets an infrastructure configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfiguration">AWS
          * API Reference</a></p>
          */
@@ -752,6 +752,58 @@ namespace imagebuilder
         void GetInfrastructureConfigurationAsync(const GetInfrastructureConfigurationRequestT& request, const GetInfrastructureConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ImagebuilderClient::GetInfrastructureConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Get the runtime information that was logged for a specific runtime instance
+         * of the workflow.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWorkflowExecutionOutcome GetWorkflowExecution(const Model::GetWorkflowExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWorkflowExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWorkflowExecutionRequestT = Model::GetWorkflowExecutionRequest>
+        Model::GetWorkflowExecutionOutcomeCallable GetWorkflowExecutionCallable(const GetWorkflowExecutionRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::GetWorkflowExecution, request);
+        }
+
+        /**
+         * An Async wrapper for GetWorkflowExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWorkflowExecutionRequestT = Model::GetWorkflowExecutionRequest>
+        void GetWorkflowExecutionAsync(const GetWorkflowExecutionRequestT& request, const GetWorkflowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::GetWorkflowExecution, request, handler, context);
+        }
+
+        /**
+         * <p>Get the runtime information that was logged for a specific runtime instance
+         * of the workflow step.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetWorkflowStepExecution">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetWorkflowStepExecutionOutcome GetWorkflowStepExecution(const Model::GetWorkflowStepExecutionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetWorkflowStepExecution that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetWorkflowStepExecutionRequestT = Model::GetWorkflowStepExecutionRequest>
+        Model::GetWorkflowStepExecutionOutcomeCallable GetWorkflowStepExecutionCallable(const GetWorkflowStepExecutionRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::GetWorkflowStepExecution, request);
+        }
+
+        /**
+         * An Async wrapper for GetWorkflowStepExecution that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetWorkflowStepExecutionRequestT = Model::GetWorkflowStepExecutionRequest>
+        void GetWorkflowStepExecutionAsync(const GetWorkflowStepExecutionRequestT& request, const GetWorkflowStepExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::GetWorkflowStepExecution, request, handler, context);
         }
 
         /**
@@ -816,7 +868,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Returns the list of component build versions for the specified semantic
+         * <p>Returns the list of component build versions for the specified semantic
          * version.</p>  <p>The semantic version has four nodes:
          * &lt;major&gt;.&lt;minor&gt;.&lt;patch&gt;/&lt;build&gt;. You can assign values
          * for the first three, and can filter on all of them.</p> <p> <b>Filtering:</b>
@@ -934,7 +986,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Returns a list of image build versions.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of image build versions.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageBuildVersions">AWS
          * API Reference</a></p>
          */
@@ -1037,7 +1089,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Returns a list of image recipes.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a list of image recipes.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageRecipes">AWS
          * API Reference</a></p>
          */
@@ -1059,6 +1111,66 @@ namespace imagebuilder
         void ListImageRecipesAsync(const ListImageRecipesRequestT& request, const ListImageRecipesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ImagebuilderClient::ListImageRecipes, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of image scan aggregations for your account. You can filter by
+         * the type of key that Image Builder uses to group results. For example, if you
+         * want to get a list of findings by severity level for one of your pipelines, you
+         * might specify your pipeline with the <code>imagePipelineArn</code> filter. If
+         * you don't specify a filter, Image Builder returns an aggregation for your
+         * account.</p> <p>To streamline results, you can use the following filters in your
+         * request:</p> <ul> <li> <p> <code>accountId</code> </p> </li> <li> <p>
+         * <code>imageBuildVersionArn</code> </p> </li> <li> <p>
+         * <code>imagePipelineArn</code> </p> </li> <li> <p> <code>vulnerabilityId</code>
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindingAggregations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImageScanFindingAggregationsOutcome ListImageScanFindingAggregations(const Model::ListImageScanFindingAggregationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImageScanFindingAggregations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListImageScanFindingAggregationsRequestT = Model::ListImageScanFindingAggregationsRequest>
+        Model::ListImageScanFindingAggregationsOutcomeCallable ListImageScanFindingAggregationsCallable(const ListImageScanFindingAggregationsRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListImageScanFindingAggregations, request);
+        }
+
+        /**
+         * An Async wrapper for ListImageScanFindingAggregations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListImageScanFindingAggregationsRequestT = Model::ListImageScanFindingAggregationsRequest>
+        void ListImageScanFindingAggregationsAsync(const ListImageScanFindingAggregationsRequestT& request, const ListImageScanFindingAggregationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListImageScanFindingAggregations, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of image scan findings for your account.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListImageScanFindings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListImageScanFindingsOutcome ListImageScanFindings(const Model::ListImageScanFindingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListImageScanFindings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListImageScanFindingsRequestT = Model::ListImageScanFindingsRequest>
+        Model::ListImageScanFindingsOutcomeCallable ListImageScanFindingsCallable(const ListImageScanFindingsRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListImageScanFindings, request);
+        }
+
+        /**
+         * An Async wrapper for ListImageScanFindings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListImageScanFindingsRequestT = Model::ListImageScanFindingsRequest>
+        void ListImageScanFindingsAsync(const ListImageScanFindingsRequestT& request, const ListImageScanFindingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListImageScanFindings, request, handler, context);
         }
 
         /**
@@ -1089,7 +1201,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Returns a list of infrastructure configurations.</p><p><h3>See Also:</h3>  
+         * <p>Returns a list of infrastructure configurations.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListInfrastructureConfigurations">AWS
          * API Reference</a></p>
@@ -1115,8 +1227,8 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Returns the list of tags for the specified resource.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Returns the list of tags for the specified resource.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -1141,7 +1253,59 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Applies a policy to a component. We recommend that you call the RAM API <a
+         * <p>Returns a list of workflow runtime instance metadata objects for a specific
+         * image build version.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkflowExecutionsOutcome ListWorkflowExecutions(const Model::ListWorkflowExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWorkflowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWorkflowExecutionsRequestT = Model::ListWorkflowExecutionsRequest>
+        Model::ListWorkflowExecutionsOutcomeCallable ListWorkflowExecutionsCallable(const ListWorkflowExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListWorkflowExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListWorkflowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWorkflowExecutionsRequestT = Model::ListWorkflowExecutionsRequest>
+        void ListWorkflowExecutionsAsync(const ListWorkflowExecutionsRequestT& request, const ListWorkflowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListWorkflowExecutions, request, handler, context);
+        }
+
+        /**
+         * <p>Shows runtime data for each step in a runtime instance of the workflow that
+         * you specify in the request.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/ListWorkflowStepExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListWorkflowStepExecutionsOutcome ListWorkflowStepExecutions(const Model::ListWorkflowStepExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListWorkflowStepExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListWorkflowStepExecutionsRequestT = Model::ListWorkflowStepExecutionsRequest>
+        Model::ListWorkflowStepExecutionsOutcomeCallable ListWorkflowStepExecutionsCallable(const ListWorkflowStepExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&ImagebuilderClient::ListWorkflowStepExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for ListWorkflowStepExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListWorkflowStepExecutionsRequestT = Model::ListWorkflowStepExecutionsRequest>
+        void ListWorkflowStepExecutionsAsync(const ListWorkflowStepExecutionsRequestT& request, const ListWorkflowStepExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ImagebuilderClient::ListWorkflowStepExecutions, request, handler, context);
+        }
+
+        /**
+         * <p>Applies a policy to a component. We recommend that you call the RAM API <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
          * to share resources. If you call the Image Builder API
          * <code>PutComponentPolicy</code>, you must also call the RAM API <a
@@ -1236,7 +1400,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Applies a policy to an image recipe. We recommend that you call the RAM API
+         * <p>Applies a policy to an image recipe. We recommend that you call the RAM API
          * <a
          * href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a>
          * to share resources. If you call the Image Builder API
@@ -1268,7 +1432,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>  
+         * <p>Manually triggers a pipeline to create an image.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/StartImagePipelineExecution">AWS
          * API Reference</a></p>
@@ -1294,7 +1458,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Adds a tag to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/TagResource">AWS
          * API Reference</a></p>
          */
@@ -1319,7 +1483,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
+         * <p>Removes a tag from a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -1344,7 +1508,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Updates a new distribution configuration. Distribution configurations define
+         * <p>Updates a new distribution configuration. Distribution configurations define
          * and configure the outputs of your pipeline.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateDistributionConfiguration">AWS
          * API Reference</a></p>
@@ -1370,7 +1534,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Updates an image pipeline. Image pipelines enable you to automate the
+         * <p>Updates an image pipeline. Image pipelines enable you to automate the
          * creation and distribution of images.</p>  <p>UpdateImagePipeline does not
          * support selective updates for the pipeline. You must specify all of the required
          * properties in the update request, not just the properties that have changed.</p>
@@ -1399,7 +1563,7 @@ namespace imagebuilder
         }
 
         /**
-         * <p> Updates a new infrastructure configuration. An infrastructure configuration
+         * <p>Updates a new infrastructure configuration. An infrastructure configuration
          * defines the environment in which your image will be built and
          * tested.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/UpdateInfrastructureConfiguration">AWS

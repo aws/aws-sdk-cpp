@@ -33,21 +33,21 @@ namespace IVS
    * <b>Resources</b> </p> <p>The following resources contain information about your
    * IVS live stream (see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">
-   * Getting Started with Amazon IVS</a>):</p> <ul> <li> <p>Channel — Stores
+   * Getting Started with Amazon IVS</a>):</p> <ul> <li> <p> <b>Channel</b> — Stores
    * configuration data related to your live stream. You first create a channel and
    * then use the channel’s stream key to start your live stream. See the Channel
-   * endpoints for more information. </p> </li> <li> <p>Stream key — An identifier
-   * assigned by Amazon IVS when you create a channel, which is then used to
-   * authorize streaming. See the StreamKey endpoints for more information. <i>
+   * endpoints for more information. </p> </li> <li> <p> <b>Stream key</b> — An
+   * identifier assigned by Amazon IVS when you create a channel, which is then used
+   * to authorize streaming. See the StreamKey endpoints for more information. <i>
    * <b>Treat the stream key like a secret, since it allows anyone to stream to the
-   * channel.</b> </i> </p> </li> <li> <p>Playback key pair — Video playback may be
-   * restricted using playback-authorization tokens, which use public-key encryption.
-   * A playback key pair is the public-private pair of keys used to sign and validate
-   * the playback-authorization token. See the PlaybackKeyPair endpoints for more
-   * information.</p> </li> <li> <p>Recording configuration — Stores configuration
-   * related to recording a live stream and where to store the recorded content.
-   * Multiple channels can reference the same recording configuration. See the
-   * Recording Configuration endpoints for more information.</p> </li> </ul> <p>
+   * channel.</b> </i> </p> </li> <li> <p> <b>Playback key pair</b> — Video playback
+   * may be restricted using playback-authorization tokens, which use public-key
+   * encryption. A playback key pair is the public-private pair of keys used to sign
+   * and validate the playback-authorization token. See the PlaybackKeyPair endpoints
+   * for more information.</p> </li> <li> <p> <b>Recording configuration</b> — Stores
+   * configuration related to recording a live stream and where to store the recorded
+   * content. Multiple channels can reference the same recording configuration. See
+   * the Recording Configuration endpoints for more information.</p> </li> </ul> <p>
    * <b>Tagging</b> </p> <p>A <i>tag</i> is a metadata label that you assign to an
    * Amazon Web Services resource. A tag comprises a <i>key</i> and a <i>value</i>,
    * both set by you. For example, you might set a tag as <code>topic:nature</code>

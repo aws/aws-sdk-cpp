@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for Reverse Geocoding operation type.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ReverseGeocodingConfig">AWS
    * API Reference</a></p>
    */
@@ -38,83 +39,99 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline const Aws::String& GetXAttributeName() const{ return m_xAttributeName; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline bool XAttributeNameHasBeenSet() const { return m_xAttributeNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline void SetXAttributeName(const Aws::String& value) { m_xAttributeNameHasBeenSet = true; m_xAttributeName = value; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline void SetXAttributeName(Aws::String&& value) { m_xAttributeNameHasBeenSet = true; m_xAttributeName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline void SetXAttributeName(const char* value) { m_xAttributeNameHasBeenSet = true; m_xAttributeName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline ReverseGeocodingConfig& WithXAttributeName(const Aws::String& value) { SetXAttributeName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline ReverseGeocodingConfig& WithXAttributeName(Aws::String&& value) { SetXAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes x-axis coordinate, eg. longitude
+     * of a point.</p>
      */
     inline ReverseGeocodingConfig& WithXAttributeName(const char* value) { SetXAttributeName(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline const Aws::String& GetYAttributeName() const{ return m_yAttributeName; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline bool YAttributeNameHasBeenSet() const { return m_yAttributeNameHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline void SetYAttributeName(const Aws::String& value) { m_yAttributeNameHasBeenSet = true; m_yAttributeName = value; }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline void SetYAttributeName(Aws::String&& value) { m_yAttributeNameHasBeenSet = true; m_yAttributeName = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline void SetYAttributeName(const char* value) { m_yAttributeNameHasBeenSet = true; m_yAttributeName.assign(value); }
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline ReverseGeocodingConfig& WithYAttributeName(const Aws::String& value) { SetYAttributeName(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline ReverseGeocodingConfig& WithYAttributeName(Aws::String&& value) { SetYAttributeName(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The field name for the data that describes y-axis coordinate, eg. latitude of
+     * a point.</p>
      */
     inline ReverseGeocodingConfig& WithYAttributeName(const char* value) { SetYAttributeName(value); return *this;}
 

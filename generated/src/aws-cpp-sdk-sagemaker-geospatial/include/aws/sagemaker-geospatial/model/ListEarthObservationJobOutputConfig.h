@@ -176,42 +176,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline const Aws::String& GetOperationType() const{ return m_operationType; }
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline void SetOperationType(const Aws::String& value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline void SetOperationType(Aws::String&& value) { m_operationTypeHasBeenSet = true; m_operationType = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline void SetOperationType(const char* value) { m_operationTypeHasBeenSet = true; m_operationType.assign(value); }
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline ListEarthObservationJobOutputConfig& WithOperationType(const Aws::String& value) { SetOperationType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline ListEarthObservationJobOutputConfig& WithOperationType(Aws::String&& value) { SetOperationType(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The operation type for an Earth Observation job.</p>
      */
     inline ListEarthObservationJobOutputConfig& WithOperationType(const char* value) { SetOperationType(value); return *this;}
 

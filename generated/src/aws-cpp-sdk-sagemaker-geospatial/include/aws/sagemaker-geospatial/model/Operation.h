@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Represents an arithmetic operation to compute spectral index.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/Operation">AWS
    * API Reference</a></p>
    */
@@ -39,42 +40,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline const Aws::String& GetEquation() const{ return m_equation; }
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline bool EquationHasBeenSet() const { return m_equationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline void SetEquation(const Aws::String& value) { m_equationHasBeenSet = true; m_equation = value; }
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline void SetEquation(Aws::String&& value) { m_equationHasBeenSet = true; m_equation = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline void SetEquation(const char* value) { m_equationHasBeenSet = true; m_equation.assign(value); }
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline Operation& WithEquation(const Aws::String& value) { SetEquation(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline Operation& WithEquation(Aws::String&& value) { SetEquation(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Textual representation of the math operation; Equation used to compute the
+     * spectral index.</p>
      */
     inline Operation& WithEquation(const char* value) { SetEquation(value); return *this;}
 

@@ -48,6 +48,7 @@ enum class KendraErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   CONFLICT= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
+  FEATURED_RESULTS_CONFLICT,
   INTERNAL_SERVER,
   INVALID_REQUEST,
   RESOURCE_ALREADY_EXIST,

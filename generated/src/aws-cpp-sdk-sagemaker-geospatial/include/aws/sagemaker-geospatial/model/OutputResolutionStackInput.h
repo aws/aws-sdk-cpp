@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure representing Output Resolution for Stacking
+   * Operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/OutputResolutionStackInput">AWS
    * API Reference</a></p>
    */
@@ -39,63 +40,81 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline const PredefinedResolution& GetPredefined() const{ return m_predefined; }
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline bool PredefinedHasBeenSet() const { return m_predefinedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline void SetPredefined(const PredefinedResolution& value) { m_predefinedHasBeenSet = true; m_predefined = value; }
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline void SetPredefined(PredefinedResolution&& value) { m_predefinedHasBeenSet = true; m_predefined = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline OutputResolutionStackInput& WithPredefined(const PredefinedResolution& value) { SetPredefined(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A string value representing Predefined Output Resolution for a stacking
+     * operation. Allowed values are <code>HIGHEST</code>, <code>LOWEST</code>, and
+     * <code>AVERAGE</code>.</p>
      */
     inline OutputResolutionStackInput& WithPredefined(PredefinedResolution&& value) { SetPredefined(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline const UserDefined& GetUserDefined() const{ return m_userDefined; }
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline bool UserDefinedHasBeenSet() const { return m_userDefinedHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline void SetUserDefined(const UserDefined& value) { m_userDefinedHasBeenSet = true; m_userDefined = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline void SetUserDefined(UserDefined&& value) { m_userDefinedHasBeenSet = true; m_userDefined = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline OutputResolutionStackInput& WithUserDefined(const UserDefined& value) { SetUserDefined(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing User Output Resolution for a Stacking operation
+     * defined as a value and unit.</p>
      */
     inline OutputResolutionStackInput& WithUserDefined(UserDefined&& value) { SetUserDefined(std::move(value)); return *this;}
 

@@ -88,115 +88,115 @@ namespace Model
 
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A user friendly name for the block list.</p> <p>For example, the block list
-     * named 'offensive-words' includes all offensive words that could appear in user
-     * queries and need to be blocked from suggestions.</p>
+     * <p>A name for the block list.</p> <p>For example, the name 'offensive-words',
+     * which includes all offensive words that could appear in user queries and need to
+     * be blocked from suggestions.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A user-friendly description for the block list.</p> <p>For example, the
-     * description "List of all offensive words that can appear in user queries and
-     * need to be blocked from suggestions."</p>
+     * <p>A description for the block list.</p> <p>For example, the description "List
+     * of all offensive words that can appear in user queries and need to be blocked
+     * from suggestions."</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -306,123 +306,123 @@ namespace Model
 
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM (Identity and Access Management) role used by Amazon Kendra to access
-     * the block list text file in your S3 bucket.</p> <p>You need permissions to the
-     * role ARN (Amazon Web Services Resource Name). The role needs S3 read permissions
-     * to your file in S3 and needs to give STS (Security Token Service) assume role
-     * permissions to Amazon Kendra.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access your
+     * S3 bucket that contains the block list text file. For more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A tag that you can assign to a block list that categorizes the block
-     * list.</p>
+     * <p>A list of key-value pairs that identify or categorize the block list. Tag
+     * keys and values can consist of Unicode letters, digits, white space, and any of
+     * the following symbols: _ . : / = + - @.</p>
      */
     inline CreateQuerySuggestionsBlockListRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

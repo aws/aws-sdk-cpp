@@ -52,7 +52,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline const Urls& GetUrls() const{ return m_urls; }
@@ -67,7 +67,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline bool UrlsHasBeenSet() const { return m_urlsHasBeenSet; }
@@ -82,7 +82,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline void SetUrls(const Urls& value) { m_urlsHasBeenSet = true; m_urls = value; }
@@ -97,7 +97,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline void SetUrls(Urls&& value) { m_urlsHasBeenSet = true; m_urls = std::move(value); }
@@ -112,7 +112,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline WebCrawlerConfiguration& WithUrls(const Urls& value) { SetUrls(value); return *this;}
@@ -127,7 +127,7 @@ namespace Model
      * selecting websites to index, you must adhere to the <a
      * href="https://aws.amazon.com/aup/">Amazon Acceptable Use Policy</a> and all
      * other Amazon terms. Remember that you must only use Amazon Kendra Web Crawler to
-     * index your own webpages, or webpages that you have authorization to index.</i>
+     * index your own web pages, or web pages that you have authorization to index.</i>
      * </p>
      */
     inline WebCrawlerConfiguration& WithUrls(Urls&& value) { SetUrls(std::move(value)); return *this;}
@@ -136,102 +136,102 @@ namespace Model
     /**
      * <p>Specifies the number of levels in a website that you want to crawl.</p>
      * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has 3 levels – index level (i.e. seed in this example),
-     * sections level, and subsections level – and you are only interested in crawling
-     * information up to the sections level (i.e. levels 0-1), you can set your depth
-     * to 1.</p> <p>The default crawl depth is set to 2.</p>
+     * example, if a website has three levels—index level (the seed in this example),
+     * sections level, and subsections level—and you are only interested in crawling
+     * information up to the sections level (levels 0-1), you can set your depth to
+     * 1.</p> <p>The default crawl depth is set to 2.</p>
      */
     inline int GetCrawlDepth() const{ return m_crawlDepth; }
 
     /**
      * <p>Specifies the number of levels in a website that you want to crawl.</p>
      * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has 3 levels – index level (i.e. seed in this example),
-     * sections level, and subsections level – and you are only interested in crawling
-     * information up to the sections level (i.e. levels 0-1), you can set your depth
-     * to 1.</p> <p>The default crawl depth is set to 2.</p>
+     * example, if a website has three levels—index level (the seed in this example),
+     * sections level, and subsections level—and you are only interested in crawling
+     * information up to the sections level (levels 0-1), you can set your depth to
+     * 1.</p> <p>The default crawl depth is set to 2.</p>
      */
     inline bool CrawlDepthHasBeenSet() const { return m_crawlDepthHasBeenSet; }
 
     /**
      * <p>Specifies the number of levels in a website that you want to crawl.</p>
      * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has 3 levels – index level (i.e. seed in this example),
-     * sections level, and subsections level – and you are only interested in crawling
-     * information up to the sections level (i.e. levels 0-1), you can set your depth
-     * to 1.</p> <p>The default crawl depth is set to 2.</p>
+     * example, if a website has three levels—index level (the seed in this example),
+     * sections level, and subsections level—and you are only interested in crawling
+     * information up to the sections level (levels 0-1), you can set your depth to
+     * 1.</p> <p>The default crawl depth is set to 2.</p>
      */
     inline void SetCrawlDepth(int value) { m_crawlDepthHasBeenSet = true; m_crawlDepth = value; }
 
     /**
      * <p>Specifies the number of levels in a website that you want to crawl.</p>
      * <p>The first level begins from the website seed or starting point URL. For
-     * example, if a website has 3 levels – index level (i.e. seed in this example),
-     * sections level, and subsections level – and you are only interested in crawling
-     * information up to the sections level (i.e. levels 0-1), you can set your depth
-     * to 1.</p> <p>The default crawl depth is set to 2.</p>
+     * example, if a website has three levels—index level (the seed in this example),
+     * sections level, and subsections level—and you are only interested in crawling
+     * information up to the sections level (levels 0-1), you can set your depth to
+     * 1.</p> <p>The default crawl depth is set to 2.</p>
      */
     inline WebCrawlerConfiguration& WithCrawlDepth(int value) { SetCrawlDepth(value); return *this;}
 
 
     /**
-     * <p>The maximum number of URLs on a webpage to include when crawling a website.
-     * This number is per webpage.</p> <p>As a website’s webpages are crawled, any URLs
-     * the webpages link to are also crawled. URLs on a webpage are crawled in order of
-     * appearance.</p> <p>The default maximum links per page is 100.</p>
+     * <p>The maximum number of URLs on a web page to include when crawling a website.
+     * This number is per web page.</p> <p>As a website’s web pages are crawled, any
+     * URLs the web pages link to are also crawled. URLs on a web page are crawled in
+     * order of appearance.</p> <p>The default maximum links per page is 100.</p>
      */
     inline int GetMaxLinksPerPage() const{ return m_maxLinksPerPage; }
 
     /**
-     * <p>The maximum number of URLs on a webpage to include when crawling a website.
-     * This number is per webpage.</p> <p>As a website’s webpages are crawled, any URLs
-     * the webpages link to are also crawled. URLs on a webpage are crawled in order of
-     * appearance.</p> <p>The default maximum links per page is 100.</p>
+     * <p>The maximum number of URLs on a web page to include when crawling a website.
+     * This number is per web page.</p> <p>As a website’s web pages are crawled, any
+     * URLs the web pages link to are also crawled. URLs on a web page are crawled in
+     * order of appearance.</p> <p>The default maximum links per page is 100.</p>
      */
     inline bool MaxLinksPerPageHasBeenSet() const { return m_maxLinksPerPageHasBeenSet; }
 
     /**
-     * <p>The maximum number of URLs on a webpage to include when crawling a website.
-     * This number is per webpage.</p> <p>As a website’s webpages are crawled, any URLs
-     * the webpages link to are also crawled. URLs on a webpage are crawled in order of
-     * appearance.</p> <p>The default maximum links per page is 100.</p>
+     * <p>The maximum number of URLs on a web page to include when crawling a website.
+     * This number is per web page.</p> <p>As a website’s web pages are crawled, any
+     * URLs the web pages link to are also crawled. URLs on a web page are crawled in
+     * order of appearance.</p> <p>The default maximum links per page is 100.</p>
      */
     inline void SetMaxLinksPerPage(int value) { m_maxLinksPerPageHasBeenSet = true; m_maxLinksPerPage = value; }
 
     /**
-     * <p>The maximum number of URLs on a webpage to include when crawling a website.
-     * This number is per webpage.</p> <p>As a website’s webpages are crawled, any URLs
-     * the webpages link to are also crawled. URLs on a webpage are crawled in order of
-     * appearance.</p> <p>The default maximum links per page is 100.</p>
+     * <p>The maximum number of URLs on a web page to include when crawling a website.
+     * This number is per web page.</p> <p>As a website’s web pages are crawled, any
+     * URLs the web pages link to are also crawled. URLs on a web page are crawled in
+     * order of appearance.</p> <p>The default maximum links per page is 100.</p>
      */
     inline WebCrawlerConfiguration& WithMaxLinksPerPage(int value) { SetMaxLinksPerPage(value); return *this;}
 
 
     /**
-     * <p>The maximum size (in MB) of a webpage or attachment to crawl.</p> <p>Files
+     * <p>The maximum size (in MB) of a web page or attachment to crawl.</p> <p>Files
      * larger than this size (in MB) are skipped/not crawled.</p> <p>The default
-     * maximum size of a webpage or attachment is set to 50 MB.</p>
+     * maximum size of a web page or attachment is set to 50 MB.</p>
      */
     inline double GetMaxContentSizePerPageInMegaBytes() const{ return m_maxContentSizePerPageInMegaBytes; }
 
     /**
-     * <p>The maximum size (in MB) of a webpage or attachment to crawl.</p> <p>Files
+     * <p>The maximum size (in MB) of a web page or attachment to crawl.</p> <p>Files
      * larger than this size (in MB) are skipped/not crawled.</p> <p>The default
-     * maximum size of a webpage or attachment is set to 50 MB.</p>
+     * maximum size of a web page or attachment is set to 50 MB.</p>
      */
     inline bool MaxContentSizePerPageInMegaBytesHasBeenSet() const { return m_maxContentSizePerPageInMegaBytesHasBeenSet; }
 
     /**
-     * <p>The maximum size (in MB) of a webpage or attachment to crawl.</p> <p>Files
+     * <p>The maximum size (in MB) of a web page or attachment to crawl.</p> <p>Files
      * larger than this size (in MB) are skipped/not crawled.</p> <p>The default
-     * maximum size of a webpage or attachment is set to 50 MB.</p>
+     * maximum size of a web page or attachment is set to 50 MB.</p>
      */
     inline void SetMaxContentSizePerPageInMegaBytes(double value) { m_maxContentSizePerPageInMegaBytesHasBeenSet = true; m_maxContentSizePerPageInMegaBytes = value; }
 
     /**
-     * <p>The maximum size (in MB) of a webpage or attachment to crawl.</p> <p>Files
+     * <p>The maximum size (in MB) of a web page or attachment to crawl.</p> <p>Files
      * larger than this size (in MB) are skipped/not crawled.</p> <p>The default
-     * maximum size of a webpage or attachment is set to 50 MB.</p>
+     * maximum size of a web page or attachment is set to 50 MB.</p>
      */
     inline WebCrawlerConfiguration& WithMaxContentSizePerPageInMegaBytes(double value) { SetMaxContentSizePerPageInMegaBytes(value); return *this;}
 

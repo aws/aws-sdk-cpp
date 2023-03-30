@@ -32,6 +32,7 @@ namespace Aws
         static const int Successful_HASH = HashingUtils::HashString("Successful");
         static const int Failed_HASH = HashingUtils::HashString("Failed");
         static const int Cancelled_HASH = HashingUtils::HashString("Cancelled");
+        static const int WaitingForConnectionDraining_HASH = HashingUtils::HashString("WaitingForConnectionDraining");
 
 
         ScalingActivityStatusCode GetScalingActivityStatusCodeForName(const Aws::String& name)
@@ -85,6 +86,10 @@ namespace Aws
           {
             return ScalingActivityStatusCode::Cancelled;
           }
+          else if (hashCode == WaitingForConnectionDraining_HASH)
+          {
+            return ScalingActivityStatusCode::WaitingForConnectionDraining;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -123,6 +128,8 @@ namespace Aws
             return "Failed";
           case ScalingActivityStatusCode::Cancelled:
             return "Cancelled";
+          case ScalingActivityStatusCode::WaitingForConnectionDraining:
+            return "WaitingForConnectionDraining";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

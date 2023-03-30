@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure representing a single PropertyFilter.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/PropertyFilter">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline const Property& GetProperty() const{ return m_property; }
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline void SetProperty(const Property& value) { m_propertyHasBeenSet = true; m_property = value; }
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline void SetProperty(Property&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline PropertyFilter& WithProperty(const Property& value) { SetProperty(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Represents a single property to match with when searching a raster data
+     * collection.</p>
      */
     inline PropertyFilter& WithProperty(Property&& value) { SetProperty(std::move(value)); return *this;}
 

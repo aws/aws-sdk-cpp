@@ -97,6 +97,31 @@ namespace Model
 
 
     /**
+     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <code>false</code>.</p>
+     */
+    inline bool GetInsecureIngest() const{ return m_insecureIngest; }
+
+    /**
+     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <code>false</code>.</p>
+     */
+    inline bool InsecureIngestHasBeenSet() const { return m_insecureIngestHasBeenSet; }
+
+    /**
+     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <code>false</code>.</p>
+     */
+    inline void SetInsecureIngest(bool value) { m_insecureIngestHasBeenSet = true; m_insecureIngest = value; }
+
+    /**
+     * <p>Whether the channel allows insecure RTMP ingest. Default:
+     * <code>false</code>.</p>
+     */
+    inline UpdateChannelRequest& WithInsecureIngest(bool value) { SetInsecureIngest(value); return *this;}
+
+
+    /**
      * <p>Channel latency mode. Use <code>NORMAL</code> to broadcast and deliver live
      * video up to Full HD. Use <code>LOW</code> for near-real-time interaction with
      * viewers. (Note: In the Amazon IVS console, <code>LOW</code> and
@@ -352,6 +377,9 @@ namespace Model
 
     bool m_authorized;
     bool m_authorizedHasBeenSet = false;
+
+    bool m_insecureIngest;
+    bool m_insecureIngestHasBeenSet = false;
 
     ChannelLatencyMode m_latencyMode;
     bool m_latencyModeHasBeenSet = false;

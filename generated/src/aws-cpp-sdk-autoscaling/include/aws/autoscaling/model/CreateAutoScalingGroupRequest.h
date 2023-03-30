@@ -647,63 +647,63 @@ namespace Model
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLoadBalancerNames() const{ return m_loadBalancerNames; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline bool LoadBalancerNamesHasBeenSet() const { return m_loadBalancerNamesHasBeenSet; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(const Aws::Vector<Aws::String>& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = value; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline void SetLoadBalancerNames(Aws::Vector<Aws::String>&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames = std::move(value); }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(const Aws::Vector<Aws::String>& value) { SetLoadBalancerNames(value); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& WithLoadBalancerNames(Aws::Vector<Aws::String>&& value) { SetLoadBalancerNames(std::move(value)); return *this;}
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const Aws::String& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(Aws::String&& value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>A list of Classic Load Balancers associated with this Auto Scaling group. For
-     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancer,
+     * Application Load Balancers, Network Load Balancers, and Gateway Load Balancers,
      * specify the <code>TargetGroupARNs</code> property instead.</p>
      */
     inline CreateAutoScalingGroupRequest& AddLoadBalancerNames(const char* value) { m_loadBalancerNamesHasBeenSet = true; m_loadBalancerNames.push_back(value); return *this; }
@@ -810,106 +810,90 @@ namespace Model
 
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline const Aws::String& GetHealthCheckType() const{ return m_healthCheckType; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline bool HealthCheckTypeHasBeenSet() const { return m_healthCheckTypeHasBeenSet; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const Aws::String& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = value; }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(Aws::String&& value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType = std::move(value); }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline void SetHealthCheckType(const char* value) { m_healthCheckTypeHasBeenSet = true; m_healthCheckType.assign(value); }
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const Aws::String& value) { SetHealthCheckType(value); return *this;}
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(Aws::String&& value) { SetHealthCheckType(std::move(value)); return *this;}
 
     /**
-     * <p>Determines whether any additional health checks are performed on the
-     * instances in this group. Amazon EC2 health checks are always on. For more
+     * <p>A comma-separated list of one or more health check types.</p> <p>The valid
+     * values are <code>EC2</code>, <code>ELB</code>, and <code>VPC_LATTICE</code>.
+     * <code>EC2</code> is the default health check and cannot be disabled. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/healthcheck.html">Health
      * checks for Auto Scaling instances</a> in the <i>Amazon EC2 Auto Scaling User
-     * Guide</i>.</p> <p>The valid values are <code>EC2</code> (default),
-     * <code>ELB</code>, and <code>VPC_LATTICE</code>. The <code>VPC_LATTICE</code>
-     * health check type is reserved for use with VPC Lattice, which is in preview
-     * release and is subject to change.</p>
+     * Guide</i>.</p>
      */
     inline CreateAutoScalingGroupRequest& WithHealthCheckType(const char* value) { SetHealthCheckType(value); return *this;}
 
@@ -1858,98 +1842,66 @@ namespace Model
 
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline const Aws::Vector<TrafficSourceIdentifier>& GetTrafficSources() const{ return m_trafficSources; }
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline bool TrafficSourcesHasBeenSet() const { return m_trafficSourcesHasBeenSet; }
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline void SetTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = value; }
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline void SetTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources = std::move(value); }
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTrafficSources(const Aws::Vector<TrafficSourceIdentifier>& value) { SetTrafficSources(value); return *this;}
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline CreateAutoScalingGroupRequest& WithTrafficSources(Aws::Vector<TrafficSourceIdentifier>&& value) { SetTrafficSources(std::move(value)); return *this;}
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTrafficSources(const TrafficSourceIdentifier& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(value); return *this; }
 
     /**
-     * <p> <b>Reserved for use with Amazon VPC Lattice, which is in preview release and
-     * is subject to change. Do not use this parameter for production workloads. It is
-     * also subject to change.</b> </p> <p>The unique identifiers of one or more
-     * traffic sources.</p> <p>Currently, you must specify an Amazon Resource Name
-     * (ARN) for an existing VPC Lattice target group. Amazon EC2 Auto Scaling
-     * registers the running instances with the attached target groups. The target
-     * groups receive incoming traffic and route requests to one or more registered
-     * targets.</p>
+     * <p>The list of traffic sources to attach to this Auto Scaling group. You can use
+     * any of the following as traffic sources for an Auto Scaling group: Classic Load
+     * Balancer, Application Load Balancer, Gateway Load Balancer, Network Load
+     * Balancer, and VPC Lattice.</p>
      */
     inline CreateAutoScalingGroupRequest& AddTrafficSources(TrafficSourceIdentifier&& value) { m_trafficSourcesHasBeenSet = true; m_trafficSources.push_back(std::move(value)); return *this; }
 

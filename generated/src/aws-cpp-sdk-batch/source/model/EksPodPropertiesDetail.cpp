@@ -26,7 +26,8 @@ EksPodPropertiesDetail::EksPodPropertiesDetail() :
     m_containersHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_podNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_nodeNameHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ EksPodPropertiesDetail::EksPodPropertiesDetail(JsonView jsonValue) :
     m_containersHasBeenSet(false),
     m_volumesHasBeenSet(false),
     m_podNameHasBeenSet(false),
-    m_nodeNameHasBeenSet(false)
+    m_nodeNameHasBeenSet(false),
+    m_metadataHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -100,6 +102,13 @@ EksPodPropertiesDetail& EksPodPropertiesDetail::operator =(JsonView jsonValue)
     m_nodeNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("metadata"))
+  {
+    m_metadata = jsonValue.GetObject("metadata");
+
+    m_metadataHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -156,6 +165,12 @@ JsonValue EksPodPropertiesDetail::Jsonize() const
   if(m_nodeNameHasBeenSet)
   {
    payload.WithString("nodeName", m_nodeName);
+
+  }
+
+  if(m_metadataHasBeenSet)
+  {
+   payload.WithObject("metadata", m_metadata.Jsonize());
 
   }
 

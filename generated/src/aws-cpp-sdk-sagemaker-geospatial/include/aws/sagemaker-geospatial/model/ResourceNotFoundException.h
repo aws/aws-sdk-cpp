@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The request references a resource which does not exist.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ResourceNotFoundException">AWS
    * API Reference</a></p>
    */
@@ -63,42 +64,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Identifier of the resource that was not found.</p>
      */
     inline ResourceNotFoundException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 

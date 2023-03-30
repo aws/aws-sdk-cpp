@@ -76,47 +76,6 @@ namespace Model
 
 
     /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline const Aws::String& GetUpdatedName() const{ return m_updatedName; }
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline bool UpdatedNameHasBeenSet() const { return m_updatedNameHasBeenSet; }
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline void SetUpdatedName(const Aws::String& value) { m_updatedNameHasBeenSet = true; m_updatedName = value; }
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline void SetUpdatedName(Aws::String&& value) { m_updatedNameHasBeenSet = true; m_updatedName = std::move(value); }
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline void SetUpdatedName(const char* value) { m_updatedNameHasBeenSet = true; m_updatedName.assign(value); }
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline UpdateDataQualityRulesetRequest& WithUpdatedName(const Aws::String& value) { SetUpdatedName(value); return *this;}
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline UpdateDataQualityRulesetRequest& WithUpdatedName(Aws::String&& value) { SetUpdatedName(std::move(value)); return *this;}
-
-    /**
-     * <p>The new name of the ruleset, if you are renaming it.</p>
-     */
-    inline UpdateDataQualityRulesetRequest& WithUpdatedName(const char* value) { SetUpdatedName(value); return *this;}
-
-
-    /**
      * <p>A description of the ruleset.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
@@ -209,9 +168,6 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
-
-    Aws::String m_updatedName;
-    bool m_updatedNameHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

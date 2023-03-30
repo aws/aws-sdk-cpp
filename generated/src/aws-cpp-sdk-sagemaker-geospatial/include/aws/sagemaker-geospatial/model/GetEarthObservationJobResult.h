@@ -294,44 +294,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyId = value; }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyId = std::move(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyId.assign(value); }
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline GetEarthObservationJobResult& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline GetEarthObservationJobResult& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Key Management Service (KMS) key ID for server-side
-     * encryption.</p>
+     * <p>The Key Management Service key ID for server-side encryption.</p>
      */
     inline GetEarthObservationJobResult& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 
@@ -373,37 +366,37 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline const Aws::Vector<OutputBand>& GetOutputBands() const{ return m_outputBands; }
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline void SetOutputBands(const Aws::Vector<OutputBand>& value) { m_outputBands = value; }
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline void SetOutputBands(Aws::Vector<OutputBand>&& value) { m_outputBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline GetEarthObservationJobResult& WithOutputBands(const Aws::Vector<OutputBand>& value) { SetOutputBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline GetEarthObservationJobResult& WithOutputBands(Aws::Vector<OutputBand>&& value) { SetOutputBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline GetEarthObservationJobResult& AddOutputBands(const OutputBand& value) { m_outputBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Bands available in the output of an operation.</p>
      */
     inline GetEarthObservationJobResult& AddOutputBands(OutputBand&& value) { m_outputBands.push_back(std::move(value)); return *this; }
 
