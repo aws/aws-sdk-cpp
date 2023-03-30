@@ -8,6 +8,8 @@
 #include <aws/guardduty/model/DetectorFeatureResult.h>
 #include <aws/guardduty/model/FeatureStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/DetectorAdditionalConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +133,47 @@ namespace Model
      */
     inline DetectorFeatureConfigurationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline const Aws::Vector<DetectorAdditionalConfigurationResult>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::Vector<DetectorAdditionalConfigurationResult>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::Vector<DetectorAdditionalConfigurationResult>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline DetectorFeatureConfigurationResult& WithAdditionalConfiguration(const Aws::Vector<DetectorAdditionalConfigurationResult>& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline DetectorFeatureConfigurationResult& WithAdditionalConfiguration(Aws::Vector<DetectorAdditionalConfigurationResult>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline DetectorFeatureConfigurationResult& AddAdditionalConfiguration(const DetectorAdditionalConfigurationResult& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>Additional configuration for a resource.</p>
+     */
+    inline DetectorFeatureConfigurationResult& AddAdditionalConfiguration(DetectorAdditionalConfigurationResult&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+
   private:
 
     DetectorFeatureResult m_name;
@@ -141,6 +184,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::Vector<DetectorAdditionalConfigurationResult> m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

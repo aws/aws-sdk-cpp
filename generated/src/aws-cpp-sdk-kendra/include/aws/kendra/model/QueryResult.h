@@ -11,6 +11,7 @@
 #include <aws/kendra/model/FacetResult.h>
 #include <aws/kendra/model/Warning.h>
 #include <aws/kendra/model/SpellCorrectedQuery.h>
+#include <aws/kendra/model/FeaturedResultsItem.h>
 #include <utility>
 
 namespace Aws
@@ -295,6 +296,63 @@ namespace Model
     inline QueryResult& AddSpellCorrectedQueries(SpellCorrectedQuery&& value) { m_spellCorrectedQueries.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline const Aws::Vector<FeaturedResultsItem>& GetFeaturedResultsItems() const{ return m_featuredResultsItems; }
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline void SetFeaturedResultsItems(const Aws::Vector<FeaturedResultsItem>& value) { m_featuredResultsItems = value; }
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline void SetFeaturedResultsItems(Aws::Vector<FeaturedResultsItem>&& value) { m_featuredResultsItems = std::move(value); }
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline QueryResult& WithFeaturedResultsItems(const Aws::Vector<FeaturedResultsItem>& value) { SetFeaturedResultsItems(value); return *this;}
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline QueryResult& WithFeaturedResultsItems(Aws::Vector<FeaturedResultsItem>&& value) { SetFeaturedResultsItems(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline QueryResult& AddFeaturedResultsItems(const FeaturedResultsItem& value) { m_featuredResultsItems.push_back(value); return *this; }
+
+    /**
+     * <p>The list of featured result items. Featured results are displayed at the top
+     * of the search results page, placed above all other results for certain queries.
+     * If there's an exact match of a query, then certain documents are featured in the
+     * search results.</p>
+     */
+    inline QueryResult& AddFeaturedResultsItems(FeaturedResultsItem&& value) { m_featuredResultsItems.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -329,6 +387,8 @@ namespace Model
     Aws::Vector<Warning> m_warnings;
 
     Aws::Vector<SpellCorrectedQuery> m_spellCorrectedQueries;
+
+    Aws::Vector<FeaturedResultsItem> m_featuredResultsItems;
 
     Aws::String m_requestId;
   };

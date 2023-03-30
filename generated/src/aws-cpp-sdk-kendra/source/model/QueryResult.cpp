@@ -79,6 +79,15 @@ QueryResult& QueryResult::operator =(const Aws::AmazonWebServiceResult<JsonValue
     }
   }
 
+  if(jsonValue.ValueExists("FeaturedResultsItems"))
+  {
+    Aws::Utils::Array<JsonView> featuredResultsItemsJsonList = jsonValue.GetArray("FeaturedResultsItems");
+    for(unsigned featuredResultsItemsIndex = 0; featuredResultsItemsIndex < featuredResultsItemsJsonList.GetLength(); ++featuredResultsItemsIndex)
+    {
+      m_featuredResultsItems.push_back(featuredResultsItemsJsonList[featuredResultsItemsIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

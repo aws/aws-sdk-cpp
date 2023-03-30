@@ -21,7 +21,7 @@ namespace Model
 {
 
   /**
-   * <p> GetInfrastructureConfiguration request object.</p><p><h3>See Also:</h3>   <a
+   * <p>GetInfrastructureConfiguration request object.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/GetInfrastructureConfigurationRequest">AWS
    * API Reference</a></p>
    */

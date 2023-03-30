@@ -238,25 +238,25 @@ namespace Model
 
     /**
      * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
-     * supports. </p>
+     * supports.</p>
      */
     inline int GetThroughput() const{ return m_throughput; }
 
     /**
      * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
-     * supports. </p>
+     * supports.</p>
      */
     inline bool ThroughputHasBeenSet() const { return m_throughputHasBeenSet; }
 
     /**
      * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
-     * supports. </p>
+     * supports.</p>
      */
     inline void SetThroughput(int value) { m_throughputHasBeenSet = true; m_throughput = value; }
 
     /**
      * <p> <b>For GP3 volumes only</b> – The throughput in MiB/s that the volume
-     * supports. </p>
+     * supports.</p>
      */
     inline EbsInstanceBlockDeviceSpecification& WithThroughput(int value) { SetThroughput(value); return *this;}
 

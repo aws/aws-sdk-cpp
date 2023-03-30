@@ -21,12 +21,14 @@ namespace Model
 {
 
 TrafficSourceIdentifier::TrafficSourceIdentifier() : 
-    m_identifierHasBeenSet(false)
+    m_identifierHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
 }
 
 TrafficSourceIdentifier::TrafficSourceIdentifier(const XmlNode& xmlNode) : 
-    m_identifierHasBeenSet(false)
+    m_identifierHasBeenSet(false),
+    m_typeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -43,6 +45,12 @@ TrafficSourceIdentifier& TrafficSourceIdentifier::operator =(const XmlNode& xmlN
       m_identifier = Aws::Utils::Xml::DecodeEscapedXmlText(identifierNode.GetText());
       m_identifierHasBeenSet = true;
     }
+    XmlNode typeNode = resultNode.FirstChild("Type");
+    if(!typeNode.IsNull())
+    {
+      m_type = Aws::Utils::Xml::DecodeEscapedXmlText(typeNode.GetText());
+      m_typeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -55,6 +63,11 @@ void TrafficSourceIdentifier::OutputToStream(Aws::OStream& oStream, const char* 
       oStream << location << index << locationValue << ".Identifier=" << StringUtils::URLEncode(m_identifier.c_str()) << "&";
   }
 
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
+  }
+
 }
 
 void TrafficSourceIdentifier::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -62,6 +75,10 @@ void TrafficSourceIdentifier::OutputToStream(Aws::OStream& oStream, const char* 
   if(m_identifierHasBeenSet)
   {
       oStream << location << ".Identifier=" << StringUtils::URLEncode(m_identifier.c_str()) << "&";
+  }
+  if(m_typeHasBeenSet)
+  {
+      oStream << location << ".Type=" << StringUtils::URLEncode(m_type.c_str()) << "&";
   }
 }
 

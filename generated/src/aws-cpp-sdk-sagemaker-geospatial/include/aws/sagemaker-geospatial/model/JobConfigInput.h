@@ -47,32 +47,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline const BandMathConfigInput& GetBandMathConfig() const{ return m_bandMathConfig; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline bool BandMathConfigHasBeenSet() const { return m_bandMathConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline void SetBandMathConfig(const BandMathConfigInput& value) { m_bandMathConfigHasBeenSet = true; m_bandMathConfig = value; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline void SetBandMathConfig(BandMathConfigInput&& value) { m_bandMathConfigHasBeenSet = true; m_bandMathConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline JobConfigInput& WithBandMathConfig(const BandMathConfigInput& value) { SetBandMathConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for
+     * BandMath.</p>
      */
     inline JobConfigInput& WithBandMathConfig(BandMathConfigInput&& value) { SetBandMathConfig(std::move(value)); return *this;}
 
@@ -263,32 +269,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline const StackConfigInput& GetStackConfig() const{ return m_stackConfig; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline bool StackConfigHasBeenSet() const { return m_stackConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline void SetStackConfig(const StackConfigInput& value) { m_stackConfigHasBeenSet = true; m_stackConfig = value; }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline void SetStackConfig(StackConfigInput&& value) { m_stackConfigHasBeenSet = true; m_stackConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline JobConfigInput& WithStackConfig(const StackConfigInput& value) { SetStackConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p>An object containing information about the job configuration for a Stacking
+     * Earth Observation job.</p>
      */
     inline JobConfigInput& WithStackConfig(StackConfigInput&& value) { SetStackConfig(std::move(value)); return *this;}
 

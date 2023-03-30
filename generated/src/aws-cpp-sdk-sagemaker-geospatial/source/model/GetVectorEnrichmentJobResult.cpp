@@ -45,7 +45,7 @@ GetVectorEnrichmentJobResult& GetVectorEnrichmentJobResult::operator =(const Aws
 
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
   }
 

@@ -105,44 +105,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline const Aws::String& GetImageBuildVersionArn() const{ return m_imageBuildVersionArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline void SetImageBuildVersionArn(const Aws::String& value) { m_imageBuildVersionArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline void SetImageBuildVersionArn(Aws::String&& value) { m_imageBuildVersionArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline void SetImageBuildVersionArn(const char* value) { m_imageBuildVersionArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline CancelImageCreationResult& WithImageBuildVersionArn(const Aws::String& value) { SetImageBuildVersionArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline CancelImageCreationResult& WithImageBuildVersionArn(Aws::String&& value) { SetImageBuildVersionArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the image whose creation has been
-     * cancelled.</p>
+     * <p>The ARN of the image whose creation this request canceled.</p>
      */
     inline CancelImageCreationResult& WithImageBuildVersionArn(const char* value) { SetImageBuildVersionArn(value); return *this;}
 

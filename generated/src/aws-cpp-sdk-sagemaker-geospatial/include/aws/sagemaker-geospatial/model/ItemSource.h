@@ -29,7 +29,7 @@ namespace Model
 {
 
   /**
-   * <p>Structure representing the items in the response for
+   * <p>The structure representing the items in the response for
    * SearchRasterDataCollection.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ItemSource">AWS
    * API Reference</a></p>
@@ -44,124 +44,136 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline const Aws::Map<Aws::String, AssetValue>& GetAssets() const{ return m_assets; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline bool AssetsHasBeenSet() const { return m_assetsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline void SetAssets(const Aws::Map<Aws::String, AssetValue>& value) { m_assetsHasBeenSet = true; m_assets = value; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline void SetAssets(Aws::Map<Aws::String, AssetValue>&& value) { m_assetsHasBeenSet = true; m_assets = std::move(value); }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& WithAssets(const Aws::Map<Aws::String, AssetValue>& value) { SetAssets(value); return *this;}
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& WithAssets(Aws::Map<Aws::String, AssetValue>&& value) { SetAssets(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(const Aws::String& key, const AssetValue& value) { m_assetsHasBeenSet = true; m_assets.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(Aws::String&& key, const AssetValue& value) { m_assetsHasBeenSet = true; m_assets.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(const Aws::String& key, AssetValue&& value) { m_assetsHasBeenSet = true; m_assets.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(Aws::String&& key, AssetValue&& value) { m_assetsHasBeenSet = true; m_assets.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(const char* key, AssetValue&& value) { m_assetsHasBeenSet = true; m_assets.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>This is a dictionary of Asset Objects data associated with the Item that can
+     * be downloaded or streamed, each with a unique key.</p>
      */
     inline ItemSource& AddAssets(const char* key, const AssetValue& value) { m_assetsHasBeenSet = true; m_assets.emplace(key, value); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetDateTime() const{ return m_dateTime; }
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline bool DateTimeHasBeenSet() const { return m_dateTimeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline void SetDateTime(const Aws::Utils::DateTime& value) { m_dateTimeHasBeenSet = true; m_dateTime = value; }
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline void SetDateTime(Aws::Utils::DateTime&& value) { m_dateTimeHasBeenSet = true; m_dateTime = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline ItemSource& WithDateTime(const Aws::Utils::DateTime& value) { SetDateTime(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The searchable date and time of the item, in UTC.</p>
      */
     inline ItemSource& WithDateTime(Aws::Utils::DateTime&& value) { SetDateTime(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline const Geometry& GetGeometry() const{ return m_geometry; }
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline bool GeometryHasBeenSet() const { return m_geometryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline void SetGeometry(const Geometry& value) { m_geometryHasBeenSet = true; m_geometry = value; }
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline void SetGeometry(Geometry&& value) { m_geometryHasBeenSet = true; m_geometry = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline ItemSource& WithGeometry(const Geometry& value) { SetGeometry(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The item Geometry in GeoJson format.</p>
      */
     inline ItemSource& WithGeometry(Geometry&& value) { SetGeometry(std::move(value)); return *this;}
 
@@ -208,32 +220,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline const Properties& GetProperties() const{ return m_properties; }
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline void SetProperties(const Properties& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline void SetProperties(Properties&& value) { m_propertiesHasBeenSet = true; m_properties = std::move(value); }
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline ItemSource& WithProperties(const Properties& value) { SetProperties(value); return *this;}
 
     /**
-     * <p/>
+     * <p>This field contains additional properties of the item.</p>
      */
     inline ItemSource& WithProperties(Properties&& value) { SetProperties(std::move(value)); return *this;}
 

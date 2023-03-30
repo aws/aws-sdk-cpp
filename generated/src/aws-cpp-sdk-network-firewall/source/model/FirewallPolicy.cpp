@@ -25,7 +25,8 @@ FirewallPolicy::FirewallPolicy() :
     m_statelessCustomActionsHasBeenSet(false),
     m_statefulRuleGroupReferencesHasBeenSet(false),
     m_statefulDefaultActionsHasBeenSet(false),
-    m_statefulEngineOptionsHasBeenSet(false)
+    m_statefulEngineOptionsHasBeenSet(false),
+    m_tLSInspectionConfigurationArnHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ FirewallPolicy::FirewallPolicy(JsonView jsonValue) :
     m_statelessCustomActionsHasBeenSet(false),
     m_statefulRuleGroupReferencesHasBeenSet(false),
     m_statefulDefaultActionsHasBeenSet(false),
-    m_statefulEngineOptionsHasBeenSet(false)
+    m_statefulEngineOptionsHasBeenSet(false),
+    m_tLSInspectionConfigurationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -108,6 +110,13 @@ FirewallPolicy& FirewallPolicy::operator =(JsonView jsonValue)
     m_statefulEngineOptions = jsonValue.GetObject("StatefulEngineOptions");
 
     m_statefulEngineOptionsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TLSInspectionConfigurationArn"))
+  {
+    m_tLSInspectionConfigurationArn = jsonValue.GetString("TLSInspectionConfigurationArn");
+
+    m_tLSInspectionConfigurationArnHasBeenSet = true;
   }
 
   return *this;
@@ -186,6 +195,12 @@ JsonValue FirewallPolicy::Jsonize() const
   if(m_statefulEngineOptionsHasBeenSet)
   {
    payload.WithObject("StatefulEngineOptions", m_statefulEngineOptions.Jsonize());
+
+  }
+
+  if(m_tLSInspectionConfigurationArnHasBeenSet)
+  {
+   payload.WithString("TLSInspectionConfigurationArn", m_tLSInspectionConfigurationArn);
 
   }
 

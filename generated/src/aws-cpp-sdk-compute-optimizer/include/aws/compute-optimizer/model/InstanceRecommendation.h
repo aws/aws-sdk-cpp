@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
+#include <aws/compute-optimizer/model/InstanceState.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationOption.h>
@@ -359,25 +360,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -466,25 +467,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -573,25 +574,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -680,25 +681,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -787,25 +788,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -894,25 +895,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -1001,25 +1002,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -1108,25 +1109,25 @@ namespace Model
      * <code>CWAgent</code> namespace.</p>  </li> <li> <p> <b>
      * <code>EBSThroughputOverprovisioned</code> </b> — The instance’s EBS throughput
      * configuration can be sized down while still meeting the performance requirements
-     * of your workload. This is identified by analyzing the <code>VolumeReadOps</code>
-     * and <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s EBS throughput
-     * configuration doesn't meet the performance requirements of your workload and
-     * there is an alternative instance type that provides better EBS throughput
-     * performance. This is identified by analyzing the <code>VolumeReadOps</code> and
-     * <code>VolumeWriteOps</code> metrics of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS IOPS configuration
-     * can be sized down while still meeting the performance requirements of your
-     * workload. This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
-     * instance during the look-back period.</p> </li> <li> <p> <b>
-     * <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
+     * of your workload. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code> metrics of EBS
+     * volumes attached to the current instance during the look-back period.</p> </li>
+     * <li> <p> <b> <code>EBSThroughputUnderprovisioned</code> </b> — The instance’s
+     * EBS throughput configuration doesn't meet the performance requirements of your
+     * workload and there is an alternative instance type that provides better EBS
+     * throughput performance. This is identified by analyzing the
+     * <code>VolumeReadBytes</code> and <code>VolumeWriteBytes</code>&gt; metrics of
+     * EBS volumes attached to the current instance during the look-back period.</p>
+     * </li> <li> <p> <b> <code>EBSIOPSOverprovisioned</code> </b> — The instance’s EBS
+     * IOPS configuration can be sized down while still meeting the performance
+     * requirements of your workload. This is identified by analyzing the
+     * <code>VolumeReadOps</code> and <code>VolumeWriteOps</code> metric of EBS volumes
+     * attached to the current instance during the look-back period.</p> </li> <li> <p>
+     * <b> <code>EBSIOPSUnderprovisioned</code> </b> — The instance’s EBS IOPS
      * configuration doesn't meet the performance requirements of your workload and
      * there is an alternative instance type that provides better EBS IOPS performance.
-     * This is identified by analyzing the <code>VolumeReadBytes</code> and
-     * <code>VolumeWriteBytes</code> metric of EBS volumes attached to the current
+     * This is identified by analyzing the <code>VolumeReadOps</code> and
+     * <code>VolumeWriteOps</code> metric of EBS volumes attached to the current
      * instance during the look-back period.</p> </li> <li> <p> <b>
      * <code>NetworkBandwidthOverprovisioned</code> </b> — The instance’s network
      * bandwidth configuration can be sized down while still meeting the performance
@@ -1611,6 +1612,37 @@ namespace Model
      */
     inline InstanceRecommendation& AddInferredWorkloadTypes(InferredWorkloadType&& value) { m_inferredWorkloadTypesHasBeenSet = true; m_inferredWorkloadTypes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline const InstanceState& GetInstanceState() const{ return m_instanceState; }
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline void SetInstanceState(const InstanceState& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline void SetInstanceState(InstanceState&& value) { m_instanceStateHasBeenSet = true; m_instanceState = std::move(value); }
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline InstanceRecommendation& WithInstanceState(const InstanceState& value) { SetInstanceState(value); return *this;}
+
+    /**
+     * <p> The state of the instance when the recommendation was generated. </p>
+     */
+    inline InstanceRecommendation& WithInstanceState(InstanceState&& value) { SetInstanceState(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceArn;
@@ -1654,6 +1686,9 @@ namespace Model
 
     Aws::Vector<InferredWorkloadType> m_inferredWorkloadTypes;
     bool m_inferredWorkloadTypesHasBeenSet = false;
+
+    InstanceState m_instanceState;
+    bool m_instanceStateHasBeenSet = false;
   };
 
 } // namespace Model

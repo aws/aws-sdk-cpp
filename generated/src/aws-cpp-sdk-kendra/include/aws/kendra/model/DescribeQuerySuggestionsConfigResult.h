@@ -201,68 +201,73 @@ namespace Model
 
 
     /**
-     * <p>The date-time query suggestions for an index was last updated.</p>
+     * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastSuggestionsBuildTime() const{ return m_lastSuggestionsBuildTime; }
 
     /**
-     * <p>The date-time query suggestions for an index was last updated.</p>
+     * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
      */
     inline void SetLastSuggestionsBuildTime(const Aws::Utils::DateTime& value) { m_lastSuggestionsBuildTime = value; }
 
     /**
-     * <p>The date-time query suggestions for an index was last updated.</p>
+     * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
      */
     inline void SetLastSuggestionsBuildTime(Aws::Utils::DateTime&& value) { m_lastSuggestionsBuildTime = std::move(value); }
 
     /**
-     * <p>The date-time query suggestions for an index was last updated.</p>
+     * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastSuggestionsBuildTime(const Aws::Utils::DateTime& value) { SetLastSuggestionsBuildTime(value); return *this;}
 
     /**
-     * <p>The date-time query suggestions for an index was last updated.</p>
+     * <p>The Unix timestamp when query suggestions for an index was last updated.</p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastSuggestionsBuildTime(Aws::Utils::DateTime&& value) { SetLastSuggestionsBuildTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date-time query suggestions for an index was last cleared.</p> <p>After
-     * you clear suggestions, Amazon Kendra learns new suggestions based on new queries
-     * added to the query log from the time you cleared suggestions. Amazon Kendra only
-     * considers re-occurences of a query from the time you cleared suggestions. </p>
+     * <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
+     * <p>After you clear suggestions, Amazon Kendra learns new suggestions based on
+     * new queries added to the query log from the time you cleared suggestions. Amazon
+     * Kendra only considers re-occurences of a query from the time you cleared
+     * suggestions. </p>
      */
     inline const Aws::Utils::DateTime& GetLastClearTime() const{ return m_lastClearTime; }
 
     /**
-     * <p>The date-time query suggestions for an index was last cleared.</p> <p>After
-     * you clear suggestions, Amazon Kendra learns new suggestions based on new queries
-     * added to the query log from the time you cleared suggestions. Amazon Kendra only
-     * considers re-occurences of a query from the time you cleared suggestions. </p>
+     * <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
+     * <p>After you clear suggestions, Amazon Kendra learns new suggestions based on
+     * new queries added to the query log from the time you cleared suggestions. Amazon
+     * Kendra only considers re-occurences of a query from the time you cleared
+     * suggestions. </p>
      */
     inline void SetLastClearTime(const Aws::Utils::DateTime& value) { m_lastClearTime = value; }
 
     /**
-     * <p>The date-time query suggestions for an index was last cleared.</p> <p>After
-     * you clear suggestions, Amazon Kendra learns new suggestions based on new queries
-     * added to the query log from the time you cleared suggestions. Amazon Kendra only
-     * considers re-occurences of a query from the time you cleared suggestions. </p>
+     * <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
+     * <p>After you clear suggestions, Amazon Kendra learns new suggestions based on
+     * new queries added to the query log from the time you cleared suggestions. Amazon
+     * Kendra only considers re-occurences of a query from the time you cleared
+     * suggestions. </p>
      */
     inline void SetLastClearTime(Aws::Utils::DateTime&& value) { m_lastClearTime = std::move(value); }
 
     /**
-     * <p>The date-time query suggestions for an index was last cleared.</p> <p>After
-     * you clear suggestions, Amazon Kendra learns new suggestions based on new queries
-     * added to the query log from the time you cleared suggestions. Amazon Kendra only
-     * considers re-occurences of a query from the time you cleared suggestions. </p>
+     * <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
+     * <p>After you clear suggestions, Amazon Kendra learns new suggestions based on
+     * new queries added to the query log from the time you cleared suggestions. Amazon
+     * Kendra only considers re-occurences of a query from the time you cleared
+     * suggestions. </p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastClearTime(const Aws::Utils::DateTime& value) { SetLastClearTime(value); return *this;}
 
     /**
-     * <p>The date-time query suggestions for an index was last cleared.</p> <p>After
-     * you clear suggestions, Amazon Kendra learns new suggestions based on new queries
-     * added to the query log from the time you cleared suggestions. Amazon Kendra only
-     * considers re-occurences of a query from the time you cleared suggestions. </p>
+     * <p>The Unix timestamp when query suggestions for an index was last cleared.</p>
+     * <p>After you clear suggestions, Amazon Kendra learns new suggestions based on
+     * new queries added to the query log from the time you cleared suggestions. Amazon
+     * Kendra only considers re-occurences of a query from the time you cleared
+     * suggestions. </p>
      */
     inline DescribeQuerySuggestionsConfigResult& WithLastClearTime(Aws::Utils::DateTime&& value) { SetLastClearTime(std::move(value)); return *this;}
 

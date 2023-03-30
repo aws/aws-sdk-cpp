@@ -27,7 +27,8 @@ namespace Model
     WaitingForInstanceWarmup,
     Successful,
     Failed,
-    Cancelled
+    Cancelled,
+    WaitingForConnectionDraining
   };
 
 namespace ScalingActivityStatusCodeMapper

@@ -84,63 +84,63 @@ namespace Model
 
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline DataSourceSyncJob& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the synchronization job started.</p>
+     * <p>The Unix timestamp when the synchronization job started.</p>
      */
     inline DataSourceSyncJob& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline DataSourceSyncJob& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The UNIX datetime that the synchronization job completed.</p>
+     * <p>The Unix timestamp when the synchronization job completed.</p>
      */
     inline DataSourceSyncJob& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 

@@ -791,6 +791,35 @@ namespace GuardDuty
         }
 
         /**
+         * <p>Retrieves aggregated statistics for your account. If you are a GuardDuty
+         * administrator, you can retrieve the statistics for all the resources associated
+         * with the active member accounts in your organization who have enabled EKS
+         * Runtime Monitoring and have the GuardDuty agent running on their EKS
+         * nodes.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/GetCoverageStatistics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCoverageStatisticsOutcome GetCoverageStatistics(const Model::GetCoverageStatisticsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetCoverageStatistics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetCoverageStatisticsRequestT = Model::GetCoverageStatisticsRequest>
+        Model::GetCoverageStatisticsOutcomeCallable GetCoverageStatisticsCallable(const GetCoverageStatisticsRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::GetCoverageStatistics, request);
+        }
+
+        /**
+         * An Async wrapper for GetCoverageStatistics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetCoverageStatisticsRequestT = Model::GetCoverageStatisticsRequest>
+        void GetCoverageStatisticsAsync(const GetCoverageStatisticsRequestT& request, const GetCoverageStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::GetCoverageStatistics, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves an Amazon GuardDuty detector specified by the detectorId.</p>
          * <p>There might be regional differences because some data sources might not be
          * available in all the Amazon Web Services Regions where GuardDuty is presently
@@ -1147,6 +1176,35 @@ namespace GuardDuty
         void InviteMembersAsync(const InviteMembersRequestT& request, const InviteMembersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&GuardDutyClient::InviteMembers, request, handler, context);
+        }
+
+        /**
+         * <p>Lists coverage details for your GuardDuty account. If you're a GuardDuty
+         * administrator, you can retrieve all resources associated with the active member
+         * accounts in your organization.</p> <p>Make sure the accounts have EKS Runtime
+         * Monitoring enabled and GuardDuty agent running on their EKS nodes.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/ListCoverage">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListCoverageOutcome ListCoverage(const Model::ListCoverageRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListCoverage that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListCoverageRequestT = Model::ListCoverageRequest>
+        Model::ListCoverageOutcomeCallable ListCoverageCallable(const ListCoverageRequestT& request) const
+        {
+            return SubmitCallable(&GuardDutyClient::ListCoverage, request);
+        }
+
+        /**
+         * An Async wrapper for ListCoverage that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListCoverageRequestT = Model::ListCoverageRequest>
+        void ListCoverageAsync(const ListCoverageRequestT& request, const ListCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&GuardDutyClient::ListCoverage, request, handler, context);
         }
 
         /**

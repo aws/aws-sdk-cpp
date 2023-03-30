@@ -8,6 +8,8 @@
 #include <aws/guardduty/model/OrgFeature.h>
 #include <aws/guardduty/model/FeatureStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/MemberAdditionalConfigurationResult.h>
 #include <utility>
 
 namespace Aws
@@ -132,6 +134,55 @@ namespace Model
      */
     inline MemberFeaturesConfigurationResult& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline const Aws::Vector<MemberAdditionalConfigurationResult>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfigurationResult>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::Vector<MemberAdditionalConfigurationResult>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline MemberFeaturesConfigurationResult& WithAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfigurationResult>& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline MemberFeaturesConfigurationResult& WithAdditionalConfiguration(Aws::Vector<MemberAdditionalConfigurationResult>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline MemberFeaturesConfigurationResult& AddAdditionalConfiguration(const MemberAdditionalConfigurationResult& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates the additional configuration of the feature that is configured for
+     * the member account.</p>
+     */
+    inline MemberFeaturesConfigurationResult& AddAdditionalConfiguration(MemberAdditionalConfigurationResult&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+
   private:
 
     OrgFeature m_name;
@@ -142,6 +193,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;
+
+    Aws::Vector<MemberAdditionalConfigurationResult> m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

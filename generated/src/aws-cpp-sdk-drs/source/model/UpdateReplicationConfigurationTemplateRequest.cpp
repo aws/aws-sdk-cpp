@@ -16,6 +16,8 @@ UpdateReplicationConfigurationTemplateRequest::UpdateReplicationConfigurationTem
     m_arnHasBeenSet(false),
     m_associateDefaultSecurityGroup(false),
     m_associateDefaultSecurityGroupHasBeenSet(false),
+    m_autoReplicateNewDisks(false),
+    m_autoReplicateNewDisksHasBeenSet(false),
     m_bandwidthThrottling(0),
     m_bandwidthThrottlingHasBeenSet(false),
     m_createPublicIP(false),
@@ -51,6 +53,12 @@ Aws::String UpdateReplicationConfigurationTemplateRequest::SerializePayload() co
   if(m_associateDefaultSecurityGroupHasBeenSet)
   {
    payload.WithBool("associateDefaultSecurityGroup", m_associateDefaultSecurityGroup);
+
+  }
+
+  if(m_autoReplicateNewDisksHasBeenSet)
+  {
+   payload.WithBool("autoReplicateNewDisks", m_autoReplicateNewDisks);
 
   }
 

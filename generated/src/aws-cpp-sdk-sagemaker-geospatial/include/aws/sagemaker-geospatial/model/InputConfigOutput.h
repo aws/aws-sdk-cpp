@@ -113,32 +113,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline const RasterDataCollectionQueryOutput& GetRasterDataCollectionQuery() const{ return m_rasterDataCollectionQuery; }
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline bool RasterDataCollectionQueryHasBeenSet() const { return m_rasterDataCollectionQueryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline void SetRasterDataCollectionQuery(const RasterDataCollectionQueryOutput& value) { m_rasterDataCollectionQueryHasBeenSet = true; m_rasterDataCollectionQuery = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline void SetRasterDataCollectionQuery(RasterDataCollectionQueryOutput&& value) { m_rasterDataCollectionQueryHasBeenSet = true; m_rasterDataCollectionQuery = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline InputConfigOutput& WithRasterDataCollectionQuery(const RasterDataCollectionQueryOutput& value) { SetRasterDataCollectionQuery(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing the RasterDataCollection Query consisting of the
+     * Area of Interest, RasterDataCollectionArn, RasterDataCollectionName, TimeRange,
+     * and Property Filters.</p>
      */
     inline InputConfigOutput& WithRasterDataCollectionQuery(RasterDataCollectionQueryOutput&& value) { SetRasterDataCollectionQuery(std::move(value)); return *this;}
 

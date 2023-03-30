@@ -78,50 +78,82 @@ namespace Model
 
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline const Aws::String& GetTrafficSourceType() const{ return m_trafficSourceType; }
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline bool TrafficSourceTypeHasBeenSet() const { return m_trafficSourceTypeHasBeenSet; }
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline void SetTrafficSourceType(const Aws::String& value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType = value; }
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline void SetTrafficSourceType(Aws::String&& value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType = std::move(value); }
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline void SetTrafficSourceType(const char* value) { m_trafficSourceTypeHasBeenSet = true; m_trafficSourceType.assign(value); }
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline DescribeTrafficSourcesRequest& WithTrafficSourceType(const Aws::String& value) { SetTrafficSourceType(value); return *this;}
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline DescribeTrafficSourcesRequest& WithTrafficSourceType(Aws::String&& value) { SetTrafficSourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of traffic source you are describing. Currently, the only valid
-     * value is <code>vpc-lattice</code>.</p>
+     * <p>The traffic source type that you want to describe.</p> <p>The following lists
+     * the valid values:</p> <ul> <li> <p> <code>elb</code> if the traffic source is a
+     * Classic Load Balancer.</p> </li> <li> <p> <code>elbv2</code> if the traffic
+     * source is a Application Load Balancer, Gateway Load Balancer, or Network Load
+     * Balancer.</p> </li> <li> <p> <code>vpc-lattice</code> if the traffic source is
+     * VPC Lattice.</p> </li> </ul>
      */
     inline DescribeTrafficSourcesRequest& WithTrafficSourceType(const char* value) { SetTrafficSourceType(value); return *this;}
 

@@ -128,32 +128,32 @@ namespace Model
 
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline ExperiencesSummary& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The date-time your Amazon Kendra experience was created.</p>
+     * <p>The Unix timestamp when your Amazon Kendra experience was created.</p>
      */
     inline ExperiencesSummary& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
 

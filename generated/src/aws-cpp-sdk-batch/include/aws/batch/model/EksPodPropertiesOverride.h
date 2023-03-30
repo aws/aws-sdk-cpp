@@ -81,22 +81,40 @@ namespace Model
     inline EksPodPropertiesOverride& AddContainers(EksContainerOverride&& value) { m_containersHasBeenSet = true; m_containers.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline const EksMetadata& GetMetadata() const{ return m_metadata; }
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline EksPodPropertiesOverride& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
 
-    
+    /**
+     * <p>Metadata about the overrides for the container that's used on the Amazon EKS
+     * pod.</p>
+     */
     inline EksPodPropertiesOverride& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
   private:

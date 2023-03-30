@@ -116,120 +116,144 @@ namespace Model
 
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline const ChoiceContent& GetHelpfulResource() const{ return m_helpfulResource; }
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline bool HelpfulResourceHasBeenSet() const { return m_helpfulResourceHasBeenSet; }
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline void SetHelpfulResource(const ChoiceContent& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = value; }
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline void SetHelpfulResource(ChoiceContent&& value) { m_helpfulResourceHasBeenSet = true; m_helpfulResource = std::move(value); }
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline Choice& WithHelpfulResource(const ChoiceContent& value) { SetHelpfulResource(value); return *this;}
 
     /**
-     * <p>The choice level helpful resource.</p>
+     * <p>The helpful resource (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one helpful
+     * resource.</p>
      */
     inline Choice& WithHelpfulResource(ChoiceContent&& value) { SetHelpfulResource(std::move(value)); return *this;}
 
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline const ChoiceContent& GetImprovementPlan() const{ return m_improvementPlan; }
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline bool ImprovementPlanHasBeenSet() const { return m_improvementPlanHasBeenSet; }
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline void SetImprovementPlan(const ChoiceContent& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = value; }
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline void SetImprovementPlan(ChoiceContent&& value) { m_improvementPlanHasBeenSet = true; m_improvementPlan = std::move(value); }
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline Choice& WithImprovementPlan(const ChoiceContent& value) { SetImprovementPlan(value); return *this;}
 
     /**
-     * <p>The choice level improvement plan.</p>
+     * <p>The improvement plan (both text and URL) for a particular choice.</p> <p>This
+     * field only applies to custom lenses. Each choice can have only one improvement
+     * plan.</p>
      */
     inline Choice& WithImprovementPlan(ChoiceContent&& value) { SetImprovementPlan(std::move(value)); return *this;}
 
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline const Aws::Vector<AdditionalResources>& GetAdditionalResources() const{ return m_additionalResources; }
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline bool AdditionalResourcesHasBeenSet() const { return m_additionalResourcesHasBeenSet; }
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline void SetAdditionalResources(const Aws::Vector<AdditionalResources>& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = value; }
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline void SetAdditionalResources(Aws::Vector<AdditionalResources>&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources = std::move(value); }
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline Choice& WithAdditionalResources(const Aws::Vector<AdditionalResources>& value) { SetAdditionalResources(value); return *this;}
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline Choice& WithAdditionalResources(Aws::Vector<AdditionalResources>&& value) { SetAdditionalResources(std::move(value)); return *this;}
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline Choice& AddAdditionalResources(const AdditionalResources& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(value); return *this; }
 
     /**
-     * <p>The additional resources for a choice. A choice can have up to two additional
-     * resources: one of type <code>HELPFUL_RESOURCE</code>, one of type
-     * <code>IMPROVEMENT_PLAN</code>, or both.</p>
+     * <p>The additional resources for a choice in a custom lens.</p> <p>A choice can
+     * have up to two additional resources: one of type <code>HELPFUL_RESOURCE</code>,
+     * one of type <code>IMPROVEMENT_PLAN</code>, or both.</p>
      */
     inline Choice& AddAdditionalResources(AdditionalResources&& value) { m_additionalResourcesHasBeenSet = true; m_additionalResources.push_back(std::move(value)); return *this; }
 

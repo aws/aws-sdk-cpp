@@ -8,7 +8,7 @@
 #include <aws/sagemaker-geospatial/model/AreaOfInterest.h>
 #include <aws/sagemaker-geospatial/model/PropertyFilters.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/sagemaker-geospatial/model/TimeRangeFilterInput.h>
+#include <aws/sagemaker-geospatial/model/TimeRangeFilterOutput.h>
 #include <utility>
 
 namespace Aws
@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The output structure contains the Raster Data Collection Query input along
+   * with some additional metadata.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/RasterDataCollectionQueryOutput">AWS
    * API Reference</a></p>
    */
@@ -41,104 +42,104 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline const AreaOfInterest& GetAreaOfInterest() const{ return m_areaOfInterest; }
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline bool AreaOfInterestHasBeenSet() const { return m_areaOfInterestHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline void SetAreaOfInterest(const AreaOfInterest& value) { m_areaOfInterestHasBeenSet = true; m_areaOfInterest = value; }
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline void SetAreaOfInterest(AreaOfInterest&& value) { m_areaOfInterestHasBeenSet = true; m_areaOfInterest = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline RasterDataCollectionQueryOutput& WithAreaOfInterest(const AreaOfInterest& value) { SetAreaOfInterest(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Area of Interest used in the search.</p>
      */
     inline RasterDataCollectionQueryOutput& WithAreaOfInterest(AreaOfInterest&& value) { SetAreaOfInterest(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline const PropertyFilters& GetPropertyFilters() const{ return m_propertyFilters; }
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline bool PropertyFiltersHasBeenSet() const { return m_propertyFiltersHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline void SetPropertyFilters(const PropertyFilters& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = value; }
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline void SetPropertyFilters(PropertyFilters&& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline RasterDataCollectionQueryOutput& WithPropertyFilters(const PropertyFilters& value) { SetPropertyFilters(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Property filters used in the search.</p>
      */
     inline RasterDataCollectionQueryOutput& WithPropertyFilters(PropertyFilters&& value) { SetPropertyFilters(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline const Aws::String& GetRasterDataCollectionArn() const{ return m_rasterDataCollectionArn; }
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline bool RasterDataCollectionArnHasBeenSet() const { return m_rasterDataCollectionArnHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline void SetRasterDataCollectionArn(const Aws::String& value) { m_rasterDataCollectionArnHasBeenSet = true; m_rasterDataCollectionArn = value; }
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline void SetRasterDataCollectionArn(Aws::String&& value) { m_rasterDataCollectionArnHasBeenSet = true; m_rasterDataCollectionArn = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline void SetRasterDataCollectionArn(const char* value) { m_rasterDataCollectionArnHasBeenSet = true; m_rasterDataCollectionArn.assign(value); }
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline RasterDataCollectionQueryOutput& WithRasterDataCollectionArn(const Aws::String& value) { SetRasterDataCollectionArn(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline RasterDataCollectionQueryOutput& WithRasterDataCollectionArn(Aws::String&& value) { SetRasterDataCollectionArn(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The ARN of the Raster Data Collection against which the search is done.</p>
      */
     inline RasterDataCollectionQueryOutput& WithRasterDataCollectionArn(const char* value) { SetRasterDataCollectionArn(value); return *this;}
 
@@ -185,34 +186,34 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
-    inline const TimeRangeFilterInput& GetTimeRangeFilter() const{ return m_timeRangeFilter; }
+    inline const TimeRangeFilterOutput& GetTimeRangeFilter() const{ return m_timeRangeFilter; }
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
     inline bool TimeRangeFilterHasBeenSet() const { return m_timeRangeFilterHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
-    inline void SetTimeRangeFilter(const TimeRangeFilterInput& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = value; }
+    inline void SetTimeRangeFilter(const TimeRangeFilterOutput& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = value; }
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
-    inline void SetTimeRangeFilter(TimeRangeFilterInput&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::move(value); }
+    inline void SetTimeRangeFilter(TimeRangeFilterOutput&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
-    inline RasterDataCollectionQueryOutput& WithTimeRangeFilter(const TimeRangeFilterInput& value) { SetTimeRangeFilter(value); return *this;}
+    inline RasterDataCollectionQueryOutput& WithTimeRangeFilter(const TimeRangeFilterOutput& value) { SetTimeRangeFilter(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The TimeRange filter used in the search.</p>
      */
-    inline RasterDataCollectionQueryOutput& WithTimeRangeFilter(TimeRangeFilterInput&& value) { SetTimeRangeFilter(std::move(value)); return *this;}
+    inline RasterDataCollectionQueryOutput& WithTimeRangeFilter(TimeRangeFilterOutput&& value) { SetTimeRangeFilter(std::move(value)); return *this;}
 
   private:
 
@@ -228,7 +229,7 @@ namespace Model
     Aws::String m_rasterDataCollectionName;
     bool m_rasterDataCollectionNameHasBeenSet = false;
 
-    TimeRangeFilterInput m_timeRangeFilter;
+    TimeRangeFilterOutput m_timeRangeFilter;
     bool m_timeRangeFilterHasBeenSet = false;
   };
 

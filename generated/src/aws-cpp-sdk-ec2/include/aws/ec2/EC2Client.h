@@ -13645,6 +13645,32 @@ namespace EC2
         }
 
         /**
+         * <p>Get details of available tunnel endpoint maintenance.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetVpnTunnelReplacementStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetVpnTunnelReplacementStatusOutcome GetVpnTunnelReplacementStatus(const Model::GetVpnTunnelReplacementStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetVpnTunnelReplacementStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetVpnTunnelReplacementStatusRequestT = Model::GetVpnTunnelReplacementStatusRequest>
+        Model::GetVpnTunnelReplacementStatusOutcomeCallable GetVpnTunnelReplacementStatusCallable(const GetVpnTunnelReplacementStatusRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::GetVpnTunnelReplacementStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetVpnTunnelReplacementStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetVpnTunnelReplacementStatusRequestT = Model::GetVpnTunnelReplacementStatusRequest>
+        void GetVpnTunnelReplacementStatusAsync(const GetVpnTunnelReplacementStatusRequestT& request, const GetVpnTunnelReplacementStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::GetVpnTunnelReplacementStatus, request, handler, context);
+        }
+
+        /**
          * <p>Uploads a client certificate revocation list to the specified Client VPN
          * endpoint. Uploading a client certificate revocation list overwrites the existing
          * client certificate revocation list.</p> <p>Uploading a client certificate
@@ -16844,6 +16870,31 @@ namespace EC2
         void ReplaceTransitGatewayRouteAsync(const ReplaceTransitGatewayRouteRequestT& request, const ReplaceTransitGatewayRouteResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&EC2Client::ReplaceTransitGatewayRoute, request, handler, context);
+        }
+
+        /**
+         * <p>Trigger replacement of specified VPN tunnel.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ReplaceVpnTunnel">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ReplaceVpnTunnelOutcome ReplaceVpnTunnel(const Model::ReplaceVpnTunnelRequest& request) const;
+
+        /**
+         * A Callable wrapper for ReplaceVpnTunnel that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ReplaceVpnTunnelRequestT = Model::ReplaceVpnTunnelRequest>
+        Model::ReplaceVpnTunnelOutcomeCallable ReplaceVpnTunnelCallable(const ReplaceVpnTunnelRequestT& request) const
+        {
+            return SubmitCallable(&EC2Client::ReplaceVpnTunnel, request);
+        }
+
+        /**
+         * An Async wrapper for ReplaceVpnTunnel that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ReplaceVpnTunnelRequestT = Model::ReplaceVpnTunnelRequest>
+        void ReplaceVpnTunnelAsync(const ReplaceVpnTunnelRequestT& request, const ReplaceVpnTunnelResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EC2Client::ReplaceVpnTunnel, request, handler, context);
         }
 
         /**

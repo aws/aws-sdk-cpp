@@ -35,7 +35,9 @@ InstanceRecommendation::InstanceRecommendation() :
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
     m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false),
+    m_instanceState(InstanceState::NOT_SET),
+    m_instanceStateHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_currentPerformanceRisk(CurrentPerformanceRisk::NOT_SET),
     m_currentPerformanceRiskHasBeenSet(false),
     m_effectiveRecommendationPreferencesHasBeenSet(false),
-    m_inferredWorkloadTypesHasBeenSet(false)
+    m_inferredWorkloadTypesHasBeenSet(false),
+    m_instanceState(InstanceState::NOT_SET),
+    m_instanceStateHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -176,6 +180,13 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_inferredWorkloadTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceState"))
+  {
+    m_instanceState = InstanceStateMapper::GetInstanceStateForName(jsonValue.GetString("instanceState"));
+
+    m_instanceStateHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -287,6 +298,11 @@ JsonValue InstanceRecommendation::Jsonize() const
    }
    payload.WithArray("inferredWorkloadTypes", std::move(inferredWorkloadTypesJsonList));
 
+  }
+
+  if(m_instanceStateHasBeenSet)
+  {
+   payload.WithString("instanceState", InstanceStateMapper::GetNameForInstanceState(m_instanceState));
   }
 
   return payload;

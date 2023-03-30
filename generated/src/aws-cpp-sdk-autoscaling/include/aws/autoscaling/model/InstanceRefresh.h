@@ -459,22 +459,34 @@ namespace Model
     inline InstanceRefresh& WithProgressDetails(InstanceRefreshProgressDetails&& value) { SetProgressDetails(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline const RefreshPreferences& GetPreferences() const{ return m_preferences; }
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline bool PreferencesHasBeenSet() const { return m_preferencesHasBeenSet; }
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline void SetPreferences(const RefreshPreferences& value) { m_preferencesHasBeenSet = true; m_preferences = value; }
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline void SetPreferences(RefreshPreferences&& value) { m_preferencesHasBeenSet = true; m_preferences = std::move(value); }
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline InstanceRefresh& WithPreferences(const RefreshPreferences& value) { SetPreferences(value); return *this;}
 
-    
+    /**
+     * <p>The preferences for an instance refresh.</p>
+     */
     inline InstanceRefresh& WithPreferences(RefreshPreferences&& value) { SetPreferences(std::move(value)); return *this;}
 
 

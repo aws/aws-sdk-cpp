@@ -6,15 +6,23 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/kendra/KendraErrors.h>
+#include <aws/kendra/model/FeaturedResultsConflictException.h>
 
 using namespace Aws::Client;
 using namespace Aws::Utils;
 using namespace Aws::kendra;
+using namespace Aws::kendra::Model;
 
 namespace Aws
 {
 namespace kendra
 {
+template<> AWS_KENDRA_API FeaturedResultsConflictException KendraError::GetModeledError()
+{
+  assert(this->GetErrorType() == KendraErrors::FEATURED_RESULTS_CONFLICT);
+  return FeaturedResultsConflictException(this->GetJsonPayload().View());
+}
+
 namespace KendraErrorMapper
 {
 
@@ -24,6 +32,7 @@ static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServer
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int RESOURCE_ALREADY_EXIST_HASH = HashingUtils::HashString("ResourceAlreadyExistException");
 static const int RESOURCE_UNAVAILABLE_HASH = HashingUtils::HashString("ResourceUnavailableException");
+static const int FEATURED_RESULTS_CONFLICT_HASH = HashingUtils::HashString("FeaturedResultsConflictException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
 
@@ -54,6 +63,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == RESOURCE_UNAVAILABLE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(KendraErrors::RESOURCE_UNAVAILABLE), false);
+  }
+  else if (hashCode == FEATURED_RESULTS_CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(KendraErrors::FEATURED_RESULTS_CONFLICT), false);
   }
   else if (hashCode == INVALID_REQUEST_HASH)
   {

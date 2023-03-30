@@ -38,7 +38,8 @@ ImagePipeline::ImagePipeline() :
     m_dateUpdatedHasBeenSet(false),
     m_dateLastRunHasBeenSet(false),
     m_dateNextRunHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ ImagePipeline::ImagePipeline(JsonView jsonValue) :
     m_dateUpdatedHasBeenSet(false),
     m_dateLastRunHasBeenSet(false),
     m_dateNextRunHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -191,6 +193,13 @@ ImagePipeline& ImagePipeline::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("imageScanningConfiguration"))
+  {
+    m_imageScanningConfiguration = jsonValue.GetObject("imageScanningConfiguration");
+
+    m_imageScanningConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -300,6 +309,12 @@ JsonValue ImagePipeline::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
 
   }
 

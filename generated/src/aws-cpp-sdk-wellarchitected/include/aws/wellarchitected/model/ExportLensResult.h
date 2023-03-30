@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline const Aws::String& GetLensJSON() const{ return m_lensJSON; }
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline void SetLensJSON(const Aws::String& value) { m_lensJSON = value; }
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline void SetLensJSON(Aws::String&& value) { m_lensJSON = std::move(value); }
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline void SetLensJSON(const char* value) { m_lensJSON.assign(value); }
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline ExportLensResult& WithLensJSON(const Aws::String& value) { SetLensJSON(value); return *this;}
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline ExportLensResult& WithLensJSON(Aws::String&& value) { SetLensJSON(std::move(value)); return *this;}
 
     /**
-     * <p>The JSON for the lens.</p>
+     * <p>The JSON representation of a lens.</p>
      */
     inline ExportLensResult& WithLensJSON(const char* value) { SetLensJSON(value); return *this;}
 

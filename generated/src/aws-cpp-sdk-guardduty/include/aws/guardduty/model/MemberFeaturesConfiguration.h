@@ -7,6 +7,8 @@
 #include <aws/guardduty/GuardDuty_EXPORTS.h>
 #include <aws/guardduty/model/OrgFeature.h>
 #include <aws/guardduty/model/FeatureStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/MemberAdditionalConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -100,6 +102,47 @@ namespace Model
      */
     inline MemberFeaturesConfiguration& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline const Aws::Vector<MemberAdditionalConfiguration>& GetAdditionalConfiguration() const{ return m_additionalConfiguration; }
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline bool AdditionalConfigurationHasBeenSet() const { return m_additionalConfigurationHasBeenSet; }
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline void SetAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfiguration>& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = value; }
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline void SetAdditionalConfiguration(Aws::Vector<MemberAdditionalConfiguration>&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration = std::move(value); }
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline MemberFeaturesConfiguration& WithAdditionalConfiguration(const Aws::Vector<MemberAdditionalConfiguration>& value) { SetAdditionalConfiguration(value); return *this;}
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline MemberFeaturesConfiguration& WithAdditionalConfiguration(Aws::Vector<MemberAdditionalConfiguration>&& value) { SetAdditionalConfiguration(std::move(value)); return *this;}
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline MemberFeaturesConfiguration& AddAdditionalConfiguration(const MemberAdditionalConfiguration& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(value); return *this; }
+
+    /**
+     * <p>Additional configuration of the feature for the member account.</p>
+     */
+    inline MemberFeaturesConfiguration& AddAdditionalConfiguration(MemberAdditionalConfiguration&& value) { m_additionalConfigurationHasBeenSet = true; m_additionalConfiguration.push_back(std::move(value)); return *this; }
+
   private:
 
     OrgFeature m_name;
@@ -107,6 +150,9 @@ namespace Model
 
     FeatureStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::Vector<MemberAdditionalConfiguration> m_additionalConfiguration;
+    bool m_additionalConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

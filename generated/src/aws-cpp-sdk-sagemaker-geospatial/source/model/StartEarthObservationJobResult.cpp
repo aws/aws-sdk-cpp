@@ -41,7 +41,7 @@ StartEarthObservationJobResult& StartEarthObservationJobResult::operator =(const
 
   if(jsonValue.ValueExists("CreationTime"))
   {
-    m_creationTime = jsonValue.GetDouble("CreationTime");
+    m_creationTime = jsonValue.GetString("CreationTime");
 
   }
 

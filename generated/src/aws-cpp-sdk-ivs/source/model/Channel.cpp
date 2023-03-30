@@ -23,6 +23,8 @@ Channel::Channel() :
     m_authorized(false),
     m_authorizedHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
+    m_insecureIngest(false),
+    m_insecureIngestHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -39,6 +41,8 @@ Channel::Channel(JsonView jsonValue) :
     m_authorized(false),
     m_authorizedHasBeenSet(false),
     m_ingestEndpointHasBeenSet(false),
+    m_insecureIngest(false),
+    m_insecureIngestHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -72,6 +76,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_ingestEndpoint = jsonValue.GetString("ingestEndpoint");
 
     m_ingestEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("insecureIngest"))
+  {
+    m_insecureIngest = jsonValue.GetBool("insecureIngest");
+
+    m_insecureIngestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("latencyMode"))
@@ -141,6 +152,12 @@ JsonValue Channel::Jsonize() const
   if(m_ingestEndpointHasBeenSet)
   {
    payload.WithString("ingestEndpoint", m_ingestEndpoint);
+
+  }
+
+  if(m_insecureIngestHasBeenSet)
+  {
+   payload.WithBool("insecureIngest", m_insecureIngest);
 
   }
 

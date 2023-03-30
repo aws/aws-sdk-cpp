@@ -22,7 +22,8 @@ DetectorFeatureConfiguration::DetectorFeatureConfiguration() :
     m_name(DetectorFeature::NOT_SET),
     m_nameHasBeenSet(false),
     m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ DetectorFeatureConfiguration::DetectorFeatureConfiguration(JsonView jsonValue) :
     m_name(DetectorFeature::NOT_SET),
     m_nameHasBeenSet(false),
     m_status(FeatureStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_additionalConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,16 @@ DetectorFeatureConfiguration& DetectorFeatureConfiguration::operator =(JsonView 
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("additionalConfiguration"))
+  {
+    Aws::Utils::Array<JsonView> additionalConfigurationJsonList = jsonValue.GetArray("additionalConfiguration");
+    for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
+    {
+      m_additionalConfiguration.push_back(additionalConfigurationJsonList[additionalConfigurationIndex].AsObject());
+    }
+    m_additionalConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +78,17 @@ JsonValue DetectorFeatureConfiguration::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", FeatureStatusMapper::GetNameForFeatureStatus(m_status));
+  }
+
+  if(m_additionalConfigurationHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> additionalConfigurationJsonList(m_additionalConfiguration.size());
+   for(unsigned additionalConfigurationIndex = 0; additionalConfigurationIndex < additionalConfigurationJsonList.GetLength(); ++additionalConfigurationIndex)
+   {
+     additionalConfigurationJsonList[additionalConfigurationIndex].AsObject(m_additionalConfiguration[additionalConfigurationIndex].Jsonize());
+   }
+   payload.WithArray("additionalConfiguration", std::move(additionalConfigurationJsonList));
+
   }
 
   return payload;

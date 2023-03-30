@@ -106,7 +106,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline const Aws::Vector<FacetResult>& GetFacetResults() const{ return m_facetResults; }
 
@@ -119,7 +120,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline bool FacetResultsHasBeenSet() const { return m_facetResultsHasBeenSet; }
 
@@ -132,7 +134,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline void SetFacetResults(const Aws::Vector<FacetResult>& value) { m_facetResultsHasBeenSet = true; m_facetResults = value; }
 
@@ -145,7 +148,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline void SetFacetResults(Aws::Vector<FacetResult>&& value) { m_facetResultsHasBeenSet = true; m_facetResults = std::move(value); }
 
@@ -158,7 +162,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline DocumentAttributeValueCountPair& WithFacetResults(const Aws::Vector<FacetResult>& value) { SetFacetResults(value); return *this;}
 
@@ -171,7 +176,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline DocumentAttributeValueCountPair& WithFacetResults(Aws::Vector<FacetResult>&& value) { SetFacetResults(std::move(value)); return *this;}
 
@@ -184,7 +190,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline DocumentAttributeValueCountPair& AddFacetResults(const FacetResult& value) { m_facetResultsHasBeenSet = true; m_facetResults.push_back(value); return *this; }
 
@@ -197,7 +204,8 @@ namespace Model
      * assigned to "Engineering". You can display nested facets in the search results
      * so that documents can be searched not only by department but also by a sub
      * department within a department. The counts for documents that belong to
-     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p>
+     * "Frontend" and "Backend" within "Engineering" are returned for a query.</p> <p/>
+     * <p/>
      */
     inline DocumentAttributeValueCountPair& AddFacetResults(FacetResult&& value) { m_facetResultsHasBeenSet = true; m_facetResults.push_back(std::move(value)); return *this; }
 

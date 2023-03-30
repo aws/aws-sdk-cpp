@@ -22,7 +22,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for specifying ViewSunAzimuth property filter.
+   * ViewSunAzimuth refers to the Sun azimuth angle. From the scene center point on
+   * the ground, this is the angle between truth north and the sun. Measured
+   * clockwise in degrees (0-360).</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/ViewSunAzimuthInput">AWS
    * API Reference</a></p>
    */
@@ -36,43 +39,51 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth greater than or equal to this value.</p>
      */
     inline double GetLowerBound() const{ return m_lowerBound; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth greater than or equal to this value.</p>
      */
     inline bool LowerBoundHasBeenSet() const { return m_lowerBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth greater than or equal to this value.</p>
      */
     inline void SetLowerBound(double value) { m_lowerBoundHasBeenSet = true; m_lowerBound = value; }
 
     /**
-     * <p/>
+     * <p>The minimum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth greater than or equal to this value.</p>
      */
     inline ViewSunAzimuthInput& WithLowerBound(double value) { SetLowerBound(value); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth lesser than or equal to this value.</p>
      */
     inline double GetUpperBound() const{ return m_upperBound; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth lesser than or equal to this value.</p>
      */
     inline bool UpperBoundHasBeenSet() const { return m_upperBoundHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth lesser than or equal to this value.</p>
      */
     inline void SetUpperBound(double value) { m_upperBoundHasBeenSet = true; m_upperBound = value; }
 
     /**
-     * <p/>
+     * <p>The maximum value for ViewSunAzimuth property filter. This filters items
+     * having ViewSunAzimuth lesser than or equal to this value.</p>
      */
     inline ViewSunAzimuthInput& WithUpperBound(double value) { SetUpperBound(value); return *this;}
 

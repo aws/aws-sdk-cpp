@@ -90,32 +90,32 @@ namespace Model
 
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline const RelevanceType& GetRelevanceValue() const{ return m_relevanceValue; }
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline bool RelevanceValueHasBeenSet() const { return m_relevanceValueHasBeenSet; }
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline void SetRelevanceValue(const RelevanceType& value) { m_relevanceValueHasBeenSet = true; m_relevanceValue = value; }
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline void SetRelevanceValue(RelevanceType&& value) { m_relevanceValueHasBeenSet = true; m_relevanceValue = std::move(value); }
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline RelevanceFeedback& WithRelevanceValue(const RelevanceType& value) { SetRelevanceValue(value); return *this;}
 
     /**
-     * <p>Whether to document was relevant or not relevant to the search.</p>
+     * <p>Whether the document was relevant or not relevant to the search.</p>
      */
     inline RelevanceFeedback& WithRelevanceValue(RelevanceType&& value) { SetRelevanceValue(std::move(value)); return *this;}
 

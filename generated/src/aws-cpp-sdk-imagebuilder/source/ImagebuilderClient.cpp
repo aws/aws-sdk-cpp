@@ -47,6 +47,8 @@
 #include <aws/imagebuilder/model/GetImageRecipeRequest.h>
 #include <aws/imagebuilder/model/GetImageRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/GetInfrastructureConfigurationRequest.h>
+#include <aws/imagebuilder/model/GetWorkflowExecutionRequest.h>
+#include <aws/imagebuilder/model/GetWorkflowStepExecutionRequest.h>
 #include <aws/imagebuilder/model/ImportComponentRequest.h>
 #include <aws/imagebuilder/model/ImportVmImageRequest.h>
 #include <aws/imagebuilder/model/ListComponentBuildVersionsRequest.h>
@@ -58,9 +60,13 @@
 #include <aws/imagebuilder/model/ListImagePipelineImagesRequest.h>
 #include <aws/imagebuilder/model/ListImagePipelinesRequest.h>
 #include <aws/imagebuilder/model/ListImageRecipesRequest.h>
+#include <aws/imagebuilder/model/ListImageScanFindingAggregationsRequest.h>
+#include <aws/imagebuilder/model/ListImageScanFindingsRequest.h>
 #include <aws/imagebuilder/model/ListImagesRequest.h>
 #include <aws/imagebuilder/model/ListInfrastructureConfigurationsRequest.h>
 #include <aws/imagebuilder/model/ListTagsForResourceRequest.h>
+#include <aws/imagebuilder/model/ListWorkflowExecutionsRequest.h>
+#include <aws/imagebuilder/model/ListWorkflowStepExecutionsRequest.h>
 #include <aws/imagebuilder/model/PutComponentPolicyRequest.h>
 #include <aws/imagebuilder/model/PutContainerRecipePolicyRequest.h>
 #include <aws/imagebuilder/model/PutImagePolicyRequest.h>
@@ -523,6 +529,34 @@ GetInfrastructureConfigurationOutcome ImagebuilderClient::GetInfrastructureConfi
   return GetInfrastructureConfigurationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetWorkflowExecutionOutcome ImagebuilderClient::GetWorkflowExecution(const GetWorkflowExecutionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.WorkflowExecutionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWorkflowExecution", "Required field: WorkflowExecutionId, is not set");
+    return GetWorkflowExecutionOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [WorkflowExecutionId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkflowExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkflowExecution");
+  return GetWorkflowExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetWorkflowStepExecutionOutcome ImagebuilderClient::GetWorkflowStepExecution(const GetWorkflowStepExecutionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetWorkflowStepExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.StepExecutionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetWorkflowStepExecution", "Required field: StepExecutionId, is not set");
+    return GetWorkflowStepExecutionOutcome(Aws::Client::AWSError<ImagebuilderErrors>(ImagebuilderErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StepExecutionId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetWorkflowStepExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/GetWorkflowStepExecution");
+  return GetWorkflowStepExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ImportComponentOutcome ImagebuilderClient::ImportComponent(const ImportComponentRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ImportComponent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -622,6 +656,24 @@ ListImageRecipesOutcome ImagebuilderClient::ListImageRecipes(const ListImageReci
   return ListImageRecipesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListImageScanFindingAggregationsOutcome ImagebuilderClient::ListImageScanFindingAggregations(const ListImageScanFindingAggregationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageScanFindingAggregations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageScanFindingAggregations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageScanFindingAggregations");
+  return ListImageScanFindingAggregationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListImageScanFindingsOutcome ImagebuilderClient::ListImageScanFindings(const ListImageScanFindingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImageScanFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListImageScanFindings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListImageScanFindings");
+  return ListImageScanFindingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListImagesOutcome ImagebuilderClient::ListImages(const ListImagesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListImages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -653,6 +705,24 @@ ListTagsForResourceOutcome ImagebuilderClient::ListTagsForResource(const ListTag
   endpointResolutionOutcome.GetResult().AddPathSegments("/tags/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetResourceArn());
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorkflowExecutionsOutcome ImagebuilderClient::ListWorkflowExecutions(const ListWorkflowExecutionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflowExecutions");
+  return ListWorkflowExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListWorkflowStepExecutionsOutcome ImagebuilderClient::ListWorkflowStepExecutions(const ListWorkflowStepExecutionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListWorkflowStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListWorkflowStepExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ListWorkflowStepExecutions");
+  return ListWorkflowStepExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutComponentPolicyOutcome ImagebuilderClient::PutComponentPolicy(const PutComponentPolicyRequest& request) const

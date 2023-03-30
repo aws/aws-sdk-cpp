@@ -85,81 +85,87 @@ namespace Model
 
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline GroupOrderingIdSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>The last date-time an action was updated. An action can be a <code>PUT</code>
-     * or <code>DELETE</code> action for mapping users to their groups.</p>
+     * <p>The Unix timestamp when an action was last updated. An action can be a
+     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
+     * groups.</p>
      */
     inline GroupOrderingIdSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline const Aws::Utils::DateTime& GetReceivedAt() const{ return m_receivedAt; }
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline bool ReceivedAtHasBeenSet() const { return m_receivedAtHasBeenSet; }
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline void SetReceivedAt(const Aws::Utils::DateTime& value) { m_receivedAtHasBeenSet = true; m_receivedAt = value; }
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline void SetReceivedAt(Aws::Utils::DateTime&& value) { m_receivedAtHasBeenSet = true; m_receivedAt = std::move(value); }
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline GroupOrderingIdSummary& WithReceivedAt(const Aws::Utils::DateTime& value) { SetReceivedAt(value); return *this;}
 
     /**
-     * <p>The date-time an action was received by Amazon Kendra. An action can be a
-     * <code>PUT</code> or <code>DELETE</code> action for mapping users to their
-     * groups.</p>
+     * <p>The Unix timestamp when an action was received by Amazon Kendra. An action
+     * can be a <code>PUT</code> or <code>DELETE</code> action for mapping users to
+     * their groups.</p>
      */
     inline GroupOrderingIdSummary& WithReceivedAt(Aws::Utils::DateTime&& value) { SetReceivedAt(std::move(value)); return *this;}
 

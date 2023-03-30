@@ -14,6 +14,8 @@ using namespace Aws::Utils;
 
 ExportEarthObservationJobRequest::ExportEarthObservationJobRequest() : 
     m_arnHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_executionRoleArnHasBeenSet(false),
     m_exportSourceImages(false),
     m_exportSourceImagesHasBeenSet(false),
@@ -28,6 +30,12 @@ Aws::String ExportEarthObservationJobRequest::SerializePayload() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("Arn", m_arn);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("ClientToken", m_clientToken);
 
   }
 

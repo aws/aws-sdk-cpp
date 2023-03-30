@@ -145,42 +145,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetImageSourceBands() const{ return m_imageSourceBands; }
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline void SetImageSourceBands(const Aws::Vector<Aws::String>& value) { m_imageSourceBands = value; }
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline void SetImageSourceBands(Aws::Vector<Aws::String>&& value) { m_imageSourceBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline GetRasterDataCollectionResult& WithImageSourceBands(const Aws::Vector<Aws::String>& value) { SetImageSourceBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline GetRasterDataCollectionResult& WithImageSourceBands(Aws::Vector<Aws::String>&& value) { SetImageSourceBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline GetRasterDataCollectionResult& AddImageSourceBands(const Aws::String& value) { m_imageSourceBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline GetRasterDataCollectionResult& AddImageSourceBands(Aws::String&& value) { m_imageSourceBands.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The list of image source bands in the raster data collection.</p>
      */
     inline GetRasterDataCollectionResult& AddImageSourceBands(const char* value) { m_imageSourceBands.push_back(value); return *this; }
 

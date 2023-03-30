@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The structure containing the asset properties.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/AssetValue">AWS
    * API Reference</a></p>
    */
@@ -38,42 +38,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline const Aws::String& GetHref() const{ return m_href; }
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline bool HrefHasBeenSet() const { return m_hrefHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline void SetHref(const Aws::String& value) { m_hrefHasBeenSet = true; m_href = value; }
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline void SetHref(Aws::String&& value) { m_hrefHasBeenSet = true; m_href = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline void SetHref(const char* value) { m_hrefHasBeenSet = true; m_href.assign(value); }
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline AssetValue& WithHref(const Aws::String& value) { SetHref(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline AssetValue& WithHref(Aws::String&& value) { SetHref(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Link to the asset object.</p>
      */
     inline AssetValue& WithHref(const char* value) { SetHref(value); return *this;}
 

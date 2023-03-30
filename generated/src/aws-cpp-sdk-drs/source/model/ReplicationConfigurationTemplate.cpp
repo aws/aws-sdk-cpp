@@ -23,6 +23,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate() :
     m_arnHasBeenSet(false),
     m_associateDefaultSecurityGroup(false),
     m_associateDefaultSecurityGroupHasBeenSet(false),
+    m_autoReplicateNewDisks(false),
+    m_autoReplicateNewDisksHasBeenSet(false),
     m_bandwidthThrottling(0),
     m_bandwidthThrottlingHasBeenSet(false),
     m_createPublicIP(false),
@@ -51,6 +53,8 @@ ReplicationConfigurationTemplate::ReplicationConfigurationTemplate(JsonView json
     m_arnHasBeenSet(false),
     m_associateDefaultSecurityGroup(false),
     m_associateDefaultSecurityGroupHasBeenSet(false),
+    m_autoReplicateNewDisks(false),
+    m_autoReplicateNewDisksHasBeenSet(false),
     m_bandwidthThrottling(0),
     m_bandwidthThrottlingHasBeenSet(false),
     m_createPublicIP(false),
@@ -90,6 +94,13 @@ ReplicationConfigurationTemplate& ReplicationConfigurationTemplate::operator =(J
     m_associateDefaultSecurityGroup = jsonValue.GetBool("associateDefaultSecurityGroup");
 
     m_associateDefaultSecurityGroupHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("autoReplicateNewDisks"))
+  {
+    m_autoReplicateNewDisks = jsonValue.GetBool("autoReplicateNewDisks");
+
+    m_autoReplicateNewDisksHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bandwidthThrottling"))
@@ -218,6 +229,12 @@ JsonValue ReplicationConfigurationTemplate::Jsonize() const
   if(m_associateDefaultSecurityGroupHasBeenSet)
   {
    payload.WithBool("associateDefaultSecurityGroup", m_associateDefaultSecurityGroup);
+
+  }
+
+  if(m_autoReplicateNewDisksHasBeenSet)
+  {
+   payload.WithBool("autoReplicateNewDisks", m_autoReplicateNewDisks);
 
   }
 

@@ -107,51 +107,51 @@ namespace Model
 
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImageRecipesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImageRecipesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The next token used for paginated responses. When this is not empty, there
-     * are additional elements that the service has not included in this request. Use
-     * this token with the next request to retrieve additional objects.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImageRecipesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

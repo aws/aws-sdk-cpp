@@ -402,22 +402,46 @@ namespace Model
     inline EksPodProperties& AddVolumes(EksVolume&& value) { m_volumesHasBeenSet = true; m_volumes.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline const EksMetadata& GetMetadata() const{ return m_metadata; }
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline EksPodProperties& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
 
-    
+    /**
+     * <p>Metadata about the Kubernetes pod. For more information, see <a
+     * href="https://kubernetes.io/docs/concepts/overview/working-with-objects/kubernetes-objects/">Understanding
+     * Kubernetes Objects</a> in the <i>Kubernetes documentation</i>.</p>
+     */
     inline EksPodProperties& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
 
   private:

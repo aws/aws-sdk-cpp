@@ -107,44 +107,51 @@ namespace Model
 
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImagePackagesResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImagePackagesResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>A token to specify where to start paginating. This is the NextToken from a
-     * previously truncated response.</p>
+     * <p>The next token used for paginated responses. When this field isn't empty,
+     * there are additional elements that the service has'ot included in this request.
+     * Use this token with the next request to retrieve additional objects.</p>
      */
     inline ListImagePackagesResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

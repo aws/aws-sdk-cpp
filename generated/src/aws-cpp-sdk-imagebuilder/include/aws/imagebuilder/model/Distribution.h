@@ -30,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p> Defines the settings for a specific Region.</p><p><h3>See Also:</h3>   <a
+   * <p>Defines the settings for a specific Region.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/imagebuilder-2019-12-02/Distribution">AWS
    * API Reference</a></p>
    */

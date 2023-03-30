@@ -39,63 +39,75 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline const ExportErrorDetailsOutput& GetExportResults() const{ return m_exportResults; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline bool ExportResultsHasBeenSet() const { return m_exportResultsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline void SetExportResults(const ExportErrorDetailsOutput& value) { m_exportResultsHasBeenSet = true; m_exportResults = value; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline void SetExportResults(ExportErrorDetailsOutput&& value) { m_exportResultsHasBeenSet = true; m_exportResults = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline ExportErrorDetails& WithExportResults(const ExportErrorDetailsOutput& value) { SetExportResults(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting results
+     * of an Earth Observation job.</p>
      */
     inline ExportErrorDetails& WithExportResults(ExportErrorDetailsOutput&& value) { SetExportResults(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline const ExportErrorDetailsOutput& GetExportSourceImages() const{ return m_exportSourceImages; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline bool ExportSourceImagesHasBeenSet() const { return m_exportSourceImagesHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline void SetExportSourceImages(const ExportErrorDetailsOutput& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = value; }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline void SetExportSourceImages(ExportErrorDetailsOutput&& value) { m_exportSourceImagesHasBeenSet = true; m_exportSourceImages = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline ExportErrorDetails& WithExportSourceImages(const ExportErrorDetailsOutput& value) { SetExportSourceImages(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure for returning the export error details while exporting the
+     * source images of an Earth Observation job.</p>
      */
     inline ExportErrorDetails& WithExportSourceImages(ExportErrorDetailsOutput&& value) { SetExportSourceImages(std::move(value)); return *this;}
 

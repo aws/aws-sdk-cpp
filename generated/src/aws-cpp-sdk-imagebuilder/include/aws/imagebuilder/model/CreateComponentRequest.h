@@ -328,63 +328,63 @@ namespace Model
 
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedOsVersions() const{ return m_supportedOsVersions; }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline bool SupportedOsVersionsHasBeenSet() const { return m_supportedOsVersionsHasBeenSet; }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(const Aws::Vector<Aws::String>& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = value; }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline void SetSupportedOsVersions(Aws::Vector<Aws::String>&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions = std::move(value); }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline CreateComponentRequest& WithSupportedOsVersions(const Aws::Vector<Aws::String>& value) { SetSupportedOsVersions(value); return *this;}
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline CreateComponentRequest& WithSupportedOsVersions(Aws::Vector<Aws::String>&& value) { SetSupportedOsVersions(std::move(value)); return *this;}
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline CreateComponentRequest& AddSupportedOsVersions(const Aws::String& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(value); return *this; }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */
     inline CreateComponentRequest& AddSupportedOsVersions(Aws::String&& value) { m_supportedOsVersionsHasBeenSet = true; m_supportedOsVersions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p> The operating system (OS) version supported by the component. If the OS
+     * <p>The operating system (OS) version supported by the component. If the OS
      * information is available, a prefix match is performed against the base image OS
      * version during image recipe creation.</p>
      */

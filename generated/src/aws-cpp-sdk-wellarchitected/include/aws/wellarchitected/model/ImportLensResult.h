@@ -34,37 +34,37 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline const Aws::String& GetLensArn() const{ return m_lensArn; }
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline void SetLensArn(const Aws::String& value) { m_lensArn = value; }
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline void SetLensArn(Aws::String&& value) { m_lensArn = std::move(value); }
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline void SetLensArn(const char* value) { m_lensArn.assign(value); }
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline ImportLensResult& WithLensArn(const Aws::String& value) { SetLensArn(value); return *this;}
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline ImportLensResult& WithLensArn(Aws::String&& value) { SetLensArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the lens.</p>
+     * <p>The ARN for the lens that was created or updated.</p>
      */
     inline ImportLensResult& WithLensArn(const char* value) { SetLensArn(value); return *this;}
 

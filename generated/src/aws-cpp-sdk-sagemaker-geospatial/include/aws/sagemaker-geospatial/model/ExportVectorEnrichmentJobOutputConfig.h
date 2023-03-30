@@ -39,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline const VectorEnrichmentJobS3Data& GetS3Data() const{ return m_s3Data; }
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline bool S3DataHasBeenSet() const { return m_s3DataHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline void SetS3Data(const VectorEnrichmentJobS3Data& value) { m_s3DataHasBeenSet = true; m_s3Data = value; }
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline void SetS3Data(VectorEnrichmentJobS3Data&& value) { m_s3DataHasBeenSet = true; m_s3Data = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline ExportVectorEnrichmentJobOutputConfig& WithS3Data(const VectorEnrichmentJobS3Data& value) { SetS3Data(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure for Amazon S3 data; representing the Amazon S3 location
+     * of the input data objects.</p>
      */
     inline ExportVectorEnrichmentJobOutputConfig& WithS3Data(VectorEnrichmentJobS3Data&& value) { SetS3Data(std::move(value)); return *this;}
 

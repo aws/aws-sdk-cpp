@@ -22,7 +22,8 @@ ClusterStatus::ClusterStatus() :
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+    m_timelineHasBeenSet(false),
+    m_errorDetailsHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ ClusterStatus::ClusterStatus(JsonView jsonValue) :
     m_state(ClusterState::NOT_SET),
     m_stateHasBeenSet(false),
     m_stateChangeReasonHasBeenSet(false),
-    m_timelineHasBeenSet(false)
+    m_timelineHasBeenSet(false),
+    m_errorDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -58,6 +60,16 @@ ClusterStatus& ClusterStatus::operator =(JsonView jsonValue)
     m_timelineHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ErrorDetails"))
+  {
+    Aws::Utils::Array<JsonView> errorDetailsJsonList = jsonValue.GetArray("ErrorDetails");
+    for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
+    {
+      m_errorDetails.push_back(errorDetailsJsonList[errorDetailsIndex].AsObject());
+    }
+    m_errorDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -79,6 +91,17 @@ JsonValue ClusterStatus::Jsonize() const
   if(m_timelineHasBeenSet)
   {
    payload.WithObject("Timeline", m_timeline.Jsonize());
+
+  }
+
+  if(m_errorDetailsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> errorDetailsJsonList(m_errorDetails.size());
+   for(unsigned errorDetailsIndex = 0; errorDetailsIndex < errorDetailsJsonList.GetLength(); ++errorDetailsIndex)
+   {
+     errorDetailsJsonList[errorDetailsIndex].AsObject(m_errorDetails[errorDetailsIndex].Jsonize());
+   }
+   payload.WithArray("ErrorDetails", std::move(errorDetailsJsonList));
 
   }
 

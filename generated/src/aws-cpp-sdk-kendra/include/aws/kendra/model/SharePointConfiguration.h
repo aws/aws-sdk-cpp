@@ -124,113 +124,73 @@ namespace Model
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline const Aws::String& GetSecretArn() const{ return m_secretArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline bool SecretArnHasBeenSet() const { return m_secretArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline void SetSecretArn(const Aws::String& value) { m_secretArnHasBeenSet = true; m_secretArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline void SetSecretArn(Aws::String&& value) { m_secretArnHasBeenSet = true; m_secretArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline void SetSecretArn(const char* value) { m_secretArnHasBeenSet = true; m_secretArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const Aws::String& value) { SetSecretArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(Aws::String&& value) { SetSecretArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of an Secrets Manager secret that contains the
-     * user name and password required to connect to the SharePoint instance. If you
-     * use SharePoint Server, you also need to provide the sever domain name as part of
-     * the credentials. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a Microsoft SharePoint Data Source</a>.</p> <p>You can also provide OAuth
-     * authentication credentials of user name, password, client ID, and client secret.
-     * For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Using
-     * a SharePoint data source</a>.</p>
+     * user name and password required to connect to the SharePoint instance. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/data-source-sharepoint.html">Microsoft
+     * SharePoint</a>.</p>
      */
     inline SharePointConfiguration& WithSecretArn(const char* value) { SetSecretArn(value); return *this;}
 
@@ -682,7 +642,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -692,7 +652,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -702,7 +662,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -712,7 +672,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -722,7 +682,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -732,7 +692,7 @@ namespace Model
     /**
      * <p>The path to the SSL certificate stored in an Amazon S3 bucket. You use this
      * to connect to SharePoint Server if you require a secure SSL connection.</p>
-     * <p>You can simply generate a self-signed X509 certificate on any computer using
+     * <p>You can generate a self-signed X509 certificate on any computer using
      * OpenSSL. For an example of using OpenSSL to create an X509 certificate, see <a
      * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/configuring-https-ssl.html">Create
      * and sign an X509 certificate</a>.</p>
@@ -741,44 +701,50 @@ namespace Model
 
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline const SharePointOnlineAuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline void SetAuthenticationType(const SharePointOnlineAuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline void SetAuthenticationType(SharePointOnlineAuthenticationType&& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = std::move(value); }
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline SharePointConfiguration& WithAuthenticationType(const SharePointOnlineAuthenticationType& value) { SetAuthenticationType(value); return *this;}
 
     /**
-     * <p>Whether you want to connect to SharePoint using basic authentication of user
-     * name and password, or OAuth authentication of user name, password, client ID,
-     * and client secret. You can use OAuth authentication for SharePoint Online.</p>
+     * <p>Whether you want to connect to SharePoint Online using basic authentication
+     * of user name and password, or OAuth authentication of user name, password,
+     * client ID, and client secret, or AD App-only authentication of client
+     * secret.</p>
      */
     inline SharePointConfiguration& WithAuthenticationType(SharePointOnlineAuthenticationType&& value) { SetAuthenticationType(std::move(value)); return *this;}
 

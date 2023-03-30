@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The geographic extent of the Earth Observation job.</p><p><h3>See Also:</h3> 
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/AreaOfInterest">AWS
    * API Reference</a></p>
    */
@@ -38,32 +39,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline const AreaOfInterestGeometry& GetAreaOfInterestGeometry() const{ return m_areaOfInterestGeometry; }
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline bool AreaOfInterestGeometryHasBeenSet() const { return m_areaOfInterestGeometryHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline void SetAreaOfInterestGeometry(const AreaOfInterestGeometry& value) { m_areaOfInterestGeometryHasBeenSet = true; m_areaOfInterestGeometry = value; }
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline void SetAreaOfInterestGeometry(AreaOfInterestGeometry&& value) { m_areaOfInterestGeometryHasBeenSet = true; m_areaOfInterestGeometry = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline AreaOfInterest& WithAreaOfInterestGeometry(const AreaOfInterestGeometry& value) { SetAreaOfInterestGeometry(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A GeoJSON object representing the geographic extent in the coordinate
+     * space.</p>
      */
     inline AreaOfInterest& WithAreaOfInterestGeometry(AreaOfInterestGeometry&& value) { SetAreaOfInterestGeometry(std::move(value)); return *this;}
 

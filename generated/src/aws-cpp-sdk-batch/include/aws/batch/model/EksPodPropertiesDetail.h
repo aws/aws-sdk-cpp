@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/batch/model/EksMetadata.h>
 #include <aws/batch/model/EksContainerDetail.h>
 #include <aws/batch/model/EksVolume.h>
 #include <utility>
@@ -554,6 +555,25 @@ namespace Model
      */
     inline EksPodPropertiesDetail& WithNodeName(const char* value) { SetNodeName(value); return *this;}
 
+
+    
+    inline const EksMetadata& GetMetadata() const{ return m_metadata; }
+
+    
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    
+    inline void SetMetadata(const EksMetadata& value) { m_metadataHasBeenSet = true; m_metadata = value; }
+
+    
+    inline void SetMetadata(EksMetadata&& value) { m_metadataHasBeenSet = true; m_metadata = std::move(value); }
+
+    
+    inline EksPodPropertiesDetail& WithMetadata(const EksMetadata& value) { SetMetadata(value); return *this;}
+
+    
+    inline EksPodPropertiesDetail& WithMetadata(EksMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_serviceAccountName;
@@ -576,6 +596,9 @@ namespace Model
 
     Aws::String m_nodeName;
     bool m_nodeNameHasBeenSet = false;
+
+    EksMetadata m_metadata;
+    bool m_metadataHasBeenSet = false;
   };
 
 } // namespace Model

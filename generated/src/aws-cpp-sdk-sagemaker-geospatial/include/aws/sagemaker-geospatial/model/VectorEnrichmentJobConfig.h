@@ -40,63 +40,63 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline const MapMatchingConfig& GetMapMatchingConfig() const{ return m_mapMatchingConfig; }
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline bool MapMatchingConfigHasBeenSet() const { return m_mapMatchingConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline void SetMapMatchingConfig(const MapMatchingConfig& value) { m_mapMatchingConfigHasBeenSet = true; m_mapMatchingConfig = value; }
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline void SetMapMatchingConfig(MapMatchingConfig&& value) { m_mapMatchingConfigHasBeenSet = true; m_mapMatchingConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline VectorEnrichmentJobConfig& WithMapMatchingConfig(const MapMatchingConfig& value) { SetMapMatchingConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure for Map Matching operation type.</p>
      */
     inline VectorEnrichmentJobConfig& WithMapMatchingConfig(MapMatchingConfig&& value) { SetMapMatchingConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline const ReverseGeocodingConfig& GetReverseGeocodingConfig() const{ return m_reverseGeocodingConfig; }
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline bool ReverseGeocodingConfigHasBeenSet() const { return m_reverseGeocodingConfigHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline void SetReverseGeocodingConfig(const ReverseGeocodingConfig& value) { m_reverseGeocodingConfigHasBeenSet = true; m_reverseGeocodingConfig = value; }
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline void SetReverseGeocodingConfig(ReverseGeocodingConfig&& value) { m_reverseGeocodingConfigHasBeenSet = true; m_reverseGeocodingConfig = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline VectorEnrichmentJobConfig& WithReverseGeocodingConfig(const ReverseGeocodingConfig& value) { SetReverseGeocodingConfig(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The input structure for Reverse Geocoding operation type.</p>
      */
     inline VectorEnrichmentJobConfig& WithReverseGeocodingConfig(ReverseGeocodingConfig&& value) { SetReverseGeocodingConfig(std::move(value)); return *this;}
 

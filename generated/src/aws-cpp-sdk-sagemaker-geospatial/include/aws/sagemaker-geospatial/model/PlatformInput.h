@@ -25,7 +25,10 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for specifying Platform. Platform refers to the unique
+   * name of the specific platform the instrument is attached to. For satellites it
+   * is the name of the satellite, eg. landsat-8 (Landsat-8),
+   * sentinel-2a.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/PlatformInput">AWS
    * API Reference</a></p>
    */
@@ -39,32 +42,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline void SetComparisonOperator(ComparisonOperator&& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline PlatformInput& WithComparisonOperator(const ComparisonOperator& value) { SetComparisonOperator(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The ComparisonOperator to use with PlatformInput.</p>
      */
     inline PlatformInput& WithComparisonOperator(ComparisonOperator&& value) { SetComparisonOperator(std::move(value)); return *this;}
 

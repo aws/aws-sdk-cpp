@@ -208,38 +208,32 @@ namespace Model
 
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline IndexConfigurationSummary& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The Unix timestamp when the index was last updated by the
-     * <code>UpdateIndex</code> API.</p>
+     * <p>The Unix timestamp when the index was last updated.</p>
      */
     inline IndexConfigurationSummary& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 

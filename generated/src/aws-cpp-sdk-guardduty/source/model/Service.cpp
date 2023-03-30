@@ -33,7 +33,8 @@ Service::Service() :
     m_userFeedbackHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_featureNameHasBeenSet(false),
-    m_ebsVolumeScanDetailsHasBeenSet(false)
+    m_ebsVolumeScanDetailsHasBeenSet(false),
+    m_runtimeDetailsHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ Service::Service(JsonView jsonValue) :
     m_userFeedbackHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
     m_featureNameHasBeenSet(false),
-    m_ebsVolumeScanDetailsHasBeenSet(false)
+    m_ebsVolumeScanDetailsHasBeenSet(false),
+    m_runtimeDetailsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -150,6 +152,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_ebsVolumeScanDetailsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("runtimeDetails"))
+  {
+    m_runtimeDetails = jsonValue.GetObject("runtimeDetails");
+
+    m_runtimeDetailsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -232,6 +241,12 @@ JsonValue Service::Jsonize() const
   if(m_ebsVolumeScanDetailsHasBeenSet)
   {
    payload.WithObject("ebsVolumeScanDetails", m_ebsVolumeScanDetails.Jsonize());
+
+  }
+
+  if(m_runtimeDetailsHasBeenSet)
+  {
+   payload.WithObject("runtimeDetails", m_runtimeDetails.Jsonize());
 
   }
 

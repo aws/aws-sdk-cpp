@@ -26,7 +26,8 @@ UpdateImagePipelineRequest::UpdateImagePipelineRequest() :
     m_status(PipelineStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -96,6 +97,12 @@ Aws::String UpdateImagePipelineRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
 
   }
 

@@ -21,14 +21,16 @@ namespace Model
 ZonalStatisticsConfigInput::ZonalStatisticsConfigInput() : 
     m_statisticsHasBeenSet(false),
     m_targetBandsHasBeenSet(false),
-    m_zoneS3PathHasBeenSet(false)
+    m_zoneS3PathHasBeenSet(false),
+    m_zoneS3PathKmsKeyIdHasBeenSet(false)
 {
 }
 
 ZonalStatisticsConfigInput::ZonalStatisticsConfigInput(JsonView jsonValue) : 
     m_statisticsHasBeenSet(false),
     m_targetBandsHasBeenSet(false),
-    m_zoneS3PathHasBeenSet(false)
+    m_zoneS3PathHasBeenSet(false),
+    m_zoneS3PathKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ ZonalStatisticsConfigInput& ZonalStatisticsConfigInput::operator =(JsonView json
     m_zoneS3Path = jsonValue.GetString("ZoneS3Path");
 
     m_zoneS3PathHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ZoneS3PathKmsKeyId"))
+  {
+    m_zoneS3PathKmsKeyId = jsonValue.GetString("ZoneS3PathKmsKeyId");
+
+    m_zoneS3PathKmsKeyIdHasBeenSet = true;
   }
 
   return *this;
@@ -94,6 +103,12 @@ JsonValue ZonalStatisticsConfigInput::Jsonize() const
   if(m_zoneS3PathHasBeenSet)
   {
    payload.WithString("ZoneS3Path", m_zoneS3Path);
+
+  }
+
+  if(m_zoneS3PathKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ZoneS3PathKmsKeyId", m_zoneS3PathKmsKeyId);
 
   }
 

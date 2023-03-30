@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>Input object defining the custom BandMath indices to compute.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/CustomIndicesInput">AWS
    * API Reference</a></p>
    */
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline const Aws::Vector<Operation>& GetOperations() const{ return m_operations; }
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline void SetOperations(const Aws::Vector<Operation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline void SetOperations(Aws::Vector<Operation>&& value) { m_operationsHasBeenSet = true; m_operations = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline CustomIndicesInput& WithOperations(const Aws::Vector<Operation>& value) { SetOperations(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline CustomIndicesInput& WithOperations(Aws::Vector<Operation>&& value) { SetOperations(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline CustomIndicesInput& AddOperations(const Operation& value) { m_operationsHasBeenSet = true; m_operations.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of BandMath indices to compute.</p>
      */
     inline CustomIndicesInput& AddOperations(Operation&& value) { m_operationsHasBeenSet = true; m_operations.push_back(std::move(value)); return *this; }
 

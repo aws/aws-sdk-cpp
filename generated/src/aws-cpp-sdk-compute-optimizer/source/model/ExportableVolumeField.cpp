@@ -48,6 +48,7 @@ namespace Aws
         static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
         static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int RootVolume_HASH = HashingUtils::HashString("RootVolume");
 
 
         ExportableVolumeField GetExportableVolumeFieldForName(const Aws::String& name)
@@ -165,6 +166,10 @@ namespace Aws
           {
             return ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue;
           }
+          else if (hashCode == RootVolume_HASH)
+          {
+            return ExportableVolumeField::RootVolume;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -235,6 +240,8 @@ namespace Aws
             return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
           case ExportableVolumeField::RecommendationOptionsEstimatedMonthlySavingsValue:
             return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableVolumeField::RootVolume:
+            return "RootVolume";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

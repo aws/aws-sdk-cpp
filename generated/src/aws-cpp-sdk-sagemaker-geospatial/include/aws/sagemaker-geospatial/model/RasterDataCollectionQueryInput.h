@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for Raster Data Collection Query containing the Area of
+   * Interest, TimeRange Filters, and Property Filters.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/RasterDataCollectionQueryInput">AWS
    * API Reference</a></p>
    */
@@ -72,32 +73,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline const PropertyFilters& GetPropertyFilters() const{ return m_propertyFilters; }
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline bool PropertyFiltersHasBeenSet() const { return m_propertyFiltersHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline void SetPropertyFilters(const PropertyFilters& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = value; }
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline void SetPropertyFilters(PropertyFilters&& value) { m_propertyFiltersHasBeenSet = true; m_propertyFilters = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline RasterDataCollectionQueryInput& WithPropertyFilters(const PropertyFilters& value) { SetPropertyFilters(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The list of Property filters used in the Raster Data Collection Query.</p>
      */
     inline RasterDataCollectionQueryInput& WithPropertyFilters(PropertyFilters&& value) { SetPropertyFilters(std::move(value)); return *this;}
 
@@ -144,32 +145,32 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline const TimeRangeFilterInput& GetTimeRangeFilter() const{ return m_timeRangeFilter; }
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline bool TimeRangeFilterHasBeenSet() const { return m_timeRangeFilterHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline void SetTimeRangeFilter(const TimeRangeFilterInput& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = value; }
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline void SetTimeRangeFilter(TimeRangeFilterInput&& value) { m_timeRangeFilterHasBeenSet = true; m_timeRangeFilter = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline RasterDataCollectionQueryInput& WithTimeRangeFilter(const TimeRangeFilterInput& value) { SetTimeRangeFilter(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The TimeRange Filter used in the RasterDataCollection Query.</p>
      */
     inline RasterDataCollectionQueryInput& WithTimeRangeFilter(TimeRangeFilterInput&& value) { SetTimeRangeFilter(std::move(value)); return *this;}
 

@@ -46,6 +46,7 @@
 #include <aws/guardduty/model/DisassociateMembersRequest.h>
 #include <aws/guardduty/model/EnableOrganizationAdminAccountRequest.h>
 #include <aws/guardduty/model/GetAdministratorAccountRequest.h>
+#include <aws/guardduty/model/GetCoverageStatisticsRequest.h>
 #include <aws/guardduty/model/GetDetectorRequest.h>
 #include <aws/guardduty/model/GetFilterRequest.h>
 #include <aws/guardduty/model/GetFindingsRequest.h>
@@ -59,6 +60,7 @@
 #include <aws/guardduty/model/GetThreatIntelSetRequest.h>
 #include <aws/guardduty/model/GetUsageStatisticsRequest.h>
 #include <aws/guardduty/model/InviteMembersRequest.h>
+#include <aws/guardduty/model/ListCoverageRequest.h>
 #include <aws/guardduty/model/ListDetectorsRequest.h>
 #include <aws/guardduty/model/ListFiltersRequest.h>
 #include <aws/guardduty/model/ListFindingsRequest.h>
@@ -605,6 +607,22 @@ GetAdministratorAccountOutcome GuardDutyClient::GetAdministratorAccount(const Ge
   return GetAdministratorAccountOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetCoverageStatisticsOutcome GuardDutyClient::GetCoverageStatistics(const GetCoverageStatisticsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCoverageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoverageStatistics", "Required field: DetectorId, is not set");
+    return GetCoverageStatisticsOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetCoverageStatistics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/coverage/statistics");
+  return GetCoverageStatisticsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetDetectorOutcome GuardDutyClient::GetDetector(const GetDetectorRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDetector, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -821,6 +839,22 @@ InviteMembersOutcome GuardDutyClient::InviteMembers(const InviteMembersRequest& 
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/member/invite");
   return InviteMembersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListCoverageOutcome GuardDutyClient::ListCoverage(const ListCoverageRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCoverage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DetectorIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCoverage", "Required field: DetectorId, is not set");
+    return ListCoverageOutcome(Aws::Client::AWSError<GuardDutyErrors>(GuardDutyErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DetectorId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCoverage, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/detector/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/coverage");
+  return ListCoverageOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListDetectorsOutcome GuardDutyClient::ListDetectors(const ListDetectorsRequest& request) const

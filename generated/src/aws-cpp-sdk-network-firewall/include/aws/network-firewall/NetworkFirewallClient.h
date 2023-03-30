@@ -279,6 +279,45 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Creates an Network Firewall TLS inspection configuration. A TLS inspection
+         * configuration contains the Certificate Manager certificate references that
+         * Network Firewall uses to decrypt and re-encrypt inbound traffic.</p> <p>After
+         * you create a TLS inspection configuration, you associate it with a firewall
+         * policy.</p> <p>To update the settings for a TLS inspection configuration, use
+         * <a>UpdateTLSInspectionConfiguration</a>.</p> <p>To manage a TLS inspection
+         * configuration's tags, use the standard Amazon Web Services resource tagging
+         * operations, <a>ListTagsForResource</a>, <a>TagResource</a>, and
+         * <a>UntagResource</a>.</p> <p>To retrieve information about TLS inspection
+         * configurations, use <a>ListTLSInspectionConfigurations</a> and
+         * <a>DescribeTLSInspectionConfiguration</a>.</p> <p> For more information about
+         * TLS inspection configurations, see <a
+         * href="https://docs.aws.amazon.com/network-firewall/latest/developerguide/tls-inspection.html">Decrypting
+         * SSL/TLS traffic with TLS inspection configurations</a> in the <i>Network
+         * Firewall Developer Guide</i>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/CreateTLSInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTLSInspectionConfigurationOutcome CreateTLSInspectionConfiguration(const Model::CreateTLSInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateTLSInspectionConfigurationRequestT = Model::CreateTLSInspectionConfigurationRequest>
+        Model::CreateTLSInspectionConfigurationOutcomeCallable CreateTLSInspectionConfigurationCallable(const CreateTLSInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::CreateTLSInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for CreateTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateTLSInspectionConfigurationRequestT = Model::CreateTLSInspectionConfigurationRequest>
+        void CreateTLSInspectionConfigurationAsync(const CreateTLSInspectionConfigurationRequestT& request, const CreateTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::CreateTLSInspectionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the specified <a>Firewall</a> and its <a>FirewallStatus</a>. This
          * operation requires the firewall's <code>DeleteProtection</code> flag to be
          * <code>FALSE</code>. You can't revert this operation. </p> <p>You can check
@@ -388,6 +427,32 @@ namespace NetworkFirewall
         void DeleteRuleGroupAsync(const DeleteRuleGroupRequestT& request, const DeleteRuleGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::DeleteRuleGroup, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes the specified <a>TLSInspectionConfiguration</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DeleteTLSInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTLSInspectionConfigurationOutcome DeleteTLSInspectionConfiguration(const Model::DeleteTLSInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteTLSInspectionConfigurationRequestT = Model::DeleteTLSInspectionConfigurationRequest>
+        Model::DeleteTLSInspectionConfigurationOutcomeCallable DeleteTLSInspectionConfigurationCallable(const DeleteTLSInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DeleteTLSInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteTLSInspectionConfigurationRequestT = Model::DeleteTLSInspectionConfigurationRequest>
+        void DeleteTLSInspectionConfigurationAsync(const DeleteTLSInspectionConfigurationRequestT& request, const DeleteTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DeleteTLSInspectionConfiguration, request, handler, context);
         }
 
         /**
@@ -549,6 +614,32 @@ namespace NetworkFirewall
         }
 
         /**
+         * <p>Returns the data objects for the specified TLS inspection
+         * configuration.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/DescribeTLSInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTLSInspectionConfigurationOutcome DescribeTLSInspectionConfiguration(const Model::DescribeTLSInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeTLSInspectionConfigurationRequestT = Model::DescribeTLSInspectionConfigurationRequest>
+        Model::DescribeTLSInspectionConfigurationOutcomeCallable DescribeTLSInspectionConfigurationCallable(const DescribeTLSInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::DescribeTLSInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeTLSInspectionConfigurationRequestT = Model::DescribeTLSInspectionConfigurationRequest>
+        void DescribeTLSInspectionConfigurationAsync(const DescribeTLSInspectionConfigurationRequestT& request, const DescribeTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::DescribeTLSInspectionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Removes the specified subnet associations from the firewall. This removes the
          * firewall endpoints from the subnets and removes any network filtering
          * protections that the endpoints were providing. </p><p><h3>See Also:</h3>   <a
@@ -656,6 +747,34 @@ namespace NetworkFirewall
         void ListRuleGroupsAsync(const ListRuleGroupsRequestT& request, const ListRuleGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::ListRuleGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the metadata for the TLS inspection configurations that you have
+         * defined. Depending on your setting for max results and the number of TLS
+         * inspection configurations, a single call might not return the full
+         * list.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/ListTLSInspectionConfigurations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTLSInspectionConfigurationsOutcome ListTLSInspectionConfigurations(const Model::ListTLSInspectionConfigurationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTLSInspectionConfigurations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTLSInspectionConfigurationsRequestT = Model::ListTLSInspectionConfigurationsRequest>
+        Model::ListTLSInspectionConfigurationsOutcomeCallable ListTLSInspectionConfigurationsCallable(const ListTLSInspectionConfigurationsRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::ListTLSInspectionConfigurations, request);
+        }
+
+        /**
+         * An Async wrapper for ListTLSInspectionConfigurations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTLSInspectionConfigurationsRequestT = Model::ListTLSInspectionConfigurationsRequest>
+        void ListTLSInspectionConfigurationsAsync(const ListTLSInspectionConfigurationsRequestT& request, const ListTLSInspectionConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::ListTLSInspectionConfigurations, request, handler, context);
         }
 
         /**
@@ -1024,6 +1143,38 @@ namespace NetworkFirewall
         void UpdateSubnetChangeProtectionAsync(const UpdateSubnetChangeProtectionRequestT& request, const UpdateSubnetChangeProtectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&NetworkFirewallClient::UpdateSubnetChangeProtection, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the TLS inspection configuration settings for the specified TLS
+         * inspection configuration. You use a TLS inspection configuration by reference in
+         * one or more firewall policies. When you modify a TLS inspection configuration,
+         * you modify all firewall policies that use the TLS inspection configuration. </p>
+         * <p>To update a TLS inspection configuration, first call
+         * <a>DescribeTLSInspectionConfiguration</a> to retrieve the current
+         * <a>TLSInspectionConfiguration</a> object, update the object as needed, and then
+         * provide the updated object to this call. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/network-firewall-2020-11-12/UpdateTLSInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTLSInspectionConfigurationOutcome UpdateTLSInspectionConfiguration(const Model::UpdateTLSInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateTLSInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateTLSInspectionConfigurationRequestT = Model::UpdateTLSInspectionConfigurationRequest>
+        Model::UpdateTLSInspectionConfigurationOutcomeCallable UpdateTLSInspectionConfigurationCallable(const UpdateTLSInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&NetworkFirewallClient::UpdateTLSInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateTLSInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateTLSInspectionConfigurationRequestT = Model::UpdateTLSInspectionConfigurationRequest>
+        void UpdateTLSInspectionConfigurationAsync(const UpdateTLSInspectionConfigurationRequestT& request, const UpdateTLSInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&NetworkFirewallClient::UpdateTLSInspectionConfiguration, request, handler, context);
         }
 
 

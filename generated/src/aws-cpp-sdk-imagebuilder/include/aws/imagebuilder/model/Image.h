@@ -18,6 +18,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/imagebuilder/model/BuildType.h>
 #include <aws/imagebuilder/model/ImageSource.h>
+#include <aws/imagebuilder/model/ImageScanState.h>
+#include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -1002,6 +1004,68 @@ namespace Model
      */
     inline Image& WithImageSource(ImageSource&& value) { SetImageSource(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline const ImageScanState& GetScanState() const{ return m_scanState; }
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline bool ScanStateHasBeenSet() const { return m_scanStateHasBeenSet; }
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline void SetScanState(const ImageScanState& value) { m_scanStateHasBeenSet = true; m_scanState = value; }
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline void SetScanState(ImageScanState&& value) { m_scanStateHasBeenSet = true; m_scanState = std::move(value); }
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline Image& WithScanState(const ImageScanState& value) { SetScanState(value); return *this;}
+
+    /**
+     * <p>Contains information about the current state of scans for this image.</p>
+     */
+    inline Image& WithScanState(ImageScanState&& value) { SetScanState(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline Image& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline Image& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -1063,6 +1127,12 @@ namespace Model
 
     ImageSource m_imageSource;
     bool m_imageSourceHasBeenSet = false;
+
+    ImageScanState m_scanState;
+    bool m_scanStateHasBeenSet = false;
+
+    ImageScanningConfiguration m_imageScanningConfiguration;
+    bool m_imageScanningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

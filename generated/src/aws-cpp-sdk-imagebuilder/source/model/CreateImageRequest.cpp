@@ -22,7 +22,8 @@ CreateImageRequest::CreateImageRequest() :
     m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientTokenHasBeenSet(true)
+    m_clientTokenHasBeenSet(true),
+    m_imageScanningConfigurationHasBeenSet(false)
 {
 }
 
@@ -80,6 +81,12 @@ Aws::String CreateImageRequest::SerializePayload() const
   if(m_clientTokenHasBeenSet)
   {
    payload.WithString("clientToken", m_clientToken);
+
+  }
+
+  if(m_imageScanningConfigurationHasBeenSet)
+  {
+   payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
 
   }
 

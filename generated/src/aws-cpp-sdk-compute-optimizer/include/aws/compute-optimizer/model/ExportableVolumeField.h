@@ -43,7 +43,8 @@ namespace Model
     CurrentPerformanceRisk,
     RecommendationOptionsSavingsOpportunityPercentage,
     RecommendationOptionsEstimatedMonthlySavingsCurrency,
-    RecommendationOptionsEstimatedMonthlySavingsValue
+    RecommendationOptionsEstimatedMonthlySavingsValue,
+    RootVolume
   };
 
 namespace ExportableVolumeFieldMapper

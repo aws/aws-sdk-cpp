@@ -119,82 +119,90 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateExperienceRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateExperienceRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a role with permission to access
-     * <code>Query</code> API, <code>QuerySuggestions</code> API,
-     * <code>SubmitFeedback</code> API, and IAM Identity Center that stores your user
-     * and group information. For more information, see <a
-     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM roles for
-     * Amazon Kendra</a>.</p>
+     * <p>The Amazon Resource Name (ARN) of an IAM role with permission to access
+     * <code>Query</code> API, <code>GetQuerySuggestions</code> API, and other required
+     * APIs. The role also must include permission to access IAM Identity Center
+     * (successor to Single Sign-On) that stores your user and group information. For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/kendra/latest/dg/iam-roles.html">IAM access
+     * roles for Amazon Kendra</a>.</p>
      */
     inline CreateExperienceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 

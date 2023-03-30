@@ -433,6 +433,7 @@
 #include <aws/ec2/model/GetVerifiedAccessGroupPolicyResponse.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceSampleConfigurationResponse.h>
 #include <aws/ec2/model/GetVpnConnectionDeviceTypesResponse.h>
+#include <aws/ec2/model/GetVpnTunnelReplacementStatusResponse.h>
 #include <aws/ec2/model/ImportClientVpnClientCertificateRevocationListResponse.h>
 #include <aws/ec2/model/ImportImageResponse.h>
 #include <aws/ec2/model/ImportInstanceResponse.h>
@@ -520,6 +521,7 @@
 #include <aws/ec2/model/ReplaceNetworkAclAssociationResponse.h>
 #include <aws/ec2/model/ReplaceRouteTableAssociationResponse.h>
 #include <aws/ec2/model/ReplaceTransitGatewayRouteResponse.h>
+#include <aws/ec2/model/ReplaceVpnTunnelResponse.h>
 #include <aws/ec2/model/RequestSpotFleetResponse.h>
 #include <aws/ec2/model/RequestSpotInstancesResponse.h>
 #include <aws/ec2/model/ResetAddressAttributeResponse.h>
@@ -1043,6 +1045,7 @@ namespace Aws
       class GetVerifiedAccessGroupPolicyRequest;
       class GetVpnConnectionDeviceSampleConfigurationRequest;
       class GetVpnConnectionDeviceTypesRequest;
+      class GetVpnTunnelReplacementStatusRequest;
       class ImportClientVpnClientCertificateRevocationListRequest;
       class ImportImageRequest;
       class ImportInstanceRequest;
@@ -1143,6 +1146,7 @@ namespace Aws
       class ReplaceRouteRequest;
       class ReplaceRouteTableAssociationRequest;
       class ReplaceTransitGatewayRouteRequest;
+      class ReplaceVpnTunnelRequest;
       class ReportInstanceStatusRequest;
       class RequestSpotFleetRequest;
       class RequestSpotInstancesRequest;
@@ -1635,6 +1639,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetVerifiedAccessGroupPolicyResponse, EC2Error> GetVerifiedAccessGroupPolicyOutcome;
       typedef Aws::Utils::Outcome<GetVpnConnectionDeviceSampleConfigurationResponse, EC2Error> GetVpnConnectionDeviceSampleConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetVpnConnectionDeviceTypesResponse, EC2Error> GetVpnConnectionDeviceTypesOutcome;
+      typedef Aws::Utils::Outcome<GetVpnTunnelReplacementStatusResponse, EC2Error> GetVpnTunnelReplacementStatusOutcome;
       typedef Aws::Utils::Outcome<ImportClientVpnClientCertificateRevocationListResponse, EC2Error> ImportClientVpnClientCertificateRevocationListOutcome;
       typedef Aws::Utils::Outcome<ImportImageResponse, EC2Error> ImportImageOutcome;
       typedef Aws::Utils::Outcome<ImportInstanceResponse, EC2Error> ImportInstanceOutcome;
@@ -1735,6 +1740,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReplaceRouteOutcome;
       typedef Aws::Utils::Outcome<ReplaceRouteTableAssociationResponse, EC2Error> ReplaceRouteTableAssociationOutcome;
       typedef Aws::Utils::Outcome<ReplaceTransitGatewayRouteResponse, EC2Error> ReplaceTransitGatewayRouteOutcome;
+      typedef Aws::Utils::Outcome<ReplaceVpnTunnelResponse, EC2Error> ReplaceVpnTunnelOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ReportInstanceStatusOutcome;
       typedef Aws::Utils::Outcome<RequestSpotFleetResponse, EC2Error> RequestSpotFleetOutcome;
       typedef Aws::Utils::Outcome<RequestSpotInstancesResponse, EC2Error> RequestSpotInstancesOutcome;
@@ -2227,6 +2233,7 @@ namespace Aws
       typedef std::future<GetVerifiedAccessGroupPolicyOutcome> GetVerifiedAccessGroupPolicyOutcomeCallable;
       typedef std::future<GetVpnConnectionDeviceSampleConfigurationOutcome> GetVpnConnectionDeviceSampleConfigurationOutcomeCallable;
       typedef std::future<GetVpnConnectionDeviceTypesOutcome> GetVpnConnectionDeviceTypesOutcomeCallable;
+      typedef std::future<GetVpnTunnelReplacementStatusOutcome> GetVpnTunnelReplacementStatusOutcomeCallable;
       typedef std::future<ImportClientVpnClientCertificateRevocationListOutcome> ImportClientVpnClientCertificateRevocationListOutcomeCallable;
       typedef std::future<ImportImageOutcome> ImportImageOutcomeCallable;
       typedef std::future<ImportInstanceOutcome> ImportInstanceOutcomeCallable;
@@ -2327,6 +2334,7 @@ namespace Aws
       typedef std::future<ReplaceRouteOutcome> ReplaceRouteOutcomeCallable;
       typedef std::future<ReplaceRouteTableAssociationOutcome> ReplaceRouteTableAssociationOutcomeCallable;
       typedef std::future<ReplaceTransitGatewayRouteOutcome> ReplaceTransitGatewayRouteOutcomeCallable;
+      typedef std::future<ReplaceVpnTunnelOutcome> ReplaceVpnTunnelOutcomeCallable;
       typedef std::future<ReportInstanceStatusOutcome> ReportInstanceStatusOutcomeCallable;
       typedef std::future<RequestSpotFleetOutcome> RequestSpotFleetOutcomeCallable;
       typedef std::future<RequestSpotInstancesOutcome> RequestSpotInstancesOutcomeCallable;
@@ -2822,6 +2830,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::GetVerifiedAccessGroupPolicyRequest&, const Model::GetVerifiedAccessGroupPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVerifiedAccessGroupPolicyResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetVpnConnectionDeviceSampleConfigurationRequest&, const Model::GetVpnConnectionDeviceSampleConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpnConnectionDeviceSampleConfigurationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::GetVpnConnectionDeviceTypesRequest&, const Model::GetVpnConnectionDeviceTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpnConnectionDeviceTypesResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::GetVpnTunnelReplacementStatusRequest&, const Model::GetVpnTunnelReplacementStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetVpnTunnelReplacementStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportClientVpnClientCertificateRevocationListRequest&, const Model::ImportClientVpnClientCertificateRevocationListOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportClientVpnClientCertificateRevocationListResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportImageRequest&, const Model::ImportImageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportImageResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ImportInstanceRequest&, const Model::ImportInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportInstanceResponseReceivedHandler;
@@ -2922,6 +2931,7 @@ namespace Aws
     typedef std::function<void(const EC2Client*, const Model::ReplaceRouteRequest&, const Model::ReplaceRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceRouteResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceRouteTableAssociationRequest&, const Model::ReplaceRouteTableAssociationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceRouteTableAssociationResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReplaceTransitGatewayRouteRequest&, const Model::ReplaceTransitGatewayRouteOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceTransitGatewayRouteResponseReceivedHandler;
+    typedef std::function<void(const EC2Client*, const Model::ReplaceVpnTunnelRequest&, const Model::ReplaceVpnTunnelOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReplaceVpnTunnelResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::ReportInstanceStatusRequest&, const Model::ReportInstanceStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ReportInstanceStatusResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotFleetRequest&, const Model::RequestSpotFleetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotFleetResponseReceivedHandler;
     typedef std::function<void(const EC2Client*, const Model::RequestSpotInstancesRequest&, const Model::RequestSpotInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RequestSpotInstancesResponseReceivedHandler;

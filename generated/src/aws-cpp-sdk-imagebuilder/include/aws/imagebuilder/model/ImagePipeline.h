@@ -11,6 +11,7 @@
 #include <aws/imagebuilder/model/Schedule.h>
 #include <aws/imagebuilder/model/PipelineStatus.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/imagebuilder/model/ImageScanningConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -197,7 +198,7 @@ namespace Model
 
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -205,7 +206,7 @@ namespace Model
     inline bool GetEnhancedImageMetadataEnabled() const{ return m_enhancedImageMetadataEnabled; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -213,7 +214,7 @@ namespace Model
     inline bool EnhancedImageMetadataEnabledHasBeenSet() const { return m_enhancedImageMetadataEnabledHasBeenSet; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -221,7 +222,7 @@ namespace Model
     inline void SetEnhancedImageMetadataEnabled(bool value) { m_enhancedImageMetadataEnabledHasBeenSet = true; m_enhancedImageMetadataEnabled = value; }
 
     /**
-     * <p> Collects additional information about the image being created, including the
+     * <p>Collects additional information about the image being created, including the
      * operating system (OS) version and package list. This information is used to
      * enhance the overall experience of using EC2 Image Builder. Enabled by
      * default.</p>
@@ -747,6 +748,37 @@ namespace Model
      */
     inline ImagePipeline& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline const ImageScanningConfiguration& GetImageScanningConfiguration() const{ return m_imageScanningConfiguration; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline bool ImageScanningConfigurationHasBeenSet() const { return m_imageScanningConfigurationHasBeenSet; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(const ImageScanningConfiguration& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = value; }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline void SetImageScanningConfiguration(ImageScanningConfiguration&& value) { m_imageScanningConfigurationHasBeenSet = true; m_imageScanningConfiguration = std::move(value); }
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline ImagePipeline& WithImageScanningConfiguration(const ImageScanningConfiguration& value) { SetImageScanningConfiguration(value); return *this;}
+
+    /**
+     * <p>Contains settings for vulnerability scans.</p>
+     */
+    inline ImagePipeline& WithImageScanningConfiguration(ImageScanningConfiguration&& value) { SetImageScanningConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_arn;
@@ -799,6 +831,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ImageScanningConfiguration m_imageScanningConfiguration;
+    bool m_imageScanningConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

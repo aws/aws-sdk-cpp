@@ -24,7 +24,8 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The output resolution (in target georeferenced units) of the result of the
+   * operation</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/UserDefined">AWS
    * API Reference</a></p>
    */
@@ -38,53 +39,53 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline const Unit& GetUnit() const{ return m_unit; }
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline void SetUnit(const Unit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline void SetUnit(Unit&& value) { m_unitHasBeenSet = true; m_unit = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline UserDefined& WithUnit(const Unit& value) { SetUnit(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The units for output resolution of the result.</p>
      */
     inline UserDefined& WithUnit(Unit&& value) { SetUnit(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The value for output resolution of the result.</p>
      */
     inline double GetValue() const{ return m_value; }
 
     /**
-     * <p/>
+     * <p>The value for output resolution of the result.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The value for output resolution of the result.</p>
      */
     inline void SetValue(double value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
-     * <p/>
+     * <p>The value for output resolution of the result.</p>
      */
     inline UserDefined& WithValue(double value) { SetValue(value); return *this;}
 

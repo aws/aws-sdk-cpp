@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p/><p><h3>See Also:</h3>   <a
+   * <p>The input structure for Stacking Operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-geospatial-2020-05-27/StackConfigInput">AWS
    * API Reference</a></p>
    */
@@ -40,78 +40,102 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline const OutputResolutionStackInput& GetOutputResolution() const{ return m_outputResolution; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline bool OutputResolutionHasBeenSet() const { return m_outputResolutionHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline void SetOutputResolution(const OutputResolutionStackInput& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = value; }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline void SetOutputResolution(OutputResolutionStackInput&& value) { m_outputResolutionHasBeenSet = true; m_outputResolution = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline StackConfigInput& WithOutputResolution(const OutputResolutionStackInput& value) { SetOutputResolution(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The structure representing output resolution (in target georeferenced units)
+     * of the result of stacking operation.</p>
      */
     inline StackConfigInput& WithOutputResolution(OutputResolutionStackInput&& value) { SetOutputResolution(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetBands() const{ return m_targetBands; }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline bool TargetBandsHasBeenSet() const { return m_targetBandsHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline void SetTargetBands(const Aws::Vector<Aws::String>& value) { m_targetBandsHasBeenSet = true; m_targetBands = value; }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline void SetTargetBands(Aws::Vector<Aws::String>&& value) { m_targetBandsHasBeenSet = true; m_targetBands = std::move(value); }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline StackConfigInput& WithTargetBands(const Aws::Vector<Aws::String>& value) { SetTargetBands(value); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline StackConfigInput& WithTargetBands(Aws::Vector<Aws::String>&& value) { SetTargetBands(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline StackConfigInput& AddTargetBands(const Aws::String& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline StackConfigInput& AddTargetBands(Aws::String&& value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>A list of bands to be stacked in the specified order. When the parameter is
+     * not provided, all the available bands in the data collection are stacked in the
+     * alphabetical order of their asset names.</p>
      */
     inline StackConfigInput& AddTargetBands(const char* value) { m_targetBandsHasBeenSet = true; m_targetBands.push_back(value); return *this; }
 

@@ -19,6 +19,7 @@ using namespace Aws;
 
 UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult() : 
     m_associateDefaultSecurityGroup(false),
+    m_autoReplicateNewDisks(false),
     m_bandwidthThrottling(0),
     m_createPublicIP(false),
     m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
@@ -30,6 +31,7 @@ UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult() :
 
 UpdateReplicationConfigurationResult::UpdateReplicationConfigurationResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_associateDefaultSecurityGroup(false),
+    m_autoReplicateNewDisks(false),
     m_bandwidthThrottling(0),
     m_createPublicIP(false),
     m_dataPlaneRouting(ReplicationConfigurationDataPlaneRouting::NOT_SET),
@@ -46,6 +48,12 @@ UpdateReplicationConfigurationResult& UpdateReplicationConfigurationResult::oper
   if(jsonValue.ValueExists("associateDefaultSecurityGroup"))
   {
     m_associateDefaultSecurityGroup = jsonValue.GetBool("associateDefaultSecurityGroup");
+
+  }
+
+  if(jsonValue.ValueExists("autoReplicateNewDisks"))
+  {
+    m_autoReplicateNewDisks = jsonValue.GetBool("autoReplicateNewDisks");
 
   }
 

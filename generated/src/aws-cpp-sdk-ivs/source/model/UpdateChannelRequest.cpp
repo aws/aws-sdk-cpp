@@ -16,6 +16,8 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_arnHasBeenSet(false),
     m_authorized(false),
     m_authorizedHasBeenSet(false),
+    m_insecureIngest(false),
+    m_insecureIngestHasBeenSet(false),
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -38,6 +40,12 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   if(m_authorizedHasBeenSet)
   {
    payload.WithBool("authorized", m_authorized);
+
+  }
+
+  if(m_insecureIngestHasBeenSet)
+  {
+   payload.WithBool("insecureIngest", m_insecureIngest);
 
   }
 

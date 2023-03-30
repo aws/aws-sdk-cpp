@@ -19,7 +19,8 @@ namespace Model
     S3_DATA_EVENTS,
     EKS_AUDIT_LOGS,
     EBS_MALWARE_PROTECTION,
-    RDS_LOGIN_EVENTS
+    RDS_LOGIN_EVENTS,
+    EKS_RUNTIME_MONITORING
   };
 
 namespace DetectorFeatureMapper

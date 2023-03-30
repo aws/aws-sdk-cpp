@@ -15,7 +15,9 @@ ModifyVpnTunnelOptionsRequest::ModifyVpnTunnelOptionsRequest() :
     m_vpnTunnelOutsideIpAddressHasBeenSet(false),
     m_tunnelOptionsHasBeenSet(false),
     m_dryRun(false),
-    m_dryRunHasBeenSet(false)
+    m_dryRunHasBeenSet(false),
+    m_skipTunnelReplacement(false),
+    m_skipTunnelReplacementHasBeenSet(false)
 {
 }
 
@@ -41,6 +43,11 @@ Aws::String ModifyVpnTunnelOptionsRequest::SerializePayload() const
   if(m_dryRunHasBeenSet)
   {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if(m_skipTunnelReplacementHasBeenSet)
+  {
+    ss << "SkipTunnelReplacement=" << std::boolalpha << m_skipTunnelReplacement << "&";
   }
 
   ss << "Version=2016-11-15";

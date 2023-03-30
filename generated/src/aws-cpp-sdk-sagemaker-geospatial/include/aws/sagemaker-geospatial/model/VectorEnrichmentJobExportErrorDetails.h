@@ -89,32 +89,38 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline const VectorEnrichmentJobExportErrorType& GetType() const{ return m_type; }
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline void SetType(const VectorEnrichmentJobExportErrorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline void SetType(VectorEnrichmentJobExportErrorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline VectorEnrichmentJobExportErrorDetails& WithType(const VectorEnrichmentJobExportErrorType& value) { SetType(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The output error details for an Export operation on a Vector Enrichment
+     * job.</p>
      */
     inline VectorEnrichmentJobExportErrorDetails& WithType(VectorEnrichmentJobExportErrorType&& value) { SetType(std::move(value)); return *this;}
 
