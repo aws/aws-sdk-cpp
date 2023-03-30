@@ -6,10 +6,6 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
-#include <aws/core/http/HttpClientFactory.h>
-
 #include <aws/s3-crt/S3CrtEndpointProvider.h>
 
 
