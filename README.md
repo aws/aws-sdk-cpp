@@ -130,7 +130,7 @@ For information about maintenance and support for SDK major versions and our und
 
 The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests.
 
-You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-cli). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
+You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-sdk-cpp). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
 
 Please make sure to check out our resources too before opening an issue:
 * Our [Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html) and [API reference](http://sdk.amazonaws.com/cpp/api/LATEST/index.html)
