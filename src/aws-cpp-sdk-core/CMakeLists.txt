@@ -20,7 +20,8 @@ if(VERSION_STRING)
     set(AWSSDK_VERSION_PATCH ${AWSSDK_VERSION_PATCH})
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-        "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
+        NEWLINE_STYLE UNIX)
 else()
     message("Not able to compute versioning string, not updating.")
 endif()
@@ -37,7 +38,8 @@ else()
 endif()
 
 configure_file("${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
-               "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h")
+               "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h"
+               NEWLINE_STYLE UNIX)
 
 file(GLOB AWS_HEADERS "include/aws/core/*.h")
 file(GLOB AWS_AUTH_HEADERS "include/aws/core/auth/*.h")
