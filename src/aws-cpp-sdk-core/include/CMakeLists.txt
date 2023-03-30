@@ -2,12 +2,12 @@
     configure_file(
             VersionConfig.h.in
             aws/core/VersionConfig.h
-            @ONLY
+            @ONLY NEWLINE_STYLE UNIX
     )
 
     message(STATUS "Generating source file SDKConfig.h for setting memory management options")
     configure_file(
             SDKConfig.h.in
             aws/core/SDKConfig.h
-            @ONLY
+            @ONLY NEWLINE_STYLE UNIX
     )
