@@ -98,8 +98,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -108,8 +108,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -118,8 +118,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -128,8 +128,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -138,8 +138,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -148,8 +148,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -158,8 +158,8 @@ namespace Model
     inline CreateAppVersionResourceRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -168,8 +168,8 @@ namespace Model
     inline CreateAppVersionResourceRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -180,64 +180,64 @@ namespace Model
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAppComponents() const{ return m_appComponents; }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline bool AppComponentsHasBeenSet() const { return m_appComponentsHasBeenSet; }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline void SetAppComponents(const Aws::Vector<Aws::String>& value) { m_appComponentsHasBeenSet = true; m_appComponents = value; }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline void SetAppComponents(Aws::Vector<Aws::String>&& value) { m_appComponentsHasBeenSet = true; m_appComponents = std::move(value); }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline CreateAppVersionResourceRequest& WithAppComponents(const Aws::Vector<Aws::String>& value) { SetAppComponents(value); return *this;}
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline CreateAppVersionResourceRequest& WithAppComponents(Aws::Vector<Aws::String>&& value) { SetAppComponents(std::move(value)); return *this;}
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline CreateAppVersionResourceRequest& AddAppComponents(const Aws::String& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(value); return *this; }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline CreateAppVersionResourceRequest& AddAppComponents(Aws::String&& value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The list of Application Components that this resource belongs to. If an
-     * Application Component is not part of the AWS Resilience Hub application, it will
-     * be added.</p>
+     * Application Component is not part of the Resilience Hub application, it will be
+     * added.</p>
      */
     inline CreateAppVersionResourceRequest& AddAppComponents(const char* value) { m_appComponentsHasBeenSet = true; m_appComponents.push_back(value); return *this; }
 

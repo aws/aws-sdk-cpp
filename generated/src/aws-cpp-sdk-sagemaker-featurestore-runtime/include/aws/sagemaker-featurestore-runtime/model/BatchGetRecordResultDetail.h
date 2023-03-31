@@ -90,42 +90,42 @@ namespace Model
 
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline const Aws::String& GetRecordIdentifierValueAsString() const{ return m_recordIdentifierValueAsString; }
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline bool RecordIdentifierValueAsStringHasBeenSet() const { return m_recordIdentifierValueAsStringHasBeenSet; }
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline void SetRecordIdentifierValueAsString(const Aws::String& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = value; }
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline void SetRecordIdentifierValueAsString(Aws::String&& value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString = std::move(value); }
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline void SetRecordIdentifierValueAsString(const char* value) { m_recordIdentifierValueAsStringHasBeenSet = true; m_recordIdentifierValueAsString.assign(value); }
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline BatchGetRecordResultDetail& WithRecordIdentifierValueAsString(const Aws::String& value) { SetRecordIdentifierValueAsString(value); return *this;}
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline BatchGetRecordResultDetail& WithRecordIdentifierValueAsString(Aws::String&& value) { SetRecordIdentifierValueAsString(std::move(value)); return *this;}
 
     /**
-     * <p>The value of the record identifer in string format.</p>
+     * <p>The value of the record identifier in string format.</p>
      */
     inline BatchGetRecordResultDetail& WithRecordIdentifierValueAsString(const char* value) { SetRecordIdentifierValueAsString(value); return *this;}
 

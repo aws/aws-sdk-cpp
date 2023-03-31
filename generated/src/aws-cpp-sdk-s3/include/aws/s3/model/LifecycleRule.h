@@ -31,7 +31,10 @@ namespace Model
 {
 
   /**
-   * <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p><p><h3>See
+   * <p>A lifecycle rule for individual objects in an Amazon S3 bucket.</p> <p>For
+   * more information see, <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+   * your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleRule">AWS
    * API Reference</a></p>

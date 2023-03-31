@@ -450,14 +450,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -814,14 +814,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1178,14 +1178,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1542,14 +1542,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1906,14 +1906,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -2270,14 +2270,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -2634,14 +2634,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -2998,14 +2998,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token

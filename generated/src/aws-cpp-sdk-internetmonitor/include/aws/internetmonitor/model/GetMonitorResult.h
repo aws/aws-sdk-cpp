@@ -11,6 +11,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/internetmonitor/model/MonitorProcessingStatusCode.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
 #include <utility>
 
 namespace Aws
@@ -367,25 +368,76 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider
+     * (ISP), that clients access the resources through. This limit helps control
+     * billing costs.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+     * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
+     * section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline int GetMaxCityNetworksToMonitor() const{ return m_maxCityNetworksToMonitor; }
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider
+     * (ISP), that clients access the resources through. This limit helps control
+     * billing costs.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+     * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
+     * section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetMaxCityNetworksToMonitor(int value) { m_maxCityNetworksToMonitor = value; }
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider
+     * (ISP), that clients access the resources through. This limit helps control
+     * billing costs.</p> <p>To learn more, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/IMCityNetworksMaximum.html">Choosing
+     * a city-network maximum value </a> in the Amazon CloudWatch Internet Monitor
+     * section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline GetMonitorResult& WithMaxCityNetworksToMonitor(int value) { SetMaxCityNetworksToMonitor(value); return *this;}
+
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline const InternetMeasurementsLogDelivery& GetInternetMeasurementsLogDelivery() const{ return m_internetMeasurementsLogDelivery; }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { m_internetMeasurementsLogDelivery = value; }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { m_internetMeasurementsLogDelivery = std::move(value); }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline GetMonitorResult& WithInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { SetInternetMeasurementsLogDelivery(value); return *this;}
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline GetMonitorResult& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
 
 
     
@@ -430,6 +482,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_tags;
 
     int m_maxCityNetworksToMonitor;
+
+    InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
 
     Aws::String m_requestId;
   };

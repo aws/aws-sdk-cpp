@@ -1003,42 +1003,32 @@ namespace Model
 
 
     /**
-     * <p>If the object is stored using server-side encryption either with an Amazon
-     * Web Services KMS key or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the server-side encryption algorithm used
-     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
-     * <p>If the object is stored using server-side encryption either with an Amazon
-     * Web Services KMS key or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the server-side encryption algorithm used
-     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
-     * <p>If the object is stored using server-side encryption either with an Amazon
-     * Web Services KMS key or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the server-side encryption algorithm used
-     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
-     * <p>If the object is stored using server-side encryption either with an Amazon
-     * Web Services KMS key or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the server-side encryption algorithm used
-     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline HeadObjectResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
-     * <p>If the object is stored using server-side encryption either with an Amazon
-     * Web Services KMS key or an Amazon S3-managed encryption key, the response
-     * includes this header with the value of the server-side encryption algorithm used
-     * when storing this object in Amazon S3 (for example, AES256, aws:kms).</p>
+     * <p>The server-side encryption algorithm used when storing this object in Amazon
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline HeadObjectResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -1206,50 +1196,50 @@ namespace Model
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline HeadObjectResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 

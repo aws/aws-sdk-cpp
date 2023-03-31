@@ -35,10 +35,10 @@ namespace Model
    * availability drop. For example, an availability score of 99% for an end user and
    * service location pair is equivalent to 1% of the traffic experiencing an
    * availability drop for that pair.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-   * How Internet Monitor calculates performance and availability scores</a> in the
-   * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+   * Internet Monitor calculates performance and availability scores</a> in the
+   * Amazon CloudWatch Internet Monitor section of the <i>Amazon CloudWatch User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/AvailabilityMeasurement">AWS
    * API Reference</a></p>
    */
@@ -57,13 +57,14 @@ namespace Model
      * summed into global scores. If you view performance or availability scores
      * without filtering for any specific geography or service provider, Amazon
      * CloudWatch Internet Monitor provides global health scores.</p> <p>The Amazon
-     * CloudWatch Internet Monitor chapter in the CloudWatch User Guide includes
+     * CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline double GetExperienceScore() const{ return m_experienceScore; }
 
@@ -73,13 +74,14 @@ namespace Model
      * summed into global scores. If you view performance or availability scores
      * without filtering for any specific geography or service provider, Amazon
      * CloudWatch Internet Monitor provides global health scores.</p> <p>The Amazon
-     * CloudWatch Internet Monitor chapter in the CloudWatch User Guide includes
+     * CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline bool ExperienceScoreHasBeenSet() const { return m_experienceScoreHasBeenSet; }
 
@@ -89,13 +91,14 @@ namespace Model
      * summed into global scores. If you view performance or availability scores
      * without filtering for any specific geography or service provider, Amazon
      * CloudWatch Internet Monitor provides global health scores.</p> <p>The Amazon
-     * CloudWatch Internet Monitor chapter in the CloudWatch User Guide includes
+     * CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetExperienceScore(double value) { m_experienceScoreHasBeenSet = true; m_experienceScore = value; }
 
@@ -105,13 +108,14 @@ namespace Model
      * summed into global scores. If you view performance or availability scores
      * without filtering for any specific geography or service provider, Amazon
      * CloudWatch Internet Monitor provides global health scores.</p> <p>The Amazon
-     * CloudWatch Internet Monitor chapter in the CloudWatch User Guide includes
+     * CloudWatch Internet Monitor chapter in the <i>CloudWatch User Guide</i> includes
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline AvailabilityMeasurement& WithExperienceScore(double value) { SetExperienceScore(value); return *this;}
 
@@ -120,9 +124,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for total traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
@@ -130,9 +134,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for total traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
 
@@ -140,9 +144,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for total traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
 
@@ -150,9 +154,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for total traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline AvailabilityMeasurement& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 
@@ -161,9 +165,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for client location traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline double GetPercentOfClientLocationImpacted() const{ return m_percentOfClientLocationImpacted; }
 
@@ -171,9 +175,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for client location traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline bool PercentOfClientLocationImpactedHasBeenSet() const { return m_percentOfClientLocationImpactedHasBeenSet; }
 
@@ -181,9 +185,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for client location traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline void SetPercentOfClientLocationImpacted(double value) { m_percentOfClientLocationImpactedHasBeenSet = true; m_percentOfClientLocationImpacted = value; }
 
@@ -191,9 +195,9 @@ namespace Model
      * <p>The percentage of impact caused by a health event for client location traffic
      * globally.</p> <p>For information about how Internet Monitor calculates impact,
      * see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">
-     * Inside Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of
-     * the Amazon CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html">Inside
+     * Internet Monitor</a> in the Amazon CloudWatch Internet Monitor section of the
+     * Amazon CloudWatch User Guide.</p>
      */
     inline AvailabilityMeasurement& WithPercentOfClientLocationImpacted(double value) { SetPercentOfClientLocationImpacted(value); return *this;}
 

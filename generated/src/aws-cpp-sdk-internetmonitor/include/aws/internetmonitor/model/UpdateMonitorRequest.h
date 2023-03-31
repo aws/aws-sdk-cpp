@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/internetmonitor/model/MonitorConfigState.h>
+#include <aws/internetmonitor/model/InternetMeasurementsLogDelivery.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -329,32 +330,79 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider,
+     * that clients access the resources through.</p>
      */
     inline int GetMaxCityNetworksToMonitor() const{ return m_maxCityNetworksToMonitor; }
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider,
+     * that clients access the resources through.</p>
      */
     inline bool MaxCityNetworksToMonitorHasBeenSet() const { return m_maxCityNetworksToMonitorHasBeenSet; }
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider,
+     * that clients access the resources through.</p>
      */
     inline void SetMaxCityNetworksToMonitor(int value) { m_maxCityNetworksToMonitorHasBeenSet = true; m_maxCityNetworksToMonitor = value; }
 
     /**
-     * <p>The maximum number of city-network combinations (that is, combinations of a
-     * city location and network, such as an ISP) to be monitored for your
-     * resources.</p>
+     * <p>The maximum number of city-networks to monitor for your resources. A
+     * city-network is the location (city) where clients access your application
+     * resources from and the network or ASN, such as an internet service provider,
+     * that clients access the resources through.</p>
      */
     inline UpdateMonitorRequest& WithMaxCityNetworksToMonitor(int value) { SetMaxCityNetworksToMonitor(value); return *this;}
+
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline const InternetMeasurementsLogDelivery& GetInternetMeasurementsLogDelivery() const{ return m_internetMeasurementsLogDelivery; }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline bool InternetMeasurementsLogDeliveryHasBeenSet() const { return m_internetMeasurementsLogDeliveryHasBeenSet; }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = value; }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline void SetInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = std::move(value); }
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { SetInternetMeasurementsLogDelivery(value); return *this;}
+
+    /**
+     * <p>Publish internet measurements for Internet Monitor to another location, such
+     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
+     * Logs.</p>
+     */
+    inline UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
 
   private:
 
@@ -375,6 +423,9 @@ namespace Model
 
     int m_maxCityNetworksToMonitor;
     bool m_maxCityNetworksToMonitorHasBeenSet = false;
+
+    InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
+    bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
   };
 
 } // namespace Model

@@ -91,10 +91,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
@@ -112,10 +112,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
@@ -133,10 +133,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline void SetKMSMasterKeyID(const Aws::String& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = value; }
@@ -154,10 +154,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline void SetKMSMasterKeyID(Aws::String&& value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID = std::move(value); }
@@ -175,10 +175,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline void SetKMSMasterKeyID(const char* value) { m_kMSMasterKeyIDHasBeenSet = true; m_kMSMasterKeyID.assign(value); }
@@ -196,10 +196,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const Aws::String& value) { SetKMSMasterKeyID(value); return *this;}
@@ -217,10 +217,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(Aws::String&& value) { SetKMSMasterKeyID(std::move(value)); return *this;}
@@ -238,10 +238,10 @@ namespace Model
      * <ul> <li> <p>Key ID: <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p>
      * </li> <li> <p>Key ARN:
      * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>
-     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric KMS keys and
-     * not asymmetric KMS keys. For more information, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
-     * symmetric and asymmetric keys</a> in the <i>Amazon Web Services Key Management
+     * </p> </li> </ul>  <p>Amazon S3 only supports symmetric encryption KMS
+     * keys. For more information, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric
+     * keys in Amazon Web Services KMS</a> in the <i>Amazon Web Services Key Management
      * Service Developer Guide</i>.</p> 
      */
     inline ServerSideEncryptionByDefault& WithKMSMasterKeyID(const char* value) { SetKMSMasterKeyID(value); return *this;}

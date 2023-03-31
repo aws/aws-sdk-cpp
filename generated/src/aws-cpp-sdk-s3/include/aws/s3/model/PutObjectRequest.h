@@ -106,15 +106,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -127,15 +127,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -148,15 +148,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -169,15 +169,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -190,15 +190,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -211,15 +211,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -232,15 +232,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -253,15 +253,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -326,56 +326,56 @@ namespace Model
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline const Aws::String& GetContentDisposition() const{ return m_contentDisposition; }
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline bool ContentDispositionHasBeenSet() const { return m_contentDispositionHasBeenSet; }
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline void SetContentDisposition(const Aws::String& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = value; }
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline void SetContentDisposition(Aws::String&& value) { m_contentDispositionHasBeenSet = true; m_contentDisposition = std::move(value); }
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline void SetContentDisposition(const char* value) { m_contentDispositionHasBeenSet = true; m_contentDisposition.assign(value); }
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(const Aws::String& value) { SetContentDisposition(value); return *this;}
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(Aws::String&& value) { SetContentDisposition(std::move(value)); return *this;}
 
     /**
      * <p>Specifies presentational information for the object. For more information,
      * see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1">http://www.w3.org/Protocols/rfc2616/rfc2616-sec19.html#sec19.5.1</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc6266#section-4">https://www.rfc-editor.org/rfc/rfc6266#section-4</a>.</p>
      */
     inline PutObjectRequest& WithContentDisposition(const char* value) { SetContentDisposition(value); return *this;}
 
@@ -384,7 +384,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline const Aws::String& GetContentEncoding() const{ return m_contentEncoding; }
 
@@ -392,7 +392,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline bool ContentEncodingHasBeenSet() const { return m_contentEncodingHasBeenSet; }
 
@@ -400,7 +400,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline void SetContentEncoding(const Aws::String& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = value; }
 
@@ -408,7 +408,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline void SetContentEncoding(Aws::String&& value) { m_contentEncodingHasBeenSet = true; m_contentEncoding = std::move(value); }
 
@@ -416,7 +416,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline void SetContentEncoding(const char* value) { m_contentEncodingHasBeenSet = true; m_contentEncoding.assign(value); }
 
@@ -424,7 +424,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(const Aws::String& value) { SetContentEncoding(value); return *this;}
 
@@ -432,7 +432,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(Aws::String&& value) { SetContentEncoding(std::move(value)); return *this;}
 
@@ -440,7 +440,7 @@ namespace Model
      * <p>Specifies what content encodings have been applied to the object and thus
      * what decoding mechanisms must be applied to obtain the media-type referenced by
      * the Content-Type header field. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.11</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding">https://www.rfc-editor.org/rfc/rfc9110.html#field.content-encoding</a>.</p>
      */
     inline PutObjectRequest& WithContentEncoding(const char* value) { SetContentEncoding(value); return *this;}
 
@@ -489,28 +489,28 @@ namespace Model
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
      */
     inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
      */
     inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
      */
     inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
      * <p>Size of the body in bytes. This parameter is useful when the size of the body
      * cannot be determined automatically. For more information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.13</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length">https://www.rfc-editor.org/rfc/rfc9110.html#name-content-length</a>.</p>
      */
     inline PutObjectRequest& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
@@ -1008,42 +1008,42 @@ namespace Model
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline const Aws::Utils::DateTime& GetExpires() const{ return m_expires; }
 
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline void SetExpires(const Aws::Utils::DateTime& value) { m_expiresHasBeenSet = true; m_expires = value; }
 
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline void SetExpires(Aws::Utils::DateTime&& value) { m_expiresHasBeenSet = true; m_expires = std::move(value); }
 
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline PutObjectRequest& WithExpires(const Aws::Utils::DateTime& value) { SetExpires(value); return *this;}
 
     /**
      * <p>The date and time at which the object is no longer cacheable. For more
      * information, see <a
-     * href="http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21">http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.21</a>.</p>
+     * href="https://www.rfc-editor.org/rfc/rfc7234#section-5.3">https://www.rfc-editor.org/rfc/rfc7234#section-5.3</a>.</p>
      */
     inline PutObjectRequest& WithExpires(Aws::Utils::DateTime&& value) { SetExpires(std::move(value)); return *this;}
 
@@ -1353,37 +1353,37 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline PutObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline PutObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -1796,10 +1796,10 @@ namespace Model
 
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1809,10 +1809,10 @@ namespace Model
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1822,10 +1822,10 @@ namespace Model
     inline bool SSEKMSKeyIdHasBeenSet() const { return m_sSEKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1835,10 +1835,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = value; }
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1848,10 +1848,10 @@ namespace Model
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId = std::move(value); }
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1861,10 +1861,10 @@ namespace Model
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyIdHasBeenSet = true; m_sSEKMSKeyId.assign(value); }
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1874,10 +1874,10 @@ namespace Model
     inline PutObjectRequest& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1887,10 +1887,10 @@ namespace Model
     inline PutObjectRequest& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>If <code>x-amz-server-side-encryption</code> is present and has the value of
+     * <p>If <code>x-amz-server-side-encryption</code> has a valid value of
      * <code>aws:kms</code>, this header specifies the ID of the Amazon Web Services
-     * Key Management Service (Amazon Web Services KMS) symmetrical customer managed
-     * key that was used for the object. If you specify
+     * Key Management Service (Amazon Web Services KMS) symmetric encryption customer
+     * managed key that was used for the object. If you specify
      * <code>x-amz-server-side-encryption:aws:kms</code>, but do not provide<code>
      * x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the Amazon
      * Web Services managed key to protect the data. If the KMS key does not exist in
@@ -1903,56 +1903,72 @@ namespace Model
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline const Aws::String& GetSSEKMSEncryptionContext() const{ return m_sSEKMSEncryptionContext; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline bool SSEKMSEncryptionContextHasBeenSet() const { return m_sSEKMSEncryptionContextHasBeenSet; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline void SetSSEKMSEncryptionContext(const Aws::String& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = value; }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline void SetSSEKMSEncryptionContext(Aws::String&& value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext = std::move(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline void SetSSEKMSEncryptionContext(const char* value) { m_sSEKMSEncryptionContextHasBeenSet = true; m_sSEKMSEncryptionContext.assign(value); }
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const Aws::String& value) { SetSSEKMSEncryptionContext(value); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(Aws::String&& value) { SetSSEKMSEncryptionContext(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the Amazon Web Services KMS Encryption Context to use for object
      * encryption. The value of this header is a base64-encoded UTF-8 string holding
-     * JSON with the encryption context key-value pairs.</p>
+     * JSON with the encryption context key-value pairs. This value is stored as object
+     * metadata and automatically gets passed on to Amazon Web Services KMS for future
+     * <code>GetObject</code> or <code>CopyObject</code> operations on this object.</p>
      */
     inline PutObjectRequest& WithSSEKMSEncryptionContext(const char* value) { SetSSEKMSEncryptionContext(value); return *this;}
 

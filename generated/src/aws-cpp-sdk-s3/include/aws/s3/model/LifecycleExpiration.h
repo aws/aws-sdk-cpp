@@ -23,7 +23,10 @@ namespace Model
 {
 
   /**
-   * <p>Container for the expiration for the lifecycle of the object.</p><p><h3>See
+   * <p>Container for the expiration for the lifecycle of the object.</p> <p>For more
+   * information see, <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing
+   * your storage lifecycle</a> in the <i>Amazon S3 User Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/LifecycleExpiration">AWS
    * API Reference</a></p>
