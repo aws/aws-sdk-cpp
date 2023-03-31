@@ -74,7 +74,7 @@ void aws_zfree(void * /* opaque */, void * ptr)
     }
 }
 
-#endif // AWS_CUSTOM_MEMORY_MANAGEMENT
+#endif // USE_AWS_MEMORY_MANAGEMENT
 #endif // ENABLED_ZLIB_REQUEST_COMPRESSION
 
 
