@@ -123,6 +123,12 @@ static const Aws::Vector<InternetMonitorEndpointProviderEndpointTestCase> TEST_C
     {EpParam("UseFIPS", true), EpParam("Endpoint", "https://example.com"), EpParam("Region", "us-east-1")}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: FIPS and custom endpoint are not supported"} // expect
+  },
+  /*TEST CASE 9*/
+  {"Missing region", // documentation
+    {}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"Invalid Configuration: Missing Region"} // expect
   }
 };
 

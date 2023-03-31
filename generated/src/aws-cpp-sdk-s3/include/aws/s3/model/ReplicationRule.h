@@ -240,32 +240,50 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline const ExistingObjectReplication& GetExistingObjectReplication() const{ return m_existingObjectReplication; }
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline bool ExistingObjectReplicationHasBeenSet() const { return m_existingObjectReplicationHasBeenSet; }
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline void SetExistingObjectReplication(const ExistingObjectReplication& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = value; }
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline void SetExistingObjectReplication(ExistingObjectReplication&& value) { m_existingObjectReplicationHasBeenSet = true; m_existingObjectReplication = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline ReplicationRule& WithExistingObjectReplication(const ExistingObjectReplication& value) { SetExistingObjectReplication(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Optional configuration to replicate existing source bucket objects. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication-what-is-isnot-replicated.html#existing-object-replication">Replicating
+     * Existing Objects</a> in the <i>Amazon S3 User Guide</i>. </p>
      */
     inline ReplicationRule& WithExistingObjectReplication(ExistingObjectReplication&& value) { SetExistingObjectReplication(std::move(value)); return *this;}
 

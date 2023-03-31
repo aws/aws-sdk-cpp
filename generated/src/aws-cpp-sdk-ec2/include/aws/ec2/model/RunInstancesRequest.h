@@ -1591,6 +1591,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline const Aws::Vector<ElasticInferenceAccelerator>& GetElasticInferenceAccelerators() const{ return m_elasticInferenceAccelerators; }
 
@@ -1599,6 +1607,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline bool ElasticInferenceAcceleratorsHasBeenSet() const { return m_elasticInferenceAcceleratorsHasBeenSet; }
 
@@ -1607,6 +1623,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline void SetElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = value; }
 
@@ -1615,6 +1639,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline void SetElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators = std::move(value); }
 
@@ -1623,6 +1655,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(const Aws::Vector<ElasticInferenceAccelerator>& value) { SetElasticInferenceAccelerators(value); return *this;}
 
@@ -1631,6 +1671,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RunInstancesRequest& WithElasticInferenceAccelerators(Aws::Vector<ElasticInferenceAccelerator>&& value) { SetElasticInferenceAccelerators(std::move(value)); return *this;}
 
@@ -1639,6 +1687,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(const ElasticInferenceAccelerator& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(value); return *this; }
 
@@ -1647,6 +1703,14 @@ namespace Model
      * inference accelerators are a resource you can attach to your Amazon EC2
      * instances to accelerate your Deep Learning (DL) inference workloads.</p> <p>You
      * cannot specify accelerators from different generations in the same request.</p>
+     *  <p>Starting April 15, 2023, Amazon Web Services will not onboard new
+     * customers to Amazon Elastic Inference (EI), and will help current customers
+     * migrate their workloads to options that offer better price and performance.
+     * After April 15, 2023, new customers will not be able to launch instances with
+     * Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon EC2. However,
+     * customers who have used Amazon EI at least once during the past 30-day period
+     * are considered current customers and will be able to continue using the
+     * service.</p> 
      */
     inline RunInstancesRequest& AddElasticInferenceAccelerators(ElasticInferenceAccelerator&& value) { m_elasticInferenceAcceleratorsHasBeenSet = true; m_elasticInferenceAccelerators.push_back(std::move(value)); return *this; }
 

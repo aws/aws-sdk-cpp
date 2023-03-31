@@ -33,8 +33,8 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -43,8 +43,8 @@ namespace Model
     inline const Aws::String& GetAppArn() const{ return m_appArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -53,8 +53,8 @@ namespace Model
     inline bool AppArnHasBeenSet() const { return m_appArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -63,8 +63,8 @@ namespace Model
     inline void SetAppArn(const Aws::String& value) { m_appArnHasBeenSet = true; m_appArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -73,8 +73,8 @@ namespace Model
     inline void SetAppArn(Aws::String&& value) { m_appArnHasBeenSet = true; m_appArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -83,8 +83,8 @@ namespace Model
     inline void SetAppArn(const char* value) { m_appArnHasBeenSet = true; m_appArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -93,8 +93,8 @@ namespace Model
     inline ListAppInputSourcesRequest& WithAppArn(const Aws::String& value) { SetAppArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -103,8 +103,8 @@ namespace Model
     inline ListAppInputSourcesRequest& WithAppArn(Aws::String&& value) { SetAppArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the AWS Resilience Hub application. The
-     * format for this ARN is:
+     * <p>The Amazon Resource Name (ARN) of the Resilience Hub application. The format
+     * for this ARN is:
      * arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>.
      * For more information about ARNs, see <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">
@@ -114,42 +114,42 @@ namespace Model
 
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline const Aws::String& GetAppVersion() const{ return m_appVersion; }
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline void SetAppVersion(const Aws::String& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline void SetAppVersion(Aws::String&& value) { m_appVersionHasBeenSet = true; m_appVersion = std::move(value); }
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline void SetAppVersion(const char* value) { m_appVersionHasBeenSet = true; m_appVersion.assign(value); }
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline ListAppInputSourcesRequest& WithAppVersion(const Aws::String& value) { SetAppVersion(value); return *this;}
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline ListAppInputSourcesRequest& WithAppVersion(Aws::String&& value) { SetAppVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS Resilience Hub application version.</p>
+     * <p>The Resilience Hub application version.</p>
      */
     inline ListAppInputSourcesRequest& WithAppVersion(const char* value) { SetAppVersion(value); return *this;}
 

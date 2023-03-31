@@ -101,6 +101,12 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
+  if(jsonValue.ValueExists("InternetMeasurementsLogDelivery"))
+  {
+    m_internetMeasurementsLogDelivery = jsonValue.GetObject("InternetMeasurementsLogDelivery");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

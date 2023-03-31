@@ -8,6 +8,7 @@
 #include <aws/sagemaker-featurestore-runtime/SageMakerFeatureStoreRuntimeRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker-featurestore-runtime/model/DeletionMode.h>
 #include <aws/sagemaker-featurestore-runtime/model/TargetStore.h>
 #include <utility>
 
@@ -235,6 +236,43 @@ namespace Model
      */
     inline DeleteRecordRequest& AddTargetStores(TargetStore&& value) { m_targetStoresHasBeenSet = true; m_targetStores.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline const DeletionMode& GetDeletionMode() const{ return m_deletionMode; }
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline bool DeletionModeHasBeenSet() const { return m_deletionModeHasBeenSet; }
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline void SetDeletionMode(const DeletionMode& value) { m_deletionModeHasBeenSet = true; m_deletionMode = value; }
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline void SetDeletionMode(DeletionMode&& value) { m_deletionModeHasBeenSet = true; m_deletionMode = std::move(value); }
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline DeleteRecordRequest& WithDeletionMode(const DeletionMode& value) { SetDeletionMode(value); return *this;}
+
+    /**
+     * <p>The name of the deletion mode for deleting the record. By default, the
+     * deletion mode is set to <code>SoftDelete</code>.</p>
+     */
+    inline DeleteRecordRequest& WithDeletionMode(DeletionMode&& value) { SetDeletionMode(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_featureGroupName;
@@ -248,6 +286,9 @@ namespace Model
 
     Aws::Vector<TargetStore> m_targetStores;
     bool m_targetStoresHasBeenSet = false;
+
+    DeletionMode m_deletionMode;
+    bool m_deletionModeHasBeenSet = false;
   };
 
 } // namespace Model

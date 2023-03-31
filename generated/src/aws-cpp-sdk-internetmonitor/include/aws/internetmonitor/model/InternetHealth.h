@@ -53,10 +53,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline const AvailabilityMeasurement& GetAvailability() const{ return m_availability; }
 
@@ -66,10 +66,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
 
@@ -79,10 +79,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetAvailability(const AvailabilityMeasurement& value) { m_availabilityHasBeenSet = true; m_availability = value; }
 
@@ -92,10 +92,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetAvailability(AvailabilityMeasurement&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
 
@@ -105,10 +105,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline InternetHealth& WithAvailability(const AvailabilityMeasurement& value) { SetAvailability(value); return *this;}
 
@@ -118,10 +118,10 @@ namespace Model
      * score of 99% for an end user and service location pair is equivalent to 1% of
      * the traffic experiencing an availability drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline InternetHealth& WithAvailability(AvailabilityMeasurement&& value) { SetAvailability(std::move(value)); return *this;}
 
@@ -132,10 +132,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline const PerformanceMeasurement& GetPerformance() const{ return m_performance; }
 
@@ -145,10 +145,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline bool PerformanceHasBeenSet() const { return m_performanceHasBeenSet; }
 
@@ -158,10 +158,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetPerformance(const PerformanceMeasurement& value) { m_performanceHasBeenSet = true; m_performance = value; }
 
@@ -171,10 +171,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetPerformance(PerformanceMeasurement&& value) { m_performanceHasBeenSet = true; m_performance = std::move(value); }
 
@@ -184,10 +184,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline InternetHealth& WithPerformance(const PerformanceMeasurement& value) { SetPerformance(value); return *this;}
 
@@ -197,10 +197,10 @@ namespace Model
      * of 99% for an end user and service location pair is equivalent to 1% of the
      * traffic experiencing a performance drop for that pair.</p> <p>For more
      * information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Internet Monitor calculates performance and availability scores</a> in the
-     * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-     * Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Internet Monitor calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline InternetHealth& WithPerformance(PerformanceMeasurement&& value) { SetPerformance(std::move(value)); return *this;}
 

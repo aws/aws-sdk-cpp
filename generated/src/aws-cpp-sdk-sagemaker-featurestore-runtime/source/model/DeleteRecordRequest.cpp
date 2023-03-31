@@ -19,7 +19,9 @@ DeleteRecordRequest::DeleteRecordRequest() :
     m_featureGroupNameHasBeenSet(false),
     m_recordIdentifierValueAsStringHasBeenSet(false),
     m_eventTimeHasBeenSet(false),
-    m_targetStoresHasBeenSet(false)
+    m_targetStoresHasBeenSet(false),
+    m_deletionMode(DeletionMode::NOT_SET),
+    m_deletionModeHasBeenSet(false)
 {
 }
 
@@ -53,6 +55,13 @@ void DeleteRecordRequest::AddQueryStringParameters(URI& uri) const
         uri.AddQueryStringParameter("TargetStores", ss.str());
         ss.str("");
       }
+    }
+
+    if(m_deletionModeHasBeenSet)
+    {
+      ss << DeletionModeMapper::GetNameForDeletionMode(m_deletionMode);
+      uri.AddQueryStringParameter("DeletionMode", ss.str());
+      ss.str("");
     }
 
 }

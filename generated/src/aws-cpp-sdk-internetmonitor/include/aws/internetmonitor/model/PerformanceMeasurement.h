@@ -37,10 +37,10 @@ namespace Model
    * performance drop. For example, a performance score of 99% for an end user and
    * service location pair is equivalent to 1% of the traffic experiencing a
    * performance drop for that pair.</p> <p>For more information, see <a
-   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-   * How Internet Monitor calculates performance and availability scores</a> in the
-   * Amazon CloudWatch Internet Monitor section of the Amazon CloudWatch User
-   * Guide.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+   * Internet Monitor calculates performance and availability scores</a> in the
+   * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/PerformanceMeasurement">AWS
    * API Reference</a></p>
    */
@@ -63,9 +63,10 @@ namespace Model
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline double GetExperienceScore() const{ return m_experienceScore; }
 
@@ -79,9 +80,10 @@ namespace Model
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline bool ExperienceScoreHasBeenSet() const { return m_experienceScoreHasBeenSet; }
 
@@ -95,9 +97,10 @@ namespace Model
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline void SetExperienceScore(double value) { m_experienceScoreHasBeenSet = true; m_experienceScore = value; }
 
@@ -111,9 +114,10 @@ namespace Model
      * detailed information about how Internet Monitor calculates health scores,
      * including performance and availability scores, and when it creates and resolves
      * health events. For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">
-     * How Amazon Web Services calculates performance and availability scores</a> in
-     * the Amazon CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMExperienceScores">How
+     * Amazon Web Services calculates performance and availability scores</a> in the
+     * Amazon CloudWatch Internet Monitor section of the <i>CloudWatch User
+     * Guide</i>.</p>
      */
     inline PerformanceMeasurement& WithExperienceScore(double value) { SetExperienceScore(value); return *this;}
 
@@ -123,9 +127,9 @@ namespace Model
      * globally. For performance, this is the percentage of how much latency increased
      * during the event compared to typical performance for your application traffic
      * globally. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline double GetPercentOfTotalTrafficImpacted() const{ return m_percentOfTotalTrafficImpacted; }
 
@@ -134,9 +138,9 @@ namespace Model
      * globally. For performance, this is the percentage of how much latency increased
      * during the event compared to typical performance for your application traffic
      * globally. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline bool PercentOfTotalTrafficImpactedHasBeenSet() const { return m_percentOfTotalTrafficImpactedHasBeenSet; }
 
@@ -145,9 +149,9 @@ namespace Model
      * globally. For performance, this is the percentage of how much latency increased
      * during the event compared to typical performance for your application traffic
      * globally. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetPercentOfTotalTrafficImpacted(double value) { m_percentOfTotalTrafficImpactedHasBeenSet = true; m_percentOfTotalTrafficImpacted = value; }
 
@@ -156,9 +160,9 @@ namespace Model
      * globally. For performance, this is the percentage of how much latency increased
      * during the event compared to typical performance for your application traffic
      * globally. </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline PerformanceMeasurement& WithPercentOfTotalTrafficImpacted(double value) { SetPercentOfTotalTrafficImpacted(value); return *this;}
 
@@ -169,9 +173,9 @@ namespace Model
      * during the event compared to typical performance for traffic, from this client
      * location to an Amazon Web Services location, using a specific client network.
      * </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline double GetPercentOfClientLocationImpacted() const{ return m_percentOfClientLocationImpacted; }
 
@@ -181,9 +185,9 @@ namespace Model
      * during the event compared to typical performance for traffic, from this client
      * location to an Amazon Web Services location, using a specific client network.
      * </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline bool PercentOfClientLocationImpactedHasBeenSet() const { return m_percentOfClientLocationImpactedHasBeenSet; }
 
@@ -193,9 +197,9 @@ namespace Model
      * during the event compared to typical performance for traffic, from this client
      * location to an Amazon Web Services location, using a specific client network.
      * </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetPercentOfClientLocationImpacted(double value) { m_percentOfClientLocationImpactedHasBeenSet = true; m_percentOfClientLocationImpacted = value; }
 
@@ -205,9 +209,9 @@ namespace Model
      * during the event compared to typical performance for traffic, from this client
      * location to an Amazon Web Services location, using a specific client network.
      * </p> <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline PerformanceMeasurement& WithPercentOfClientLocationImpacted(double value) { SetPercentOfClientLocationImpacted(value); return *this;}
 
@@ -216,9 +220,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline const RoundTripTime& GetRoundTripTime() const{ return m_roundTripTime; }
 
@@ -226,9 +230,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline bool RoundTripTimeHasBeenSet() const { return m_roundTripTimeHasBeenSet; }
 
@@ -236,9 +240,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetRoundTripTime(const RoundTripTime& value) { m_roundTripTimeHasBeenSet = true; m_roundTripTime = value; }
 
@@ -246,9 +250,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline void SetRoundTripTime(RoundTripTime&& value) { m_roundTripTimeHasBeenSet = true; m_roundTripTime = std::move(value); }
 
@@ -256,9 +260,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline PerformanceMeasurement& WithRoundTripTime(const RoundTripTime& value) { SetRoundTripTime(value); return *this;}
 
@@ -266,9 +270,9 @@ namespace Model
      * <p>This is the percentage of how much round-trip time increased during the event
      * compared to typical round-trip time for your application for traffic. </p>
      * <p>For more information, see <a
-     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">
-     * When Amazon Web Services creates and resolves health events</a> in the Amazon
-     * CloudWatch Internet Monitor section of the CloudWatch User Guide.</p>
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-IM-inside-internet-monitor.html#IMHealthEventStartStop">When
+     * Amazon Web Services creates and resolves health events</a> in the Amazon
+     * CloudWatch Internet Monitor section of the <i>CloudWatch User Guide</i>.</p>
      */
     inline PerformanceMeasurement& WithRoundTripTime(RoundTripTime&& value) { SetRoundTripTime(std::move(value)); return *this;}
 

@@ -102,15 +102,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -123,15 +123,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -144,15 +144,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -165,15 +165,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -186,15 +186,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -207,15 +207,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -228,15 +228,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -249,15 +249,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CopyObjectRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -1391,37 +1391,37 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline bool ServerSideEncryptionHasBeenSet() const { return m_serverSideEncryptionHasBeenSet; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryptionHasBeenSet = true; m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline CopyObjectRequest& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -1496,56 +1496,80 @@ namespace Model
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline const Aws::String& GetWebsiteRedirectLocation() const{ return m_websiteRedirectLocation; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline bool WebsiteRedirectLocationHasBeenSet() const { return m_websiteRedirectLocationHasBeenSet; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline void SetWebsiteRedirectLocation(const Aws::String& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = value; }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline void SetWebsiteRedirectLocation(Aws::String&& value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation = std::move(value); }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline void SetWebsiteRedirectLocation(const char* value) { m_websiteRedirectLocationHasBeenSet = true; m_websiteRedirectLocation.assign(value); }
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const Aws::String& value) { SetWebsiteRedirectLocation(value); return *this;}
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(Aws::String&& value) { SetWebsiteRedirectLocation(std::move(value)); return *this;}
 
     /**
      * <p>If the bucket is configured as a website, redirects requests for this object
      * to another object in the same bucket or to an external URL. Amazon S3 stores the
-     * value of this header in the object metadata.</p>
+     * value of this header in the object metadata. This value is unique to each object
+     * and is not copied when using the <code>x-amz-metadata-directive</code> header.
+     * Instead, you may opt to provide this header in combination with the
+     * directive.</p>
      */
     inline CopyObjectRequest& WithWebsiteRedirectLocation(const char* value) { SetWebsiteRedirectLocation(value); return *this;}
 

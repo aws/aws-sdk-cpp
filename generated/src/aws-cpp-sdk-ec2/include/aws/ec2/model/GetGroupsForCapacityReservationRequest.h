@@ -37,42 +37,58 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline const Aws::String& GetCapacityReservationId() const{ return m_capacityReservationId; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline bool CapacityReservationIdHasBeenSet() const { return m_capacityReservationIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline void SetCapacityReservationId(const Aws::String& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = value; }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline void SetCapacityReservationId(Aws::String&& value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId = std::move(value); }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline void SetCapacityReservationId(const char* value) { m_capacityReservationIdHasBeenSet = true; m_capacityReservationId.assign(value); }
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline GetGroupsForCapacityReservationRequest& WithCapacityReservationId(const Aws::String& value) { SetCapacityReservationId(value); return *this;}
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline GetGroupsForCapacityReservationRequest& WithCapacityReservationId(Aws::String&& value) { SetCapacityReservationId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Capacity Reservation.</p>
+     * <p>The ID of the Capacity Reservation. If you specify a Capacity Reservation
+     * that is shared with you, the operation returns only Capacity Reservation groups
+     * that you own.</p>
      */
     inline GetGroupsForCapacityReservationRequest& WithCapacityReservationId(const char* value) { SetCapacityReservationId(value); return *this;}
 

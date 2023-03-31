@@ -187,8 +187,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline const ResourceMappingType& GetMappingType() const{ return m_mappingType; }
 
@@ -201,8 +201,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline bool MappingTypeHasBeenSet() const { return m_mappingTypeHasBeenSet; }
 
@@ -215,8 +215,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline void SetMappingType(const ResourceMappingType& value) { m_mappingTypeHasBeenSet = true; m_mappingType = value; }
 
@@ -229,8 +229,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline void SetMappingType(ResourceMappingType&& value) { m_mappingTypeHasBeenSet = true; m_mappingType = std::move(value); }
 
@@ -243,8 +243,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline ResourceMapping& WithMappingType(const ResourceMappingType& value) { SetMappingType(value); return *this;}
 
@@ -257,8 +257,8 @@ namespace Model
      * <code>logicalStackName</code> property.</p> </dd> <dt>Resource</dt> <dd> <p>The
      * resource is mapped to another resource. The name of the resource is contained in
      * the <code>resourceName</code> property.</p> </dd> <dt>ResourceGroup</dt> <dd>
-     * <p>The resource is mapped to an Resource Groups. The name of the resource group
-     * is contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
+     * <p>The resource is mapped to Resource Groups. The name of the resource group is
+     * contained in the <code>resourceGroupName</code> property.</p> </dd> </dl>
      */
     inline ResourceMapping& WithMappingType(ResourceMappingType&& value) { SetMappingType(std::move(value)); return *this;}
 

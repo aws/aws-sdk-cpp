@@ -51,73 +51,105 @@ namespace Model
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutBucketEncryptionRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutBucketEncryptionRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
      * <p>Specifies default encryption for a bucket using server-side encryption with
-     * Amazon S3-managed keys (SSE-S3) or customer managed keys (SSE-KMS). For
-     * information about the Amazon S3 default encryption feature, see <a
+     * different key options. By default, all buckets have a default encryption
+     * configuration that uses server-side encryption with Amazon S3 managed keys
+     * (SSE-S3). You can optionally configure default encryption for a bucket by using
+     * server-side encryption with an Amazon Web Services KMS key (SSE-KMS) or a
+     * customer-provided key (SSE-C). For information about the bucket default
+     * encryption feature, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-     * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline PutBucketEncryptionRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

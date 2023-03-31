@@ -1230,42 +1230,42 @@ namespace Model
 
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline const Aws::Vector<ElasticInferenceAcceleratorAssociation>& GetElasticInferenceAcceleratorAssociations() const{ return m_elasticInferenceAcceleratorAssociations; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline bool ElasticInferenceAcceleratorAssociationsHasBeenSet() const { return m_elasticInferenceAcceleratorAssociationsHasBeenSet; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline void SetElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = value; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline void SetElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations = std::move(value); }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& WithElasticInferenceAcceleratorAssociations(const Aws::Vector<ElasticInferenceAcceleratorAssociation>& value) { SetElasticInferenceAcceleratorAssociations(value); return *this;}
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& WithElasticInferenceAcceleratorAssociations(Aws::Vector<ElasticInferenceAcceleratorAssociation>&& value) { SetElasticInferenceAcceleratorAssociations(std::move(value)); return *this;}
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& AddElasticInferenceAcceleratorAssociations(const ElasticInferenceAcceleratorAssociation& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(value); return *this; }
 
     /**
-     * <p> The elastic inference accelerator associated with the instance.</p>
+     * <p>The elastic inference accelerator associated with the instance.</p>
      */
     inline Instance& AddElasticInferenceAcceleratorAssociations(ElasticInferenceAcceleratorAssociation&& value) { m_elasticInferenceAcceleratorAssociationsHasBeenSet = true; m_elasticInferenceAcceleratorAssociations.push_back(std::move(value)); return *this; }
 
