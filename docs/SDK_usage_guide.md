@@ -8,7 +8,7 @@ Several directories are appended with \*integration-tests. After building your p
 
 ## Build Defines
 If you dynamically link to the SDK you will need to define the USE_IMPORT_EXPORT symbol for all build targets using the SDK.
-If you wish to install your own memory manager to handle allocations made by the SDK, you will need to pass the CUSTOM_MEMORY_MANAGEMENT cmake parameter (-DCUSTOM_MEMORY_MANAGEMENT) as well as define AWS_CUSTOM_MEMORY_MANAGEMENT in all build targets dependent on the SDK.
+If you wish to install your own memory manager to handle allocations made by the SDK, you will need to pass the CUSTOM_MEMORY_MANAGEMENT cmake parameter (-DCUSTOM_MEMORY_MANAGEMENT) as well as define USE_AWS_MEMORY_MANAGEMENT in all build targets dependent on the SDK.
 
 Note, if you use our export file, this will be handled automatically for you. We recommend you use our export file to handle this for you:
 https://aws.amazon.com/blogs/developer/using-cmake-exports-with-the-aws-sdk-for-c/
