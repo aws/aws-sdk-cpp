@@ -25,7 +25,7 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
 using namespace Aws::Monitoring;
 
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
 
 static const char* MemTag = "libcurl";
 static size_t offset = sizeof(size_t);
@@ -505,7 +505,7 @@ void CurlHttpClient::InitGlobalState()
         AWS_LOGSTREAM_INFO(CURL_HTTP_CLIENT_TAG, "Initializing Curl library with version: " << curlVersionData->version
             << ", ssl version: " << curlVersionData->ssl_version);
         isInit = true;
-#ifdef AWS_CUSTOM_MEMORY_MANAGEMENT
+#ifdef USE_AWS_MEMORY_MANAGEMENT
         curl_global_init_mem(CURL_GLOBAL_ALL, &malloc_callback, &free_callback, &realloc_callback, &strdup_callback, &calloc_callback);
 #else
         curl_global_init(CURL_GLOBAL_ALL);
