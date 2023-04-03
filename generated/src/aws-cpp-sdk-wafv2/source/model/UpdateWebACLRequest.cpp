@@ -25,7 +25,8 @@ UpdateWebACLRequest::UpdateWebACLRequest() :
     m_customResponseBodiesHasBeenSet(false),
     m_captchaConfigHasBeenSet(false),
     m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false)
+    m_tokenDomainsHasBeenSet(false),
+    m_associationConfigHasBeenSet(false)
 {
 }
 
@@ -116,6 +117,12 @@ Aws::String UpdateWebACLRequest::SerializePayload() const
      tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);
    }
    payload.WithArray("TokenDomains", std::move(tokenDomainsJsonList));
+
+  }
+
+  if(m_associationConfigHasBeenSet)
+  {
+   payload.WithObject("AssociationConfig", m_associationConfig.Jsonize());
 
   }
 

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/license-manager/model/GrantStatus.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/license-manager/model/Options.h>
 #include <aws/license-manager/model/AllowedOperation.h>
 #include <utility>
 
@@ -439,6 +440,37 @@ namespace Model
      */
     inline Grant& AddGrantedOperations(AllowedOperation&& value) { m_grantedOperationsHasBeenSet = true; m_grantedOperations.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline const Options& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline Grant& WithOptions(const Options& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline Grant& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_grantArn;
@@ -470,6 +502,9 @@ namespace Model
 
     Aws::Vector<AllowedOperation> m_grantedOperations;
     bool m_grantedOperationsHasBeenSet = false;
+
+    Options m_options;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

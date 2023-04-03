@@ -20,7 +20,8 @@ namespace Model
     INTERNAL_FAILURE,
     LIMIT_EXCEEDED,
     RESOURCE_NOT_FOUND,
-    THROTTLING
+    THROTTLING,
+    INVALID_PARAMETER
   };
 
 namespace ServiceActionAssociationErrorCodeMapper

@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     CLOUD_FORMATION_TEMPLATE,
-    MARKETPLACE
+    MARKETPLACE,
+    DEFAULT_CUSTOM,
+    TERRAFORM_OPEN_SOURCE
   };
 
 namespace ProductTypeMapper

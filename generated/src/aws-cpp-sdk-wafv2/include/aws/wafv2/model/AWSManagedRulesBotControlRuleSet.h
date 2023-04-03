@@ -44,7 +44,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline const InspectionLevel& GetInspectionLevel() const{ return m_inspectionLevel; }
 
@@ -53,7 +53,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline bool InspectionLevelHasBeenSet() const { return m_inspectionLevelHasBeenSet; }
 
@@ -62,7 +62,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline void SetInspectionLevel(const InspectionLevel& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = value; }
 
@@ -71,7 +71,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline void SetInspectionLevel(InspectionLevel&& value) { m_inspectionLevelHasBeenSet = true; m_inspectionLevel = std::move(value); }
 
@@ -80,7 +80,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline AWSManagedRulesBotControlRuleSet& WithInspectionLevel(const InspectionLevel& value) { SetInspectionLevel(value); return *this;}
 
@@ -89,7 +89,7 @@ namespace Model
      * is the least expensive. The targeted level includes all common level rules and
      * adds rules with more advanced inspection criteria. For details, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-managed-rule-groups-bot.html">WAF
-     * Bot Control rule group</a>.</p>
+     * Bot Control rule group</a> in the <i>WAF Developer Guide</i>.</p>
      */
     inline AWSManagedRulesBotControlRuleSet& WithInspectionLevel(InspectionLevel&& value) { SetInspectionLevel(std::move(value)); return *this;}
 

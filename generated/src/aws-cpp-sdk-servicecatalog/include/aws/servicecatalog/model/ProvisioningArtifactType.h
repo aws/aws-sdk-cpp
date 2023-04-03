@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     CLOUD_FORMATION_TEMPLATE,
     MARKETPLACE_AMI,
-    MARKETPLACE_CAR
+    MARKETPLACE_CAR,
+    DEFAULT_CUSTOM,
+    TERRAFORM_OPEN_SOURCE
   };
 
 namespace ProvisioningArtifactTypeMapper

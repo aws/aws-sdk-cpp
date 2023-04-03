@@ -11,6 +11,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/glue/model/TableIdentifier.h>
+#include <aws/glue/model/FederatedTable.h>
 #include <aws/glue/model/Column.h>
 #include <utility>
 
@@ -910,6 +911,43 @@ namespace Model
      */
     inline Table& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline const FederatedTable& GetFederatedTable() const{ return m_federatedTable; }
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline bool FederatedTableHasBeenSet() const { return m_federatedTableHasBeenSet; }
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline void SetFederatedTable(const FederatedTable& value) { m_federatedTableHasBeenSet = true; m_federatedTable = value; }
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline void SetFederatedTable(FederatedTable&& value) { m_federatedTableHasBeenSet = true; m_federatedTable = std::move(value); }
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline Table& WithFederatedTable(const FederatedTable& value) { SetFederatedTable(value); return *this;}
+
+    /**
+     * <p>A <code>FederatedTable</code> structure that references an entity outside the
+     * Glue Data Catalog.</p>
+     */
+    inline Table& WithFederatedTable(FederatedTable&& value) { SetFederatedTable(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -971,6 +1009,9 @@ namespace Model
 
     Aws::String m_versionId;
     bool m_versionIdHasBeenSet = false;
+
+    FederatedTable m_federatedTable;
+    bool m_federatedTableHasBeenSet = false;
   };
 
 } // namespace Model

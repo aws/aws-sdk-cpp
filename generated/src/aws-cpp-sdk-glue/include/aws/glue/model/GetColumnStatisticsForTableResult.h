@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline const Aws::Vector<ColumnStatistics>& GetColumnStatisticsList() const{ return m_columnStatisticsList; }
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline void SetColumnStatisticsList(const Aws::Vector<ColumnStatistics>& value) { m_columnStatisticsList = value; }
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline void SetColumnStatisticsList(Aws::Vector<ColumnStatistics>&& value) { m_columnStatisticsList = std::move(value); }
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline GetColumnStatisticsForTableResult& WithColumnStatisticsList(const Aws::Vector<ColumnStatistics>& value) { SetColumnStatisticsList(value); return *this;}
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline GetColumnStatisticsForTableResult& WithColumnStatisticsList(Aws::Vector<ColumnStatistics>&& value) { SetColumnStatisticsList(std::move(value)); return *this;}
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline GetColumnStatisticsForTableResult& AddColumnStatisticsList(const ColumnStatistics& value) { m_columnStatisticsList.push_back(value); return *this; }
 
     /**
-     * <p>List of ColumnStatistics that failed to be retrieved.</p>
+     * <p>List of ColumnStatistics.</p>
      */
     inline GetColumnStatisticsForTableResult& AddColumnStatisticsList(ColumnStatistics&& value) { m_columnStatisticsList.push_back(std::move(value)); return *this; }
 

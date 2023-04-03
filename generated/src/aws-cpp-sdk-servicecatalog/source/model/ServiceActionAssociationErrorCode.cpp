@@ -25,6 +25,7 @@ namespace Aws
         static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LIMIT_EXCEEDED");
         static const int RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("RESOURCE_NOT_FOUND");
         static const int THROTTLING_HASH = HashingUtils::HashString("THROTTLING");
+        static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("INVALID_PARAMETER");
 
 
         ServiceActionAssociationErrorCode GetServiceActionAssociationErrorCodeForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return ServiceActionAssociationErrorCode::THROTTLING;
           }
+          else if (hashCode == INVALID_PARAMETER_HASH)
+          {
+            return ServiceActionAssociationErrorCode::INVALID_PARAMETER;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "RESOURCE_NOT_FOUND";
           case ServiceActionAssociationErrorCode::THROTTLING:
             return "THROTTLING";
+          case ServiceActionAssociationErrorCode::INVALID_PARAMETER:
+            return "INVALID_PARAMETER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

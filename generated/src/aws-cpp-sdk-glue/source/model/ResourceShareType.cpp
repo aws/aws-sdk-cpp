@@ -22,6 +22,7 @@ namespace Aws
 
         static const int FOREIGN_HASH = HashingUtils::HashString("FOREIGN");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
+        static const int FEDERATED_HASH = HashingUtils::HashString("FEDERATED");
 
 
         ResourceShareType GetResourceShareTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ALL_HASH)
           {
             return ResourceShareType::ALL;
+          }
+          else if (hashCode == FEDERATED_HASH)
+          {
+            return ResourceShareType::FEDERATED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "FOREIGN";
           case ResourceShareType::ALL:
             return "ALL";
+          case ResourceShareType::FEDERATED:
+            return "FEDERATED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

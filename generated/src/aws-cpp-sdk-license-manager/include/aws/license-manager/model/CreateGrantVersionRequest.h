@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/license-manager/model/GrantStatus.h>
+#include <aws/license-manager/model/Options.h>
 #include <aws/license-manager/model/AllowedOperation.h>
 #include <utility>
 
@@ -321,6 +322,37 @@ namespace Model
      */
     inline CreateGrantVersionRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline const Options& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline void SetOptions(const Options& value) { m_optionsHasBeenSet = true; m_options = value; }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline void SetOptions(Options&& value) { m_optionsHasBeenSet = true; m_options = std::move(value); }
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline CreateGrantVersionRequest& WithOptions(const Options& value) { SetOptions(value); return *this;}
+
+    /**
+     * <p>The options specified for the grant.</p>
+     */
+    inline CreateGrantVersionRequest& WithOptions(Options&& value) { SetOptions(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientToken;
@@ -343,6 +375,9 @@ namespace Model
 
     Aws::String m_sourceVersion;
     bool m_sourceVersionHasBeenSet = false;
+
+    Options m_options;
+    bool m_optionsHasBeenSet = false;
   };
 
 } // namespace Model

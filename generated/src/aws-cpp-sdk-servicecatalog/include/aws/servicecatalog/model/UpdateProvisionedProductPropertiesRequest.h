@@ -38,58 +38,50 @@ namespace Model
 
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline UpdateProvisionedProductPropertiesRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 
@@ -143,9 +135,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -171,9 +163,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -199,9 +191,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -227,9 +219,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -255,9 +247,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -283,9 +275,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -311,9 +303,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -339,9 +331,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -367,9 +359,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -395,9 +387,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -423,9 +415,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned
@@ -451,9 +443,9 @@ namespace Model
      * when an end user calls a provisioning operation such as
      * <code>UpdateProvisionedProduct</code>, <code>TerminateProvisionedProduct</code>,
      * or <code>ExecuteProvisionedProductServiceAction</code>. Only a role ARN is
-     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts IAM
-     * user ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that
-     * has permission to see, update, terminate, and execute service actions in the
+     * valid. A user ARN is invalid. </p> <p>The <code>OWNER</code> key accepts user
+     * ARNs, IAM role ARNs, and STS assumed-role ARNs. The owner is the user that has
+     * permission to see, update, terminate, and execute service actions in the
      * provisioned product.</p> <p>The administrator can change the owner of a
      * provisioned product to another IAM or STS entity within the same account. Both
      * end user owners and administrators can see ownership history of the provisioned

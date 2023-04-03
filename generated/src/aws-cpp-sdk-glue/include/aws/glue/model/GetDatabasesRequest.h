@@ -148,61 +148,73 @@ namespace Model
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline const ResourceShareType& GetResourceShareType() const{ return m_resourceShareType; }
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline bool ResourceShareTypeHasBeenSet() const { return m_resourceShareTypeHasBeenSet; }
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline void SetResourceShareType(const ResourceShareType& value) { m_resourceShareTypeHasBeenSet = true; m_resourceShareType = value; }
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline void SetResourceShareType(ResourceShareType&& value) { m_resourceShareTypeHasBeenSet = true; m_resourceShareType = std::move(value); }
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline GetDatabasesRequest& WithResourceShareType(const ResourceShareType& value) { SetResourceShareType(value); return *this;}
 
     /**
      * <p>Allows you to specify that you want to list the databases shared with your
-     * account. The allowable values are <code>FOREIGN</code> or <code>ALL</code>. </p>
-     * <ul> <li> <p>If set to <code>FOREIGN</code>, will list the databases shared with
-     * your account. </p> </li> <li> <p>If set to <code>ALL</code>, will list the
-     * databases shared with your account, as well as the databases in yor local
-     * account. </p> </li> </ul>
+     * account. The allowable values are <code>FEDERATED</code>, <code>FOREIGN</code>
+     * or <code>ALL</code>. </p> <ul> <li> <p>If set to <code>FEDERATED</code>, will
+     * list the federated databases (referencing an external entity) shared with your
+     * account.</p> </li> <li> <p>If set to <code>FOREIGN</code>, will list the
+     * databases shared with your account. </p> </li> <li> <p>If set to
+     * <code>ALL</code>, will list the databases shared with your account, as well as
+     * the databases in yor local account. </p> </li> </ul>
      */
     inline GetDatabasesRequest& WithResourceShareType(ResourceShareType&& value) { SetResourceShareType(std::move(value)); return *this;}
 

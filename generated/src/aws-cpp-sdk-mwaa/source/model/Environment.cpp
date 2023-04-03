@@ -43,6 +43,8 @@ Environment::Environment() :
     m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
+    m_startupScriptS3ObjectVersionHasBeenSet(false),
+    m_startupScriptS3PathHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -78,6 +80,8 @@ Environment::Environment(JsonView jsonValue) :
     m_schedulersHasBeenSet(false),
     m_serviceRoleArnHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
+    m_startupScriptS3ObjectVersionHasBeenSet(false),
+    m_startupScriptS3PathHasBeenSet(false),
     m_status(EnvironmentStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_tagsHasBeenSet(false),
@@ -239,6 +243,20 @@ Environment& Environment::operator =(JsonView jsonValue)
     m_sourceBucketArn = jsonValue.GetString("SourceBucketArn");
 
     m_sourceBucketArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartupScriptS3ObjectVersion"))
+  {
+    m_startupScriptS3ObjectVersion = jsonValue.GetString("StartupScriptS3ObjectVersion");
+
+    m_startupScriptS3ObjectVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartupScriptS3Path"))
+  {
+    m_startupScriptS3Path = jsonValue.GetString("StartupScriptS3Path");
+
+    m_startupScriptS3PathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Status"))
@@ -413,6 +431,18 @@ JsonValue Environment::Jsonize() const
   if(m_sourceBucketArnHasBeenSet)
   {
    payload.WithString("SourceBucketArn", m_sourceBucketArn);
+
+  }
+
+  if(m_startupScriptS3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3ObjectVersion", m_startupScriptS3ObjectVersion);
+
+  }
+
+  if(m_startupScriptS3PathHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3Path", m_startupScriptS3Path);
 
   }
 

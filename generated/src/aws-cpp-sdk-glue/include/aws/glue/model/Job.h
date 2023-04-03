@@ -680,11 +680,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
-     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
-     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
-     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
+     * specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline double GetMaxCapacity() const{ return m_maxCapacity; }
 
@@ -702,11 +702,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
-     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
-     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
-     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
+     * specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
@@ -724,11 +724,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
-     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
-     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
-     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
+     * specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline void SetMaxCapacity(double value) { m_maxCapacityHasBeenSet = true; m_maxCapacity = value; }
 
@@ -746,11 +746,11 @@ namespace Model
      * (<code>JobCommand.Name</code>="pythonshell"), you can allocate either 0.0625 or
      * 1 DPU. The default is 0.0625 DPU.</p> </li> <li> <p>When you specify an Apache
      * Spark ETL job (<code>JobCommand.Name</code>="glueetl") or Apache Spark streaming
-     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate a
-     * minimum of 2 DPUs. The default is 10 DPUs. This job type cannot have a
-     * fractional DPU allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you
-     * cannot instead specify a <code>Maximum capacity</code>. Instead, you should
-     * specify a <code>Worker type</code> and the <code>Number of workers</code>.</p>
+     * ETL job (<code>JobCommand.Name</code>="gluestreaming"), you can allocate from 2
+     * to 100 DPUs. The default is 10 DPUs. This job type cannot have a fractional DPU
+     * allocation.</p> </li> </ul> <p>For Glue version 2.0 jobs, you cannot instead
+     * specify a <code>Maximum capacity</code>. Instead, you should specify a
+     * <code>Worker type</code> and the <code>Number of workers</code>.</p>
      */
     inline Job& WithMaxCapacity(double value) { SetMaxCapacity(value); return *this;}
 

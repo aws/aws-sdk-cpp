@@ -14,7 +14,9 @@ using namespace Aws::Utils;
 
 UpdateResourceRequest::UpdateResourceRequest() : 
     m_roleArnHasBeenSet(false),
-    m_resourceArnHasBeenSet(false)
+    m_resourceArnHasBeenSet(false),
+    m_withFederation(false),
+    m_withFederationHasBeenSet(false)
 {
 }
 
@@ -31,6 +33,12 @@ Aws::String UpdateResourceRequest::SerializePayload() const
   if(m_resourceArnHasBeenSet)
   {
    payload.WithString("ResourceArn", m_resourceArn);
+
+  }
+
+  if(m_withFederationHasBeenSet)
+  {
+   payload.WithBool("WithFederation", m_withFederation);
 
   }
 

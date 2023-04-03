@@ -33,6 +33,8 @@ CreateEnvironmentRequest::CreateEnvironmentRequest() :
     m_schedulers(0),
     m_schedulersHasBeenSet(false),
     m_sourceBucketArnHasBeenSet(false),
+    m_startupScriptS3ObjectVersionHasBeenSet(false),
+    m_startupScriptS3PathHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_webserverAccessMode(WebserverAccessMode::NOT_SET),
     m_webserverAccessModeHasBeenSet(false),
@@ -142,6 +144,18 @@ Aws::String CreateEnvironmentRequest::SerializePayload() const
   if(m_sourceBucketArnHasBeenSet)
   {
    payload.WithString("SourceBucketArn", m_sourceBucketArn);
+
+  }
+
+  if(m_startupScriptS3ObjectVersionHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3ObjectVersion", m_startupScriptS3ObjectVersion);
+
+  }
+
+  if(m_startupScriptS3PathHasBeenSet)
+  {
+   payload.WithString("StartupScriptS3Path", m_startupScriptS3Path);
 
   }
 
