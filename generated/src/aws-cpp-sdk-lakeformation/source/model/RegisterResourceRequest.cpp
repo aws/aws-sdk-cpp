@@ -16,7 +16,9 @@ RegisterResourceRequest::RegisterResourceRequest() :
     m_resourceArnHasBeenSet(false),
     m_useServiceLinkedRole(false),
     m_useServiceLinkedRoleHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_withFederation(false),
+    m_withFederationHasBeenSet(false)
 {
 }
 
@@ -39,6 +41,12 @@ Aws::String RegisterResourceRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_withFederationHasBeenSet)
+  {
+   payload.WithBool("WithFederation", m_withFederation);
 
   }
 

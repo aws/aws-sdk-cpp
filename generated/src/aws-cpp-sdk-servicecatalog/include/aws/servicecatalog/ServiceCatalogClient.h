@@ -2077,6 +2077,84 @@ namespace ServiceCatalog
         }
 
         /**
+         * <p> Notifies the result of the provisioning engine execution. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyProvisionProductEngineWorkflowResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::NotifyProvisionProductEngineWorkflowResultOutcome NotifyProvisionProductEngineWorkflowResult(const Model::NotifyProvisionProductEngineWorkflowResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for NotifyProvisionProductEngineWorkflowResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename NotifyProvisionProductEngineWorkflowResultRequestT = Model::NotifyProvisionProductEngineWorkflowResultRequest>
+        Model::NotifyProvisionProductEngineWorkflowResultOutcomeCallable NotifyProvisionProductEngineWorkflowResultCallable(const NotifyProvisionProductEngineWorkflowResultRequestT& request) const
+        {
+            return SubmitCallable(&ServiceCatalogClient::NotifyProvisionProductEngineWorkflowResult, request);
+        }
+
+        /**
+         * An Async wrapper for NotifyProvisionProductEngineWorkflowResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename NotifyProvisionProductEngineWorkflowResultRequestT = Model::NotifyProvisionProductEngineWorkflowResultRequest>
+        void NotifyProvisionProductEngineWorkflowResultAsync(const NotifyProvisionProductEngineWorkflowResultRequestT& request, const NotifyProvisionProductEngineWorkflowResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceCatalogClient::NotifyProvisionProductEngineWorkflowResult, request, handler, context);
+        }
+
+        /**
+         * <p> Notifies the result of the terminate engine execution. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyTerminateProvisionedProductEngineWorkflowResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::NotifyTerminateProvisionedProductEngineWorkflowResultOutcome NotifyTerminateProvisionedProductEngineWorkflowResult(const Model::NotifyTerminateProvisionedProductEngineWorkflowResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for NotifyTerminateProvisionedProductEngineWorkflowResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename NotifyTerminateProvisionedProductEngineWorkflowResultRequestT = Model::NotifyTerminateProvisionedProductEngineWorkflowResultRequest>
+        Model::NotifyTerminateProvisionedProductEngineWorkflowResultOutcomeCallable NotifyTerminateProvisionedProductEngineWorkflowResultCallable(const NotifyTerminateProvisionedProductEngineWorkflowResultRequestT& request) const
+        {
+            return SubmitCallable(&ServiceCatalogClient::NotifyTerminateProvisionedProductEngineWorkflowResult, request);
+        }
+
+        /**
+         * An Async wrapper for NotifyTerminateProvisionedProductEngineWorkflowResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename NotifyTerminateProvisionedProductEngineWorkflowResultRequestT = Model::NotifyTerminateProvisionedProductEngineWorkflowResultRequest>
+        void NotifyTerminateProvisionedProductEngineWorkflowResultAsync(const NotifyTerminateProvisionedProductEngineWorkflowResultRequestT& request, const NotifyTerminateProvisionedProductEngineWorkflowResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceCatalogClient::NotifyTerminateProvisionedProductEngineWorkflowResult, request, handler, context);
+        }
+
+        /**
+         * <p> Notifies the result of the update engine execution. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/NotifyUpdateProvisionedProductEngineWorkflowResult">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::NotifyUpdateProvisionedProductEngineWorkflowResultOutcome NotifyUpdateProvisionedProductEngineWorkflowResult(const Model::NotifyUpdateProvisionedProductEngineWorkflowResultRequest& request) const;
+
+        /**
+         * A Callable wrapper for NotifyUpdateProvisionedProductEngineWorkflowResult that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename NotifyUpdateProvisionedProductEngineWorkflowResultRequestT = Model::NotifyUpdateProvisionedProductEngineWorkflowResultRequest>
+        Model::NotifyUpdateProvisionedProductEngineWorkflowResultOutcomeCallable NotifyUpdateProvisionedProductEngineWorkflowResultCallable(const NotifyUpdateProvisionedProductEngineWorkflowResultRequestT& request) const
+        {
+            return SubmitCallable(&ServiceCatalogClient::NotifyUpdateProvisionedProductEngineWorkflowResult, request);
+        }
+
+        /**
+         * An Async wrapper for NotifyUpdateProvisionedProductEngineWorkflowResult that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename NotifyUpdateProvisionedProductEngineWorkflowResultRequestT = Model::NotifyUpdateProvisionedProductEngineWorkflowResultRequest>
+        void NotifyUpdateProvisionedProductEngineWorkflowResultAsync(const NotifyUpdateProvisionedProductEngineWorkflowResultRequestT& request, const NotifyUpdateProvisionedProductEngineWorkflowResultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ServiceCatalogClient::NotifyUpdateProvisionedProductEngineWorkflowResult, request, handler, context);
+        }
+
+        /**
          * <p> Provisions the specified product. </p> <p> A provisioned product is a
          * resourced instance of a product. For example, provisioning a product that's
          * based on an CloudFormation template launches an CloudFormation stack and its

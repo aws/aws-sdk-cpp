@@ -20,7 +20,8 @@ CreateGrantVersionRequest::CreateGrantVersionRequest() :
     m_status(GrantStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
-    m_sourceVersionHasBeenSet(false)
+    m_sourceVersionHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -71,6 +72,12 @@ Aws::String CreateGrantVersionRequest::SerializePayload() const
   if(m_sourceVersionHasBeenSet)
   {
    payload.WithString("SourceVersion", m_sourceVersion);
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

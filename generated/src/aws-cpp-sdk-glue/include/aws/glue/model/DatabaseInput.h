@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DatabaseIdentifier.h>
+#include <aws/glue/model/FederatedDatabase.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
@@ -337,6 +338,43 @@ namespace Model
      */
     inline DatabaseInput& WithTargetDatabase(DatabaseIdentifier&& value) { SetTargetDatabase(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline const FederatedDatabase& GetFederatedDatabase() const{ return m_federatedDatabase; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline bool FederatedDatabaseHasBeenSet() const { return m_federatedDatabaseHasBeenSet; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline void SetFederatedDatabase(const FederatedDatabase& value) { m_federatedDatabaseHasBeenSet = true; m_federatedDatabase = value; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline void SetFederatedDatabase(FederatedDatabase&& value) { m_federatedDatabaseHasBeenSet = true; m_federatedDatabase = std::move(value); }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline DatabaseInput& WithFederatedDatabase(const FederatedDatabase& value) { SetFederatedDatabase(value); return *this;}
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline DatabaseInput& WithFederatedDatabase(FederatedDatabase&& value) { SetFederatedDatabase(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -356,6 +394,9 @@ namespace Model
 
     DatabaseIdentifier m_targetDatabase;
     bool m_targetDatabaseHasBeenSet = false;
+
+    FederatedDatabase m_federatedDatabase;
+    bool m_federatedDatabaseHasBeenSet = false;
   };
 
 } // namespace Model

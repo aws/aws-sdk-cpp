@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/DatabaseIdentifier.h>
+#include <aws/glue/model/FederatedDatabase.h>
 #include <aws/glue/model/PrincipalPermissions.h>
 #include <utility>
 
@@ -397,6 +398,43 @@ namespace Model
      */
     inline Database& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline const FederatedDatabase& GetFederatedDatabase() const{ return m_federatedDatabase; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline bool FederatedDatabaseHasBeenSet() const { return m_federatedDatabaseHasBeenSet; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline void SetFederatedDatabase(const FederatedDatabase& value) { m_federatedDatabaseHasBeenSet = true; m_federatedDatabase = value; }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline void SetFederatedDatabase(FederatedDatabase&& value) { m_federatedDatabaseHasBeenSet = true; m_federatedDatabase = std::move(value); }
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline Database& WithFederatedDatabase(const FederatedDatabase& value) { SetFederatedDatabase(value); return *this;}
+
+    /**
+     * <p>A <code>FederatedDatabase</code> structure that references an entity outside
+     * the Glue Data Catalog.</p>
+     */
+    inline Database& WithFederatedDatabase(FederatedDatabase&& value) { SetFederatedDatabase(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -422,6 +460,9 @@ namespace Model
 
     Aws::String m_catalogId;
     bool m_catalogIdHasBeenSet = false;
+
+    FederatedDatabase m_federatedDatabase;
+    bool m_federatedDatabaseHasBeenSet = false;
   };
 
 } // namespace Model

@@ -29,7 +29,8 @@ Grant::Grant() :
     m_grantStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_grantedOperationsHasBeenSet(false)
+    m_grantedOperationsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Grant::Grant(JsonView jsonValue) :
     m_grantStatusHasBeenSet(false),
     m_statusReasonHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_grantedOperationsHasBeenSet(false)
+    m_grantedOperationsHasBeenSet(false),
+    m_optionsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -124,6 +126,13 @@ Grant& Grant::operator =(JsonView jsonValue)
     m_grantedOperationsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Options"))
+  {
+    m_options = jsonValue.GetObject("Options");
+
+    m_optionsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -192,6 +201,12 @@ JsonValue Grant::Jsonize() const
      grantedOperationsJsonList[grantedOperationsIndex].AsString(AllowedOperationMapper::GetNameForAllowedOperation(m_grantedOperations[grantedOperationsIndex]));
    }
    payload.WithArray("GrantedOperations", std::move(grantedOperationsJsonList));
+
+  }
+
+  if(m_optionsHasBeenSet)
+  {
+   payload.WithObject("Options", m_options.Jsonize());
 
   }
 

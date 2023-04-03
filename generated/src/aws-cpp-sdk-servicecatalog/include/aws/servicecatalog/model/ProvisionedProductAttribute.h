@@ -919,91 +919,83 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetUserArn(Aws::String&& value) { m_userArnHasBeenSet = true; m_userArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline void SetUserArn(const char* value) { m_userArnHasBeenSet = true; m_userArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline ProvisionedProductAttribute& WithUserArn(const Aws::String& value) { SetUserArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline ProvisionedProductAttribute& WithUserArn(Aws::String&& value) { SetUserArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the IAM user.</p>
+     * <p>The Amazon Resource Name (ARN) of the user.</p>
      */
     inline ProvisionedProductAttribute& WithUserArn(const char* value) { SetUserArn(value); return *this;}
 
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline const Aws::String& GetUserArnSession() const{ return m_userArnSession; }
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline bool UserArnSessionHasBeenSet() const { return m_userArnSessionHasBeenSet; }
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline void SetUserArnSession(const Aws::String& value) { m_userArnSessionHasBeenSet = true; m_userArnSession = value; }
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline void SetUserArnSession(Aws::String&& value) { m_userArnSessionHasBeenSet = true; m_userArnSession = std::move(value); }
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline void SetUserArnSession(const char* value) { m_userArnSessionHasBeenSet = true; m_userArnSession.assign(value); }
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline ProvisionedProductAttribute& WithUserArnSession(const Aws::String& value) { SetUserArnSession(value); return *this;}
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline ProvisionedProductAttribute& WithUserArnSession(Aws::String&& value) { SetUserArnSession(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the IAM user in the session. This ARN might contain a session
-     * ID.</p>
+     * <p>The ARN of the user in the session. This ARN might contain a session ID.</p>
      */
     inline ProvisionedProductAttribute& WithUserArnSession(const char* value) { SetUserArnSession(value); return *this;}
 

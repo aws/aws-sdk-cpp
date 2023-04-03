@@ -21,14 +21,18 @@ namespace Model
 ResourceInfo::ResourceInfo() : 
     m_resourceArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_withFederation(false),
+    m_withFederationHasBeenSet(false)
 {
 }
 
 ResourceInfo::ResourceInfo(JsonView jsonValue) : 
     m_resourceArnHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_lastModifiedHasBeenSet(false)
+    m_lastModifiedHasBeenSet(false),
+    m_withFederation(false),
+    m_withFederationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +60,13 @@ ResourceInfo& ResourceInfo::operator =(JsonView jsonValue)
     m_lastModifiedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("WithFederation"))
+  {
+    m_withFederation = jsonValue.GetBool("WithFederation");
+
+    m_withFederationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +89,12 @@ JsonValue ResourceInfo::Jsonize() const
   if(m_lastModifiedHasBeenSet)
   {
    payload.WithDouble("LastModified", m_lastModified.SecondsWithMSPrecision());
+  }
+
+  if(m_withFederationHasBeenSet)
+  {
+   payload.WithBool("WithFederation", m_withFederation);
+
   }
 
   return payload;

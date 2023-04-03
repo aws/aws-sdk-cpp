@@ -89,6 +89,9 @@
 #include <aws/servicecatalog/model/ListServiceActionsForProvisioningArtifactResult.h>
 #include <aws/servicecatalog/model/ListStackInstancesForProvisionedProductResult.h>
 #include <aws/servicecatalog/model/ListTagOptionsResult.h>
+#include <aws/servicecatalog/model/NotifyProvisionProductEngineWorkflowResultResult.h>
+#include <aws/servicecatalog/model/NotifyTerminateProvisionedProductEngineWorkflowResultResult.h>
+#include <aws/servicecatalog/model/NotifyUpdateProvisionedProductEngineWorkflowResultResult.h>
 #include <aws/servicecatalog/model/ProvisionProductResult.h>
 #include <aws/servicecatalog/model/RejectPortfolioShareResult.h>
 #include <aws/servicecatalog/model/ScanProvisionedProductsResult.h>
@@ -216,6 +219,9 @@ namespace Aws
       class ListServiceActionsForProvisioningArtifactRequest;
       class ListStackInstancesForProvisionedProductRequest;
       class ListTagOptionsRequest;
+      class NotifyProvisionProductEngineWorkflowResultRequest;
+      class NotifyTerminateProvisionedProductEngineWorkflowResultRequest;
+      class NotifyUpdateProvisionedProductEngineWorkflowResultRequest;
       class ProvisionProductRequest;
       class RejectPortfolioShareRequest;
       class ScanProvisionedProductsRequest;
@@ -306,6 +312,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListServiceActionsForProvisioningArtifactResult, ServiceCatalogError> ListServiceActionsForProvisioningArtifactOutcome;
       typedef Aws::Utils::Outcome<ListStackInstancesForProvisionedProductResult, ServiceCatalogError> ListStackInstancesForProvisionedProductOutcome;
       typedef Aws::Utils::Outcome<ListTagOptionsResult, ServiceCatalogError> ListTagOptionsOutcome;
+      typedef Aws::Utils::Outcome<NotifyProvisionProductEngineWorkflowResultResult, ServiceCatalogError> NotifyProvisionProductEngineWorkflowResultOutcome;
+      typedef Aws::Utils::Outcome<NotifyTerminateProvisionedProductEngineWorkflowResultResult, ServiceCatalogError> NotifyTerminateProvisionedProductEngineWorkflowResultOutcome;
+      typedef Aws::Utils::Outcome<NotifyUpdateProvisionedProductEngineWorkflowResultResult, ServiceCatalogError> NotifyUpdateProvisionedProductEngineWorkflowResultOutcome;
       typedef Aws::Utils::Outcome<ProvisionProductResult, ServiceCatalogError> ProvisionProductOutcome;
       typedef Aws::Utils::Outcome<RejectPortfolioShareResult, ServiceCatalogError> RejectPortfolioShareOutcome;
       typedef Aws::Utils::Outcome<ScanProvisionedProductsResult, ServiceCatalogError> ScanProvisionedProductsOutcome;
@@ -396,6 +405,9 @@ namespace Aws
       typedef std::future<ListServiceActionsForProvisioningArtifactOutcome> ListServiceActionsForProvisioningArtifactOutcomeCallable;
       typedef std::future<ListStackInstancesForProvisionedProductOutcome> ListStackInstancesForProvisionedProductOutcomeCallable;
       typedef std::future<ListTagOptionsOutcome> ListTagOptionsOutcomeCallable;
+      typedef std::future<NotifyProvisionProductEngineWorkflowResultOutcome> NotifyProvisionProductEngineWorkflowResultOutcomeCallable;
+      typedef std::future<NotifyTerminateProvisionedProductEngineWorkflowResultOutcome> NotifyTerminateProvisionedProductEngineWorkflowResultOutcomeCallable;
+      typedef std::future<NotifyUpdateProvisionedProductEngineWorkflowResultOutcome> NotifyUpdateProvisionedProductEngineWorkflowResultOutcomeCallable;
       typedef std::future<ProvisionProductOutcome> ProvisionProductOutcomeCallable;
       typedef std::future<RejectPortfolioShareOutcome> RejectPortfolioShareOutcomeCallable;
       typedef std::future<ScanProvisionedProductsOutcome> ScanProvisionedProductsOutcomeCallable;
@@ -489,6 +501,9 @@ namespace Aws
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListServiceActionsForProvisioningArtifactRequest&, const Model::ListServiceActionsForProvisioningArtifactOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListServiceActionsForProvisioningArtifactResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListStackInstancesForProvisionedProductRequest&, const Model::ListStackInstancesForProvisionedProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStackInstancesForProvisionedProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ListTagOptionsRequest&, const Model::ListTagOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagOptionsResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::NotifyProvisionProductEngineWorkflowResultRequest&, const Model::NotifyProvisionProductEngineWorkflowResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyProvisionProductEngineWorkflowResultResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::NotifyTerminateProvisionedProductEngineWorkflowResultRequest&, const Model::NotifyTerminateProvisionedProductEngineWorkflowResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyTerminateProvisionedProductEngineWorkflowResultResponseReceivedHandler;
+    typedef std::function<void(const ServiceCatalogClient*, const Model::NotifyUpdateProvisionedProductEngineWorkflowResultRequest&, const Model::NotifyUpdateProvisionedProductEngineWorkflowResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > NotifyUpdateProvisionedProductEngineWorkflowResultResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ProvisionProductRequest&, const Model::ProvisionProductOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ProvisionProductResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::RejectPortfolioShareRequest&, const Model::RejectPortfolioShareOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RejectPortfolioShareResponseReceivedHandler;
     typedef std::function<void(const ServiceCatalogClient*, const Model::ScanProvisionedProductsRequest&, const Model::ScanProvisionedProductsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScanProvisionedProductsResponseReceivedHandler;

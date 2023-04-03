@@ -268,10 +268,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline const Body& GetBody() const{ return m_body; }
 
@@ -279,10 +282,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
@@ -290,10 +296,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline void SetBody(const Body& value) { m_bodyHasBeenSet = true; m_body = value; }
 
@@ -301,10 +310,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline void SetBody(Body&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
 
@@ -312,10 +324,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline FieldToMatch& WithBody(const Body& value) { SetBody(value); return *this;}
 
@@ -323,10 +338,13 @@ namespace Model
      * <p>Inspect the request body as plain text. The request body immediately follows
      * the request headers. This is the part of a request that contains any additional
      * data that you want to send to your web server as the HTTP request body, such as
-     * data from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body
-     * are forwarded to WAF for inspection by the underlying host service. For
-     * information about how to handle oversized request bodies, see the
-     * <code>Body</code> object configuration. </p>
+     * data from a form. </p> <p>A limited amount of the request body is forwarded to
+     * WAF for inspection by the underlying host service. For regional resources, the
+     * limit is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is
+     * 16 KB (16,384 kilobytes). For CloudFront distributions, you can increase the
+     * limit in the web ACL's <code>AssociationConfig</code>, for additional processing
+     * fees. </p> <p>For information about how to handle oversized request bodies, see
+     * the <code>Body</code> object configuration. </p>
      */
     inline FieldToMatch& WithBody(Body&& value) { SetBody(std::move(value)); return *this;}
 
@@ -372,10 +390,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline const JsonBody& GetJsonBody() const{ return m_jsonBody; }
 
@@ -383,10 +404,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline bool JsonBodyHasBeenSet() const { return m_jsonBodyHasBeenSet; }
 
@@ -394,10 +418,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline void SetJsonBody(const JsonBody& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = value; }
 
@@ -405,10 +432,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline void SetJsonBody(JsonBody&& value) { m_jsonBodyHasBeenSet = true; m_jsonBody = std::move(value); }
 
@@ -416,10 +446,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline FieldToMatch& WithJsonBody(const JsonBody& value) { SetJsonBody(value); return *this;}
 
@@ -427,10 +460,13 @@ namespace Model
      * <p>Inspect the request body as JSON. The request body immediately follows the
      * request headers. This is the part of a request that contains any additional data
      * that you want to send to your web server as the HTTP request body, such as data
-     * from a form. </p> <p>Only the first 8 KB (8192 bytes) of the request body are
-     * forwarded to WAF for inspection by the underlying host service. For information
-     * about how to handle oversized request bodies, see the <code>JsonBody</code>
-     * object configuration. </p>
+     * from a form. </p> <p>A limited amount of the request body is forwarded to WAF
+     * for inspection by the underlying host service. For regional resources, the limit
+     * is 8 KB (8,192 kilobytes) and for CloudFront distributions, the limit is 16 KB
+     * (16,384 kilobytes). For CloudFront distributions, you can increase the limit in
+     * the web ACL's <code>AssociationConfig</code>, for additional processing fees.
+     * </p> <p>For information about how to handle oversized request bodies, see the
+     * <code>JsonBody</code> object configuration. </p>
      */
     inline FieldToMatch& WithJsonBody(JsonBody&& value) { SetJsonBody(std::move(value)); return *this;}
 

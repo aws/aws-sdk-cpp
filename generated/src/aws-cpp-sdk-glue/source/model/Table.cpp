@@ -40,7 +40,8 @@ Table::Table() :
     m_isRegisteredWithLakeFormationHasBeenSet(false),
     m_targetTableHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_federatedTableHasBeenSet(false)
 {
 }
 
@@ -66,7 +67,8 @@ Table::Table(JsonView jsonValue) :
     m_isRegisteredWithLakeFormationHasBeenSet(false),
     m_targetTableHasBeenSet(false),
     m_catalogIdHasBeenSet(false),
-    m_versionIdHasBeenSet(false)
+    m_versionIdHasBeenSet(false),
+    m_federatedTableHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -219,6 +221,13 @@ Table& Table::operator =(JsonView jsonValue)
     m_versionIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FederatedTable"))
+  {
+    m_federatedTable = jsonValue.GetObject("FederatedTable");
+
+    m_federatedTableHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -349,6 +358,12 @@ JsonValue Table::Jsonize() const
   if(m_versionIdHasBeenSet)
   {
    payload.WithString("VersionId", m_versionId);
+
+  }
+
+  if(m_federatedTableHasBeenSet)
+  {
+   payload.WithObject("FederatedTable", m_federatedTable.Jsonize());
 
   }
 

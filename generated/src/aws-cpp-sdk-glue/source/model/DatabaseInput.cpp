@@ -24,7 +24,8 @@ DatabaseInput::DatabaseInput() :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false)
+    m_targetDatabaseHasBeenSet(false),
+    m_federatedDatabaseHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ DatabaseInput::DatabaseInput(JsonView jsonValue) :
     m_locationUriHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
-    m_targetDatabaseHasBeenSet(false)
+    m_targetDatabaseHasBeenSet(false),
+    m_federatedDatabaseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ DatabaseInput& DatabaseInput::operator =(JsonView jsonValue)
     m_targetDatabaseHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FederatedDatabase"))
+  {
+    m_federatedDatabase = jsonValue.GetObject("FederatedDatabase");
+
+    m_federatedDatabaseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue DatabaseInput::Jsonize() const
   if(m_targetDatabaseHasBeenSet)
   {
    payload.WithObject("TargetDatabase", m_targetDatabase.Jsonize());
+
+  }
+
+  if(m_federatedDatabaseHasBeenSet)
+  {
+   payload.WithObject("FederatedDatabase", m_federatedDatabase.Jsonize());
 
   }
 

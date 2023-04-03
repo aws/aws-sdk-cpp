@@ -26,7 +26,8 @@ Database::Database() :
     m_createTimeHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
     m_targetDatabaseHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
+    m_catalogIdHasBeenSet(false),
+    m_federatedDatabaseHasBeenSet(false)
 {
 }
 
@@ -38,7 +39,8 @@ Database::Database(JsonView jsonValue) :
     m_createTimeHasBeenSet(false),
     m_createTableDefaultPermissionsHasBeenSet(false),
     m_targetDatabaseHasBeenSet(false),
-    m_catalogIdHasBeenSet(false)
+    m_catalogIdHasBeenSet(false),
+    m_federatedDatabaseHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,13 @@ Database& Database::operator =(JsonView jsonValue)
     m_catalogIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FederatedDatabase"))
+  {
+    m_federatedDatabase = jsonValue.GetObject("FederatedDatabase");
+
+    m_federatedDatabaseHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -168,6 +177,12 @@ JsonValue Database::Jsonize() const
   if(m_catalogIdHasBeenSet)
   {
    payload.WithString("CatalogId", m_catalogId);
+
+  }
+
+  if(m_federatedDatabaseHasBeenSet)
+  {
+   payload.WithObject("FederatedDatabase", m_federatedDatabase.Jsonize());
 
   }
 

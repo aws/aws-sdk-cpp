@@ -38,7 +38,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -46,7 +46,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -54,7 +54,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -62,7 +62,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -70,7 +70,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>A list of key-value pairs containing the Apache Airflow configuration options
-     * you want to attach to your environment. To learn more, see <a
+     * you want to attach to your environment. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-env-variables.html">Apache
      * Airflow configuration options</a>.</p>
      */
@@ -200,7 +200,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -208,7 +208,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -216,7 +216,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -224,7 +224,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -232,7 +232,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -240,7 +240,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -248,7 +248,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -256,7 +256,7 @@ namespace Model
 
     /**
      * <p>The relative path to the DAGs folder on your Amazon S3 bucket. For example,
-     * <code>dags</code>. To learn more, see <a
+     * <code>dags</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding
      * or updating DAGs</a>.</p>
      */
@@ -265,7 +265,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -273,7 +273,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -281,7 +281,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -289,7 +289,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -297,7 +297,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -305,7 +305,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -313,7 +313,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -321,7 +321,7 @@ namespace Model
 
     /**
      * <p>The environment class type. Valid values: <code>mw1.small</code>,
-     * <code>mw1.medium</code>, <code>mw1.large</code>. To learn more, see <a
+     * <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon
      * MWAA environment class</a>.</p>
      */
@@ -331,8 +331,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -341,8 +341,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -351,8 +351,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -361,8 +361,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -371,8 +371,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -381,8 +381,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -391,8 +391,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -401,8 +401,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA
      * to access Amazon Web Services resources in your environment. For example,
-     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. To learn more, see
-     * <a
+     * <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon
      * MWAA Execution role</a>.</p>
      */
@@ -569,8 +569,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -578,8 +578,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -587,8 +587,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -596,8 +596,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -605,8 +605,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -614,8 +614,8 @@ namespace Model
 
     /**
      * <p>The VPC networking components used to secure and enable network traffic
-     * between the Amazon Web Services resources for your environment. To learn more,
-     * see <a
+     * between the Amazon Web Services resources for your environment. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/networking-about.html">About
      * networking on Amazon MWAA</a>.</p>
      */
@@ -623,64 +623,72 @@ namespace Model
 
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline const Aws::String& GetPluginsS3ObjectVersion() const{ return m_pluginsS3ObjectVersion; }
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline bool PluginsS3ObjectVersionHasBeenSet() const { return m_pluginsS3ObjectVersionHasBeenSet; }
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetPluginsS3ObjectVersion(const Aws::String& value) { m_pluginsS3ObjectVersionHasBeenSet = true; m_pluginsS3ObjectVersion = value; }
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetPluginsS3ObjectVersion(Aws::String&& value) { m_pluginsS3ObjectVersionHasBeenSet = true; m_pluginsS3ObjectVersion = std::move(value); }
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetPluginsS3ObjectVersion(const char* value) { m_pluginsS3ObjectVersionHasBeenSet = true; m_pluginsS3ObjectVersion.assign(value); }
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithPluginsS3ObjectVersion(const Aws::String& value) { SetPluginsS3ObjectVersion(value); return *this;}
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithPluginsS3ObjectVersion(Aws::String&& value) { SetPluginsS3ObjectVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the plugins.zip file on your Amazon S3 bucket. A version must
-     * be specified each time a plugins.zip file is updated. To learn more, see <a
+     * <p>The version of the plugins.zip file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>plugins.zip</code> file is updated. For more
+     * information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
@@ -690,7 +698,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -699,7 +707,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -708,7 +716,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -717,7 +725,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -726,7 +734,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -735,7 +743,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -744,7 +752,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -753,7 +761,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>plugins.zip</code> file on your Amazon S3
      * bucket. For example, <code>plugins.zip</code>. If specified, then the
-     * plugins.zip version is required. To learn more, see <a
+     * plugins.zip version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing
      * custom plugins</a>.</p>
      */
@@ -761,72 +769,72 @@ namespace Model
 
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline const Aws::String& GetRequirementsS3ObjectVersion() const{ return m_requirementsS3ObjectVersion; }
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline bool RequirementsS3ObjectVersionHasBeenSet() const { return m_requirementsS3ObjectVersionHasBeenSet; }
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetRequirementsS3ObjectVersion(const Aws::String& value) { m_requirementsS3ObjectVersionHasBeenSet = true; m_requirementsS3ObjectVersion = value; }
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetRequirementsS3ObjectVersion(Aws::String&& value) { m_requirementsS3ObjectVersionHasBeenSet = true; m_requirementsS3ObjectVersion = std::move(value); }
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline void SetRequirementsS3ObjectVersion(const char* value) { m_requirementsS3ObjectVersionHasBeenSet = true; m_requirementsS3ObjectVersion.assign(value); }
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithRequirementsS3ObjectVersion(const Aws::String& value) { SetRequirementsS3ObjectVersion(value); return *this;}
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithRequirementsS3ObjectVersion(Aws::String&& value) { SetRequirementsS3ObjectVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The version of the requirements.txt file on your Amazon S3 bucket. A version
-     * must be specified each time a requirements.txt file is updated. To learn more,
-     * see <a
+     * <p>The version of the requirements.txt file on your Amazon S3 bucket. You must
+     * specify a version each time a <code>requirements.txt</code> file is updated. For
+     * more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How
      * S3 Versioning works</a>.</p>
      */
@@ -836,7 +844,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -845,7 +853,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -854,7 +862,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -863,7 +871,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -872,7 +880,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -881,7 +889,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -890,7 +898,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -899,7 +907,7 @@ namespace Model
     /**
      * <p>The relative path to the <code>requirements.txt</code> file on your Amazon S3
      * bucket. For example, <code>requirements.txt</code>. If specified, then a file
-     * version is required. To learn more, see <a
+     * version is required. For more information, see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing
      * Python dependencies</a>.</p>
      */
@@ -934,7 +942,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -943,7 +952,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -952,7 +962,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -961,7 +972,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -970,7 +982,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -979,7 +992,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -988,7 +1002,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -997,7 +1012,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code
      * and supporting files are stored. For example,
-     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. To learn more, see <a
+     * <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create
      * an Amazon S3 bucket for Amazon MWAA</a>.</p>
      */
@@ -1005,42 +1021,258 @@ namespace Model
 
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline const Aws::String& GetStartupScriptS3ObjectVersion() const{ return m_startupScriptS3ObjectVersion; }
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline bool StartupScriptS3ObjectVersionHasBeenSet() const { return m_startupScriptS3ObjectVersionHasBeenSet; }
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3ObjectVersion(const Aws::String& value) { m_startupScriptS3ObjectVersionHasBeenSet = true; m_startupScriptS3ObjectVersion = value; }
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3ObjectVersion(Aws::String&& value) { m_startupScriptS3ObjectVersionHasBeenSet = true; m_startupScriptS3ObjectVersion = std::move(value); }
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3ObjectVersion(const char* value) { m_startupScriptS3ObjectVersionHasBeenSet = true; m_startupScriptS3ObjectVersion.assign(value); }
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3ObjectVersion(const Aws::String& value) { SetStartupScriptS3ObjectVersion(value); return *this;}
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3ObjectVersion(Aws::String&& value) { SetStartupScriptS3ObjectVersion(std::move(value)); return *this;}
+
+    /**
+     * <p> The version of the startup shell script in your Amazon S3 bucket. You must
+     * specify the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version
+     * ID</a> that Amazon S3 assigns to the file every time you update the script. </p>
+     * <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are
+     * no more than 1,024 bytes long. The following is an example: </p> <p>
+     * <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code>
+     * </p> <p> For more information, see <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3ObjectVersion(const char* value) { SetStartupScriptS3ObjectVersion(value); return *this;}
+
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline const Aws::String& GetStartupScriptS3Path() const{ return m_startupScriptS3Path; }
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline bool StartupScriptS3PathHasBeenSet() const { return m_startupScriptS3PathHasBeenSet; }
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3Path(const Aws::String& value) { m_startupScriptS3PathHasBeenSet = true; m_startupScriptS3Path = value; }
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3Path(Aws::String&& value) { m_startupScriptS3PathHasBeenSet = true; m_startupScriptS3Path = std::move(value); }
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline void SetStartupScriptS3Path(const char* value) { m_startupScriptS3PathHasBeenSet = true; m_startupScriptS3Path.assign(value); }
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3Path(const Aws::String& value) { SetStartupScriptS3Path(value); return *this;}
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3Path(Aws::String&& value) { SetStartupScriptS3Path(std::move(value)); return *this;}
+
+    /**
+     * <p>The relative path to the startup shell script in your Amazon S3 bucket. For
+     * example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs
+     * the script as your environment starts, and before running the Apache Airflow
+     * process. You can use this script to install dependencies, modify Apache Airflow
+     * configuration options, and set environment variables. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using
+     * a startup script</a>. </p>
+     */
+    inline UpdateEnvironmentRequest& WithStartupScriptS3Path(const char* value) { SetStartupScriptS3Path(value); return *this;}
+
+
+    /**
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
     inline const WebserverAccessMode& GetWebserverAccessMode() const{ return m_webserverAccessMode; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
     inline bool WebserverAccessModeHasBeenSet() const { return m_webserverAccessModeHasBeenSet; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
     inline void SetWebserverAccessMode(const WebserverAccessMode& value) { m_webserverAccessModeHasBeenSet = true; m_webserverAccessMode = value; }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
     inline void SetWebserverAccessMode(WebserverAccessMode&& value) { m_webserverAccessModeHasBeenSet = true; m_webserverAccessMode = std::move(value); }
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
     inline UpdateEnvironmentRequest& WithWebserverAccessMode(const WebserverAccessMode& value) { SetWebserverAccessMode(value); return *this;}
 
     /**
-     * <p>The Apache Airflow <i>Web server</i> access mode. To learn more, see <a
+     * <p>The Apache Airflow <i>Web server</i> access mode. For more information, see
+     * <a
      * href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-networking.html">Apache
      * Airflow access modes</a>.</p>
      */
@@ -1160,6 +1392,12 @@ namespace Model
 
     Aws::String m_sourceBucketArn;
     bool m_sourceBucketArnHasBeenSet = false;
+
+    Aws::String m_startupScriptS3ObjectVersion;
+    bool m_startupScriptS3ObjectVersionHasBeenSet = false;
+
+    Aws::String m_startupScriptS3Path;
+    bool m_startupScriptS3PathHasBeenSet = false;
 
     WebserverAccessMode m_webserverAccessMode;
     bool m_webserverAccessModeHasBeenSet = false;

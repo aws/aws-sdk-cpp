@@ -39,57 +39,57 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline const Aws::String& GetPrincipalARN() const{ return m_principalARN; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline void SetPrincipalARN(Aws::String&& value) { m_principalARNHasBeenSet = true; m_principalARN = std::move(value); }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline void SetPrincipalARN(const char* value) { m_principalARNHasBeenSet = true; m_principalARN.assign(value); }
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline Principal& WithPrincipalARN(const Aws::String& value) { SetPrincipalARN(value); return *this;}
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline Principal& WithPrincipalARN(Aws::String&& value) { SetPrincipalARN(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the principal (IAM user, role, or group). This field allows for an
-     * ARN with no <code>accountID</code> if the <code>PrincipalType</code> is an
+     * <p>The ARN of the principal (user, role, or group). This field allows for an ARN
+     * with no <code>accountID</code> if the <code>PrincipalType</code> is an
      * <code>IAM_PATTERN</code>. </p>
      */
     inline Principal& WithPrincipalARN(const char* value) { SetPrincipalARN(value); return *this;}

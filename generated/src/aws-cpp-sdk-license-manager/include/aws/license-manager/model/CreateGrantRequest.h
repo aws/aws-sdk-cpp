@@ -168,56 +168,92 @@ namespace Model
 
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline void SetPrincipals(const Aws::Vector<Aws::String>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline void SetPrincipals(Aws::Vector<Aws::String>&& value) { m_principalsHasBeenSet = true; m_principals = std::move(value); }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline CreateGrantRequest& WithPrincipals(const Aws::Vector<Aws::String>& value) { SetPrincipals(value); return *this;}
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline CreateGrantRequest& WithPrincipals(Aws::Vector<Aws::String>&& value) { SetPrincipals(std::move(value)); return *this;}
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline CreateGrantRequest& AddPrincipals(const Aws::String& value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline CreateGrantRequest& AddPrincipals(Aws::String&& value) { m_principalsHasBeenSet = true; m_principals.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The grant principals. This value should be specified as an Amazon Resource
-     * Name (ARN).</p>
+     * <p>The grant principals. You can specify one of the following as an Amazon
+     * Resource Name (ARN):</p> <ul> <li> <p>An Amazon Web Services account, which
+     * includes only the account specified.</p> </li> </ul> <ul> <li> <p>An
+     * organizational unit (OU), which includes all accounts in the OU.</p> </li> </ul>
+     * <ul> <li> <p>An organization, which will include all accounts across your
+     * organization.</p> </li> </ul>
      */
     inline CreateGrantRequest& AddPrincipals(const char* value) { m_principalsHasBeenSet = true; m_principals.push_back(value); return *this; }
 

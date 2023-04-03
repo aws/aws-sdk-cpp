@@ -88,8 +88,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline const LicenseConversionContext& GetSourceLicenseContext() const{ return m_sourceLicenseContext; }
 
@@ -97,8 +96,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline bool SourceLicenseContextHasBeenSet() const { return m_sourceLicenseContextHasBeenSet; }
 
@@ -106,8 +104,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline void SetSourceLicenseContext(const LicenseConversionContext& value) { m_sourceLicenseContextHasBeenSet = true; m_sourceLicenseContext = value; }
 
@@ -115,8 +112,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline void SetSourceLicenseContext(LicenseConversionContext&& value) { m_sourceLicenseContextHasBeenSet = true; m_sourceLicenseContext = std::move(value); }
 
@@ -124,8 +120,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline CreateLicenseConversionTaskForResourceRequest& WithSourceLicenseContext(const LicenseConversionContext& value) { SetSourceLicenseContext(value); return *this;}
 
@@ -133,8 +128,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting from. For the
      * structure of the source license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline CreateLicenseConversionTaskForResourceRequest& WithSourceLicenseContext(LicenseConversionContext&& value) { SetSourceLicenseContext(std::move(value)); return *this;}
 
@@ -143,8 +137,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline const LicenseConversionContext& GetDestinationLicenseContext() const{ return m_destinationLicenseContext; }
 
@@ -152,8 +145,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline bool DestinationLicenseContextHasBeenSet() const { return m_destinationLicenseContextHasBeenSet; }
 
@@ -161,8 +153,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline void SetDestinationLicenseContext(const LicenseConversionContext& value) { m_destinationLicenseContextHasBeenSet = true; m_destinationLicenseContext = value; }
 
@@ -170,8 +161,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline void SetDestinationLicenseContext(LicenseConversionContext&& value) { m_destinationLicenseContextHasBeenSet = true; m_destinationLicenseContext = std::move(value); }
 
@@ -179,8 +169,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline CreateLicenseConversionTaskForResourceRequest& WithDestinationLicenseContext(const LicenseConversionContext& value) { SetDestinationLicenseContext(value); return *this;}
 
@@ -188,8 +177,7 @@ namespace Model
      * <p>Information that identifies the license type you are converting to. For the
      * structure of the destination license, see <a
      * href="https://docs.aws.amazon.com/license-manager/latest/userguide/conversion-procedures.html#conversion-cli">Convert
-     * a license type using the Amazon Web Services CLI</a> in the <i>License Manager
-     * User Guide</i>.</p>
+     * a license type using the CLI </a> in the <i>License Manager User Guide</i>.</p>
      */
     inline CreateLicenseConversionTaskForResourceRequest& WithDestinationLicenseContext(LicenseConversionContext&& value) { SetDestinationLicenseContext(std::move(value)); return *this;}
 

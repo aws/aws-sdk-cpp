@@ -25,7 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>A structure containing information for audit.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure containing the Lake Formation audit context.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/AuditContext">AWS
    * API Reference</a></p>
    */
@@ -39,42 +40,42 @@ namespace Model
 
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline const Aws::String& GetAdditionalAuditContext() const{ return m_additionalAuditContext; }
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline bool AdditionalAuditContextHasBeenSet() const { return m_additionalAuditContextHasBeenSet; }
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline void SetAdditionalAuditContext(const Aws::String& value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext = value; }
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline void SetAdditionalAuditContext(Aws::String&& value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext = std::move(value); }
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline void SetAdditionalAuditContext(const char* value) { m_additionalAuditContextHasBeenSet = true; m_additionalAuditContext.assign(value); }
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline AuditContext& WithAdditionalAuditContext(const Aws::String& value) { SetAdditionalAuditContext(value); return *this;}
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline AuditContext& WithAdditionalAuditContext(Aws::String&& value) { SetAdditionalAuditContext(std::move(value)); return *this;}
 
     /**
-     * <p>The context for the audit..</p>
+     * <p>A string containing the additional audit context information.</p>
      */
     inline AuditContext& WithAdditionalAuditContext(const char* value) { SetAdditionalAuditContext(value); return *this;}
 

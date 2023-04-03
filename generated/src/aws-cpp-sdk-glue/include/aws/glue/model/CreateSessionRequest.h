@@ -196,43 +196,59 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds before request times out. </p>
+     * <p> The number of minutes before session times out. Default for Spark ETL jobs
+     * is 48 hours (2880 minutes), the maximum session lifetime for this job type.
+     * Consult the documentation for other job types. </p>
      */
     inline int GetTimeout() const{ return m_timeout; }
 
     /**
-     * <p>The number of seconds before request times out. </p>
+     * <p> The number of minutes before session times out. Default for Spark ETL jobs
+     * is 48 hours (2880 minutes), the maximum session lifetime for this job type.
+     * Consult the documentation for other job types. </p>
      */
     inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
 
     /**
-     * <p>The number of seconds before request times out. </p>
+     * <p> The number of minutes before session times out. Default for Spark ETL jobs
+     * is 48 hours (2880 minutes), the maximum session lifetime for this job type.
+     * Consult the documentation for other job types. </p>
      */
     inline void SetTimeout(int value) { m_timeoutHasBeenSet = true; m_timeout = value; }
 
     /**
-     * <p>The number of seconds before request times out. </p>
+     * <p> The number of minutes before session times out. Default for Spark ETL jobs
+     * is 48 hours (2880 minutes), the maximum session lifetime for this job type.
+     * Consult the documentation for other job types. </p>
      */
     inline CreateSessionRequest& WithTimeout(int value) { SetTimeout(value); return *this;}
 
 
     /**
-     * <p>The number of seconds when idle before request times out. </p>
+     * <p> The number of minutes when idle before session times out. Default for Spark
+     * ETL jobs is value of Timeout. Consult the documentation for other job types.
+     * </p>
      */
     inline int GetIdleTimeout() const{ return m_idleTimeout; }
 
     /**
-     * <p>The number of seconds when idle before request times out. </p>
+     * <p> The number of minutes when idle before session times out. Default for Spark
+     * ETL jobs is value of Timeout. Consult the documentation for other job types.
+     * </p>
      */
     inline bool IdleTimeoutHasBeenSet() const { return m_idleTimeoutHasBeenSet; }
 
     /**
-     * <p>The number of seconds when idle before request times out. </p>
+     * <p> The number of minutes when idle before session times out. Default for Spark
+     * ETL jobs is value of Timeout. Consult the documentation for other job types.
+     * </p>
      */
     inline void SetIdleTimeout(int value) { m_idleTimeoutHasBeenSet = true; m_idleTimeout = value; }
 
     /**
-     * <p>The number of seconds when idle before request times out. </p>
+     * <p> The number of minutes when idle before session times out. Default for Spark
+     * ETL jobs is value of Timeout. Consult the documentation for other job types.
+     * </p>
      */
     inline CreateSessionRequest& WithIdleTimeout(int value) { SetIdleTimeout(value); return *this;}
 

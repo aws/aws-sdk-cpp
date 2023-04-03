@@ -140,32 +140,44 @@ namespace Model
 
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline const DecimalColumnStatisticsData& GetDecimalColumnStatisticsData() const{ return m_decimalColumnStatisticsData; }
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline bool DecimalColumnStatisticsDataHasBeenSet() const { return m_decimalColumnStatisticsDataHasBeenSet; }
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline void SetDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = value; }
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline void SetDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { m_decimalColumnStatisticsDataHasBeenSet = true; m_decimalColumnStatisticsData = std::move(value); }
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline ColumnStatisticsData& WithDecimalColumnStatisticsData(const DecimalColumnStatisticsData& value) { SetDecimalColumnStatisticsData(value); return *this;}
 
     /**
-     * <p>Decimal column statistics data.</p>
+     * <p> Decimal column statistics data. UnscaledValues within are Base64-encoded
+     * binary objects storing big-endian, two's complement representations of the
+     * decimal's unscaled value. </p>
      */
     inline ColumnStatisticsData& WithDecimalColumnStatisticsData(DecimalColumnStatisticsData&& value) { SetDecimalColumnStatisticsData(std::move(value)); return *this;}
 

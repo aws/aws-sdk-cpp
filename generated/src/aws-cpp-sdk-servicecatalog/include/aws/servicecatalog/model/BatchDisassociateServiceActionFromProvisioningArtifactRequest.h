@@ -86,58 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(Aws::String&& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = std::move(value); }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline void SetAcceptLanguage(const char* value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage.assign(value); }
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(const Aws::String& value) { SetAcceptLanguage(value); return *this;}
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(Aws::String&& value) { SetAcceptLanguage(std::move(value)); return *this;}
 
     /**
-     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
-     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
-     * Chinese</p> </li> </ul>
+     * <p>The language code.</p> <ul> <li> <p> <code>jp</code> - Japanese</p> </li>
+     * <li> <p> <code>zh</code> - Chinese</p> </li> </ul>
      */
     inline BatchDisassociateServiceActionFromProvisioningArtifactRequest& WithAcceptLanguage(const char* value) { SetAcceptLanguage(value); return *this;}
 

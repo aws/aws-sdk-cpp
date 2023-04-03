@@ -154,6 +154,27 @@ namespace Model
      */
     inline RegisterResourceRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Whether or not the resource is a federated resource.</p>
+     */
+    inline bool GetWithFederation() const{ return m_withFederation; }
+
+    /**
+     * <p>Whether or not the resource is a federated resource.</p>
+     */
+    inline bool WithFederationHasBeenSet() const { return m_withFederationHasBeenSet; }
+
+    /**
+     * <p>Whether or not the resource is a federated resource.</p>
+     */
+    inline void SetWithFederation(bool value) { m_withFederationHasBeenSet = true; m_withFederation = value; }
+
+    /**
+     * <p>Whether or not the resource is a federated resource.</p>
+     */
+    inline RegisterResourceRequest& WithWithFederation(bool value) { SetWithFederation(value); return *this;}
+
   private:
 
     Aws::String m_resourceArn;
@@ -164,6 +185,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
+
+    bool m_withFederation;
+    bool m_withFederationHasBeenSet = false;
   };
 
 } // namespace Model
