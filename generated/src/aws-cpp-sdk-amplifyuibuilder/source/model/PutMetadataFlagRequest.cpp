@@ -14,9 +14,9 @@ using namespace Aws::Utils;
 
 PutMetadataFlagRequest::PutMetadataFlagRequest() : 
     m_appIdHasBeenSet(false),
-    m_bodyHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
-    m_featureNameHasBeenSet(false)
+    m_featureNameHasBeenSet(false),
+    m_bodyHasBeenSet(false)
 {
 }
 

@@ -40,6 +40,85 @@ namespace Model
 
 
     /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetVariantValues() const{ return m_variantValues; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline bool VariantValuesHasBeenSet() const { return m_variantValuesHasBeenSet; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline void SetVariantValues(const Aws::Map<Aws::String, Aws::String>& value) { m_variantValuesHasBeenSet = true; m_variantValues = value; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline void SetVariantValues(Aws::Map<Aws::String, Aws::String>&& value) { m_variantValuesHasBeenSet = true; m_variantValues = std::move(value); }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& WithVariantValues(const Aws::Map<Aws::String, Aws::String>& value) { SetVariantValues(value); return *this;}
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& WithVariantValues(Aws::Map<Aws::String, Aws::String>&& value) { SetVariantValues(std::move(value)); return *this;}
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(const Aws::String& key, const Aws::String& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, value); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(Aws::String&& key, const Aws::String& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(const Aws::String& key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(Aws::String&& key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(const char* key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(Aws::String&& key, const char* value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The combination of variants that comprise this variant. You can't specify
+     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
+     */
+    inline ComponentVariant& AddVariantValues(const char* key, const char* value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The properties of the component variant that can be overriden when
      * customizing an instance of the component. You can't specify <code>tags</code> as
      * a valid property for <code>overrides</code>.</p>
@@ -123,92 +202,13 @@ namespace Model
      */
     inline ComponentVariant& AddOverrides(const char* key, const Aws::Map<Aws::String, Aws::String>& value) { m_overridesHasBeenSet = true; m_overrides.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::String>& GetVariantValues() const{ return m_variantValues; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline bool VariantValuesHasBeenSet() const { return m_variantValuesHasBeenSet; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline void SetVariantValues(const Aws::Map<Aws::String, Aws::String>& value) { m_variantValuesHasBeenSet = true; m_variantValues = value; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline void SetVariantValues(Aws::Map<Aws::String, Aws::String>&& value) { m_variantValuesHasBeenSet = true; m_variantValues = std::move(value); }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& WithVariantValues(const Aws::Map<Aws::String, Aws::String>& value) { SetVariantValues(value); return *this;}
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& WithVariantValues(Aws::Map<Aws::String, Aws::String>&& value) { SetVariantValues(std::move(value)); return *this;}
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(const Aws::String& key, const Aws::String& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, value); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(Aws::String&& key, const Aws::String& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(const Aws::String& key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(Aws::String&& key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(const char* key, Aws::String&& value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(Aws::String&& key, const char* value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>The combination of variants that comprise this variant. You can't specify
-     * <code>tags</code> as a valid property for <code>variantValues</code>.</p>
-     */
-    inline ComponentVariant& AddVariantValues(const char* key, const char* value) { m_variantValuesHasBeenSet = true; m_variantValues.emplace(key, value); return *this; }
-
   private:
-
-    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
-    bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_variantValues;
     bool m_variantValuesHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::String>> m_overrides;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

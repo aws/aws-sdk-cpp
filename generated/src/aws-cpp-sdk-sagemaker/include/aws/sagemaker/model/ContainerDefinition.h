@@ -189,7 +189,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline const Aws::String& GetImage() const{ return m_image; }
 
@@ -203,7 +206,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
@@ -217,7 +223,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
@@ -231,7 +240,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
@@ -245,7 +257,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
 
@@ -259,7 +274,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
 
@@ -273,7 +291,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
 
@@ -287,7 +308,10 @@ namespace Model
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
-     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     * Your Own Algorithms with Amazon SageMaker</a>. </p>  <p>The model
+     * artifacts in an Amazon S3 bucket and the Docker image for inference container in
+     * Amazon EC2 Container Registry must be in the same region as the model or
+     * endpoint you are creating.</p> 
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
 
@@ -297,7 +321,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline const ImageConfig& GetImageConfig() const{ return m_imageConfig; }
 
@@ -306,7 +333,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline bool ImageConfigHasBeenSet() const { return m_imageConfigHasBeenSet; }
 
@@ -315,7 +345,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline void SetImageConfig(const ImageConfig& value) { m_imageConfigHasBeenSet = true; m_imageConfig = value; }
 
@@ -324,7 +357,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline void SetImageConfig(ImageConfig&& value) { m_imageConfigHasBeenSet = true; m_imageConfig = std::move(value); }
 
@@ -333,7 +369,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline ContainerDefinition& WithImageConfig(const ImageConfig& value) { SetImageConfig(value); return *this;}
 
@@ -342,7 +381,10 @@ namespace Model
      * registry accessible from your Amazon Virtual Private Cloud (VPC). For
      * information about storing containers in a private Docker registry, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms-containers-inference-private.html">Use
-     * a Private Docker Registry for Real-Time Inference Containers</a> </p>
+     * a Private Docker Registry for Real-Time Inference Containers</a>. </p> 
+     * <p>The model artifacts in an Amazon S3 bucket and the Docker image for inference
+     * container in Amazon EC2 Container Registry must be in the same region as the
+     * model or endpoint you are creating.</p> 
      */
     inline ContainerDefinition& WithImageConfig(ImageConfig&& value) { SetImageConfig(std::move(value)); return *this;}
 

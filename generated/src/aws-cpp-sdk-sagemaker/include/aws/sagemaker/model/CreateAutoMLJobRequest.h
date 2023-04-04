@@ -94,10 +94,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline const Aws::Vector<AutoMLChannel>& GetInputDataConfig() const{ return m_inputDataConfig; }
@@ -105,10 +105,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
@@ -116,10 +116,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
@@ -127,10 +127,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
@@ -138,10 +138,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(const Aws::Vector<AutoMLChannel>& value) { SetInputDataConfig(value); return *this;}
@@ -149,10 +149,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& WithInputDataConfig(Aws::Vector<AutoMLChannel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
@@ -160,10 +160,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(const AutoMLChannel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
@@ -171,10 +171,10 @@ namespace Model
     /**
      * <p>An array of channel objects that describes the input data and its location.
      * Each channel is a named input source. Similar to <code>InputDataConfig</code>
-     * supported by <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
-     * </code>. Format(s) supported: CSV, Parquet. A minimum of 500 rows is required
-     * for the training dataset. There is not a minimum number of rows required for the
+     * supported by <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>.
+     * Format(s) supported: CSV, Parquet. A minimum of 500 rows is required for the
+     * training dataset. There is not a minimum number of rows required for the
      * validation dataset.</p>
      */
     inline CreateAutoMLJobRequest& AddInputDataConfig(AutoMLChannel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
@@ -268,61 +268,61 @@ namespace Model
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline const AutoMLJobObjective& GetAutoMLJobObjective() const{ return m_autoMLJobObjective; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline bool AutoMLJobObjectiveHasBeenSet() const { return m_autoMLJobObjectiveHasBeenSet; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline void SetAutoMLJobObjective(const AutoMLJobObjective& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = value; }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline void SetAutoMLJobObjective(AutoMLJobObjective&& value) { m_autoMLJobObjectiveHasBeenSet = true; m_autoMLJobObjective = std::move(value); }
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(const AutoMLJobObjective& value) { SetAutoMLJobObjective(value); return *this;}
 
     /**
      * <p>Defines the objective metric used to measure the predictive quality of an
-     * AutoML job. You provide an <code> <a
+     * AutoML job. You provide an <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobObjective.html">AutoMLJobObjective$MetricName</a>
-     * </code> and Autopilot infers whether to minimize or maximize it. For <code> <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>
-     * </code>, only <code>Accuracy</code> is supported.</p>
+     * and Autopilot infers whether to minimize or maximize it. For <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a>,
+     * only <code>Accuracy</code> is supported.</p>
      */
     inline CreateAutoMLJobRequest& WithAutoMLJobObjective(AutoMLJobObjective&& value) { SetAutoMLJobObjective(std::move(value)); return *this;}
 

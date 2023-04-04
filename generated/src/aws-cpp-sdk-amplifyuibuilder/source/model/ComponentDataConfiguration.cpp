@@ -19,46 +19,29 @@ namespace Model
 {
 
 ComponentDataConfiguration::ComponentDataConfiguration() : 
-    m_identifiersHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_predicateHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_identifiersHasBeenSet(false)
 {
 }
 
 ComponentDataConfiguration::ComponentDataConfiguration(JsonView jsonValue) : 
-    m_identifiersHasBeenSet(false),
     m_modelHasBeenSet(false),
+    m_sortHasBeenSet(false),
     m_predicateHasBeenSet(false),
-    m_sortHasBeenSet(false)
+    m_identifiersHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("identifiers"))
-  {
-    Aws::Utils::Array<JsonView> identifiersJsonList = jsonValue.GetArray("identifiers");
-    for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
-    {
-      m_identifiers.push_back(identifiersJsonList[identifiersIndex].AsString());
-    }
-    m_identifiersHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("model"))
   {
     m_model = jsonValue.GetString("model");
 
     m_modelHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("predicate"))
-  {
-    m_predicate = jsonValue.GetObject("predicate");
-
-    m_predicateHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sort"))
@@ -71,6 +54,23 @@ ComponentDataConfiguration& ComponentDataConfiguration::operator =(JsonView json
     m_sortHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("predicate"))
+  {
+    m_predicate = jsonValue.GetObject("predicate");
+
+    m_predicateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("identifiers"))
+  {
+    Aws::Utils::Array<JsonView> identifiersJsonList = jsonValue.GetArray("identifiers");
+    for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
+    {
+      m_identifiers.push_back(identifiersJsonList[identifiersIndex].AsString());
+    }
+    m_identifiersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,26 +78,9 @@ JsonValue ComponentDataConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_identifiersHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
-   for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
-   {
-     identifiersJsonList[identifiersIndex].AsString(m_identifiers[identifiersIndex]);
-   }
-   payload.WithArray("identifiers", std::move(identifiersJsonList));
-
-  }
-
   if(m_modelHasBeenSet)
   {
    payload.WithString("model", m_model);
-
-  }
-
-  if(m_predicateHasBeenSet)
-  {
-   payload.WithObject("predicate", m_predicate.Jsonize());
 
   }
 
@@ -109,6 +92,23 @@ JsonValue ComponentDataConfiguration::Jsonize() const
      sortJsonList[sortIndex].AsObject(m_sort[sortIndex].Jsonize());
    }
    payload.WithArray("sort", std::move(sortJsonList));
+
+  }
+
+  if(m_predicateHasBeenSet)
+  {
+   payload.WithObject("predicate", m_predicate.Jsonize());
+
+  }
+
+  if(m_identifiersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> identifiersJsonList(m_identifiers.size());
+   for(unsigned identifiersIndex = 0; identifiersIndex < identifiersJsonList.GetLength(); ++identifiersIndex)
+   {
+     identifiersJsonList[identifiersIndex].AsString(m_identifiers[identifiersIndex]);
+   }
+   payload.WithArray("identifiers", std::move(identifiersJsonList));
 
   }
 

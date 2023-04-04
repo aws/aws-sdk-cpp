@@ -20,13 +20,15 @@ namespace Model
 
 ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody() : 
     m_codeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
+    m_redirectUriHasBeenSet(false),
+    m_clientIdHasBeenSet(false)
 {
 }
 
 ExchangeCodeForTokenRequestBody::ExchangeCodeForTokenRequestBody(JsonView jsonValue) : 
     m_codeHasBeenSet(false),
-    m_redirectUriHasBeenSet(false)
+    m_redirectUriHasBeenSet(false),
+    m_clientIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ ExchangeCodeForTokenRequestBody& ExchangeCodeForTokenRequestBody::operator =(Jso
     m_redirectUriHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("clientId"))
+  {
+    m_clientId = jsonValue.GetString("clientId");
+
+    m_clientIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue ExchangeCodeForTokenRequestBody::Jsonize() const
   if(m_redirectUriHasBeenSet)
   {
    payload.WithString("redirectUri", m_redirectUri);
+
+  }
+
+  if(m_clientIdHasBeenSet)
+  {
+   payload.WithString("clientId", m_clientId);
 
   }
 

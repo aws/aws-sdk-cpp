@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/amplifyuibuilder/model/FieldInputConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/FieldPosition.h>
+#include <aws/amplifyuibuilder/model/FieldInputConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/FieldValidationConfiguration.h>
 #include <utility>
@@ -40,64 +40,6 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API FieldConfig(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FieldConfig& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>Specifies whether to hide a field.</p>
-     */
-    inline bool GetExcluded() const{ return m_excluded; }
-
-    /**
-     * <p>Specifies whether to hide a field.</p>
-     */
-    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether to hide a field.</p>
-     */
-    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
-
-    /**
-     * <p>Specifies whether to hide a field.</p>
-     */
-    inline FieldConfig& WithExcluded(bool value) { SetExcluded(value); return *this;}
-
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline const FieldInputConfig& GetInputType() const{ return m_inputType; }
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline void SetInputType(const FieldInputConfig& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline void SetInputType(FieldInputConfig&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline FieldConfig& WithInputType(const FieldInputConfig& value) { SetInputType(value); return *this;}
-
-    /**
-     * <p>Describes the configuration for the default input value to display for a
-     * field.</p>
-     */
-    inline FieldConfig& WithInputType(FieldInputConfig&& value) { SetInputType(std::move(value)); return *this;}
 
 
     /**
@@ -173,6 +115,64 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether to hide a field.</p>
+     */
+    inline bool GetExcluded() const{ return m_excluded; }
+
+    /**
+     * <p>Specifies whether to hide a field.</p>
+     */
+    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to hide a field.</p>
+     */
+    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
+
+    /**
+     * <p>Specifies whether to hide a field.</p>
+     */
+    inline FieldConfig& WithExcluded(bool value) { SetExcluded(value); return *this;}
+
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline const FieldInputConfig& GetInputType() const{ return m_inputType; }
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline void SetInputType(const FieldInputConfig& value) { m_inputTypeHasBeenSet = true; m_inputType = value; }
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline void SetInputType(FieldInputConfig&& value) { m_inputTypeHasBeenSet = true; m_inputType = std::move(value); }
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline FieldConfig& WithInputType(const FieldInputConfig& value) { SetInputType(value); return *this;}
+
+    /**
+     * <p>Describes the configuration for the default input value to display for a
+     * field.</p>
+     */
+    inline FieldConfig& WithInputType(FieldInputConfig&& value) { SetInputType(std::move(value)); return *this;}
+
+
+    /**
      * <p>The validations to perform on the value in the field.</p>
      */
     inline const Aws::Vector<FieldValidationConfiguration>& GetValidations() const{ return m_validations; }
@@ -214,17 +214,17 @@ namespace Model
 
   private:
 
-    bool m_excluded;
-    bool m_excludedHasBeenSet = false;
-
-    FieldInputConfig m_inputType;
-    bool m_inputTypeHasBeenSet = false;
-
     Aws::String m_label;
     bool m_labelHasBeenSet = false;
 
     FieldPosition m_position;
     bool m_positionHasBeenSet = false;
+
+    bool m_excluded;
+    bool m_excludedHasBeenSet = false;
+
+    FieldInputConfig m_inputType;
+    bool m_inputTypeHasBeenSet = false;
 
     Aws::Vector<FieldValidationConfiguration> m_validations;
     bool m_validationsHasBeenSet = false;

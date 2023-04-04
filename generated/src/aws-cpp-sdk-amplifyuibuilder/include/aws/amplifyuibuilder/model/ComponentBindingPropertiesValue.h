@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValueProperties.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifyuibuilder/model/ComponentBindingPropertiesValueProperties.h>
 #include <utility>
 
 namespace Aws
@@ -39,6 +39,47 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentBindingPropertiesValue& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline ComponentBindingPropertiesValue& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline ComponentBindingPropertiesValue& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The property type.</p>
+     */
+    inline ComponentBindingPropertiesValue& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
@@ -112,57 +153,16 @@ namespace Model
      */
     inline ComponentBindingPropertiesValue& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
 
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline ComponentBindingPropertiesValue& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline ComponentBindingPropertiesValue& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The property type.</p>
-     */
-    inline ComponentBindingPropertiesValue& WithType(const char* value) { SetType(value); return *this;}
-
   private:
+
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     ComponentBindingPropertiesValueProperties m_bindingProperties;
     bool m_bindingPropertiesHasBeenSet = false;
 
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet = false;
-
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
   };
 
 } // namespace Model

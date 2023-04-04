@@ -80,12 +80,11 @@ namespace Model
      * <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected
      * as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts
-     * to infer <code>MaxResource</code> from the following keys (if present) in <code>
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>
-     * </code>:</p> <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p>
-     * <code>numepochs</code> </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li>
-     * <p> <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
+     * to infer <code>MaxResource</code> from the following keys (if present) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+     * <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p> <code>numepochs</code>
+     * </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li> <p>
+     * <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
      * </ul> <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for
      * <code>MaxResource</code>, it generates a validation error. The maximum value is
      * 20,000 epochs. All metrics that correspond to an objective metric are used to
@@ -106,12 +105,11 @@ namespace Model
      * <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected
      * as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts
-     * to infer <code>MaxResource</code> from the following keys (if present) in <code>
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>
-     * </code>:</p> <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p>
-     * <code>numepochs</code> </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li>
-     * <p> <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
+     * to infer <code>MaxResource</code> from the following keys (if present) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+     * <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p> <code>numepochs</code>
+     * </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li> <p>
+     * <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
      * </ul> <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for
      * <code>MaxResource</code>, it generates a validation error. The maximum value is
      * 20,000 epochs. All metrics that correspond to an objective metric are used to
@@ -132,12 +130,11 @@ namespace Model
      * <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected
      * as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts
-     * to infer <code>MaxResource</code> from the following keys (if present) in <code>
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>
-     * </code>:</p> <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p>
-     * <code>numepochs</code> </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li>
-     * <p> <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
+     * to infer <code>MaxResource</code> from the following keys (if present) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+     * <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p> <code>numepochs</code>
+     * </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li> <p>
+     * <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
      * </ul> <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for
      * <code>MaxResource</code>, it generates a validation error. The maximum value is
      * 20,000 epochs. All metrics that correspond to an objective metric are used to
@@ -158,12 +155,11 @@ namespace Model
      * <code>MaxResource</code> value, it is stopped. If a value for
      * <code>MaxResource</code> is not provided, and <code>Hyperband</code> is selected
      * as the hyperparameter tuning strategy, <code>HyperbandTrainingJ</code> attempts
-     * to infer <code>MaxResource</code> from the following keys (if present) in <code>
-     * <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>
-     * </code>:</p> <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p>
-     * <code>numepochs</code> </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li>
-     * <p> <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
+     * to infer <code>MaxResource</code> from the following keys (if present) in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-StaticHyperParameters">StaticsHyperParameters</a>:</p>
+     * <ul> <li> <p> <code>epochs</code> </p> </li> <li> <p> <code>numepochs</code>
+     * </p> </li> <li> <p> <code>n-epochs</code> </p> </li> <li> <p>
+     * <code>n_epochs</code> </p> </li> <li> <p> <code>num_epochs</code> </p> </li>
      * </ul> <p>If <code>HyperbandStrategyConfig</code> is unable to infer a value for
      * <code>MaxResource</code>, it generates a validation error. The maximum value is
      * 20,000 epochs. All metrics that correspond to an objective metric are used to

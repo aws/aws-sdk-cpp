@@ -17,9 +17,9 @@ using namespace Aws::Http;
 
 CreateThemeRequest::CreateThemeRequest() : 
     m_appIdHasBeenSet(false),
+    m_environmentNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_environmentNameHasBeenSet(false),
     m_themeToCreateHasBeenSet(false)
 {
 }

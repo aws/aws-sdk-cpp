@@ -17,9 +17,9 @@ using namespace Aws::Http;
 
 CreateFormRequest::CreateFormRequest() : 
     m_appIdHasBeenSet(false),
+    m_environmentNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_environmentNameHasBeenSet(false),
     m_formToCreateHasBeenSet(false)
 {
 }

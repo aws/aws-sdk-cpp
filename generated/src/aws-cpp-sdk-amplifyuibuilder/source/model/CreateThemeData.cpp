@@ -20,17 +20,17 @@ namespace Model
 
 CreateThemeData::CreateThemeData() : 
     m_nameHasBeenSet(false),
+    m_valuesHasBeenSet(false),
     m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
 CreateThemeData::CreateThemeData(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
+    m_valuesHasBeenSet(false),
     m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,6 +42,16 @@ CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("values"))
+  {
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
+    {
+      m_values.push_back(valuesJsonList[valuesIndex].AsObject());
+    }
+    m_valuesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("overrides"))
@@ -64,16 +74,6 @@ CreateThemeData& CreateThemeData::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("values"))
-  {
-    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
-      m_values.push_back(valuesJsonList[valuesIndex].AsObject());
-    }
-    m_valuesHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -84,6 +84,17 @@ JsonValue CreateThemeData::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_valuesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
+   {
+     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+   }
+   payload.WithArray("values", std::move(valuesJsonList));
 
   }
 
@@ -106,17 +117,6 @@ JsonValue CreateThemeData::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
 
   }
 

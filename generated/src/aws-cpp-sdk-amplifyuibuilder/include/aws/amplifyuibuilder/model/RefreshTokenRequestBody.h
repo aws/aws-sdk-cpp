@@ -85,10 +85,54 @@ namespace Model
      */
     inline RefreshTokenRequestBody& WithToken(const char* value) { SetToken(value); return *this;}
 
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline RefreshTokenRequestBody& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline RefreshTokenRequestBody& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the client to request the token from.</p>
+     */
+    inline RefreshTokenRequestBody& WithClientId(const char* value) { SetClientId(value); return *this;}
+
   private:
 
     Aws::String m_token;
     bool m_tokenHasBeenSet = false;
+
+    Aws::String m_clientId;
+    bool m_clientIdHasBeenSet = false;
   };
 
 } // namespace Model

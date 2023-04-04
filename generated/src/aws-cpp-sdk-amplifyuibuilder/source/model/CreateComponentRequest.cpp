@@ -17,10 +17,10 @@ using namespace Aws::Http;
 
 CreateComponentRequest::CreateComponentRequest() : 
     m_appIdHasBeenSet(false),
+    m_environmentNameHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_componentToCreateHasBeenSet(false),
-    m_environmentNameHasBeenSet(false)
+    m_componentToCreateHasBeenSet(false)
 {
 }
 

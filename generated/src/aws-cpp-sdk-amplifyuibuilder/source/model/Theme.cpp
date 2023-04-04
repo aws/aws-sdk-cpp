@@ -20,27 +20,27 @@ namespace Model
 
 Theme::Theme() : 
     m_appIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
+    m_valuesHasBeenSet(false),
     m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
 }
 
 Theme::Theme(JsonView jsonValue) : 
     m_appIdHasBeenSet(false),
-    m_createdAtHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_modifiedAtHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_createdAtHasBeenSet(false),
+    m_modifiedAtHasBeenSet(false),
+    m_valuesHasBeenSet(false),
     m_overridesHasBeenSet(false),
-    m_tagsHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,13 +52,6 @@ Theme& Theme::operator =(JsonView jsonValue)
     m_appId = jsonValue.GetString("appId");
 
     m_appIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("createdAt"))
-  {
-    m_createdAt = jsonValue.GetString("createdAt");
-
-    m_createdAtHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentName"))
@@ -75,6 +68,20 @@ Theme& Theme::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("createdAt"))
+  {
+    m_createdAt = jsonValue.GetString("createdAt");
+
+    m_createdAtHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("modifiedAt"))
   {
     m_modifiedAt = jsonValue.GetString("modifiedAt");
@@ -82,11 +89,14 @@ Theme& Theme::operator =(JsonView jsonValue)
     m_modifiedAtHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("values"))
   {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
+    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
+    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
+    {
+      m_values.push_back(valuesJsonList[valuesIndex].AsObject());
+    }
+    m_valuesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("overrides"))
@@ -109,16 +119,6 @@ Theme& Theme::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("values"))
-  {
-    Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
-    for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-    {
-      m_values.push_back(valuesJsonList[valuesIndex].AsObject());
-    }
-    m_valuesHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -130,11 +130,6 @@ JsonValue Theme::Jsonize() const
   {
    payload.WithString("appId", m_appId);
 
-  }
-
-  if(m_createdAtHasBeenSet)
-  {
-   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_environmentNameHasBeenSet)
@@ -149,14 +144,30 @@ JsonValue Theme::Jsonize() const
 
   }
 
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_createdAtHasBeenSet)
+  {
+   payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_modifiedAtHasBeenSet)
   {
    payload.WithString("modifiedAt", m_modifiedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_nameHasBeenSet)
+  if(m_valuesHasBeenSet)
   {
-   payload.WithString("name", m_name);
+   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
+   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
+   {
+     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
+   }
+   payload.WithArray("values", std::move(valuesJsonList));
 
   }
 
@@ -179,17 +190,6 @@ JsonValue Theme::Jsonize() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
-
-  }
-
-  if(m_valuesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
-   for(unsigned valuesIndex = 0; valuesIndex < valuesJsonList.GetLength(); ++valuesIndex)
-   {
-     valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
-   }
-   payload.WithArray("values", std::move(valuesJsonList));
 
   }
 

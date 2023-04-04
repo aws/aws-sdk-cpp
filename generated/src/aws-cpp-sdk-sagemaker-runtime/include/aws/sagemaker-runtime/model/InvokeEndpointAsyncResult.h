@@ -118,6 +118,42 @@ namespace Model
     inline InvokeEndpointAsyncResult& WithOutputLocation(const char* value) { SetOutputLocation(value); return *this;}
 
 
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline const Aws::String& GetFailureLocation() const{ return m_failureLocation; }
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline void SetFailureLocation(const Aws::String& value) { m_failureLocation = value; }
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline void SetFailureLocation(Aws::String&& value) { m_failureLocation = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline void SetFailureLocation(const char* value) { m_failureLocation.assign(value); }
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline InvokeEndpointAsyncResult& WithFailureLocation(const Aws::String& value) { SetFailureLocation(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline InvokeEndpointAsyncResult& WithFailureLocation(Aws::String&& value) { SetFailureLocation(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 URI where the inference failure response payload is stored.</p>
+     */
+    inline InvokeEndpointAsyncResult& WithFailureLocation(const char* value) { SetFailureLocation(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -144,6 +180,8 @@ namespace Model
     Aws::String m_inferenceId;
 
     Aws::String m_outputLocation;
+
+    Aws::String m_failureLocation;
 
     Aws::String m_requestId;
   };

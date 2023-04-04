@@ -20,34 +20,27 @@ namespace Model
 {
 
 ComponentConditionProperty::ComponentConditionProperty() : 
-    m_elseHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_operandHasBeenSet(false),
-    m_operandTypeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_propertyHasBeenSet(false),
-    m_thenHasBeenSet(false)
+    m_fieldHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_operandHasBeenSet(false),
+    m_thenHasBeenSet(false),
+    m_elseHasBeenSet(false),
+    m_operandTypeHasBeenSet(false)
 {
 }
 
 ComponentConditionProperty::ComponentConditionProperty(JsonView jsonValue) : 
-    m_elseHasBeenSet(false),
-    m_fieldHasBeenSet(false),
-    m_operandHasBeenSet(false),
-    m_operandTypeHasBeenSet(false),
-    m_operatorHasBeenSet(false),
     m_propertyHasBeenSet(false),
-    m_thenHasBeenSet(false)
+    m_fieldHasBeenSet(false),
+    m_operatorHasBeenSet(false),
+    m_operandHasBeenSet(false),
+    m_thenHasBeenSet(false),
+    m_elseHasBeenSet(false),
+    m_operandTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
-
-const ComponentProperty& ComponentConditionProperty::GetElse() const{ return *m_else; }
-bool ComponentConditionProperty::ElseHasBeenSet() const { return m_elseHasBeenSet; }
-void ComponentConditionProperty::SetElse(const ComponentProperty& value) { m_elseHasBeenSet = true; m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", value); }
-void ComponentConditionProperty::SetElse(ComponentProperty&& value) { m_elseHasBeenSet = true; m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", std::move(value)); }
-ComponentConditionProperty& ComponentConditionProperty::WithElse(const ComponentProperty& value) { SetElse(value); return *this;}
-ComponentConditionProperty& ComponentConditionProperty::WithElse(ComponentProperty&& value) { SetElse(std::move(value)); return *this;}
 
 const ComponentProperty& ComponentConditionProperty::GetThen() const{ return *m_then; }
 bool ComponentConditionProperty::ThenHasBeenSet() const { return m_thenHasBeenSet; }
@@ -56,13 +49,20 @@ void ComponentConditionProperty::SetThen(ComponentProperty&& value) { m_thenHasB
 ComponentConditionProperty& ComponentConditionProperty::WithThen(const ComponentProperty& value) { SetThen(value); return *this;}
 ComponentConditionProperty& ComponentConditionProperty::WithThen(ComponentProperty&& value) { SetThen(std::move(value)); return *this;}
 
+const ComponentProperty& ComponentConditionProperty::GetElse() const{ return *m_else; }
+bool ComponentConditionProperty::ElseHasBeenSet() const { return m_elseHasBeenSet; }
+void ComponentConditionProperty::SetElse(const ComponentProperty& value) { m_elseHasBeenSet = true; m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", value); }
+void ComponentConditionProperty::SetElse(ComponentProperty&& value) { m_elseHasBeenSet = true; m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", std::move(value)); }
+ComponentConditionProperty& ComponentConditionProperty::WithElse(const ComponentProperty& value) { SetElse(value); return *this;}
+ComponentConditionProperty& ComponentConditionProperty::WithElse(ComponentProperty&& value) { SetElse(std::move(value)); return *this;}
+
 ComponentConditionProperty& ComponentConditionProperty::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("else"))
+  if(jsonValue.ValueExists("property"))
   {
-    m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", jsonValue.GetObject("else"));
+    m_property = jsonValue.GetString("property");
 
-    m_elseHasBeenSet = true;
+    m_propertyHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("field"))
@@ -72,20 +72,6 @@ ComponentConditionProperty& ComponentConditionProperty::operator =(JsonView json
     m_fieldHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("operand"))
-  {
-    m_operand = jsonValue.GetString("operand");
-
-    m_operandHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("operandType"))
-  {
-    m_operandType = jsonValue.GetString("operandType");
-
-    m_operandTypeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = jsonValue.GetString("operator");
@@ -93,11 +79,11 @@ ComponentConditionProperty& ComponentConditionProperty::operator =(JsonView json
     m_operatorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("property"))
+  if(jsonValue.ValueExists("operand"))
   {
-    m_property = jsonValue.GetString("property");
+    m_operand = jsonValue.GetString("operand");
 
-    m_propertyHasBeenSet = true;
+    m_operandHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("then"))
@@ -107,6 +93,20 @@ ComponentConditionProperty& ComponentConditionProperty::operator =(JsonView json
     m_thenHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("else"))
+  {
+    m_else = Aws::MakeShared<ComponentProperty>("ComponentConditionProperty", jsonValue.GetObject("else"));
+
+    m_elseHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operandType"))
+  {
+    m_operandType = jsonValue.GetString("operandType");
+
+    m_operandTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -114,9 +114,9 @@ JsonValue ComponentConditionProperty::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_elseHasBeenSet)
+  if(m_propertyHasBeenSet)
   {
-   payload.WithObject("else", m_else->Jsonize());
+   payload.WithString("property", m_property);
 
   }
 
@@ -126,33 +126,33 @@ JsonValue ComponentConditionProperty::Jsonize() const
 
   }
 
-  if(m_operandHasBeenSet)
-  {
-   payload.WithString("operand", m_operand);
-
-  }
-
-  if(m_operandTypeHasBeenSet)
-  {
-   payload.WithString("operandType", m_operandType);
-
-  }
-
   if(m_operatorHasBeenSet)
   {
    payload.WithString("operator", m_operator);
 
   }
 
-  if(m_propertyHasBeenSet)
+  if(m_operandHasBeenSet)
   {
-   payload.WithString("property", m_property);
+   payload.WithString("operand", m_operand);
 
   }
 
   if(m_thenHasBeenSet)
   {
    payload.WithObject("then", m_then->Jsonize());
+
+  }
+
+  if(m_elseHasBeenSet)
+  {
+   payload.WithObject("else", m_else->Jsonize());
+
+  }
+
+  if(m_operandTypeHasBeenSet)
+  {
+   payload.WithString("operandType", m_operandType);
 
   }
 

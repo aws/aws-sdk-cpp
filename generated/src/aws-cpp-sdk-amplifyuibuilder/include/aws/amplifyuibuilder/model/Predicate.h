@@ -43,6 +43,47 @@ namespace Model
     /**
      * <p>A list of predicates to combine logically.</p>
      */
+    inline const Aws::Vector<Predicate>& GetOr() const{ return m_or; }
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline void SetOr(const Aws::Vector<Predicate>& value) { m_orHasBeenSet = true; m_or = value; }
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline void SetOr(Aws::Vector<Predicate>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline Predicate& WithOr(const Aws::Vector<Predicate>& value) { SetOr(value); return *this;}
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline Predicate& WithOr(Aws::Vector<Predicate>&& value) { SetOr(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline Predicate& AddOr(const Predicate& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
+    inline Predicate& AddOr(Predicate&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A list of predicates to combine logically.</p>
+     */
     inline const Aws::Vector<Predicate>& GetAnd() const{ return m_and; }
 
     /**
@@ -123,47 +164,6 @@ namespace Model
 
 
     /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline const Aws::String& GetOperand() const{ return m_operand; }
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline bool OperandHasBeenSet() const { return m_operandHasBeenSet; }
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline void SetOperand(const Aws::String& value) { m_operandHasBeenSet = true; m_operand = value; }
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline void SetOperand(Aws::String&& value) { m_operandHasBeenSet = true; m_operand = std::move(value); }
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline void SetOperand(const char* value) { m_operandHasBeenSet = true; m_operand.assign(value); }
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline Predicate& WithOperand(const Aws::String& value) { SetOperand(value); return *this;}
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline Predicate& WithOperand(Aws::String&& value) { SetOperand(std::move(value)); return *this;}
-
-    /**
-     * <p>The value to use when performing the evaluation.</p>
-     */
-    inline Predicate& WithOperand(const char* value) { SetOperand(value); return *this;}
-
-
-    /**
      * <p>The operator to use to perform the evaluation.</p>
      */
     inline const Aws::String& GetOperator() const{ return m_operator; }
@@ -205,46 +205,90 @@ namespace Model
 
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline const Aws::Vector<Predicate>& GetOr() const{ return m_or; }
+    inline const Aws::String& GetOperand() const{ return m_operand; }
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
+    inline bool OperandHasBeenSet() const { return m_operandHasBeenSet; }
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline void SetOr(const Aws::Vector<Predicate>& value) { m_orHasBeenSet = true; m_or = value; }
+    inline void SetOperand(const Aws::String& value) { m_operandHasBeenSet = true; m_operand = value; }
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline void SetOr(Aws::Vector<Predicate>&& value) { m_orHasBeenSet = true; m_or = std::move(value); }
+    inline void SetOperand(Aws::String&& value) { m_operandHasBeenSet = true; m_operand = std::move(value); }
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline Predicate& WithOr(const Aws::Vector<Predicate>& value) { SetOr(value); return *this;}
+    inline void SetOperand(const char* value) { m_operandHasBeenSet = true; m_operand.assign(value); }
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline Predicate& WithOr(Aws::Vector<Predicate>&& value) { SetOr(std::move(value)); return *this;}
+    inline Predicate& WithOperand(const Aws::String& value) { SetOperand(value); return *this;}
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline Predicate& AddOr(const Predicate& value) { m_orHasBeenSet = true; m_or.push_back(value); return *this; }
+    inline Predicate& WithOperand(Aws::String&& value) { SetOperand(std::move(value)); return *this;}
 
     /**
-     * <p>A list of predicates to combine logically.</p>
+     * <p>The value to use when performing the evaluation.</p>
      */
-    inline Predicate& AddOr(Predicate&& value) { m_orHasBeenSet = true; m_or.push_back(std::move(value)); return *this; }
+    inline Predicate& WithOperand(const char* value) { SetOperand(value); return *this;}
+
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline const Aws::String& GetOperandType() const{ return m_operandType; }
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline bool OperandTypeHasBeenSet() const { return m_operandTypeHasBeenSet; }
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline void SetOperandType(const Aws::String& value) { m_operandTypeHasBeenSet = true; m_operandType = value; }
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline void SetOperandType(Aws::String&& value) { m_operandTypeHasBeenSet = true; m_operandType = std::move(value); }
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline void SetOperandType(const char* value) { m_operandTypeHasBeenSet = true; m_operandType.assign(value); }
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline Predicate& WithOperandType(const Aws::String& value) { SetOperandType(value); return *this;}
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline Predicate& WithOperandType(Aws::String&& value) { SetOperandType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of value to use when performing the evaluation.</p>
+     */
+    inline Predicate& WithOperandType(const char* value) { SetOperandType(value); return *this;}
 
   private:
+
+    Aws::Vector<Predicate> m_or;
+    bool m_orHasBeenSet = false;
 
     Aws::Vector<Predicate> m_and;
     bool m_andHasBeenSet = false;
@@ -252,14 +296,14 @@ namespace Model
     Aws::String m_field;
     bool m_fieldHasBeenSet = false;
 
-    Aws::String m_operand;
-    bool m_operandHasBeenSet = false;
-
     Aws::String m_operator;
     bool m_operatorHasBeenSet = false;
 
-    Aws::Vector<Predicate> m_or;
-    bool m_orHasBeenSet = false;
+    Aws::String m_operand;
+    bool m_operandHasBeenSet = false;
+
+    Aws::String m_operandType;
+    bool m_operandTypeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,48 +19,69 @@ namespace Model
 {
 
 CreateComponentData::CreateComponentData() : 
-    m_bindingPropertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_collectionPropertiesHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
+    m_componentTypeHasBeenSet(false),
+    m_propertiesHasBeenSet(false),
+    m_childrenHasBeenSet(false),
+    m_variantsHasBeenSet(false),
+    m_overridesHasBeenSet(false),
+    m_bindingPropertiesHasBeenSet(false),
+    m_collectionPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_variantsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false)
 {
 }
 
 CreateComponentData::CreateComponentData(JsonView jsonValue) : 
-    m_bindingPropertiesHasBeenSet(false),
-    m_childrenHasBeenSet(false),
-    m_collectionPropertiesHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
-    m_eventsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_propertiesHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
     m_sourceIdHasBeenSet(false),
+    m_componentTypeHasBeenSet(false),
+    m_propertiesHasBeenSet(false),
+    m_childrenHasBeenSet(false),
+    m_variantsHasBeenSet(false),
+    m_overridesHasBeenSet(false),
+    m_bindingPropertiesHasBeenSet(false),
+    m_collectionPropertiesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_variantsHasBeenSet(false)
+    m_eventsHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CreateComponentData& CreateComponentData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("bindingProperties"))
+  if(jsonValue.ValueExists("name"))
   {
-    Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
-    for(auto& bindingPropertiesItem : bindingPropertiesJsonMap)
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceId"))
+  {
+    m_sourceId = jsonValue.GetString("sourceId");
+
+    m_sourceIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("componentType"))
+  {
+    m_componentType = jsonValue.GetString("componentType");
+
+    m_componentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("properties"))
+  {
+    Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
+    for(auto& propertiesItem : propertiesJsonMap)
     {
-      m_bindingProperties[bindingPropertiesItem.first] = bindingPropertiesItem.second.AsObject();
+      m_properties[propertiesItem.first] = propertiesItem.second.AsObject();
     }
-    m_bindingPropertiesHasBeenSet = true;
+    m_propertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("children"))
@@ -73,38 +94,14 @@ CreateComponentData& CreateComponentData::operator =(JsonView jsonValue)
     m_childrenHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("collectionProperties"))
+  if(jsonValue.ValueExists("variants"))
   {
-    Aws::Map<Aws::String, JsonView> collectionPropertiesJsonMap = jsonValue.GetObject("collectionProperties").GetAllObjects();
-    for(auto& collectionPropertiesItem : collectionPropertiesJsonMap)
+    Aws::Utils::Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
+    for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
     {
-      m_collectionProperties[collectionPropertiesItem.first] = collectionPropertiesItem.second.AsObject();
+      m_variants.push_back(variantsJsonList[variantsIndex].AsObject());
     }
-    m_collectionPropertiesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("componentType"))
-  {
-    m_componentType = jsonValue.GetString("componentType");
-
-    m_componentTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("events"))
-  {
-    Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
-    for(auto& eventsItem : eventsJsonMap)
-    {
-      m_events[eventsItem.first] = eventsItem.second.AsObject();
-    }
-    m_eventsHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
+    m_variantsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("overrides"))
@@ -123,28 +120,24 @@ CreateComponentData& CreateComponentData::operator =(JsonView jsonValue)
     m_overridesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("properties"))
+  if(jsonValue.ValueExists("bindingProperties"))
   {
-    Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
-    for(auto& propertiesItem : propertiesJsonMap)
+    Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
+    for(auto& bindingPropertiesItem : bindingPropertiesJsonMap)
     {
-      m_properties[propertiesItem.first] = propertiesItem.second.AsObject();
+      m_bindingProperties[bindingPropertiesItem.first] = bindingPropertiesItem.second.AsObject();
     }
-    m_propertiesHasBeenSet = true;
+    m_bindingPropertiesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("schemaVersion"))
+  if(jsonValue.ValueExists("collectionProperties"))
   {
-    m_schemaVersion = jsonValue.GetString("schemaVersion");
-
-    m_schemaVersionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sourceId"))
-  {
-    m_sourceId = jsonValue.GetString("sourceId");
-
-    m_sourceIdHasBeenSet = true;
+    Aws::Map<Aws::String, JsonView> collectionPropertiesJsonMap = jsonValue.GetObject("collectionProperties").GetAllObjects();
+    for(auto& collectionPropertiesItem : collectionPropertiesJsonMap)
+    {
+      m_collectionProperties[collectionPropertiesItem.first] = collectionPropertiesItem.second.AsObject();
+    }
+    m_collectionPropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -157,14 +150,21 @@ CreateComponentData& CreateComponentData::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("variants"))
+  if(jsonValue.ValueExists("events"))
   {
-    Aws::Utils::Array<JsonView> variantsJsonList = jsonValue.GetArray("variants");
-    for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
+    Aws::Map<Aws::String, JsonView> eventsJsonMap = jsonValue.GetObject("events").GetAllObjects();
+    for(auto& eventsItem : eventsJsonMap)
     {
-      m_variants.push_back(variantsJsonList[variantsIndex].AsObject());
+      m_events[eventsItem.first] = eventsItem.second.AsObject();
     }
-    m_variantsHasBeenSet = true;
+    m_eventsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("schemaVersion"))
+  {
+    m_schemaVersion = jsonValue.GetString("schemaVersion");
+
+    m_schemaVersionHasBeenSet = true;
   }
 
   return *this;
@@ -174,14 +174,32 @@ JsonValue CreateComponentData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_bindingPropertiesHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   JsonValue bindingPropertiesJsonMap;
-   for(auto& bindingPropertiesItem : m_bindingProperties)
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_sourceIdHasBeenSet)
+  {
+   payload.WithString("sourceId", m_sourceId);
+
+  }
+
+  if(m_componentTypeHasBeenSet)
+  {
+   payload.WithString("componentType", m_componentType);
+
+  }
+
+  if(m_propertiesHasBeenSet)
+  {
+   JsonValue propertiesJsonMap;
+   for(auto& propertiesItem : m_properties)
    {
-     bindingPropertiesJsonMap.WithObject(bindingPropertiesItem.first, bindingPropertiesItem.second.Jsonize());
+     propertiesJsonMap.WithObject(propertiesItem.first, propertiesItem.second.Jsonize());
    }
-   payload.WithObject("bindingProperties", std::move(bindingPropertiesJsonMap));
+   payload.WithObject("properties", std::move(propertiesJsonMap));
 
   }
 
@@ -196,37 +214,14 @@ JsonValue CreateComponentData::Jsonize() const
 
   }
 
-  if(m_collectionPropertiesHasBeenSet)
+  if(m_variantsHasBeenSet)
   {
-   JsonValue collectionPropertiesJsonMap;
-   for(auto& collectionPropertiesItem : m_collectionProperties)
+   Aws::Utils::Array<JsonValue> variantsJsonList(m_variants.size());
+   for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
    {
-     collectionPropertiesJsonMap.WithObject(collectionPropertiesItem.first, collectionPropertiesItem.second.Jsonize());
+     variantsJsonList[variantsIndex].AsObject(m_variants[variantsIndex].Jsonize());
    }
-   payload.WithObject("collectionProperties", std::move(collectionPropertiesJsonMap));
-
-  }
-
-  if(m_componentTypeHasBeenSet)
-  {
-   payload.WithString("componentType", m_componentType);
-
-  }
-
-  if(m_eventsHasBeenSet)
-  {
-   JsonValue eventsJsonMap;
-   for(auto& eventsItem : m_events)
-   {
-     eventsJsonMap.WithObject(eventsItem.first, eventsItem.second.Jsonize());
-   }
-   payload.WithObject("events", std::move(eventsJsonMap));
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
+   payload.WithArray("variants", std::move(variantsJsonList));
 
   }
 
@@ -246,26 +241,25 @@ JsonValue CreateComponentData::Jsonize() const
 
   }
 
-  if(m_propertiesHasBeenSet)
+  if(m_bindingPropertiesHasBeenSet)
   {
-   JsonValue propertiesJsonMap;
-   for(auto& propertiesItem : m_properties)
+   JsonValue bindingPropertiesJsonMap;
+   for(auto& bindingPropertiesItem : m_bindingProperties)
    {
-     propertiesJsonMap.WithObject(propertiesItem.first, propertiesItem.second.Jsonize());
+     bindingPropertiesJsonMap.WithObject(bindingPropertiesItem.first, bindingPropertiesItem.second.Jsonize());
    }
-   payload.WithObject("properties", std::move(propertiesJsonMap));
+   payload.WithObject("bindingProperties", std::move(bindingPropertiesJsonMap));
 
   }
 
-  if(m_schemaVersionHasBeenSet)
+  if(m_collectionPropertiesHasBeenSet)
   {
-   payload.WithString("schemaVersion", m_schemaVersion);
-
-  }
-
-  if(m_sourceIdHasBeenSet)
-  {
-   payload.WithString("sourceId", m_sourceId);
+   JsonValue collectionPropertiesJsonMap;
+   for(auto& collectionPropertiesItem : m_collectionProperties)
+   {
+     collectionPropertiesJsonMap.WithObject(collectionPropertiesItem.first, collectionPropertiesItem.second.Jsonize());
+   }
+   payload.WithObject("collectionProperties", std::move(collectionPropertiesJsonMap));
 
   }
 
@@ -280,14 +274,20 @@ JsonValue CreateComponentData::Jsonize() const
 
   }
 
-  if(m_variantsHasBeenSet)
+  if(m_eventsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> variantsJsonList(m_variants.size());
-   for(unsigned variantsIndex = 0; variantsIndex < variantsJsonList.GetLength(); ++variantsIndex)
+   JsonValue eventsJsonMap;
+   for(auto& eventsItem : m_events)
    {
-     variantsJsonList[variantsIndex].AsObject(m_variants[variantsIndex].Jsonize());
+     eventsJsonMap.WithObject(eventsItem.first, eventsItem.second.Jsonize());
    }
-   payload.WithArray("variants", std::move(variantsJsonList));
+   payload.WithObject("events", std::move(eventsJsonMap));
+
+  }
+
+  if(m_schemaVersionHasBeenSet)
+  {
+   payload.WithString("schemaVersion", m_schemaVersion);
 
   }
 

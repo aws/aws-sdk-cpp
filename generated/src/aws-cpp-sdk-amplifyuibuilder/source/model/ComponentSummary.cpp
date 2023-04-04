@@ -20,19 +20,19 @@ namespace Model
 
 ComponentSummary::ComponentSummary() : 
     m_appIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_componentTypeHasBeenSet(false)
 {
 }
 
 ComponentSummary::ComponentSummary(JsonView jsonValue) : 
     m_appIdHasBeenSet(false),
-    m_componentTypeHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_componentTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -44,13 +44,6 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     m_appId = jsonValue.GetString("appId");
 
     m_appIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("componentType"))
-  {
-    m_componentType = jsonValue.GetString("componentType");
-
-    m_componentTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("environmentName"))
@@ -74,6 +67,13 @@ ComponentSummary& ComponentSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("componentType"))
+  {
+    m_componentType = jsonValue.GetString("componentType");
+
+    m_componentTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -84,12 +84,6 @@ JsonValue ComponentSummary::Jsonize() const
   if(m_appIdHasBeenSet)
   {
    payload.WithString("appId", m_appId);
-
-  }
-
-  if(m_componentTypeHasBeenSet)
-  {
-   payload.WithString("componentType", m_componentType);
 
   }
 
@@ -108,6 +102,12 @@ JsonValue ComponentSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_componentTypeHasBeenSet)
+  {
+   payload.WithString("componentType", m_componentType);
 
   }
 

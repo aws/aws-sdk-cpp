@@ -658,6 +658,11 @@ namespace Aws
         static const int r7g_12xlarge_HASH = HashingUtils::HashString("r7g.12xlarge");
         static const int r7g_16xlarge_HASH = HashingUtils::HashString("r7g.16xlarge");
         static const int r7g_metal_HASH = HashingUtils::HashString("r7g.metal");
+        static const int c6in_metal_HASH = HashingUtils::HashString("c6in.metal");
+        static const int m6in_metal_HASH = HashingUtils::HashString("m6in.metal");
+        static const int m6idn_metal_HASH = HashingUtils::HashString("m6idn.metal");
+        static const int r6in_metal_HASH = HashingUtils::HashString("r6in.metal");
+        static const int r6idn_metal_HASH = HashingUtils::HashString("r6idn.metal");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3876,6 +3881,31 @@ namespace Aws
             enumValue = InstanceType::r7g_metal;
             return true;
           }
+          else if (hashCode == c6in_metal_HASH)
+          {
+            enumValue = InstanceType::c6in_metal;
+            return true;
+          }
+          else if (hashCode == m6in_metal_HASH)
+          {
+            enumValue = InstanceType::m6in_metal;
+            return true;
+          }
+          else if (hashCode == m6idn_metal_HASH)
+          {
+            enumValue = InstanceType::m6idn_metal;
+            return true;
+          }
+          else if (hashCode == r6in_metal_HASH)
+          {
+            enumValue = InstanceType::r6in_metal;
+            return true;
+          }
+          else if (hashCode == r6idn_metal_HASH)
+          {
+            enumValue = InstanceType::r6idn_metal;
+            return true;
+          }
           return false;
         }
 
@@ -5836,6 +5866,21 @@ namespace Aws
             return true;
           case InstanceType::r7g_metal:
             value = "r7g.metal";
+            return true;
+          case InstanceType::c6in_metal:
+            value = "c6in.metal";
+            return true;
+          case InstanceType::m6in_metal:
+            value = "m6in.metal";
+            return true;
+          case InstanceType::m6idn_metal:
+            value = "m6idn.metal";
+            return true;
+          case InstanceType::r6in_metal:
+            value = "r6in.metal";
+            return true;
+          case InstanceType::r6idn_metal:
+            value = "r6idn.metal";
             return true;
           default:
             return false;

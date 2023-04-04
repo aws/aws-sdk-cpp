@@ -19,19 +19,19 @@ namespace Model
 {
 
 FormCTA::FormCTA() : 
-    m_cancelHasBeenSet(false),
-    m_clearHasBeenSet(false),
     m_position(FormButtonsPosition::NOT_SET),
     m_positionHasBeenSet(false),
+    m_clearHasBeenSet(false),
+    m_cancelHasBeenSet(false),
     m_submitHasBeenSet(false)
 {
 }
 
 FormCTA::FormCTA(JsonView jsonValue) : 
-    m_cancelHasBeenSet(false),
-    m_clearHasBeenSet(false),
     m_position(FormButtonsPosition::NOT_SET),
     m_positionHasBeenSet(false),
+    m_clearHasBeenSet(false),
+    m_cancelHasBeenSet(false),
     m_submitHasBeenSet(false)
 {
   *this = jsonValue;
@@ -39,11 +39,11 @@ FormCTA::FormCTA(JsonView jsonValue) :
 
 FormCTA& FormCTA::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cancel"))
+  if(jsonValue.ValueExists("position"))
   {
-    m_cancel = jsonValue.GetObject("cancel");
+    m_position = FormButtonsPositionMapper::GetFormButtonsPositionForName(jsonValue.GetString("position"));
 
-    m_cancelHasBeenSet = true;
+    m_positionHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("clear"))
@@ -53,11 +53,11 @@ FormCTA& FormCTA::operator =(JsonView jsonValue)
     m_clearHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("position"))
+  if(jsonValue.ValueExists("cancel"))
   {
-    m_position = FormButtonsPositionMapper::GetFormButtonsPositionForName(jsonValue.GetString("position"));
+    m_cancel = jsonValue.GetObject("cancel");
 
-    m_positionHasBeenSet = true;
+    m_cancelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("submit"))
@@ -74,10 +74,9 @@ JsonValue FormCTA::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cancelHasBeenSet)
+  if(m_positionHasBeenSet)
   {
-   payload.WithObject("cancel", m_cancel.Jsonize());
-
+   payload.WithString("position", FormButtonsPositionMapper::GetNameForFormButtonsPosition(m_position));
   }
 
   if(m_clearHasBeenSet)
@@ -86,9 +85,10 @@ JsonValue FormCTA::Jsonize() const
 
   }
 
-  if(m_positionHasBeenSet)
+  if(m_cancelHasBeenSet)
   {
-   payload.WithString("position", FormButtonsPositionMapper::GetNameForFormButtonsPosition(m_position));
+   payload.WithObject("cancel", m_cancel.Jsonize());
+
   }
 
   if(m_submitHasBeenSet)

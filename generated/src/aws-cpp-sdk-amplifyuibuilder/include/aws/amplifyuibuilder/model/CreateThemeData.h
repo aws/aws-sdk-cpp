@@ -83,6 +83,47 @@ namespace Model
 
 
     /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline void SetValues(const Aws::Vector<ThemeValues>& value) { m_valuesHasBeenSet = true; m_values = value; }
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline void SetValues(Aws::Vector<ThemeValues>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline CreateThemeData& WithValues(const Aws::Vector<ThemeValues>& value) { SetValues(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline CreateThemeData& WithValues(Aws::Vector<ThemeValues>&& value) { SetValues(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline CreateThemeData& AddValues(const ThemeValues& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
+     */
+    inline CreateThemeData& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>Describes the properties that can be overriden to customize an instance of
      * the theme.</p>
      */
@@ -196,60 +237,19 @@ namespace Model
      */
     inline CreateThemeData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline void SetValues(const Aws::Vector<ThemeValues>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline void SetValues(Aws::Vector<ThemeValues>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline CreateThemeData& WithValues(const Aws::Vector<ThemeValues>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline CreateThemeData& WithValues(Aws::Vector<ThemeValues>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline CreateThemeData& AddValues(const ThemeValues& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that deﬁnes the properties of the theme.</p>
-     */
-    inline CreateThemeData& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<ThemeValues> m_values;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<ThemeValues> m_overrides;
     bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::Vector<ThemeValues> m_values;
-    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

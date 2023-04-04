@@ -42,10 +42,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -58,10 +58,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -74,10 +74,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -90,10 +90,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -106,10 +106,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -122,10 +122,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -138,10 +138,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>
@@ -154,10 +154,10 @@ namespace Model
     /**
      * <p>The selection of algorithms run on a dataset to train the model candidates of
      * an Autopilot job. </p>  <p>Selected algorithms must belong to the list
-     * corresponding to the training mode set in <code> <a
+     * corresponding to the training mode set in <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLJobConfig.html#sagemaker-Type-AutoMLJobConfig-Mode">AutoMLJobConfig.Mode</a>
-     * </code> (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose
-     * a minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
+     * (<code>ENSEMBLING</code> or <code>HYPERPARAMETER_TUNING</code>). Choose a
+     * minimum of 1 algorithm. </p>  <ul> <li> <p>In <code>ENSEMBLING</code>
      * mode:</p> <ul> <li> <p>"catboost"</p> </li> <li> <p>"extra-trees"</p> </li> <li>
      * <p>"fastai"</p> </li> <li> <p>"lightgbm"</p> </li> <li> <p>"linear-learner"</p>
      * </li> <li> <p>"nn-torch"</p> </li> <li> <p>"randomforest"</p> </li> <li>

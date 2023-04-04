@@ -19,40 +19,37 @@ namespace Model
 {
 
 SectionalElement::SectionalElement() : 
+    m_typeHasBeenSet(false),
+    m_positionHasBeenSet(false),
+    m_textHasBeenSet(false),
     m_level(0),
     m_levelHasBeenSet(false),
     m_orientationHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_excluded(false),
+    m_excludedHasBeenSet(false)
 {
 }
 
 SectionalElement::SectionalElement(JsonView jsonValue) : 
+    m_typeHasBeenSet(false),
+    m_positionHasBeenSet(false),
+    m_textHasBeenSet(false),
     m_level(0),
     m_levelHasBeenSet(false),
     m_orientationHasBeenSet(false),
-    m_positionHasBeenSet(false),
-    m_textHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_excluded(false),
+    m_excludedHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 SectionalElement& SectionalElement::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("level"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_level = jsonValue.GetInteger("level");
+    m_type = jsonValue.GetString("type");
 
-    m_levelHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("orientation"))
-  {
-    m_orientation = jsonValue.GetString("orientation");
-
-    m_orientationHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("position"))
@@ -69,11 +66,25 @@ SectionalElement& SectionalElement::operator =(JsonView jsonValue)
     m_textHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("level"))
   {
-    m_type = jsonValue.GetString("type");
+    m_level = jsonValue.GetInteger("level");
 
-    m_typeHasBeenSet = true;
+    m_levelHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("orientation"))
+  {
+    m_orientation = jsonValue.GetString("orientation");
+
+    m_orientationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("excluded"))
+  {
+    m_excluded = jsonValue.GetBool("excluded");
+
+    m_excludedHasBeenSet = true;
   }
 
   return *this;
@@ -83,15 +94,9 @@ JsonValue SectionalElement::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_levelHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithInteger("level", m_level);
-
-  }
-
-  if(m_orientationHasBeenSet)
-  {
-   payload.WithString("orientation", m_orientation);
+   payload.WithString("type", m_type);
 
   }
 
@@ -107,9 +112,21 @@ JsonValue SectionalElement::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_levelHasBeenSet)
   {
-   payload.WithString("type", m_type);
+   payload.WithInteger("level", m_level);
+
+  }
+
+  if(m_orientationHasBeenSet)
+  {
+   payload.WithString("orientation", m_orientation);
+
+  }
+
+  if(m_excludedHasBeenSet)
+  {
+   payload.WithBool("excluded", m_excluded);
 
   }
 

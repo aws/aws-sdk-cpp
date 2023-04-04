@@ -80,47 +80,6 @@ namespace Model
 
 
     /**
-     * <p>The component type.</p>
-     */
-    inline const Aws::String& GetComponentType() const{ return m_componentType; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentSummary& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentSummary& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentSummary& WithComponentType(const char* value) { SetComponentType(value); return *this;}
-
-
-    /**
      * <p>The name of the backend environment that is a part of the Amplify app.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
@@ -242,13 +201,51 @@ namespace Model
      */
     inline ComponentSummary& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline const Aws::String& GetComponentType() const{ return m_componentType; }
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline bool ComponentTypeHasBeenSet() const { return m_componentTypeHasBeenSet; }
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline ComponentSummary& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline ComponentSummary& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The component type.</p>
+     */
+    inline ComponentSummary& WithComponentType(const char* value) { SetComponentType(value); return *this;}
+
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
-
-    Aws::String m_componentType;
-    bool m_componentTypeHasBeenSet = false;
 
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
@@ -258,6 +255,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_componentType;
+    bool m_componentTypeHasBeenSet = false;
   };
 
 } // namespace Model

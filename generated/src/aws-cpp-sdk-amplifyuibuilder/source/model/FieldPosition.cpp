@@ -19,31 +19,24 @@ namespace Model
 {
 
 FieldPosition::FieldPosition() : 
-    m_belowHasBeenSet(false),
     m_fixed(FixedPosition::NOT_SET),
     m_fixedHasBeenSet(false),
-    m_rightOfHasBeenSet(false)
+    m_rightOfHasBeenSet(false),
+    m_belowHasBeenSet(false)
 {
 }
 
 FieldPosition::FieldPosition(JsonView jsonValue) : 
-    m_belowHasBeenSet(false),
     m_fixed(FixedPosition::NOT_SET),
     m_fixedHasBeenSet(false),
-    m_rightOfHasBeenSet(false)
+    m_rightOfHasBeenSet(false),
+    m_belowHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FieldPosition& FieldPosition::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("below"))
-  {
-    m_below = jsonValue.GetString("below");
-
-    m_belowHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("fixed"))
   {
     m_fixed = FixedPositionMapper::GetFixedPositionForName(jsonValue.GetString("fixed"));
@@ -58,18 +51,19 @@ FieldPosition& FieldPosition::operator =(JsonView jsonValue)
     m_rightOfHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("below"))
+  {
+    m_below = jsonValue.GetString("below");
+
+    m_belowHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue FieldPosition::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_belowHasBeenSet)
-  {
-   payload.WithString("below", m_below);
-
-  }
 
   if(m_fixedHasBeenSet)
   {
@@ -79,6 +73,12 @@ JsonValue FieldPosition::Jsonize() const
   if(m_rightOfHasBeenSet)
   {
    payload.WithString("rightOf", m_rightOf);
+
+  }
+
+  if(m_belowHasBeenSet)
+  {
+   payload.WithString("below", m_below);
 
   }
 

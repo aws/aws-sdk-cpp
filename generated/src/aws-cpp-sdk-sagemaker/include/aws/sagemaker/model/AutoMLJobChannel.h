@@ -29,11 +29,11 @@ namespace Model
   /**
    * <p>A channel is a named input source that training algorithms can consume. This
    * channel is used for the non tabular training data of an AutoML job using the V2
-   * API. For tabular training data, see <code> <a
+   * API. For tabular training data, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLChannel.html">
-   * AutoMLChannel</a> </code>. For more information, see <code> <a
+   * AutoMLChannel</a>. For more information, see <a
    * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">
-   * Channel</a> </code>.</p><p><h3>See Also:</h3>   <a
+   * Channel</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AutoMLJobChannel">AWS
    * API Reference</a></p>
    */

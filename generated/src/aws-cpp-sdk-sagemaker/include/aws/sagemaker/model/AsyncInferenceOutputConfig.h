@@ -173,6 +173,47 @@ namespace Model
      */
     inline AsyncInferenceOutputConfig& WithNotificationConfig(AsyncInferenceNotificationConfig&& value) { SetNotificationConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline const Aws::String& GetS3FailurePath() const{ return m_s3FailurePath; }
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline bool S3FailurePathHasBeenSet() const { return m_s3FailurePathHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline void SetS3FailurePath(const Aws::String& value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath = value; }
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline void SetS3FailurePath(Aws::String&& value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline void SetS3FailurePath(const char* value) { m_s3FailurePathHasBeenSet = true; m_s3FailurePath.assign(value); }
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline AsyncInferenceOutputConfig& WithS3FailurePath(const Aws::String& value) { SetS3FailurePath(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline AsyncInferenceOutputConfig& WithS3FailurePath(Aws::String&& value) { SetS3FailurePath(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon S3 location to upload failure inference responses to.</p>
+     */
+    inline AsyncInferenceOutputConfig& WithS3FailurePath(const char* value) { SetS3FailurePath(value); return *this;}
+
   private:
 
     Aws::String m_kmsKeyId;
@@ -183,6 +224,9 @@ namespace Model
 
     AsyncInferenceNotificationConfig m_notificationConfig;
     bool m_notificationConfigHasBeenSet = false;
+
+    Aws::String m_s3FailurePath;
+    bool m_s3FailurePathHasBeenSet = false;
   };
 
 } // namespace Model

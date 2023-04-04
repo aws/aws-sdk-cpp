@@ -43,34 +43,44 @@ namespace Model
 
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API const ComponentProperty& GetElse() const;
+    inline const Aws::String& GetProperty() const{ return m_property; }
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API bool ElseHasBeenSet() const;
+    inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API void SetElse(const ComponentProperty& value);
+    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API void SetElse(ComponentProperty&& value);
+    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(const ComponentProperty& value);
+    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
 
     /**
-     * <p>The value to assign to the property if the condition is not met.</p>
+     * <p>The name of the conditional property.</p>
      */
-    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(ComponentProperty&& value);
+    inline ComponentConditionProperty& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
+
+    /**
+     * <p>The name of the conditional property.</p>
+     */
+    inline ComponentConditionProperty& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the conditional property.</p>
+     */
+    inline ComponentConditionProperty& WithProperty(const char* value) { SetProperty(value); return *this;}
 
 
     /**
@@ -112,88 +122,6 @@ namespace Model
      * <p>The name of a field. Specify this when the property is a data model.</p>
      */
     inline ComponentConditionProperty& WithField(const char* value) { SetField(value); return *this;}
-
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline const Aws::String& GetOperand() const{ return m_operand; }
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline bool OperandHasBeenSet() const { return m_operandHasBeenSet; }
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline void SetOperand(const Aws::String& value) { m_operandHasBeenSet = true; m_operand = value; }
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline void SetOperand(Aws::String&& value) { m_operandHasBeenSet = true; m_operand = std::move(value); }
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline void SetOperand(const char* value) { m_operandHasBeenSet = true; m_operand.assign(value); }
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperand(const Aws::String& value) { SetOperand(value); return *this;}
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperand(Aws::String&& value) { SetOperand(std::move(value)); return *this;}
-
-    /**
-     * <p>The value of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperand(const char* value) { SetOperand(value); return *this;}
-
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline const Aws::String& GetOperandType() const{ return m_operandType; }
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline bool OperandTypeHasBeenSet() const { return m_operandTypeHasBeenSet; }
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline void SetOperandType(const Aws::String& value) { m_operandTypeHasBeenSet = true; m_operandType = value; }
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline void SetOperandType(Aws::String&& value) { m_operandTypeHasBeenSet = true; m_operandType = std::move(value); }
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline void SetOperandType(const char* value) { m_operandTypeHasBeenSet = true; m_operandType.assign(value); }
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperandType(const Aws::String& value) { SetOperandType(value); return *this;}
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperandType(Aws::String&& value) { SetOperandType(std::move(value)); return *this;}
-
-    /**
-     * <p>The type of the property to evaluate.</p>
-     */
-    inline ComponentConditionProperty& WithOperandType(const char* value) { SetOperandType(value); return *this;}
 
 
     /**
@@ -246,44 +174,44 @@ namespace Model
 
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline const Aws::String& GetProperty() const{ return m_property; }
+    inline const Aws::String& GetOperand() const{ return m_operand; }
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline bool PropertyHasBeenSet() const { return m_propertyHasBeenSet; }
+    inline bool OperandHasBeenSet() const { return m_operandHasBeenSet; }
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline void SetProperty(const Aws::String& value) { m_propertyHasBeenSet = true; m_property = value; }
+    inline void SetOperand(const Aws::String& value) { m_operandHasBeenSet = true; m_operand = value; }
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline void SetProperty(Aws::String&& value) { m_propertyHasBeenSet = true; m_property = std::move(value); }
+    inline void SetOperand(Aws::String&& value) { m_operandHasBeenSet = true; m_operand = std::move(value); }
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline void SetProperty(const char* value) { m_propertyHasBeenSet = true; m_property.assign(value); }
+    inline void SetOperand(const char* value) { m_operandHasBeenSet = true; m_operand.assign(value); }
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline ComponentConditionProperty& WithProperty(const Aws::String& value) { SetProperty(value); return *this;}
+    inline ComponentConditionProperty& WithOperand(const Aws::String& value) { SetOperand(value); return *this;}
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline ComponentConditionProperty& WithProperty(Aws::String&& value) { SetProperty(std::move(value)); return *this;}
+    inline ComponentConditionProperty& WithOperand(Aws::String&& value) { SetOperand(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the conditional property.</p>
+     * <p>The value of the property to evaluate.</p>
      */
-    inline ComponentConditionProperty& WithProperty(const char* value) { SetProperty(value); return *this;}
+    inline ComponentConditionProperty& WithOperand(const char* value) { SetOperand(value); return *this;}
 
 
     /**
@@ -316,28 +244,100 @@ namespace Model
      */
     AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithThen(ComponentProperty&& value);
 
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API const ComponentProperty& GetElse() const;
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API bool ElseHasBeenSet() const;
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API void SetElse(const ComponentProperty& value);
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API void SetElse(ComponentProperty&& value);
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(const ComponentProperty& value);
+
+    /**
+     * <p>The value to assign to the property if the condition is not met.</p>
+     */
+    AWS_AMPLIFYUIBUILDER_API ComponentConditionProperty& WithElse(ComponentProperty&& value);
+
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline const Aws::String& GetOperandType() const{ return m_operandType; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline bool OperandTypeHasBeenSet() const { return m_operandTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(const Aws::String& value) { m_operandTypeHasBeenSet = true; m_operandType = value; }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(Aws::String&& value) { m_operandTypeHasBeenSet = true; m_operandType = std::move(value); }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline void SetOperandType(const char* value) { m_operandTypeHasBeenSet = true; m_operandType.assign(value); }
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(const Aws::String& value) { SetOperandType(value); return *this;}
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(Aws::String&& value) { SetOperandType(std::move(value)); return *this;}
+
+    /**
+     * <p>The type of the property to evaluate.</p>
+     */
+    inline ComponentConditionProperty& WithOperandType(const char* value) { SetOperandType(value); return *this;}
+
   private:
-
-    std::shared_ptr<ComponentProperty> m_else;
-    bool m_elseHasBeenSet = false;
-
-    Aws::String m_field;
-    bool m_fieldHasBeenSet = false;
-
-    Aws::String m_operand;
-    bool m_operandHasBeenSet = false;
-
-    Aws::String m_operandType;
-    bool m_operandTypeHasBeenSet = false;
-
-    Aws::String m_operator;
-    bool m_operatorHasBeenSet = false;
 
     Aws::String m_property;
     bool m_propertyHasBeenSet = false;
 
+    Aws::String m_field;
+    bool m_fieldHasBeenSet = false;
+
+    Aws::String m_operator;
+    bool m_operatorHasBeenSet = false;
+
+    Aws::String m_operand;
+    bool m_operandHasBeenSet = false;
+
     std::shared_ptr<ComponentProperty> m_then;
     bool m_thenHasBeenSet = false;
+
+    std::shared_ptr<ComponentProperty> m_else;
+    bool m_elseHasBeenSet = false;
+
+    Aws::String m_operandType;
+    bool m_operandTypeHasBeenSet = false;
   };
 
 } // namespace Model

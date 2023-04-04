@@ -21,16 +21,16 @@ namespace Model
 UpdateThemeData::UpdateThemeData() : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
 }
 
 UpdateThemeData::UpdateThemeData(JsonView jsonValue) : 
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_overridesHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,16 +51,6 @@ UpdateThemeData& UpdateThemeData::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("overrides"))
-  {
-    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
-    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-    {
-      m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
-    }
-    m_overridesHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("values"))
   {
     Aws::Utils::Array<JsonView> valuesJsonList = jsonValue.GetArray("values");
@@ -69,6 +59,16 @@ UpdateThemeData& UpdateThemeData::operator =(JsonView jsonValue)
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("overrides"))
+  {
+    Aws::Utils::Array<JsonView> overridesJsonList = jsonValue.GetArray("overrides");
+    for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
+    {
+      m_overrides.push_back(overridesJsonList[overridesIndex].AsObject());
+    }
+    m_overridesHasBeenSet = true;
   }
 
   return *this;
@@ -90,17 +90,6 @@ JsonValue UpdateThemeData::Jsonize() const
 
   }
 
-  if(m_overridesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
-   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
-   {
-     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
-   }
-   payload.WithArray("overrides", std::move(overridesJsonList));
-
-  }
-
   if(m_valuesHasBeenSet)
   {
    Aws::Utils::Array<JsonValue> valuesJsonList(m_values.size());
@@ -109,6 +98,17 @@ JsonValue UpdateThemeData::Jsonize() const
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
    }
    payload.WithArray("values", std::move(valuesJsonList));
+
+  }
+
+  if(m_overridesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> overridesJsonList(m_overrides.size());
+   for(unsigned overridesIndex = 0; overridesIndex < overridesJsonList.GetLength(); ++overridesIndex)
+   {
+     overridesJsonList[overridesIndex].AsObject(m_overrides[overridesIndex].Jsonize());
+   }
+   payload.WithArray("overrides", std::move(overridesJsonList));
 
   }
 

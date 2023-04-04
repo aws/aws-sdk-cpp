@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sagemaker/model/AsyncNotificationTopicTypes.h>
 #include <utility>
 
 namespace Aws
@@ -135,6 +137,55 @@ namespace Model
      */
     inline AsyncInferenceNotificationConfig& WithErrorTopic(const char* value) { SetErrorTopic(value); return *this;}
 
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline const Aws::Vector<AsyncNotificationTopicTypes>& GetIncludeInferenceResponseIn() const{ return m_includeInferenceResponseIn; }
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline bool IncludeInferenceResponseInHasBeenSet() const { return m_includeInferenceResponseInHasBeenSet; }
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline void SetIncludeInferenceResponseIn(const Aws::Vector<AsyncNotificationTopicTypes>& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn = value; }
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline void SetIncludeInferenceResponseIn(Aws::Vector<AsyncNotificationTopicTypes>&& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn = std::move(value); }
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline AsyncInferenceNotificationConfig& WithIncludeInferenceResponseIn(const Aws::Vector<AsyncNotificationTopicTypes>& value) { SetIncludeInferenceResponseIn(value); return *this;}
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline AsyncInferenceNotificationConfig& WithIncludeInferenceResponseIn(Aws::Vector<AsyncNotificationTopicTypes>&& value) { SetIncludeInferenceResponseIn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline AsyncInferenceNotificationConfig& AddIncludeInferenceResponseIn(const AsyncNotificationTopicTypes& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn.push_back(value); return *this; }
+
+    /**
+     * <p>The Amazon SNS topics where you want the inference response to be
+     * included.</p>
+     */
+    inline AsyncInferenceNotificationConfig& AddIncludeInferenceResponseIn(AsyncNotificationTopicTypes&& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_successTopic;
@@ -142,6 +193,9 @@ namespace Model
 
     Aws::String m_errorTopic;
     bool m_errorTopicHasBeenSet = false;
+
+    Aws::Vector<AsyncNotificationTopicTypes> m_includeInferenceResponseIn;
+    bool m_includeInferenceResponseInHasBeenSet = false;
   };
 
 } // namespace Model

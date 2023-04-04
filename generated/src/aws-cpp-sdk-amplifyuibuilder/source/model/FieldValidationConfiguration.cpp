@@ -19,17 +19,17 @@ namespace Model
 {
 
 FieldValidationConfiguration::FieldValidationConfiguration() : 
-    m_numValuesHasBeenSet(false),
-    m_strValuesHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_strValuesHasBeenSet(false),
+    m_numValuesHasBeenSet(false),
     m_validationMessageHasBeenSet(false)
 {
 }
 
 FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue) : 
-    m_numValuesHasBeenSet(false),
-    m_strValuesHasBeenSet(false),
     m_typeHasBeenSet(false),
+    m_strValuesHasBeenSet(false),
+    m_numValuesHasBeenSet(false),
     m_validationMessageHasBeenSet(false)
 {
   *this = jsonValue;
@@ -37,14 +37,11 @@ FieldValidationConfiguration::FieldValidationConfiguration(JsonView jsonValue) :
 
 FieldValidationConfiguration& FieldValidationConfiguration::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("numValues"))
+  if(jsonValue.ValueExists("type"))
   {
-    Aws::Utils::Array<JsonView> numValuesJsonList = jsonValue.GetArray("numValues");
-    for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
-    {
-      m_numValues.push_back(numValuesJsonList[numValuesIndex].AsInteger());
-    }
-    m_numValuesHasBeenSet = true;
+    m_type = jsonValue.GetString("type");
+
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("strValues"))
@@ -57,11 +54,14 @@ FieldValidationConfiguration& FieldValidationConfiguration::operator =(JsonView 
     m_strValuesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("numValues"))
   {
-    m_type = jsonValue.GetString("type");
-
-    m_typeHasBeenSet = true;
+    Aws::Utils::Array<JsonView> numValuesJsonList = jsonValue.GetArray("numValues");
+    for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
+    {
+      m_numValues.push_back(numValuesJsonList[numValuesIndex].AsInteger());
+    }
+    m_numValuesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("validationMessage"))
@@ -78,14 +78,9 @@ JsonValue FieldValidationConfiguration::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_numValuesHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> numValuesJsonList(m_numValues.size());
-   for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
-   {
-     numValuesJsonList[numValuesIndex].AsInteger(m_numValues[numValuesIndex]);
-   }
-   payload.WithArray("numValues", std::move(numValuesJsonList));
+   payload.WithString("type", m_type);
 
   }
 
@@ -100,9 +95,14 @@ JsonValue FieldValidationConfiguration::Jsonize() const
 
   }
 
-  if(m_typeHasBeenSet)
+  if(m_numValuesHasBeenSet)
   {
-   payload.WithString("type", m_type);
+   Aws::Utils::Array<JsonValue> numValuesJsonList(m_numValues.size());
+   for(unsigned numValuesIndex = 0; numValuesIndex < numValuesJsonList.GetLength(); ++numValuesIndex)
+   {
+     numValuesJsonList[numValuesIndex].AsInteger(m_numValues[numValuesIndex]);
+   }
+   payload.WithArray("numValues", std::move(numValuesJsonList));
 
   }
 

@@ -41,77 +41,52 @@ namespace Model
 
 
     /**
-     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
-     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline int GetLevel() const{ return m_level; }
+    inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
-     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
-     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline void SetLevel(int value) { m_levelHasBeenSet = true; m_level = value; }
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
-     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline SectionalElement& WithLevel(int value) { SetLevel(value); return *this;}
-
-
-    /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
-     */
-    inline const Aws::String& GetOrientation() const{ return m_orientation; }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline bool OrientationHasBeenSet() const { return m_orientationHasBeenSet; }
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline void SetOrientation(const Aws::String& value) { m_orientationHasBeenSet = true; m_orientation = value; }
+    inline SectionalElement& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline void SetOrientation(Aws::String&& value) { m_orientationHasBeenSet = true; m_orientation = std::move(value); }
+    inline SectionalElement& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     * <p>The type of sectional element. Valid values are <code>Heading</code>,
+     * <code>Text</code>, and <code>Divider</code>.</p>
      */
-    inline void SetOrientation(const char* value) { m_orientationHasBeenSet = true; m_orientation.assign(value); }
-
-    /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
-     */
-    inline SectionalElement& WithOrientation(const Aws::String& value) { SetOrientation(value); return *this;}
-
-    /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
-     */
-    inline SectionalElement& WithOrientation(Aws::String&& value) { SetOrientation(std::move(value)); return *this;}
-
-    /**
-     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
-     * values are <code>horizontal</code> or <code>vertical</code>.</p>
-     */
-    inline SectionalElement& WithOrientation(const char* value) { SetOrientation(value); return *this;}
+    inline SectionalElement& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
@@ -193,60 +168,107 @@ namespace Model
 
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
+     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline int GetLevel() const{ return m_level; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
+     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
+     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
      */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetLevel(int value) { m_levelHasBeenSet = true; m_level = value; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the size of the font for a <code>Heading</code> sectional element.
+     * Valid values are <code>1 | 2 | 3 | 4 | 5 | 6</code>.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline SectionalElement& WithLevel(int value) { SetLevel(value); return *this;}
+
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
      */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+    inline const Aws::String& GetOrientation() const{ return m_orientation; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
      */
-    inline SectionalElement& WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline bool OrientationHasBeenSet() const { return m_orientationHasBeenSet; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
      */
-    inline SectionalElement& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+    inline void SetOrientation(const Aws::String& value) { m_orientationHasBeenSet = true; m_orientation = value; }
 
     /**
-     * <p>The type of sectional element. Valid values are <code>Heading</code>,
-     * <code>Text</code>, and <code>Divider</code>.</p>
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
      */
-    inline SectionalElement& WithType(const char* value) { SetType(value); return *this;}
+    inline void SetOrientation(Aws::String&& value) { m_orientationHasBeenSet = true; m_orientation = std::move(value); }
+
+    /**
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     */
+    inline void SetOrientation(const char* value) { m_orientationHasBeenSet = true; m_orientation.assign(value); }
+
+    /**
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     */
+    inline SectionalElement& WithOrientation(const Aws::String& value) { SetOrientation(value); return *this;}
+
+    /**
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     */
+    inline SectionalElement& WithOrientation(Aws::String&& value) { SetOrientation(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the orientation for a <code>Divider</code> sectional element. Valid
+     * values are <code>horizontal</code> or <code>vertical</code>.</p>
+     */
+    inline SectionalElement& WithOrientation(const char* value) { SetOrientation(value); return *this;}
+
+
+    /**
+     * <p>Excludes a sectional element that was generated by default for a specified
+     * data model.</p>
+     */
+    inline bool GetExcluded() const{ return m_excluded; }
+
+    /**
+     * <p>Excludes a sectional element that was generated by default for a specified
+     * data model.</p>
+     */
+    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+
+    /**
+     * <p>Excludes a sectional element that was generated by default for a specified
+     * data model.</p>
+     */
+    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
+
+    /**
+     * <p>Excludes a sectional element that was generated by default for a specified
+     * data model.</p>
+     */
+    inline SectionalElement& WithExcluded(bool value) { SetExcluded(value); return *this;}
 
   private:
 
-    int m_level;
-    bool m_levelHasBeenSet = false;
-
-    Aws::String m_orientation;
-    bool m_orientationHasBeenSet = false;
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     FieldPosition m_position;
     bool m_positionHasBeenSet = false;
@@ -254,8 +276,14 @@ namespace Model
     Aws::String m_text;
     bool m_textHasBeenSet = false;
 
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
+    int m_level;
+    bool m_levelHasBeenSet = false;
+
+    Aws::String m_orientation;
+    bool m_orientationHasBeenSet = false;
+
+    bool m_excluded;
+    bool m_excludedHasBeenSet = false;
   };
 
 } // namespace Model
