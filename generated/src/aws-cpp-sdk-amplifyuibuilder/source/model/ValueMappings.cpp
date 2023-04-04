@@ -19,12 +19,14 @@ namespace Model
 {
 
 ValueMappings::ValueMappings() : 
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_bindingPropertiesHasBeenSet(false)
 {
 }
 
 ValueMappings::ValueMappings(JsonView jsonValue) : 
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_bindingPropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -39,6 +41,16 @@ ValueMappings& ValueMappings::operator =(JsonView jsonValue)
       m_values.push_back(valuesJsonList[valuesIndex].AsObject());
     }
     m_valuesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bindingProperties"))
+  {
+    Aws::Map<Aws::String, JsonView> bindingPropertiesJsonMap = jsonValue.GetObject("bindingProperties").GetAllObjects();
+    for(auto& bindingPropertiesItem : bindingPropertiesJsonMap)
+    {
+      m_bindingProperties[bindingPropertiesItem.first] = bindingPropertiesItem.second.AsObject();
+    }
+    m_bindingPropertiesHasBeenSet = true;
   }
 
   return *this;
@@ -56,6 +68,17 @@ JsonValue ValueMappings::Jsonize() const
      valuesJsonList[valuesIndex].AsObject(m_values[valuesIndex].Jsonize());
    }
    payload.WithArray("values", std::move(valuesJsonList));
+
+  }
+
+  if(m_bindingPropertiesHasBeenSet)
+  {
+   JsonValue bindingPropertiesJsonMap;
+   for(auto& bindingPropertiesItem : m_bindingProperties)
+   {
+     bindingPropertiesJsonMap.WithObject(bindingPropertiesItem.first, bindingPropertiesItem.second.Jsonize());
+   }
+   payload.WithObject("bindingProperties", std::move(bindingPropertiesJsonMap));
 
   }
 

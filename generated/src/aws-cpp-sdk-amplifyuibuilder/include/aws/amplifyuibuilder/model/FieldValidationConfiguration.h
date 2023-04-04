@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -40,39 +40,44 @@ namespace Model
 
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline const Aws::Vector<int>& GetNumValues() const{ return m_numValues; }
+    inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline bool NumValuesHasBeenSet() const { return m_numValuesHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline void SetNumValues(const Aws::Vector<int>& value) { m_numValuesHasBeenSet = true; m_numValues = value; }
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline void SetNumValues(Aws::Vector<int>&& value) { m_numValuesHasBeenSet = true; m_numValues = std::move(value); }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline FieldValidationConfiguration& WithNumValues(const Aws::Vector<int>& value) { SetNumValues(value); return *this;}
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline FieldValidationConfiguration& WithNumValues(Aws::Vector<int>&& value) { SetNumValues(std::move(value)); return *this;}
+    inline FieldValidationConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The validation to perform on a number value.</p>
+     * <p>The validation to perform on an object type.<code/> </p>
      */
-    inline FieldValidationConfiguration& AddNumValues(int value) { m_numValuesHasBeenSet = true; m_numValues.push_back(value); return *this; }
+    inline FieldValidationConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The validation to perform on an object type.<code/> </p>
+     */
+    inline FieldValidationConfiguration& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
@@ -122,44 +127,39 @@ namespace Model
 
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline const Aws::String& GetType() const{ return m_type; }
+    inline const Aws::Vector<int>& GetNumValues() const{ return m_numValues; }
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+    inline bool NumValuesHasBeenSet() const { return m_numValuesHasBeenSet; }
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
+    inline void SetNumValues(const Aws::Vector<int>& value) { m_numValuesHasBeenSet = true; m_numValues = value; }
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+    inline void SetNumValues(Aws::Vector<int>&& value) { m_numValuesHasBeenSet = true; m_numValues = std::move(value); }
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+    inline FieldValidationConfiguration& WithNumValues(const Aws::Vector<int>& value) { SetNumValues(value); return *this;}
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline FieldValidationConfiguration& WithType(const Aws::String& value) { SetType(value); return *this;}
+    inline FieldValidationConfiguration& WithNumValues(Aws::Vector<int>&& value) { SetNumValues(std::move(value)); return *this;}
 
     /**
-     * <p>The validation to perform on an object type.<code/> </p>
+     * <p>The validation to perform on a number value.</p>
      */
-    inline FieldValidationConfiguration& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The validation to perform on an object type.<code/> </p>
-     */
-    inline FieldValidationConfiguration& WithType(const char* value) { SetType(value); return *this;}
+    inline FieldValidationConfiguration& AddNumValues(int value) { m_numValuesHasBeenSet = true; m_numValues.push_back(value); return *this; }
 
 
     /**
@@ -204,14 +204,14 @@ namespace Model
 
   private:
 
-    Aws::Vector<int> m_numValues;
-    bool m_numValuesHasBeenSet = false;
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_strValues;
     bool m_strValuesHasBeenSet = false;
 
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
+    Aws::Vector<int> m_numValues;
+    bool m_numValuesHasBeenSet = false;
 
     Aws::String m_validationMessage;
     bool m_validationMessageHasBeenSet = false;

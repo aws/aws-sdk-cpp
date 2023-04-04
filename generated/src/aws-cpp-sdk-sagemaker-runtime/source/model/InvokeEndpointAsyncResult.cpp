@@ -43,6 +43,12 @@ InvokeEndpointAsyncResult& InvokeEndpointAsyncResult::operator =(const Aws::Amaz
     m_outputLocation = outputLocationIter->second;
   }
 
+  const auto& failureLocationIter = headers.find("x-amzn-sagemaker-failurelocation");
+  if(failureLocationIter != headers.end())
+  {
+    m_failureLocation = failureLocationIter->second;
+  }
+
   const auto& requestIdIter = headers.find("x-amzn-requestid");
   if(requestIdIter != headers.end())
   {

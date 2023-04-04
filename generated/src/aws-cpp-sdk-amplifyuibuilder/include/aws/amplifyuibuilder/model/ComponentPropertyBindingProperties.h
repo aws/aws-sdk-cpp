@@ -40,47 +40,6 @@ namespace Model
 
 
     /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline const Aws::String& GetField() const{ return m_field; }
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline ComponentPropertyBindingProperties& WithField(const Aws::String& value) { SetField(value); return *this;}
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline ComponentPropertyBindingProperties& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
-
-    /**
-     * <p>The data field to bind the property to.</p>
-     */
-    inline ComponentPropertyBindingProperties& WithField(const char* value) { SetField(value); return *this;}
-
-
-    /**
      * <p>The component property to bind to the data field.</p>
      */
     inline const Aws::String& GetProperty() const{ return m_property; }
@@ -120,13 +79,54 @@ namespace Model
      */
     inline ComponentPropertyBindingProperties& WithProperty(const char* value) { SetProperty(value); return *this;}
 
-  private:
 
-    Aws::String m_field;
-    bool m_fieldHasBeenSet = false;
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline const Aws::String& GetField() const{ return m_field; }
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline ComponentPropertyBindingProperties& WithField(const Aws::String& value) { SetField(value); return *this;}
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline ComponentPropertyBindingProperties& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
+
+    /**
+     * <p>The data field to bind the property to.</p>
+     */
+    inline ComponentPropertyBindingProperties& WithField(const char* value) { SetField(value); return *this;}
+
+  private:
 
     Aws::String m_property;
     bool m_propertyHasBeenSet = false;
+
+    Aws::String m_field;
+    bool m_fieldHasBeenSet = false;
   };
 
 } // namespace Model

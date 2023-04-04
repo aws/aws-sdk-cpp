@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/ComponentPropertyBindingProperties.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/FormBindingElement.h>
 #include <utility>
@@ -46,6 +46,47 @@ namespace Model
 
 
     /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithValue(const char* value) { SetValue(value); return *this;}
+
+
+    /**
      * <p>The information to bind the component property to data at runtime.</p>
      */
     inline const ComponentPropertyBindingProperties& GetBindingProperties() const{ return m_bindingProperties; }
@@ -74,6 +115,125 @@ namespace Model
      * <p>The information to bind the component property to data at runtime.</p>
      */
     inline ComponentProperty& WithBindingProperties(ComponentPropertyBindingProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline const ComponentPropertyBindingProperties& GetCollectionBindingProperties() const{ return m_collectionBindingProperties; }
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline bool CollectionBindingPropertiesHasBeenSet() const { return m_collectionBindingPropertiesHasBeenSet; }
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline void SetCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = value; }
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline void SetCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = std::move(value); }
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline ComponentProperty& WithCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { SetCollectionBindingProperties(value); return *this;}
+
+    /**
+     * <p>The information to bind the component property to data at runtime. Use this
+     * for collection components.</p>
+     */
+    inline ComponentProperty& WithCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { SetCollectionBindingProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+
+    /**
+     * <p>The default value to assign to the component property.</p>
+     */
+    inline ComponentProperty& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
+
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline const Aws::String& GetModel() const{ return m_model; }
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline ComponentProperty& WithModel(const Aws::String& value) { SetModel(value); return *this;}
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline ComponentProperty& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
+
+    /**
+     * <p>The data model to use to assign a value to the component property.</p>
+     */
+    inline ComponentProperty& WithModel(const char* value) { SetModel(value); return *this;}
 
 
     /**
@@ -138,81 +298,93 @@ namespace Model
 
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline const ComponentPropertyBindingProperties& GetCollectionBindingProperties() const{ return m_collectionBindingProperties; }
+    inline const Aws::String& GetEvent() const{ return m_event; }
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline bool CollectionBindingPropertiesHasBeenSet() const { return m_collectionBindingPropertiesHasBeenSet; }
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline void SetCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = value; }
+    inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline void SetCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { m_collectionBindingPropertiesHasBeenSet = true; m_collectionBindingProperties = std::move(value); }
+    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline ComponentProperty& WithCollectionBindingProperties(const ComponentPropertyBindingProperties& value) { SetCollectionBindingProperties(value); return *this;}
+    inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
 
     /**
-     * <p>The information to bind the component property to data at runtime. Use this
-     * for collection components.</p>
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
      */
-    inline ComponentProperty& WithCollectionBindingProperties(ComponentPropertyBindingProperties&& value) { SetCollectionBindingProperties(std::move(value)); return *this;}
+    inline ComponentProperty& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
+
+    /**
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
+     */
+    inline ComponentProperty& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
+
+    /**
+     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
+     */
+    inline ComponentProperty& WithEvent(const char* value) { SetEvent(value); return *this;}
 
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline const Aws::String& GetComponentName() const{ return m_componentName; }
+    inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
+    inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
+    inline void SetUserAttribute(const Aws::String& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
+    inline void SetUserAttribute(Aws::String&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
+    inline void SetUserAttribute(const char* value) { m_userAttributeHasBeenSet = true; m_userAttribute.assign(value); }
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline ComponentProperty& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
+    inline ComponentProperty& WithUserAttribute(const Aws::String& value) { SetUserAttribute(value); return *this;}
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline ComponentProperty& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
+    inline ComponentProperty& WithUserAttribute(Aws::String&& value) { SetUserAttribute(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the component that is affected by an event.</p>
+     * <p>An authenticated user attribute to use to assign a value to the component
+     * property.</p>
      */
-    inline ComponentProperty& WithComponentName(const char* value) { SetComponentName(value); return *this;}
+    inline ComponentProperty& WithUserAttribute(const char* value) { SetUserAttribute(value); return *this;}
 
 
     /**
@@ -327,85 +499,44 @@ namespace Model
 
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+    inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline void SetDefaultValue(Aws::String&& value) { m_defaultValueHasBeenSet = true; m_defaultValue = std::move(value); }
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline void SetDefaultValue(const char* value) { m_defaultValueHasBeenSet = true; m_defaultValue.assign(value); }
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline ComponentProperty& WithDefaultValue(const Aws::String& value) { SetDefaultValue(value); return *this;}
+    inline ComponentProperty& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline ComponentProperty& WithDefaultValue(Aws::String&& value) { SetDefaultValue(std::move(value)); return *this;}
+    inline ComponentProperty& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The default value to assign to the component property.</p>
+     * <p>The component type.</p>
      */
-    inline ComponentProperty& WithDefaultValue(const char* value) { SetDefaultValue(value); return *this;}
-
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline const Aws::String& GetEvent() const{ return m_event; }
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline void SetEvent(const Aws::String& value) { m_eventHasBeenSet = true; m_event = value; }
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline void SetEvent(Aws::String&& value) { m_eventHasBeenSet = true; m_event = std::move(value); }
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline void SetEvent(const char* value) { m_eventHasBeenSet = true; m_event.assign(value); }
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline ComponentProperty& WithEvent(const Aws::String& value) { SetEvent(value); return *this;}
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline ComponentProperty& WithEvent(Aws::String&& value) { SetEvent(std::move(value)); return *this;}
-
-    /**
-     * <p>An event that occurs in your app. Use this for workflow data binding.</p>
-     */
-    inline ComponentProperty& WithEvent(const char* value) { SetEvent(value); return *this;}
+    inline ComponentProperty& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
@@ -458,44 +589,44 @@ namespace Model
 
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline const Aws::String& GetModel() const{ return m_model; }
+    inline const Aws::String& GetComponentName() const{ return m_componentName; }
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+    inline bool ComponentNameHasBeenSet() const { return m_componentNameHasBeenSet; }
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
+    inline void SetComponentName(const Aws::String& value) { m_componentNameHasBeenSet = true; m_componentName = value; }
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline void SetModel(Aws::String&& value) { m_modelHasBeenSet = true; m_model = std::move(value); }
+    inline void SetComponentName(Aws::String&& value) { m_componentNameHasBeenSet = true; m_componentName = std::move(value); }
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline void SetModel(const char* value) { m_modelHasBeenSet = true; m_model.assign(value); }
+    inline void SetComponentName(const char* value) { m_componentNameHasBeenSet = true; m_componentName.assign(value); }
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline ComponentProperty& WithModel(const Aws::String& value) { SetModel(value); return *this;}
+    inline ComponentProperty& WithComponentName(const Aws::String& value) { SetComponentName(value); return *this;}
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline ComponentProperty& WithModel(Aws::String&& value) { SetModel(std::move(value)); return *this;}
+    inline ComponentProperty& WithComponentName(Aws::String&& value) { SetComponentName(std::move(value)); return *this;}
 
     /**
-     * <p>The data model to use to assign a value to the component property.</p>
+     * <p>The name of the component that is affected by an event.</p>
      */
-    inline ComponentProperty& WithModel(const char* value) { SetModel(value); return *this;}
+    inline ComponentProperty& WithComponentName(const char* value) { SetComponentName(value); return *this;}
 
 
     /**
@@ -538,150 +669,31 @@ namespace Model
      */
     inline ComponentProperty& WithProperty(const char* value) { SetProperty(value); return *this;}
 
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentProperty& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentProperty& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The component type.</p>
-     */
-    inline ComponentProperty& WithType(const char* value) { SetType(value); return *this;}
-
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline const Aws::String& GetUserAttribute() const{ return m_userAttribute; }
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline void SetUserAttribute(const Aws::String& value) { m_userAttributeHasBeenSet = true; m_userAttribute = value; }
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline void SetUserAttribute(Aws::String&& value) { m_userAttributeHasBeenSet = true; m_userAttribute = std::move(value); }
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline void SetUserAttribute(const char* value) { m_userAttributeHasBeenSet = true; m_userAttribute.assign(value); }
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline ComponentProperty& WithUserAttribute(const Aws::String& value) { SetUserAttribute(value); return *this;}
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline ComponentProperty& WithUserAttribute(Aws::String&& value) { SetUserAttribute(std::move(value)); return *this;}
-
-    /**
-     * <p>An authenticated user attribute to use to assign a value to the component
-     * property.</p>
-     */
-    inline ComponentProperty& WithUserAttribute(const char* value) { SetUserAttribute(value); return *this;}
-
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline const Aws::String& GetValue() const{ return m_value; }
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline ComponentProperty& WithValue(const Aws::String& value) { SetValue(value); return *this;}
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline ComponentProperty& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
-
-    /**
-     * <p>The value to assign to the component property.</p>
-     */
-    inline ComponentProperty& WithValue(const char* value) { SetValue(value); return *this;}
-
   private:
+
+    Aws::String m_value;
+    bool m_valueHasBeenSet = false;
 
     ComponentPropertyBindingProperties m_bindingProperties;
     bool m_bindingPropertiesHasBeenSet = false;
 
-    Aws::Map<Aws::String, FormBindingElement> m_bindings;
-    bool m_bindingsHasBeenSet = false;
-
     ComponentPropertyBindingProperties m_collectionBindingProperties;
     bool m_collectionBindingPropertiesHasBeenSet = false;
 
-    Aws::String m_componentName;
-    bool m_componentNameHasBeenSet = false;
+    Aws::String m_defaultValue;
+    bool m_defaultValueHasBeenSet = false;
+
+    Aws::String m_model;
+    bool m_modelHasBeenSet = false;
+
+    Aws::Map<Aws::String, FormBindingElement> m_bindings;
+    bool m_bindingsHasBeenSet = false;
+
+    Aws::String m_event;
+    bool m_eventHasBeenSet = false;
+
+    Aws::String m_userAttribute;
+    bool m_userAttributeHasBeenSet = false;
 
     Aws::Vector<ComponentProperty> m_concat;
     bool m_concatHasBeenSet = false;
@@ -692,29 +704,17 @@ namespace Model
     bool m_configured;
     bool m_configuredHasBeenSet = false;
 
-    Aws::String m_defaultValue;
-    bool m_defaultValueHasBeenSet = false;
-
-    Aws::String m_event;
-    bool m_eventHasBeenSet = false;
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
     Aws::String m_importedValue;
     bool m_importedValueHasBeenSet = false;
 
-    Aws::String m_model;
-    bool m_modelHasBeenSet = false;
+    Aws::String m_componentName;
+    bool m_componentNameHasBeenSet = false;
 
     Aws::String m_property;
     bool m_propertyHasBeenSet = false;
-
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
-
-    Aws::String m_userAttribute;
-    bool m_userAttributeHasBeenSet = false;
-
-    Aws::String m_value;
-    bool m_valueHasBeenSet = false;
   };
 
 } // namespace Model

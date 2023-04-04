@@ -30,8 +30,9 @@ namespace Model
    * rule actions and default web ACL actions that are set to <a>BlockAction</a>.
    * </p> <p>For information about customizing web requests and responses, see <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-   * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>.
-   * </p><p><h3>See Also:</h3>   <a
+   * web requests and responses in WAF</a> in the <a
+   * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+   * Developer Guide</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CustomResponse">AWS
    * API Reference</a></p>
    */
@@ -48,7 +49,9 @@ namespace Model
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
      * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+     * status codes for custom response</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline int GetResponseCode() const{ return m_responseCode; }
 
@@ -56,7 +59,9 @@ namespace Model
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
      * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+     * status codes for custom response</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
 
@@ -64,7 +69,9 @@ namespace Model
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
      * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+     * status codes for custom response</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetResponseCode(int value) { m_responseCodeHasBeenSet = true; m_responseCode = value; }
 
@@ -72,7 +79,9 @@ namespace Model
      * <p>The HTTP status code to return to the client. </p> <p>For a list of status
      * codes that you can use in your custom responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/customizing-the-response-status-codes.html">Supported
-     * status codes for custom response</a> in the <i>WAF Developer Guide</i>. </p>
+     * status codes for custom response</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponse& WithResponseCode(int value) { SetResponseCode(value); return *this;}
 
@@ -171,7 +180,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::Vector<CustomHTTPHeader>& GetResponseHeaders() const{ return m_responseHeaders; }
 
@@ -180,7 +191,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool ResponseHeadersHasBeenSet() const { return m_responseHeadersHasBeenSet; }
 
@@ -189,7 +202,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = value; }
 
@@ -198,7 +213,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders = std::move(value); }
 
@@ -207,7 +224,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponse& WithResponseHeaders(const Aws::Vector<CustomHTTPHeader>& value) { SetResponseHeaders(value); return *this;}
 
@@ -216,7 +235,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponse& WithResponseHeaders(Aws::Vector<CustomHTTPHeader>&& value) { SetResponseHeaders(std::move(value)); return *this;}
 
@@ -225,7 +246,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponse& AddResponseHeaders(const CustomHTTPHeader& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(value); return *this; }
 
@@ -234,7 +257,9 @@ namespace Model
      * allowed. </p> <p>For information about the limits on count and size for custom
      * request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CustomResponse& AddResponseHeaders(CustomHTTPHeader&& value) { m_responseHeadersHasBeenSet = true; m_responseHeaders.push_back(std::move(value)); return *this; }
 

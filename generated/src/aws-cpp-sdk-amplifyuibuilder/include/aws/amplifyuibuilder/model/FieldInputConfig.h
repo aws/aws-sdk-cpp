@@ -7,6 +7,7 @@
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/ValueMappings.h>
+#include <aws/amplifyuibuilder/model/FileUploaderFieldConfig.h>
 #include <utility>
 
 namespace Aws
@@ -40,65 +41,127 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether a field has a default value.</p>
+     * <p>The input type for the field. </p>
      */
-    inline bool GetDefaultChecked() const{ return m_defaultChecked; }
+    inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>Specifies whether a field has a default value.</p>
+     * <p>The input type for the field. </p>
      */
-    inline bool DefaultCheckedHasBeenSet() const { return m_defaultCheckedHasBeenSet; }
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Specifies whether a field has a default value.</p>
+     * <p>The input type for the field. </p>
      */
-    inline void SetDefaultChecked(bool value) { m_defaultCheckedHasBeenSet = true; m_defaultChecked = value; }
+    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Specifies whether a field has a default value.</p>
+     * <p>The input type for the field. </p>
      */
-    inline FieldInputConfig& WithDefaultChecked(bool value) { SetDefaultChecked(value); return *this;}
+    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
+
+    /**
+     * <p>The input type for the field. </p>
+     */
+    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
+
+    /**
+     * <p>The input type for the field. </p>
+     */
+    inline FieldInputConfig& WithType(const Aws::String& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The input type for the field. </p>
+     */
+    inline FieldInputConfig& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
+
+    /**
+     * <p>The input type for the field. </p>
+     */
+    inline FieldInputConfig& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a field that requires input.</p>
      */
-    inline const Aws::String& GetDefaultCountryCode() const{ return m_defaultCountryCode; }
+    inline bool GetRequired() const{ return m_required; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a field that requires input.</p>
      */
-    inline bool DefaultCountryCodeHasBeenSet() const { return m_defaultCountryCodeHasBeenSet; }
+    inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a field that requires input.</p>
      */
-    inline void SetDefaultCountryCode(const Aws::String& value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode = value; }
+    inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a field that requires input.</p>
      */
-    inline void SetDefaultCountryCode(Aws::String&& value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode = std::move(value); }
+    inline FieldInputConfig& WithRequired(bool value) { SetRequired(value); return *this;}
+
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a read only field.</p>
      */
-    inline void SetDefaultCountryCode(const char* value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode.assign(value); }
+    inline bool GetReadOnly() const{ return m_readOnly; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a read only field.</p>
      */
-    inline FieldInputConfig& WithDefaultCountryCode(const Aws::String& value) { SetDefaultCountryCode(value); return *this;}
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a read only field.</p>
      */
-    inline FieldInputConfig& WithDefaultCountryCode(Aws::String&& value) { SetDefaultCountryCode(std::move(value)); return *this;}
+    inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
-     * <p>The default country code for a phone number.</p>
+     * <p>Specifies a read only field.</p>
      */
-    inline FieldInputConfig& WithDefaultCountryCode(const char* value) { SetDefaultCountryCode(value); return *this;}
+    inline FieldInputConfig& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
+
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline const Aws::String& GetPlaceholder() const{ return m_placeholder; }
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline bool PlaceholderHasBeenSet() const { return m_placeholderHasBeenSet; }
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline void SetPlaceholder(const Aws::String& value) { m_placeholderHasBeenSet = true; m_placeholder = value; }
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline void SetPlaceholder(Aws::String&& value) { m_placeholderHasBeenSet = true; m_placeholder = std::move(value); }
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline void SetPlaceholder(const char* value) { m_placeholderHasBeenSet = true; m_placeholder.assign(value); }
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline FieldInputConfig& WithPlaceholder(const Aws::String& value) { SetPlaceholder(value); return *this;}
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline FieldInputConfig& WithPlaceholder(Aws::String&& value) { SetPlaceholder(std::move(value)); return *this;}
+
+    /**
+     * <p>The text to display as a placeholder for the field.</p>
+     */
+    inline FieldInputConfig& WithPlaceholder(const char* value) { SetPlaceholder(value); return *this;}
 
 
     /**
@@ -184,70 +247,102 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to render the field as an array. This property is ignored
-     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     * <p>Specifies whether a field has a default value.</p>
      */
-    inline bool GetIsArray() const{ return m_isArray; }
+    inline bool GetDefaultChecked() const{ return m_defaultChecked; }
 
     /**
-     * <p>Specifies whether to render the field as an array. This property is ignored
-     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     * <p>Specifies whether a field has a default value.</p>
      */
-    inline bool IsArrayHasBeenSet() const { return m_isArrayHasBeenSet; }
+    inline bool DefaultCheckedHasBeenSet() const { return m_defaultCheckedHasBeenSet; }
 
     /**
-     * <p>Specifies whether to render the field as an array. This property is ignored
-     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     * <p>Specifies whether a field has a default value.</p>
      */
-    inline void SetIsArray(bool value) { m_isArrayHasBeenSet = true; m_isArray = value; }
+    inline void SetDefaultChecked(bool value) { m_defaultCheckedHasBeenSet = true; m_defaultChecked = value; }
 
     /**
-     * <p>Specifies whether to render the field as an array. This property is ignored
-     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
+     * <p>Specifies whether a field has a default value.</p>
      */
-    inline FieldInputConfig& WithIsArray(bool value) { SetIsArray(value); return *this;}
+    inline FieldInputConfig& WithDefaultChecked(bool value) { SetDefaultChecked(value); return *this;}
 
 
     /**
-     * <p>The maximum value to display for the field.</p>
+     * <p>The default country code for a phone number.</p>
      */
-    inline double GetMaxValue() const{ return m_maxValue; }
+    inline const Aws::String& GetDefaultCountryCode() const{ return m_defaultCountryCode; }
 
     /**
-     * <p>The maximum value to display for the field.</p>
+     * <p>The default country code for a phone number.</p>
      */
-    inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
+    inline bool DefaultCountryCodeHasBeenSet() const { return m_defaultCountryCodeHasBeenSet; }
 
     /**
-     * <p>The maximum value to display for the field.</p>
+     * <p>The default country code for a phone number.</p>
      */
-    inline void SetMaxValue(double value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
+    inline void SetDefaultCountryCode(const Aws::String& value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode = value; }
 
     /**
-     * <p>The maximum value to display for the field.</p>
+     * <p>The default country code for a phone number.</p>
      */
-    inline FieldInputConfig& WithMaxValue(double value) { SetMaxValue(value); return *this;}
+    inline void SetDefaultCountryCode(Aws::String&& value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode = std::move(value); }
+
+    /**
+     * <p>The default country code for a phone number.</p>
+     */
+    inline void SetDefaultCountryCode(const char* value) { m_defaultCountryCodeHasBeenSet = true; m_defaultCountryCode.assign(value); }
+
+    /**
+     * <p>The default country code for a phone number.</p>
+     */
+    inline FieldInputConfig& WithDefaultCountryCode(const Aws::String& value) { SetDefaultCountryCode(value); return *this;}
+
+    /**
+     * <p>The default country code for a phone number.</p>
+     */
+    inline FieldInputConfig& WithDefaultCountryCode(Aws::String&& value) { SetDefaultCountryCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The default country code for a phone number.</p>
+     */
+    inline FieldInputConfig& WithDefaultCountryCode(const char* value) { SetDefaultCountryCode(value); return *this;}
 
 
     /**
-     * <p>The minimum value to display for the field.</p>
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
      */
-    inline double GetMinValue() const{ return m_minValue; }
+    inline const ValueMappings& GetValueMappings() const{ return m_valueMappings; }
 
     /**
-     * <p>The minimum value to display for the field.</p>
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
      */
-    inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
+    inline bool ValueMappingsHasBeenSet() const { return m_valueMappingsHasBeenSet; }
 
     /**
-     * <p>The minimum value to display for the field.</p>
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
      */
-    inline void SetMinValue(double value) { m_minValueHasBeenSet = true; m_minValue = value; }
+    inline void SetValueMappings(const ValueMappings& value) { m_valueMappingsHasBeenSet = true; m_valueMappings = value; }
 
     /**
-     * <p>The minimum value to display for the field.</p>
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
      */
-    inline FieldInputConfig& WithMinValue(double value) { SetMinValue(value); return *this;}
+    inline void SetValueMappings(ValueMappings&& value) { m_valueMappingsHasBeenSet = true; m_valueMappings = std::move(value); }
+
+    /**
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
+     */
+    inline FieldInputConfig& WithValueMappings(const ValueMappings& value) { SetValueMappings(value); return *this;}
+
+    /**
+     * <p>The information to use to customize the input fields with data at
+     * runtime.</p>
+     */
+    inline FieldInputConfig& WithValueMappings(ValueMappings&& value) { SetValueMappings(std::move(value)); return *this;}
 
 
     /**
@@ -292,86 +387,45 @@ namespace Model
 
 
     /**
-     * <p>The text to display as a placeholder for the field.</p>
+     * <p>The minimum value to display for the field.</p>
      */
-    inline const Aws::String& GetPlaceholder() const{ return m_placeholder; }
+    inline double GetMinValue() const{ return m_minValue; }
 
     /**
-     * <p>The text to display as a placeholder for the field.</p>
+     * <p>The minimum value to display for the field.</p>
      */
-    inline bool PlaceholderHasBeenSet() const { return m_placeholderHasBeenSet; }
+    inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
 
     /**
-     * <p>The text to display as a placeholder for the field.</p>
+     * <p>The minimum value to display for the field.</p>
      */
-    inline void SetPlaceholder(const Aws::String& value) { m_placeholderHasBeenSet = true; m_placeholder = value; }
+    inline void SetMinValue(double value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
-     * <p>The text to display as a placeholder for the field.</p>
+     * <p>The minimum value to display for the field.</p>
      */
-    inline void SetPlaceholder(Aws::String&& value) { m_placeholderHasBeenSet = true; m_placeholder = std::move(value); }
-
-    /**
-     * <p>The text to display as a placeholder for the field.</p>
-     */
-    inline void SetPlaceholder(const char* value) { m_placeholderHasBeenSet = true; m_placeholder.assign(value); }
-
-    /**
-     * <p>The text to display as a placeholder for the field.</p>
-     */
-    inline FieldInputConfig& WithPlaceholder(const Aws::String& value) { SetPlaceholder(value); return *this;}
-
-    /**
-     * <p>The text to display as a placeholder for the field.</p>
-     */
-    inline FieldInputConfig& WithPlaceholder(Aws::String&& value) { SetPlaceholder(std::move(value)); return *this;}
-
-    /**
-     * <p>The text to display as a placeholder for the field.</p>
-     */
-    inline FieldInputConfig& WithPlaceholder(const char* value) { SetPlaceholder(value); return *this;}
+    inline FieldInputConfig& WithMinValue(double value) { SetMinValue(value); return *this;}
 
 
     /**
-     * <p>Specifies a read only field.</p>
+     * <p>The maximum value to display for the field.</p>
      */
-    inline bool GetReadOnly() const{ return m_readOnly; }
+    inline double GetMaxValue() const{ return m_maxValue; }
 
     /**
-     * <p>Specifies a read only field.</p>
+     * <p>The maximum value to display for the field.</p>
      */
-    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+    inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
 
     /**
-     * <p>Specifies a read only field.</p>
+     * <p>The maximum value to display for the field.</p>
      */
-    inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
+    inline void SetMaxValue(double value) { m_maxValueHasBeenSet = true; m_maxValue = value; }
 
     /**
-     * <p>Specifies a read only field.</p>
+     * <p>The maximum value to display for the field.</p>
      */
-    inline FieldInputConfig& WithReadOnly(bool value) { SetReadOnly(value); return *this;}
-
-
-    /**
-     * <p>Specifies a field that requires input.</p>
-     */
-    inline bool GetRequired() const{ return m_required; }
-
-    /**
-     * <p>Specifies a field that requires input.</p>
-     */
-    inline bool RequiredHasBeenSet() const { return m_requiredHasBeenSet; }
-
-    /**
-     * <p>Specifies a field that requires input.</p>
-     */
-    inline void SetRequired(bool value) { m_requiredHasBeenSet = true; m_required = value; }
-
-    /**
-     * <p>Specifies a field that requires input.</p>
-     */
-    inline FieldInputConfig& WithRequired(bool value) { SetRequired(value); return *this;}
+    inline FieldInputConfig& WithMaxValue(double value) { SetMaxValue(value); return *this;}
 
 
     /**
@@ -393,47 +447,6 @@ namespace Model
      * <p>The stepping increment for a numeric value in a field.</p>
      */
     inline FieldInputConfig& WithStep(double value) { SetStep(value); return *this;}
-
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline const Aws::String& GetType() const{ return m_type; }
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline FieldInputConfig& WithType(const Aws::String& value) { SetType(value); return *this;}
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline FieldInputConfig& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
-
-    /**
-     * <p>The input type for the field. </p>
-     */
-    inline FieldInputConfig& WithType(const char* value) { SetType(value); return *this;}
 
 
     /**
@@ -478,48 +491,73 @@ namespace Model
 
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
      */
-    inline const ValueMappings& GetValueMappings() const{ return m_valueMappings; }
+    inline bool GetIsArray() const{ return m_isArray; }
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
      */
-    inline bool ValueMappingsHasBeenSet() const { return m_valueMappingsHasBeenSet; }
+    inline bool IsArrayHasBeenSet() const { return m_isArrayHasBeenSet; }
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
      */
-    inline void SetValueMappings(const ValueMappings& value) { m_valueMappingsHasBeenSet = true; m_valueMappings = value; }
+    inline void SetIsArray(bool value) { m_isArrayHasBeenSet = true; m_isArray = value; }
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>Specifies whether to render the field as an array. This property is ignored
+     * if the <code>dataSourceType</code> for the form is a Data Store.</p>
      */
-    inline void SetValueMappings(ValueMappings&& value) { m_valueMappingsHasBeenSet = true; m_valueMappings = std::move(value); }
+    inline FieldInputConfig& WithIsArray(bool value) { SetIsArray(value); return *this;}
+
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>The configuration for the file uploader field.</p>
      */
-    inline FieldInputConfig& WithValueMappings(const ValueMappings& value) { SetValueMappings(value); return *this;}
+    inline const FileUploaderFieldConfig& GetFileUploaderConfig() const{ return m_fileUploaderConfig; }
 
     /**
-     * <p>The information to use to customize the input fields with data at
-     * runtime.</p>
+     * <p>The configuration for the file uploader field.</p>
      */
-    inline FieldInputConfig& WithValueMappings(ValueMappings&& value) { SetValueMappings(std::move(value)); return *this;}
+    inline bool FileUploaderConfigHasBeenSet() const { return m_fileUploaderConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for the file uploader field.</p>
+     */
+    inline void SetFileUploaderConfig(const FileUploaderFieldConfig& value) { m_fileUploaderConfigHasBeenSet = true; m_fileUploaderConfig = value; }
+
+    /**
+     * <p>The configuration for the file uploader field.</p>
+     */
+    inline void SetFileUploaderConfig(FileUploaderFieldConfig&& value) { m_fileUploaderConfigHasBeenSet = true; m_fileUploaderConfig = std::move(value); }
+
+    /**
+     * <p>The configuration for the file uploader field.</p>
+     */
+    inline FieldInputConfig& WithFileUploaderConfig(const FileUploaderFieldConfig& value) { SetFileUploaderConfig(value); return *this;}
+
+    /**
+     * <p>The configuration for the file uploader field.</p>
+     */
+    inline FieldInputConfig& WithFileUploaderConfig(FileUploaderFieldConfig&& value) { SetFileUploaderConfig(std::move(value)); return *this;}
 
   private:
 
-    bool m_defaultChecked;
-    bool m_defaultCheckedHasBeenSet = false;
+    Aws::String m_type;
+    bool m_typeHasBeenSet = false;
 
-    Aws::String m_defaultCountryCode;
-    bool m_defaultCountryCodeHasBeenSet = false;
+    bool m_required;
+    bool m_requiredHasBeenSet = false;
+
+    bool m_readOnly;
+    bool m_readOnlyHasBeenSet = false;
+
+    Aws::String m_placeholder;
+    bool m_placeholderHasBeenSet = false;
 
     Aws::String m_defaultValue;
     bool m_defaultValueHasBeenSet = false;
@@ -527,38 +565,35 @@ namespace Model
     Aws::String m_descriptiveText;
     bool m_descriptiveTextHasBeenSet = false;
 
-    bool m_isArray;
-    bool m_isArrayHasBeenSet = false;
+    bool m_defaultChecked;
+    bool m_defaultCheckedHasBeenSet = false;
 
-    double m_maxValue;
-    bool m_maxValueHasBeenSet = false;
+    Aws::String m_defaultCountryCode;
+    bool m_defaultCountryCodeHasBeenSet = false;
 
-    double m_minValue;
-    bool m_minValueHasBeenSet = false;
+    ValueMappings m_valueMappings;
+    bool m_valueMappingsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_placeholder;
-    bool m_placeholderHasBeenSet = false;
+    double m_minValue;
+    bool m_minValueHasBeenSet = false;
 
-    bool m_readOnly;
-    bool m_readOnlyHasBeenSet = false;
-
-    bool m_required;
-    bool m_requiredHasBeenSet = false;
+    double m_maxValue;
+    bool m_maxValueHasBeenSet = false;
 
     double m_step;
     bool m_stepHasBeenSet = false;
 
-    Aws::String m_type;
-    bool m_typeHasBeenSet = false;
-
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
 
-    ValueMappings m_valueMappings;
-    bool m_valueMappingsHasBeenSet = false;
+    bool m_isArray;
+    bool m_isArrayHasBeenSet = false;
+
+    FileUploaderFieldConfig m_fileUploaderConfig;
+    bool m_fileUploaderConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -44,7 +44,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const CustomResponse& GetCustomResponse() const{ return m_customResponse; }
 
@@ -52,7 +54,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool CustomResponseHasBeenSet() const { return m_customResponseHasBeenSet; }
 
@@ -60,7 +64,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponse(const CustomResponse& value) { m_customResponseHasBeenSet = true; m_customResponse = value; }
 
@@ -68,7 +74,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponse(CustomResponse&& value) { m_customResponseHasBeenSet = true; m_customResponse = std::move(value); }
 
@@ -76,7 +84,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline BlockAction& WithCustomResponse(const CustomResponse& value) { SetCustomResponse(value); return *this;}
 
@@ -84,7 +94,9 @@ namespace Model
      * <p>Defines a custom response for the web request.</p> <p>For information about
      * customizing web requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline BlockAction& WithCustomResponse(CustomResponse&& value) { SetCustomResponse(std::move(value)); return *this;}
 

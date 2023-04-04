@@ -19,26 +19,38 @@ namespace Model
 {
 
 Predicate::Predicate() : 
+    m_orHasBeenSet(false),
     m_andHasBeenSet(false),
     m_fieldHasBeenSet(false),
-    m_operandHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_orHasBeenSet(false)
+    m_operandHasBeenSet(false),
+    m_operandTypeHasBeenSet(false)
 {
 }
 
 Predicate::Predicate(JsonView jsonValue) : 
+    m_orHasBeenSet(false),
     m_andHasBeenSet(false),
     m_fieldHasBeenSet(false),
-    m_operandHasBeenSet(false),
     m_operatorHasBeenSet(false),
-    m_orHasBeenSet(false)
+    m_operandHasBeenSet(false),
+    m_operandTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 Predicate& Predicate::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("or"))
+  {
+    Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
+    for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
+    {
+      m_or.push_back(orJsonList[orIndex].AsObject());
+    }
+    m_orHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("and"))
   {
     Aws::Utils::Array<JsonView> andJsonList = jsonValue.GetArray("and");
@@ -56,13 +68,6 @@ Predicate& Predicate::operator =(JsonView jsonValue)
     m_fieldHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("operand"))
-  {
-    m_operand = jsonValue.GetString("operand");
-
-    m_operandHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("operator"))
   {
     m_operator = jsonValue.GetString("operator");
@@ -70,14 +75,18 @@ Predicate& Predicate::operator =(JsonView jsonValue)
     m_operatorHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("or"))
+  if(jsonValue.ValueExists("operand"))
   {
-    Aws::Utils::Array<JsonView> orJsonList = jsonValue.GetArray("or");
-    for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
-    {
-      m_or.push_back(orJsonList[orIndex].AsObject());
-    }
-    m_orHasBeenSet = true;
+    m_operand = jsonValue.GetString("operand");
+
+    m_operandHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("operandType"))
+  {
+    m_operandType = jsonValue.GetString("operandType");
+
+    m_operandTypeHasBeenSet = true;
   }
 
   return *this;
@@ -86,6 +95,17 @@ Predicate& Predicate::operator =(JsonView jsonValue)
 JsonValue Predicate::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_orHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> orJsonList(m_or.size());
+   for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
+   {
+     orJsonList[orIndex].AsObject(m_or[orIndex].Jsonize());
+   }
+   payload.WithArray("or", std::move(orJsonList));
+
+  }
 
   if(m_andHasBeenSet)
   {
@@ -104,26 +124,21 @@ JsonValue Predicate::Jsonize() const
 
   }
 
-  if(m_operandHasBeenSet)
-  {
-   payload.WithString("operand", m_operand);
-
-  }
-
   if(m_operatorHasBeenSet)
   {
    payload.WithString("operator", m_operator);
 
   }
 
-  if(m_orHasBeenSet)
+  if(m_operandHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> orJsonList(m_or.size());
-   for(unsigned orIndex = 0; orIndex < orJsonList.GetLength(); ++orIndex)
-   {
-     orJsonList[orIndex].AsObject(m_or[orIndex].Jsonize());
-   }
-   payload.WithArray("or", std::move(orJsonList));
+   payload.WithString("operand", m_operand);
+
+  }
+
+  if(m_operandTypeHasBeenSet)
+  {
+   payload.WithString("operandType", m_operandType);
 
   }
 

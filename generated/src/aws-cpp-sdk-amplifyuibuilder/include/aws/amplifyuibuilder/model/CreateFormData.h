@@ -5,12 +5,13 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/amplifyuibuilder/model/FormCTA.h>
-#include <aws/amplifyuibuilder/model/FormDataTypeConfig.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/amplifyuibuilder/model/FormActionType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifyuibuilder/model/FormDataTypeConfig.h>
+#include <aws/amplifyuibuilder/model/FormActionType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/amplifyuibuilder/model/FormStyle.h>
+#include <aws/amplifyuibuilder/model/FormCTA.h>
+#include <aws/amplifyuibuilder/model/LabelDecorator.h>
 #include <aws/amplifyuibuilder/model/FieldConfig.h>
 #include <aws/amplifyuibuilder/model/SectionalElement.h>
 #include <utility>
@@ -46,40 +47,44 @@ namespace Model
 
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline const FormCTA& GetCta() const{ return m_cta; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline bool CtaHasBeenSet() const { return m_ctaHasBeenSet; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline void SetCta(const FormCTA& value) { m_ctaHasBeenSet = true; m_cta = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline void SetCta(FormCTA&& value) { m_ctaHasBeenSet = true; m_cta = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline CreateFormData& WithCta(const FormCTA& value) { SetCta(value); return *this;}
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The <code>FormCTA</code> object that stores the call to action configuration
-     * for the form.</p>
+     * <p>The name of the form.</p>
      */
-    inline CreateFormData& WithCta(FormCTA&& value) { SetCta(std::move(value)); return *this;}
+    inline CreateFormData& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The name of the form.</p>
+     */
+    inline CreateFormData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the form.</p>
+     */
+    inline CreateFormData& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -111,6 +116,37 @@ namespace Model
      * <p>The type of data source to use to create the form.</p>
      */
     inline CreateFormData& WithDataType(FormDataTypeConfig&& value) { SetDataType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline const FormActionType& GetFormActionType() const{ return m_formActionType; }
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline bool FormActionTypeHasBeenSet() const { return m_formActionTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline void SetFormActionType(const FormActionType& value) { m_formActionTypeHasBeenSet = true; m_formActionType = value; }
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline void SetFormActionType(FormActionType&& value) { m_formActionTypeHasBeenSet = true; m_formActionType = std::move(value); }
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline CreateFormData& WithFormActionType(const FormActionType& value) { SetFormActionType(value); return *this;}
+
+    /**
+     * <p>Specifies whether to perform a create or update action on the form.</p>
+     */
+    inline CreateFormData& WithFormActionType(FormActionType&& value) { SetFormActionType(std::move(value)); return *this;}
 
 
     /**
@@ -175,116 +211,34 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline const FormActionType& GetFormActionType() const{ return m_formActionType; }
+    inline const FormStyle& GetStyle() const{ return m_style; }
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline bool FormActionTypeHasBeenSet() const { return m_formActionTypeHasBeenSet; }
+    inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline void SetFormActionType(const FormActionType& value) { m_formActionTypeHasBeenSet = true; m_formActionType = value; }
+    inline void SetStyle(const FormStyle& value) { m_styleHasBeenSet = true; m_style = value; }
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline void SetFormActionType(FormActionType&& value) { m_formActionTypeHasBeenSet = true; m_formActionType = std::move(value); }
+    inline void SetStyle(FormStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline CreateFormData& WithFormActionType(const FormActionType& value) { SetFormActionType(value); return *this;}
+    inline CreateFormData& WithStyle(const FormStyle& value) { SetStyle(value); return *this;}
 
     /**
-     * <p>Specifies whether to perform a create or update action on the form.</p>
+     * <p>The configuration for the form's style.</p>
      */
-    inline CreateFormData& WithFormActionType(FormActionType&& value) { SetFormActionType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline CreateFormData& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline CreateFormData& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the form.</p>
-     */
-    inline CreateFormData& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline CreateFormData& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline CreateFormData& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
-
-    /**
-     * <p>The schema version of the form.</p>
-     */
-    inline CreateFormData& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+    inline CreateFormData& WithStyle(FormStyle&& value) { SetStyle(std::move(value)); return *this;}
 
 
     /**
@@ -361,34 +315,81 @@ namespace Model
 
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline const FormStyle& GetStyle() const{ return m_style; }
+    inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline bool StyleHasBeenSet() const { return m_styleHasBeenSet; }
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline void SetStyle(const FormStyle& value) { m_styleHasBeenSet = true; m_style = value; }
+    inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline void SetStyle(FormStyle&& value) { m_styleHasBeenSet = true; m_style = std::move(value); }
+    inline void SetSchemaVersion(Aws::String&& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = std::move(value); }
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline CreateFormData& WithStyle(const FormStyle& value) { SetStyle(value); return *this;}
+    inline void SetSchemaVersion(const char* value) { m_schemaVersionHasBeenSet = true; m_schemaVersion.assign(value); }
 
     /**
-     * <p>The configuration for the form's style.</p>
+     * <p>The schema version of the form.</p>
      */
-    inline CreateFormData& WithStyle(FormStyle&& value) { SetStyle(std::move(value)); return *this;}
+    inline CreateFormData& WithSchemaVersion(const Aws::String& value) { SetSchemaVersion(value); return *this;}
+
+    /**
+     * <p>The schema version of the form.</p>
+     */
+    inline CreateFormData& WithSchemaVersion(Aws::String&& value) { SetSchemaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The schema version of the form.</p>
+     */
+    inline CreateFormData& WithSchemaVersion(const char* value) { SetSchemaVersion(value); return *this;}
+
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline const FormCTA& GetCta() const{ return m_cta; }
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline bool CtaHasBeenSet() const { return m_ctaHasBeenSet; }
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline void SetCta(const FormCTA& value) { m_ctaHasBeenSet = true; m_cta = value; }
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline void SetCta(FormCTA&& value) { m_ctaHasBeenSet = true; m_cta = std::move(value); }
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline CreateFormData& WithCta(const FormCTA& value) { SetCta(value); return *this;}
+
+    /**
+     * <p>The <code>FormCTA</code> object that stores the call to action configuration
+     * for the form.</p>
+     */
+    inline CreateFormData& WithCta(FormCTA&& value) { SetCta(std::move(value)); return *this;}
 
 
     /**
@@ -456,34 +457,68 @@ namespace Model
      */
     inline CreateFormData& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline const LabelDecorator& GetLabelDecorator() const{ return m_labelDecorator; }
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline bool LabelDecoratorHasBeenSet() const { return m_labelDecoratorHasBeenSet; }
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline void SetLabelDecorator(const LabelDecorator& value) { m_labelDecoratorHasBeenSet = true; m_labelDecorator = value; }
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline void SetLabelDecorator(LabelDecorator&& value) { m_labelDecoratorHasBeenSet = true; m_labelDecorator = std::move(value); }
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline CreateFormData& WithLabelDecorator(const LabelDecorator& value) { SetLabelDecorator(value); return *this;}
+
+    /**
+     * <p>Specifies an icon or decoration to display on the form.</p>
+     */
+    inline CreateFormData& WithLabelDecorator(LabelDecorator&& value) { SetLabelDecorator(std::move(value)); return *this;}
+
   private:
-
-    FormCTA m_cta;
-    bool m_ctaHasBeenSet = false;
-
-    FormDataTypeConfig m_dataType;
-    bool m_dataTypeHasBeenSet = false;
-
-    Aws::Map<Aws::String, FieldConfig> m_fields;
-    bool m_fieldsHasBeenSet = false;
-
-    FormActionType m_formActionType;
-    bool m_formActionTypeHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::String m_schemaVersion;
-    bool m_schemaVersionHasBeenSet = false;
+    FormDataTypeConfig m_dataType;
+    bool m_dataTypeHasBeenSet = false;
 
-    Aws::Map<Aws::String, SectionalElement> m_sectionalElements;
-    bool m_sectionalElementsHasBeenSet = false;
+    FormActionType m_formActionType;
+    bool m_formActionTypeHasBeenSet = false;
+
+    Aws::Map<Aws::String, FieldConfig> m_fields;
+    bool m_fieldsHasBeenSet = false;
 
     FormStyle m_style;
     bool m_styleHasBeenSet = false;
 
+    Aws::Map<Aws::String, SectionalElement> m_sectionalElements;
+    bool m_sectionalElementsHasBeenSet = false;
+
+    Aws::String m_schemaVersion;
+    bool m_schemaVersionHasBeenSet = false;
+
+    FormCTA m_cta;
+    bool m_ctaHasBeenSet = false;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    LabelDecorator m_labelDecorator;
+    bool m_labelDecoratorHasBeenSet = false;
   };
 
 } // namespace Model

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/amplifyuibuilder/model/FixedPosition.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -36,47 +36,6 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API FieldPosition(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API FieldPosition& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline const Aws::String& GetBelow() const{ return m_below; }
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline bool BelowHasBeenSet() const { return m_belowHasBeenSet; }
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline void SetBelow(const Aws::String& value) { m_belowHasBeenSet = true; m_below = value; }
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline void SetBelow(Aws::String&& value) { m_belowHasBeenSet = true; m_below = std::move(value); }
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline void SetBelow(const char* value) { m_belowHasBeenSet = true; m_below.assign(value); }
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline FieldPosition& WithBelow(const Aws::String& value) { SetBelow(value); return *this;}
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline FieldPosition& WithBelow(Aws::String&& value) { SetBelow(std::move(value)); return *this;}
-
-    /**
-     * <p>The field position is below the field specified by the string.</p>
-     */
-    inline FieldPosition& WithBelow(const char* value) { SetBelow(value); return *this;}
 
 
     /**
@@ -156,16 +115,57 @@ namespace Model
      */
     inline FieldPosition& WithRightOf(const char* value) { SetRightOf(value); return *this;}
 
-  private:
 
-    Aws::String m_below;
-    bool m_belowHasBeenSet = false;
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline const Aws::String& GetBelow() const{ return m_below; }
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline bool BelowHasBeenSet() const { return m_belowHasBeenSet; }
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline void SetBelow(const Aws::String& value) { m_belowHasBeenSet = true; m_below = value; }
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline void SetBelow(Aws::String&& value) { m_belowHasBeenSet = true; m_below = std::move(value); }
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline void SetBelow(const char* value) { m_belowHasBeenSet = true; m_below.assign(value); }
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline FieldPosition& WithBelow(const Aws::String& value) { SetBelow(value); return *this;}
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline FieldPosition& WithBelow(Aws::String&& value) { SetBelow(std::move(value)); return *this;}
+
+    /**
+     * <p>The field position is below the field specified by the string.</p>
+     */
+    inline FieldPosition& WithBelow(const char* value) { SetBelow(value); return *this;}
+
+  private:
 
     FixedPosition m_fixed;
     bool m_fixedHasBeenSet = false;
 
     Aws::String m_rightOf;
     bool m_rightOfHasBeenSet = false;
+
+    Aws::String m_below;
+    bool m_belowHasBeenSet = false;
   };
 
 } // namespace Model

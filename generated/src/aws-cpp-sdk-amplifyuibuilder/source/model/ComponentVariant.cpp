@@ -19,20 +19,30 @@ namespace Model
 {
 
 ComponentVariant::ComponentVariant() : 
-    m_overridesHasBeenSet(false),
-    m_variantValuesHasBeenSet(false)
+    m_variantValuesHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
 }
 
 ComponentVariant::ComponentVariant(JsonView jsonValue) : 
-    m_overridesHasBeenSet(false),
-    m_variantValuesHasBeenSet(false)
+    m_variantValuesHasBeenSet(false),
+    m_overridesHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ComponentVariant& ComponentVariant::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("variantValues"))
+  {
+    Aws::Map<Aws::String, JsonView> variantValuesJsonMap = jsonValue.GetObject("variantValues").GetAllObjects();
+    for(auto& variantValuesItem : variantValuesJsonMap)
+    {
+      m_variantValues[variantValuesItem.first] = variantValuesItem.second.AsString();
+    }
+    m_variantValuesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("overrides"))
   {
     Aws::Map<Aws::String, JsonView> overridesJsonMap = jsonValue.GetObject("overrides").GetAllObjects();
@@ -49,22 +59,23 @@ ComponentVariant& ComponentVariant::operator =(JsonView jsonValue)
     m_overridesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("variantValues"))
-  {
-    Aws::Map<Aws::String, JsonView> variantValuesJsonMap = jsonValue.GetObject("variantValues").GetAllObjects();
-    for(auto& variantValuesItem : variantValuesJsonMap)
-    {
-      m_variantValues[variantValuesItem.first] = variantValuesItem.second.AsString();
-    }
-    m_variantValuesHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ComponentVariant::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_variantValuesHasBeenSet)
+  {
+   JsonValue variantValuesJsonMap;
+   for(auto& variantValuesItem : m_variantValues)
+   {
+     variantValuesJsonMap.WithString(variantValuesItem.first, variantValuesItem.second);
+   }
+   payload.WithObject("variantValues", std::move(variantValuesJsonMap));
+
+  }
 
   if(m_overridesHasBeenSet)
   {
@@ -79,17 +90,6 @@ JsonValue ComponentVariant::Jsonize() const
      overridesJsonMap.WithObject(overridesItem.first, std::move(componentOverridesValueJsonMap));
    }
    payload.WithObject("overrides", std::move(overridesJsonMap));
-
-  }
-
-  if(m_variantValuesHasBeenSet)
-  {
-   JsonValue variantValuesJsonMap;
-   for(auto& variantValuesItem : m_variantValues)
-   {
-     variantValuesJsonMap.WithString(variantValuesItem.first, variantValuesItem.second);
-   }
-   payload.WithObject("variantValues", std::move(variantValuesJsonMap));
 
   }
 

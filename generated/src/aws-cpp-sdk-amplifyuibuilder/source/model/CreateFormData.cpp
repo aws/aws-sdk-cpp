@@ -19,41 +19,45 @@ namespace Model
 {
 
 CreateFormData::CreateFormData() : 
-    m_ctaHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
     m_formActionType(FormActionType::NOT_SET),
     m_formActionTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
+    m_fieldsHasBeenSet(false),
     m_styleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_sectionalElementsHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
+    m_ctaHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_labelDecorator(LabelDecorator::NOT_SET),
+    m_labelDecoratorHasBeenSet(false)
 {
 }
 
 CreateFormData::CreateFormData(JsonView jsonValue) : 
-    m_ctaHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_dataTypeHasBeenSet(false),
-    m_fieldsHasBeenSet(false),
     m_formActionType(FormActionType::NOT_SET),
     m_formActionTypeHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_schemaVersionHasBeenSet(false),
-    m_sectionalElementsHasBeenSet(false),
+    m_fieldsHasBeenSet(false),
     m_styleHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_sectionalElementsHasBeenSet(false),
+    m_schemaVersionHasBeenSet(false),
+    m_ctaHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_labelDecorator(LabelDecorator::NOT_SET),
+    m_labelDecoratorHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 CreateFormData& CreateFormData::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cta"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_cta = jsonValue.GetObject("cta");
+    m_name = jsonValue.GetString("name");
 
-    m_ctaHasBeenSet = true;
+    m_nameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("dataType"))
@@ -61,6 +65,13 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     m_dataType = jsonValue.GetObject("dataType");
 
     m_dataTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("formActionType"))
+  {
+    m_formActionType = FormActionTypeMapper::GetFormActionTypeForName(jsonValue.GetString("formActionType"));
+
+    m_formActionTypeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fields"))
@@ -73,25 +84,11 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     m_fieldsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("formActionType"))
+  if(jsonValue.ValueExists("style"))
   {
-    m_formActionType = FormActionTypeMapper::GetFormActionTypeForName(jsonValue.GetString("formActionType"));
+    m_style = jsonValue.GetObject("style");
 
-    m_formActionTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("schemaVersion"))
-  {
-    m_schemaVersion = jsonValue.GetString("schemaVersion");
-
-    m_schemaVersionHasBeenSet = true;
+    m_styleHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sectionalElements"))
@@ -104,11 +101,18 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     m_sectionalElementsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("style"))
+  if(jsonValue.ValueExists("schemaVersion"))
   {
-    m_style = jsonValue.GetObject("style");
+    m_schemaVersion = jsonValue.GetString("schemaVersion");
 
-    m_styleHasBeenSet = true;
+    m_schemaVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cta"))
+  {
+    m_cta = jsonValue.GetObject("cta");
+
+    m_ctaHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -121,6 +125,13 @@ CreateFormData& CreateFormData::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("labelDecorator"))
+  {
+    m_labelDecorator = LabelDecoratorMapper::GetLabelDecoratorForName(jsonValue.GetString("labelDecorator"));
+
+    m_labelDecoratorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -128,9 +139,9 @@ JsonValue CreateFormData::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_ctaHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithObject("cta", m_cta.Jsonize());
+   payload.WithString("name", m_name);
 
   }
 
@@ -138,6 +149,11 @@ JsonValue CreateFormData::Jsonize() const
   {
    payload.WithObject("dataType", m_dataType.Jsonize());
 
+  }
+
+  if(m_formActionTypeHasBeenSet)
+  {
+   payload.WithString("formActionType", FormActionTypeMapper::GetNameForFormActionType(m_formActionType));
   }
 
   if(m_fieldsHasBeenSet)
@@ -151,20 +167,9 @@ JsonValue CreateFormData::Jsonize() const
 
   }
 
-  if(m_formActionTypeHasBeenSet)
+  if(m_styleHasBeenSet)
   {
-   payload.WithString("formActionType", FormActionTypeMapper::GetNameForFormActionType(m_formActionType));
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_schemaVersionHasBeenSet)
-  {
-   payload.WithString("schemaVersion", m_schemaVersion);
+   payload.WithObject("style", m_style.Jsonize());
 
   }
 
@@ -179,9 +184,15 @@ JsonValue CreateFormData::Jsonize() const
 
   }
 
-  if(m_styleHasBeenSet)
+  if(m_schemaVersionHasBeenSet)
   {
-   payload.WithObject("style", m_style.Jsonize());
+   payload.WithString("schemaVersion", m_schemaVersion);
+
+  }
+
+  if(m_ctaHasBeenSet)
+  {
+   payload.WithObject("cta", m_cta.Jsonize());
 
   }
 
@@ -194,6 +205,11 @@ JsonValue CreateFormData::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_labelDecoratorHasBeenSet)
+  {
+   payload.WithString("labelDecorator", LabelDecoratorMapper::GetNameForLabelDecorator(m_labelDecorator));
   }
 
   return payload;

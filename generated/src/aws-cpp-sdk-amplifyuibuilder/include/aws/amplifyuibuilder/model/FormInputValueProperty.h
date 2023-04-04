@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifyuibuilder/model/FormInputValuePropertyBindingProperties.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -79,10 +81,96 @@ namespace Model
      */
     inline FormInputValueProperty& WithValue(const char* value) { SetValue(value); return *this;}
 
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline const FormInputValuePropertyBindingProperties& GetBindingProperties() const{ return m_bindingProperties; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline void SetBindingProperties(const FormInputValuePropertyBindingProperties& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline void SetBindingProperties(FormInputValuePropertyBindingProperties&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline FormInputValueProperty& WithBindingProperties(const FormInputValuePropertyBindingProperties& value) { SetBindingProperties(value); return *this;}
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline FormInputValueProperty& WithBindingProperties(FormInputValuePropertyBindingProperties&& value) { SetBindingProperties(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline const Aws::Vector<FormInputValueProperty>& GetConcat() const{ return m_concat; }
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline bool ConcatHasBeenSet() const { return m_concatHasBeenSet; }
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline void SetConcat(const Aws::Vector<FormInputValueProperty>& value) { m_concatHasBeenSet = true; m_concat = value; }
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline void SetConcat(Aws::Vector<FormInputValueProperty>&& value) { m_concatHasBeenSet = true; m_concat = std::move(value); }
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline FormInputValueProperty& WithConcat(const Aws::Vector<FormInputValueProperty>& value) { SetConcat(value); return *this;}
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline FormInputValueProperty& WithConcat(Aws::Vector<FormInputValueProperty>&& value) { SetConcat(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline FormInputValueProperty& AddConcat(const FormInputValueProperty& value) { m_concatHasBeenSet = true; m_concat.push_back(value); return *this; }
+
+    /**
+     * <p>A list of form properties to concatenate to create the value to assign to
+     * this field property.</p>
+     */
+    inline FormInputValueProperty& AddConcat(FormInputValueProperty&& value) { m_concatHasBeenSet = true; m_concat.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_value;
     bool m_valueHasBeenSet = false;
+
+    FormInputValuePropertyBindingProperties m_bindingProperties;
+    bool m_bindingPropertiesHasBeenSet = false;
+
+    Aws::Vector<FormInputValueProperty> m_concat;
+    bool m_concatHasBeenSet = false;
   };
 
 } // namespace Model

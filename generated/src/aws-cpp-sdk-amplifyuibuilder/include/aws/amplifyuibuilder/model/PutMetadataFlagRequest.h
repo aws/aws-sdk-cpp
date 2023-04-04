@@ -75,37 +75,6 @@ namespace Model
 
 
     /**
-     * <p>The metadata information to store.</p>
-     */
-    inline const PutMetadataFlagBody& GetMemberBody() const{ return m_body; }
-
-    /**
-     * <p>The metadata information to store.</p>
-     */
-    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
-
-    /**
-     * <p>The metadata information to store.</p>
-     */
-    inline void SetBody(const PutMetadataFlagBody& value) { m_bodyHasBeenSet = true; m_body = value; }
-
-    /**
-     * <p>The metadata information to store.</p>
-     */
-    inline void SetBody(PutMetadataFlagBody&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
-
-    /**
-     * <p>The metadata information to store.</p>
-     */
-    inline PutMetadataFlagRequest& WithBody(const PutMetadataFlagBody& value) { SetBody(value); return *this;}
-
-    /**
-     * <p>The metadata information to store.</p>
-     */
-    inline PutMetadataFlagRequest& WithBody(PutMetadataFlagBody&& value) { SetBody(std::move(value)); return *this;}
-
-
-    /**
      * <p>The name of the backend environment that is part of the Amplify app.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
@@ -186,19 +155,50 @@ namespace Model
      */
     inline PutMetadataFlagRequest& WithFeatureName(const char* value) { SetFeatureName(value); return *this;}
 
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline const PutMetadataFlagBody& GetMemberBody() const{ return m_body; }
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline void SetBody(const PutMetadataFlagBody& value) { m_bodyHasBeenSet = true; m_body = value; }
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline void SetBody(PutMetadataFlagBody&& value) { m_bodyHasBeenSet = true; m_body = std::move(value); }
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline PutMetadataFlagRequest& WithBody(const PutMetadataFlagBody& value) { SetBody(value); return *this;}
+
+    /**
+     * <p>The metadata information to store.</p>
+     */
+    inline PutMetadataFlagRequest& WithBody(PutMetadataFlagBody&& value) { SetBody(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
-
-    PutMetadataFlagBody m_body;
-    bool m_bodyHasBeenSet = false;
 
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_featureName;
     bool m_featureNameHasBeenSet = false;
+
+    PutMetadataFlagBody m_body;
+    bool m_bodyHasBeenSet = false;
   };
 
 } // namespace Model

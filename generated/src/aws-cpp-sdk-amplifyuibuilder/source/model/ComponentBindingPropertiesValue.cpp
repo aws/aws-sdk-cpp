@@ -19,22 +19,29 @@ namespace Model
 {
 
 ComponentBindingPropertiesValue::ComponentBindingPropertiesValue() : 
+    m_typeHasBeenSet(false),
     m_bindingPropertiesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_defaultValueHasBeenSet(false)
 {
 }
 
 ComponentBindingPropertiesValue::ComponentBindingPropertiesValue(JsonView jsonValue) : 
+    m_typeHasBeenSet(false),
     m_bindingPropertiesHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_typeHasBeenSet(false)
+    m_defaultValueHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ComponentBindingPropertiesValue& ComponentBindingPropertiesValue::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = jsonValue.GetString("type");
+
+    m_typeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bindingProperties"))
   {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
@@ -49,19 +56,18 @@ ComponentBindingPropertiesValue& ComponentBindingPropertiesValue::operator =(Jso
     m_defaultValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = jsonValue.GetString("type");
-
-    m_typeHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ComponentBindingPropertiesValue::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", m_type);
+
+  }
 
   if(m_bindingPropertiesHasBeenSet)
   {
@@ -72,12 +78,6 @@ JsonValue ComponentBindingPropertiesValue::Jsonize() const
   if(m_defaultValueHasBeenSet)
   {
    payload.WithString("defaultValue", m_defaultValue);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
 
   }
 

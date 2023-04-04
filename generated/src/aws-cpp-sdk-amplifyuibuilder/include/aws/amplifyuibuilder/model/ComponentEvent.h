@@ -83,6 +83,37 @@ namespace Model
 
 
     /**
+     * <p>Describes information about the action.</p>
+     */
+    inline const ActionParameters& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Describes information about the action.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>Describes information about the action.</p>
+     */
+    inline void SetParameters(const ActionParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
+
+    /**
+     * <p>Describes information about the action.</p>
+     */
+    inline void SetParameters(ActionParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
+
+    /**
+     * <p>Describes information about the action.</p>
+     */
+    inline ComponentEvent& WithParameters(const ActionParameters& value) { SetParameters(value); return *this;}
+
+    /**
+     * <p>Describes information about the action.</p>
+     */
+    inline ComponentEvent& WithParameters(ActionParameters&& value) { SetParameters(std::move(value)); return *this;}
+
+
+    /**
      * <p>Binds an event to an action on a component. When you specify a
      * <code>bindingEvent</code>, the event is called when the action is performed.</p>
      */
@@ -130,47 +161,16 @@ namespace Model
      */
     inline ComponentEvent& WithBindingEvent(const char* value) { SetBindingEvent(value); return *this;}
 
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline const ActionParameters& GetParameters() const{ return m_parameters; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline void SetParameters(const ActionParameters& value) { m_parametersHasBeenSet = true; m_parameters = value; }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline void SetParameters(ActionParameters&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline ComponentEvent& WithParameters(const ActionParameters& value) { SetParameters(value); return *this;}
-
-    /**
-     * <p>Describes information about the action.</p>
-     */
-    inline ComponentEvent& WithParameters(ActionParameters&& value) { SetParameters(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_action;
     bool m_actionHasBeenSet = false;
 
-    Aws::String m_bindingEvent;
-    bool m_bindingEventHasBeenSet = false;
-
     ActionParameters m_parameters;
     bool m_parametersHasBeenSet = false;
+
+    Aws::String m_bindingEvent;
+    bool m_bindingEventHasBeenSet = false;
   };
 
 } // namespace Model

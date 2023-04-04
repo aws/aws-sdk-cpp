@@ -20,42 +20,42 @@ namespace Model
 {
 
 ComponentProperty::ComponentProperty() : 
+    m_valueHasBeenSet(false),
     m_bindingPropertiesHasBeenSet(false),
-    m_bindingsHasBeenSet(false),
     m_collectionBindingPropertiesHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_bindingsHasBeenSet(false),
+    m_eventHasBeenSet(false),
+    m_userAttributeHasBeenSet(false),
     m_concatHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_configured(false),
     m_configuredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_importedValueHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_propertyHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_userAttributeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_importedValueHasBeenSet(false),
+    m_componentNameHasBeenSet(false),
+    m_propertyHasBeenSet(false)
 {
 }
 
 ComponentProperty::ComponentProperty(JsonView jsonValue) : 
+    m_valueHasBeenSet(false),
     m_bindingPropertiesHasBeenSet(false),
-    m_bindingsHasBeenSet(false),
     m_collectionBindingPropertiesHasBeenSet(false),
-    m_componentNameHasBeenSet(false),
+    m_defaultValueHasBeenSet(false),
+    m_modelHasBeenSet(false),
+    m_bindingsHasBeenSet(false),
+    m_eventHasBeenSet(false),
+    m_userAttributeHasBeenSet(false),
     m_concatHasBeenSet(false),
     m_conditionHasBeenSet(false),
     m_configured(false),
     m_configuredHasBeenSet(false),
-    m_defaultValueHasBeenSet(false),
-    m_eventHasBeenSet(false),
-    m_importedValueHasBeenSet(false),
-    m_modelHasBeenSet(false),
-    m_propertyHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_userAttributeHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_importedValueHasBeenSet(false),
+    m_componentNameHasBeenSet(false),
+    m_propertyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -69,11 +69,39 @@ ComponentProperty& ComponentProperty::WithCondition(ComponentConditionProperty&&
 
 ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("value"))
+  {
+    m_value = jsonValue.GetString("value");
+
+    m_valueHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("bindingProperties"))
   {
     m_bindingProperties = jsonValue.GetObject("bindingProperties");
 
     m_bindingPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("collectionBindingProperties"))
+  {
+    m_collectionBindingProperties = jsonValue.GetObject("collectionBindingProperties");
+
+    m_collectionBindingPropertiesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("defaultValue"))
+  {
+    m_defaultValue = jsonValue.GetString("defaultValue");
+
+    m_defaultValueHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("model"))
+  {
+    m_model = jsonValue.GetString("model");
+
+    m_modelHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("bindings"))
@@ -86,18 +114,18 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_bindingsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("collectionBindingProperties"))
+  if(jsonValue.ValueExists("event"))
   {
-    m_collectionBindingProperties = jsonValue.GetObject("collectionBindingProperties");
+    m_event = jsonValue.GetString("event");
 
-    m_collectionBindingPropertiesHasBeenSet = true;
+    m_eventHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("componentName"))
+  if(jsonValue.ValueExists("userAttribute"))
   {
-    m_componentName = jsonValue.GetString("componentName");
+    m_userAttribute = jsonValue.GetString("userAttribute");
 
-    m_componentNameHasBeenSet = true;
+    m_userAttributeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("concat"))
@@ -124,18 +152,11 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_configuredHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("defaultValue"))
+  if(jsonValue.ValueExists("type"))
   {
-    m_defaultValue = jsonValue.GetString("defaultValue");
+    m_type = jsonValue.GetString("type");
 
-    m_defaultValueHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("event"))
-  {
-    m_event = jsonValue.GetString("event");
-
-    m_eventHasBeenSet = true;
+    m_typeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("importedValue"))
@@ -145,11 +166,11 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_importedValueHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("model"))
+  if(jsonValue.ValueExists("componentName"))
   {
-    m_model = jsonValue.GetString("model");
+    m_componentName = jsonValue.GetString("componentName");
 
-    m_modelHasBeenSet = true;
+    m_componentNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("property"))
@@ -159,27 +180,6 @@ ComponentProperty& ComponentProperty::operator =(JsonView jsonValue)
     m_propertyHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("type"))
-  {
-    m_type = jsonValue.GetString("type");
-
-    m_typeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("userAttribute"))
-  {
-    m_userAttribute = jsonValue.GetString("userAttribute");
-
-    m_userAttributeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("value"))
-  {
-    m_value = jsonValue.GetString("value");
-
-    m_valueHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -187,9 +187,33 @@ JsonValue ComponentProperty::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_valueHasBeenSet)
+  {
+   payload.WithString("value", m_value);
+
+  }
+
   if(m_bindingPropertiesHasBeenSet)
   {
    payload.WithObject("bindingProperties", m_bindingProperties.Jsonize());
+
+  }
+
+  if(m_collectionBindingPropertiesHasBeenSet)
+  {
+   payload.WithObject("collectionBindingProperties", m_collectionBindingProperties.Jsonize());
+
+  }
+
+  if(m_defaultValueHasBeenSet)
+  {
+   payload.WithString("defaultValue", m_defaultValue);
+
+  }
+
+  if(m_modelHasBeenSet)
+  {
+   payload.WithString("model", m_model);
 
   }
 
@@ -204,15 +228,15 @@ JsonValue ComponentProperty::Jsonize() const
 
   }
 
-  if(m_collectionBindingPropertiesHasBeenSet)
+  if(m_eventHasBeenSet)
   {
-   payload.WithObject("collectionBindingProperties", m_collectionBindingProperties.Jsonize());
+   payload.WithString("event", m_event);
 
   }
 
-  if(m_componentNameHasBeenSet)
+  if(m_userAttributeHasBeenSet)
   {
-   payload.WithString("componentName", m_componentName);
+   payload.WithString("userAttribute", m_userAttribute);
 
   }
 
@@ -239,15 +263,9 @@ JsonValue ComponentProperty::Jsonize() const
 
   }
 
-  if(m_defaultValueHasBeenSet)
+  if(m_typeHasBeenSet)
   {
-   payload.WithString("defaultValue", m_defaultValue);
-
-  }
-
-  if(m_eventHasBeenSet)
-  {
-   payload.WithString("event", m_event);
+   payload.WithString("type", m_type);
 
   }
 
@@ -257,33 +275,15 @@ JsonValue ComponentProperty::Jsonize() const
 
   }
 
-  if(m_modelHasBeenSet)
+  if(m_componentNameHasBeenSet)
   {
-   payload.WithString("model", m_model);
+   payload.WithString("componentName", m_componentName);
 
   }
 
   if(m_propertyHasBeenSet)
   {
    payload.WithString("property", m_property);
-
-  }
-
-  if(m_typeHasBeenSet)
-  {
-   payload.WithString("type", m_type);
-
-  }
-
-  if(m_userAttributeHasBeenSet)
-  {
-   payload.WithString("userAttribute", m_userAttribute);
-
-  }
-
-  if(m_valueHasBeenSet)
-  {
-   payload.WithString("value", m_value);
 
   }
 

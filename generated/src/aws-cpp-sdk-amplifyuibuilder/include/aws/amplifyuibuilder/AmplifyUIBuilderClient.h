@@ -520,8 +520,8 @@ namespace AmplifyUIBuilder
         }
 
         /**
-         * <p>Stores the metadata information about a feature on a form or
-         * view.</p><p><h3>See Also:</h3>   <a
+         * <p>Stores the metadata information about a feature on a form.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/amplifyuibuilder-2021-08-11/PutMetadataFlag">AWS
          * API Reference</a></p>
          */

@@ -5,11 +5,11 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
-#include <aws/amplifyuibuilder/model/ComponentEvent.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/amplifyuibuilder/model/ComponentProperty.h>
+#include <aws/amplifyuibuilder/model/ComponentEvent.h>
 #include <utility>
 
 namespace Aws
@@ -40,47 +40,6 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API ComponentChild(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API ComponentChild& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline const Aws::Vector<ComponentChild>& GetChildren() const{ return m_children; }
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline void SetChildren(const Aws::Vector<ComponentChild>& value) { m_childrenHasBeenSet = true; m_children = value; }
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline void SetChildren(Aws::Vector<ComponentChild>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline ComponentChild& WithChildren(const Aws::Vector<ComponentChild>& value) { SetChildren(value); return *this;}
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline ComponentChild& WithChildren(Aws::Vector<ComponentChild>&& value) { SetChildren(std::move(value)); return *this;}
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline ComponentChild& AddChildren(const ComponentChild& value) { m_childrenHasBeenSet = true; m_children.push_back(value); return *this; }
-
-    /**
-     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
-     */
-    inline ComponentChild& AddChildren(ComponentChild&& value) { m_childrenHasBeenSet = true; m_children.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -122,91 +81,6 @@ namespace Model
      * <p>The type of the child component. </p>
      */
     inline ComponentChild& WithComponentType(const char* value) { SetComponentType(value); return *this;}
-
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Describes the events that can be raised on the child component. Use for the
-     * workflow feature in Amplify Studio that allows you to bind events and actions to
-     * components.</p>
-     */
-    inline ComponentChild& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
 
 
     /**
@@ -324,6 +198,132 @@ namespace Model
 
 
     /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline const Aws::Vector<ComponentChild>& GetChildren() const{ return m_children; }
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline bool ChildrenHasBeenSet() const { return m_childrenHasBeenSet; }
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline void SetChildren(const Aws::Vector<ComponentChild>& value) { m_childrenHasBeenSet = true; m_children = value; }
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline void SetChildren(Aws::Vector<ComponentChild>&& value) { m_childrenHasBeenSet = true; m_children = std::move(value); }
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline ComponentChild& WithChildren(const Aws::Vector<ComponentChild>& value) { SetChildren(value); return *this;}
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline ComponentChild& WithChildren(Aws::Vector<ComponentChild>&& value) { SetChildren(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline ComponentChild& AddChildren(const ComponentChild& value) { m_childrenHasBeenSet = true; m_children.push_back(value); return *this; }
+
+    /**
+     * <p>The list of <code>ComponentChild</code> instances for this component.</p>
+     */
+    inline ComponentChild& AddChildren(ComponentChild&& value) { m_childrenHasBeenSet = true; m_children.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline const Aws::Map<Aws::String, ComponentEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline void SetEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& WithEvents(const Aws::Map<Aws::String, ComponentEvent>& value) { SetEvents(value); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& WithEvents(Aws::Map<Aws::String, ComponentEvent>&& value) { SetEvents(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const Aws::String& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(Aws::String&& key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const Aws::String& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(Aws::String&& key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const char* key, ComponentEvent&& value) { m_eventsHasBeenSet = true; m_events.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Describes the events that can be raised on the child component. Use for the
+     * workflow feature in Amplify Studio that allows you to bind events and actions to
+     * components.</p>
+     */
+    inline ComponentChild& AddEvents(const char* key, const ComponentEvent& value) { m_eventsHasBeenSet = true; m_events.emplace(key, value); return *this; }
+
+
+    /**
      * <p>The unique ID of the child component in its original source system, such as
      * Figma.</p>
      */
@@ -373,20 +373,20 @@ namespace Model
 
   private:
 
-    Aws::Vector<ComponentChild> m_children;
-    bool m_childrenHasBeenSet = false;
-
     Aws::String m_componentType;
     bool m_componentTypeHasBeenSet = false;
-
-    Aws::Map<Aws::String, ComponentEvent> m_events;
-    bool m_eventsHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::Map<Aws::String, ComponentProperty> m_properties;
     bool m_propertiesHasBeenSet = false;
+
+    Aws::Vector<ComponentChild> m_children;
+    bool m_childrenHasBeenSet = false;
+
+    Aws::Map<Aws::String, ComponentEvent> m_events;
+    bool m_eventsHasBeenSet = false;
 
     Aws::String m_sourceId;
     bool m_sourceIdHasBeenSet = false;

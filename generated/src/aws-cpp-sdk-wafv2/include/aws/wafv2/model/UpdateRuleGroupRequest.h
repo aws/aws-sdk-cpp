@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -104,7 +104,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -116,7 +116,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -128,7 +128,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -140,7 +140,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -152,7 +152,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -466,11 +466,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
 
@@ -481,11 +484,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
 
@@ -496,11 +502,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
 
@@ -511,11 +520,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
 
@@ -526,11 +538,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
 
@@ -541,11 +556,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
 
@@ -556,11 +574,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 
@@ -571,11 +592,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
 
@@ -586,11 +610,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -601,11 +628,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -616,11 +646,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -631,11 +664,14 @@ namespace Model
      * rule group. </p> <p>For information about customizing web requests and
      * responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline UpdateRuleGroupRequest& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 

@@ -122,47 +122,6 @@ namespace Model
 
 
     /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline const Aws::Vector<ThemeValues>& GetOverrides() const{ return m_overrides; }
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline void SetOverrides(const Aws::Vector<ThemeValues>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline void SetOverrides(Aws::Vector<ThemeValues>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline UpdateThemeData& WithOverrides(const Aws::Vector<ThemeValues>& value) { SetOverrides(value); return *this;}
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline UpdateThemeData& WithOverrides(Aws::Vector<ThemeValues>&& value) { SetOverrides(std::move(value)); return *this;}
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline UpdateThemeData& AddOverrides(const ThemeValues& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
-
-    /**
-     * <p>Describes the properties that can be overriden to customize the theme.</p>
-     */
-    inline UpdateThemeData& AddOverrides(ThemeValues&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>A list of key-value pairs that define the theme's properties.</p>
      */
     inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
@@ -202,6 +161,47 @@ namespace Model
      */
     inline UpdateThemeData& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline const Aws::Vector<ThemeValues>& GetOverrides() const{ return m_overrides; }
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline void SetOverrides(const Aws::Vector<ThemeValues>& value) { m_overridesHasBeenSet = true; m_overrides = value; }
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline void SetOverrides(Aws::Vector<ThemeValues>&& value) { m_overridesHasBeenSet = true; m_overrides = std::move(value); }
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline UpdateThemeData& WithOverrides(const Aws::Vector<ThemeValues>& value) { SetOverrides(value); return *this;}
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline UpdateThemeData& WithOverrides(Aws::Vector<ThemeValues>&& value) { SetOverrides(std::move(value)); return *this;}
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline UpdateThemeData& AddOverrides(const ThemeValues& value) { m_overridesHasBeenSet = true; m_overrides.push_back(value); return *this; }
+
+    /**
+     * <p>Describes the properties that can be overriden to customize the theme.</p>
+     */
+    inline UpdateThemeData& AddOverrides(ThemeValues&& value) { m_overridesHasBeenSet = true; m_overrides.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -210,11 +210,11 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
-    Aws::Vector<ThemeValues> m_overrides;
-    bool m_overridesHasBeenSet = false;
-
     Aws::Vector<ThemeValues> m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Vector<ThemeValues> m_overrides;
+    bool m_overridesHasBeenSet = false;
   };
 
 } // namespace Model

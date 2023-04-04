@@ -14,7 +14,6 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/wafv2/model/CaptchaConfig.h>
 #include <aws/wafv2/model/ChallengeConfig.h>
-#include <aws/wafv2/model/AssociationConfig.h>
 #include <aws/wafv2/model/Rule.h>
 #include <aws/wafv2/model/Tag.h>
 #include <aws/wafv2/model/CustomResponseBody.h>
@@ -97,7 +96,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -109,7 +108,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -121,7 +120,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -133,7 +132,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -145,7 +144,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -157,7 +156,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -395,11 +394,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline const Aws::Map<Aws::String, CustomResponseBody>& GetCustomResponseBodies() const{ return m_customResponseBodies; }
 
@@ -410,11 +412,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline bool CustomResponseBodiesHasBeenSet() const { return m_customResponseBodiesHasBeenSet; }
 
@@ -425,11 +430,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = value; }
 
@@ -440,11 +448,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline void SetCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies = std::move(value); }
 
@@ -455,11 +466,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& WithCustomResponseBodies(const Aws::Map<Aws::String, CustomResponseBody>& value) { SetCustomResponseBodies(value); return *this;}
 
@@ -470,11 +484,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& WithCustomResponseBodies(Aws::Map<Aws::String, CustomResponseBody>&& value) { SetCustomResponseBodies(std::move(value)); return *this;}
 
@@ -485,11 +502,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(const Aws::String& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 
@@ -500,11 +520,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(Aws::String&& key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), value); return *this; }
 
@@ -515,11 +538,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(const Aws::String& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -530,11 +556,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(Aws::String&& key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(std::move(key), std::move(value)); return *this; }
 
@@ -545,11 +574,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(const char* key, CustomResponseBody&& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, std::move(value)); return *this; }
 
@@ -560,11 +592,14 @@ namespace Model
      * you define in the web ACL. </p> <p>For information about customizing web
      * requests and responses, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-custom-request-response.html">Customizing
-     * web requests and responses in WAF</a> in the <i>WAF Developer Guide</i>. </p>
-     * <p>For information about the limits on count and size for custom request and
-     * response settings, see <a
+     * web requests and responses in WAF</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p> <p>For information about the limits on count and size
+     * for custom request and response settings, see <a
      * href="https://docs.aws.amazon.com/waf/latest/developerguide/limits.html">WAF
-     * quotas</a> in the <i>WAF Developer Guide</i>. </p>
+     * quotas</a> in the <a
+     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-chapter.html">WAF
+     * Developer Guide</a>. </p>
      */
     inline CreateWebACLRequest& AddCustomResponseBodies(const char* key, const CustomResponseBody& value) { m_customResponseBodiesHasBeenSet = true; m_customResponseBodies.emplace(key, value); return *this; }
 
@@ -781,73 +816,6 @@ namespace Model
      */
     inline CreateWebACLRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline const AssociationConfig& GetAssociationConfig() const{ return m_associationConfig; }
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline bool AssociationConfigHasBeenSet() const { return m_associationConfigHasBeenSet; }
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline void SetAssociationConfig(const AssociationConfig& value) { m_associationConfigHasBeenSet = true; m_associationConfig = value; }
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline void SetAssociationConfig(AssociationConfig&& value) { m_associationConfigHasBeenSet = true; m_associationConfig = std::move(value); }
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline CreateWebACLRequest& WithAssociationConfig(const AssociationConfig& value) { SetAssociationConfig(value); return *this;}
-
-    /**
-     * <p>Specifies custom configurations for the associations between the web ACL and
-     * protected resources. </p> <p>Use this to customize the maximum size of the
-     * request body that your protected CloudFront distributions forward to WAF for
-     * inspection. The default is 16 KB (16,384 kilobytes). </p>  <p>You are
-     * charged additional fees when your protected resources forward body sizes that
-     * are larger than the default. For more information, see <a
-     * href="http://aws.amazon.com/waf/pricing/">WAF Pricing</a>.</p> 
-     */
-    inline CreateWebACLRequest& WithAssociationConfig(AssociationConfig&& value) { SetAssociationConfig(std::move(value)); return *this;}
-
   private:
 
     Aws::String m_name;
@@ -882,9 +850,6 @@ namespace Model
 
     Aws::Vector<Aws::String> m_tokenDomains;
     bool m_tokenDomainsHasBeenSet = false;
-
-    AssociationConfig m_associationConfig;
-    bool m_associationConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -653,7 +653,12 @@ namespace Model
     r7g_8xlarge,
     r7g_12xlarge,
     r7g_16xlarge,
-    r7g_metal
+    r7g_metal,
+    c6in_metal,
+    m6in_metal,
+    m6idn_metal,
+    r6in_metal,
+    r6idn_metal
   };
 
 namespace InstanceTypeMapper

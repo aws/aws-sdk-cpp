@@ -82,47 +82,6 @@ namespace Model
 
 
     /**
-     * <p>The unique client token.</p>
-     */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline CreateThemeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline CreateThemeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
-
-    /**
-     * <p>The unique client token.</p>
-     */
-    inline CreateThemeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
-
-
-    /**
      * <p>The name of the backend environment that is a part of the Amplify app.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
@@ -164,6 +123,47 @@ namespace Model
 
 
     /**
+     * <p>The unique client token.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline CreateThemeRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline CreateThemeRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique client token.</p>
+     */
+    inline CreateThemeRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
      * <p>Represents the configuration of the theme to create.</p>
      */
     inline const CreateThemeData& GetThemeToCreate() const{ return m_themeToCreate; }
@@ -198,11 +198,11 @@ namespace Model
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     CreateThemeData m_themeToCreate;
     bool m_themeToCreateHasBeenSet = false;

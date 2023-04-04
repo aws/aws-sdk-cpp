@@ -20,13 +20,15 @@ namespace Model
 
 AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig() : 
     m_successTopicHasBeenSet(false),
-    m_errorTopicHasBeenSet(false)
+    m_errorTopicHasBeenSet(false),
+    m_includeInferenceResponseInHasBeenSet(false)
 {
 }
 
 AsyncInferenceNotificationConfig::AsyncInferenceNotificationConfig(JsonView jsonValue) : 
     m_successTopicHasBeenSet(false),
-    m_errorTopicHasBeenSet(false)
+    m_errorTopicHasBeenSet(false),
+    m_includeInferenceResponseInHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ AsyncInferenceNotificationConfig& AsyncInferenceNotificationConfig::operator =(J
     m_errorTopicHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("IncludeInferenceResponseIn"))
+  {
+    Aws::Utils::Array<JsonView> includeInferenceResponseInJsonList = jsonValue.GetArray("IncludeInferenceResponseIn");
+    for(unsigned includeInferenceResponseInIndex = 0; includeInferenceResponseInIndex < includeInferenceResponseInJsonList.GetLength(); ++includeInferenceResponseInIndex)
+    {
+      m_includeInferenceResponseIn.push_back(AsyncNotificationTopicTypesMapper::GetAsyncNotificationTopicTypesForName(includeInferenceResponseInJsonList[includeInferenceResponseInIndex].AsString()));
+    }
+    m_includeInferenceResponseInHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue AsyncInferenceNotificationConfig::Jsonize() const
   if(m_errorTopicHasBeenSet)
   {
    payload.WithString("ErrorTopic", m_errorTopic);
+
+  }
+
+  if(m_includeInferenceResponseInHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> includeInferenceResponseInJsonList(m_includeInferenceResponseIn.size());
+   for(unsigned includeInferenceResponseInIndex = 0; includeInferenceResponseInIndex < includeInferenceResponseInJsonList.GetLength(); ++includeInferenceResponseInIndex)
+   {
+     includeInferenceResponseInJsonList[includeInferenceResponseInIndex].AsString(AsyncNotificationTopicTypesMapper::GetNameForAsyncNotificationTopicTypes(m_includeInferenceResponseIn[includeInferenceResponseInIndex]));
+   }
+   payload.WithArray("IncludeInferenceResponseIn", std::move(includeInferenceResponseInJsonList));
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
-#include <aws/amplifyuibuilder/model/SortDirection.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifyuibuilder/model/SortDirection.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_AMPLIFYUIBUILDER_API SortProperty(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API SortProperty& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_AMPLIFYUIBUILDER_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline const SortDirection& GetDirection() const{ return m_direction; }
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline void SetDirection(const SortDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline void SetDirection(SortDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline SortProperty& WithDirection(const SortDirection& value) { SetDirection(value); return *this;}
-
-    /**
-     * <p>The direction of the sort, either ascending or descending.</p>
-     */
-    inline SortProperty& WithDirection(SortDirection&& value) { SetDirection(std::move(value)); return *this;}
 
 
     /**
@@ -110,13 +79,44 @@ namespace Model
      */
     inline SortProperty& WithField(const char* value) { SetField(value); return *this;}
 
-  private:
 
-    SortDirection m_direction;
-    bool m_directionHasBeenSet = false;
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline const SortDirection& GetDirection() const{ return m_direction; }
+
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
+
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline void SetDirection(const SortDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
+
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline void SetDirection(SortDirection&& value) { m_directionHasBeenSet = true; m_direction = std::move(value); }
+
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline SortProperty& WithDirection(const SortDirection& value) { SetDirection(value); return *this;}
+
+    /**
+     * <p>The direction of the sort, either ascending or descending.</p>
+     */
+    inline SortProperty& WithDirection(SortDirection&& value) { SetDirection(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_field;
     bool m_fieldHasBeenSet = false;
+
+    SortDirection m_direction;
+    bool m_directionHasBeenSet = false;
   };
 
 } // namespace Model

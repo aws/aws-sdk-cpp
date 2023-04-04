@@ -21,14 +21,16 @@ namespace Model
 AsyncInferenceOutputConfig::AsyncInferenceOutputConfig() : 
     m_kmsKeyIdHasBeenSet(false),
     m_s3OutputPathHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_s3FailurePathHasBeenSet(false)
 {
 }
 
 AsyncInferenceOutputConfig::AsyncInferenceOutputConfig(JsonView jsonValue) : 
     m_kmsKeyIdHasBeenSet(false),
     m_s3OutputPathHasBeenSet(false),
-    m_notificationConfigHasBeenSet(false)
+    m_notificationConfigHasBeenSet(false),
+    m_s3FailurePathHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ AsyncInferenceOutputConfig& AsyncInferenceOutputConfig::operator =(JsonView json
     m_notificationConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3FailurePath"))
+  {
+    m_s3FailurePath = jsonValue.GetString("S3FailurePath");
+
+    m_s3FailurePathHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue AsyncInferenceOutputConfig::Jsonize() const
   if(m_notificationConfigHasBeenSet)
   {
    payload.WithObject("NotificationConfig", m_notificationConfig.Jsonize());
+
+  }
+
+  if(m_s3FailurePathHasBeenSet)
+  {
+   payload.WithString("S3FailurePath", m_s3FailurePath);
 
   }
 

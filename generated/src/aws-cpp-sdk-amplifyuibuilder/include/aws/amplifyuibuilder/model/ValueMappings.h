@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/amplifyuibuilder/model/ValueMapping.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/amplifyuibuilder/model/FormInputBindingPropertiesValue.h>
 #include <utility>
 
 namespace Aws
@@ -79,10 +82,74 @@ namespace Model
      */
     inline ValueMappings& AddValues(ValueMapping&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& GetBindingProperties() const{ return m_bindingProperties; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline bool BindingPropertiesHasBeenSet() const { return m_bindingPropertiesHasBeenSet; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline void SetBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = value; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline void SetBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties = std::move(value); }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& WithBindingProperties(const Aws::Map<Aws::String, FormInputBindingPropertiesValue>& value) { SetBindingProperties(value); return *this;}
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& WithBindingProperties(Aws::Map<Aws::String, FormInputBindingPropertiesValue>&& value) { SetBindingProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(const Aws::String& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(Aws::String&& key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(const Aws::String& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(Aws::String&& key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(const char* key, FormInputBindingPropertiesValue&& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The information to bind fields to data at runtime.</p>
+     */
+    inline ValueMappings& AddBindingProperties(const char* key, const FormInputBindingPropertiesValue& value) { m_bindingPropertiesHasBeenSet = true; m_bindingProperties.emplace(key, value); return *this; }
+
   private:
 
     Aws::Vector<ValueMapping> m_values;
     bool m_valuesHasBeenSet = false;
+
+    Aws::Map<Aws::String, FormInputBindingPropertiesValue> m_bindingProperties;
+    bool m_bindingPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

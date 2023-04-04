@@ -84,37 +84,6 @@ namespace Model
 
 
     /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
-
-    /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
-
-    /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
-
-    /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
-
-    /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline Theme& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
-
-    /**
-     * <p>The time that the theme was created.</p>
-     */
-    inline Theme& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
      * <p>The name of the backend environment that is a part of the Amplify app.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
@@ -197,37 +166,6 @@ namespace Model
 
 
     /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
-
-    /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
-
-    /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
-
-    /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
-
-    /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline Theme& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
-
-    /**
-     * <p>The time that the theme was modified.</p>
-     */
-    inline Theme& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
-
-
-    /**
      * <p>The name of the theme.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -266,6 +204,109 @@ namespace Model
      * <p>The name of the theme.</p>
      */
     inline Theme& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline Theme& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
+
+    /**
+     * <p>The time that the theme was created.</p>
+     */
+    inline Theme& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline const Aws::Utils::DateTime& GetModifiedAt() const{ return m_modifiedAt; }
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline bool ModifiedAtHasBeenSet() const { return m_modifiedAtHasBeenSet; }
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline void SetModifiedAt(const Aws::Utils::DateTime& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = value; }
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline void SetModifiedAt(Aws::Utils::DateTime&& value) { m_modifiedAtHasBeenSet = true; m_modifiedAt = std::move(value); }
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline Theme& WithModifiedAt(const Aws::Utils::DateTime& value) { SetModifiedAt(value); return *this;}
+
+    /**
+     * <p>The time that the theme was modified.</p>
+     */
+    inline Theme& WithModifiedAt(Aws::Utils::DateTime&& value) { SetModifiedAt(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline void SetValues(const Aws::Vector<ThemeValues>& value) { m_valuesHasBeenSet = true; m_values = value; }
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline void SetValues(Aws::Vector<ThemeValues>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline Theme& WithValues(const Aws::Vector<ThemeValues>& value) { SetValues(value); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline Theme& WithValues(Aws::Vector<ThemeValues>&& value) { SetValues(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline Theme& AddValues(const ThemeValues& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
+
+    /**
+     * <p>A list of key-value pairs that defines the properties of the theme.</p>
+     */
+    inline Theme& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -374,54 +415,10 @@ namespace Model
      */
     inline Theme& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline const Aws::Vector<ThemeValues>& GetValues() const{ return m_values; }
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline void SetValues(const Aws::Vector<ThemeValues>& value) { m_valuesHasBeenSet = true; m_values = value; }
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline void SetValues(Aws::Vector<ThemeValues>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline Theme& WithValues(const Aws::Vector<ThemeValues>& value) { SetValues(value); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline Theme& WithValues(Aws::Vector<ThemeValues>&& value) { SetValues(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline Theme& AddValues(const ThemeValues& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
-
-    /**
-     * <p>A list of key-value pairs that defines the properties of the theme.</p>
-     */
-    inline Theme& AddValues(ThemeValues&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
-
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
-
-    Aws::Utils::DateTime m_createdAt;
-    bool m_createdAtHasBeenSet = false;
 
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
@@ -429,20 +426,23 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::Utils::DateTime m_createdAt;
+    bool m_createdAtHasBeenSet = false;
+
     Aws::Utils::DateTime m_modifiedAt;
     bool m_modifiedAtHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::Vector<ThemeValues> m_values;
+    bool m_valuesHasBeenSet = false;
 
     Aws::Vector<ThemeValues> m_overrides;
     bool m_overridesHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
-
-    Aws::Vector<ThemeValues> m_values;
-    bool m_valuesHasBeenSet = false;
   };
 
 } // namespace Model

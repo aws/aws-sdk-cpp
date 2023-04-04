@@ -40,6 +40,27 @@ namespace Model
 
 
     /**
+     * <p>Specifies whether the button is visible on the form.</p>
+     */
+    inline bool GetExcluded() const{ return m_excluded; }
+
+    /**
+     * <p>Specifies whether the button is visible on the form.</p>
+     */
+    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the button is visible on the form.</p>
+     */
+    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
+
+    /**
+     * <p>Specifies whether the button is visible on the form.</p>
+     */
+    inline FormButton& WithExcluded(bool value) { SetExcluded(value); return *this;}
+
+
+    /**
      * <p>Describes the button's properties.</p>
      */
     inline const Aws::String& GetChildren() const{ return m_children; }
@@ -81,27 +102,6 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the button is visible on the form.</p>
-     */
-    inline bool GetExcluded() const{ return m_excluded; }
-
-    /**
-     * <p>Specifies whether the button is visible on the form.</p>
-     */
-    inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
-
-    /**
-     * <p>Specifies whether the button is visible on the form.</p>
-     */
-    inline void SetExcluded(bool value) { m_excludedHasBeenSet = true; m_excluded = value; }
-
-    /**
-     * <p>Specifies whether the button is visible on the form.</p>
-     */
-    inline FormButton& WithExcluded(bool value) { SetExcluded(value); return *this;}
-
-
-    /**
      * <p>The position of the button.</p>
      */
     inline const FieldPosition& GetPosition() const{ return m_position; }
@@ -133,11 +133,11 @@ namespace Model
 
   private:
 
-    Aws::String m_children;
-    bool m_childrenHasBeenSet = false;
-
     bool m_excluded;
     bool m_excludedHasBeenSet = false;
+
+    Aws::String m_children;
+    bool m_childrenHasBeenSet = false;
 
     FieldPosition m_position;
     bool m_positionHasBeenSet = false;

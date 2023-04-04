@@ -82,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline CreateComponentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline CreateComponentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the backend environment that is a part of the Amplify app.</p>
+     */
+    inline CreateComponentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
+
+
+    /**
      * <p>The unique client token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -152,60 +193,19 @@ namespace Model
      */
     inline CreateComponentRequest& WithComponentToCreate(CreateComponentData&& value) { SetComponentToCreate(std::move(value)); return *this;}
 
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline void SetEnvironmentName(Aws::String&& value) { m_environmentNameHasBeenSet = true; m_environmentName = std::move(value); }
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline void SetEnvironmentName(const char* value) { m_environmentNameHasBeenSet = true; m_environmentName.assign(value); }
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline CreateComponentRequest& WithEnvironmentName(const Aws::String& value) { SetEnvironmentName(value); return *this;}
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline CreateComponentRequest& WithEnvironmentName(Aws::String&& value) { SetEnvironmentName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the backend environment that is a part of the Amplify app.</p>
-     */
-    inline CreateComponentRequest& WithEnvironmentName(const char* value) { SetEnvironmentName(value); return *this;}
-
   private:
 
     Aws::String m_appId;
     bool m_appIdHasBeenSet = false;
+
+    Aws::String m_environmentName;
+    bool m_environmentNameHasBeenSet = false;
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet = false;
 
     CreateComponentData m_componentToCreate;
     bool m_componentToCreateHasBeenSet = false;
-
-    Aws::String m_environmentName;
-    bool m_environmentNameHasBeenSet = false;
   };
 
 } // namespace Model

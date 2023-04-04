@@ -20,15 +20,15 @@ namespace Model
 
 ComponentEvent::ComponentEvent() : 
     m_actionHasBeenSet(false),
-    m_bindingEventHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_bindingEventHasBeenSet(false)
 {
 }
 
 ComponentEvent::ComponentEvent(JsonView jsonValue) : 
     m_actionHasBeenSet(false),
-    m_bindingEventHasBeenSet(false),
-    m_parametersHasBeenSet(false)
+    m_parametersHasBeenSet(false),
+    m_bindingEventHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -42,18 +42,18 @@ ComponentEvent& ComponentEvent::operator =(JsonView jsonValue)
     m_actionHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("bindingEvent"))
-  {
-    m_bindingEvent = jsonValue.GetString("bindingEvent");
-
-    m_bindingEventHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("parameters"))
   {
     m_parameters = jsonValue.GetObject("parameters");
 
     m_parametersHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bindingEvent"))
+  {
+    m_bindingEvent = jsonValue.GetString("bindingEvent");
+
+    m_bindingEventHasBeenSet = true;
   }
 
   return *this;
@@ -69,15 +69,15 @@ JsonValue ComponentEvent::Jsonize() const
 
   }
 
-  if(m_bindingEventHasBeenSet)
-  {
-   payload.WithString("bindingEvent", m_bindingEvent);
-
-  }
-
   if(m_parametersHasBeenSet)
   {
    payload.WithObject("parameters", m_parameters.Jsonize());
+
+  }
+
+  if(m_bindingEventHasBeenSet)
+  {
+   payload.WithString("bindingEvent", m_bindingEvent);
 
   }
 
