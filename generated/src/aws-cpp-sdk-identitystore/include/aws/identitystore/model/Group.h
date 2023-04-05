@@ -26,8 +26,8 @@ namespace Model
 {
 
   /**
-   * <p>A group object that contains a specified group’s metadata and
-   * attributes.</p><p><h3>See Also:</h3>   <a
+   * <p>A group object that contains the metadata and attributes for a specified
+   * group.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/Group">AWS
    * API Reference</a></p>
    */
@@ -82,8 +82,8 @@ namespace Model
 
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -91,8 +91,8 @@ namespace Model
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -100,8 +100,8 @@ namespace Model
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -109,8 +109,8 @@ namespace Model
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -118,8 +118,8 @@ namespace Model
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -127,8 +127,8 @@ namespace Model
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -136,8 +136,8 @@ namespace Model
     inline Group& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>
@@ -145,8 +145,8 @@ namespace Model
     inline Group& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The group’s display name value. The length limit is 1,024 characters. This
-     * value can consist of letters, accented characters, symbols, numbers,
+     * <p>The display name value for the group. The length limit is 1,024 characters.
+     * This value can consist of letters, accented characters, symbols, numbers,
      * punctuation, tab, new line, carriage return, space, and nonbreaking space in
      * this attribute. This value is specified at the time the group is created and
      * stored as an attribute of the group object in the identity store.</p>

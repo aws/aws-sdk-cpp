@@ -22,6 +22,7 @@ namespace Aws
 
         static const int DUALSTACK_HASH = HashingUtils::HashString("DUALSTACK");
         static const int IPV4_HASH = HashingUtils::HashString("IPV4");
+        static const int IPV6_HASH = HashingUtils::HashString("IPV6");
 
 
         IPAddressType GetIPAddressTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == IPV4_HASH)
           {
             return IPAddressType::IPV4;
+          }
+          else if (hashCode == IPV6_HASH)
+          {
+            return IPAddressType::IPV6;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "DUALSTACK";
           case IPAddressType::IPV4:
             return "IPV4";
+          case IPAddressType::IPV6:
+            return "IPV6";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

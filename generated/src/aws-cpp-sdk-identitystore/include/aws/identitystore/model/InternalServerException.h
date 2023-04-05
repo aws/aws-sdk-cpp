@@ -121,26 +121,22 @@ namespace Model
 
 
     /**
-     * <p>The number of seconds that you would like to wait before retrying the next
-     * request.</p>
+     * <p>The number of seconds to wait before retrying the next request.</p>
      */
     inline int GetRetryAfterSeconds() const{ return m_retryAfterSeconds; }
 
     /**
-     * <p>The number of seconds that you would like to wait before retrying the next
-     * request.</p>
+     * <p>The number of seconds to wait before retrying the next request.</p>
      */
     inline bool RetryAfterSecondsHasBeenSet() const { return m_retryAfterSecondsHasBeenSet; }
 
     /**
-     * <p>The number of seconds that you would like to wait before retrying the next
-     * request.</p>
+     * <p>The number of seconds to wait before retrying the next request.</p>
      */
     inline void SetRetryAfterSeconds(int value) { m_retryAfterSecondsHasBeenSet = true; m_retryAfterSeconds = value; }
 
     /**
-     * <p>The number of seconds that you would like to wait before retrying the next
-     * request.</p>
+     * <p>The number of seconds to wait before retrying the next request.</p>
      */
     inline InternalServerException& WithRetryAfterSeconds(int value) { SetRetryAfterSeconds(value); return *this;}
 

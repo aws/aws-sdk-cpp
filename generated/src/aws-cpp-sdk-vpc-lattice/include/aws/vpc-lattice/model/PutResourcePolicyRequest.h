@@ -33,42 +33,50 @@ namespace Model
 
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policyHasBeenSet = true; m_policy = std::move(value); }
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline void SetPolicy(const char* value) { m_policyHasBeenSet = true; m_policy.assign(value); }
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline PutResourcePolicyRequest& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline PutResourcePolicyRequest& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>An IAM policy.</p>
+     * <p>An IAM policy. The policy string in JSON must not contain newlines or blank
+     * lines.</p>
      */
     inline PutResourcePolicyRequest& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

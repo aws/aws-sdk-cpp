@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Details for a volume mount point that's used in a container
+   * <p>The details for a volume mount point that's used in a container
    * definition.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/MountPoint">AWS API
    * Reference</a></p>

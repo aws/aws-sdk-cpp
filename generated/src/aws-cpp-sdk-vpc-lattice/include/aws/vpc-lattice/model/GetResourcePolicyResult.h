@@ -33,37 +33,37 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline const Aws::String& GetPolicy() const{ return m_policy; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline void SetPolicy(const Aws::String& value) { m_policy = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline void SetPolicy(Aws::String&& value) { m_policy = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline void SetPolicy(const char* value) { m_policy.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline GetResourcePolicyResult& WithPolicy(const Aws::String& value) { SetPolicy(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline GetResourcePolicyResult& WithPolicy(Aws::String&& value) { SetPolicy(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the service network or service.</p>
+     * <p>An IAM policy.</p>
      */
     inline GetResourcePolicyResult& WithPolicy(const char* value) { SetPolicy(value); return *this;}
 

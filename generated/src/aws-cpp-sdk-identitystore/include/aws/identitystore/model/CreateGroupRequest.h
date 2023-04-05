@@ -77,49 +77,57 @@ namespace Model
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline CreateGroupRequest& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline CreateGroupRequest& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
      * <p>A string containing the name of the group. This value is commonly displayed
-     * when the group is referenced.</p>
+     * when the group is referenced. "Administrator" and "AWSAdministrators" are
+     * reserved names and can't be used for users or groups.</p>
      */
     inline CreateGroupRequest& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

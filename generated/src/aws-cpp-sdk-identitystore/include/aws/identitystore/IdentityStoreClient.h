@@ -28,7 +28,7 @@ namespace IdentityStore
    * href=&quot;https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html#renamed&quot;&gt;IAM
    * Identity Center rename&lt;/a&gt;.&lt;/p&gt; &lt;/note&gt; &lt;p&gt;This
    * reference guide describes the identity store operations that you can call
-   * programatically and includes detailed information on data types and
+   * programatically and includes detailed information about data types and
    * errors.&lt;/p&gt; </code></pre>
    */
   class AWS_IDENTITYSTORE_API IdentityStoreClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IdentityStoreClient>
@@ -141,8 +141,8 @@ namespace IdentityStore
         }
 
         /**
-         * <p>Creates a new user within the specified identity store.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Creates a user within the specified identity store.</p><p><h3>See Also:</h3> 
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/CreateUser">AWS
          * API Reference</a></p>
          */
