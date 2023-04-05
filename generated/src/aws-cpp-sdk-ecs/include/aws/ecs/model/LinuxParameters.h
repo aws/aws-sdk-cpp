@@ -27,8 +27,10 @@ namespace Model
 {
 
   /**
-   * <p>Linux-specific options that are applied to the container, such as Linux
-   * <a>KernelCapabilities</a>.</p><p><h3>See Also:</h3>   <a
+   * <p>The Linux-specific options that are applied to the container, such as Linux
+   * <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_KernelCapabilities.html">KernelCapabilities</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/LinuxParameters">AWS
    * API Reference</a></p>
    */

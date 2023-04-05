@@ -42,57 +42,57 @@ namespace Model
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline void SetDeviceName(Aws::String&& value) { m_deviceNameHasBeenSet = true; m_deviceName = std::move(value); }
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline void SetDeviceName(const char* value) { m_deviceNameHasBeenSet = true; m_deviceName.assign(value); }
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline InferenceAccelerator& WithDeviceName(const Aws::String& value) { SetDeviceName(value); return *this;}
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline InferenceAccelerator& WithDeviceName(Aws::String&& value) { SetDeviceName(std::move(value)); return *this;}
 
     /**
      * <p>The Elastic Inference accelerator device name. The <code>deviceName</code>
-     * must also be referenced in a container definition as a
-     * <a>ResourceRequirement</a>.</p>
+     * must also be referenced in a container definition as a <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_ResourceRequirement.html">ResourceRequirement</a>.</p>
      */
     inline InferenceAccelerator& WithDeviceName(const char* value) { SetDeviceName(value); return *this;}
 

@@ -271,6 +271,29 @@ namespace Aws
         static const int AWS_Events_Connection_HASH = HashingUtils::HashString("AWS::Events::Connection");
         static const int AWS_EventSchemas_Schema_HASH = HashingUtils::HashString("AWS::EventSchemas::Schema");
         static const int AWS_MediaPackage_PackagingConfiguration_HASH = HashingUtils::HashString("AWS::MediaPackage::PackagingConfiguration");
+        static const int AWS_KinesisVideo_SignalingChannel_HASH = HashingUtils::HashString("AWS::KinesisVideo::SignalingChannel");
+        static const int AWS_AppStream_DirectoryConfig_HASH = HashingUtils::HashString("AWS::AppStream::DirectoryConfig");
+        static const int AWS_LookoutVision_Project_HASH = HashingUtils::HashString("AWS::LookoutVision::Project");
+        static const int AWS_Route53RecoveryControl_Cluster_HASH = HashingUtils::HashString("AWS::Route53RecoveryControl::Cluster");
+        static const int AWS_Route53RecoveryControl_SafetyRule_HASH = HashingUtils::HashString("AWS::Route53RecoveryControl::SafetyRule");
+        static const int AWS_Route53RecoveryControl_ControlPanel_HASH = HashingUtils::HashString("AWS::Route53RecoveryControl::ControlPanel");
+        static const int AWS_Route53RecoveryControl_RoutingControl_HASH = HashingUtils::HashString("AWS::Route53RecoveryControl::RoutingControl");
+        static const int AWS_Route53RecoveryReadiness_ResourceSet_HASH = HashingUtils::HashString("AWS::Route53RecoveryReadiness::ResourceSet");
+        static const int AWS_RoboMaker_SimulationApplication_HASH = HashingUtils::HashString("AWS::RoboMaker::SimulationApplication");
+        static const int AWS_RoboMaker_RobotApplication_HASH = HashingUtils::HashString("AWS::RoboMaker::RobotApplication");
+        static const int AWS_HealthLake_FHIRDatastore_HASH = HashingUtils::HashString("AWS::HealthLake::FHIRDatastore");
+        static const int AWS_Pinpoint_Segment_HASH = HashingUtils::HashString("AWS::Pinpoint::Segment");
+        static const int AWS_Pinpoint_ApplicationSettings_HASH = HashingUtils::HashString("AWS::Pinpoint::ApplicationSettings");
+        static const int AWS_Events_Rule_HASH = HashingUtils::HashString("AWS::Events::Rule");
+        static const int AWS_EC2_DHCPOptions_HASH = HashingUtils::HashString("AWS::EC2::DHCPOptions");
+        static const int AWS_EC2_NetworkInsightsPath_HASH = HashingUtils::HashString("AWS::EC2::NetworkInsightsPath");
+        static const int AWS_EC2_TrafficMirrorFilter_HASH = HashingUtils::HashString("AWS::EC2::TrafficMirrorFilter");
+        static const int AWS_EC2_IPAM_HASH = HashingUtils::HashString("AWS::EC2::IPAM");
+        static const int AWS_IoTTwinMaker_Scene_HASH = HashingUtils::HashString("AWS::IoTTwinMaker::Scene");
+        static const int AWS_NetworkManager_TransitGatewayRegistration_HASH = HashingUtils::HashString("AWS::NetworkManager::TransitGatewayRegistration");
+        static const int AWS_CustomerProfiles_Domain_HASH = HashingUtils::HashString("AWS::CustomerProfiles::Domain");
+        static const int AWS_AutoScaling_WarmPool_HASH = HashingUtils::HashString("AWS::AutoScaling::WarmPool");
+        static const int AWS_Connect_PhoneNumber_HASH = HashingUtils::HashString("AWS::Connect::PhoneNumber");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1542,6 +1565,121 @@ namespace Aws
             enumValue = ResourceType::AWS_MediaPackage_PackagingConfiguration;
             return true;
           }
+          else if (hashCode == AWS_KinesisVideo_SignalingChannel_HASH)
+          {
+            enumValue = ResourceType::AWS_KinesisVideo_SignalingChannel;
+            return true;
+          }
+          else if (hashCode == AWS_AppStream_DirectoryConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_AppStream_DirectoryConfig;
+            return true;
+          }
+          else if (hashCode == AWS_LookoutVision_Project_HASH)
+          {
+            enumValue = ResourceType::AWS_LookoutVision_Project;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryControl_Cluster_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryControl_Cluster;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryControl_SafetyRule_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryControl_SafetyRule;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryControl_ControlPanel_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryControl_ControlPanel;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryControl_RoutingControl_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryControl_RoutingControl;
+            return true;
+          }
+          else if (hashCode == AWS_Route53RecoveryReadiness_ResourceSet_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53RecoveryReadiness_ResourceSet;
+            return true;
+          }
+          else if (hashCode == AWS_RoboMaker_SimulationApplication_HASH)
+          {
+            enumValue = ResourceType::AWS_RoboMaker_SimulationApplication;
+            return true;
+          }
+          else if (hashCode == AWS_RoboMaker_RobotApplication_HASH)
+          {
+            enumValue = ResourceType::AWS_RoboMaker_RobotApplication;
+            return true;
+          }
+          else if (hashCode == AWS_HealthLake_FHIRDatastore_HASH)
+          {
+            enumValue = ResourceType::AWS_HealthLake_FHIRDatastore;
+            return true;
+          }
+          else if (hashCode == AWS_Pinpoint_Segment_HASH)
+          {
+            enumValue = ResourceType::AWS_Pinpoint_Segment;
+            return true;
+          }
+          else if (hashCode == AWS_Pinpoint_ApplicationSettings_HASH)
+          {
+            enumValue = ResourceType::AWS_Pinpoint_ApplicationSettings;
+            return true;
+          }
+          else if (hashCode == AWS_Events_Rule_HASH)
+          {
+            enumValue = ResourceType::AWS_Events_Rule;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_DHCPOptions_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_DHCPOptions;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_NetworkInsightsPath_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_NetworkInsightsPath;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_TrafficMirrorFilter_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_TrafficMirrorFilter;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_IPAM_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_IPAM;
+            return true;
+          }
+          else if (hashCode == AWS_IoTTwinMaker_Scene_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTTwinMaker_Scene;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_TransitGatewayRegistration_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_TransitGatewayRegistration;
+            return true;
+          }
+          else if (hashCode == AWS_CustomerProfiles_Domain_HASH)
+          {
+            enumValue = ResourceType::AWS_CustomerProfiles_Domain;
+            return true;
+          }
+          else if (hashCode == AWS_AutoScaling_WarmPool_HASH)
+          {
+            enumValue = ResourceType::AWS_AutoScaling_WarmPool;
+            return true;
+          }
+          else if (hashCode == AWS_Connect_PhoneNumber_HASH)
+          {
+            enumValue = ResourceType::AWS_Connect_PhoneNumber;
+            return true;
+          }
           return false;
         }
 
@@ -2317,6 +2455,75 @@ namespace Aws
             return true;
           case ResourceType::AWS_MediaPackage_PackagingConfiguration:
             value = "AWS::MediaPackage::PackagingConfiguration";
+            return true;
+          case ResourceType::AWS_KinesisVideo_SignalingChannel:
+            value = "AWS::KinesisVideo::SignalingChannel";
+            return true;
+          case ResourceType::AWS_AppStream_DirectoryConfig:
+            value = "AWS::AppStream::DirectoryConfig";
+            return true;
+          case ResourceType::AWS_LookoutVision_Project:
+            value = "AWS::LookoutVision::Project";
+            return true;
+          case ResourceType::AWS_Route53RecoveryControl_Cluster:
+            value = "AWS::Route53RecoveryControl::Cluster";
+            return true;
+          case ResourceType::AWS_Route53RecoveryControl_SafetyRule:
+            value = "AWS::Route53RecoveryControl::SafetyRule";
+            return true;
+          case ResourceType::AWS_Route53RecoveryControl_ControlPanel:
+            value = "AWS::Route53RecoveryControl::ControlPanel";
+            return true;
+          case ResourceType::AWS_Route53RecoveryControl_RoutingControl:
+            value = "AWS::Route53RecoveryControl::RoutingControl";
+            return true;
+          case ResourceType::AWS_Route53RecoveryReadiness_ResourceSet:
+            value = "AWS::Route53RecoveryReadiness::ResourceSet";
+            return true;
+          case ResourceType::AWS_RoboMaker_SimulationApplication:
+            value = "AWS::RoboMaker::SimulationApplication";
+            return true;
+          case ResourceType::AWS_RoboMaker_RobotApplication:
+            value = "AWS::RoboMaker::RobotApplication";
+            return true;
+          case ResourceType::AWS_HealthLake_FHIRDatastore:
+            value = "AWS::HealthLake::FHIRDatastore";
+            return true;
+          case ResourceType::AWS_Pinpoint_Segment:
+            value = "AWS::Pinpoint::Segment";
+            return true;
+          case ResourceType::AWS_Pinpoint_ApplicationSettings:
+            value = "AWS::Pinpoint::ApplicationSettings";
+            return true;
+          case ResourceType::AWS_Events_Rule:
+            value = "AWS::Events::Rule";
+            return true;
+          case ResourceType::AWS_EC2_DHCPOptions:
+            value = "AWS::EC2::DHCPOptions";
+            return true;
+          case ResourceType::AWS_EC2_NetworkInsightsPath:
+            value = "AWS::EC2::NetworkInsightsPath";
+            return true;
+          case ResourceType::AWS_EC2_TrafficMirrorFilter:
+            value = "AWS::EC2::TrafficMirrorFilter";
+            return true;
+          case ResourceType::AWS_EC2_IPAM:
+            value = "AWS::EC2::IPAM";
+            return true;
+          case ResourceType::AWS_IoTTwinMaker_Scene:
+            value = "AWS::IoTTwinMaker::Scene";
+            return true;
+          case ResourceType::AWS_NetworkManager_TransitGatewayRegistration:
+            value = "AWS::NetworkManager::TransitGatewayRegistration";
+            return true;
+          case ResourceType::AWS_CustomerProfiles_Domain:
+            value = "AWS::CustomerProfiles::Domain";
+            return true;
+          case ResourceType::AWS_AutoScaling_WarmPool:
+            value = "AWS::AutoScaling::WarmPool";
+            return true;
+          case ResourceType::AWS_Connect_PhoneNumber:
+            value = "AWS::Connect::PhoneNumber";
             return true;
           default:
             return false;

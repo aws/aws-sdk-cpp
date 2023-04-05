@@ -1954,7 +1954,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
 
@@ -1962,7 +1964,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
@@ -1970,7 +1974,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline void SetPropagateTags(const PropagateTags& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = value; }
 
@@ -1978,7 +1984,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline void SetPropagateTags(PropagateTags&& value) { m_propagateTagsHasBeenSet = true; m_propagateTags = std::move(value); }
 
@@ -1986,7 +1994,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(const PropagateTags& value) { SetPropagateTags(value); return *this;}
 
@@ -1994,7 +2004,9 @@ namespace Model
      * <p>Specifies whether to propagate the tags from the task definition to the task.
      * If no value is specified, the tags aren't propagated. Tags can only be
      * propagated to the task during task creation. To add tags to a task after task
-     * creation, use the <a>TagResource</a> API action.</p>
+     * creation, use the <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_TagResource.html">TagResource</a>
+     * API action.</p>
      */
     inline CreateServiceRequest& WithPropagateTags(PropagateTags&& value) { SetPropagateTags(std::move(value)); return *this;}
 

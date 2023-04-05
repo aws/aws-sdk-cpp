@@ -30,8 +30,8 @@ namespace Model
 {
 
   /**
-   * <p>A user object that contains a specified user’s metadata and
-   * attributes.</p><p><h3>See Also:</h3>   <a
+   * <p>A user object that contains the metadata and attributes for a specified
+   * user.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/identitystore-2020-06-15/User">AWS
    * API Reference</a></p>
    */
@@ -200,81 +200,81 @@ namespace Model
 
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline const Name& GetName() const{ return m_name; }
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline void SetName(const Name& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline void SetName(Name&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline User& WithName(const Name& value) { SetName(value); return *this;}
 
     /**
-     * <p>An object containing the user's name.</p>
+     * <p>An object containing the name of the user.</p>
      */
     inline User& WithName(Name&& value) { SetName(std::move(value)); return *this;}
 
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline User& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline User& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's name that's formatted for display when the
-     * user is referenced. For example, "John Doe."</p>
+     * <p>A string containing the name of the user that is formatted for display when
+     * the user is referenced. For example, "John Doe."</p>
      */
     inline User& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -321,42 +321,42 @@ namespace Model
 
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline const Aws::String& GetProfileUrl() const{ return m_profileUrl; }
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline bool ProfileUrlHasBeenSet() const { return m_profileUrlHasBeenSet; }
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline void SetProfileUrl(const Aws::String& value) { m_profileUrlHasBeenSet = true; m_profileUrl = value; }
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline void SetProfileUrl(Aws::String&& value) { m_profileUrlHasBeenSet = true; m_profileUrl = std::move(value); }
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline void SetProfileUrl(const char* value) { m_profileUrlHasBeenSet = true; m_profileUrl.assign(value); }
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline User& WithProfileUrl(const Aws::String& value) { SetProfileUrl(value); return *this;}
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline User& WithProfileUrl(Aws::String&& value) { SetProfileUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing a URL that may be associated with the user.</p>
+     * <p>A string containing a URL that might be associated with the user.</p>
      */
     inline User& WithProfileUrl(const char* value) { SetProfileUrl(value); return *this;}
 
@@ -509,99 +509,99 @@ namespace Model
 
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline const Aws::String& GetUserType() const{ return m_userType; }
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline void SetUserType(const Aws::String& value) { m_userTypeHasBeenSet = true; m_userType = value; }
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline void SetUserType(Aws::String&& value) { m_userTypeHasBeenSet = true; m_userType = std::move(value); }
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline void SetUserType(const char* value) { m_userTypeHasBeenSet = true; m_userType.assign(value); }
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline User& WithUserType(const Aws::String& value) { SetUserType(value); return *this;}
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline User& WithUserType(Aws::String&& value) { SetUserType(std::move(value)); return *this;}
 
     /**
-     * <p>A string indicating the user's type. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string indicating the type of user. Possible values are left unspecified.
+     * The value can vary based on your specific use case.</p>
      */
     inline User& WithUserType(const char* value) { SetUserType(value); return *this;}
 
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline User& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline User& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's title. Possible values depend on each
-     * customer's specific needs, so they are left unspecified.</p>
+     * <p>A string containing the title of the user. Possible values are left
+     * unspecified. The value can vary based on your specific use case.</p>
      */
     inline User& WithTitle(const char* value) { SetTitle(value); return *this;}
 
@@ -656,83 +656,83 @@ namespace Model
 
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(const Aws::String& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(Aws::String&& value) { m_localeHasBeenSet = true; m_locale = std::move(value); }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(const char* value) { m_localeHasBeenSet = true; m_locale.assign(value); }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline User& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline User& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline User& WithLocale(const char* value) { SetLocale(value); return *this;}
 
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline void SetTimezone(Aws::String&& value) { m_timezoneHasBeenSet = true; m_timezone = std::move(value); }
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline void SetTimezone(const char* value) { m_timezoneHasBeenSet = true; m_timezone.assign(value); }
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline User& WithTimezone(const Aws::String& value) { SetTimezone(value); return *this;}
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline User& WithTimezone(Aws::String&& value) { SetTimezone(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's time zone.</p>
+     * <p>A string containing the time zone of the user.</p>
      */
     inline User& WithTimezone(const char* value) { SetTimezone(value); return *this;}
 

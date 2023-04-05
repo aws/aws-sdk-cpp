@@ -266,7 +266,30 @@ namespace Model
     AWS_IoT_ScheduledAudit,
     AWS_Events_Connection,
     AWS_EventSchemas_Schema,
-    AWS_MediaPackage_PackagingConfiguration
+    AWS_MediaPackage_PackagingConfiguration,
+    AWS_KinesisVideo_SignalingChannel,
+    AWS_AppStream_DirectoryConfig,
+    AWS_LookoutVision_Project,
+    AWS_Route53RecoveryControl_Cluster,
+    AWS_Route53RecoveryControl_SafetyRule,
+    AWS_Route53RecoveryControl_ControlPanel,
+    AWS_Route53RecoveryControl_RoutingControl,
+    AWS_Route53RecoveryReadiness_ResourceSet,
+    AWS_RoboMaker_SimulationApplication,
+    AWS_RoboMaker_RobotApplication,
+    AWS_HealthLake_FHIRDatastore,
+    AWS_Pinpoint_Segment,
+    AWS_Pinpoint_ApplicationSettings,
+    AWS_Events_Rule,
+    AWS_EC2_DHCPOptions,
+    AWS_EC2_NetworkInsightsPath,
+    AWS_EC2_TrafficMirrorFilter,
+    AWS_EC2_IPAM,
+    AWS_IoTTwinMaker_Scene,
+    AWS_NetworkManager_TransitGatewayRegistration,
+    AWS_CustomerProfiles_Domain,
+    AWS_AutoScaling_WarmPool,
+    AWS_Connect_PhoneNumber
   };
 
 namespace ResourceTypeMapper

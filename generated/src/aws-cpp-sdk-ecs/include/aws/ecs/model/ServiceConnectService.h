@@ -105,10 +105,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline const Aws::String& GetDiscoveryName() const{ return m_discoveryName; }
 
@@ -117,10 +116,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline bool DiscoveryNameHasBeenSet() const { return m_discoveryNameHasBeenSet; }
 
@@ -129,10 +127,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline void SetDiscoveryName(const Aws::String& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = value; }
 
@@ -141,10 +138,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline void SetDiscoveryName(Aws::String&& value) { m_discoveryNameHasBeenSet = true; m_discoveryName = std::move(value); }
 
@@ -153,10 +149,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline void SetDiscoveryName(const char* value) { m_discoveryNameHasBeenSet = true; m_discoveryName.assign(value); }
 
@@ -165,10 +160,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline ServiceConnectService& WithDiscoveryName(const Aws::String& value) { SetDiscoveryName(value); return *this;}
 
@@ -177,10 +171,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline ServiceConnectService& WithDiscoveryName(Aws::String&& value) { SetDiscoveryName(std::move(value)); return *this;}
 
@@ -189,10 +182,9 @@ namespace Model
      * Amazon ECS creates for this Amazon ECS service. This must be unique within the
      * Cloud Map namespace. The name can contain up to 64 characters. The name can
      * include lowercase letters, numbers, underscores (_), and hyphens (-). The name
-     * can't start with a hyphen.</p> <p>If this parameter isn't specified, the default
-     * value of <code>discoveryName.namespace</code> is used. If the
-     * <code>discoveryName</code> isn't specified, the port mapping name from the task
-     * definition is used in <code>portName.namespace</code>.</p>
+     * can't start with a hyphen.</p> <p>If the <code>discoveryName</code> isn't
+     * specified, the port mapping name from the task definition is used in
+     * <code>portName.namespace</code>.</p>
      */
     inline ServiceConnectService& WithDiscoveryName(const char* value) { SetDiscoveryName(value); return *this;}
 

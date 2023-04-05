@@ -78,33 +78,45 @@ namespace Model
 
 
     /**
-     * <p>The target capacity value for the capacity provider. The specified value must
-     * be greater than <code>0</code> and less than or equal to <code>100</code>. A
-     * value of <code>100</code> results in the Amazon EC2 instances in your Auto
+     * <p>The target capacity utilization as a percentage for the capacity provider.
+     * The specified value must be greater than <code>0</code> and less than or equal
+     * to <code>100</code>. For example, if you want the capacity provider to maintain
+     * 10% spare capacity, then that means the utilization is 90%, so use a
+     * <code>targetCapacity</code> of <code>90</code>. The default value of
+     * <code>100</code> percent results in the Amazon EC2 instances in your Auto
      * Scaling group being completely used.</p>
      */
     inline int GetTargetCapacity() const{ return m_targetCapacity; }
 
     /**
-     * <p>The target capacity value for the capacity provider. The specified value must
-     * be greater than <code>0</code> and less than or equal to <code>100</code>. A
-     * value of <code>100</code> results in the Amazon EC2 instances in your Auto
+     * <p>The target capacity utilization as a percentage for the capacity provider.
+     * The specified value must be greater than <code>0</code> and less than or equal
+     * to <code>100</code>. For example, if you want the capacity provider to maintain
+     * 10% spare capacity, then that means the utilization is 90%, so use a
+     * <code>targetCapacity</code> of <code>90</code>. The default value of
+     * <code>100</code> percent results in the Amazon EC2 instances in your Auto
      * Scaling group being completely used.</p>
      */
     inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
 
     /**
-     * <p>The target capacity value for the capacity provider. The specified value must
-     * be greater than <code>0</code> and less than or equal to <code>100</code>. A
-     * value of <code>100</code> results in the Amazon EC2 instances in your Auto
+     * <p>The target capacity utilization as a percentage for the capacity provider.
+     * The specified value must be greater than <code>0</code> and less than or equal
+     * to <code>100</code>. For example, if you want the capacity provider to maintain
+     * 10% spare capacity, then that means the utilization is 90%, so use a
+     * <code>targetCapacity</code> of <code>90</code>. The default value of
+     * <code>100</code> percent results in the Amazon EC2 instances in your Auto
      * Scaling group being completely used.</p>
      */
     inline void SetTargetCapacity(int value) { m_targetCapacityHasBeenSet = true; m_targetCapacity = value; }
 
     /**
-     * <p>The target capacity value for the capacity provider. The specified value must
-     * be greater than <code>0</code> and less than or equal to <code>100</code>. A
-     * value of <code>100</code> results in the Amazon EC2 instances in your Auto
+     * <p>The target capacity utilization as a percentage for the capacity provider.
+     * The specified value must be greater than <code>0</code> and less than or equal
+     * to <code>100</code>. For example, if you want the capacity provider to maintain
+     * 10% spare capacity, then that means the utilization is 90%, so use a
+     * <code>targetCapacity</code> of <code>90</code>. The default value of
+     * <code>100</code> percent results in the Amazon EC2 instances in your Auto
      * Scaling group being completely used.</p>
      */
     inline ManagedScaling& WithTargetCapacity(int value) { SetTargetCapacity(value); return *this;}

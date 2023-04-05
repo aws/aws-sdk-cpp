@@ -159,10 +159,17 @@ namespace ECS
          * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS runs another copy of the task in the
          * specified cluster. To update an existing service, see the <a>UpdateService</a>
-         * action.</p> <p>In addition to maintaining the desired count of tasks in your
-         * service, you can optionally run your service behind one or more load balancers.
-         * The load balancers distribute traffic across the tasks that are associated with
-         * the service. For more information, see <a
+         * action.</p>  <p>Starting April 15, 2023, Amazon Web Services will not
+         * onboard new customers to Amazon Elastic Inference (EI), and will help current
+         * customers migrate their workloads to options that offer better price and
+         * performance. After April 15, 2023, new customers will not be able to launch
+         * instances with Amazon EI accelerators in Amazon SageMaker, Amazon ECS, or Amazon
+         * EC2. However, customers who have used Amazon EI at least once during the past
+         * 30-day period are considered current customers and will be able to continue
+         * using the service. </p>  <p>In addition to maintaining the desired count
+         * of tasks in your service, you can optionally run your service behind one or more
+         * load balancers. The load balancers distribute traffic across the tasks that are
+         * associated with the service. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * load balancing</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>Tasks for services that don't use a load balancer are
@@ -1401,22 +1408,30 @@ namespace ECS
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
-         * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
-         * follows an eventual consistency model. This is because of the distributed nature
-         * of the system supporting the API. This means that the result of an API command
-         * you run that affects your Amazon ECS resources might not be immediately visible
-         * to all subsequent commands you run. Keep this in mind when you carry out an API
-         * command that immediately follows a previous API command.</p> <p>To manage
-         * eventual consistency, you can do the following:</p> <ul> <li> <p>Confirm the
-         * state of the resource before you run a command to modify it. Run the
-         * DescribeTasks command using an exponential backoff algorithm to ensure that you
-         * allow enough time for the previous command to propagate through the system. To
-         * do this, run the DescribeTasks command repeatedly, starting with a couple of
-         * seconds of wait time and increasing gradually up to five minutes of wait
-         * time.</p> </li> <li> <p>Add wait time between subsequent commands, even if the
-         * DescribeTasks command returns an accurate response. Apply an exponential backoff
-         * algorithm starting with a couple of seconds of wait time, and increase gradually
-         * up to about five minutes of wait time.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * place tasks manually on specific container instances.</p>  <p>Starting
+         * April 15, 2023, Amazon Web Services will not onboard new customers to Amazon
+         * Elastic Inference (EI), and will help current customers migrate their workloads
+         * to options that offer better price and performance. After April 15, 2023, new
+         * customers will not be able to launch instances with Amazon EI accelerators in
+         * Amazon SageMaker, Amazon ECS, or Amazon EC2. However, customers who have used
+         * Amazon EI at least once during the past 30-day period are considered current
+         * customers and will be able to continue using the service. </p>  <p>The
+         * Amazon ECS API follows an eventual consistency model. This is because of the
+         * distributed nature of the system supporting the API. This means that the result
+         * of an API command you run that affects your Amazon ECS resources might not be
+         * immediately visible to all subsequent commands you run. Keep this in mind when
+         * you carry out an API command that immediately follows a previous API
+         * command.</p> <p>To manage eventual consistency, you can do the following:</p>
+         * <ul> <li> <p>Confirm the state of the resource before you run a command to
+         * modify it. Run the DescribeTasks command using an exponential backoff algorithm
+         * to ensure that you allow enough time for the previous command to propagate
+         * through the system. To do this, run the DescribeTasks command repeatedly,
+         * starting with a couple of seconds of wait time and increasing gradually up to
+         * five minutes of wait time.</p> </li> <li> <p>Add wait time between subsequent
+         * commands, even if the DescribeTasks command returns an accurate response. Apply
+         * an exponential backoff algorithm starting with a couple of seconds of wait time,
+         * and increase gradually up to about five minutes of wait time.</p> </li>
+         * </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/RunTask">AWS API
          * Reference</a></p>
          */
@@ -1442,7 +1457,14 @@ namespace ECS
 
         /**
          * <p>Starts a new task from the specified task definition on the specified
-         * container instance or instances.</p> <p>Alternatively, you can use
+         * container instance or instances.</p>  <p>Starting April 15, 2023, Amazon
+         * Web Services will not onboard new customers to Amazon Elastic Inference (EI),
+         * and will help current customers migrate their workloads to options that offer
+         * better price and performance. After April 15, 2023, new customers will not be
+         * able to launch instances with Amazon EI accelerators in Amazon SageMaker, Amazon
+         * ECS, or Amazon EC2. However, customers who have used Amazon EI at least once
+         * during the past 30-day period are considered current customers and will be able
+         * to continue using the service. </p>  <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer

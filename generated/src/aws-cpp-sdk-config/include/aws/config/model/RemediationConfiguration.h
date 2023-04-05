@@ -122,42 +122,42 @@ namespace Model
 
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline void SetTargetId(Aws::String&& value) { m_targetIdHasBeenSet = true; m_targetId = std::move(value); }
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline void SetTargetId(const char* value) { m_targetIdHasBeenSet = true; m_targetId.assign(value); }
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline RemediationConfiguration& WithTargetId(const Aws::String& value) { SetTargetId(value); return *this;}
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline RemediationConfiguration& WithTargetId(Aws::String&& value) { SetTargetId(std::move(value)); return *this;}
 
     /**
-     * <p>Target ID is the name of the public document.</p>
+     * <p>Target ID is the name of the SSM document.</p>
      */
     inline RemediationConfiguration& WithTargetId(const char* value) { SetTargetId(value); return *this;}
 

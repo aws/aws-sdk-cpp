@@ -1112,58 +1112,74 @@ namespace Model
 
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const Aws::Vector<Compatibility>& GetRequiresCompatibilities() const{ return m_requiresCompatibilities; }
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline bool RequiresCompatibilitiesHasBeenSet() const { return m_requiresCompatibilitiesHasBeenSet; }
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = value; }
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities = std::move(value); }
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(const Aws::Vector<Compatibility>& value) { SetRequiresCompatibilities(value); return *this;}
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& WithRequiresCompatibilities(Aws::Vector<Compatibility>&& value) { SetRequiresCompatibilities(std::move(value)); return *this;}
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(const Compatibility& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(value); return *this; }
 
     /**
-     * <p>The task launch types the task definition was validated against. To determine
-     * which task launch types the task definition is validated for, see the
-     * <a>TaskDefinition$compatibilities</a> parameter.</p>
+     * <p>The task launch types the task definition was validated against. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS launch types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline TaskDefinition& AddRequiresCompatibilities(Compatibility&& value) { m_requiresCompatibilitiesHasBeenSet = true; m_requiresCompatibilities.push_back(std::move(value)); return *this; }
 

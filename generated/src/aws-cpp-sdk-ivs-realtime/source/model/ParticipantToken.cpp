@@ -74,7 +74,7 @@ ParticipantToken& ParticipantToken::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("expirationTime"))
   {
-    m_expirationTime = jsonValue.GetDouble("expirationTime");
+    m_expirationTime = jsonValue.GetString("expirationTime");
 
     m_expirationTimeHasBeenSet = true;
   }
@@ -137,7 +137,7 @@ JsonValue ParticipantToken::Jsonize() const
 
   if(m_expirationTimeHasBeenSet)
   {
-   payload.WithDouble("expirationTime", m_expirationTime.SecondsWithMSPrecision());
+   payload.WithString("expirationTime", m_expirationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_participantIdHasBeenSet)

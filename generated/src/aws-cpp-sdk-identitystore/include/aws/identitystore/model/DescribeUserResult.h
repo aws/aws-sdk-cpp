@@ -201,37 +201,37 @@ namespace Model
 
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayName = value; }
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayName = std::move(value); }
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayName.assign(value); }
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline DescribeUserResult& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline DescribeUserResult& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The user's name value for display.</p>
+     * <p>The display name of the user.</p>
      */
     inline DescribeUserResult& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -309,73 +309,73 @@ namespace Model
 
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline const Aws::Vector<Email>& GetEmails() const{ return m_emails; }
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline void SetEmails(const Aws::Vector<Email>& value) { m_emails = value; }
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline void SetEmails(Aws::Vector<Email>&& value) { m_emails = std::move(value); }
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline DescribeUserResult& WithEmails(const Aws::Vector<Email>& value) { SetEmails(value); return *this;}
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline DescribeUserResult& WithEmails(Aws::Vector<Email>&& value) { SetEmails(std::move(value)); return *this;}
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline DescribeUserResult& AddEmails(const Email& value) { m_emails.push_back(value); return *this; }
 
     /**
-     * <p>The user's email value.</p>
+     * <p>The email address of the user.</p>
      */
     inline DescribeUserResult& AddEmails(Email&& value) { m_emails.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline const Aws::Vector<Address>& GetAddresses() const{ return m_addresses; }
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline void SetAddresses(const Aws::Vector<Address>& value) { m_addresses = value; }
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline void SetAddresses(Aws::Vector<Address>&& value) { m_addresses = std::move(value); }
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline DescribeUserResult& WithAddresses(const Aws::Vector<Address>& value) { SetAddresses(value); return *this;}
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline DescribeUserResult& WithAddresses(Aws::Vector<Address>&& value) { SetAddresses(std::move(value)); return *this;}
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline DescribeUserResult& AddAddresses(const Address& value) { m_addresses.push_back(value); return *this; }
 
     /**
-     * <p>The user's physical address.</p>
+     * <p>The physical address of the user.</p>
      */
     inline DescribeUserResult& AddAddresses(Address&& value) { m_addresses.push_back(std::move(value)); return *this; }
 
@@ -417,73 +417,73 @@ namespace Model
 
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline const Aws::String& GetUserType() const{ return m_userType; }
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline void SetUserType(const Aws::String& value) { m_userType = value; }
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline void SetUserType(Aws::String&& value) { m_userType = std::move(value); }
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline void SetUserType(const char* value) { m_userType.assign(value); }
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline DescribeUserResult& WithUserType(const Aws::String& value) { SetUserType(value); return *this;}
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline DescribeUserResult& WithUserType(Aws::String&& value) { SetUserType(std::move(value)); return *this;}
 
     /**
-     * <p>A string indicating the user's type.</p>
+     * <p>A string indicating the type of user.</p>
      */
     inline DescribeUserResult& WithUserType(const char* value) { SetUserType(value); return *this;}
 
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_title = value; }
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_title = std::move(value); }
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline void SetTitle(const char* value) { m_title.assign(value); }
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline DescribeUserResult& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline DescribeUserResult& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's title.</p>
+     * <p>A string containing the title of the user.</p>
      */
     inline DescribeUserResult& WithTitle(const char* value) { SetTitle(value); return *this;}
 
@@ -525,37 +525,37 @@ namespace Model
 
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(const Aws::String& value) { m_locale = value; }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(Aws::String&& value) { m_locale = std::move(value); }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline void SetLocale(const char* value) { m_locale.assign(value); }
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline DescribeUserResult& WithLocale(const Aws::String& value) { SetLocale(value); return *this;}
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline DescribeUserResult& WithLocale(Aws::String&& value) { SetLocale(std::move(value)); return *this;}
 
     /**
-     * <p>A string containing the user's geographical region or location.</p>
+     * <p>A string containing the geographical region or location of the user.</p>
      */
     inline DescribeUserResult& WithLocale(const char* value) { SetLocale(value); return *this;}
 

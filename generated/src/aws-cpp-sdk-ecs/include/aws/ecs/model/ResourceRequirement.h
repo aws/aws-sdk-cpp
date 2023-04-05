@@ -30,7 +30,7 @@ namespace Model
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-gpu.html">Working
    * with GPUs on Amazon ECS</a> or <a
-   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-inference.html">Working
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/url-ecs-dev;ecs-inference.html">Working
    * with Amazon Elastic Inference on Amazon ECS</a> in the <i>Amazon Elastic
    * Container Service Developer Guide</i> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ResourceRequirement">AWS
@@ -52,8 +52,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
@@ -64,8 +65,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
@@ -76,8 +78,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
@@ -88,8 +91,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
@@ -100,8 +104,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
@@ -112,8 +117,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline ResourceRequirement& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
@@ -124,8 +130,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline ResourceRequirement& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
@@ -136,8 +143,9 @@ namespace Model
      * reserved for all containers in a task can't exceed the number of available GPUs
      * on the container instance that the task is launched on.</p> <p>If the
      * <code>InferenceAccelerator</code> type is used, the <code>value</code> matches
-     * the <code>deviceName</code> for an <a>InferenceAccelerator</a> specified in a
-     * task definition.</p>
+     * the <code>deviceName</code> for an <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_InferenceAccelerator.html">InferenceAccelerator</a>
+     * specified in a task definition.</p>
      */
     inline ResourceRequirement& WithValue(const char* value) { SetValue(value); return *this;}
 
