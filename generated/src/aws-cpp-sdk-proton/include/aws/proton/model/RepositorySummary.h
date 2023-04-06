@@ -81,6 +81,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline const Aws::String& GetConnectionArn() const{ return m_connectionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline bool ConnectionArnHasBeenSet() const { return m_connectionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline void SetConnectionArn(const Aws::String& value) { m_connectionArnHasBeenSet = true; m_connectionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline void SetConnectionArn(Aws::String&& value) { m_connectionArnHasBeenSet = true; m_connectionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline void SetConnectionArn(const char* value) { m_connectionArnHasBeenSet = true; m_connectionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline RepositorySummary& WithConnectionArn(const Aws::String& value) { SetConnectionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline RepositorySummary& WithConnectionArn(Aws::String&& value) { SetConnectionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the of your connection that connects Proton
+     * to your repository.</p>
+     */
+    inline RepositorySummary& WithConnectionArn(const char* value) { SetConnectionArn(value); return *this;}
+
+
+    /**
      * <p>The repository name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -155,6 +204,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    Aws::String m_connectionArn;
+    bool m_connectionArnHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;

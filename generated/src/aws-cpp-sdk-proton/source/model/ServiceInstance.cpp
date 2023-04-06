@@ -25,6 +25,7 @@ ServiceInstance::ServiceInstance() :
     m_deploymentStatusHasBeenSet(false),
     m_deploymentStatusMessageHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_lastClientRequestTokenHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -43,6 +44,7 @@ ServiceInstance::ServiceInstance(JsonView jsonValue) :
     m_deploymentStatusHasBeenSet(false),
     m_deploymentStatusMessageHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_lastClientRequestTokenHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -90,6 +92,13 @@ ServiceInstance& ServiceInstance::operator =(JsonView jsonValue)
     m_environmentName = jsonValue.GetString("environmentName");
 
     m_environmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastClientRequestToken"))
+  {
+    m_lastClientRequestToken = jsonValue.GetString("lastClientRequestToken");
+
+    m_lastClientRequestTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastDeploymentAttemptedAt"))
@@ -180,6 +189,12 @@ JsonValue ServiceInstance::Jsonize() const
   if(m_environmentNameHasBeenSet)
   {
    payload.WithString("environmentName", m_environmentName);
+
+  }
+
+  if(m_lastClientRequestTokenHasBeenSet)
+  {
+   payload.WithString("lastClientRequestToken", m_lastClientRequestToken);
 
   }
 

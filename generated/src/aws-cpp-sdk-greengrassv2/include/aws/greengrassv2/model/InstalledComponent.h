@@ -280,44 +280,44 @@ namespace Model
 
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline const Aws::Utils::DateTime& GetLastReportedTimestamp() const{ return m_lastReportedTimestamp; }
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline bool LastReportedTimestampHasBeenSet() const { return m_lastReportedTimestampHasBeenSet; }
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline void SetLastReportedTimestamp(const Aws::Utils::DateTime& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = value; }
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline void SetLastReportedTimestamp(Aws::Utils::DateTime&& value) { m_lastReportedTimestampHasBeenSet = true; m_lastReportedTimestamp = std::move(value); }
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline InstalledComponent& WithLastReportedTimestamp(const Aws::Utils::DateTime& value) { SetLastReportedTimestamp(value); return *this;}
 
     /**
-     * <p>The last time the Greengrass core device sent a message containing a certain
-     * component to the Amazon Web Services Cloud.</p> <p>A component does not need to
-     * see a state change for this field to update.</p>
+     * <p>The last time the Greengrass core device sent a message containing a
+     * component's state to the Amazon Web Services Cloud.</p> <p>A component does not
+     * need to see a state change for this field to update.</p>
      */
     inline InstalledComponent& WithLastReportedTimestamp(Aws::Utils::DateTime&& value) { SetLastReportedTimestamp(std::move(value)); return *this;}
 
@@ -326,7 +326,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline const Aws::String& GetLastInstallationSource() const{ return m_lastInstallationSource; }
 
@@ -334,7 +336,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline bool LastInstallationSourceHasBeenSet() const { return m_lastInstallationSourceHasBeenSet; }
 
@@ -342,7 +346,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline void SetLastInstallationSource(const Aws::String& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = value; }
 
@@ -350,7 +356,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline void SetLastInstallationSource(Aws::String&& value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource = std::move(value); }
 
@@ -358,7 +366,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline void SetLastInstallationSource(const char* value) { m_lastInstallationSourceHasBeenSet = true; m_lastInstallationSource.assign(value); }
 
@@ -366,7 +376,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(const Aws::String& value) { SetLastInstallationSource(value); return *this;}
 
@@ -374,7 +386,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(Aws::String&& value) { SetLastInstallationSource(std::move(value)); return *this;}
 
@@ -382,7 +396,9 @@ namespace Model
      * <p>The most recent deployment source that brought the component to the
      * Greengrass core device. For a thing group deployment or thing deployment, the
      * source will be the The ID of the deployment. and for local deployments it will
-     * be <code>LOCAL</code>.</p>
+     * be <code>LOCAL</code>.</p>  <p>Any deployment will attempt to reinstall
+     * currently broken components on the device, which will update the last
+     * installation source.</p> 
      */
     inline InstalledComponent& WithLastInstallationSource(const char* value) { SetLastInstallationSource(value); return *this;}
 

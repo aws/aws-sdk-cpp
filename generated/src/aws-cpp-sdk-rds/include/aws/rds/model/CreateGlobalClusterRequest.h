@@ -37,42 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline const Aws::String& GetGlobalClusterIdentifier() const{ return m_globalClusterIdentifier; }
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline bool GlobalClusterIdentifierHasBeenSet() const { return m_globalClusterIdentifierHasBeenSet; }
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline void SetGlobalClusterIdentifier(const Aws::String& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = value; }
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline void SetGlobalClusterIdentifier(Aws::String&& value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier = std::move(value); }
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline void SetGlobalClusterIdentifier(const char* value) { m_globalClusterIdentifierHasBeenSet = true; m_globalClusterIdentifier.assign(value); }
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline CreateGlobalClusterRequest& WithGlobalClusterIdentifier(const Aws::String& value) { SetGlobalClusterIdentifier(value); return *this;}
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline CreateGlobalClusterRequest& WithGlobalClusterIdentifier(Aws::String&& value) { SetGlobalClusterIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>The cluster identifier of the new global database cluster.</p>
+     * <p>The cluster identifier of the new global database cluster. This parameter is
+     * stored as a lowercase string.</p>
      */
     inline CreateGlobalClusterRequest& WithGlobalClusterIdentifier(const char* value) { SetGlobalClusterIdentifier(value); return *this;}
 

@@ -30,6 +30,8 @@
 #include <aws/proton/model/CreateEnvironmentTemplateVersionResult.h>
 #include <aws/proton/model/CreateRepositoryResult.h>
 #include <aws/proton/model/CreateServiceResult.h>
+#include <aws/proton/model/CreateServiceInstanceResult.h>
+#include <aws/proton/model/CreateServiceSyncConfigResult.h>
 #include <aws/proton/model/CreateServiceTemplateResult.h>
 #include <aws/proton/model/CreateServiceTemplateVersionResult.h>
 #include <aws/proton/model/CreateTemplateSyncConfigResult.h>
@@ -40,6 +42,7 @@
 #include <aws/proton/model/DeleteEnvironmentTemplateVersionResult.h>
 #include <aws/proton/model/DeleteRepositoryResult.h>
 #include <aws/proton/model/DeleteServiceResult.h>
+#include <aws/proton/model/DeleteServiceSyncConfigResult.h>
 #include <aws/proton/model/DeleteServiceTemplateResult.h>
 #include <aws/proton/model/DeleteServiceTemplateVersionResult.h>
 #include <aws/proton/model/DeleteTemplateSyncConfigResult.h>
@@ -54,6 +57,9 @@
 #include <aws/proton/model/GetResourcesSummaryResult.h>
 #include <aws/proton/model/GetServiceResult.h>
 #include <aws/proton/model/GetServiceInstanceResult.h>
+#include <aws/proton/model/GetServiceInstanceSyncStatusResult.h>
+#include <aws/proton/model/GetServiceSyncBlockerSummaryResult.h>
+#include <aws/proton/model/GetServiceSyncConfigResult.h>
 #include <aws/proton/model/GetServiceTemplateResult.h>
 #include <aws/proton/model/GetServiceTemplateVersionResult.h>
 #include <aws/proton/model/GetTemplateSyncConfigResult.h>
@@ -91,6 +97,8 @@
 #include <aws/proton/model/UpdateServiceResult.h>
 #include <aws/proton/model/UpdateServiceInstanceResult.h>
 #include <aws/proton/model/UpdateServicePipelineResult.h>
+#include <aws/proton/model/UpdateServiceSyncBlockerResult.h>
+#include <aws/proton/model/UpdateServiceSyncConfigResult.h>
 #include <aws/proton/model/UpdateServiceTemplateResult.h>
 #include <aws/proton/model/UpdateServiceTemplateVersionResult.h>
 #include <aws/proton/model/UpdateTemplateSyncConfigResult.h>
@@ -146,6 +154,8 @@ namespace Aws
       class CreateEnvironmentTemplateVersionRequest;
       class CreateRepositoryRequest;
       class CreateServiceRequest;
+      class CreateServiceInstanceRequest;
+      class CreateServiceSyncConfigRequest;
       class CreateServiceTemplateRequest;
       class CreateServiceTemplateVersionRequest;
       class CreateTemplateSyncConfigRequest;
@@ -156,6 +166,7 @@ namespace Aws
       class DeleteEnvironmentTemplateVersionRequest;
       class DeleteRepositoryRequest;
       class DeleteServiceRequest;
+      class DeleteServiceSyncConfigRequest;
       class DeleteServiceTemplateRequest;
       class DeleteServiceTemplateVersionRequest;
       class DeleteTemplateSyncConfigRequest;
@@ -170,6 +181,9 @@ namespace Aws
       class GetResourcesSummaryRequest;
       class GetServiceRequest;
       class GetServiceInstanceRequest;
+      class GetServiceInstanceSyncStatusRequest;
+      class GetServiceSyncBlockerSummaryRequest;
+      class GetServiceSyncConfigRequest;
       class GetServiceTemplateRequest;
       class GetServiceTemplateVersionRequest;
       class GetTemplateSyncConfigRequest;
@@ -207,6 +221,8 @@ namespace Aws
       class UpdateServiceRequest;
       class UpdateServiceInstanceRequest;
       class UpdateServicePipelineRequest;
+      class UpdateServiceSyncBlockerRequest;
+      class UpdateServiceSyncConfigRequest;
       class UpdateServiceTemplateRequest;
       class UpdateServiceTemplateVersionRequest;
       class UpdateTemplateSyncConfigRequest;
@@ -225,6 +241,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateEnvironmentTemplateVersionResult, ProtonError> CreateEnvironmentTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<CreateRepositoryResult, ProtonError> CreateRepositoryOutcome;
       typedef Aws::Utils::Outcome<CreateServiceResult, ProtonError> CreateServiceOutcome;
+      typedef Aws::Utils::Outcome<CreateServiceInstanceResult, ProtonError> CreateServiceInstanceOutcome;
+      typedef Aws::Utils::Outcome<CreateServiceSyncConfigResult, ProtonError> CreateServiceSyncConfigOutcome;
       typedef Aws::Utils::Outcome<CreateServiceTemplateResult, ProtonError> CreateServiceTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateServiceTemplateVersionResult, ProtonError> CreateServiceTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<CreateTemplateSyncConfigResult, ProtonError> CreateTemplateSyncConfigOutcome;
@@ -235,6 +253,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteEnvironmentTemplateVersionResult, ProtonError> DeleteEnvironmentTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteRepositoryResult, ProtonError> DeleteRepositoryOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceResult, ProtonError> DeleteServiceOutcome;
+      typedef Aws::Utils::Outcome<DeleteServiceSyncConfigResult, ProtonError> DeleteServiceSyncConfigOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceTemplateResult, ProtonError> DeleteServiceTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteServiceTemplateVersionResult, ProtonError> DeleteServiceTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<DeleteTemplateSyncConfigResult, ProtonError> DeleteTemplateSyncConfigOutcome;
@@ -249,6 +268,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetResourcesSummaryResult, ProtonError> GetResourcesSummaryOutcome;
       typedef Aws::Utils::Outcome<GetServiceResult, ProtonError> GetServiceOutcome;
       typedef Aws::Utils::Outcome<GetServiceInstanceResult, ProtonError> GetServiceInstanceOutcome;
+      typedef Aws::Utils::Outcome<GetServiceInstanceSyncStatusResult, ProtonError> GetServiceInstanceSyncStatusOutcome;
+      typedef Aws::Utils::Outcome<GetServiceSyncBlockerSummaryResult, ProtonError> GetServiceSyncBlockerSummaryOutcome;
+      typedef Aws::Utils::Outcome<GetServiceSyncConfigResult, ProtonError> GetServiceSyncConfigOutcome;
       typedef Aws::Utils::Outcome<GetServiceTemplateResult, ProtonError> GetServiceTemplateOutcome;
       typedef Aws::Utils::Outcome<GetServiceTemplateVersionResult, ProtonError> GetServiceTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<GetTemplateSyncConfigResult, ProtonError> GetTemplateSyncConfigOutcome;
@@ -286,6 +308,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateServiceResult, ProtonError> UpdateServiceOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceInstanceResult, ProtonError> UpdateServiceInstanceOutcome;
       typedef Aws::Utils::Outcome<UpdateServicePipelineResult, ProtonError> UpdateServicePipelineOutcome;
+      typedef Aws::Utils::Outcome<UpdateServiceSyncBlockerResult, ProtonError> UpdateServiceSyncBlockerOutcome;
+      typedef Aws::Utils::Outcome<UpdateServiceSyncConfigResult, ProtonError> UpdateServiceSyncConfigOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceTemplateResult, ProtonError> UpdateServiceTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateServiceTemplateVersionResult, ProtonError> UpdateServiceTemplateVersionOutcome;
       typedef Aws::Utils::Outcome<UpdateTemplateSyncConfigResult, ProtonError> UpdateTemplateSyncConfigOutcome;
@@ -304,6 +328,8 @@ namespace Aws
       typedef std::future<CreateEnvironmentTemplateVersionOutcome> CreateEnvironmentTemplateVersionOutcomeCallable;
       typedef std::future<CreateRepositoryOutcome> CreateRepositoryOutcomeCallable;
       typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
+      typedef std::future<CreateServiceInstanceOutcome> CreateServiceInstanceOutcomeCallable;
+      typedef std::future<CreateServiceSyncConfigOutcome> CreateServiceSyncConfigOutcomeCallable;
       typedef std::future<CreateServiceTemplateOutcome> CreateServiceTemplateOutcomeCallable;
       typedef std::future<CreateServiceTemplateVersionOutcome> CreateServiceTemplateVersionOutcomeCallable;
       typedef std::future<CreateTemplateSyncConfigOutcome> CreateTemplateSyncConfigOutcomeCallable;
@@ -314,6 +340,7 @@ namespace Aws
       typedef std::future<DeleteEnvironmentTemplateVersionOutcome> DeleteEnvironmentTemplateVersionOutcomeCallable;
       typedef std::future<DeleteRepositoryOutcome> DeleteRepositoryOutcomeCallable;
       typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+      typedef std::future<DeleteServiceSyncConfigOutcome> DeleteServiceSyncConfigOutcomeCallable;
       typedef std::future<DeleteServiceTemplateOutcome> DeleteServiceTemplateOutcomeCallable;
       typedef std::future<DeleteServiceTemplateVersionOutcome> DeleteServiceTemplateVersionOutcomeCallable;
       typedef std::future<DeleteTemplateSyncConfigOutcome> DeleteTemplateSyncConfigOutcomeCallable;
@@ -328,6 +355,9 @@ namespace Aws
       typedef std::future<GetResourcesSummaryOutcome> GetResourcesSummaryOutcomeCallable;
       typedef std::future<GetServiceOutcome> GetServiceOutcomeCallable;
       typedef std::future<GetServiceInstanceOutcome> GetServiceInstanceOutcomeCallable;
+      typedef std::future<GetServiceInstanceSyncStatusOutcome> GetServiceInstanceSyncStatusOutcomeCallable;
+      typedef std::future<GetServiceSyncBlockerSummaryOutcome> GetServiceSyncBlockerSummaryOutcomeCallable;
+      typedef std::future<GetServiceSyncConfigOutcome> GetServiceSyncConfigOutcomeCallable;
       typedef std::future<GetServiceTemplateOutcome> GetServiceTemplateOutcomeCallable;
       typedef std::future<GetServiceTemplateVersionOutcome> GetServiceTemplateVersionOutcomeCallable;
       typedef std::future<GetTemplateSyncConfigOutcome> GetTemplateSyncConfigOutcomeCallable;
@@ -365,6 +395,8 @@ namespace Aws
       typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
       typedef std::future<UpdateServiceInstanceOutcome> UpdateServiceInstanceOutcomeCallable;
       typedef std::future<UpdateServicePipelineOutcome> UpdateServicePipelineOutcomeCallable;
+      typedef std::future<UpdateServiceSyncBlockerOutcome> UpdateServiceSyncBlockerOutcomeCallable;
+      typedef std::future<UpdateServiceSyncConfigOutcome> UpdateServiceSyncConfigOutcomeCallable;
       typedef std::future<UpdateServiceTemplateOutcome> UpdateServiceTemplateOutcomeCallable;
       typedef std::future<UpdateServiceTemplateVersionOutcome> UpdateServiceTemplateVersionOutcomeCallable;
       typedef std::future<UpdateTemplateSyncConfigOutcome> UpdateTemplateSyncConfigOutcomeCallable;
@@ -386,6 +418,8 @@ namespace Aws
     typedef std::function<void(const ProtonClient*, const Model::CreateEnvironmentTemplateVersionRequest&, const Model::CreateEnvironmentTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateEnvironmentTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateRepositoryRequest&, const Model::CreateRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRepositoryResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::CreateServiceInstanceRequest&, const Model::CreateServiceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceInstanceResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::CreateServiceSyncConfigRequest&, const Model::CreateServiceSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateServiceTemplateRequest&, const Model::CreateServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceTemplateResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateServiceTemplateVersionRequest&, const Model::CreateServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::CreateTemplateSyncConfigRequest&, const Model::CreateTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateSyncConfigResponseReceivedHandler;
@@ -396,6 +430,7 @@ namespace Aws
     typedef std::function<void(const ProtonClient*, const Model::DeleteEnvironmentTemplateVersionRequest&, const Model::DeleteEnvironmentTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteEnvironmentTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteRepositoryRequest&, const Model::DeleteRepositoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRepositoryResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::DeleteServiceSyncConfigRequest&, const Model::DeleteServiceSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteServiceTemplateRequest&, const Model::DeleteServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceTemplateResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteServiceTemplateVersionRequest&, const Model::DeleteServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::DeleteTemplateSyncConfigRequest&, const Model::DeleteTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateSyncConfigResponseReceivedHandler;
@@ -410,6 +445,9 @@ namespace Aws
     typedef std::function<void(const ProtonClient*, const Model::GetResourcesSummaryRequest&, const Model::GetResourcesSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcesSummaryResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceRequest&, const Model::GetServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceInstanceRequest&, const Model::GetServiceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceInstanceResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::GetServiceInstanceSyncStatusRequest&, const Model::GetServiceInstanceSyncStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceInstanceSyncStatusResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::GetServiceSyncBlockerSummaryRequest&, const Model::GetServiceSyncBlockerSummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSyncBlockerSummaryResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::GetServiceSyncConfigRequest&, const Model::GetServiceSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceTemplateRequest&, const Model::GetServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceTemplateResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetServiceTemplateVersionRequest&, const Model::GetServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::GetTemplateSyncConfigRequest&, const Model::GetTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTemplateSyncConfigResponseReceivedHandler;
@@ -447,6 +485,8 @@ namespace Aws
     typedef std::function<void(const ProtonClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateServiceInstanceRequest&, const Model::UpdateServiceInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceInstanceResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateServicePipelineRequest&, const Model::UpdateServicePipelineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServicePipelineResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::UpdateServiceSyncBlockerRequest&, const Model::UpdateServiceSyncBlockerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSyncBlockerResponseReceivedHandler;
+    typedef std::function<void(const ProtonClient*, const Model::UpdateServiceSyncConfigRequest&, const Model::UpdateServiceSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSyncConfigResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateServiceTemplateRequest&, const Model::UpdateServiceTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceTemplateResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateServiceTemplateVersionRequest&, const Model::UpdateServiceTemplateVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceTemplateVersionResponseReceivedHandler;
     typedef std::function<void(const ProtonClient*, const Model::UpdateTemplateSyncConfigRequest&, const Model::UpdateTemplateSyncConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateSyncConfigResponseReceivedHandler;

@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateComponentRequest::CreateComponentRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_manifestHasBeenSet(false),
@@ -28,6 +30,12 @@ CreateComponentRequest::CreateComponentRequest() :
 Aws::String CreateComponentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
 
   if(m_descriptionHasBeenSet)
   {

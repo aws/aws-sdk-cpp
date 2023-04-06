@@ -27,6 +27,7 @@ namespace Aws
         static const int TIMED_OUT_HASH = HashingUtils::HashString("TIMED_OUT");
         static const int CANCELED_HASH = HashingUtils::HashString("CANCELED");
         static const int REJECTED_HASH = HashingUtils::HashString("REJECTED");
+        static const int SUCCEEDED_HASH = HashingUtils::HashString("SUCCEEDED");
 
 
         EffectiveDeploymentExecutionStatus GetEffectiveDeploymentExecutionStatusForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return EffectiveDeploymentExecutionStatus::REJECTED;
           }
+          else if (hashCode == SUCCEEDED_HASH)
+          {
+            return EffectiveDeploymentExecutionStatus::SUCCEEDED;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -88,6 +93,8 @@ namespace Aws
             return "CANCELED";
           case EffectiveDeploymentExecutionStatus::REJECTED:
             return "REJECTED";
+          case EffectiveDeploymentExecutionStatus::SUCCEEDED:
+            return "SUCCEEDED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

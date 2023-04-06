@@ -226,6 +226,47 @@ namespace Model
 
 
     /**
+     * <p>The last client request token received.</p>
+     */
+    inline const Aws::String& GetLastClientRequestToken() const{ return m_lastClientRequestToken; }
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline bool LastClientRequestTokenHasBeenSet() const { return m_lastClientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline void SetLastClientRequestToken(const Aws::String& value) { m_lastClientRequestTokenHasBeenSet = true; m_lastClientRequestToken = value; }
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline void SetLastClientRequestToken(Aws::String&& value) { m_lastClientRequestTokenHasBeenSet = true; m_lastClientRequestToken = std::move(value); }
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline void SetLastClientRequestToken(const char* value) { m_lastClientRequestTokenHasBeenSet = true; m_lastClientRequestToken.assign(value); }
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline ServiceInstance& WithLastClientRequestToken(const Aws::String& value) { SetLastClientRequestToken(value); return *this;}
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline ServiceInstance& WithLastClientRequestToken(Aws::String&& value) { SetLastClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The last client request token received.</p>
+     */
+    inline ServiceInstance& WithLastClientRequestToken(const char* value) { SetLastClientRequestToken(value); return *this;}
+
+
+    /**
      * <p>The time when a deployment of the service instance was last attempted.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDeploymentAttemptedAt() const{ return m_lastDeploymentAttemptedAt; }
@@ -572,6 +613,9 @@ namespace Model
 
     Aws::String m_environmentName;
     bool m_environmentNameHasBeenSet = false;
+
+    Aws::String m_lastClientRequestToken;
+    bool m_lastClientRequestTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_lastDeploymentAttemptedAt;
     bool m_lastDeploymentAttemptedAtHasBeenSet = false;
