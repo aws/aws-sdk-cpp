@@ -559,6 +559,56 @@ namespace Proton
         }
 
         /**
+         * <p>Create a service instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateServiceInstanceOutcome CreateServiceInstance(const Model::CreateServiceInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateServiceInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateServiceInstanceRequestT = Model::CreateServiceInstanceRequest>
+        Model::CreateServiceInstanceOutcomeCallable CreateServiceInstanceCallable(const CreateServiceInstanceRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::CreateServiceInstance, request);
+        }
+
+        /**
+         * An Async wrapper for CreateServiceInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateServiceInstanceRequestT = Model::CreateServiceInstanceRequest>
+        void CreateServiceInstanceAsync(const CreateServiceInstanceRequestT& request, const CreateServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::CreateServiceInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Create the Proton Ops configuration file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/CreateServiceSyncConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateServiceSyncConfigOutcome CreateServiceSyncConfig(const Model::CreateServiceSyncConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateServiceSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateServiceSyncConfigRequestT = Model::CreateServiceSyncConfigRequest>
+        Model::CreateServiceSyncConfigOutcomeCallable CreateServiceSyncConfigCallable(const CreateServiceSyncConfigRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::CreateServiceSyncConfig, request);
+        }
+
+        /**
+         * An Async wrapper for CreateServiceSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateServiceSyncConfigRequestT = Model::CreateServiceSyncConfigRequest>
+        void CreateServiceSyncConfigAsync(const CreateServiceSyncConfigRequestT& request, const CreateServiceSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::CreateServiceSyncConfig, request, handler, context);
+        }
+
+        /**
          * <p>Create a service template. The administrator creates a service template to
          * define standardized infrastructure and an optional CI/CD service pipeline.
          * Developers, in turn, select the service template from Proton. If the selected
@@ -853,6 +903,31 @@ namespace Proton
         void DeleteServiceAsync(const DeleteServiceRequestT& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ProtonClient::DeleteService, request, handler, context);
+        }
+
+        /**
+         * <p>Delete the Proton Ops file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/DeleteServiceSyncConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteServiceSyncConfigOutcome DeleteServiceSyncConfig(const Model::DeleteServiceSyncConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteServiceSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteServiceSyncConfigRequestT = Model::DeleteServiceSyncConfigRequest>
+        Model::DeleteServiceSyncConfigOutcomeCallable DeleteServiceSyncConfigCallable(const DeleteServiceSyncConfigRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::DeleteServiceSyncConfig, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteServiceSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteServiceSyncConfigRequestT = Model::DeleteServiceSyncConfigRequest>
+        void DeleteServiceSyncConfigAsync(const DeleteServiceSyncConfigRequestT& request, const DeleteServiceSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::DeleteServiceSyncConfig, request, handler, context);
         }
 
         /**
@@ -1166,7 +1241,7 @@ namespace Proton
          * are up-to-date, behind a template major version, or behind a template minor
          * version), the total number of resources, and the number of resources that are in
          * a failed state, grouped by resource type. Components, environments, and service
-         * templates are exceptions—see the <code>components</code>,
+         * templates return less information - see the <code>components</code>,
          * <code>environments</code>, and <code>serviceTemplates</code> field
          * descriptions.</p> <p>For context, the action also returns the total number of
          * each type of Proton template in the Amazon Web Services account.</p> <p>For more
@@ -1246,6 +1321,83 @@ namespace Proton
         void GetServiceInstanceAsync(const GetServiceInstanceRequestT& request, const GetServiceInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ProtonClient::GetServiceInstance, request, handler, context);
+        }
+
+        /**
+         * <p>Get the status of the synced service instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceInstanceSyncStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceInstanceSyncStatusOutcome GetServiceInstanceSyncStatus(const Model::GetServiceInstanceSyncStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetServiceInstanceSyncStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceInstanceSyncStatusRequestT = Model::GetServiceInstanceSyncStatusRequest>
+        Model::GetServiceInstanceSyncStatusOutcomeCallable GetServiceInstanceSyncStatusCallable(const GetServiceInstanceSyncStatusRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::GetServiceInstanceSyncStatus, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceInstanceSyncStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceInstanceSyncStatusRequestT = Model::GetServiceInstanceSyncStatusRequest>
+        void GetServiceInstanceSyncStatusAsync(const GetServiceInstanceSyncStatusRequestT& request, const GetServiceInstanceSyncStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::GetServiceInstanceSyncStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Get detailed data for the service sync blocker summary.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncBlockerSummary">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceSyncBlockerSummaryOutcome GetServiceSyncBlockerSummary(const Model::GetServiceSyncBlockerSummaryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetServiceSyncBlockerSummary that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceSyncBlockerSummaryRequestT = Model::GetServiceSyncBlockerSummaryRequest>
+        Model::GetServiceSyncBlockerSummaryOutcomeCallable GetServiceSyncBlockerSummaryCallable(const GetServiceSyncBlockerSummaryRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::GetServiceSyncBlockerSummary, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceSyncBlockerSummary that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceSyncBlockerSummaryRequestT = Model::GetServiceSyncBlockerSummaryRequest>
+        void GetServiceSyncBlockerSummaryAsync(const GetServiceSyncBlockerSummaryRequestT& request, const GetServiceSyncBlockerSummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::GetServiceSyncBlockerSummary, request, handler, context);
+        }
+
+        /**
+         * <p>Get detailed information for the service sync configuration.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/GetServiceSyncConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceSyncConfigOutcome GetServiceSyncConfig(const Model::GetServiceSyncConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetServiceSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetServiceSyncConfigRequestT = Model::GetServiceSyncConfigRequest>
+        Model::GetServiceSyncConfigOutcomeCallable GetServiceSyncConfigCallable(const GetServiceSyncConfigRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::GetServiceSyncConfig, request);
+        }
+
+        /**
+         * An Async wrapper for GetServiceSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetServiceSyncConfigRequestT = Model::GetServiceSyncConfigRequest>
+        void GetServiceSyncConfigAsync(const GetServiceSyncConfigRequestT& request, const GetServiceSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::GetServiceSyncConfig, request, handler, context);
         }
 
         /**
@@ -2304,6 +2456,57 @@ namespace Proton
         void UpdateServicePipelineAsync(const UpdateServicePipelineRequestT& request, const UpdateServicePipelineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ProtonClient::UpdateServicePipeline, request, handler, context);
+        }
+
+        /**
+         * <p>Update the service sync blocker by resolving it.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncBlocker">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServiceSyncBlockerOutcome UpdateServiceSyncBlocker(const Model::UpdateServiceSyncBlockerRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateServiceSyncBlocker that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateServiceSyncBlockerRequestT = Model::UpdateServiceSyncBlockerRequest>
+        Model::UpdateServiceSyncBlockerOutcomeCallable UpdateServiceSyncBlockerCallable(const UpdateServiceSyncBlockerRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::UpdateServiceSyncBlocker, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateServiceSyncBlocker that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateServiceSyncBlockerRequestT = Model::UpdateServiceSyncBlockerRequest>
+        void UpdateServiceSyncBlockerAsync(const UpdateServiceSyncBlockerRequestT& request, const UpdateServiceSyncBlockerResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::UpdateServiceSyncBlocker, request, handler, context);
+        }
+
+        /**
+         * <p>Update the Proton Ops config file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/proton-2020-07-20/UpdateServiceSyncConfig">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServiceSyncConfigOutcome UpdateServiceSyncConfig(const Model::UpdateServiceSyncConfigRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateServiceSyncConfig that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateServiceSyncConfigRequestT = Model::UpdateServiceSyncConfigRequest>
+        Model::UpdateServiceSyncConfigOutcomeCallable UpdateServiceSyncConfigCallable(const UpdateServiceSyncConfigRequestT& request) const
+        {
+            return SubmitCallable(&ProtonClient::UpdateServiceSyncConfig, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateServiceSyncConfig that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateServiceSyncConfigRequestT = Model::UpdateServiceSyncConfigRequest>
+        void UpdateServiceSyncConfigAsync(const UpdateServiceSyncConfigRequestT& request, const UpdateServiceSyncConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ProtonClient::UpdateServiceSyncConfig, request, handler, context);
         }
 
         /**

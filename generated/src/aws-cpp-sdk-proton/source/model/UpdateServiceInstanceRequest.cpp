@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateServiceInstanceRequest::UpdateServiceInstanceRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_deploymentType(DeploymentUpdateType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
@@ -26,6 +28,12 @@ UpdateServiceInstanceRequest::UpdateServiceInstanceRequest() :
 Aws::String UpdateServiceInstanceRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
 
   if(m_deploymentTypeHasBeenSet)
   {

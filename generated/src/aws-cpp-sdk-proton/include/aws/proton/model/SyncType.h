@@ -16,7 +16,8 @@ namespace Model
   enum class SyncType
   {
     NOT_SET,
-    TEMPLATE_SYNC
+    TEMPLATE_SYNC,
+    SERVICE_SYNC
   };
 
 namespace SyncTypeMapper

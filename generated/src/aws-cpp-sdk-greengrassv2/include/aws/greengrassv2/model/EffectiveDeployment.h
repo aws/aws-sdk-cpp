@@ -320,32 +320,98 @@ namespace Model
 
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline const EffectiveDeploymentExecutionStatus& GetCoreDeviceExecutionStatus() const{ return m_coreDeviceExecutionStatus; }
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline bool CoreDeviceExecutionStatusHasBeenSet() const { return m_coreDeviceExecutionStatusHasBeenSet; }
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline void SetCoreDeviceExecutionStatus(const EffectiveDeploymentExecutionStatus& value) { m_coreDeviceExecutionStatusHasBeenSet = true; m_coreDeviceExecutionStatus = value; }
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline void SetCoreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus&& value) { m_coreDeviceExecutionStatusHasBeenSet = true; m_coreDeviceExecutionStatus = std::move(value); }
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline EffectiveDeployment& WithCoreDeviceExecutionStatus(const EffectiveDeploymentExecutionStatus& value) { SetCoreDeviceExecutionStatus(value); return *this;}
 
     /**
-     * <p>The status of the deployment job on the Greengrass core device.</p>
+     * <p>The status of the deployment job on the Greengrass core device.</p> <ul> <li>
+     * <p> <code>IN_PROGRESS</code> – The deployment job is running.</p> </li> <li> <p>
+     * <code>QUEUED</code> – The deployment job is in the job queue and waiting to
+     * run.</p> </li> <li> <p> <code>FAILED</code> – The deployment failed. For more
+     * information, see the <code>statusDetails</code> field.</p> </li> <li> <p>
+     * <code>COMPLETED</code> – The deployment to an IoT thing was completed
+     * successfully.</p> </li> <li> <p> <code>TIMED_OUT</code> – The deployment didn't
+     * complete in the allotted time. </p> </li> <li> <p> <code>CANCELED</code> – The
+     * deployment was canceled by the user.</p> </li> <li> <p> <code>REJECTED</code> –
+     * The deployment was rejected. For more information, see the
+     * <code>statusDetails</code> field.</p> </li> <li> <p> <code>SUCCEEDED</code> –
+     * The deployment to an IoT thing group was completed successfully.</p> </li> </ul>
      */
     inline EffectiveDeployment& WithCoreDeviceExecutionStatus(EffectiveDeploymentExecutionStatus&& value) { SetCoreDeviceExecutionStatus(std::move(value)); return *this;}
 

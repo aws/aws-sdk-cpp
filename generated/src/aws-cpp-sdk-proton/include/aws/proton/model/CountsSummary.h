@@ -99,38 +99,44 @@ namespace Model
 
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline const ResourceCountsSummary& GetEnvironmentTemplates() const{ return m_environmentTemplates; }
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline bool EnvironmentTemplatesHasBeenSet() const { return m_environmentTemplatesHasBeenSet; }
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline void SetEnvironmentTemplates(const ResourceCountsSummary& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = value; }
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline void SetEnvironmentTemplates(ResourceCountsSummary&& value) { m_environmentTemplatesHasBeenSet = true; m_environmentTemplates = std::move(value); }
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline CountsSummary& WithEnvironmentTemplates(const ResourceCountsSummary& value) { SetEnvironmentTemplates(value); return *this;}
 
     /**
-     * <p>The total number of environment templates in the Amazon Web Services
-     * account.</p>
+     * <p>The total number of environment templates in the Amazon Web Services account.
+     * The <code>environmentTemplates</code> object will only contain
+     * <code>total</code> members.</p>
      */
     inline CountsSummary& WithEnvironmentTemplates(ResourceCountsSummary&& value) { SetEnvironmentTemplates(std::move(value)); return *this;}
 

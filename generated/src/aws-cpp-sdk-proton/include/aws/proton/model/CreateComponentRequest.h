@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/proton/model/Tag.h>
 #include <utility>
+#include <aws/core/utils/UUID.h>
 
 namespace Aws
 {
@@ -34,6 +35,47 @@ namespace Model
     AWS_PROTON_API Aws::String SerializePayload() const override;
 
     AWS_PROTON_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline CreateComponentRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline CreateComponentRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The client token for the created component.</p>
+     */
+    inline CreateComponentRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -533,6 +575,9 @@ namespace Model
     inline CreateComponentRequest& WithTemplateFile(const char* value) { SetTemplateFile(value); return *this;}
 
   private:
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;

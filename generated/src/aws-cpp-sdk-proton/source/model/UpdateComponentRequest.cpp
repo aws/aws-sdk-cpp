@@ -13,6 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateComponentRequest::UpdateComponentRequest() : 
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true),
     m_deploymentType(ComponentDeploymentUpdateType::NOT_SET),
     m_deploymentTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
@@ -27,6 +29,12 @@ UpdateComponentRequest::UpdateComponentRequest() :
 Aws::String UpdateComponentRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
+
+  }
 
   if(m_deploymentTypeHasBeenSet)
   {

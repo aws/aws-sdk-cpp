@@ -37,50 +37,50 @@ namespace Model
   public:
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
-     * <p>The database engine. The only supported engine is
-     * <code>custom-oracle-ee</code>.</p>
+     * <p>The database engine. The only supported engines are
+     * <code>custom-oracle-ee</code> and <code>custom-oracle-ee-cdb</code>.</p>
      */
     inline DeleteCustomDBEngineVersionRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

@@ -20,6 +20,7 @@ namespace Model
 
 RepositorySummary::RepositorySummary() : 
     m_arnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_provider(RepositoryProvider::NOT_SET),
     m_providerHasBeenSet(false)
@@ -28,6 +29,7 @@ RepositorySummary::RepositorySummary() :
 
 RepositorySummary::RepositorySummary(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_connectionArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_provider(RepositoryProvider::NOT_SET),
     m_providerHasBeenSet(false)
@@ -42,6 +44,13 @@ RepositorySummary& RepositorySummary::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("connectionArn"))
+  {
+    m_connectionArn = jsonValue.GetString("connectionArn");
+
+    m_connectionArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("name"))
@@ -68,6 +77,12 @@ JsonValue RepositorySummary::Jsonize() const
   if(m_arnHasBeenSet)
   {
    payload.WithString("arn", m_arn);
+
+  }
+
+  if(m_connectionArnHasBeenSet)
+  {
+   payload.WithString("connectionArn", m_connectionArn);
 
   }
 

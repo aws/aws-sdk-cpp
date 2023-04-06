@@ -663,48 +663,48 @@ namespace Model
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline const RepositoryBranch& GetProvisioningRepository() const{ return m_provisioningRepository; }
 
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline bool ProvisioningRepositoryHasBeenSet() const { return m_provisioningRepositoryHasBeenSet; }
 
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline void SetProvisioningRepository(const RepositoryBranch& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = value; }
 
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline void SetProvisioningRepository(RepositoryBranch&& value) { m_provisioningRepositoryHasBeenSet = true; m_provisioningRepository = std::move(value); }
 
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline Environment& WithProvisioningRepository(const RepositoryBranch& value) { SetProvisioningRepository(value); return *this;}
 
     /**
      * <p>The linked repository that you use to host your rendered infrastructure
      * templates for self-managed provisioning. A linked repository is a repository
-     * that has been registered with Proton. For more information, see
-     * <a>CreateRepository</a>.</p>
+     * that has been registered with Proton. For more information, see <a
+     * href="https://docs.aws.amazon.com/proton/latest/APIReference/API_CreateRepository.html">CreateRepository</a>.</p>
      */
     inline Environment& WithProvisioningRepository(RepositoryBranch&& value) { SetProvisioningRepository(std::move(value)); return *this;}
 

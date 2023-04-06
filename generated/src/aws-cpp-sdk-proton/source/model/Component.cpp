@@ -26,6 +26,7 @@ Component::Component() :
     m_deploymentStatusMessageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_lastClientRequestTokenHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
     m_lastModifiedAtHasBeenSet(false),
@@ -44,6 +45,7 @@ Component::Component(JsonView jsonValue) :
     m_deploymentStatusMessageHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
+    m_lastClientRequestTokenHasBeenSet(false),
     m_lastDeploymentAttemptedAtHasBeenSet(false),
     m_lastDeploymentSucceededAtHasBeenSet(false),
     m_lastModifiedAtHasBeenSet(false),
@@ -97,6 +99,13 @@ Component& Component::operator =(JsonView jsonValue)
     m_environmentName = jsonValue.GetString("environmentName");
 
     m_environmentNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("lastClientRequestToken"))
+  {
+    m_lastClientRequestToken = jsonValue.GetString("lastClientRequestToken");
+
+    m_lastClientRequestTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("lastDeploymentAttemptedAt"))
@@ -186,6 +195,12 @@ JsonValue Component::Jsonize() const
   if(m_environmentNameHasBeenSet)
   {
    payload.WithString("environmentName", m_environmentName);
+
+  }
+
+  if(m_lastClientRequestTokenHasBeenSet)
+  {
+   payload.WithString("lastClientRequestToken", m_lastClientRequestToken);
 
   }
 

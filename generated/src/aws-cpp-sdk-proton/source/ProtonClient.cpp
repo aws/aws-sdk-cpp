@@ -33,6 +33,8 @@
 #include <aws/proton/model/CreateEnvironmentTemplateVersionRequest.h>
 #include <aws/proton/model/CreateRepositoryRequest.h>
 #include <aws/proton/model/CreateServiceRequest.h>
+#include <aws/proton/model/CreateServiceInstanceRequest.h>
+#include <aws/proton/model/CreateServiceSyncConfigRequest.h>
 #include <aws/proton/model/CreateServiceTemplateRequest.h>
 #include <aws/proton/model/CreateServiceTemplateVersionRequest.h>
 #include <aws/proton/model/CreateTemplateSyncConfigRequest.h>
@@ -43,6 +45,7 @@
 #include <aws/proton/model/DeleteEnvironmentTemplateVersionRequest.h>
 #include <aws/proton/model/DeleteRepositoryRequest.h>
 #include <aws/proton/model/DeleteServiceRequest.h>
+#include <aws/proton/model/DeleteServiceSyncConfigRequest.h>
 #include <aws/proton/model/DeleteServiceTemplateRequest.h>
 #include <aws/proton/model/DeleteServiceTemplateVersionRequest.h>
 #include <aws/proton/model/DeleteTemplateSyncConfigRequest.h>
@@ -57,6 +60,9 @@
 #include <aws/proton/model/GetResourcesSummaryRequest.h>
 #include <aws/proton/model/GetServiceRequest.h>
 #include <aws/proton/model/GetServiceInstanceRequest.h>
+#include <aws/proton/model/GetServiceInstanceSyncStatusRequest.h>
+#include <aws/proton/model/GetServiceSyncBlockerSummaryRequest.h>
+#include <aws/proton/model/GetServiceSyncConfigRequest.h>
 #include <aws/proton/model/GetServiceTemplateRequest.h>
 #include <aws/proton/model/GetServiceTemplateVersionRequest.h>
 #include <aws/proton/model/GetTemplateSyncConfigRequest.h>
@@ -94,6 +100,8 @@
 #include <aws/proton/model/UpdateServiceRequest.h>
 #include <aws/proton/model/UpdateServiceInstanceRequest.h>
 #include <aws/proton/model/UpdateServicePipelineRequest.h>
+#include <aws/proton/model/UpdateServiceSyncBlockerRequest.h>
+#include <aws/proton/model/UpdateServiceSyncConfigRequest.h>
 #include <aws/proton/model/UpdateServiceTemplateRequest.h>
 #include <aws/proton/model/UpdateServiceTemplateVersionRequest.h>
 #include <aws/proton/model/UpdateTemplateSyncConfigRequest.h>
@@ -321,6 +329,22 @@ CreateServiceOutcome ProtonClient::CreateService(const CreateServiceRequest& req
   return CreateServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateServiceInstanceOutcome ProtonClient::CreateServiceInstance(const CreateServiceInstanceRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateServiceInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateServiceSyncConfigOutcome ProtonClient::CreateServiceSyncConfig(const CreateServiceSyncConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateServiceSyncConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateServiceTemplateOutcome ProtonClient::CreateServiceTemplate(const CreateServiceTemplateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateServiceTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -399,6 +423,14 @@ DeleteServiceOutcome ProtonClient::DeleteService(const DeleteServiceRequest& req
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteService, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DeleteServiceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteServiceSyncConfigOutcome ProtonClient::DeleteServiceSyncConfig(const DeleteServiceSyncConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DeleteServiceSyncConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteServiceTemplateOutcome ProtonClient::DeleteServiceTemplate(const DeleteServiceTemplateRequest& request) const
@@ -511,6 +543,30 @@ GetServiceInstanceOutcome ProtonClient::GetServiceInstance(const GetServiceInsta
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceInstance, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetServiceInstanceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetServiceInstanceSyncStatusOutcome ProtonClient::GetServiceInstanceSyncStatus(const GetServiceInstanceSyncStatusRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceInstanceSyncStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceInstanceSyncStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetServiceInstanceSyncStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetServiceSyncBlockerSummaryOutcome ProtonClient::GetServiceSyncBlockerSummary(const GetServiceSyncBlockerSummaryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceSyncBlockerSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceSyncBlockerSummary, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetServiceSyncBlockerSummaryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetServiceSyncConfigOutcome ProtonClient::GetServiceSyncConfig(const GetServiceSyncConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetServiceSyncConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetServiceTemplateOutcome ProtonClient::GetServiceTemplate(const GetServiceTemplateRequest& request) const
@@ -807,6 +863,22 @@ UpdateServicePipelineOutcome ProtonClient::UpdateServicePipeline(const UpdateSer
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateServicePipeline, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateServicePipelineOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateServiceSyncBlockerOutcome ProtonClient::UpdateServiceSyncBlocker(const UpdateServiceSyncBlockerRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceSyncBlocker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateServiceSyncBlocker, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateServiceSyncBlockerOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateServiceSyncConfigOutcome ProtonClient::UpdateServiceSyncConfig(const UpdateServiceSyncConfigRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateServiceSyncConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return UpdateServiceSyncConfigOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateServiceTemplateOutcome ProtonClient::UpdateServiceTemplate(const UpdateServiceTemplateRequest& request) const

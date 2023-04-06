@@ -22,7 +22,8 @@ namespace Model
     COMPLETED,
     TIMED_OUT,
     CANCELED,
-    REJECTED
+    REJECTED,
+    SUCCEEDED
   };
 
 namespace EffectiveDeploymentExecutionStatusMapper
