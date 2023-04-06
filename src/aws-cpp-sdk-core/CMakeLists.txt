@@ -1,3 +1,36 @@
+if (NOT LEGACY_BUILD)
+    add_library(aws-sdk-cpp-core)
+    add_library(aws-sdk-cpp::core ALIAS aws-sdk-cpp-core)
+
+    target_include_directories(
+            aws-sdk-cpp-core
+            PUBLIC ${CMAKE_CURRENT_BINARY_DIR}
+            PUBLIC ${aws-crt-cpp_INCLUDE_DIRS}
+            PUBLIC ${CJSON_INCLUDE_DIRS}
+    )
+    message(STATUS "CRT: ${aws-crt-cpp_LIBRARY_DIRS}")
+    target_link_directories(
+            aws-sdk-cpp-core
+            PUBLIC ${aws-crt-cpp_LIBRARY_DIRS}
+            PUBLIC ${CJSON_LIBRARY_DIRS}
+    )
+    target_link_libraries(
+            aws-sdk-cpp-core
+            ${aws-crt-cpp_LIBRARIES}
+            ${CJSON_LIBRARIES}
+            tinyxml2::tinyxml2
+            CURL::libcurl
+    )
+
+    include(GenerateExportHeader)
+    generate_export_header(
+            aws-sdk-cpp-core
+            EXPORT_MACRO_NAME AWS_CORE_API # to be backward compatible during LEGACY_BUILD exist until 1.12
+    )
+
+    add_subdirectory(include)
+    add_subdirectory(source)
+else () # NOT LEGACY_BUILD
 add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
 if(VERSION_STRING)
@@ -657,3 +690,4 @@ endif()
 
 do_packaging()
 
+endif () # NOT LEGACY_BUILD

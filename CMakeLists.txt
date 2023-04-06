@@ -160,19 +160,19 @@ if (LEGACY_BUILD)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
     # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
-    if(ENABLE_ZLIB_REQUEST_COMPRESSION)
+    if (ENABLE_ZLIB_REQUEST_COMPRESSION)
         find_package(ZLIB QUIET)
-        if ( NOT ZLIB_FOUND)
+        if (NOT ZLIB_FOUND)
             set(ENABLE_ZLIB_REQUEST_COMPRESSION
                     OFF CACHE BOOL
                     "For services that support it, request content will be compressed. On by default if dependency available"
                     FORCE)
             message(WARNING "ZLIB is not available, it will not be used to compress requests")
-        else()
+        else ()
             #Passing the information that we want zlib request compression support to C++
             add_definitions("-DENABLED_ZLIB_REQUEST_COMPRESSION" "-DENABLED_REQUEST_COMPRESSION")
-        endif()
-    endif()
+        endif ()
+    endif ()
 
     if (UNIX AND NOT APPLE)
         include(GNUInstallDirs)
@@ -188,7 +188,7 @@ if (LEGACY_BUILD)
     if (NOT AWS_USER_AGENT_CUSTOMIZATION STREQUAL "")
         message(STATUS "Adding user agent customization ${AWS_USER_AGENT_CUSTOMIZATION}")
         add_definitions("-DAWS_USER_AGENT_CUSTOMIZATION=${AWS_USER_AGENT_CUSTOMIZATION}")
-    endif()
+    endif ()
     if (DEFINED CMAKE_INSTALL_PREFIX)
         file(TO_CMAKE_PATH "${CMAKE_INSTALL_PREFIX}" CMAKE_INSTALL_PREFIX)
     endif ()
@@ -381,15 +381,15 @@ else () #  End of Legacy Build
     # Options definition
     option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
 
-    # Next to be included
-    #    # -- Dependencies --
-    #    include(dependencies)
-
+    # -- Dependencies --
+    include(dependencies)
     # Configuring the encryption tools used
 
-    #    # -- main build targets --
-    #    add_subdirectory(src)
-    #    add_subdirectory(generated)
+    # -- main build targets --
+    add_subdirectory(src)
+
+    # Next to be included
+    # add_subdirectory(generated)
 
     # -- Tests and packaging if running this as top project --
     #    if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
@@ -411,4 +411,15 @@ else () #  End of Legacy Build
     message(WARNING "This is work in progress build script. No SDK is built so far."
             "If you need to build the SDK, you need to use LEGACY_BUILD mode at this time. "
             )
+
+    #    message(STATUS "Building core library tests.")
+    #    message(STATUS "Add support for static analysis.")
+    #    message(STATUS "Building client libraries.")
+    #    message(STATUS "Setting up tests.")
+    #    message(STATUS "Setting up installation.")
+    #    message(STATUS "Setting up packaging. ")
+    #    message(STATUS "Setting up docs.")
+    #    message(STATUS "Add support support for SDK flags.")
+    #    message(STATUS "Add previously available options.")
+
 endif ()

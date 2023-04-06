@@ -1,0 +1,7 @@
+add_subdirectory(aws-cpp-sdk-core)
+#add_subdirectory(aws-cpp-sdk-access-management)
+#add_subdirectory(aws-cpp-sdk-identity-management)
+#add_subdirectory(aws-cpp-sdk-queues)
+#add_subdirectory(aws-cpp-sdk-s3-encryption)
+#add_subdirectory(aws-cpp-sdk-text-to-speech)
+#add_subdirectory(aws-cpp-sdk-transfer)
