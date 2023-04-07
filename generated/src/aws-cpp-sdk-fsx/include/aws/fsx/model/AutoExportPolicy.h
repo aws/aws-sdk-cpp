@@ -30,9 +30,9 @@ namespace Model
    * system that will be automatically exported to the data repository. As you
    * create, modify, or delete files, Amazon FSx for Lustre automatically exports the
    * defined changes asynchronously once your application finishes modifying the
-   * file.</p> <p>This <code>AutoExportPolicy</code> is supported only for Amazon FSx
-   * for Lustre file systems with the <code>Persistent_2</code> deployment
-   * type.</p><p><h3>See Also:</h3>   <a
+   * file.</p> <p>The <code>AutoExportPolicy</code> is only supported on Amazon FSx
+   * for Lustre file systems with a data repository association.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/AutoExportPolicy">AWS
    * API Reference</a></p>
    */

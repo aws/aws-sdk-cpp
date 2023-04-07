@@ -43,57 +43,57 @@ namespace Model
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline const Aws::String& GetJunctionPath() const{ return m_junctionPath; }
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline bool JunctionPathHasBeenSet() const { return m_junctionPathHasBeenSet; }
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline void SetJunctionPath(const Aws::String& value) { m_junctionPathHasBeenSet = true; m_junctionPath = value; }
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline void SetJunctionPath(Aws::String&& value) { m_junctionPathHasBeenSet = true; m_junctionPath = std::move(value); }
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline void SetJunctionPath(const char* value) { m_junctionPathHasBeenSet = true; m_junctionPath.assign(value); }
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline CreateOntapVolumeConfiguration& WithJunctionPath(const Aws::String& value) { SetJunctionPath(value); return *this;}
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline CreateOntapVolumeConfiguration& WithJunctionPath(Aws::String&& value) { SetJunctionPath(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the location in the SVM's namespace where the volume is mounted.
-     * The <code>JunctionPath</code> must have a leading forward slash, such as
-     * <code>/vol3</code>.</p>
+     * This parameter is required. The <code>JunctionPath</code> must have a leading
+     * forward slash, such as <code>/vol3</code>.</p>
      */
     inline CreateOntapVolumeConfiguration& WithJunctionPath(const char* value) { SetJunctionPath(value); return *this;}
 
@@ -214,51 +214,59 @@ namespace Model
 
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are
-     * creating.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Provide any whole number in the range of 20–104857600 to specify the size of the
+     * volume.</p>
      */
     inline int GetSizeInMegabytes() const{ return m_sizeInMegabytes; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are
-     * creating.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Provide any whole number in the range of 20–104857600 to specify the size of the
+     * volume.</p>
      */
     inline bool SizeInMegabytesHasBeenSet() const { return m_sizeInMegabytesHasBeenSet; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are
-     * creating.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Provide any whole number in the range of 20–104857600 to specify the size of the
+     * volume.</p>
      */
     inline void SetSizeInMegabytes(int value) { m_sizeInMegabytesHasBeenSet = true; m_sizeInMegabytes = value; }
 
     /**
-     * <p>Specifies the size of the volume, in megabytes (MB), that you are
-     * creating.</p>
+     * <p>Specifies the size of the volume, in megabytes (MB), that you are creating.
+     * Provide any whole number in the range of 20–104857600 to specify the size of the
+     * volume.</p>
      */
     inline CreateOntapVolumeConfiguration& WithSizeInMegabytes(int value) { SetSizeInMegabytes(value); return *this;}
 
 
     /**
      * <p>Set to true to enable deduplication, compression, and compaction storage
-     * efficiency features on the volume.</p>
+     * efficiency features on the volume, or set to false to disable them. This
+     * parameter is required.</p>
      */
     inline bool GetStorageEfficiencyEnabled() const{ return m_storageEfficiencyEnabled; }
 
     /**
      * <p>Set to true to enable deduplication, compression, and compaction storage
-     * efficiency features on the volume.</p>
+     * efficiency features on the volume, or set to false to disable them. This
+     * parameter is required.</p>
      */
     inline bool StorageEfficiencyEnabledHasBeenSet() const { return m_storageEfficiencyEnabledHasBeenSet; }
 
     /**
      * <p>Set to true to enable deduplication, compression, and compaction storage
-     * efficiency features on the volume.</p>
+     * efficiency features on the volume, or set to false to disable them. This
+     * parameter is required.</p>
      */
     inline void SetStorageEfficiencyEnabled(bool value) { m_storageEfficiencyEnabledHasBeenSet = true; m_storageEfficiencyEnabled = value; }
 
     /**
      * <p>Set to true to enable deduplication, compression, and compaction storage
-     * efficiency features on the volume.</p>
+     * efficiency features on the volume, or set to false to disable them. This
+     * parameter is required.</p>
      */
     inline CreateOntapVolumeConfiguration& WithStorageEfficiencyEnabled(bool value) { SetStorageEfficiencyEnabled(value); return *this;}
 

@@ -92,8 +92,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
 
@@ -104,8 +104,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
@@ -116,8 +116,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
@@ -128,8 +128,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline void SetPath(Aws::String&& value) { m_pathHasBeenSet = true; m_path = std::move(value); }
 
@@ -140,8 +140,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline void SetPath(const char* value) { m_pathHasBeenSet = true; m_path.assign(value); }
 
@@ -152,8 +152,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline CompletionReport& WithPath(const Aws::String& value) { SetPath(value); return *this;}
 
@@ -164,8 +164,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline CompletionReport& WithPath(Aws::String&& value) { SetPath(std::move(value)); return *this;}
 
@@ -176,8 +176,8 @@ namespace Model
      * destination location. The <code>Path</code> you provide must be located within
      * the file system’s ExportPath. An example <code>Path</code> value is
      * "s3://myBucket/myExportPath/optionalPrefix". The report provides the following
-     * information for each file in the report: FilePath, FileStatus, and ErrorCode. To
-     * learn more about a file system's <code>ExportPath</code>, see . </p>
+     * information for each file in the report: FilePath, FileStatus, and
+     * ErrorCode.</p>
      */
     inline CompletionReport& WithPath(const char* value) { SetPath(value); return *this;}
 

@@ -275,8 +275,10 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon
          * MSK</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache
-         * Kafka</a> </p> </li> </ul> <p>The following error handling options are available
-         * only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
+         * Kafka</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+         * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
+         * available only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
          * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
          * split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue
@@ -301,7 +303,9 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms">
          * Amazon MSK</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
-         * Apache Kafka</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Apache Kafka</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+         * Amazon DocumentDB</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/CreateEventSourceMapping">AWS
          * API Reference</a></p>
          */
@@ -1207,6 +1211,34 @@ namespace Lambda
         }
 
         /**
+         * <p>Configure your Lambda functions to stream response payloads back to clients.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring
+         * a Lambda function to stream responses</a>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/InvokeWithResponseStream">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::InvokeWithResponseStreamOutcome InvokeWithResponseStream(Model::InvokeWithResponseStreamRequest& request) const;
+
+        /**
+         * A Callable wrapper for InvokeWithResponseStream that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename InvokeWithResponseStreamRequestT = Model::InvokeWithResponseStreamRequest>
+        Model::InvokeWithResponseStreamOutcomeCallable InvokeWithResponseStreamCallable(InvokeWithResponseStreamRequestT& request) const
+        {
+            return SubmitCallable(&LambdaClient::InvokeWithResponseStream, request);
+        }
+
+        /**
+         * An Async wrapper for InvokeWithResponseStream that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename InvokeWithResponseStreamRequestT = Model::InvokeWithResponseStreamRequest>
+        void InvokeWithResponseStreamAsync(InvokeWithResponseStreamRequestT& request, const InvokeWithResponseStreamResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&LambdaClient::InvokeWithResponseStream, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a>
          * for a Lambda function.</p><p><h3>See Also:</h3>   <a
@@ -1949,8 +1981,10 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html"> Amazon
          * MSK</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/kafka-smaa.html"> Apache
-         * Kafka</a> </p> </li> </ul> <p>The following error handling options are available
-         * only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
+         * Kafka</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html"> Amazon
+         * DocumentDB</a> </p> </li> </ul> <p>The following error handling options are
+         * available only for stream sources (DynamoDB and Kinesis):</p> <ul> <li> <p>
          * <code>BisectBatchOnFunctionError</code> – If the function returns an error,
          * split the batch in two and retry.</p> </li> <li> <p>
          * <code>DestinationConfig</code> – Send discarded records to an Amazon SQS queue
@@ -1975,7 +2009,9 @@ namespace Lambda
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-msk.html#services-msk-parms">
          * Amazon MSK</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/lambda/latest/dg/with-kafka.html#services-kafka-parms">
-         * Apache Kafka</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * Apache Kafka</a> </p> </li> <li> <p> <a
+         * href="https://docs.aws.amazon.com/lambda/latest/dg/with-documentdb.html#docdb-configuration">
+         * Amazon DocumentDB</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/UpdateEventSourceMapping">AWS
          * API Reference</a></p>
          */

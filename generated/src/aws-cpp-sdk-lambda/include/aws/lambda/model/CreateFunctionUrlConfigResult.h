@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/lambda/model/FunctionUrlAuthType.h>
 #include <aws/lambda/model/Cors.h>
+#include <aws/lambda/model/InvokeMode.h>
 #include <utility>
 
 namespace Aws
@@ -243,6 +244,77 @@ namespace Model
     inline CreateFunctionUrlConfigResult& WithCreationTime(const char* value) { SetCreationTime(value); return *this;}
 
 
+    /**
+     * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+     * This is the default option. Lambda invokes your function using the
+     * <code>Invoke</code> API operation. Invocation results are available when the
+     * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
+     * become available. Lambda invokes your function using the
+     * <code>InvokeWithResponseStream</code> API operation. The maximum response
+     * payload size is 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+     * a quota increase</a>.</p> </li> </ul>
+     */
+    inline const InvokeMode& GetInvokeMode() const{ return m_invokeMode; }
+
+    /**
+     * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+     * This is the default option. Lambda invokes your function using the
+     * <code>Invoke</code> API operation. Invocation results are available when the
+     * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
+     * become available. Lambda invokes your function using the
+     * <code>InvokeWithResponseStream</code> API operation. The maximum response
+     * payload size is 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+     * a quota increase</a>.</p> </li> </ul>
+     */
+    inline void SetInvokeMode(const InvokeMode& value) { m_invokeMode = value; }
+
+    /**
+     * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+     * This is the default option. Lambda invokes your function using the
+     * <code>Invoke</code> API operation. Invocation results are available when the
+     * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
+     * become available. Lambda invokes your function using the
+     * <code>InvokeWithResponseStream</code> API operation. The maximum response
+     * payload size is 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+     * a quota increase</a>.</p> </li> </ul>
+     */
+    inline void SetInvokeMode(InvokeMode&& value) { m_invokeMode = std::move(value); }
+
+    /**
+     * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+     * This is the default option. Lambda invokes your function using the
+     * <code>Invoke</code> API operation. Invocation results are available when the
+     * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
+     * become available. Lambda invokes your function using the
+     * <code>InvokeWithResponseStream</code> API operation. The maximum response
+     * payload size is 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+     * a quota increase</a>.</p> </li> </ul>
+     */
+    inline CreateFunctionUrlConfigResult& WithInvokeMode(const InvokeMode& value) { SetInvokeMode(value); return *this;}
+
+    /**
+     * <p>Use one of the following options:</p> <ul> <li> <p> <code>BUFFERED</code> –
+     * This is the default option. Lambda invokes your function using the
+     * <code>Invoke</code> API operation. Invocation results are available when the
+     * payload is complete. The maximum payload size is 6 MB.</p> </li> <li> <p>
+     * <code>RESPONSE_STREAM</code> – Your function streams payload results as they
+     * become available. Lambda invokes your function using the
+     * <code>InvokeWithResponseStream</code> API operation. The maximum response
+     * payload size is 20 MB, however, you can <a
+     * href="https://docs.aws.amazon.com/servicequotas/latest/userguide/request-quota-increase.html">request
+     * a quota increase</a>.</p> </li> </ul>
+     */
+    inline CreateFunctionUrlConfigResult& WithInvokeMode(InvokeMode&& value) { SetInvokeMode(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -275,6 +347,8 @@ namespace Model
     Cors m_cors;
 
     Aws::String m_creationTime;
+
+    InvokeMode m_invokeMode;
 
     Aws::String m_requestId;
   };

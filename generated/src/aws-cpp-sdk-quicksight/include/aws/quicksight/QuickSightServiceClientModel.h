@@ -32,6 +32,7 @@
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/CreateIngestionResult.h>
 #include <aws/quicksight/model/CreateNamespaceResult.h>
+#include <aws/quicksight/model/CreateRefreshScheduleResult.h>
 #include <aws/quicksight/model/CreateTemplateResult.h>
 #include <aws/quicksight/model/CreateTemplateAliasResult.h>
 #include <aws/quicksight/model/CreateThemeResult.h>
@@ -41,6 +42,7 @@
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
 #include <aws/quicksight/model/DeleteDashboardResult.h>
 #include <aws/quicksight/model/DeleteDataSetResult.h>
+#include <aws/quicksight/model/DeleteDataSetRefreshPropertiesResult.h>
 #include <aws/quicksight/model/DeleteDataSourceResult.h>
 #include <aws/quicksight/model/DeleteFolderResult.h>
 #include <aws/quicksight/model/DeleteFolderMembershipResult.h>
@@ -48,6 +50,7 @@
 #include <aws/quicksight/model/DeleteGroupMembershipResult.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/DeleteNamespaceResult.h>
+#include <aws/quicksight/model/DeleteRefreshScheduleResult.h>
 #include <aws/quicksight/model/DeleteTemplateResult.h>
 #include <aws/quicksight/model/DeleteTemplateAliasResult.h>
 #include <aws/quicksight/model/DeleteThemeResult.h>
@@ -65,6 +68,7 @@
 #include <aws/quicksight/model/DescribeDashboardPermissionsResult.h>
 #include <aws/quicksight/model/DescribeDataSetResult.h>
 #include <aws/quicksight/model/DescribeDataSetPermissionsResult.h>
+#include <aws/quicksight/model/DescribeDataSetRefreshPropertiesResult.h>
 #include <aws/quicksight/model/DescribeDataSourceResult.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsResult.h>
 #include <aws/quicksight/model/DescribeFolderResult.h>
@@ -76,6 +80,7 @@
 #include <aws/quicksight/model/DescribeIngestionResult.h>
 #include <aws/quicksight/model/DescribeIpRestrictionResult.h>
 #include <aws/quicksight/model/DescribeNamespaceResult.h>
+#include <aws/quicksight/model/DescribeRefreshScheduleResult.h>
 #include <aws/quicksight/model/DescribeTemplateResult.h>
 #include <aws/quicksight/model/DescribeTemplateAliasResult.h>
 #include <aws/quicksight/model/DescribeTemplateDefinitionResult.h>
@@ -101,6 +106,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserResult.h>
 #include <aws/quicksight/model/ListIngestionsResult.h>
 #include <aws/quicksight/model/ListNamespacesResult.h>
+#include <aws/quicksight/model/ListRefreshSchedulesResult.h>
 #include <aws/quicksight/model/ListTagsForResourceResult.h>
 #include <aws/quicksight/model/ListTemplateAliasesResult.h>
 #include <aws/quicksight/model/ListTemplateVersionsResult.h>
@@ -110,6 +116,7 @@
 #include <aws/quicksight/model/ListThemesResult.h>
 #include <aws/quicksight/model/ListUserGroupsResult.h>
 #include <aws/quicksight/model/ListUsersResult.h>
+#include <aws/quicksight/model/PutDataSetRefreshPropertiesResult.h>
 #include <aws/quicksight/model/RegisterUserResult.h>
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
 #include <aws/quicksight/model/SearchAnalysesResult.h>
@@ -137,6 +144,7 @@
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentResult.h>
 #include <aws/quicksight/model/UpdateIpRestrictionResult.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsResult.h>
+#include <aws/quicksight/model/UpdateRefreshScheduleResult.h>
 #include <aws/quicksight/model/UpdateTemplateResult.h>
 #include <aws/quicksight/model/UpdateTemplateAliasResult.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsResult.h>
@@ -198,6 +206,7 @@ namespace Aws
       class CreateIAMPolicyAssignmentRequest;
       class CreateIngestionRequest;
       class CreateNamespaceRequest;
+      class CreateRefreshScheduleRequest;
       class CreateTemplateRequest;
       class CreateTemplateAliasRequest;
       class CreateThemeRequest;
@@ -207,6 +216,7 @@ namespace Aws
       class DeleteAnalysisRequest;
       class DeleteDashboardRequest;
       class DeleteDataSetRequest;
+      class DeleteDataSetRefreshPropertiesRequest;
       class DeleteDataSourceRequest;
       class DeleteFolderRequest;
       class DeleteFolderMembershipRequest;
@@ -214,6 +224,7 @@ namespace Aws
       class DeleteGroupMembershipRequest;
       class DeleteIAMPolicyAssignmentRequest;
       class DeleteNamespaceRequest;
+      class DeleteRefreshScheduleRequest;
       class DeleteTemplateRequest;
       class DeleteTemplateAliasRequest;
       class DeleteThemeRequest;
@@ -231,6 +242,7 @@ namespace Aws
       class DescribeDashboardPermissionsRequest;
       class DescribeDataSetRequest;
       class DescribeDataSetPermissionsRequest;
+      class DescribeDataSetRefreshPropertiesRequest;
       class DescribeDataSourceRequest;
       class DescribeDataSourcePermissionsRequest;
       class DescribeFolderRequest;
@@ -242,6 +254,7 @@ namespace Aws
       class DescribeIngestionRequest;
       class DescribeIpRestrictionRequest;
       class DescribeNamespaceRequest;
+      class DescribeRefreshScheduleRequest;
       class DescribeTemplateRequest;
       class DescribeTemplateAliasRequest;
       class DescribeTemplateDefinitionRequest;
@@ -267,6 +280,7 @@ namespace Aws
       class ListIAMPolicyAssignmentsForUserRequest;
       class ListIngestionsRequest;
       class ListNamespacesRequest;
+      class ListRefreshSchedulesRequest;
       class ListTagsForResourceRequest;
       class ListTemplateAliasesRequest;
       class ListTemplateVersionsRequest;
@@ -276,6 +290,7 @@ namespace Aws
       class ListThemesRequest;
       class ListUserGroupsRequest;
       class ListUsersRequest;
+      class PutDataSetRefreshPropertiesRequest;
       class RegisterUserRequest;
       class RestoreAnalysisRequest;
       class SearchAnalysesRequest;
@@ -303,6 +318,7 @@ namespace Aws
       class UpdateIAMPolicyAssignmentRequest;
       class UpdateIpRestrictionRequest;
       class UpdatePublicSharingSettingsRequest;
+      class UpdateRefreshScheduleRequest;
       class UpdateTemplateRequest;
       class UpdateTemplateAliasRequest;
       class UpdateTemplatePermissionsRequest;
@@ -327,6 +343,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateIAMPolicyAssignmentResult, QuickSightError> CreateIAMPolicyAssignmentOutcome;
       typedef Aws::Utils::Outcome<CreateIngestionResult, QuickSightError> CreateIngestionOutcome;
       typedef Aws::Utils::Outcome<CreateNamespaceResult, QuickSightError> CreateNamespaceOutcome;
+      typedef Aws::Utils::Outcome<CreateRefreshScheduleResult, QuickSightError> CreateRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<CreateTemplateResult, QuickSightError> CreateTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateTemplateAliasResult, QuickSightError> CreateTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<CreateThemeResult, QuickSightError> CreateThemeOutcome;
@@ -336,6 +353,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
       typedef Aws::Utils::Outcome<DeleteDashboardResult, QuickSightError> DeleteDashboardOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSetResult, QuickSightError> DeleteDataSetOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataSetRefreshPropertiesResult, QuickSightError> DeleteDataSetRefreshPropertiesOutcome;
       typedef Aws::Utils::Outcome<DeleteDataSourceResult, QuickSightError> DeleteDataSourceOutcome;
       typedef Aws::Utils::Outcome<DeleteFolderResult, QuickSightError> DeleteFolderOutcome;
       typedef Aws::Utils::Outcome<DeleteFolderMembershipResult, QuickSightError> DeleteFolderMembershipOutcome;
@@ -343,6 +361,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteGroupMembershipResult, QuickSightError> DeleteGroupMembershipOutcome;
       typedef Aws::Utils::Outcome<DeleteIAMPolicyAssignmentResult, QuickSightError> DeleteIAMPolicyAssignmentOutcome;
       typedef Aws::Utils::Outcome<DeleteNamespaceResult, QuickSightError> DeleteNamespaceOutcome;
+      typedef Aws::Utils::Outcome<DeleteRefreshScheduleResult, QuickSightError> DeleteRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<DeleteTemplateResult, QuickSightError> DeleteTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteTemplateAliasResult, QuickSightError> DeleteTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteThemeResult, QuickSightError> DeleteThemeOutcome;
@@ -360,6 +379,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDashboardPermissionsResult, QuickSightError> DescribeDashboardPermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetResult, QuickSightError> DescribeDataSetOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSetPermissionsResult, QuickSightError> DescribeDataSetPermissionsOutcome;
+      typedef Aws::Utils::Outcome<DescribeDataSetRefreshPropertiesResult, QuickSightError> DescribeDataSetRefreshPropertiesOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSourceResult, QuickSightError> DescribeDataSourceOutcome;
       typedef Aws::Utils::Outcome<DescribeDataSourcePermissionsResult, QuickSightError> DescribeDataSourcePermissionsOutcome;
       typedef Aws::Utils::Outcome<DescribeFolderResult, QuickSightError> DescribeFolderOutcome;
@@ -371,6 +391,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeIngestionResult, QuickSightError> DescribeIngestionOutcome;
       typedef Aws::Utils::Outcome<DescribeIpRestrictionResult, QuickSightError> DescribeIpRestrictionOutcome;
       typedef Aws::Utils::Outcome<DescribeNamespaceResult, QuickSightError> DescribeNamespaceOutcome;
+      typedef Aws::Utils::Outcome<DescribeRefreshScheduleResult, QuickSightError> DescribeRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplateResult, QuickSightError> DescribeTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplateAliasResult, QuickSightError> DescribeTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<DescribeTemplateDefinitionResult, QuickSightError> DescribeTemplateDefinitionOutcome;
@@ -396,6 +417,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListIAMPolicyAssignmentsForUserResult, QuickSightError> ListIAMPolicyAssignmentsForUserOutcome;
       typedef Aws::Utils::Outcome<ListIngestionsResult, QuickSightError> ListIngestionsOutcome;
       typedef Aws::Utils::Outcome<ListNamespacesResult, QuickSightError> ListNamespacesOutcome;
+      typedef Aws::Utils::Outcome<ListRefreshSchedulesResult, QuickSightError> ListRefreshSchedulesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, QuickSightError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTemplateAliasesResult, QuickSightError> ListTemplateAliasesOutcome;
       typedef Aws::Utils::Outcome<ListTemplateVersionsResult, QuickSightError> ListTemplateVersionsOutcome;
@@ -405,6 +427,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListThemesResult, QuickSightError> ListThemesOutcome;
       typedef Aws::Utils::Outcome<ListUserGroupsResult, QuickSightError> ListUserGroupsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, QuickSightError> ListUsersOutcome;
+      typedef Aws::Utils::Outcome<PutDataSetRefreshPropertiesResult, QuickSightError> PutDataSetRefreshPropertiesOutcome;
       typedef Aws::Utils::Outcome<RegisterUserResult, QuickSightError> RegisterUserOutcome;
       typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnalysisOutcome;
       typedef Aws::Utils::Outcome<SearchAnalysesResult, QuickSightError> SearchAnalysesOutcome;
@@ -432,6 +455,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateIAMPolicyAssignmentResult, QuickSightError> UpdateIAMPolicyAssignmentOutcome;
       typedef Aws::Utils::Outcome<UpdateIpRestrictionResult, QuickSightError> UpdateIpRestrictionOutcome;
       typedef Aws::Utils::Outcome<UpdatePublicSharingSettingsResult, QuickSightError> UpdatePublicSharingSettingsOutcome;
+      typedef Aws::Utils::Outcome<UpdateRefreshScheduleResult, QuickSightError> UpdateRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<UpdateTemplateResult, QuickSightError> UpdateTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateTemplateAliasResult, QuickSightError> UpdateTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateTemplatePermissionsResult, QuickSightError> UpdateTemplatePermissionsOutcome;
@@ -456,6 +480,7 @@ namespace Aws
       typedef std::future<CreateIAMPolicyAssignmentOutcome> CreateIAMPolicyAssignmentOutcomeCallable;
       typedef std::future<CreateIngestionOutcome> CreateIngestionOutcomeCallable;
       typedef std::future<CreateNamespaceOutcome> CreateNamespaceOutcomeCallable;
+      typedef std::future<CreateRefreshScheduleOutcome> CreateRefreshScheduleOutcomeCallable;
       typedef std::future<CreateTemplateOutcome> CreateTemplateOutcomeCallable;
       typedef std::future<CreateTemplateAliasOutcome> CreateTemplateAliasOutcomeCallable;
       typedef std::future<CreateThemeOutcome> CreateThemeOutcomeCallable;
@@ -465,6 +490,7 @@ namespace Aws
       typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
       typedef std::future<DeleteDashboardOutcome> DeleteDashboardOutcomeCallable;
       typedef std::future<DeleteDataSetOutcome> DeleteDataSetOutcomeCallable;
+      typedef std::future<DeleteDataSetRefreshPropertiesOutcome> DeleteDataSetRefreshPropertiesOutcomeCallable;
       typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
       typedef std::future<DeleteFolderOutcome> DeleteFolderOutcomeCallable;
       typedef std::future<DeleteFolderMembershipOutcome> DeleteFolderMembershipOutcomeCallable;
@@ -472,6 +498,7 @@ namespace Aws
       typedef std::future<DeleteGroupMembershipOutcome> DeleteGroupMembershipOutcomeCallable;
       typedef std::future<DeleteIAMPolicyAssignmentOutcome> DeleteIAMPolicyAssignmentOutcomeCallable;
       typedef std::future<DeleteNamespaceOutcome> DeleteNamespaceOutcomeCallable;
+      typedef std::future<DeleteRefreshScheduleOutcome> DeleteRefreshScheduleOutcomeCallable;
       typedef std::future<DeleteTemplateOutcome> DeleteTemplateOutcomeCallable;
       typedef std::future<DeleteTemplateAliasOutcome> DeleteTemplateAliasOutcomeCallable;
       typedef std::future<DeleteThemeOutcome> DeleteThemeOutcomeCallable;
@@ -489,6 +516,7 @@ namespace Aws
       typedef std::future<DescribeDashboardPermissionsOutcome> DescribeDashboardPermissionsOutcomeCallable;
       typedef std::future<DescribeDataSetOutcome> DescribeDataSetOutcomeCallable;
       typedef std::future<DescribeDataSetPermissionsOutcome> DescribeDataSetPermissionsOutcomeCallable;
+      typedef std::future<DescribeDataSetRefreshPropertiesOutcome> DescribeDataSetRefreshPropertiesOutcomeCallable;
       typedef std::future<DescribeDataSourceOutcome> DescribeDataSourceOutcomeCallable;
       typedef std::future<DescribeDataSourcePermissionsOutcome> DescribeDataSourcePermissionsOutcomeCallable;
       typedef std::future<DescribeFolderOutcome> DescribeFolderOutcomeCallable;
@@ -500,6 +528,7 @@ namespace Aws
       typedef std::future<DescribeIngestionOutcome> DescribeIngestionOutcomeCallable;
       typedef std::future<DescribeIpRestrictionOutcome> DescribeIpRestrictionOutcomeCallable;
       typedef std::future<DescribeNamespaceOutcome> DescribeNamespaceOutcomeCallable;
+      typedef std::future<DescribeRefreshScheduleOutcome> DescribeRefreshScheduleOutcomeCallable;
       typedef std::future<DescribeTemplateOutcome> DescribeTemplateOutcomeCallable;
       typedef std::future<DescribeTemplateAliasOutcome> DescribeTemplateAliasOutcomeCallable;
       typedef std::future<DescribeTemplateDefinitionOutcome> DescribeTemplateDefinitionOutcomeCallable;
@@ -525,6 +554,7 @@ namespace Aws
       typedef std::future<ListIAMPolicyAssignmentsForUserOutcome> ListIAMPolicyAssignmentsForUserOutcomeCallable;
       typedef std::future<ListIngestionsOutcome> ListIngestionsOutcomeCallable;
       typedef std::future<ListNamespacesOutcome> ListNamespacesOutcomeCallable;
+      typedef std::future<ListRefreshSchedulesOutcome> ListRefreshSchedulesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTemplateAliasesOutcome> ListTemplateAliasesOutcomeCallable;
       typedef std::future<ListTemplateVersionsOutcome> ListTemplateVersionsOutcomeCallable;
@@ -534,6 +564,7 @@ namespace Aws
       typedef std::future<ListThemesOutcome> ListThemesOutcomeCallable;
       typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+      typedef std::future<PutDataSetRefreshPropertiesOutcome> PutDataSetRefreshPropertiesOutcomeCallable;
       typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
       typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
       typedef std::future<SearchAnalysesOutcome> SearchAnalysesOutcomeCallable;
@@ -561,6 +592,7 @@ namespace Aws
       typedef std::future<UpdateIAMPolicyAssignmentOutcome> UpdateIAMPolicyAssignmentOutcomeCallable;
       typedef std::future<UpdateIpRestrictionOutcome> UpdateIpRestrictionOutcomeCallable;
       typedef std::future<UpdatePublicSharingSettingsOutcome> UpdatePublicSharingSettingsOutcomeCallable;
+      typedef std::future<UpdateRefreshScheduleOutcome> UpdateRefreshScheduleOutcomeCallable;
       typedef std::future<UpdateTemplateOutcome> UpdateTemplateOutcomeCallable;
       typedef std::future<UpdateTemplateAliasOutcome> UpdateTemplateAliasOutcomeCallable;
       typedef std::future<UpdateTemplatePermissionsOutcome> UpdateTemplatePermissionsOutcomeCallable;
@@ -588,6 +620,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::CreateIAMPolicyAssignmentRequest&, const Model::CreateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateIngestionRequest&, const Model::CreateIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateNamespaceRequest&, const Model::CreateNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNamespaceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateRefreshScheduleRequest&, const Model::CreateRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateTemplateRequest&, const Model::CreateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateTemplateAliasRequest&, const Model::CreateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateThemeRequest&, const Model::CreateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeResponseReceivedHandler;
@@ -597,6 +630,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDashboardRequest&, const Model::DeleteDashboardOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDashboardResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSetRequest&, const Model::DeleteDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSetRefreshPropertiesRequest&, const Model::DeleteDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSetRefreshPropertiesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteFolderRequest&, const Model::DeleteFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFolderResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteFolderMembershipRequest&, const Model::DeleteFolderMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFolderMembershipResponseReceivedHandler;
@@ -604,6 +638,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DeleteGroupMembershipRequest&, const Model::DeleteGroupMembershipOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupMembershipResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteIAMPolicyAssignmentRequest&, const Model::DeleteIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteNamespaceRequest&, const Model::DeleteNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteNamespaceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteRefreshScheduleRequest&, const Model::DeleteRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteTemplateRequest&, const Model::DeleteTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteTemplateAliasRequest&, const Model::DeleteTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteThemeRequest&, const Model::DeleteThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeResponseReceivedHandler;
@@ -621,6 +656,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDashboardPermissionsRequest&, const Model::DescribeDashboardPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDashboardPermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetRequest&, const Model::DescribeDataSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetPermissionsRequest&, const Model::DescribeDataSetPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetPermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSetRefreshPropertiesRequest&, const Model::DescribeDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSetRefreshPropertiesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSourceRequest&, const Model::DescribeDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeDataSourcePermissionsRequest&, const Model::DescribeDataSourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDataSourcePermissionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeFolderRequest&, const Model::DescribeFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeFolderResponseReceivedHandler;
@@ -632,6 +668,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIngestionRequest&, const Model::DescribeIngestionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIngestionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeIpRestrictionRequest&, const Model::DescribeIpRestrictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeIpRestrictionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeNamespaceRequest&, const Model::DescribeNamespaceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeNamespaceResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeRefreshScheduleRequest&, const Model::DescribeRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateRequest&, const Model::DescribeTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateAliasRequest&, const Model::DescribeTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeTemplateDefinitionRequest&, const Model::DescribeTemplateDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTemplateDefinitionResponseReceivedHandler;
@@ -657,6 +694,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListIAMPolicyAssignmentsForUserRequest&, const Model::ListIAMPolicyAssignmentsForUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIAMPolicyAssignmentsForUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListIngestionsRequest&, const Model::ListIngestionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIngestionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListNamespacesRequest&, const Model::ListNamespacesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListNamespacesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListRefreshSchedulesRequest&, const Model::ListRefreshSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListRefreshSchedulesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTemplateAliasesRequest&, const Model::ListTemplateAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateAliasesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListTemplateVersionsRequest&, const Model::ListTemplateVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTemplateVersionsResponseReceivedHandler;
@@ -666,6 +704,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListThemesRequest&, const Model::ListThemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUserGroupsRequest&, const Model::ListUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::PutDataSetRefreshPropertiesRequest&, const Model::PutDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataSetRefreshPropertiesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RegisterUserRequest&, const Model::RegisterUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RestoreAnalysisRequest&, const Model::RestoreAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAnalysisResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::SearchAnalysesRequest&, const Model::SearchAnalysesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchAnalysesResponseReceivedHandler;
@@ -693,6 +732,7 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIAMPolicyAssignmentRequest&, const Model::UpdateIAMPolicyAssignmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIAMPolicyAssignmentResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateIpRestrictionRequest&, const Model::UpdateIpRestrictionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateIpRestrictionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdatePublicSharingSettingsRequest&, const Model::UpdatePublicSharingSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePublicSharingSettingsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateRefreshScheduleRequest&, const Model::UpdateRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateRequest&, const Model::UpdateTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplateAliasRequest&, const Model::UpdateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateTemplatePermissionsRequest&, const Model::UpdateTemplatePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTemplatePermissionsResponseReceivedHandler;

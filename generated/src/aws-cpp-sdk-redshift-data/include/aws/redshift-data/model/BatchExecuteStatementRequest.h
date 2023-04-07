@@ -193,49 +193,49 @@ namespace Model
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline const Aws::String& GetDbUser() const{ return m_dbUser; }
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(Aws::String&& value) { m_dbUserHasBeenSet = true; m_dbUser = std::move(value); }
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline void SetDbUser(const char* value) { m_dbUserHasBeenSet = true; m_dbUser.assign(value); }
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline BatchExecuteStatementRequest& WithDbUser(const Aws::String& value) { SetDbUser(value); return *this;}
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline BatchExecuteStatementRequest& WithDbUser(Aws::String&& value) { SetDbUser(std::move(value)); return *this;}
 
     /**
      * <p>The database user name. This parameter is required when connecting to a
-     * cluster and authenticating using temporary credentials. </p>
+     * cluster as a database user and authenticating using temporary credentials. </p>
      */
     inline BatchExecuteStatementRequest& WithDbUser(const char* value) { SetDbUser(value); return *this;}
 

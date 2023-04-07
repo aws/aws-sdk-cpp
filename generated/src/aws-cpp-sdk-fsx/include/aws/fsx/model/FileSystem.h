@@ -52,57 +52,57 @@ namespace Model
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Web Services account that created the file system. If the file
-     * system was created by an Identity and Access Management (IAM) user, the Amazon
-     * Web Services account to which the IAM user belongs is the owner.</p>
+     * system was created by a user in IAM Identity Center, the Amazon Web Services
+     * account to which the IAM user belongs is the owner.</p>
      */
     inline FileSystem& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
 

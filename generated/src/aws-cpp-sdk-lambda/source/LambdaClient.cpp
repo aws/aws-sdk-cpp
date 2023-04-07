@@ -17,6 +17,7 @@
 #include <aws/core/utils/DNS.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/event/EventStream.h>
 
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
@@ -55,6 +56,7 @@
 #include <aws/lambda/model/GetProvisionedConcurrencyConfigRequest.h>
 #include <aws/lambda/model/GetRuntimeManagementConfigRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
+#include <aws/lambda/model/InvokeWithResponseStreamRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListCodeSigningConfigsRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
@@ -770,6 +772,25 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/invocations");
   return InvokeOutcome(MakeRequestWithUnparsedResponse(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
+}
+
+InvokeWithResponseStreamOutcome LambdaClient::InvokeWithResponseStream(InvokeWithResponseStreamRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeWithResponseStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InvokeWithResponseStream", "Required field: FunctionName, is not set");
+    return InvokeWithResponseStreamOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeWithResponseStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-11-15/functions/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFunctionName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/response-streaming-invocations");
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+  return InvokeWithResponseStreamOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST));
 }
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const

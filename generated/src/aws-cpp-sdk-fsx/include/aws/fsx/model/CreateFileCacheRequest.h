@@ -41,7 +41,7 @@ namespace Model
 
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -54,7 +54,7 @@ namespace Model
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -67,7 +67,7 @@ namespace Model
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -80,7 +80,7 @@ namespace Model
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -93,7 +93,7 @@ namespace Model
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -106,7 +106,7 @@ namespace Model
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -119,7 +119,7 @@ namespace Model
     inline CreateFileCacheRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation
@@ -132,7 +132,7 @@ namespace Model
     inline CreateFileCacheRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>An idempotency token for resource creation, in a string of up to 64 ASCII
+     * <p>An idempotency token for resource creation, in a string of up to 63 ASCII
      * characters. This token is automatically filled on your behalf when you use the
      * Command Line Interface (CLI) or an Amazon Web Services SDK.</p> <p>By using the
      * idempotent operation, you can retry a <code>CreateFileCache</code> operation

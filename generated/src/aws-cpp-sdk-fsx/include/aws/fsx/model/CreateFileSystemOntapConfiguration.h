@@ -165,7 +165,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline const Aws::String& GetEndpointIpAddressRange() const{ return m_endpointIpAddressRange; }
 
@@ -176,7 +177,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline bool EndpointIpAddressRangeHasBeenSet() const { return m_endpointIpAddressRangeHasBeenSet; }
 
@@ -187,7 +189,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline void SetEndpointIpAddressRange(const Aws::String& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = value; }
 
@@ -198,7 +201,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline void SetEndpointIpAddressRange(Aws::String&& value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange = std::move(value); }
 
@@ -209,7 +213,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline void SetEndpointIpAddressRange(const char* value) { m_endpointIpAddressRangeHasBeenSet = true; m_endpointIpAddressRange.assign(value); }
 
@@ -220,7 +225,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const Aws::String& value) { SetEndpointIpAddressRange(value); return *this;}
 
@@ -231,7 +237,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(Aws::String&& value) { SetEndpointIpAddressRange(std::move(value)); return *this;}
 
@@ -242,7 +249,8 @@ namespace Model
      * By default in the Amazon FSx console, Amazon FSx chooses the last 64 IP
      * addresses from the VPC’s primary CIDR range to use as the endpoint IP address
      * range for the file system. You can have overlapping endpoint IP addresses for
-     * file systems deployed in the same VPC/route tables.</p>
+     * file systems deployed in the same VPC/route tables, as long as they don't
+     * overlap with any subnet.</p>
      */
     inline CreateFileSystemOntapConfiguration& WithEndpointIpAddressRange(const char* value) { SetEndpointIpAddressRange(value); return *this;}
 

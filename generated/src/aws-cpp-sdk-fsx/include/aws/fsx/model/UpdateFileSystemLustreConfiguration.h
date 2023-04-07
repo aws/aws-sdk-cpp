@@ -155,10 +155,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
 
@@ -180,10 +179,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
 
@@ -205,10 +203,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
 
@@ -230,10 +227,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
 
@@ -255,10 +251,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
 
@@ -280,10 +275,9 @@ namespace Model
      * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
      * Amazon FSx automatically imports file and directory listings of any new objects
      * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>The
-     * <code>AutoImportPolicy</code> parameter is not supported for Lustre file systems
-     * with the <code>Persistent_2</code> deployment type. Instead, use to update a
-     * data repository association on your <code>Persistent_2</code> file system.</p>
+     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p>
      */
     inline UpdateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
 

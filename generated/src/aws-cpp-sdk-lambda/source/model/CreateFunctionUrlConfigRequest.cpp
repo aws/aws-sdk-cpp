@@ -20,7 +20,9 @@ CreateFunctionUrlConfigRequest::CreateFunctionUrlConfigRequest() :
     m_qualifierHasBeenSet(false),
     m_authType(FunctionUrlAuthType::NOT_SET),
     m_authTypeHasBeenSet(false),
-    m_corsHasBeenSet(false)
+    m_corsHasBeenSet(false),
+    m_invokeMode(InvokeMode::NOT_SET),
+    m_invokeModeHasBeenSet(false)
 {
 }
 
@@ -37,6 +39,11 @@ Aws::String CreateFunctionUrlConfigRequest::SerializePayload() const
   {
    payload.WithObject("Cors", m_cors.Jsonize());
 
+  }
+
+  if(m_invokeModeHasBeenSet)
+  {
+   payload.WithString("InvokeMode", InvokeModeMapper::GetNameForInvokeMode(m_invokeMode));
   }
 
   return payload.View().WriteReadable();

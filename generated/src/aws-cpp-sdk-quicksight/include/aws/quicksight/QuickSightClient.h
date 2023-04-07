@@ -519,6 +519,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Creates a refresh schedule for a dataset. You can create up to 5 different
+         * schedules for a single dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/CreateRefreshSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateRefreshScheduleOutcome CreateRefreshSchedule(const Model::CreateRefreshScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateRefreshSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateRefreshScheduleRequestT = Model::CreateRefreshScheduleRequest>
+        Model::CreateRefreshScheduleOutcomeCallable CreateRefreshScheduleCallable(const CreateRefreshScheduleRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::CreateRefreshSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for CreateRefreshSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateRefreshScheduleRequestT = Model::CreateRefreshScheduleRequest>
+        void CreateRefreshScheduleAsync(const CreateRefreshScheduleRequestT& request, const CreateRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::CreateRefreshSchedule, request, handler, context);
+        }
+
+        /**
          * <p>Creates a template either from a <code>TemplateDefinition</code> or from an
          * existing Amazon QuickSight analysis or template. You can use the resulting
          * template to create additional dashboards, templates, or analyses.</p> <p>A
@@ -779,6 +805,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Deletes the dataset refresh properties of the dataset.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSetRefreshProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteDataSetRefreshPropertiesOutcome DeleteDataSetRefreshProperties(const Model::DeleteDataSetRefreshPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteDataSetRefreshProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteDataSetRefreshPropertiesRequestT = Model::DeleteDataSetRefreshPropertiesRequest>
+        Model::DeleteDataSetRefreshPropertiesOutcomeCallable DeleteDataSetRefreshPropertiesCallable(const DeleteDataSetRefreshPropertiesRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteDataSetRefreshProperties, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteDataSetRefreshProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteDataSetRefreshPropertiesRequestT = Model::DeleteDataSetRefreshPropertiesRequest>
+        void DeleteDataSetRefreshPropertiesAsync(const DeleteDataSetRefreshPropertiesRequestT& request, const DeleteDataSetRefreshPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteDataSetRefreshProperties, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the data source permanently. This operation breaks all the datasets
          * that reference the deleted data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteDataSource">AWS
@@ -957,6 +1009,31 @@ namespace QuickSight
         void DeleteNamespaceAsync(const DeleteNamespaceRequestT& request, const DeleteNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::DeleteNamespace, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a refresh schedule from a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DeleteRefreshSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteRefreshScheduleOutcome DeleteRefreshSchedule(const Model::DeleteRefreshScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteRefreshSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteRefreshScheduleRequestT = Model::DeleteRefreshScheduleRequest>
+        Model::DeleteRefreshScheduleOutcomeCallable DeleteRefreshScheduleCallable(const DeleteRefreshScheduleRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DeleteRefreshSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteRefreshSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteRefreshScheduleRequestT = Model::DeleteRefreshScheduleRequest>
+        void DeleteRefreshScheduleAsync(const DeleteRefreshScheduleRequestT& request, const DeleteRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DeleteRefreshSchedule, request, handler, context);
         }
 
         /**
@@ -1456,6 +1533,31 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes the refresh properties of a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSetRefreshProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDataSetRefreshPropertiesOutcome DescribeDataSetRefreshProperties(const Model::DescribeDataSetRefreshPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDataSetRefreshProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDataSetRefreshPropertiesRequestT = Model::DescribeDataSetRefreshPropertiesRequest>
+        Model::DescribeDataSetRefreshPropertiesOutcomeCallable DescribeDataSetRefreshPropertiesCallable(const DescribeDataSetRefreshPropertiesRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeDataSetRefreshProperties, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDataSetRefreshProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDataSetRefreshPropertiesRequestT = Model::DescribeDataSetRefreshPropertiesRequest>
+        void DescribeDataSetRefreshPropertiesAsync(const DescribeDataSetRefreshPropertiesRequestT& request, const DescribeDataSetRefreshPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeDataSetRefreshProperties, request, handler, context);
+        }
+
+        /**
          * <p>Describes a data source.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDataSource">AWS
          * API Reference</a></p>
@@ -1736,6 +1838,31 @@ namespace QuickSight
         void DescribeNamespaceAsync(const DescribeNamespaceRequestT& request, const DescribeNamespaceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::DescribeNamespace, request, handler, context);
+        }
+
+        /**
+         * <p>Provides a summary of a refresh schedule.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeRefreshSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeRefreshScheduleOutcome DescribeRefreshSchedule(const Model::DescribeRefreshScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeRefreshSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeRefreshScheduleRequestT = Model::DescribeRefreshScheduleRequest>
+        Model::DescribeRefreshScheduleOutcomeCallable DescribeRefreshScheduleCallable(const DescribeRefreshScheduleRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeRefreshSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeRefreshSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeRefreshScheduleRequestT = Model::DescribeRefreshScheduleRequest>
+        void DescribeRefreshScheduleAsync(const DescribeRefreshScheduleRequestT& request, const DescribeRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeRefreshSchedule, request, handler, context);
         }
 
         /**
@@ -2459,6 +2586,32 @@ namespace QuickSight
         }
 
         /**
+         * <p>Lists the refresh schedules of a dataset. Each dataset can have up to 5
+         * schedules. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListRefreshSchedules">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListRefreshSchedulesOutcome ListRefreshSchedules(const Model::ListRefreshSchedulesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListRefreshSchedules that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListRefreshSchedulesRequestT = Model::ListRefreshSchedulesRequest>
+        Model::ListRefreshSchedulesOutcomeCallable ListRefreshSchedulesCallable(const ListRefreshSchedulesRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListRefreshSchedules, request);
+        }
+
+        /**
+         * An Async wrapper for ListRefreshSchedules that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListRefreshSchedulesRequestT = Model::ListRefreshSchedulesRequest>
+        void ListRefreshSchedulesAsync(const ListRefreshSchedulesRequestT& request, const ListRefreshSchedulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListRefreshSchedules, request, handler, context);
+        }
+
+        /**
          * <p>Lists the tags assigned to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -2687,6 +2840,32 @@ namespace QuickSight
         void ListUsersAsync(const ListUsersRequestT& request, const ListUsersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::ListUsers, request, handler, context);
+        }
+
+        /**
+         * <p>Creates or updates the dataset refresh properties for the
+         * dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PutDataSetRefreshProperties">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDataSetRefreshPropertiesOutcome PutDataSetRefreshProperties(const Model::PutDataSetRefreshPropertiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDataSetRefreshProperties that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDataSetRefreshPropertiesRequestT = Model::PutDataSetRefreshPropertiesRequest>
+        Model::PutDataSetRefreshPropertiesOutcomeCallable PutDataSetRefreshPropertiesCallable(const PutDataSetRefreshPropertiesRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::PutDataSetRefreshProperties, request);
+        }
+
+        /**
+         * An Async wrapper for PutDataSetRefreshProperties that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDataSetRefreshPropertiesRequestT = Model::PutDataSetRefreshPropertiesRequest>
+        void PutDataSetRefreshPropertiesAsync(const PutDataSetRefreshPropertiesRequestT& request, const PutDataSetRefreshPropertiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::PutDataSetRefreshProperties, request, handler, context);
         }
 
         /**
@@ -3432,6 +3611,31 @@ namespace QuickSight
         void UpdatePublicSharingSettingsAsync(const UpdatePublicSharingSettingsRequestT& request, const UpdatePublicSharingSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::UpdatePublicSharingSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a refresh schedule for a dataset.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/UpdateRefreshSchedule">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateRefreshScheduleOutcome UpdateRefreshSchedule(const Model::UpdateRefreshScheduleRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateRefreshSchedule that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateRefreshScheduleRequestT = Model::UpdateRefreshScheduleRequest>
+        Model::UpdateRefreshScheduleOutcomeCallable UpdateRefreshScheduleCallable(const UpdateRefreshScheduleRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::UpdateRefreshSchedule, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateRefreshSchedule that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateRefreshScheduleRequestT = Model::UpdateRefreshScheduleRequest>
+        void UpdateRefreshScheduleAsync(const UpdateRefreshScheduleRequestT& request, const UpdateRefreshScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::UpdateRefreshSchedule, request, handler, context);
         }
 
         /**

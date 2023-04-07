@@ -145,6 +145,7 @@ namespace Aws
       class GetProvisionedConcurrencyConfigRequest;
       class GetRuntimeManagementConfigRequest;
       class InvokeRequest;
+      class InvokeWithResponseStreamRequest;
       class ListAliasesRequest;
       class ListCodeSigningConfigsRequest;
       class ListEventSourceMappingsRequest;
@@ -212,6 +213,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetProvisionedConcurrencyConfigResult, LambdaError> GetProvisionedConcurrencyConfigOutcome;
       typedef Aws::Utils::Outcome<GetRuntimeManagementConfigResult, LambdaError> GetRuntimeManagementConfigOutcome;
       typedef Aws::Utils::Outcome<InvokeResult, LambdaError> InvokeOutcome;
+      typedef Aws::Utils::Outcome<Aws::NoResult, LambdaError> InvokeWithResponseStreamOutcome;
       typedef Aws::Utils::Outcome<ListAliasesResult, LambdaError> ListAliasesOutcome;
       typedef Aws::Utils::Outcome<ListCodeSigningConfigsResult, LambdaError> ListCodeSigningConfigsOutcome;
       typedef Aws::Utils::Outcome<ListEventSourceMappingsResult, LambdaError> ListEventSourceMappingsOutcome;
@@ -279,6 +281,7 @@ namespace Aws
       typedef std::future<GetProvisionedConcurrencyConfigOutcome> GetProvisionedConcurrencyConfigOutcomeCallable;
       typedef std::future<GetRuntimeManagementConfigOutcome> GetRuntimeManagementConfigOutcomeCallable;
       typedef std::future<InvokeOutcome> InvokeOutcomeCallable;
+      typedef std::future<InvokeWithResponseStreamOutcome> InvokeWithResponseStreamOutcomeCallable;
       typedef std::future<ListAliasesOutcome> ListAliasesOutcomeCallable;
       typedef std::future<ListCodeSigningConfigsOutcome> ListCodeSigningConfigsOutcomeCallable;
       typedef std::future<ListEventSourceMappingsOutcome> ListEventSourceMappingsOutcomeCallable;
@@ -349,6 +352,7 @@ namespace Aws
     typedef std::function<void(const LambdaClient*, const Model::GetProvisionedConcurrencyConfigRequest&, const Model::GetProvisionedConcurrencyConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetProvisionedConcurrencyConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::GetRuntimeManagementConfigRequest&, const Model::GetRuntimeManagementConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetRuntimeManagementConfigResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::InvokeRequest&, Model::InvokeOutcome, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeResponseReceivedHandler;
+    typedef std::function<void(const LambdaClient*, const Model::InvokeWithResponseStreamRequest&, const Model::InvokeWithResponseStreamOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InvokeWithResponseStreamResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListAliasesRequest&, const Model::ListAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAliasesResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListCodeSigningConfigsRequest&, const Model::ListCodeSigningConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCodeSigningConfigsResponseReceivedHandler;
     typedef std::function<void(const LambdaClient*, const Model::ListEventSourceMappingsRequest&, const Model::ListEventSourceMappingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventSourceMappingsResponseReceivedHandler;

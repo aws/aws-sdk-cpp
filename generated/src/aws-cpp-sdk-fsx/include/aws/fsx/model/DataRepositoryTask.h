@@ -217,7 +217,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline const DataRepositoryTaskType& GetType() const{ return m_type; }
 
@@ -228,7 +230,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
@@ -239,7 +243,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline void SetType(const DataRepositoryTaskType& value) { m_typeHasBeenSet = true; m_type = value; }
 
@@ -250,7 +256,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline void SetType(DataRepositoryTaskType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
@@ -261,7 +269,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(const DataRepositoryTaskType& value) { SetType(value); return *this;}
 
@@ -272,7 +282,9 @@ namespace Model
      * <code>IMPORT_METADATA_FROM_REPOSITORY</code> tasks import metadata changes from
      * a linked S3 bucket to your Amazon FSx for Lustre file system.</p> </li> <li> <p>
      * <code>AUTO_RELEASE_DATA</code> tasks automatically release files from an Amazon
-     * File Cache resource.</p> </li> </ul>
+     * File Cache resource.</p> </li> <li> <p>
+     * <code>RELEASE_DATA_FROM_FILESYSTEM</code> tasks are not supported.</p> </li>
+     * </ul>
      */
     inline DataRepositoryTask& WithType(DataRepositoryTaskType&& value) { SetType(std::move(value)); return *this;}
 
