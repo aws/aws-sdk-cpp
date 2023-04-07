@@ -25,7 +25,9 @@ FunctionUrlConfig::FunctionUrlConfig() :
     m_lastModifiedTimeHasBeenSet(false),
     m_corsHasBeenSet(false),
     m_authType(FunctionUrlAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false)
+    m_authTypeHasBeenSet(false),
+    m_invokeMode(InvokeMode::NOT_SET),
+    m_invokeModeHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ FunctionUrlConfig::FunctionUrlConfig(JsonView jsonValue) :
     m_lastModifiedTimeHasBeenSet(false),
     m_corsHasBeenSet(false),
     m_authType(FunctionUrlAuthType::NOT_SET),
-    m_authTypeHasBeenSet(false)
+    m_authTypeHasBeenSet(false),
+    m_invokeMode(InvokeMode::NOT_SET),
+    m_invokeModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,13 @@ FunctionUrlConfig& FunctionUrlConfig::operator =(JsonView jsonValue)
     m_authTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InvokeMode"))
+  {
+    m_invokeMode = InvokeModeMapper::GetInvokeModeForName(jsonValue.GetString("InvokeMode"));
+
+    m_invokeModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +136,11 @@ JsonValue FunctionUrlConfig::Jsonize() const
   if(m_authTypeHasBeenSet)
   {
    payload.WithString("AuthType", FunctionUrlAuthTypeMapper::GetNameForFunctionUrlAuthType(m_authType));
+  }
+
+  if(m_invokeModeHasBeenSet)
+  {
+   payload.WithString("InvokeMode", InvokeModeMapper::GetNameForInvokeMode(m_invokeMode));
   }
 
   return payload;

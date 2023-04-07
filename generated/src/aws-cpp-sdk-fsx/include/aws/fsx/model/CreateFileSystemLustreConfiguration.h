@@ -31,13 +31,11 @@ namespace Model
 
   /**
    * <p>The Lustre configuration for the file system being created.</p>  <p>The
-   * following parameters are not supported for file systems with the
-   * <code>Persistent_2</code> deployment type. Instead, use
-   * <code>CreateDataRepositoryAssociation</code> to create a data repository
-   * association to link your Lustre file system to a data repository.</p> <ul> <li>
-   * <p> <code>AutoImportPolicy</code> </p> </li> <li> <p> <code>ExportPath</code>
-   * </p> </li> <li> <p> <code>ImportedChunkSize</code> </p> </li> <li> <p>
-   * <code>ImportPath</code> </p> </li> </ul> <p><h3>See Also:</h3>   <a
+   * following parameters are not supported for file systems with a data repository
+   * association created with .</p> <ul> <li> <p> <code>AutoImportPolicy</code> </p>
+   * </li> <li> <p> <code>ExportPath</code> </p> </li> <li> <p>
+   * <code>ImportedChunkSize</code> </p> </li> <li> <p> <code>ImportPath</code> </p>
+   * </li> </ul> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateFileSystemLustreConfiguration">AWS
    * API Reference</a></p>
    */
@@ -115,9 +113,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline const Aws::String& GetImportPath() const{ return m_importPath; }
 
@@ -129,9 +125,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline bool ImportPathHasBeenSet() const { return m_importPathHasBeenSet; }
 
@@ -143,9 +137,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline void SetImportPath(const Aws::String& value) { m_importPathHasBeenSet = true; m_importPath = value; }
 
@@ -157,9 +149,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline void SetImportPath(Aws::String&& value) { m_importPathHasBeenSet = true; m_importPath = std::move(value); }
 
@@ -171,9 +161,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline void SetImportPath(const char* value) { m_importPathHasBeenSet = true; m_importPath.assign(value); }
 
@@ -185,9 +173,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithImportPath(const Aws::String& value) { SetImportPath(value); return *this;}
 
@@ -199,9 +185,7 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithImportPath(Aws::String&& value) { SetImportPath(std::move(value)); return *this;}
 
@@ -213,23 +197,19 @@ namespace Model
      * <code>s3://import-bucket/optional-prefix</code>. If you specify a prefix after
      * the Amazon S3 bucket name, only object keys with that prefix are loaded into the
      * file system.</p>  <p>This parameter is not supported for file systems with
-     * the <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     * a data repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithImportPath(const char* value) { SetImportPath(value); return *this;}
 
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -238,23 +218,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline const Aws::String& GetExportPath() const{ return m_exportPath; }
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -263,23 +239,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline bool ExportPathHasBeenSet() const { return m_exportPathHasBeenSet; }
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -288,23 +260,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline void SetExportPath(const Aws::String& value) { m_exportPathHasBeenSet = true; m_exportPath = value; }
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -313,23 +281,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline void SetExportPath(Aws::String&& value) { m_exportPathHasBeenSet = true; m_exportPath = std::move(value); }
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -338,23 +302,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline void SetExportPath(const char* value) { m_exportPathHasBeenSet = true; m_exportPath.assign(value); }
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -363,23 +323,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithExportPath(const Aws::String& value) { SetExportPath(value); return *this;}
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -388,23 +344,19 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithExportPath(Aws::String&& value) { SetExportPath(std::move(value)); return *this;}
 
     /**
-     * <p>(Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. Specifies the path in the Amazon S3 bucket where the root of
-     * your Amazon FSx file system is exported. The path must use the same Amazon S3
-     * bucket as specified in ImportPath. You can provide an optional prefix to which
-     * new and changed data is to be exported from your Amazon FSx for Lustre file
-     * system. If an <code>ExportPath</code> value is not provided, Amazon FSx sets a
-     * default export path,
-     * <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The timestamp is
-     * in UTC format, for example
+     * <p>(Optional) Specifies the path in the Amazon S3 bucket where the root of your
+     * Amazon FSx file system is exported. The path must use the same Amazon S3 bucket
+     * as specified in ImportPath. You can provide an optional prefix to which new and
+     * changed data is to be exported from your Amazon FSx for Lustre file system. If
+     * an <code>ExportPath</code> value is not provided, Amazon FSx sets a default
+     * export path, <code>s3://import-bucket/FSxLustre[creation-timestamp]</code>. The
+     * timestamp is in UTC format, for example
      * <code>s3://import-bucket/FSxLustre20181105T222312Z</code>.</p> <p>The Amazon S3
      * export bucket must be the same as the import bucket specified by
      * <code>ImportPath</code>. If you specify only a bucket name, such as
@@ -413,10 +365,8 @@ namespace Model
      * on export. If you provide a custom prefix in the export path, such as
      * <code>s3://import-bucket/[custom-optional-prefix]</code>, Amazon FSx exports the
      * contents of your file system to that export prefix in the Amazon S3 bucket.</p>
-     *  <p>This parameter is not supported for file systems with the
-     * <code>Persistent_2</code> deployment type. Instead, use
-     * <code>CreateDataRepositoryAssociation</code> to create a data repository
-     * association to link your Lustre file system to a data repository.</p> 
+     *  <p>This parameter is not supported for file systems with a data
+     * repository association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithExportPath(const char* value) { SetExportPath(value); return *this;}
 
@@ -427,10 +377,9 @@ namespace Model
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
      * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
-     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p> <p>This parameter
-     * is not supported for file systems with the <code>Persistent_2</code> deployment
-     * type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data
-     * repository association to link your Lustre file system to a data repository.</p>
+     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>  <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline int GetImportedFileChunkSize() const{ return m_importedFileChunkSize; }
 
@@ -440,10 +389,9 @@ namespace Model
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
      * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
-     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p> <p>This parameter
-     * is not supported for file systems with the <code>Persistent_2</code> deployment
-     * type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data
-     * repository association to link your Lustre file system to a data repository.</p>
+     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>  <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline bool ImportedFileChunkSizeHasBeenSet() const { return m_importedFileChunkSizeHasBeenSet; }
 
@@ -453,10 +401,9 @@ namespace Model
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
      * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
-     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p> <p>This parameter
-     * is not supported for file systems with the <code>Persistent_2</code> deployment
-     * type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data
-     * repository association to link your Lustre file system to a data repository.</p>
+     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>  <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline void SetImportedFileChunkSize(int value) { m_importedFileChunkSizeHasBeenSet = true; m_importedFileChunkSize = value; }
 
@@ -466,10 +413,9 @@ namespace Model
      * physical disk. The maximum number of disks that a single file can be striped
      * across is limited by the total number of disks that make up the file system.</p>
      * <p>The default chunk size is 1,024 MiB (1 GiB) and can go as high as 512,000 MiB
-     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p> <p>This parameter
-     * is not supported for file systems with the <code>Persistent_2</code> deployment
-     * type. Instead, use <code>CreateDataRepositoryAssociation</code> to create a data
-     * repository association to link your Lustre file system to a data repository.</p>
+     * (500 GiB). Amazon S3 objects have a maximum size of 5 TB.</p>  <p>This
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithImportedFileChunkSize(int value) { SetImportedFileChunkSize(value); return *this;}
 
@@ -497,9 +443,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -531,9 +475,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -565,9 +507,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -599,9 +539,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -633,9 +571,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -667,9 +603,7 @@ namespace Model
      * <code>CreateFileSystem</code> operation fails.</p>  <p>Encryption of data
      * in transit is automatically turned on when you access <code>SCRATCH_2</code>,
      * <code>PERSISTENT_1</code> and <code>PERSISTENT_2</code> file systems from Amazon
-     * EC2 instances that <a
-     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/data-
-     * protection.html">support automatic encryption</a> in the Amazon Web Services
+     * EC2 instances that support automatic encryption in the Amazon Web Services
      * Regions where they are available. For more information about encryption in
      * transit for FSx for Lustre file systems, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/encryption-in-transit-fsxl.html">Encrypting
@@ -680,182 +614,158 @@ namespace Model
 
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline const AutoImportPolicyType& GetAutoImportPolicy() const{ return m_autoImportPolicy; }
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline bool AutoImportPolicyHasBeenSet() const { return m_autoImportPolicyHasBeenSet; }
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline void SetAutoImportPolicy(const AutoImportPolicyType& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = value; }
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline void SetAutoImportPolicy(AutoImportPolicyType&& value) { m_autoImportPolicyHasBeenSet = true; m_autoImportPolicy = std::move(value); }
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(const AutoImportPolicyType& value) { SetAutoImportPolicy(value); return *this;}
 
     /**
-     * <p> (Optional) Available with <code>Scratch</code> and <code>Persistent_1</code>
-     * deployment types. When you create your file system, your existing S3 objects
-     * appear as file and directory listings. Use this property to choose how Amazon
-     * FSx keeps your file and directory listings up to date as you add or modify
-     * objects in your linked S3 bucket. <code>AutoImportPolicy</code> can have the
-     * following values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is
-     * off. Amazon FSx only updates file and directory listings from the linked S3
-     * bucket when the file system is created. FSx does not update file and directory
-     * listings for any new or changed objects after choosing this option.</p> </li>
-     * <li> <p> <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports
-     * directory listings of any new objects added to the linked S3 bucket that do not
-     * currently exist in the FSx file system. </p> </li> <li> <p>
-     * <code>NEW_CHANGED</code> - AutoImport is on. Amazon FSx automatically imports
-     * file and directory listings of any new objects added to the S3 bucket and any
-     * existing objects that are changed in the S3 bucket after you choose this
-     * option.</p> </li> <li> <p> <code>NEW_CHANGED_DELETED</code> - AutoImport is on.
-     * Amazon FSx automatically imports file and directory listings of any new objects
-     * added to the S3 bucket, any existing objects that are changed in the S3 bucket,
-     * and any objects that were deleted in the S3 bucket.</p> </li> </ul> <p>For more
-     * information, see <a
+     * <p> (Optional) When you create your file system, your existing S3 objects appear
+     * as file and directory listings. Use this parameter to choose how Amazon FSx
+     * keeps your file and directory listings up to date as you add or modify objects
+     * in your linked S3 bucket. <code>AutoImportPolicy</code> can have the following
+     * values:</p> <ul> <li> <p> <code>NONE</code> - (Default) AutoImport is off.
+     * Amazon FSx only updates file and directory listings from the linked S3 bucket
+     * when the file system is created. FSx does not update file and directory listings
+     * for any new or changed objects after choosing this option.</p> </li> <li> <p>
+     * <code>NEW</code> - AutoImport is on. Amazon FSx automatically imports directory
+     * listings of any new objects added to the linked S3 bucket that do not currently
+     * exist in the FSx file system. </p> </li> <li> <p> <code>NEW_CHANGED</code> -
+     * AutoImport is on. Amazon FSx automatically imports file and directory listings
+     * of any new objects added to the S3 bucket and any existing objects that are
+     * changed in the S3 bucket after you choose this option.</p> </li> <li> <p>
+     * <code>NEW_CHANGED_DELETED</code> - AutoImport is on. Amazon FSx automatically
+     * imports file and directory listings of any new objects added to the S3 bucket,
+     * any existing objects that are changed in the S3 bucket, and any objects that
+     * were deleted in the S3 bucket.</p> </li> </ul> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/fsx/latest/LustreGuide/older-deployment-types.html#legacy-auto-import-from-s3">
      * Automatically import updates from your S3 bucket</a>.</p>  <p>This
-     * parameter is not supported for file systems with the <code>Persistent_2</code>
-     * deployment type. Instead, use <code>CreateDataRepositoryAssociation</code> to
-     * create a data repository association to link your Lustre file system to a data
-     * repository.</p> 
+     * parameter is not supported for file systems with a data repository
+     * association.</p> 
      */
     inline CreateFileSystemLustreConfiguration& WithAutoImportPolicy(AutoImportPolicyType&& value) { SetAutoImportPolicy(std::move(value)); return *this;}
 

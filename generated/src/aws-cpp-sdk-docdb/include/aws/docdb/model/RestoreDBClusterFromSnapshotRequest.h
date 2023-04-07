@@ -743,6 +743,95 @@ namespace Model
      */
     inline RestoreDBClusterFromSnapshotRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the DB cluster parameter group to associate with this DB
+     * cluster.</p> <p> <i>Type:</i> String.       <i>Required:</i> No.</p> <p>If this
+     * argument is omitted, the default DB cluster parameter group is used. If
+     * supplied, must match the name of an existing default DB cluster parameter group.
+     * The string must consist of from 1 to 255 letters, numbers or hyphens. Its first
+     * character must be a letter, and it cannot end with a hyphen or contain two
+     * consecutive hyphens.</p>
+     */
+    inline RestoreDBClusterFromSnapshotRequest& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -780,6 +869,9 @@ namespace Model
 
     bool m_deletionProtection;
     bool m_deletionProtectionHasBeenSet = false;
+
+    Aws::String m_dBClusterParameterGroupName;
+    bool m_dBClusterParameterGroupNameHasBeenSet = false;
   };
 
 } // namespace Model

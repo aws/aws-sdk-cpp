@@ -243,9 +243,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
@@ -253,9 +253,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
@@ -263,9 +263,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
@@ -273,9 +273,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
@@ -283,9 +283,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline UpdateFunctionEventInvokeConfigRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
@@ -293,9 +293,9 @@ namespace Model
      * <p>A destination for events after they have been sent to a function for
      * processing.</p> <p class="title"> <b>Destinations</b> </p> <ul> <li> <p>
      * <b>Function</b> - The Amazon Resource Name (ARN) of a Lambda function.</p> </li>
-     * <li> <p> <b>Queue</b> - The ARN of an SQS queue.</p> </li> <li> <p> <b>Topic</b>
-     * - The ARN of an SNS topic.</p> </li> <li> <p> <b>Event Bus</b> - The ARN of an
-     * Amazon EventBridge event bus.</p> </li> </ul>
+     * <li> <p> <b>Queue</b> - The ARN of a standard SQS queue.</p> </li> <li> <p>
+     * <b>Topic</b> - The ARN of a standard SNS topic.</p> </li> <li> <p> <b>Event
+     * Bus</b> - The ARN of an Amazon EventBridge event bus.</p> </li> </ul>
      */
     inline UpdateFunctionEventInvokeConfigRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 

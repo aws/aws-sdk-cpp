@@ -45,7 +45,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetEventSourceArn() const{ return m_eventSourceArn; }
 
@@ -56,7 +57,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
 
@@ -67,7 +69,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline void SetEventSourceArn(const Aws::String& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = value; }
 
@@ -78,7 +81,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline void SetEventSourceArn(Aws::String&& value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn = std::move(value); }
 
@@ -89,7 +93,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline void SetEventSourceArn(const char* value) { m_eventSourceArnHasBeenSet = true; m_eventSourceArn.assign(value); }
 
@@ -100,7 +105,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const Aws::String& value) { SetEventSourceArn(value); return *this;}
 
@@ -111,7 +117,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(Aws::String&& value) { SetEventSourceArn(std::move(value)); return *this;}
 
@@ -122,7 +129,8 @@ namespace Model
      * <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li>
      * <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the
      * cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li>
-     * </ul>
+     * <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p>
+     * </li> </ul>
      */
     inline ListEventSourceMappingsRequest& WithEventSourceArn(const char* value) { SetEventSourceArn(value); return *this;}
 

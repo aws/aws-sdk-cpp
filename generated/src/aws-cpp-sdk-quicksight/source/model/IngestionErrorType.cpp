@@ -64,6 +64,7 @@ namespace Aws
         static const int PERMISSION_NOT_FOUND_HASH = HashingUtils::HashString("PERMISSION_NOT_FOUND");
         static const int ELASTICSEARCH_CURSOR_NOT_ENABLED_HASH = HashingUtils::HashString("ELASTICSEARCH_CURSOR_NOT_ENABLED");
         static const int CURSOR_NOT_ENABLED_HASH = HashingUtils::HashString("CURSOR_NOT_ENABLED");
+        static const int DUPLICATE_COLUMN_NAMES_FOUND_HASH = HashingUtils::HashString("DUPLICATE_COLUMN_NAMES_FOUND");
 
 
         IngestionErrorType GetIngestionErrorTypeForName(const Aws::String& name)
@@ -245,6 +246,10 @@ namespace Aws
           {
             return IngestionErrorType::CURSOR_NOT_ENABLED;
           }
+          else if (hashCode == DUPLICATE_COLUMN_NAMES_FOUND_HASH)
+          {
+            return IngestionErrorType::DUPLICATE_COLUMN_NAMES_FOUND;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -347,6 +352,8 @@ namespace Aws
             return "ELASTICSEARCH_CURSOR_NOT_ENABLED";
           case IngestionErrorType::CURSOR_NOT_ENABLED:
             return "CURSOR_NOT_ENABLED";
+          case IngestionErrorType::DUPLICATE_COLUMN_NAMES_FOUND:
+            return "DUPLICATE_COLUMN_NAMES_FOUND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

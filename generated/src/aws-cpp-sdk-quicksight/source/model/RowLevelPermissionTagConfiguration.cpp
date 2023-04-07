@@ -21,14 +21,16 @@ namespace Model
 RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration() : 
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagRulesHasBeenSet(false)
+    m_tagRulesHasBeenSet(false),
+    m_tagRuleConfigurationsHasBeenSet(false)
 {
 }
 
 RowLevelPermissionTagConfiguration::RowLevelPermissionTagConfiguration(JsonView jsonValue) : 
     m_status(Status::NOT_SET),
     m_statusHasBeenSet(false),
-    m_tagRulesHasBeenSet(false)
+    m_tagRulesHasBeenSet(false),
+    m_tagRuleConfigurationsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +54,23 @@ RowLevelPermissionTagConfiguration& RowLevelPermissionTagConfiguration::operator
     m_tagRulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TagRuleConfigurations"))
+  {
+    Aws::Utils::Array<JsonView> tagRuleConfigurationsJsonList = jsonValue.GetArray("TagRuleConfigurations");
+    for(unsigned tagRuleConfigurationsIndex = 0; tagRuleConfigurationsIndex < tagRuleConfigurationsJsonList.GetLength(); ++tagRuleConfigurationsIndex)
+    {
+      Aws::Utils::Array<JsonView> rowLevelPermissionTagRuleConfigurationJsonList = tagRuleConfigurationsJsonList[tagRuleConfigurationsIndex].AsArray();
+      Aws::Vector<Aws::String> rowLevelPermissionTagRuleConfigurationList;
+      rowLevelPermissionTagRuleConfigurationList.reserve((size_t)rowLevelPermissionTagRuleConfigurationJsonList.GetLength());
+      for(unsigned rowLevelPermissionTagRuleConfigurationIndex = 0; rowLevelPermissionTagRuleConfigurationIndex < rowLevelPermissionTagRuleConfigurationJsonList.GetLength(); ++rowLevelPermissionTagRuleConfigurationIndex)
+      {
+        rowLevelPermissionTagRuleConfigurationList.push_back(rowLevelPermissionTagRuleConfigurationJsonList[rowLevelPermissionTagRuleConfigurationIndex].AsString());
+      }
+      m_tagRuleConfigurations.push_back(std::move(rowLevelPermissionTagRuleConfigurationList));
+    }
+    m_tagRuleConfigurationsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -72,6 +91,22 @@ JsonValue RowLevelPermissionTagConfiguration::Jsonize() const
      tagRulesJsonList[tagRulesIndex].AsObject(m_tagRules[tagRulesIndex].Jsonize());
    }
    payload.WithArray("TagRules", std::move(tagRulesJsonList));
+
+  }
+
+  if(m_tagRuleConfigurationsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagRuleConfigurationsJsonList(m_tagRuleConfigurations.size());
+   for(unsigned tagRuleConfigurationsIndex = 0; tagRuleConfigurationsIndex < tagRuleConfigurationsJsonList.GetLength(); ++tagRuleConfigurationsIndex)
+   {
+     Aws::Utils::Array<JsonValue> rowLevelPermissionTagRuleConfigurationJsonList(m_tagRuleConfigurations[tagRuleConfigurationsIndex].size());
+     for(unsigned rowLevelPermissionTagRuleConfigurationIndex = 0; rowLevelPermissionTagRuleConfigurationIndex < rowLevelPermissionTagRuleConfigurationJsonList.GetLength(); ++rowLevelPermissionTagRuleConfigurationIndex)
+     {
+       rowLevelPermissionTagRuleConfigurationJsonList[rowLevelPermissionTagRuleConfigurationIndex].AsString(m_tagRuleConfigurations[tagRuleConfigurationsIndex][rowLevelPermissionTagRuleConfigurationIndex]);
+     }
+     tagRuleConfigurationsJsonList[tagRuleConfigurationsIndex].AsArray(std::move(rowLevelPermissionTagRuleConfigurationJsonList));
+   }
+   payload.WithArray("TagRuleConfigurations", std::move(tagRuleConfigurationsJsonList));
 
   }
 

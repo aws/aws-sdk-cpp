@@ -89,35 +89,40 @@ namespace Model
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
+     * Amazon DocumentDB.</p>
      */
     inline const EventSourcePosition& GetStartingPosition() const{ return m_startingPosition; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
+     * Amazon DocumentDB.</p>
      */
     inline void SetStartingPosition(const EventSourcePosition& value) { m_startingPosition = value; }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
+     * Amazon DocumentDB.</p>
      */
     inline void SetStartingPosition(EventSourcePosition&& value) { m_startingPosition = std::move(value); }
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
+     * Amazon DocumentDB.</p>
      */
     inline DeleteEventSourceMappingResult& WithStartingPosition(const EventSourcePosition& value) { SetStartingPosition(value); return *this;}
 
     /**
      * <p>The position in a stream from which to start reading. Required for Amazon
      * Kinesis, Amazon DynamoDB, and Amazon MSK stream sources.
-     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams.</p>
+     * <code>AT_TIMESTAMP</code> is supported only for Amazon Kinesis streams and
+     * Amazon DocumentDB.</p>
      */
     inline DeleteEventSourceMappingResult& WithStartingPosition(EventSourcePosition&& value) { SetStartingPosition(std::move(value)); return *this;}
 
@@ -193,8 +198,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -210,8 +215,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -227,8 +232,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -240,20 +245,20 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) The number of batches to process concurrently from each shard.
-     * The default value is 1.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process
+     * concurrently from each shard. The default value is 1.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams only) The number of batches to process concurrently from each shard.
-     * The default value is 1.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process
+     * concurrently from each shard. The default value is 1.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams only) The number of batches to process concurrently from each shard.
-     * The default value is 1.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process
+     * concurrently from each shard. The default value is 1.</p>
      */
     inline DeleteEventSourceMappingResult& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -539,32 +544,32 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
+     * destination for discarded records.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
+     * destination for discarded records.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfig = value; }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
+     * destination for discarded records.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
+     * destination for discarded records.</p>
      */
     inline DeleteEventSourceMappingResult& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) An Amazon SQS queue or Amazon SNS topic
+     * destination for discarded records.</p>
      */
     inline DeleteEventSourceMappingResult& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 
@@ -729,129 +734,132 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is -1, which sets the maximum age to infinite. When the value is set to
-     * infinite, Lambda never discards old records. </p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is -1, which sets the maximum age to infinite. When the
+     * value is set to infinite, Lambda never discards old records. </p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is -1, which sets the maximum age to infinite. When the value is set to
-     * infinite, Lambda never discards old records. </p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is -1, which sets the maximum age to infinite. When the
+     * value is set to infinite, Lambda never discards old records. </p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is -1, which sets the maximum age to infinite. When the value is set to
-     * infinite, Lambda never discards old records. </p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is -1, which sets the maximum age to infinite. When the
+     * value is set to infinite, Lambda never discards old records. </p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry. The default value is false.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry. The default value is false.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry. The default value is false.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry. The default value is false.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry. The default value is false.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry. The default value is false.</p>
      */
     inline DeleteEventSourceMappingResult& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is -1, which sets the maximum number of retries to infinite. When
-     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
-     * expires in the event source.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is -1, which sets the maximum number of
+     * retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
+     * failed records until the record expires in the event source.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is -1, which sets the maximum number of retries to infinite. When
-     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
-     * expires in the event source.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is -1, which sets the maximum number of
+     * retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
+     * failed records until the record expires in the event source.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is -1, which sets the maximum number of retries to infinite. When
-     * MaximumRetryAttempts is infinite, Lambda retries failed records until the record
-     * expires in the event source.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is -1, which sets the maximum number of
+     * retries to infinite. When MaximumRetryAttempts is infinite, Lambda retries
+     * failed records until the record expires in the event source.</p>
      */
     inline DeleteEventSourceMappingResult& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * 1–900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * 1–900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * 1–900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline DeleteEventSourceMappingResult& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline DeleteEventSourceMappingResult& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline DeleteEventSourceMappingResult& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline DeleteEventSourceMappingResult& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline DeleteEventSourceMappingResult& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

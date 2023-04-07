@@ -81,56 +81,56 @@ namespace Model
 
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline DeleteBackupRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */
     inline DeleteBackupRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>A string of up to 64 ASCII characters that Amazon FSx uses to ensure
+     * <p>A string of up to 63 ASCII characters that Amazon FSx uses to ensure
      * idempotent deletion. This parameter is automatically filled on your behalf when
      * using the CLI or SDK.</p>
      */

@@ -24,7 +24,8 @@ RestoreDBClusterFromSnapshotRequest::RestoreDBClusterFromSnapshotRequest() :
     m_kmsKeyIdHasBeenSet(false),
     m_enableCloudwatchLogsExportsHasBeenSet(false),
     m_deletionProtection(false),
-    m_deletionProtectionHasBeenSet(false)
+    m_deletionProtectionHasBeenSet(false),
+    m_dBClusterParameterGroupNameHasBeenSet(false)
 {
 }
 
@@ -113,6 +114,11 @@ Aws::String RestoreDBClusterFromSnapshotRequest::SerializePayload() const
   if(m_deletionProtectionHasBeenSet)
   {
     ss << "DeletionProtection=" << std::boolalpha << m_deletionProtection << "&";
+  }
+
+  if(m_dBClusterParameterGroupNameHasBeenSet)
+  {
+    ss << "DBClusterParameterGroupName=" << StringUtils::URLEncode(m_dBClusterParameterGroupName.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

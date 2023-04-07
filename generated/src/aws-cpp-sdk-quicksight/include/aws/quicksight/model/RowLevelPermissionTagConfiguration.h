@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/Status.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/quicksight/model/RowLevelPermissionTagRule.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
 namespace Aws
@@ -125,6 +126,71 @@ namespace Model
      */
     inline RowLevelPermissionTagConfiguration& AddTagRules(RowLevelPermissionTagRule&& value) { m_tagRulesHasBeenSet = true; m_tagRules.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline const Aws::Vector<Aws::Vector<Aws::String>>& GetTagRuleConfigurations() const{ return m_tagRuleConfigurations; }
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline bool TagRuleConfigurationsHasBeenSet() const { return m_tagRuleConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline void SetTagRuleConfigurations(const Aws::Vector<Aws::Vector<Aws::String>>& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations = value; }
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline void SetTagRuleConfigurations(Aws::Vector<Aws::Vector<Aws::String>>&& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations = std::move(value); }
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline RowLevelPermissionTagConfiguration& WithTagRuleConfigurations(const Aws::Vector<Aws::Vector<Aws::String>>& value) { SetTagRuleConfigurations(value); return *this;}
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline RowLevelPermissionTagConfiguration& WithTagRuleConfigurations(Aws::Vector<Aws::Vector<Aws::String>>&& value) { SetTagRuleConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline RowLevelPermissionTagConfiguration& AddTagRuleConfigurations(const Aws::Vector<Aws::String>& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tag configuration rules to apply to a dataset. All tag
+     * configurations have the OR condition. Tags within each tile will be joined
+     * (AND). At least one rule in this structure must have all tag values assigned to
+     * it to apply Row-level security (RLS) to the dataset.</p>
+     */
+    inline RowLevelPermissionTagConfiguration& AddTagRuleConfigurations(Aws::Vector<Aws::String>&& value) { m_tagRuleConfigurationsHasBeenSet = true; m_tagRuleConfigurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Status m_status;
@@ -132,6 +198,9 @@ namespace Model
 
     Aws::Vector<RowLevelPermissionTagRule> m_tagRules;
     bool m_tagRulesHasBeenSet = false;
+
+    Aws::Vector<Aws::Vector<Aws::String>> m_tagRuleConfigurations;
+    bool m_tagRuleConfigurationsHasBeenSet = false;
   };
 
 } // namespace Model

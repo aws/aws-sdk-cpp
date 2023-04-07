@@ -87,7 +87,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -101,7 +101,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -115,7 +115,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -129,7 +129,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -143,7 +143,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -157,7 +157,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -171,7 +171,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -185,7 +185,7 @@ namespace Model
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
      * </li> <li> <p> <b>Version or Alias ARN</b> –
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p>
-     * </li> <li> <p> <b>Partial ARN</b> –
+     * </li> <li> <p> <b>Partial ARN</b> ���
      * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
      * constraint applies only to the full ARN. If you specify only the function name,
      * it's limited to 64 characters in length.</p>
@@ -229,7 +229,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
-     * Default 100. Max 10,000.</p> </li> </ul>
+     * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
+     * 10,000.</p> </li> </ul>
      */
     inline int GetBatchSize() const{ return m_batchSize; }
 
@@ -244,7 +245,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
-     * Default 100. Max 10,000.</p> </li> </ul>
+     * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
+     * 10,000.</p> </li> </ul>
      */
     inline bool BatchSizeHasBeenSet() const { return m_batchSizeHasBeenSet; }
 
@@ -259,7 +261,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
-     * Default 100. Max 10,000.</p> </li> </ul>
+     * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
+     * 10,000.</p> </li> </ul>
      */
     inline void SetBatchSize(int value) { m_batchSizeHasBeenSet = true; m_batchSize = value; }
 
@@ -274,7 +277,8 @@ namespace Model
      * </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Self-managed Apache Kafka</b> – Default 100.
      * Max 10,000.</p> </li> <li> <p> <b>Amazon MQ (ActiveMQ and RabbitMQ)</b> –
-     * Default 100. Max 10,000.</p> </li> </ul>
+     * Default 100. Max 10,000.</p> </li> <li> <p> <b>DocumentDB</b> – Default 100. Max
+     * 10,000.</p> </li> </ul>
      */
     inline UpdateEventSourceMappingRequest& WithBatchSize(int value) { SetBatchSize(value); return *this;}
 
@@ -334,8 +338,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -351,8 +355,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -368,8 +372,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -385,8 +389,8 @@ namespace Model
      * <code>MaximumBatchingWindowInSeconds</code> to any value from 0 seconds to 300
      * seconds in increments of seconds.</p> <p>For streams and Amazon SQS event
      * sources, the default batching window is 0 seconds. For Amazon MSK, Self-managed
-     * Apache Kafka, and Amazon MQ event sources, the default batching window is 500
-     * ms. Note that because you can only change
+     * Apache Kafka, Amazon MQ, and DocumentDB event sources, the default batching
+     * window is 500 ms. Note that because you can only change
      * <code>MaximumBatchingWindowInSeconds</code> in increments of seconds, you cannot
      * revert back to the 500 ms default batching window after you have changed it. To
      * restore the default batching window, you must create a new event source
@@ -398,142 +402,142 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline const DestinationConfig& GetDestinationConfig() const{ return m_destinationConfig; }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline bool DestinationConfigHasBeenSet() const { return m_destinationConfigHasBeenSet; }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline void SetDestinationConfig(const DestinationConfig& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = value; }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline void SetDestinationConfig(DestinationConfig&& value) { m_destinationConfigHasBeenSet = true; m_destinationConfig = std::move(value); }
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(const DestinationConfig& value) { SetDestinationConfig(value); return *this;}
 
     /**
-     * <p>(Streams only) An Amazon SQS queue or Amazon SNS topic destination for
-     * discarded records.</p>
+     * <p>(Kinesis and DynamoDB Streams only) A standard Amazon SQS queue or standard
+     * Amazon SNS topic destination for discarded records.</p>
      */
     inline UpdateEventSourceMappingRequest& WithDestinationConfig(DestinationConfig&& value) { SetDestinationConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is infinite (-1).</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is infinite (-1).</p>
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is infinite (-1).</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is infinite (-1).</p>
      */
     inline bool MaximumRecordAgeInSecondsHasBeenSet() const { return m_maximumRecordAgeInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is infinite (-1).</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is infinite (-1).</p>
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSecondsHasBeenSet = true; m_maximumRecordAgeInSeconds = value; }
 
     /**
-     * <p>(Streams only) Discard records older than the specified age. The default
-     * value is infinite (-1).</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
+     * age. The default value is infinite (-1).</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry.</p>
      */
     inline bool GetBisectBatchOnFunctionError() const{ return m_bisectBatchOnFunctionError; }
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry.</p>
      */
     inline bool BisectBatchOnFunctionErrorHasBeenSet() const { return m_bisectBatchOnFunctionErrorHasBeenSet; }
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry.</p>
      */
     inline void SetBisectBatchOnFunctionError(bool value) { m_bisectBatchOnFunctionErrorHasBeenSet = true; m_bisectBatchOnFunctionError = value; }
 
     /**
-     * <p>(Streams only) If the function returns an error, split the batch in two and
-     * retry.</p>
+     * <p>(Kinesis and DynamoDB Streams only) If the function returns an error, split
+     * the batch in two and retry.</p>
      */
     inline UpdateEventSourceMappingRequest& WithBisectBatchOnFunctionError(bool value) { SetBisectBatchOnFunctionError(value); return *this;}
 
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records are
-     * retried until the record expires.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.</p>
      */
     inline int GetMaximumRetryAttempts() const{ return m_maximumRetryAttempts; }
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records are
-     * retried until the record expires.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.</p>
      */
     inline bool MaximumRetryAttemptsHasBeenSet() const { return m_maximumRetryAttemptsHasBeenSet; }
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records are
-     * retried until the record expires.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.</p>
      */
     inline void SetMaximumRetryAttempts(int value) { m_maximumRetryAttemptsHasBeenSet = true; m_maximumRetryAttempts = value; }
 
     /**
-     * <p>(Streams only) Discard records after the specified number of retries. The
-     * default value is infinite (-1). When set to infinite (-1), failed records are
-     * retried until the record expires.</p>
+     * <p>(Kinesis and DynamoDB Streams only) Discard records after the specified
+     * number of retries. The default value is infinite (-1). When set to infinite
+     * (-1), failed records are retried until the record expires.</p>
      */
     inline UpdateEventSourceMappingRequest& WithMaximumRetryAttempts(int value) { SetMaximumRetryAttempts(value); return *this;}
 
 
     /**
-     * <p>(Streams only) The number of batches to process from each shard
-     * concurrently.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
+     * each shard concurrently.</p>
      */
     inline int GetParallelizationFactor() const{ return m_parallelizationFactor; }
 
     /**
-     * <p>(Streams only) The number of batches to process from each shard
-     * concurrently.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
+     * each shard concurrently.</p>
      */
     inline bool ParallelizationFactorHasBeenSet() const { return m_parallelizationFactorHasBeenSet; }
 
     /**
-     * <p>(Streams only) The number of batches to process from each shard
-     * concurrently.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
+     * each shard concurrently.</p>
      */
     inline void SetParallelizationFactor(int value) { m_parallelizationFactorHasBeenSet = true; m_parallelizationFactor = value; }
 
     /**
-     * <p>(Streams only) The number of batches to process from each shard
-     * concurrently.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The number of batches to process from
+     * each shard concurrently.</p>
      */
     inline UpdateEventSourceMappingRequest& WithParallelizationFactor(int value) { SetParallelizationFactor(value); return *this;}
 
@@ -588,75 +592,79 @@ namespace Model
 
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second and 900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline int GetTumblingWindowInSeconds() const{ return m_tumblingWindowInSeconds; }
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second and 900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline bool TumblingWindowInSecondsHasBeenSet() const { return m_tumblingWindowInSecondsHasBeenSet; }
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second and 900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline void SetTumblingWindowInSeconds(int value) { m_tumblingWindowInSecondsHasBeenSet = true; m_tumblingWindowInSeconds = value; }
 
     /**
-     * <p>(Streams only) The duration in seconds of a processing window. The range is
-     * between 1 second and 900 seconds.</p>
+     * <p>(Kinesis and DynamoDB Streams only) The duration in seconds of a processing
+     * window for DynamoDB and Kinesis Streams event sources. A value of 0 seconds
+     * indicates no tumbling window.</p>
      */
     inline UpdateEventSourceMappingRequest& WithTumblingWindowInSeconds(int value) { SetTumblingWindowInSeconds(value); return *this;}
 
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline const Aws::Vector<FunctionResponseType>& GetFunctionResponseTypes() const{ return m_functionResponseTypes; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline bool FunctionResponseTypesHasBeenSet() const { return m_functionResponseTypesHasBeenSet; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = value; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline void SetFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes = std::move(value); }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(const Aws::Vector<FunctionResponseType>& value) { SetFunctionResponseTypes(value); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& WithFunctionResponseTypes(Aws::Vector<FunctionResponseType>&& value) { SetFunctionResponseTypes(std::move(value)); return *this;}
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(const FunctionResponseType& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(value); return *this; }
 
     /**
-     * <p>(Streams and Amazon SQS) A list of current response type enums applied to the
-     * event source mapping.</p>
+     * <p>(Kinesis, DynamoDB Streams, and Amazon SQS) A list of current response type
+     * enums applied to the event source mapping.</p>
      */
     inline UpdateEventSourceMappingRequest& AddFunctionResponseTypes(FunctionResponseType&& value) { m_functionResponseTypesHasBeenSet = true; m_functionResponseTypes.push_back(std::move(value)); return *this; }
 

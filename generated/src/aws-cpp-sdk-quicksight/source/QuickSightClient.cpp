@@ -35,6 +35,7 @@
 #include <aws/quicksight/model/CreateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/CreateIngestionRequest.h>
 #include <aws/quicksight/model/CreateNamespaceRequest.h>
+#include <aws/quicksight/model/CreateRefreshScheduleRequest.h>
 #include <aws/quicksight/model/CreateTemplateRequest.h>
 #include <aws/quicksight/model/CreateTemplateAliasRequest.h>
 #include <aws/quicksight/model/CreateThemeRequest.h>
@@ -44,6 +45,7 @@
 #include <aws/quicksight/model/DeleteAnalysisRequest.h>
 #include <aws/quicksight/model/DeleteDashboardRequest.h>
 #include <aws/quicksight/model/DeleteDataSetRequest.h>
+#include <aws/quicksight/model/DeleteDataSetRefreshPropertiesRequest.h>
 #include <aws/quicksight/model/DeleteDataSourceRequest.h>
 #include <aws/quicksight/model/DeleteFolderRequest.h>
 #include <aws/quicksight/model/DeleteFolderMembershipRequest.h>
@@ -51,6 +53,7 @@
 #include <aws/quicksight/model/DeleteGroupMembershipRequest.h>
 #include <aws/quicksight/model/DeleteIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/DeleteNamespaceRequest.h>
+#include <aws/quicksight/model/DeleteRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DeleteTemplateRequest.h>
 #include <aws/quicksight/model/DeleteTemplateAliasRequest.h>
 #include <aws/quicksight/model/DeleteThemeRequest.h>
@@ -68,6 +71,7 @@
 #include <aws/quicksight/model/DescribeDashboardPermissionsRequest.h>
 #include <aws/quicksight/model/DescribeDataSetRequest.h>
 #include <aws/quicksight/model/DescribeDataSetPermissionsRequest.h>
+#include <aws/quicksight/model/DescribeDataSetRefreshPropertiesRequest.h>
 #include <aws/quicksight/model/DescribeDataSourceRequest.h>
 #include <aws/quicksight/model/DescribeDataSourcePermissionsRequest.h>
 #include <aws/quicksight/model/DescribeFolderRequest.h>
@@ -79,6 +83,7 @@
 #include <aws/quicksight/model/DescribeIngestionRequest.h>
 #include <aws/quicksight/model/DescribeIpRestrictionRequest.h>
 #include <aws/quicksight/model/DescribeNamespaceRequest.h>
+#include <aws/quicksight/model/DescribeRefreshScheduleRequest.h>
 #include <aws/quicksight/model/DescribeTemplateRequest.h>
 #include <aws/quicksight/model/DescribeTemplateAliasRequest.h>
 #include <aws/quicksight/model/DescribeTemplateDefinitionRequest.h>
@@ -104,6 +109,7 @@
 #include <aws/quicksight/model/ListIAMPolicyAssignmentsForUserRequest.h>
 #include <aws/quicksight/model/ListIngestionsRequest.h>
 #include <aws/quicksight/model/ListNamespacesRequest.h>
+#include <aws/quicksight/model/ListRefreshSchedulesRequest.h>
 #include <aws/quicksight/model/ListTagsForResourceRequest.h>
 #include <aws/quicksight/model/ListTemplateAliasesRequest.h>
 #include <aws/quicksight/model/ListTemplateVersionsRequest.h>
@@ -113,6 +119,7 @@
 #include <aws/quicksight/model/ListThemesRequest.h>
 #include <aws/quicksight/model/ListUserGroupsRequest.h>
 #include <aws/quicksight/model/ListUsersRequest.h>
+#include <aws/quicksight/model/PutDataSetRefreshPropertiesRequest.h>
 #include <aws/quicksight/model/RegisterUserRequest.h>
 #include <aws/quicksight/model/RestoreAnalysisRequest.h>
 #include <aws/quicksight/model/SearchAnalysesRequest.h>
@@ -140,6 +147,7 @@
 #include <aws/quicksight/model/UpdateIAMPolicyAssignmentRequest.h>
 #include <aws/quicksight/model/UpdateIpRestrictionRequest.h>
 #include <aws/quicksight/model/UpdatePublicSharingSettingsRequest.h>
+#include <aws/quicksight/model/UpdateRefreshScheduleRequest.h>
 #include <aws/quicksight/model/UpdateTemplateRequest.h>
 #include <aws/quicksight/model/UpdateTemplateAliasRequest.h>
 #include <aws/quicksight/model/UpdateTemplatePermissionsRequest.h>
@@ -594,6 +602,29 @@ CreateNamespaceOutcome QuickSightClient::CreateNamespace(const CreateNamespaceRe
   return CreateNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateRefreshScheduleOutcome QuickSightClient::CreateRefreshSchedule(const CreateRefreshScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRefreshSchedule", "Required field: DataSetId, is not set");
+    return CreateRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRefreshSchedule", "Required field: AwsAccountId, is not set");
+    return CreateRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules");
+  return CreateRefreshScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateTemplateOutcome QuickSightClient::CreateTemplate(const CreateTemplateRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateTemplate, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -793,6 +824,29 @@ DeleteDataSetOutcome QuickSightClient::DeleteDataSet(const DeleteDataSetRequest&
   return DeleteDataSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteDataSetRefreshPropertiesOutcome QuickSightClient::DeleteDataSetRefreshProperties(const DeleteDataSetRefreshPropertiesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataSetRefreshProperties", "Required field: AwsAccountId, is not set");
+    return DeleteDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDataSetRefreshProperties", "Required field: DataSetId, is not set");
+    return DeleteDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-properties");
+  return DeleteDataSetRefreshPropertiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DeleteDataSourceOutcome QuickSightClient::DeleteDataSource(const DeleteDataSourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -986,6 +1040,35 @@ DeleteNamespaceOutcome QuickSightClient::DeleteNamespace(const DeleteNamespaceRe
   endpointResolutionOutcome.GetResult().AddPathSegments("/namespaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   return DeleteNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteRefreshScheduleOutcome QuickSightClient::DeleteRefreshSchedule(const DeleteRefreshScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRefreshSchedule", "Required field: DataSetId, is not set");
+    return DeleteRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRefreshSchedule", "Required field: AwsAccountId, is not set");
+    return DeleteRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.ScheduleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRefreshSchedule", "Required field: ScheduleId, is not set");
+    return DeleteRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScheduleId());
+  return DeleteRefreshScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteTemplateOutcome QuickSightClient::DeleteTemplate(const DeleteTemplateRequest& request) const
@@ -1376,6 +1459,29 @@ DescribeDataSetPermissionsOutcome QuickSightClient::DescribeDataSetPermissions(c
   return DescribeDataSetPermissionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeDataSetRefreshPropertiesOutcome QuickSightClient::DescribeDataSetRefreshProperties(const DescribeDataSetRefreshPropertiesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDataSetRefreshProperties", "Required field: AwsAccountId, is not set");
+    return DescribeDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDataSetRefreshProperties", "Required field: DataSetId, is not set");
+    return DescribeDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-properties");
+  return DescribeDataSetRefreshPropertiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeDataSourceOutcome QuickSightClient::DescribeDataSource(const DescribeDataSourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDataSource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -1648,6 +1754,35 @@ DescribeNamespaceOutcome QuickSightClient::DescribeNamespace(const DescribeNames
   endpointResolutionOutcome.GetResult().AddPathSegments("/namespaces/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   return DescribeNamespaceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeRefreshScheduleOutcome QuickSightClient::DescribeRefreshSchedule(const DescribeRefreshScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRefreshSchedule", "Required field: AwsAccountId, is not set");
+    return DescribeRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRefreshSchedule", "Required field: DataSetId, is not set");
+    return DescribeRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.ScheduleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRefreshSchedule", "Required field: ScheduleId, is not set");
+    return DescribeRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduleId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetScheduleId());
+  return DescribeRefreshScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTemplateOutcome QuickSightClient::DescribeTemplate(const DescribeTemplateRequest& request) const
@@ -2197,6 +2332,29 @@ ListNamespacesOutcome QuickSightClient::ListNamespaces(const ListNamespacesReque
   return ListNamespacesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListRefreshSchedulesOutcome QuickSightClient::ListRefreshSchedules(const ListRefreshSchedulesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListRefreshSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRefreshSchedules", "Required field: AwsAccountId, is not set");
+    return ListRefreshSchedulesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListRefreshSchedules", "Required field: DataSetId, is not set");
+    return ListRefreshSchedulesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListRefreshSchedules, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules");
+  return ListRefreshSchedulesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListTagsForResourceOutcome QuickSightClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -2388,6 +2546,29 @@ ListUsersOutcome QuickSightClient::ListUsers(const ListUsersRequest& request) co
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetNamespace());
   endpointResolutionOutcome.GetResult().AddPathSegments("/users");
   return ListUsersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutDataSetRefreshPropertiesOutcome QuickSightClient::PutDataSetRefreshProperties(const PutDataSetRefreshPropertiesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutDataSetRefreshProperties", "Required field: AwsAccountId, is not set");
+    return PutDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutDataSetRefreshProperties", "Required field: DataSetId, is not set");
+    return PutDataSetRefreshPropertiesOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDataSetRefreshProperties, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-properties");
+  return PutDataSetRefreshPropertiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 RegisterUserOutcome QuickSightClient::RegisterUser(const RegisterUserRequest& request) const
@@ -2949,6 +3130,29 @@ UpdatePublicSharingSettingsOutcome QuickSightClient::UpdatePublicSharingSettings
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/public-sharing-settings");
   return UpdatePublicSharingSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateRefreshScheduleOutcome QuickSightClient::UpdateRefreshSchedule(const UpdateRefreshScheduleRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DataSetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRefreshSchedule", "Required field: DataSetId, is not set");
+    return UpdateRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DataSetId]", false));
+  }
+  if (!request.AwsAccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRefreshSchedule", "Required field: AwsAccountId, is not set");
+    return UpdateRefreshScheduleOutcome(Aws::Client::AWSError<QuickSightErrors>(QuickSightErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AwsAccountId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateRefreshSchedule, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/accounts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAwsAccountId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/data-sets/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDataSetId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/refresh-schedules");
+  return UpdateRefreshScheduleOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTemplateOutcome QuickSightClient::UpdateTemplate(const UpdateTemplateRequest& request) const

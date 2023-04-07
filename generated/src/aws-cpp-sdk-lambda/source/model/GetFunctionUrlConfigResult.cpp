@@ -18,12 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetFunctionUrlConfigResult::GetFunctionUrlConfigResult() : 
-    m_authType(FunctionUrlAuthType::NOT_SET)
+    m_authType(FunctionUrlAuthType::NOT_SET),
+    m_invokeMode(InvokeMode::NOT_SET)
 {
 }
 
 GetFunctionUrlConfigResult::GetFunctionUrlConfigResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_authType(FunctionUrlAuthType::NOT_SET)
+    m_authType(FunctionUrlAuthType::NOT_SET),
+    m_invokeMode(InvokeMode::NOT_SET)
 {
   *this = result;
 }
@@ -64,6 +66,12 @@ GetFunctionUrlConfigResult& GetFunctionUrlConfigResult::operator =(const Aws::Am
   if(jsonValue.ValueExists("LastModifiedTime"))
   {
     m_lastModifiedTime = jsonValue.GetString("LastModifiedTime");
+
+  }
+
+  if(jsonValue.ValueExists("InvokeMode"))
+  {
+    m_invokeMode = InvokeModeMapper::GetInvokeModeForName(jsonValue.GetString("InvokeMode"));
 
   }
 
