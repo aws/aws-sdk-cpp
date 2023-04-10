@@ -142,28 +142,28 @@ namespace Model
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes
-     * until the job can hop to the destination queue. Valid range is 1 to 1440
+     * until the job can hop to the destination queue. Valid range is 1 to 4320
      * minutes, inclusive.
      */
     inline int GetWaitMinutes() const{ return m_waitMinutes; }
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes
-     * until the job can hop to the destination queue. Valid range is 1 to 1440
+     * until the job can hop to the destination queue. Valid range is 1 to 4320
      * minutes, inclusive.
      */
     inline bool WaitMinutesHasBeenSet() const { return m_waitMinutesHasBeenSet; }
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes
-     * until the job can hop to the destination queue. Valid range is 1 to 1440
+     * until the job can hop to the destination queue. Valid range is 1 to 4320
      * minutes, inclusive.
      */
     inline void SetWaitMinutes(int value) { m_waitMinutesHasBeenSet = true; m_waitMinutes = value; }
 
     /**
      * Required for setting up a job to use queue hopping. Minimum wait time in minutes
-     * until the job can hop to the destination queue. Valid range is 1 to 1440
+     * until the job can hop to the destination queue. Valid range is 1 to 4320
      * minutes, inclusive.
      */
     inline HopDestination& WithWaitMinutes(int value) { SetWaitMinutes(value); return *this;}

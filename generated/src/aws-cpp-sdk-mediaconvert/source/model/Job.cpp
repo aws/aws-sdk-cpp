@@ -25,6 +25,7 @@ Job::Job() :
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_currentPhase(JobPhase::NOT_SET),
     m_currentPhaseHasBeenSet(false),
@@ -53,7 +54,8 @@ Job::Job() :
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
     m_statusUpdateIntervalHasBeenSet(false),
     m_timingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false)
+    m_userMetadataHasBeenSet(false),
+    m_warningsHasBeenSet(false)
 {
 }
 
@@ -64,6 +66,7 @@ Job::Job(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
+    m_clientRequestTokenHasBeenSet(false),
     m_createdAtHasBeenSet(false),
     m_currentPhase(JobPhase::NOT_SET),
     m_currentPhaseHasBeenSet(false),
@@ -92,7 +95,8 @@ Job::Job(JsonView jsonValue) :
     m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
     m_statusUpdateIntervalHasBeenSet(false),
     m_timingHasBeenSet(false),
-    m_userMetadataHasBeenSet(false)
+    m_userMetadataHasBeenSet(false),
+    m_warningsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,13 @@ Job& Job::operator =(JsonView jsonValue)
     m_billingTagsSource = BillingTagsSourceMapper::GetBillingTagsSourceForName(jsonValue.GetString("billingTagsSource"));
 
     m_billingTagsSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clientRequestToken"))
+  {
+    m_clientRequestToken = jsonValue.GetString("clientRequestToken");
+
+    m_clientRequestTokenHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("createdAt"))
@@ -286,6 +297,16 @@ Job& Job::operator =(JsonView jsonValue)
     m_userMetadataHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("warnings"))
+  {
+    Aws::Utils::Array<JsonView> warningsJsonList = jsonValue.GetArray("warnings");
+    for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+    {
+      m_warnings.push_back(warningsJsonList[warningsIndex].AsObject());
+    }
+    m_warningsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -313,6 +334,12 @@ JsonValue Job::Jsonize() const
   if(m_billingTagsSourceHasBeenSet)
   {
    payload.WithString("billingTagsSource", BillingTagsSourceMapper::GetNameForBillingTagsSource(m_billingTagsSource));
+  }
+
+  if(m_clientRequestTokenHasBeenSet)
+  {
+   payload.WithString("clientRequestToken", m_clientRequestToken);
+
   }
 
   if(m_createdAtHasBeenSet)
@@ -453,6 +480,17 @@ JsonValue Job::Jsonize() const
      userMetadataJsonMap.WithString(userMetadataItem.first, userMetadataItem.second);
    }
    payload.WithObject("userMetadata", std::move(userMetadataJsonMap));
+
+  }
+
+  if(m_warningsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> warningsJsonList(m_warnings.size());
+   for(unsigned warningsIndex = 0; warningsIndex < warningsJsonList.GetLength(); ++warningsIndex)
+   {
+     warningsJsonList[warningsIndex].AsObject(m_warnings[warningsIndex].Jsonize());
+   }
+   payload.WithArray("warnings", std::move(warningsJsonList));
 
   }
 

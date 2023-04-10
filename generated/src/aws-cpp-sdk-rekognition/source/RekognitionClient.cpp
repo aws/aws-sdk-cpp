@@ -25,6 +25,7 @@
 #include <aws/rekognition/model/CopyProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateCollectionRequest.h>
 #include <aws/rekognition/model/CreateDatasetRequest.h>
+#include <aws/rekognition/model/CreateFaceLivenessSessionRequest.h>
 #include <aws/rekognition/model/CreateProjectRequest.h>
 #include <aws/rekognition/model/CreateProjectVersionRequest.h>
 #include <aws/rekognition/model/CreateStreamProcessorRequest.h>
@@ -51,6 +52,7 @@
 #include <aws/rekognition/model/GetCelebrityRecognitionRequest.h>
 #include <aws/rekognition/model/GetContentModerationRequest.h>
 #include <aws/rekognition/model/GetFaceDetectionRequest.h>
+#include <aws/rekognition/model/GetFaceLivenessSessionResultsRequest.h>
 #include <aws/rekognition/model/GetFaceSearchRequest.h>
 #include <aws/rekognition/model/GetLabelDetectionRequest.h>
 #include <aws/rekognition/model/GetPersonTrackingRequest.h>
@@ -242,6 +244,14 @@ CreateDatasetOutcome RekognitionClient::CreateDataset(const CreateDatasetRequest
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateDataset, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return CreateDatasetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateFaceLivenessSessionOutcome RekognitionClient::CreateFaceLivenessSession(const CreateFaceLivenessSessionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFaceLivenessSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFaceLivenessSession, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return CreateFaceLivenessSessionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateProjectOutcome RekognitionClient::CreateProject(const CreateProjectRequest& request) const
@@ -450,6 +460,14 @@ GetFaceDetectionOutcome RekognitionClient::GetFaceDetection(const GetFaceDetecti
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFaceDetection, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return GetFaceDetectionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFaceLivenessSessionResultsOutcome RekognitionClient::GetFaceLivenessSessionResults(const GetFaceLivenessSessionResultsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFaceLivenessSessionResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFaceLivenessSessionResults, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return GetFaceLivenessSessionResultsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFaceSearchOutcome RekognitionClient::GetFaceSearch(const GetFaceSearchRequest& request) const

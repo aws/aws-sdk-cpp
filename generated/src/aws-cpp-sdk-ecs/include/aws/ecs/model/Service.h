@@ -1647,30 +1647,30 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
-     * service. If <code>true</code>, the execute command functionality is enabled for
-     * all containers in tasks as part of the service.</p>
+     * <p>Determines whether the execute command functionality is turned on for the
+     * service. If <code>true</code>, the execute command functionality is turned on
+     * for all containers in tasks as part of the service.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
-     * service. If <code>true</code>, the execute command functionality is enabled for
-     * all containers in tasks as part of the service.</p>
+     * <p>Determines whether the execute command functionality is turned on for the
+     * service. If <code>true</code>, the execute command functionality is turned on
+     * for all containers in tasks as part of the service.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
-     * service. If <code>true</code>, the execute command functionality is enabled for
-     * all containers in tasks as part of the service.</p>
+     * <p>Determines whether the execute command functionality is turned on for the
+     * service. If <code>true</code>, the execute command functionality is turned on
+     * for all containers in tasks as part of the service.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
-     * service. If <code>true</code>, the execute command functionality is enabled for
-     * all containers in tasks as part of the service.</p>
+     * <p>Determines whether the execute command functionality is turned on for the
+     * service. If <code>true</code>, the execute command functionality is turned on
+     * for all containers in tasks as part of the service.</p>
      */
     inline Service& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
 

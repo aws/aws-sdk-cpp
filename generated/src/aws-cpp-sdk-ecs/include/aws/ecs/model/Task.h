@@ -741,29 +741,29 @@ namespace Model
 
 
     /**
-     * <p>Determines whether execute command functionality is enabled for this task. If
-     * <code>true</code>, execute command functionality is enabled on all the
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
      * containers in the task.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Determines whether execute command functionality is enabled for this task. If
-     * <code>true</code>, execute command functionality is enabled on all the
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
      * containers in the task.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Determines whether execute command functionality is enabled for this task. If
-     * <code>true</code>, execute command functionality is enabled on all the
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
      * containers in the task.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Determines whether execute command functionality is enabled for this task. If
-     * <code>true</code>, execute command functionality is enabled on all the
+     * <p>Determines whether execute command functionality is turned on for this task.
+     * If <code>true</code>, execute command functionality is turned on all the
      * containers in the task.</p>
      */
     inline Task& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}

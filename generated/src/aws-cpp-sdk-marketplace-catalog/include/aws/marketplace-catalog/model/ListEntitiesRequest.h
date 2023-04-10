@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/marketplace-catalog/model/Sort.h>
+#include <aws/marketplace-catalog/model/OwnershipType.h>
 #include <aws/marketplace-catalog/model/Filter.h>
 #include <utility>
 
@@ -284,6 +285,25 @@ namespace Model
      */
     inline ListEntitiesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    
+    inline const OwnershipType& GetOwnershipType() const{ return m_ownershipType; }
+
+    
+    inline bool OwnershipTypeHasBeenSet() const { return m_ownershipTypeHasBeenSet; }
+
+    
+    inline void SetOwnershipType(const OwnershipType& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = value; }
+
+    
+    inline void SetOwnershipType(OwnershipType&& value) { m_ownershipTypeHasBeenSet = true; m_ownershipType = std::move(value); }
+
+    
+    inline ListEntitiesRequest& WithOwnershipType(const OwnershipType& value) { SetOwnershipType(value); return *this;}
+
+    
+    inline ListEntitiesRequest& WithOwnershipType(OwnershipType&& value) { SetOwnershipType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_catalog;
@@ -303,6 +323,9 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    OwnershipType m_ownershipType;
+    bool m_ownershipTypeHasBeenSet = false;
   };
 
 } // namespace Model

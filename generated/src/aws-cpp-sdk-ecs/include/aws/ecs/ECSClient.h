@@ -839,7 +839,7 @@ namespace ECS
          * <code>AccessDeniedException</code> when there is a mismatch between the
          * condition key value and the corresponding parameter value.</p> <p>For
          * information about required permissions and considerations, see <a
-         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.htm">Using
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-exec.html">Using
          * Amazon ECS Exec for debugging</a> in the <i>Amazon ECS Developer Guide</i>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ExecuteCommand">AWS
@@ -1178,9 +1178,9 @@ namespace ECS
 
         /**
          * <p>Modifies an account setting. Account settings are set on a per-Region
-         * basis.</p> <p>If you change the account setting for the root user, the default
-         * settings for all of the users and roles that no individual account setting was
-         * specified are reset for. For more information, see <a
+         * basis.</p> <p>If you change the root user account setting, the default settings
+         * are reset for users and roles that do not have specified individual account
+         * settings. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html">Account
          * Settings</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>When <code>serviceLongArnFormat</code>, <code>taskLongArnFormat</code>, or
@@ -1193,15 +1193,16 @@ namespace ECS
          * features such as resource tagging.</p> <p>When <code>awsvpcTrunking</code> is
          * specified, the elastic network interface (ENI) limit for any new container
          * instances that support the feature is changed. If <code>awsvpcTrunking</code> is
-         * enabled, any new container instances that support the feature are launched have
-         * the increased ENI limits available to them. For more information, see <a
+         * turned on, any new container instances that support the feature are launched
+         * have the increased ENI limits available to them. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/container-instance-eni.html">Elastic
          * Network Interface Trunking</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> <p>When <code>containerInsights</code> is specified,
-         * the default setting indicating whether CloudWatch Container Insights is enabled
-         * for your clusters is changed. If <code>containerInsights</code> is enabled, any
-         * new clusters that are created will have Container Insights enabled unless you
-         * disable it during cluster creation. For more information, see <a
+         * the default setting indicating whether Amazon Web Services CloudWatch Container
+         * Insights is turned on for your clusters is changed. If
+         * <code>containerInsights</code> is turned on, any new clusters that are created
+         * will have Container Insights turned on unless you disable it during cluster
+         * creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
          * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
@@ -2004,7 +2005,7 @@ namespace ECS
          * Autoscaling</a> or <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">deployments</a>.</p>
          * <p>Task-protection, by default, expires after 2 hours at which point Amazon ECS
-         * unsets the <code>protectionEnabled</code> property making the task eligible for
+         * clears the <code>protectionEnabled</code> property making the task eligible for
          * termination by a subsequent scale-in event.</p> <p>You can specify a custom
          * expiration period for task protection from 1 minute to up to 2,880 minutes (48
          * hours). To specify the custom expiration period, set the

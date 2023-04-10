@@ -44,56 +44,104 @@ namespace Model
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline const Aws::String& GetChangeType() const{ return m_changeType; }
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetChangeType(const Aws::String& value) { m_changeTypeHasBeenSet = true; m_changeType = value; }
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetChangeType(Aws::String&& value) { m_changeTypeHasBeenSet = true; m_changeType = std::move(value); }
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetChangeType(const char* value) { m_changeTypeHasBeenSet = true; m_changeType.assign(value); }
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithChangeType(const Aws::String& value) { SetChangeType(value); return *this;}
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithChangeType(Aws::String&& value) { SetChangeType(std::move(value)); return *this;}
 
     /**
      * <p>Change types are single string values that describe your intention for the
      * change. Each change type is unique for each <code>EntityType</code> provided in
-     * the change's scope.</p>
+     * the change's scope. For more information on change types available for
+     * single-AMI products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithChangeType(const char* value) { SetChangeType(value); return *this;}
 
@@ -172,49 +220,97 @@ namespace Model
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetDetails(Aws::String&& value) { m_detailsHasBeenSet = true; m_details = std::move(value); }
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline void SetDetails(const char* value) { m_detailsHasBeenSet = true; m_details.assign(value); }
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithDetails(const Aws::String& value) { SetDetails(value); return *this;}
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithDetails(Aws::String&& value) { SetDetails(std::move(value)); return *this;}
 
     /**
      * <p>This object contains details specific to the change type of the requested
-     * change.</p>
+     * change. For more information on change types available for single-AMI products,
+     * see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+     * with single-AMI products</a>. Also, for more information on change types
+     * available for container-based products, see <a
+     * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+     * with container products</a>.</p>
      */
     inline Change& WithDetails(const char* value) { SetDetails(value); return *this;}
 

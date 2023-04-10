@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/connect/Connect_EXPORTS.h>
 #include <aws/connect/model/Channel.h>
+#include <aws/connect/model/CrossChannelBehavior.h>
 #include <utility>
 
 namespace Aws
@@ -106,6 +107,55 @@ namespace Model
      */
     inline MediaConcurrency& WithConcurrency(int value) { SetConcurrency(value); return *this;}
 
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline const CrossChannelBehavior& GetCrossChannelBehavior() const{ return m_crossChannelBehavior; }
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline bool CrossChannelBehaviorHasBeenSet() const { return m_crossChannelBehaviorHasBeenSet; }
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline void SetCrossChannelBehavior(const CrossChannelBehavior& value) { m_crossChannelBehaviorHasBeenSet = true; m_crossChannelBehavior = value; }
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline void SetCrossChannelBehavior(CrossChannelBehavior&& value) { m_crossChannelBehaviorHasBeenSet = true; m_crossChannelBehavior = std::move(value); }
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline MediaConcurrency& WithCrossChannelBehavior(const CrossChannelBehavior& value) { SetCrossChannelBehavior(value); return *this;}
+
+    /**
+     * <p>Defines the cross-channel routing behavior for each channel that is enabled
+     * for this Routing Profile. For example, this allows you to offer an agent a
+     * different contact from another channel when they are currently working with a
+     * contact from a Voice channel.</p>
+     */
+    inline MediaConcurrency& WithCrossChannelBehavior(CrossChannelBehavior&& value) { SetCrossChannelBehavior(std::move(value)); return *this;}
+
   private:
 
     Channel m_channel;
@@ -113,6 +163,9 @@ namespace Model
 
     int m_concurrency;
     bool m_concurrencyHasBeenSet = false;
+
+    CrossChannelBehavior m_crossChannelBehavior;
+    bool m_crossChannelBehaviorHasBeenSet = false;
   };
 
 } // namespace Model

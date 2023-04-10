@@ -19,7 +19,9 @@ ListEntitiesRequest::ListEntitiesRequest() :
     m_sortHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_ownershipType(OwnershipType::NOT_SET),
+    m_ownershipTypeHasBeenSet(false)
 {
 }
 
@@ -66,6 +68,11 @@ Aws::String ListEntitiesRequest::SerializePayload() const
   {
    payload.WithInteger("MaxResults", m_maxResults);
 
+  }
+
+  if(m_ownershipTypeHasBeenSet)
+  {
+   payload.WithString("OwnershipType", OwnershipTypeMapper::GetNameForOwnershipType(m_ownershipType));
   }
 
   return payload.View().WriteReadable();

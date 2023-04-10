@@ -107,6 +107,32 @@ namespace MarketplaceCatalog
         }
 
         /**
+         * <p>Deletes a resource-based policy on an Entity that is identified by its
+         * resource ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DeleteResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteResourcePolicyOutcome DeleteResourcePolicy(const Model::DeleteResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        Model::DeleteResourcePolicyOutcomeCallable DeleteResourcePolicyCallable(const DeleteResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&MarketplaceCatalogClient::DeleteResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteResourcePolicyRequestT = Model::DeleteResourcePolicyRequest>
+        void DeleteResourcePolicyAsync(const DeleteResourcePolicyRequestT& request, const DeleteResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MarketplaceCatalogClient::DeleteResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Provides information about a given change set.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/DescribeChangeSet">AWS
          * API Reference</a></p>
@@ -154,6 +180,32 @@ namespace MarketplaceCatalog
         void DescribeEntityAsync(const DescribeEntityRequestT& request, const DescribeEntityResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MarketplaceCatalogClient::DescribeEntity, request, handler, context);
+        }
+
+        /**
+         * <p>Gets a resource-based policy of an Entity that is identified by its resource
+         * ARN.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/GetResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcePolicyOutcome GetResourcePolicy(const Model::GetResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        Model::GetResourcePolicyOutcomeCallable GetResourcePolicyCallable(const GetResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&MarketplaceCatalogClient::GetResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for GetResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetResourcePolicyRequestT = Model::GetResourcePolicyRequest>
+        void GetResourcePolicyAsync(const GetResourcePolicyRequestT& request, const GetResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MarketplaceCatalogClient::GetResourcePolicy, request, handler, context);
         }
 
         /**
@@ -241,6 +293,33 @@ namespace MarketplaceCatalog
         }
 
         /**
+         * <p>Attaches a resource-based policy to an Entity. Examples of an entity include:
+         * <code>AmiProduct</code> and <code>ContainerProduct</code>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/PutResourcePolicy">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutResourcePolicyOutcome PutResourcePolicy(const Model::PutResourcePolicyRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutResourcePolicy that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        Model::PutResourcePolicyOutcomeCallable PutResourcePolicyCallable(const PutResourcePolicyRequestT& request) const
+        {
+            return SubmitCallable(&MarketplaceCatalogClient::PutResourcePolicy, request);
+        }
+
+        /**
+         * An Async wrapper for PutResourcePolicy that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutResourcePolicyRequestT = Model::PutResourcePolicyRequest>
+        void PutResourcePolicyAsync(const PutResourcePolicyRequestT& request, const PutResourcePolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MarketplaceCatalogClient::PutResourcePolicy, request, handler, context);
+        }
+
+        /**
          * <p>Allows you to request changes for your entities. Within a single
          * <code>ChangeSet</code>, you can't start the same change type against the same
          * entity multiple times. Additionally, when a <code>ChangeSet</code> is running,
@@ -255,7 +334,13 @@ namespace MarketplaceCatalog
          * (<code>entity-id@1</code>).</p> <p>For more information about working with
          * change sets, see <a
          * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/welcome.html#working-with-change-sets">
-         * Working with change sets</a>.</p><p><h3>See Also:</h3>   <a
+         * Working with change sets</a>. For information on change types for single-AMI
+         * products, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/ami-products.html#working-with-single-AMI-products">Working
+         * with single-AMI products</a>. Als, for more information on change types
+         * available for container-based products, see <a
+         * href="https://docs.aws.amazon.com/marketplace-catalog/latest/api-reference/container-products.html#working-with-container-products">Working
+         * with container products</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/marketplace-catalog-2018-09-17/StartChangeSet">AWS
          * API Reference</a></p>
          */

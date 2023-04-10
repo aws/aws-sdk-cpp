@@ -76,8 +76,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
@@ -86,8 +86,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
@@ -96,8 +96,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
@@ -106,8 +106,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
@@ -116,8 +116,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
@@ -126,8 +126,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline ServiceConnectConfiguration& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
@@ -136,8 +136,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline ServiceConnectConfiguration& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
@@ -146,8 +146,8 @@ namespace Model
      * namespace for use with Service Connect. The namespace must be in the same Amazon
      * Web Services Region as the Amazon ECS service and cluster. The type of namespace
      * doesn't affect Service Connect. For more information about Cloud Map, see <a
-     * href="https://docs.aws.amazon.com/">Working with Services</a> in the <i>Cloud
-     * Map Developer Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/cloud-map/latest/dg/working-with-services.html">Working
+     * with Services</a> in the <i>Cloud Map Developer Guide</i>.</p>
      */
     inline ServiceConnectConfiguration& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
