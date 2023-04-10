@@ -1792,9 +1792,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
 
@@ -1804,9 +1804,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
 
@@ -1816,9 +1816,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
 
@@ -1828,9 +1828,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
 
@@ -1840,9 +1840,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
 
@@ -1852,9 +1852,9 @@ namespace Model
      * default amount, for tasks hosted on Fargate. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/userguide/using_data_volumes.html">Fargate
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
-     * <p>This parameter is only supported for tasks hosted on Fargate using the
-     * following platform versions:</p> <ul> <li> <p>Linux platform version
-     * <code>1.4.0</code> or later.</p> </li> </ul> 
+     * <p>For tasks using the Fargate launch type, the task requires the following
+     * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}
 

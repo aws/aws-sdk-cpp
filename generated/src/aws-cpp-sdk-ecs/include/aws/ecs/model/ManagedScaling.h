@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>The managed scaling settings for the Auto Scaling group capacity
-   * provider.</p> <p>When managed scaling is enabled, Amazon ECS manages the
+   * provider.</p> <p>When managed scaling is turned on, Amazon ECS manages the
    * scale-in and scale-out actions of the Auto Scaling group. Amazon ECS manages a
    * target tracking scaling policy using an Amazon ECS managed CloudWatch metric
    * with the specified <code>targetCapacity</code> value as the target value for the

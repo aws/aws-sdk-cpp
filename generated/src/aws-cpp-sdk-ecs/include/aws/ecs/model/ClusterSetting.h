@@ -40,46 +40,47 @@ namespace Model
 
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline const ClusterSettingName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline void SetName(const ClusterSettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline void SetName(ClusterSettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline ClusterSetting& WithName(const ClusterSettingName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the cluster setting. The only supported value is
-     * <code>containerInsights</code>.</p>
+     * <p>The name of the cluster setting. The value is <code>containerInsights</code>
+     * .</p>
      */
     inline ClusterSetting& WithName(ClusterSettingName&& value) { SetName(std::move(value)); return *this;}
 
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -91,8 +92,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -104,8 +106,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -117,8 +120,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -130,8 +134,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -143,8 +148,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -156,8 +162,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a
@@ -169,8 +176,9 @@ namespace Model
 
     /**
      * <p>The value to set for the cluster setting. The supported values are
-     * <code>enabled</code> and <code>disabled</code>. If <code>enabled</code> is
-     * specified, CloudWatch Container Insights will be enabled for the cluster,
+     * <code>enabled</code> and <code>disabled</code>. </p> <p>If you set
+     * <code>name</code> to <code>containerInsights</code> and <code>value</code> to
+     * <code>enabled</code>, CloudWatch Container Insights will be on for the cluster,
      * otherwise it will be off unless the <code>containerInsights</code> account
      * setting is turned on. If a cluster value is specified, it will override the
      * <code>containerInsights</code> value set with <a

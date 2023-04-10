@@ -20,8 +20,7 @@ namespace Model
     ACTIVE,
     UPDATING,
     DELETED,
-    FAILED,
-    INACTIVE
+    FAILED
   };
 
 namespace WorkflowStatusMapper

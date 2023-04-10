@@ -72,37 +72,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline const ManagedAgentName& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline void SetName(const ManagedAgentName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline void SetName(ManagedAgentName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline ManagedAgent& WithName(const ManagedAgentName& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the managed agent. When the execute command feature is enabled,
+     * <p>The name of the managed agent. When the execute command feature is turned on,
      * the managed agent name is <code>ExecuteCommandAgent</code>.</p>
      */
     inline ManagedAgent& WithName(ManagedAgentName&& value) { SetName(std::move(value)); return *this;}

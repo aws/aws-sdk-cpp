@@ -127,8 +127,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from
@@ -145,8 +145,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from
@@ -163,8 +163,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from
@@ -181,8 +181,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from
@@ -199,8 +199,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from
@@ -217,8 +217,8 @@ namespace Model
      * termination protection is on, Amazon ECS prevents the Amazon EC2 instances in an
      * Auto Scaling group that contain tasks from being terminated during a scale-in
      * action. The Auto Scaling group and each instance in the Auto Scaling group must
-     * have instance protection from scale-in actions enabled as well. For more
-     * information, see <a
+     * have instance protection from scale-in actions on as well. For more information,
+     * see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/as-instance-termination.html#instance-protection">Instance
      * Protection</a> in the <i>Auto Scaling User Guide</i>.</p> <p>When managed
      * termination protection is off, your Amazon EC2 instances aren't protected from

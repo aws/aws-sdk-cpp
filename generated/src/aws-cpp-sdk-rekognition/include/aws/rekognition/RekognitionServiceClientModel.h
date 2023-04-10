@@ -22,6 +22,7 @@
 #include <aws/rekognition/model/CopyProjectVersionResult.h>
 #include <aws/rekognition/model/CreateCollectionResult.h>
 #include <aws/rekognition/model/CreateDatasetResult.h>
+#include <aws/rekognition/model/CreateFaceLivenessSessionResult.h>
 #include <aws/rekognition/model/CreateProjectResult.h>
 #include <aws/rekognition/model/CreateProjectVersionResult.h>
 #include <aws/rekognition/model/CreateStreamProcessorResult.h>
@@ -48,6 +49,7 @@
 #include <aws/rekognition/model/GetCelebrityRecognitionResult.h>
 #include <aws/rekognition/model/GetContentModerationResult.h>
 #include <aws/rekognition/model/GetFaceDetectionResult.h>
+#include <aws/rekognition/model/GetFaceLivenessSessionResultsResult.h>
 #include <aws/rekognition/model/GetFaceSearchResult.h>
 #include <aws/rekognition/model/GetLabelDetectionResult.h>
 #include <aws/rekognition/model/GetPersonTrackingResult.h>
@@ -125,6 +127,7 @@ namespace Aws
       class CopyProjectVersionRequest;
       class CreateCollectionRequest;
       class CreateDatasetRequest;
+      class CreateFaceLivenessSessionRequest;
       class CreateProjectRequest;
       class CreateProjectVersionRequest;
       class CreateStreamProcessorRequest;
@@ -151,6 +154,7 @@ namespace Aws
       class GetCelebrityRecognitionRequest;
       class GetContentModerationRequest;
       class GetFaceDetectionRequest;
+      class GetFaceLivenessSessionResultsRequest;
       class GetFaceSearchRequest;
       class GetLabelDetectionRequest;
       class GetPersonTrackingRequest;
@@ -191,6 +195,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<CopyProjectVersionResult, RekognitionError> CopyProjectVersionOutcome;
       typedef Aws::Utils::Outcome<CreateCollectionResult, RekognitionError> CreateCollectionOutcome;
       typedef Aws::Utils::Outcome<CreateDatasetResult, RekognitionError> CreateDatasetOutcome;
+      typedef Aws::Utils::Outcome<CreateFaceLivenessSessionResult, RekognitionError> CreateFaceLivenessSessionOutcome;
       typedef Aws::Utils::Outcome<CreateProjectResult, RekognitionError> CreateProjectOutcome;
       typedef Aws::Utils::Outcome<CreateProjectVersionResult, RekognitionError> CreateProjectVersionOutcome;
       typedef Aws::Utils::Outcome<CreateStreamProcessorResult, RekognitionError> CreateStreamProcessorOutcome;
@@ -217,6 +222,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCelebrityRecognitionResult, RekognitionError> GetCelebrityRecognitionOutcome;
       typedef Aws::Utils::Outcome<GetContentModerationResult, RekognitionError> GetContentModerationOutcome;
       typedef Aws::Utils::Outcome<GetFaceDetectionResult, RekognitionError> GetFaceDetectionOutcome;
+      typedef Aws::Utils::Outcome<GetFaceLivenessSessionResultsResult, RekognitionError> GetFaceLivenessSessionResultsOutcome;
       typedef Aws::Utils::Outcome<GetFaceSearchResult, RekognitionError> GetFaceSearchOutcome;
       typedef Aws::Utils::Outcome<GetLabelDetectionResult, RekognitionError> GetLabelDetectionOutcome;
       typedef Aws::Utils::Outcome<GetPersonTrackingResult, RekognitionError> GetPersonTrackingOutcome;
@@ -257,6 +263,7 @@ namespace Aws
       typedef std::future<CopyProjectVersionOutcome> CopyProjectVersionOutcomeCallable;
       typedef std::future<CreateCollectionOutcome> CreateCollectionOutcomeCallable;
       typedef std::future<CreateDatasetOutcome> CreateDatasetOutcomeCallable;
+      typedef std::future<CreateFaceLivenessSessionOutcome> CreateFaceLivenessSessionOutcomeCallable;
       typedef std::future<CreateProjectOutcome> CreateProjectOutcomeCallable;
       typedef std::future<CreateProjectVersionOutcome> CreateProjectVersionOutcomeCallable;
       typedef std::future<CreateStreamProcessorOutcome> CreateStreamProcessorOutcomeCallable;
@@ -283,6 +290,7 @@ namespace Aws
       typedef std::future<GetCelebrityRecognitionOutcome> GetCelebrityRecognitionOutcomeCallable;
       typedef std::future<GetContentModerationOutcome> GetContentModerationOutcomeCallable;
       typedef std::future<GetFaceDetectionOutcome> GetFaceDetectionOutcomeCallable;
+      typedef std::future<GetFaceLivenessSessionResultsOutcome> GetFaceLivenessSessionResultsOutcomeCallable;
       typedef std::future<GetFaceSearchOutcome> GetFaceSearchOutcomeCallable;
       typedef std::future<GetLabelDetectionOutcome> GetLabelDetectionOutcomeCallable;
       typedef std::future<GetPersonTrackingOutcome> GetPersonTrackingOutcomeCallable;
@@ -326,6 +334,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::CopyProjectVersionRequest&, const Model::CopyProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CopyProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateCollectionRequest&, const Model::CreateCollectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCollectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateDatasetRequest&, const Model::CreateDatasetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatasetResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::CreateFaceLivenessSessionRequest&, const Model::CreateFaceLivenessSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFaceLivenessSessionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectRequest&, const Model::CreateProjectOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateProjectVersionRequest&, const Model::CreateProjectVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProjectVersionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::CreateStreamProcessorRequest&, const Model::CreateStreamProcessorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStreamProcessorResponseReceivedHandler;
@@ -352,6 +361,7 @@ namespace Aws
     typedef std::function<void(const RekognitionClient*, const Model::GetCelebrityRecognitionRequest&, const Model::GetCelebrityRecognitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCelebrityRecognitionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetContentModerationRequest&, const Model::GetContentModerationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContentModerationResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceDetectionRequest&, const Model::GetFaceDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceDetectionResponseReceivedHandler;
+    typedef std::function<void(const RekognitionClient*, const Model::GetFaceLivenessSessionResultsRequest&, const Model::GetFaceLivenessSessionResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceLivenessSessionResultsResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetFaceSearchRequest&, const Model::GetFaceSearchOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFaceSearchResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetLabelDetectionRequest&, const Model::GetLabelDetectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetLabelDetectionResponseReceivedHandler;
     typedef std::function<void(const RekognitionClient*, const Model::GetPersonTrackingRequest&, const Model::GetPersonTrackingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPersonTrackingResponseReceivedHandler;

@@ -143,48 +143,54 @@ namespace Model
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline GetMetricDataV2Request& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
      * <p>The timestamp, in UNIX Epoch time format, at which to end the reporting
      * interval for the retrieval of historical metrics data. The time must be later
-     * than the start time timestamp.</p> <p>The time range between the start and end
-     * time must be less than 24 hours.</p>
+     * than the start time timestamp. It cannot be later than the current
+     * timestamp.</p> <p>The time range between the start and end time must be less
+     * than 24 hours.</p>
      */
     inline GetMetricDataV2Request& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
@@ -596,14 +602,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline const Aws::Vector<MetricV2>& GetMetrics() const{ return m_metrics; }
 
@@ -678,14 +689,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
@@ -760,14 +776,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline void SetMetrics(const Aws::Vector<MetricV2>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
 
@@ -842,14 +863,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline void SetMetrics(Aws::Vector<MetricV2>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
 
@@ -924,14 +950,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline GetMetricDataV2Request& WithMetrics(const Aws::Vector<MetricV2>& value) { SetMetrics(value); return *this;}
 
@@ -1006,14 +1037,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline GetMetricDataV2Request& WithMetrics(Aws::Vector<MetricV2>&& value) { SetMetrics(std::move(value)); return *this;}
 
@@ -1088,14 +1124,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline GetMetricDataV2Request& AddMetrics(const MetricV2& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
 
@@ -1170,14 +1211,19 @@ namespace Model
      * (inclusive), in seconds. For <code>Comparison</code>, you must enter
      * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ANSWERED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd>
      * <dt>SUM_CONTACTS_ABANDONED_IN_X</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_CONTACTS_DISCONNECTED </dt> <dd> <p>Valid metric filter key:
-     * <code>DISCONNECT_REASON</code> </p> <p>Unit: Count</p> <p>Valid groupings and
-     * filters: Queue, Channel, Routing Profile</p> </dd>
-     * <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p> <p>Valid groupings
-     * and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
+     * and filters: Queue, Channel, Routing Profile</p> <p>Threshold: For
+     * <code>ThresholdValue</code>, enter any whole number from 1 to 604800
+     * (inclusive), in seconds. For <code>Comparison</code>, you must enter
+     * <code>LT</code> (for "Less than"). </p> </dd> <dt>SUM_CONTACTS_DISCONNECTED
+     * </dt> <dd> <p>Valid metric filter key: <code>DISCONNECT_REASON</code> </p>
+     * <p>Unit: Count</p> <p>Valid groupings and filters: Queue, Channel, Routing
+     * Profile</p> </dd> <dt>SUM_RETRY_CALLBACK_ATTEMPTS</dt> <dd> <p>Unit: Count</p>
+     * <p>Valid groupings and filters: Queue, Channel, Routing Profile</p> </dd> </dl>
      */
     inline GetMetricDataV2Request& AddMetrics(MetricV2&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 

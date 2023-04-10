@@ -39,9 +39,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline const Aws::Vector<ProtectedTask>& GetProtectedTasks() const{ return m_protectedTasks; }
 
@@ -49,9 +49,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline void SetProtectedTasks(const Aws::Vector<ProtectedTask>& value) { m_protectedTasks = value; }
 
@@ -59,9 +59,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline void SetProtectedTasks(Aws::Vector<ProtectedTask>&& value) { m_protectedTasks = std::move(value); }
 
@@ -69,9 +69,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline UpdateTaskProtectionResult& WithProtectedTasks(const Aws::Vector<ProtectedTask>& value) { SetProtectedTasks(value); return *this;}
 
@@ -79,9 +79,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline UpdateTaskProtectionResult& WithProtectedTasks(Aws::Vector<ProtectedTask>&& value) { SetProtectedTasks(std::move(value)); return *this;}
 
@@ -89,9 +89,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline UpdateTaskProtectionResult& AddProtectedTasks(const ProtectedTask& value) { m_protectedTasks.push_back(value); return *this; }
 
@@ -99,9 +99,9 @@ namespace Model
      * <p>A list of tasks with the following information.</p> <ul> <li> <p>
      * <code>taskArn</code>: The task ARN.</p> </li> <li> <p>
      * <code>protectionEnabled</code>: The protection status of the task. If scale-in
-     * protection is enabled for a task, the value is <code>true</code>. Otherwise, it
-     * is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The epoch
-     * time when protection for the task will expire.</p> </li> </ul>
+     * protection is turned on for a task, the value is <code>true</code>. Otherwise,
+     * it is <code>false</code>.</p> </li> <li> <p> <code>expirationDate</code>: The
+     * epoch time when protection for the task will expire.</p> </li> </ul>
      */
     inline UpdateTaskProtectionResult& AddProtectedTasks(ProtectedTask&& value) { m_protectedTasks.push_back(std::move(value)); return *this; }
 

@@ -33,6 +33,7 @@ static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INVALID_POLICY_REVISION_ID_HASH = HashingUtils::HashString("InvalidPolicyRevisionIdException");
 static const int INVALID_PAGINATION_TOKEN_HASH = HashingUtils::HashString("InvalidPaginationTokenException");
+static const int SESSION_NOT_FOUND_HASH = HashingUtils::HashString("SessionNotFoundException");
 static const int MALFORMED_POLICY_DOCUMENT_HASH = HashingUtils::HashString("MalformedPolicyDocumentException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
@@ -75,6 +76,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_PAGINATION_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::INVALID_PAGINATION_TOKEN), false);
+  }
+  else if (hashCode == SESSION_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RekognitionErrors::SESSION_NOT_FOUND), false);
   }
   else if (hashCode == MALFORMED_POLICY_DOCUMENT_HASH)
   {

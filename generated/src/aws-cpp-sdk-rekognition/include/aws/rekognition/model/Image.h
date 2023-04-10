@@ -57,32 +57,38 @@ namespace Model
 
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetBytes() const{ return m_bytes; }
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline void SetBytes(Aws::Utils::ByteBuffer&& value) { m_bytesHasBeenSet = true; m_bytes = std::move(value); }
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline Image& WithBytes(const Aws::Utils::ByteBuffer& value) { SetBytes(value); return *this;}
 
     /**
-     * <p>Blob of image bytes up to 5 MBs.</p>
+     * <p>Blob of image bytes up to 5 MBs. Note that the maximum image size you can
+     * pass to <code>DetectCustomLabels</code> is 4MB. </p>
      */
     inline Image& WithBytes(Aws::Utils::ByteBuffer&& value) { SetBytes(std::move(value)); return *this;}
 

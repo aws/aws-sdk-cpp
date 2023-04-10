@@ -22,11 +22,14 @@
 #include <aws/marketplace-catalog/MarketplaceCatalogErrorMarshaller.h>
 #include <aws/marketplace-catalog/MarketplaceCatalogEndpointProvider.h>
 #include <aws/marketplace-catalog/model/CancelChangeSetRequest.h>
+#include <aws/marketplace-catalog/model/DeleteResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/DescribeChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/DescribeEntityRequest.h>
+#include <aws/marketplace-catalog/model/GetResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/ListChangeSetsRequest.h>
 #include <aws/marketplace-catalog/model/ListEntitiesRequest.h>
 #include <aws/marketplace-catalog/model/ListTagsForResourceRequest.h>
+#include <aws/marketplace-catalog/model/PutResourcePolicyRequest.h>
 #include <aws/marketplace-catalog/model/StartChangeSetRequest.h>
 #include <aws/marketplace-catalog/model/TagResourceRequest.h>
 #include <aws/marketplace-catalog/model/UntagResourceRequest.h>
@@ -177,6 +180,20 @@ CancelChangeSetOutcome MarketplaceCatalogClient::CancelChangeSet(const CancelCha
   return CancelChangeSetOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
+DeleteResourcePolicyOutcome MarketplaceCatalogClient::DeleteResourcePolicy(const DeleteResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResourcePolicy", "Required field: ResourceArn, is not set");
+    return DeleteResourcePolicyOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteResourcePolicy");
+  return DeleteResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeChangeSetOutcome MarketplaceCatalogClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeChangeSet, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -215,6 +232,20 @@ DescribeEntityOutcome MarketplaceCatalogClient::DescribeEntity(const DescribeEnt
   return DescribeEntityOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetResourcePolicyOutcome MarketplaceCatalogClient::GetResourcePolicy(const GetResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourcePolicy", "Required field: ResourceArn, is not set");
+    return GetResourcePolicyOutcome(Aws::Client::AWSError<MarketplaceCatalogErrors>(MarketplaceCatalogErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/GetResourcePolicy");
+  return GetResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListChangeSetsOutcome MarketplaceCatalogClient::ListChangeSets(const ListChangeSetsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListChangeSets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -240,6 +271,15 @@ ListTagsForResourceOutcome MarketplaceCatalogClient::ListTagsForResource(const L
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/ListTagsForResource");
   return ListTagsForResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutResourcePolicyOutcome MarketplaceCatalogClient::PutResourcePolicy(const PutResourcePolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutResourcePolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/PutResourcePolicy");
+  return PutResourcePolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartChangeSetOutcome MarketplaceCatalogClient::StartChangeSet(const StartChangeSetRequest& request) const

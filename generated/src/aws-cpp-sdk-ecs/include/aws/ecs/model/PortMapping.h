@@ -110,9 +110,9 @@ namespace Model
      * <code>hostPort</code> is set to the same value as the
      * <code>containerPort</code>. This is a static mapping strategy.</p> </li> <li>
      * <p>For containers in a task with the <code>bridge</code> network mode, the
-     * Amazon ECS agent finds open ports on the host and automaticaly binds them to the
-     * container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If you
-     * use containers in a task with the <code>awsvpc</code> or <code>host</code>
+     * Amazon ECS agent finds open ports on the host and automatically binds them to
+     * the container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If
+     * you use containers in a task with the <code>awsvpc</code> or <code>host</code>
      * network mode, the <code>hostPort</code> can either be left blank or set to the
      * same value as the <code>containerPort</code>.</p> <p>If you use containers in a
      * task with the <code>bridge</code> network mode, you can specify a non-reserved
@@ -147,9 +147,9 @@ namespace Model
      * <code>hostPort</code> is set to the same value as the
      * <code>containerPort</code>. This is a static mapping strategy.</p> </li> <li>
      * <p>For containers in a task with the <code>bridge</code> network mode, the
-     * Amazon ECS agent finds open ports on the host and automaticaly binds them to the
-     * container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If you
-     * use containers in a task with the <code>awsvpc</code> or <code>host</code>
+     * Amazon ECS agent finds open ports on the host and automatically binds them to
+     * the container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If
+     * you use containers in a task with the <code>awsvpc</code> or <code>host</code>
      * network mode, the <code>hostPort</code> can either be left blank or set to the
      * same value as the <code>containerPort</code>.</p> <p>If you use containers in a
      * task with the <code>bridge</code> network mode, you can specify a non-reserved
@@ -184,9 +184,9 @@ namespace Model
      * <code>hostPort</code> is set to the same value as the
      * <code>containerPort</code>. This is a static mapping strategy.</p> </li> <li>
      * <p>For containers in a task with the <code>bridge</code> network mode, the
-     * Amazon ECS agent finds open ports on the host and automaticaly binds them to the
-     * container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If you
-     * use containers in a task with the <code>awsvpc</code> or <code>host</code>
+     * Amazon ECS agent finds open ports on the host and automatically binds them to
+     * the container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If
+     * you use containers in a task with the <code>awsvpc</code> or <code>host</code>
      * network mode, the <code>hostPort</code> can either be left blank or set to the
      * same value as the <code>containerPort</code>.</p> <p>If you use containers in a
      * task with the <code>bridge</code> network mode, you can specify a non-reserved
@@ -221,9 +221,9 @@ namespace Model
      * <code>hostPort</code> is set to the same value as the
      * <code>containerPort</code>. This is a static mapping strategy.</p> </li> <li>
      * <p>For containers in a task with the <code>bridge</code> network mode, the
-     * Amazon ECS agent finds open ports on the host and automaticaly binds them to the
-     * container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If you
-     * use containers in a task with the <code>awsvpc</code> or <code>host</code>
+     * Amazon ECS agent finds open ports on the host and automatically binds them to
+     * the container ports. This is a dynamic mapping strategy.</p> </li> </ul> <p>If
+     * you use containers in a task with the <code>awsvpc</code> or <code>host</code>
      * network mode, the <code>hostPort</code> can either be left blank or set to the
      * same value as the <code>containerPort</code>.</p> <p>If you use containers in a
      * task with the <code>bridge</code> network mode, you can specify a non-reserved

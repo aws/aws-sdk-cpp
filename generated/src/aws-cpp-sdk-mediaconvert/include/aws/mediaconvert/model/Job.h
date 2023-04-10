@@ -22,6 +22,7 @@
 #include <aws/mediaconvert/model/HopDestination.h>
 #include <aws/mediaconvert/model/OutputGroupDetail.h>
 #include <aws/mediaconvert/model/QueueTransition.h>
+#include <aws/mediaconvert/model/WarningGroup.h>
 #include <utility>
 
 namespace Aws
@@ -260,6 +261,87 @@ namespace Model
      * Elemental MediaConvert costs on any billing report that you set up.
      */
     inline Job& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
+
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline Job& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline Job& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
+
+    /**
+     * Prevent duplicate jobs from being created and ensure idempotency for your
+     * requests. A client request token can be any string that includes up to 64 ASCII
+     * characters. If you reuse a client request token within one minute of a
+     * successful request, the API returns the job details of the original request
+     * instead. For more information see
+     * https://docs.aws.amazon.com/mediaconvert/latest/apireference/idempotency.html.
+     */
+    inline Job& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
 
     /**
@@ -1136,6 +1218,63 @@ namespace Model
      */
     inline Job& AddUserMetadata(const char* key, const char* value) { m_userMetadataHasBeenSet = true; m_userMetadata.emplace(key, value); return *this; }
 
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline const Aws::Vector<WarningGroup>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline bool WarningsHasBeenSet() const { return m_warningsHasBeenSet; }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline void SetWarnings(const Aws::Vector<WarningGroup>& value) { m_warningsHasBeenSet = true; m_warnings = value; }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline void SetWarnings(Aws::Vector<WarningGroup>&& value) { m_warningsHasBeenSet = true; m_warnings = std::move(value); }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline Job& WithWarnings(const Aws::Vector<WarningGroup>& value) { SetWarnings(value); return *this;}
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline Job& WithWarnings(Aws::Vector<WarningGroup>&& value) { SetWarnings(std::move(value)); return *this;}
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline Job& AddWarnings(const WarningGroup& value) { m_warningsHasBeenSet = true; m_warnings.push_back(value); return *this; }
+
+    /**
+     * Contains any warning messages for the job. Use to help identify potential issues
+     * with your input, output, or job. For more information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/warning_codes.html
+     */
+    inline Job& AddWarnings(WarningGroup&& value) { m_warningsHasBeenSet = true; m_warnings.push_back(std::move(value)); return *this; }
+
   private:
 
     AccelerationSettings m_accelerationSettings;
@@ -1149,6 +1288,9 @@ namespace Model
 
     BillingTagsSource m_billingTagsSource;
     bool m_billingTagsSourceHasBeenSet = false;
+
+    Aws::String m_clientRequestToken;
+    bool m_clientRequestTokenHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
@@ -1212,6 +1354,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_userMetadata;
     bool m_userMetadataHasBeenSet = false;
+
+    Aws::Vector<WarningGroup> m_warnings;
+    bool m_warningsHasBeenSet = false;
   };
 
 } // namespace Model

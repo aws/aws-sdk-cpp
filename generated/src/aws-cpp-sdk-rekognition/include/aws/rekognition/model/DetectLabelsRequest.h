@@ -226,7 +226,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline const DetectLabelsSettings& GetSettings() const{ return m_settings; }
 
@@ -235,7 +237,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
@@ -244,7 +248,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline void SetSettings(const DetectLabelsSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
@@ -253,7 +259,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline void SetSettings(DetectLabelsSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
@@ -262,7 +270,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline DetectLabelsRequest& WithSettings(const DetectLabelsSettings& value) { SetSettings(value); return *this;}
 
@@ -271,7 +281,9 @@ namespace Model
      * properties. Specified filters can be inclusive, exclusive, or a combination of
      * both. Filters can be used for individual labels or label categories. The exact
      * label names or label categories must be supplied. For a full list of labels and
-     * label categories, see LINK HERE.</p>
+     * label categories, see <a
+     * href="https://docs.aws.amazon.com/rekognition/latest/dg/labels.html">Detecting
+     * labels</a>.</p>
      */
     inline DetectLabelsRequest& WithSettings(DetectLabelsSettings&& value) { SetSettings(std::move(value)); return *this;}
 

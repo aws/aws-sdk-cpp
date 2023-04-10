@@ -198,30 +198,30 @@ namespace Model
 
 
     /**
-     * <p>Whether or not the execute command functionality is enabled for the task. If
-     * <code>true</code>, this enables execute command functionality on all containers
-     * in the task.</p>
+     * <p>Whether or not the execute command functionality is turned on for the task.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the task.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Whether or not the execute command functionality is enabled for the task. If
-     * <code>true</code>, this enables execute command functionality on all containers
-     * in the task.</p>
+     * <p>Whether or not the execute command functionality is turned on for the task.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the task.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Whether or not the execute command functionality is enabled for the task. If
-     * <code>true</code>, this enables execute command functionality on all containers
-     * in the task.</p>
+     * <p>Whether or not the execute command functionality is turned on for the task.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the task.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Whether or not the execute command functionality is enabled for the task. If
-     * <code>true</code>, this enables execute command functionality on all containers
-     * in the task.</p>
+     * <p>Whether or not the execute command functionality is turned on for the task.
+     * If <code>true</code>, this enables execute command functionality on all
+     * containers in the task.</p>
      */
     inline StartTaskRequest& WithEnableExecuteCommand(bool value) { SetEnableExecuteCommand(value); return *this;}
 

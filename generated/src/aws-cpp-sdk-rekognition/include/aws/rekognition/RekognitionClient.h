@@ -292,7 +292,9 @@ namespace Rekognition
          * the current status, call <a>DescribeProjectVersions</a> and check the value of
          * <code>Status</code> in the <a>ProjectVersionDescription</a> object. The copy
          * operation has finished when the value of <code>Status</code> is
-         * <code>COPYING_COMPLETED</code>.</p><p><h3>See Also:</h3>   <a
+         * <code>COPYING_COMPLETED</code>.</p> <p>This operation requires permissions to
+         * perform the <code>rekognition:CopyProjectVersion</code> action.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CopyProjectVersion">AWS
          * API Reference</a></p>
          */
@@ -397,6 +399,39 @@ namespace Rekognition
         }
 
         /**
+         * <p>This API operation initiates a Face Liveness session. It returns a
+         * <code>SessionId</code>, which you can use to start streaming Face Liveness video
+         * and get the results for a Face Liveness session. You can use the
+         * <code>OutputConfig</code> option in the Settings parameter to provide an Amazon
+         * S3 bucket location. The Amazon S3 bucket stores reference images and audit
+         * images. You can use <code>AuditImagesLimit</code> to limit of audit images
+         * returned. This number is between 0 and 4. By default, it is set to 0. The limit
+         * is best effort and based on the duration of the selfie-video. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFaceLivenessSessionOutcome CreateFaceLivenessSession(const Model::CreateFaceLivenessSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateFaceLivenessSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateFaceLivenessSessionRequestT = Model::CreateFaceLivenessSessionRequest>
+        Model::CreateFaceLivenessSessionOutcomeCallable CreateFaceLivenessSessionCallable(const CreateFaceLivenessSessionRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::CreateFaceLivenessSession, request);
+        }
+
+        /**
+         * An Async wrapper for CreateFaceLivenessSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateFaceLivenessSessionRequestT = Model::CreateFaceLivenessSessionRequest>
+        void CreateFaceLivenessSessionAsync(const CreateFaceLivenessSessionRequestT& request, const CreateFaceLivenessSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::CreateFaceLivenessSession, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new Amazon Rekognition Custom Labels project. A project is a group
          * of resources (datasets, model versions) that you use to create and manage Amazon
          * Rekognition Custom Labels models. </p> <p>This operation requires permissions to
@@ -483,19 +518,21 @@ namespace Rekognition
          * detecting faces and detecting labels.</p> <ul> <li> <p>If you are creating a
          * stream processor for detecting faces, you provide as input a Kinesis video
          * stream (<code>Input</code>) and a Kinesis data stream (<code>Output</code>)
-         * stream. You also specify the face recognition criteria in <code>Settings</code>.
-         * For example, the collection containing faces that you want to recognize. After
-         * you have finished analyzing a streaming video, use <a>StopStreamProcessor</a> to
-         * stop processing.</p> </li> <li> <p>If you are creating a stream processor to
-         * detect labels, you provide as input a Kinesis video stream (<code>Input</code>),
-         * Amazon S3 bucket information (<code>Output</code>), and an Amazon SNS topic ARN
+         * stream for receiving the output. You must use the <code>FaceSearch</code> option
+         * in <code>Settings</code>, specifying the collection that contains the faces you
+         * want to recognize. After you have finished analyzing a streaming video, use
+         * <a>StopStreamProcessor</a> to stop processing.</p> </li> <li> <p>If you are
+         * creating a stream processor to detect labels, you provide as input a Kinesis
+         * video stream (<code>Input</code>), Amazon S3 bucket information
+         * (<code>Output</code>), and an Amazon SNS topic ARN
          * (<code>NotificationChannel</code>). You can also provide a KMS key ID to encrypt
-         * the data sent to your Amazon S3 bucket. You specify what you want to detect in
-         * <code>ConnectedHomeSettings</code>, such as people, packages and people, or
-         * pets, people, and packages. You can also specify where in the frame you want
-         * Amazon Rekognition to monitor with <code>RegionsOfInterest</code>. When you run
-         * the <a>StartStreamProcessor</a> operation on a label detection stream processor,
-         * you input start and stop information to determine the length of the processing
+         * the data sent to your Amazon S3 bucket. You specify what you want to detect by
+         * using the <code>ConnectedHome</code> option in settings, and selecting one of
+         * the following: <code>PERSON</code>, <code>PET</code>, <code>PACKAGE</code>,
+         * <code>ALL</code> You can also specify where in the frame you want Amazon
+         * Rekognition to monitor with <code>RegionsOfInterest</code>. When you run the
+         * <a>StartStreamProcessor</a> operation on a label detection stream processor, you
+         * input start and stop information to determine the length of the processing
          * time.</p> </li> </ul> <p> Use <code>Name</code> to assign an identifier for the
          * stream processor. You use <code>Name</code> to manage the stream processor. For
          * example, you can start processing the source video by calling
@@ -654,7 +691,9 @@ namespace Rekognition
         /**
          * <p>Deletes an existing project policy.</p> <p>To get a list of project policies
          * attached to a project, call <a>ListProjectPolicies</a>. To attach a project
-         * policy to a project, call <a>PutProjectPolicy</a>.</p><p><h3>See Also:</h3>   <a
+         * policy to a project, call <a>PutProjectPolicy</a>.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:DeleteProjectPolicy</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DeleteProjectPolicy">AWS
          * API Reference</a></p>
          */
@@ -1002,7 +1041,7 @@ namespace Rekognition
          * You can also add the <code>MaxLabels</code> parameter to limit the number of
          * labels returned. The default and upper limit is 1000 labels.</p> <p> <b>Response
          * Elements</b> </p> <p> For each object, scene, and concept the API returns one or
-         * more labels. The API returns the following types of information regarding
+         * more labels. The API returns the following types of information about
          * labels:</p> <ul> <li> <p> Name - The name of the detected label. </p> </li> <li>
          * <p> Confidence - The level of confidence in the label assigned to a detected
          * object. </p> </li> <li> <p> Parents - The ancestor labels for a detected label.
@@ -1042,9 +1081,9 @@ namespace Rekognition
          * identifies the flower as a tulip.</p>  <p>If the object detected is a
          * person, the operation doesn't provide the same facial details that the
          * <a>DetectFaces</a> operation provides.</p>  <p>This is a stateless API
-         * operation. That is, the operation does not persist any data.</p> <p>This
-         * operation requires permissions to perform the
-         * <code>rekognition:DetectLabels</code> action. </p><p><h3>See Also:</h3>   <a
+         * operation that doesn't return any data.</p> <p>This operation requires
+         * permissions to perform the <code>rekognition:DetectLabels</code> action.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/DetectLabels">AWS
          * API Reference</a></p>
          */
@@ -1435,6 +1474,37 @@ namespace Rekognition
         void GetFaceDetectionAsync(const GetFaceDetectionRequestT& request, const GetFaceDetectionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&RekognitionClient::GetFaceDetection, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the results of a specific Face Liveness session. It requires the
+         * <code>sessionId</code> as input, which was created using
+         * <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness
+         * confidence score, a reference image that includes a face bounding box, and audit
+         * images that also contain face bounding boxes. The Face Liveness confidence score
+         * ranges from 0 to 100. The reference image can optionally be
+         * returned.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/GetFaceLivenessSessionResults">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFaceLivenessSessionResultsOutcome GetFaceLivenessSessionResults(const Model::GetFaceLivenessSessionResultsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFaceLivenessSessionResults that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFaceLivenessSessionResultsRequestT = Model::GetFaceLivenessSessionResultsRequest>
+        Model::GetFaceLivenessSessionResultsOutcomeCallable GetFaceLivenessSessionResultsCallable(const GetFaceLivenessSessionResultsRequestT& request) const
+        {
+            return SubmitCallable(&RekognitionClient::GetFaceLivenessSessionResults, request);
+        }
+
+        /**
+         * An Async wrapper for GetFaceLivenessSessionResults that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFaceLivenessSessionResultsRequestT = Model::GetFaceLivenessSessionResultsRequest>
+        void GetFaceLivenessSessionResultsAsync(const GetFaceLivenessSessionResultsRequestT& request, const GetFaceLivenessSessionResultsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&RekognitionClient::GetFaceLivenessSessionResults, request, handler, context);
         }
 
         /**
@@ -1942,8 +2012,9 @@ namespace Rekognition
         /**
          * <p>Gets a list of the project policies attached to a project.</p> <p>To attach a
          * project policy to a project, call <a>PutProjectPolicy</a>. To remove a project
-         * policy from a project, call <a>DeleteProjectPolicy</a>.</p><p><h3>See Also:</h3>
-         * <a
+         * policy from a project, call <a>DeleteProjectPolicy</a>.</p> <p>This operation
+         * requires permissions to perform the <code>rekognition:ListProjectPolicies</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/ListProjectPolicies">AWS
          * API Reference</a></p>
          */
@@ -2035,7 +2106,9 @@ namespace Rekognition
          * <p>To remove a project policy from a project, call <a>DeleteProjectPolicy</a>.
          * To get a list of project policies attached to a project, call
          * <a>ListProjectPolicies</a>. </p> <p>You copy a model version by calling
-         * <a>CopyProjectVersion</a>.</p><p><h3>See Also:</h3>   <a
+         * <a>CopyProjectVersion</a>.</p> <p>This operation requires permissions to perform
+         * the <code>rekognition:PutProjectPolicy</code> action.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PutProjectPolicy">AWS
          * API Reference</a></p>
          */
@@ -2593,8 +2666,9 @@ namespace Rekognition
 
         /**
          * <p>Stops a running model. The operation might take a while to complete. To check
-         * the current status, call <a>DescribeProjectVersions</a>. </p><p><h3>See
-         * Also:</h3>   <a
+         * the current status, call <a>DescribeProjectVersions</a>. </p> <p>This operation
+         * requires permissions to perform the <code>rekognition:StopProjectVersion</code>
+         * action.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/StopProjectVersion">AWS
          * API Reference</a></p>
          */

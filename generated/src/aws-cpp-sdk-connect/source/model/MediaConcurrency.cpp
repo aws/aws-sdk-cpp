@@ -22,7 +22,8 @@ MediaConcurrency::MediaConcurrency() :
     m_channel(Channel::NOT_SET),
     m_channelHasBeenSet(false),
     m_concurrency(0),
-    m_concurrencyHasBeenSet(false)
+    m_concurrencyHasBeenSet(false),
+    m_crossChannelBehaviorHasBeenSet(false)
 {
 }
 
@@ -30,7 +31,8 @@ MediaConcurrency::MediaConcurrency(JsonView jsonValue) :
     m_channel(Channel::NOT_SET),
     m_channelHasBeenSet(false),
     m_concurrency(0),
-    m_concurrencyHasBeenSet(false)
+    m_concurrencyHasBeenSet(false),
+    m_crossChannelBehaviorHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -51,6 +53,13 @@ MediaConcurrency& MediaConcurrency::operator =(JsonView jsonValue)
     m_concurrencyHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CrossChannelBehavior"))
+  {
+    m_crossChannelBehavior = jsonValue.GetObject("CrossChannelBehavior");
+
+    m_crossChannelBehaviorHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -66,6 +75,12 @@ JsonValue MediaConcurrency::Jsonize() const
   if(m_concurrencyHasBeenSet)
   {
    payload.WithInteger("Concurrency", m_concurrency);
+
+  }
+
+  if(m_crossChannelBehaviorHasBeenSet)
+  {
+   payload.WithObject("CrossChannelBehavior", m_crossChannelBehavior.Jsonize());
 
   }
 

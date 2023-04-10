@@ -20,7 +20,8 @@ namespace Model
     taskLongArnFormat,
     containerInstanceLongArnFormat,
     awsvpcTrunking,
-    containerInsights
+    containerInsights,
+    fargateFIPSMode
   };
 
 namespace SettingNameMapper

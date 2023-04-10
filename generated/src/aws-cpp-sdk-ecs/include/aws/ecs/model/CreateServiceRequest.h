@@ -176,7 +176,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
 
@@ -186,7 +189,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
@@ -196,7 +202,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
@@ -206,7 +215,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline void SetTaskDefinition(Aws::String&& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = std::move(value); }
 
@@ -216,7 +228,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline void SetTaskDefinition(const char* value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition.assign(value); }
 
@@ -226,7 +241,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const Aws::String& value) { SetTaskDefinition(value); return *this;}
 
@@ -236,7 +254,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(Aws::String&& value) { SetTaskDefinition(std::move(value)); return *this;}
 
@@ -246,7 +267,10 @@ namespace Model
      * service. If a <code>revision</code> isn't specified, the latest
      * <code>ACTIVE</code> revision is used.</p> <p>A task definition must be specified
      * if the service uses either the <code>ECS</code> or <code>CODE_DEPLOY</code>
-     * deployment controllers.</p>
+     * deployment controllers.</p> <p>For more information about deployment types, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+     * ECS deployment types</a>.</p>
      */
     inline CreateServiceRequest& WithTaskDefinition(const char* value) { SetTaskDefinition(value); return *this;}
 
@@ -2012,28 +2036,28 @@ namespace Model
 
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
+     * <p>Determines whether the execute command functionality is turned on for the
      * service. If <code>true</code>, this enables execute command functionality on all
      * containers in the service tasks.</p>
      */
     inline bool GetEnableExecuteCommand() const{ return m_enableExecuteCommand; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
+     * <p>Determines whether the execute command functionality is turned on for the
      * service. If <code>true</code>, this enables execute command functionality on all
      * containers in the service tasks.</p>
      */
     inline bool EnableExecuteCommandHasBeenSet() const { return m_enableExecuteCommandHasBeenSet; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
+     * <p>Determines whether the execute command functionality is turned on for the
      * service. If <code>true</code>, this enables execute command functionality on all
      * containers in the service tasks.</p>
      */
     inline void SetEnableExecuteCommand(bool value) { m_enableExecuteCommandHasBeenSet = true; m_enableExecuteCommand = value; }
 
     /**
-     * <p>Determines whether the execute command functionality is enabled for the
+     * <p>Determines whether the execute command functionality is turned on for the
      * service. If <code>true</code>, this enables execute command functionality on all
      * containers in the service tasks.</p>
      */

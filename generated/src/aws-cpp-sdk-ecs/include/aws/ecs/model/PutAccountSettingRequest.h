@@ -44,8 +44,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
@@ -58,8 +60,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -72,8 +76,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -86,8 +92,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -100,8 +108,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline PutAccountSettingRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
@@ -114,8 +124,10 @@ namespace Model
      * ID for your Amazon ECS container instances is affected. If
      * <code>awsvpcTrunking</code> is specified, the elastic network interface (ENI)
      * limit for your Amazon ECS container instances is affected. If
-     * <code>containerInsights</code> is specified, the default setting for CloudWatch
-     * Container Insights for your clusters is affected.</p>
+     * <code>containerInsights</code> is specified, the default setting for Amazon Web
+     * Services CloudWatch Container Insights for your clusters is affected. If
+     * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
+     * affected.</p>
      */
     inline PutAccountSettingRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 
