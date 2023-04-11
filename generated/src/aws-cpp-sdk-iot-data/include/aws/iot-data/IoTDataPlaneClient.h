@@ -119,7 +119,7 @@ namespace IoTDataPlane
          * <p>This action returns the message payload of the retained message, which can
          * incur messaging costs. To list only the topic names of the retained messages,
          * call <a
-         * href="/iot/latest/developerguide/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_ListRetainedMessages.html">ListRetainedMessages</a>.</p>
          * <p>Requires permission to access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">GetRetainedMessage</a>
          * action.</p> <p>For more information about messaging costs, see <a
@@ -212,7 +212,7 @@ namespace IoTDataPlane
          * messages. It doesn't return any message payloads. Although this action doesn't
          * return a message payload, it can still incur messaging costs.</p> <p>To get the
          * message payload of a retained message, call <a
-         * href="https://docs.aws.amazon.com/iot/latest/developerguide/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
+         * href="https://docs.aws.amazon.com/iot/latest/apireference/API_iotdata_GetRetainedMessage.html">GetRetainedMessage</a>
          * with the topic name of the retained message.</p> <p>Requires permission to
          * access the <a
          * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiotfleethubfordevicemanagement.html#awsiotfleethubfordevicemanagement-actions-as-permissions">ListRetainedMessages</a>

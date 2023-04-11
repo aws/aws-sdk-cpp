@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
@@ -196,7 +196,7 @@ namespace Model
     /**
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
-     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito
+     * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
      * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
      * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
      * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT

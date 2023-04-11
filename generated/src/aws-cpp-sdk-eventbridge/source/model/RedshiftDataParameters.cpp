@@ -25,7 +25,8 @@ RedshiftDataParameters::RedshiftDataParameters() :
     m_sqlHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_withEvent(false),
-    m_withEventHasBeenSet(false)
+    m_withEventHasBeenSet(false),
+    m_sqlsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ RedshiftDataParameters::RedshiftDataParameters(JsonView jsonValue) :
     m_sqlHasBeenSet(false),
     m_statementNameHasBeenSet(false),
     m_withEvent(false),
-    m_withEventHasBeenSet(false)
+    m_withEventHasBeenSet(false),
+    m_sqlsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +87,16 @@ RedshiftDataParameters& RedshiftDataParameters::operator =(JsonView jsonValue)
     m_withEventHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Sqls"))
+  {
+    Aws::Utils::Array<JsonView> sqlsJsonList = jsonValue.GetArray("Sqls");
+    for(unsigned sqlsIndex = 0; sqlsIndex < sqlsJsonList.GetLength(); ++sqlsIndex)
+    {
+      m_sqls.push_back(sqlsJsonList[sqlsIndex].AsString());
+    }
+    m_sqlsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -125,6 +137,17 @@ JsonValue RedshiftDataParameters::Jsonize() const
   if(m_withEventHasBeenSet)
   {
    payload.WithBool("WithEvent", m_withEvent);
+
+  }
+
+  if(m_sqlsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sqlsJsonList(m_sqls.size());
+   for(unsigned sqlsIndex = 0; sqlsIndex < sqlsJsonList.GetLength(); ++sqlsIndex)
+   {
+     sqlsJsonList[sqlsIndex].AsString(m_sqls[sqlsIndex]);
+   }
+   payload.WithArray("Sqls", std::move(sqlsJsonList));
 
   }
 

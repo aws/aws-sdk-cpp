@@ -136,6 +136,52 @@ namespace Model
     inline GetRetainedMessageResult& WithLastModifiedTime(long long value) { SetLastModifiedTime(value); return *this;}
 
 
+    /**
+     * <p>A base64-encoded JSON string that includes an array of JSON objects, or null
+     * if the retained message doesn't include any user properties.</p> <p>The
+     * following example <code>userProperties</code> parameter is a JSON string that
+     * represents two user properties. Note that it will be base64-encoded:</p> <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetUserProperties() const{ return m_userProperties; }
+
+    /**
+     * <p>A base64-encoded JSON string that includes an array of JSON objects, or null
+     * if the retained message doesn't include any user properties.</p> <p>The
+     * following example <code>userProperties</code> parameter is a JSON string that
+     * represents two user properties. Note that it will be base64-encoded:</p> <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+     */
+    inline void SetUserProperties(const Aws::Utils::ByteBuffer& value) { m_userProperties = value; }
+
+    /**
+     * <p>A base64-encoded JSON string that includes an array of JSON objects, or null
+     * if the retained message doesn't include any user properties.</p> <p>The
+     * following example <code>userProperties</code> parameter is a JSON string that
+     * represents two user properties. Note that it will be base64-encoded:</p> <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+     */
+    inline void SetUserProperties(Aws::Utils::ByteBuffer&& value) { m_userProperties = std::move(value); }
+
+    /**
+     * <p>A base64-encoded JSON string that includes an array of JSON objects, or null
+     * if the retained message doesn't include any user properties.</p> <p>The
+     * following example <code>userProperties</code> parameter is a JSON string that
+     * represents two user properties. Note that it will be base64-encoded:</p> <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+     */
+    inline GetRetainedMessageResult& WithUserProperties(const Aws::Utils::ByteBuffer& value) { SetUserProperties(value); return *this;}
+
+    /**
+     * <p>A base64-encoded JSON string that includes an array of JSON objects, or null
+     * if the retained message doesn't include any user properties.</p> <p>The
+     * following example <code>userProperties</code> parameter is a JSON string that
+     * represents two user properties. Note that it will be base64-encoded:</p> <p>
+     * <code>[{"deviceName": "alpha"}, {"deviceCnt": "45"}]</code> </p>
+     */
+    inline GetRetainedMessageResult& WithUserProperties(Aws::Utils::ByteBuffer&& value) { SetUserProperties(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -166,6 +212,8 @@ namespace Model
     int m_qos;
 
     long long m_lastModifiedTime;
+
+    Aws::Utils::ByteBuffer m_userProperties;
 
     Aws::String m_requestId;
   };

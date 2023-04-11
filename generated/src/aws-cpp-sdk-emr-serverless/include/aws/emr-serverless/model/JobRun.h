@@ -691,6 +691,31 @@ namespace Model
      */
     inline JobRun& WithTotalExecutionDurationSeconds(int value) { SetTotalExecutionDurationSeconds(value); return *this;}
 
+
+    /**
+     * <p>Maximum duration for the job run to run. If the job run runs beyond this
+     * duration, it will be automatically cancelled.</p>
+     */
+    inline long long GetExecutionTimeoutMinutes() const{ return m_executionTimeoutMinutes; }
+
+    /**
+     * <p>Maximum duration for the job run to run. If the job run runs beyond this
+     * duration, it will be automatically cancelled.</p>
+     */
+    inline bool ExecutionTimeoutMinutesHasBeenSet() const { return m_executionTimeoutMinutesHasBeenSet; }
+
+    /**
+     * <p>Maximum duration for the job run to run. If the job run runs beyond this
+     * duration, it will be automatically cancelled.</p>
+     */
+    inline void SetExecutionTimeoutMinutes(long long value) { m_executionTimeoutMinutesHasBeenSet = true; m_executionTimeoutMinutes = value; }
+
+    /**
+     * <p>Maximum duration for the job run to run. If the job run runs beyond this
+     * duration, it will be automatically cancelled.</p>
+     */
+    inline JobRun& WithExecutionTimeoutMinutes(long long value) { SetExecutionTimeoutMinutes(value); return *this;}
+
   private:
 
     Aws::String m_applicationId;
@@ -743,6 +768,9 @@ namespace Model
 
     int m_totalExecutionDurationSeconds;
     bool m_totalExecutionDurationSecondsHasBeenSet = false;
+
+    long long m_executionTimeoutMinutes;
+    bool m_executionTimeoutMinutesHasBeenSet = false;
   };
 
 } // namespace Model

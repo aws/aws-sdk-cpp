@@ -36,7 +36,8 @@ WebACL::WebACL() :
     m_customResponseBodiesHasBeenSet(false),
     m_captchaConfigHasBeenSet(false),
     m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false)
+    m_tokenDomainsHasBeenSet(false),
+    m_associationConfigHasBeenSet(false)
 {
 }
 
@@ -58,7 +59,8 @@ WebACL::WebACL(JsonView jsonValue) :
     m_customResponseBodiesHasBeenSet(false),
     m_captchaConfigHasBeenSet(false),
     m_challengeConfigHasBeenSet(false),
-    m_tokenDomainsHasBeenSet(false)
+    m_tokenDomainsHasBeenSet(false),
+    m_associationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -192,6 +194,13 @@ WebACL& WebACL::operator =(JsonView jsonValue)
     m_tokenDomainsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AssociationConfig"))
+  {
+    m_associationConfig = jsonValue.GetObject("AssociationConfig");
+
+    m_associationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -317,6 +326,12 @@ JsonValue WebACL::Jsonize() const
      tokenDomainsJsonList[tokenDomainsIndex].AsString(m_tokenDomains[tokenDomainsIndex]);
    }
    payload.WithArray("TokenDomains", std::move(tokenDomainsJsonList));
+
+  }
+
+  if(m_associationConfigHasBeenSet)
+  {
+   payload.WithObject("AssociationConfig", m_associationConfig.Jsonize());
 
   }
 
