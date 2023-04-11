@@ -37,7 +37,9 @@ JobRun::JobRun() :
     m_totalResourceUtilizationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_totalExecutionDurationSeconds(0),
-    m_totalExecutionDurationSecondsHasBeenSet(false)
+    m_totalExecutionDurationSecondsHasBeenSet(false),
+    m_executionTimeoutMinutes(0),
+    m_executionTimeoutMinutesHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ JobRun::JobRun(JsonView jsonValue) :
     m_totalResourceUtilizationHasBeenSet(false),
     m_networkConfigurationHasBeenSet(false),
     m_totalExecutionDurationSeconds(0),
-    m_totalExecutionDurationSecondsHasBeenSet(false)
+    m_totalExecutionDurationSecondsHasBeenSet(false),
+    m_executionTimeoutMinutes(0),
+    m_executionTimeoutMinutesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -189,6 +193,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_totalExecutionDurationSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("executionTimeoutMinutes"))
+  {
+    m_executionTimeoutMinutes = jsonValue.GetInt64("executionTimeoutMinutes");
+
+    m_executionTimeoutMinutesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -297,6 +308,12 @@ JsonValue JobRun::Jsonize() const
   if(m_totalExecutionDurationSecondsHasBeenSet)
   {
    payload.WithInteger("totalExecutionDurationSeconds", m_totalExecutionDurationSeconds);
+
+  }
+
+  if(m_executionTimeoutMinutesHasBeenSet)
+  {
+   payload.WithInt64("executionTimeoutMinutes", m_executionTimeoutMinutes);
 
   }
 

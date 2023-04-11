@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/eventbridge/EventBridge_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -308,6 +309,34 @@ namespace Model
      */
     inline RedshiftDataParameters& WithWithEvent(bool value) { SetWithEvent(value); return *this;}
 
+
+    
+    inline const Aws::Vector<Aws::String>& GetSqls() const{ return m_sqls; }
+
+    
+    inline bool SqlsHasBeenSet() const { return m_sqlsHasBeenSet; }
+
+    
+    inline void SetSqls(const Aws::Vector<Aws::String>& value) { m_sqlsHasBeenSet = true; m_sqls = value; }
+
+    
+    inline void SetSqls(Aws::Vector<Aws::String>&& value) { m_sqlsHasBeenSet = true; m_sqls = std::move(value); }
+
+    
+    inline RedshiftDataParameters& WithSqls(const Aws::Vector<Aws::String>& value) { SetSqls(value); return *this;}
+
+    
+    inline RedshiftDataParameters& WithSqls(Aws::Vector<Aws::String>&& value) { SetSqls(std::move(value)); return *this;}
+
+    
+    inline RedshiftDataParameters& AddSqls(const Aws::String& value) { m_sqlsHasBeenSet = true; m_sqls.push_back(value); return *this; }
+
+    
+    inline RedshiftDataParameters& AddSqls(Aws::String&& value) { m_sqlsHasBeenSet = true; m_sqls.push_back(std::move(value)); return *this; }
+
+    
+    inline RedshiftDataParameters& AddSqls(const char* value) { m_sqlsHasBeenSet = true; m_sqls.push_back(value); return *this; }
+
   private:
 
     Aws::String m_secretManagerArn;
@@ -327,6 +356,9 @@ namespace Model
 
     bool m_withEvent;
     bool m_withEventHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_sqls;
+    bool m_sqlsHasBeenSet = false;
   };
 
 } // namespace Model

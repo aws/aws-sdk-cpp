@@ -86,12 +86,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -104,12 +103,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -122,12 +120,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -140,12 +137,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -158,12 +154,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -176,12 +171,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -194,12 +188,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a
@@ -212,12 +205,11 @@ namespace Model
     /**
      * <p>The policy to attach to the specified rule group. </p> <p>The policy
      * specifications must conform to the following:</p> <ul> <li> <p>The policy must
-     * be composed using IAM Policy version 2012-10-17 or version 2015-01-01.</p> </li>
-     * <li> <p>The policy must include specifications for <code>Effect</code>,
-     * <code>Action</code>, and <code>Principal</code>.</p> </li> <li> <p>
-     * <code>Effect</code> must specify <code>Allow</code>.</p> </li> <li> <p>
-     * <code>Action</code> must specify <code>wafv2:CreateWebACL</code>,
-     * <code>wafv2:UpdateWebACL</code>, and
+     * be composed using IAM Policy version 2012-10-17.</p> </li> <li> <p>The policy
+     * must include specifications for <code>Effect</code>, <code>Action</code>, and
+     * <code>Principal</code>.</p> </li> <li> <p> <code>Effect</code> must specify
+     * <code>Allow</code>.</p> </li> <li> <p> <code>Action</code> must specify
+     * <code>wafv2:CreateWebACL</code>, <code>wafv2:UpdateWebACL</code>, and
      * <code>wafv2:PutFirewallManagerRuleGroups</code> and may optionally specify
      * <code>wafv2:GetRuleGroup</code>. WAF rejects any extra actions or wildcard
      * actions in the policy.</p> </li> <li> <p>The policy must not include a

@@ -112,37 +112,37 @@ namespace Model
 
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline void SetArn(const Aws::String& value) { m_arn = value; }
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline void SetArn(const char* value) { m_arn.assign(value); }
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline StartJobRunResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline StartJobRunResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The output lists the execution role ARN of the job run.</p>
+     * <p>This output displays the ARN of the job run..</p>
      */
     inline StartJobRunResult& WithArn(const char* value) { SetArn(value); return *this;}
 

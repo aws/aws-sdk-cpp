@@ -45,11 +45,11 @@ namespace WAFV2
    * href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and
    * quotas</a>. </p> <ul> <li> <p>For regional applications, you can use any of the
    * endpoints in the list. A regional application can be an Application Load
-   * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon
-   * Cognito user pool, or an App Runner service. </p> </li> <li> <p>For Amazon
-   * CloudFront applications, you must use the API endpoint listed for US East (N.
-   * Virginia): us-east-1.</p> </li> </ul> <p>Alternatively, you can use one of the
-   * Amazon Web Services SDKs to access an API that's tailored to the programming
+   * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
+   * Amazon Cognito user pool, or an App Runner service. </p> </li> <li> <p>For
+   * Amazon CloudFront applications, you must use the API endpoint listed for US East
+   * (N. Virginia): us-east-1.</p> </li> </ul> <p>Alternatively, you can use one of
+   * the Amazon Web Services SDKs to access an API that's tailored to the programming
    * language or platform that you're using. For more information, see <a
    * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p> <p>We
    * currently provide two versions of the WAF API: this API and the prior versions,
@@ -123,24 +123,25 @@ namespace WAFV2
         /**
          * <p>Associates a web ACL with a regional application resource, to protect the
          * resource. A regional application can be an Application Load Balancer (ALB), an
-         * Amazon API Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool,
-         * or an App Runner service. </p> <p>For Amazon CloudFront, don't use this call.
-         * Instead, use your CloudFront distribution configuration. To associate a web ACL,
-         * in the CloudFront call <code>UpdateDistribution</code>, set the web ACL ID to
-         * the Amazon Resource Name (ARN) of the web ACL. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-         * <p>When you make changes to web ACLs or web ACL components, like rules and rule
-         * groups, WAF propagates the changes everywhere that the web ACL and its
-         * components are stored and used. Your changes are applied within seconds, but
-         * there might be a brief period of inconsistency when the changes have arrived in
-         * some places and not in others. So, for example, if you change a rule action
-         * setting, the action might be the old action in one area and the new action in
-         * another area. Or if you add an IP address to an IP set used in a blocking rule,
-         * the new address might briefly be blocked in one area while still allowed in
-         * another. This temporary inconsistency can occur when you first associate a web
-         * ACL with an Amazon Web Services resource and when you change a web ACL that is
-         * already associated with a resource. Generally, any inconsistencies of this type
-         * last only a few seconds.</p><p><h3>See Also:</h3>   <a
+         * Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user
+         * pool, or an App Runner service. </p> <p>For Amazon CloudFront, don't use this
+         * call. Instead, use your CloudFront distribution configuration. To associate a
+         * web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL
+         * ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+         * in the <i>Amazon CloudFront Developer Guide</i>. </p> <p>When you make changes
+         * to web ACLs or web ACL components, like rules and rule groups, WAF propagates
+         * the changes everywhere that the web ACL and its components are stored and used.
+         * Your changes are applied within seconds, but there might be a brief period of
+         * inconsistency when the changes have arrived in some places and not in others.
+         * So, for example, if you change a rule action setting, the action might be the
+         * old action in one area and the new action in another area. Or if you add an IP
+         * address to an IP set used in a blocking rule, the new address might briefly be
+         * blocked in one area while still allowed in another. This temporary inconsistency
+         * can occur when you first associate a web ACL with an Amazon Web Services
+         * resource and when you change a web ACL that is already associated with a
+         * resource. Generally, any inconsistencies of this type last only a few
+         * seconds.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/AssociateWebACL">AWS
          * API Reference</a></p>
          */
@@ -173,8 +174,10 @@ namespace WAFV2
          * rule type, to reflect the relative cost of each rule. Simple rules that cost
          * little to run use fewer WCUs than more complex rules that use more processing
          * power. Rule group capacity is fixed at creation, which helps users plan their
-         * web ACL WCU usage when they use a rule group. The WCU limit for web ACLs is
-         * 1,500. </p><p><h3>See Also:</h3>   <a
+         * web ACL WCU usage when they use a rule group. For more information, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/aws-waf-capacity-units.html">WAF
+         * web ACL capacity units (WCU)</a> in the <i>WAF Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CheckCapacity">AWS
          * API Reference</a></p>
          */
@@ -294,7 +297,7 @@ namespace WAFV2
          * and managed rule group. You can associate a web ACL with one or more Amazon Web
          * Services resources to protect. The resources can be an Amazon CloudFront
          * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an
-         * AppSync GraphQL API, Amazon Cognito user pool, or an App Runner service.
+         * AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
@@ -484,14 +487,15 @@ namespace WAFV2
          * regional resources, call <a>ListResourcesForWebACL</a>.</p> </li> <li> <p>For
          * Amazon CloudFront distributions, use the CloudFront call
          * <code>ListDistributionsByWebACLId</code>. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>.</p>
-         * </li> </ul> </li> <li> <p>To disassociate a resource from a web ACL, use the
-         * following calls:</p> <ul> <li> <p>For regional resources, call
-         * <a>DisassociateWebACL</a>.</p> </li> <li> <p>For Amazon CloudFront
-         * distributions, provide an empty web ACL ID in the CloudFront call
-         * <code>UpdateDistribution</code>. For information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p>
-         * </li> </ul> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_ListDistributionsByWebACLId.html">ListDistributionsByWebACLId</a>
+         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> <li> <p>To
+         * disassociate a resource from a web ACL, use the following calls:</p> <ul> <li>
+         * <p>For regional resources, call <a>DisassociateWebACL</a>.</p> </li> <li> <p>For
+         * Amazon CloudFront distributions, provide an empty web ACL ID in the CloudFront
+         * call <code>UpdateDistribution</code>. For information, see <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+         * in the <i>Amazon CloudFront API Reference</i>. </p> </li> </ul> </li> </ul>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DeleteWebACL">AWS
          * API Reference</a></p>
          */
@@ -545,13 +549,13 @@ namespace WAFV2
          * <p>Disassociates the specified regional application resource from any existing
          * web ACL association. A resource can have at most one web ACL association. A
          * regional application can be an Application Load Balancer (ALB), an Amazon API
-         * Gateway REST API, an AppSync GraphQL API, a Amazon Cognito user pool, or an App
+         * Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App
          * Runner service. </p> <p>For Amazon CloudFront, don't use this call. Instead, use
          * your CloudFront distribution configuration. To disassociate a web ACL, provide
          * an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For
          * information, see <a
-         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
+         * in the <i>Amazon CloudFront API Reference</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
          * API Reference</a></p>
          */
@@ -1617,7 +1621,7 @@ namespace WAFV2
          * group. You can associate a web ACL with one or more Amazon Web Services
          * resources to protect. The resources can be an Amazon CloudFront distribution, an
          * Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL
-         * API, Amazon Cognito user pool, or an App Runner service. </p><p><h3>See
+         * API, an Amazon Cognito user pool, or an App Runner service. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
