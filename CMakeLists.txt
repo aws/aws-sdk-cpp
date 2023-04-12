@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.15 FATAL_ERROR)
 
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
@@ -16,6 +16,7 @@ if (LEGACY_BUILD)
     if (POLICY CMP0077)
         cmake_policy(SET CMP0077 OLD) # CMP0077: option() honors normal variables. Introduced in 3.13
     endif ()
+    cmake_policy(SET CMP0091 NEW)
 
     get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
@@ -146,6 +147,12 @@ if (LEGACY_BUILD)
         set(STATIC_CRT OFF)
     else ()
         set(STATIC_CRT ON)
+    endif ()
+	
+    if (${STATIC_CRT})
+        set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>")
+    else ()
+        set(CMAKE_MSVC_RUNTIME_LIBRARY "MultiThreaded$<$<CONFIG:Debug>:Debug>DLL")
     endif ()
 
     # Add Linker search paths to RPATH so as to fix the problem where some linkers can't find cross-compiled dependent libraries in customer paths when linking executables.

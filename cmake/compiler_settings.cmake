@@ -75,18 +75,6 @@ endmacro()
 
 macro(set_msvc_flags)
     if(MSVC)
-        # Based on the FORCE_SHARED_CRT and BUILD_SHARED_LIBS options, make sure our compile/link flags bring in the right CRT library
-        # modified from gtest's version; while only the else clause is actually necessary, do both for completeness/future-proofing
-        foreach (var
-                CMAKE_CXX_FLAGS CMAKE_CXX_FLAGS_DEBUG CMAKE_CXX_FLAGS_RELEASE
-                CMAKE_CXX_FLAGS_MINSIZEREL CMAKE_CXX_FLAGS_RELWITHDEBINFO)
-            if(BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
-                string(REPLACE "/MT" "/MD" ${var} "${${var}}")
-            else()
-                string(REPLACE "/MD" "/MT" ${var} "${${var}}")
-            endif()
-        endforeach()
-
         # enable parallel builds
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
         # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
