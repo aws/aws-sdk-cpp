@@ -83,38 +83,38 @@ namespace Model
 
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline const AccessorType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline void SetType(const AccessorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline void SetType(AccessorType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline Accessor& WithType(const AccessorType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of the accessor.</p>  <p>Currently accessor type is restricted
-     * to <code>BILLING_TOKEN</code>.</p> 
+     * <p>The type of the accessor.</p>  <p>Currently, accessor type is
+     * restricted to <code>BILLING_TOKEN</code>.</p> 
      */
     inline Accessor& WithType(AccessorType&& value) { SetType(std::move(value)); return *this;}
 

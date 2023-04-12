@@ -109,37 +109,37 @@ namespace Model
 
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline const AccessorType& GetAccessorType() const{ return m_accessorType; }
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline bool AccessorTypeHasBeenSet() const { return m_accessorTypeHasBeenSet; }
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline void SetAccessorType(const AccessorType& value) { m_accessorTypeHasBeenSet = true; m_accessorType = value; }
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline void SetAccessorType(AccessorType&& value) { m_accessorTypeHasBeenSet = true; m_accessorType = std::move(value); }
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline CreateAccessorRequest& WithAccessorType(const AccessorType& value) { SetAccessorType(value); return *this;}
 
     /**
-     * <p>The type of accessor.</p>  <p>Currently accessor type is restricted to
+     * <p>The type of accessor.</p>  <p>Currently, accessor type is restricted to
      * <code>BILLING_TOKEN</code>.</p> 
      */
     inline CreateAccessorRequest& WithAccessorType(AccessorType&& value) { SetAccessorType(std::move(value)); return *this;}

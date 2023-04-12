@@ -25,7 +25,7 @@ namespace Model
 
   /**
    * <p>Configuration properties for Hyperledger Fabric for a member in a Managed
-   * Blockchain network using the Hyperledger Fabric framework.</p><p><h3>See
+   * Blockchain network that is using the Hyperledger Fabric framework.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/managedblockchain-2018-09-24/MemberFabricConfiguration">AWS
    * API Reference</a></p>
@@ -82,8 +82,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -91,8 +91,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -100,8 +100,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -109,8 +109,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -118,8 +118,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -127,8 +127,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -136,8 +136,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
@@ -145,8 +145,8 @@ namespace Model
 
     /**
      * <p>The password for the member's initial administrative user. The
-     * <code>AdminPassword</code> must be at least eight characters long and no more
-     * than 32 characters. It must contain at least one uppercase letter, one lowercase
+     * <code>AdminPassword</code> must be at least 8 characters long and no more than
+     * 32 characters. It must contain at least one uppercase letter, one lowercase
      * letter, and one digit. It cannot have a single quotation mark (‘), a double
      * quotation marks (“), a forward slash(/), a backward slash(\), @, or a space.</p>
      */
