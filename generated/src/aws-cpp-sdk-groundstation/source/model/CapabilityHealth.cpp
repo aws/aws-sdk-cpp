@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/groundstation/model/ComponentType.h>
+#include <aws/groundstation/model/CapabilityHealth.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/Globals.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
@@ -17,49 +17,42 @@ namespace Aws
   {
     namespace Model
     {
-      namespace ComponentTypeMapper
+      namespace CapabilityHealthMapper
       {
 
-        static const int LAMINAR_FLOW_HASH = HashingUtils::HashString("LAMINAR_FLOW");
-        static const int PRISM_HASH = HashingUtils::HashString("PRISM");
-        static const int DIGITIZER_HASH = HashingUtils::HashString("DIGITIZER");
+        static const int UNHEALTHY_HASH = HashingUtils::HashString("UNHEALTHY");
+        static const int HEALTHY_HASH = HashingUtils::HashString("HEALTHY");
 
 
-        ComponentType GetComponentTypeForName(const Aws::String& name)
+        CapabilityHealth GetCapabilityHealthForName(const Aws::String& name)
         {
           int hashCode = HashingUtils::HashString(name.c_str());
-          if (hashCode == LAMINAR_FLOW_HASH)
+          if (hashCode == UNHEALTHY_HASH)
           {
-            return ComponentType::LAMINAR_FLOW;
+            return CapabilityHealth::UNHEALTHY;
           }
-          else if (hashCode == PRISM_HASH)
+          else if (hashCode == HEALTHY_HASH)
           {
-            return ComponentType::PRISM;
-          }
-          else if (hashCode == DIGITIZER_HASH)
-          {
-            return ComponentType::DIGITIZER;
+            return CapabilityHealth::HEALTHY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
             overflowContainer->StoreOverflow(hashCode, name);
-            return static_cast<ComponentType>(hashCode);
+            return static_cast<CapabilityHealth>(hashCode);
           }
 
-          return ComponentType::NOT_SET;
+          return CapabilityHealth::NOT_SET;
         }
 
-        Aws::String GetNameForComponentType(ComponentType enumValue)
+        Aws::String GetNameForCapabilityHealth(CapabilityHealth enumValue)
         {
           switch(enumValue)
           {
-          case ComponentType::LAMINAR_FLOW:
-            return "LAMINAR_FLOW";
-          case ComponentType::PRISM:
-            return "PRISM";
-          case ComponentType::DIGITIZER:
-            return "DIGITIZER";
+          case CapabilityHealth::UNHEALTHY:
+            return "UNHEALTHY";
+          case CapabilityHealth::HEALTHY:
+            return "HEALTHY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -71,7 +64,7 @@ namespace Aws
           }
         }
 
-      } // namespace ComponentTypeMapper
+      } // namespace CapabilityHealthMapper
     } // namespace Model
   } // namespace GroundStation
 } // namespace Aws

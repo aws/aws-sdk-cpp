@@ -21,6 +21,9 @@ namespace Model
 EndpointDetails::EndpointDetails() : 
     m_awsGroundStationAgentEndpointHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_healthReasonsHasBeenSet(false),
+    m_healthStatus(CapabilityHealth::NOT_SET),
+    m_healthStatusHasBeenSet(false),
     m_securityDetailsHasBeenSet(false)
 {
 }
@@ -28,6 +31,9 @@ EndpointDetails::EndpointDetails() :
 EndpointDetails::EndpointDetails(JsonView jsonValue) : 
     m_awsGroundStationAgentEndpointHasBeenSet(false),
     m_endpointHasBeenSet(false),
+    m_healthReasonsHasBeenSet(false),
+    m_healthStatus(CapabilityHealth::NOT_SET),
+    m_healthStatusHasBeenSet(false),
     m_securityDetailsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -47,6 +53,23 @@ EndpointDetails& EndpointDetails::operator =(JsonView jsonValue)
     m_endpoint = jsonValue.GetObject("endpoint");
 
     m_endpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("healthReasons"))
+  {
+    Aws::Utils::Array<JsonView> healthReasonsJsonList = jsonValue.GetArray("healthReasons");
+    for(unsigned healthReasonsIndex = 0; healthReasonsIndex < healthReasonsJsonList.GetLength(); ++healthReasonsIndex)
+    {
+      m_healthReasons.push_back(CapabilityHealthReasonMapper::GetCapabilityHealthReasonForName(healthReasonsJsonList[healthReasonsIndex].AsString()));
+    }
+    m_healthReasonsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("healthStatus"))
+  {
+    m_healthStatus = CapabilityHealthMapper::GetCapabilityHealthForName(jsonValue.GetString("healthStatus"));
+
+    m_healthStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("securityDetails"))
@@ -73,6 +96,22 @@ JsonValue EndpointDetails::Jsonize() const
   {
    payload.WithObject("endpoint", m_endpoint.Jsonize());
 
+  }
+
+  if(m_healthReasonsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> healthReasonsJsonList(m_healthReasons.size());
+   for(unsigned healthReasonsIndex = 0; healthReasonsIndex < healthReasonsJsonList.GetLength(); ++healthReasonsIndex)
+   {
+     healthReasonsJsonList[healthReasonsIndex].AsString(CapabilityHealthReasonMapper::GetNameForCapabilityHealthReason(m_healthReasons[healthReasonsIndex]));
+   }
+   payload.WithArray("healthReasons", std::move(healthReasonsJsonList));
+
+  }
+
+  if(m_healthStatusHasBeenSet)
+  {
+   payload.WithString("healthStatus", CapabilityHealthMapper::GetNameForCapabilityHealth(m_healthStatus));
   }
 
   if(m_securityDetailsHasBeenSet)

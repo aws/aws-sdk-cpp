@@ -24,7 +24,6 @@ ComponentStatusData::ComponentStatusData() :
     m_bytesSent(0),
     m_bytesSentHasBeenSet(false),
     m_capabilityArnHasBeenSet(false),
-    m_componentType(ComponentType::NOT_SET),
     m_componentTypeHasBeenSet(false),
     m_dataflowIdHasBeenSet(false),
     m_packetsDropped(0),
@@ -40,7 +39,6 @@ ComponentStatusData::ComponentStatusData(JsonView jsonValue) :
     m_bytesSent(0),
     m_bytesSentHasBeenSet(false),
     m_capabilityArnHasBeenSet(false),
-    m_componentType(ComponentType::NOT_SET),
     m_componentTypeHasBeenSet(false),
     m_dataflowIdHasBeenSet(false),
     m_packetsDropped(0),
@@ -76,7 +74,7 @@ ComponentStatusData& ComponentStatusData::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("componentType"))
   {
-    m_componentType = ComponentTypeMapper::GetComponentTypeForName(jsonValue.GetString("componentType"));
+    m_componentType = jsonValue.GetString("componentType");
 
     m_componentTypeHasBeenSet = true;
   }
@@ -129,7 +127,8 @@ JsonValue ComponentStatusData::Jsonize() const
 
   if(m_componentTypeHasBeenSet)
   {
-   payload.WithString("componentType", ComponentTypeMapper::GetNameForComponentType(m_componentType));
+   payload.WithString("componentType", m_componentType);
+
   }
 
   if(m_dataflowIdHasBeenSet)

@@ -43,8 +43,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline const Aws::String& GetNetworkId() const{ return m_networkId; }
 
@@ -53,8 +52,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
 
@@ -63,8 +61,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline void SetNetworkId(const Aws::String& value) { m_networkIdHasBeenSet = true; m_networkId = value; }
 
@@ -73,8 +70,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline void SetNetworkId(Aws::String&& value) { m_networkIdHasBeenSet = true; m_networkId = std::move(value); }
 
@@ -83,8 +79,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline void SetNetworkId(const char* value) { m_networkIdHasBeenSet = true; m_networkId.assign(value); }
 
@@ -93,8 +88,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline DeleteNodeRequest& WithNetworkId(const Aws::String& value) { SetNetworkId(value); return *this;}
 
@@ -103,8 +97,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline DeleteNodeRequest& WithNetworkId(Aws::String&& value) { SetNetworkId(std::move(value)); return *this;}
 
@@ -113,8 +106,7 @@ namespace Model
      * public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p>
      * <code>n-ethereum-mainnet</code> </p> </li> <li> <p>
      * <code>n-ethereum-goerli</code> </p> </li> <li> <p>
-     * <code>n-ethereum-rinkeby</code> </p> </li> <li> <p>
-     * <code>n-ethereum-ropsten</code> </p> </li> </ul>
+     * <code>n-ethereum-rinkeby</code> </p> </li> </ul>
      */
     inline DeleteNodeRequest& WithNetworkId(const char* value) { SetNetworkId(value); return *this;}
 

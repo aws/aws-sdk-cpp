@@ -65,32 +65,32 @@ namespace Model
 
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline const DiscoveryData& GetDiscoveryData() const{ return m_discoveryData; }
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline bool DiscoveryDataHasBeenSet() const { return m_discoveryDataHasBeenSet; }
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline void SetDiscoveryData(const DiscoveryData& value) { m_discoveryDataHasBeenSet = true; m_discoveryData = value; }
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline void SetDiscoveryData(DiscoveryData&& value) { m_discoveryDataHasBeenSet = true; m_discoveryData = std::move(value); }
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline RegisterAgentRequest& WithDiscoveryData(const DiscoveryData& value) { SetDiscoveryData(value); return *this;}
 
     /**
-     * <p>Data for associating and agent with the capabilities it is managing.</p>
+     * <p>Data for associating an agent with the capabilities it is managing.</p>
      */
     inline RegisterAgentRequest& WithDiscoveryData(DiscoveryData&& value) { SetDiscoveryData(std::move(value)); return *this;}
 

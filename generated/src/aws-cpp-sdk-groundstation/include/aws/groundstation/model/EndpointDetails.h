@@ -7,7 +7,10 @@
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/groundstation/model/AwsGroundStationAgentEndpoint.h>
 #include <aws/groundstation/model/DataflowEndpoint.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/groundstation/model/CapabilityHealth.h>
 #include <aws/groundstation/model/SecurityDetails.h>
+#include <aws/groundstation/model/CapabilityHealthReason.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +105,92 @@ namespace Model
 
 
     /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline const Aws::Vector<CapabilityHealthReason>& GetHealthReasons() const{ return m_healthReasons; }
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline bool HealthReasonsHasBeenSet() const { return m_healthReasonsHasBeenSet; }
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline void SetHealthReasons(const Aws::Vector<CapabilityHealthReason>& value) { m_healthReasonsHasBeenSet = true; m_healthReasons = value; }
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline void SetHealthReasons(Aws::Vector<CapabilityHealthReason>&& value) { m_healthReasonsHasBeenSet = true; m_healthReasons = std::move(value); }
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& WithHealthReasons(const Aws::Vector<CapabilityHealthReason>& value) { SetHealthReasons(value); return *this;}
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& WithHealthReasons(Aws::Vector<CapabilityHealthReason>&& value) { SetHealthReasons(std::move(value)); return *this;}
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& AddHealthReasons(const CapabilityHealthReason& value) { m_healthReasonsHasBeenSet = true; m_healthReasons.push_back(value); return *this; }
+
+    /**
+     * <p>Health reasons for a dataflow endpoint. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& AddHealthReasons(CapabilityHealthReason&& value) { m_healthReasonsHasBeenSet = true; m_healthReasons.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline const CapabilityHealth& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline void SetHealthStatus(const CapabilityHealth& value) { m_healthStatusHasBeenSet = true; m_healthStatus = value; }
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline void SetHealthStatus(CapabilityHealth&& value) { m_healthStatusHasBeenSet = true; m_healthStatus = std::move(value); }
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& WithHealthStatus(const CapabilityHealth& value) { SetHealthStatus(value); return *this;}
+
+    /**
+     * <p>A dataflow endpoint health status. This field is ignored when calling
+     * <code>CreateDataflowEndpointGroup</code>.</p>
+     */
+    inline EndpointDetails& WithHealthStatus(CapabilityHealth&& value) { SetHealthStatus(std::move(value)); return *this;}
+
+
+    /**
      * <p>Endpoint security details including a list of subnets, a list of security
      * groups and a role to connect streams to instances.</p>
      */
@@ -144,6 +233,12 @@ namespace Model
 
     DataflowEndpoint m_endpoint;
     bool m_endpointHasBeenSet = false;
+
+    Aws::Vector<CapabilityHealthReason> m_healthReasons;
+    bool m_healthReasonsHasBeenSet = false;
+
+    CapabilityHealth m_healthStatus;
+    bool m_healthStatusHasBeenSet = false;
 
     SecurityDetails m_securityDetails;
     bool m_securityDetailsHasBeenSet = false;

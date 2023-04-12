@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/groundstation/model/ComponentVersion.h>
 #include <utility>
 
@@ -37,6 +37,42 @@ namespace Model
     AWS_GROUNDSTATION_API AgentDetails(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API AgentDetails& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline const Aws::Vector<int>& GetAgentCpuCores() const{ return m_agentCpuCores; }
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline bool AgentCpuCoresHasBeenSet() const { return m_agentCpuCoresHasBeenSet; }
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline void SetAgentCpuCores(const Aws::Vector<int>& value) { m_agentCpuCoresHasBeenSet = true; m_agentCpuCores = value; }
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline void SetAgentCpuCores(Aws::Vector<int>&& value) { m_agentCpuCoresHasBeenSet = true; m_agentCpuCores = std::move(value); }
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline AgentDetails& WithAgentCpuCores(const Aws::Vector<int>& value) { SetAgentCpuCores(value); return *this;}
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline AgentDetails& WithAgentCpuCores(Aws::Vector<int>&& value) { SetAgentCpuCores(std::move(value)); return *this;}
+
+    /**
+     * <p>List of CPU cores reserved for the agent.</p>
+     */
+    inline AgentDetails& AddAgentCpuCores(int value) { m_agentCpuCoresHasBeenSet = true; m_agentCpuCores.push_back(value); return *this; }
 
 
     /**
@@ -204,41 +240,58 @@ namespace Model
 
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline const Aws::Vector<int>& GetReservedCpuCores() const{ return m_reservedCpuCores; }
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline bool ReservedCpuCoresHasBeenSet() const { return m_reservedCpuCoresHasBeenSet; }
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline void SetReservedCpuCores(const Aws::Vector<int>& value) { m_reservedCpuCoresHasBeenSet = true; m_reservedCpuCores = value; }
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline void SetReservedCpuCores(Aws::Vector<int>&& value) { m_reservedCpuCoresHasBeenSet = true; m_reservedCpuCores = std::move(value); }
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline AgentDetails& WithReservedCpuCores(const Aws::Vector<int>& value) { SetReservedCpuCores(value); return *this;}
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline AgentDetails& WithReservedCpuCores(Aws::Vector<int>&& value) { SetReservedCpuCores(std::move(value)); return *this;}
 
     /**
-     * <p>Number of Cpu cores reserved for agent.</p>
+     *  <p>This field should not be used. Use agentCpuCores instead.</p> 
+     * <p>List of CPU cores reserved for processes other than the agent running on the
+     * EC2 instance.</p>
      */
     inline AgentDetails& AddReservedCpuCores(int value) { m_reservedCpuCoresHasBeenSet = true; m_reservedCpuCores.push_back(value); return *this; }
 
   private:
+
+    Aws::Vector<int> m_agentCpuCores;
+    bool m_agentCpuCoresHasBeenSet = false;
 
     Aws::String m_agentVersion;
     bool m_agentVersionHasBeenSet = false;

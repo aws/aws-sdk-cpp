@@ -13,20 +13,19 @@ namespace GroundStation
 {
 namespace Model
 {
-  enum class ComponentType
+  enum class CapabilityHealth
   {
     NOT_SET,
-    LAMINAR_FLOW,
-    PRISM,
-    DIGITIZER
+    UNHEALTHY,
+    HEALTHY
   };
 
-namespace ComponentTypeMapper
+namespace CapabilityHealthMapper
 {
-AWS_GROUNDSTATION_API ComponentType GetComponentTypeForName(const Aws::String& name);
+AWS_GROUNDSTATION_API CapabilityHealth GetCapabilityHealthForName(const Aws::String& name);
 
-AWS_GROUNDSTATION_API Aws::String GetNameForComponentType(ComponentType value);
-} // namespace ComponentTypeMapper
+AWS_GROUNDSTATION_API Aws::String GetNameForCapabilityHealth(CapabilityHealth value);
+} // namespace CapabilityHealthMapper
 } // namespace Model
 } // namespace GroundStation
 } // namespace Aws

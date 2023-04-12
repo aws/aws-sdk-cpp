@@ -364,8 +364,9 @@ namespace GroundStation
         }
 
         /**
-         * <p>Gets the latest configuration information for a registered
-         * agent.</p><p><h3>See Also:</h3>   <a
+         *  <p> For use by AWS Ground Station Agent and shouldn't be called
+         * directly.</p>  <p>Gets the latest configuration information for a
+         * registered agent.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetAgentConfiguration">AWS
          * API Reference</a></p>
          */
@@ -721,7 +722,9 @@ namespace GroundStation
         }
 
         /**
-         * <p>Registers a new agent with AWS Groundstation.</p><p><h3>See Also:</h3>   <a
+         *  <p> For use by AWS Ground Station Agent and shouldn't be called
+         * directly.</p>  <p> Registers a new agent with AWS Ground Station.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/RegisterAgent">AWS
          * API Reference</a></p>
          */
@@ -821,7 +824,9 @@ namespace GroundStation
         }
 
         /**
-         * <p>Update the status of the agent.</p><p><h3>See Also:</h3>   <a
+         *  <p> For use by AWS Ground Station Agent and shouldn't be called
+         * directly.</p>  <p>Update the status of the agent.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/UpdateAgentStatus">AWS
          * API Reference</a></p>
          */

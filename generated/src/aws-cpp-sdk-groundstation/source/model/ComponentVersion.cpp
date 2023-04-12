@@ -19,14 +19,12 @@ namespace Model
 {
 
 ComponentVersion::ComponentVersion() : 
-    m_componentType(ComponentType::NOT_SET),
     m_componentTypeHasBeenSet(false),
     m_versionsHasBeenSet(false)
 {
 }
 
 ComponentVersion::ComponentVersion(JsonView jsonValue) : 
-    m_componentType(ComponentType::NOT_SET),
     m_componentTypeHasBeenSet(false),
     m_versionsHasBeenSet(false)
 {
@@ -37,7 +35,7 @@ ComponentVersion& ComponentVersion::operator =(JsonView jsonValue)
 {
   if(jsonValue.ValueExists("componentType"))
   {
-    m_componentType = ComponentTypeMapper::GetComponentTypeForName(jsonValue.GetString("componentType"));
+    m_componentType = jsonValue.GetString("componentType");
 
     m_componentTypeHasBeenSet = true;
   }
@@ -61,7 +59,8 @@ JsonValue ComponentVersion::Jsonize() const
 
   if(m_componentTypeHasBeenSet)
   {
-   payload.WithString("componentType", ComponentTypeMapper::GetNameForComponentType(m_componentType));
+   payload.WithString("componentType", m_componentType);
+
   }
 
   if(m_versionsHasBeenSet)

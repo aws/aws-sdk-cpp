@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/groundstation/model/ComponentType.h>
 #include <aws/groundstation/model/AgentStatus.h>
 #include <utility>
 
@@ -125,7 +124,7 @@ namespace Model
     /**
      * <p>The Component type.</p>
      */
-    inline const ComponentType& GetComponentType() const{ return m_componentType; }
+    inline const Aws::String& GetComponentType() const{ return m_componentType; }
 
     /**
      * <p>The Component type.</p>
@@ -135,22 +134,32 @@ namespace Model
     /**
      * <p>The Component type.</p>
      */
-    inline void SetComponentType(const ComponentType& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
+    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
 
     /**
      * <p>The Component type.</p>
      */
-    inline void SetComponentType(ComponentType&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
+    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
 
     /**
      * <p>The Component type.</p>
      */
-    inline ComponentStatusData& WithComponentType(const ComponentType& value) { SetComponentType(value); return *this;}
+    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
 
     /**
      * <p>The Component type.</p>
      */
-    inline ComponentStatusData& WithComponentType(ComponentType&& value) { SetComponentType(std::move(value)); return *this;}
+    inline ComponentStatusData& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
+
+    /**
+     * <p>The Component type.</p>
+     */
+    inline ComponentStatusData& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
+
+    /**
+     * <p>The Component type.</p>
+     */
+    inline ComponentStatusData& WithComponentType(const char* value) { SetComponentType(value); return *this;}
 
 
     /**
@@ -256,7 +265,7 @@ namespace Model
     Aws::String m_capabilityArn;
     bool m_capabilityArnHasBeenSet = false;
 
-    ComponentType m_componentType;
+    Aws::String m_componentType;
     bool m_componentTypeHasBeenSet = false;
 
     Aws::String m_dataflowId;

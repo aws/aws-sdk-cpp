@@ -19,6 +19,7 @@ namespace Model
 {
 
 AgentDetails::AgentDetails() : 
+    m_agentCpuCoresHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_componentVersionsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -28,6 +29,7 @@ AgentDetails::AgentDetails() :
 }
 
 AgentDetails::AgentDetails(JsonView jsonValue) : 
+    m_agentCpuCoresHasBeenSet(false),
     m_agentVersionHasBeenSet(false),
     m_componentVersionsHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
@@ -39,6 +41,16 @@ AgentDetails::AgentDetails(JsonView jsonValue) :
 
 AgentDetails& AgentDetails::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("agentCpuCores"))
+  {
+    Aws::Utils::Array<JsonView> agentCpuCoresJsonList = jsonValue.GetArray("agentCpuCores");
+    for(unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex)
+    {
+      m_agentCpuCores.push_back(agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger());
+    }
+    m_agentCpuCoresHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("agentVersion"))
   {
     m_agentVersion = jsonValue.GetString("agentVersion");
@@ -86,6 +98,17 @@ AgentDetails& AgentDetails::operator =(JsonView jsonValue)
 JsonValue AgentDetails::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_agentCpuCoresHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> agentCpuCoresJsonList(m_agentCpuCores.size());
+   for(unsigned agentCpuCoresIndex = 0; agentCpuCoresIndex < agentCpuCoresJsonList.GetLength(); ++agentCpuCoresIndex)
+   {
+     agentCpuCoresJsonList[agentCpuCoresIndex].AsInteger(m_agentCpuCores[agentCpuCoresIndex]);
+   }
+   payload.WithArray("agentCpuCores", std::move(agentCpuCoresJsonList));
+
+  }
 
   if(m_agentVersionHasBeenSet)
   {

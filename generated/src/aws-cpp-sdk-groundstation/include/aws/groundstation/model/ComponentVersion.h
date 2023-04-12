@@ -5,9 +5,8 @@
 
 #pragma once
 #include <aws/groundstation/GroundStation_EXPORTS.h>
-#include <aws/groundstation/model/ComponentType.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -42,7 +41,7 @@ namespace Model
     /**
      * <p>Component type.</p>
      */
-    inline const ComponentType& GetComponentType() const{ return m_componentType; }
+    inline const Aws::String& GetComponentType() const{ return m_componentType; }
 
     /**
      * <p>Component type.</p>
@@ -52,22 +51,32 @@ namespace Model
     /**
      * <p>Component type.</p>
      */
-    inline void SetComponentType(const ComponentType& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
+    inline void SetComponentType(const Aws::String& value) { m_componentTypeHasBeenSet = true; m_componentType = value; }
 
     /**
      * <p>Component type.</p>
      */
-    inline void SetComponentType(ComponentType&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
+    inline void SetComponentType(Aws::String&& value) { m_componentTypeHasBeenSet = true; m_componentType = std::move(value); }
 
     /**
      * <p>Component type.</p>
      */
-    inline ComponentVersion& WithComponentType(const ComponentType& value) { SetComponentType(value); return *this;}
+    inline void SetComponentType(const char* value) { m_componentTypeHasBeenSet = true; m_componentType.assign(value); }
 
     /**
      * <p>Component type.</p>
      */
-    inline ComponentVersion& WithComponentType(ComponentType&& value) { SetComponentType(std::move(value)); return *this;}
+    inline ComponentVersion& WithComponentType(const Aws::String& value) { SetComponentType(value); return *this;}
+
+    /**
+     * <p>Component type.</p>
+     */
+    inline ComponentVersion& WithComponentType(Aws::String&& value) { SetComponentType(std::move(value)); return *this;}
+
+    /**
+     * <p>Component type.</p>
+     */
+    inline ComponentVersion& WithComponentType(const char* value) { SetComponentType(value); return *this;}
 
 
     /**
@@ -117,7 +126,7 @@ namespace Model
 
   private:
 
-    ComponentType m_componentType;
+    Aws::String m_componentType;
     bool m_componentTypeHasBeenSet = false;
 
     Aws::Vector<Aws::String> m_versions;

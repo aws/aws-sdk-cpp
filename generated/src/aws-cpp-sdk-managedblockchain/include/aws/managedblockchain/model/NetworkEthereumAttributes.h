@@ -41,7 +41,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline const Aws::String& GetChainId() const{ return m_chainId; }
 
@@ -49,7 +49,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline bool ChainIdHasBeenSet() const { return m_chainIdHasBeenSet; }
 
@@ -57,7 +57,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetChainId(const Aws::String& value) { m_chainIdHasBeenSet = true; m_chainId = value; }
 
@@ -65,7 +65,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetChainId(Aws::String&& value) { m_chainIdHasBeenSet = true; m_chainId = std::move(value); }
 
@@ -73,7 +73,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetChainId(const char* value) { m_chainIdHasBeenSet = true; m_chainId.assign(value); }
 
@@ -81,7 +81,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline NetworkEthereumAttributes& WithChainId(const Aws::String& value) { SetChainId(value); return *this;}
 
@@ -89,7 +89,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline NetworkEthereumAttributes& WithChainId(Aws::String&& value) { SetChainId(std::move(value)); return *this;}
 
@@ -97,7 +97,7 @@ namespace Model
      * <p>The Ethereum <code>CHAIN_ID</code> associated with the Ethereum network.
      * Chain IDs are as follows:</p> <ul> <li> <p>mainnet = <code>1</code> </p> </li>
      * <li> <p>goerli = <code>5</code> </p> </li> <li> <p>rinkeby = <code>4</code> </p>
-     * </li> <li> <p>ropsten = <code>3</code> </p> </li> </ul>
+     * </li> </ul>
      */
     inline NetworkEthereumAttributes& WithChainId(const char* value) { SetChainId(value); return *this;}
 

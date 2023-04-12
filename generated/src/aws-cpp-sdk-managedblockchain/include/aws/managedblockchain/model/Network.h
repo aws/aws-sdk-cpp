@@ -327,32 +327,38 @@ namespace Model
 
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline const VotingPolicy& GetVotingPolicy() const{ return m_votingPolicy; }
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline bool VotingPolicyHasBeenSet() const { return m_votingPolicyHasBeenSet; }
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline void SetVotingPolicy(const VotingPolicy& value) { m_votingPolicyHasBeenSet = true; m_votingPolicy = value; }
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline void SetVotingPolicy(VotingPolicy&& value) { m_votingPolicyHasBeenSet = true; m_votingPolicy = std::move(value); }
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline Network& WithVotingPolicy(const VotingPolicy& value) { SetVotingPolicy(value); return *this;}
 
     /**
-     * <p>The voting rules for the network to decide if a proposal is accepted.</p>
+     * <p>The voting rules that the network uses to decide if a proposal is
+     * accepted.</p>
      */
     inline Network& WithVotingPolicy(VotingPolicy&& value) { SetVotingPolicy(std::move(value)); return *this;}
 
