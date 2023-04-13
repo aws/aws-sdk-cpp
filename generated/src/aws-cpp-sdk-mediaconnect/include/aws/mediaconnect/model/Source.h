@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Transport.h>
+#include <aws/mediaconnect/model/GatewayBridgeSource.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfiguration.h>
 #include <utility>
 
@@ -594,6 +595,37 @@ namespace Model
      */
     inline Source& WithWhitelistCidr(const char* value) { SetWhitelistCidr(value); return *this;}
 
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline const GatewayBridgeSource& GetGatewayBridgeSource() const{ return m_gatewayBridgeSource; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline bool GatewayBridgeSourceHasBeenSet() const { return m_gatewayBridgeSourceHasBeenSet; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline void SetGatewayBridgeSource(const GatewayBridgeSource& value) { m_gatewayBridgeSourceHasBeenSet = true; m_gatewayBridgeSource = value; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline void SetGatewayBridgeSource(GatewayBridgeSource&& value) { m_gatewayBridgeSourceHasBeenSet = true; m_gatewayBridgeSource = std::move(value); }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline Source& WithGatewayBridgeSource(const GatewayBridgeSource& value) { SetGatewayBridgeSource(value); return *this;}
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline Source& WithGatewayBridgeSource(GatewayBridgeSource&& value) { SetGatewayBridgeSource(std::move(value)); return *this;}
+
   private:
 
     int m_dataTransferSubscriberFeePercent;
@@ -637,6 +669,9 @@ namespace Model
 
     Aws::String m_whitelistCidr;
     bool m_whitelistCidrHasBeenSet = false;
+
+    GatewayBridgeSource m_gatewayBridgeSource;
+    bool m_gatewayBridgeSourceHasBeenSet = false;
   };
 
 } // namespace Model

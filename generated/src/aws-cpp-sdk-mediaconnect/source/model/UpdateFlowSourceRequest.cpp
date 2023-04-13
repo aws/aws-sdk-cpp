@@ -39,7 +39,8 @@ UpdateFlowSourceRequest::UpdateFlowSourceRequest() :
     m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false)
+    m_whitelistCidrHasBeenSet(false),
+    m_gatewayBridgeSourceHasBeenSet(false)
 {
 }
 
@@ -150,6 +151,12 @@ Aws::String UpdateFlowSourceRequest::SerializePayload() const
   if(m_whitelistCidrHasBeenSet)
   {
    payload.WithString("whitelistCidr", m_whitelistCidr);
+
+  }
+
+  if(m_gatewayBridgeSourceHasBeenSet)
+  {
+   payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
 
   }
 

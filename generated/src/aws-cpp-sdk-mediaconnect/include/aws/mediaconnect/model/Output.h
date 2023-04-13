@@ -558,6 +558,83 @@ namespace Model
      */
     inline Output& WithVpcInterfaceAttachment(VpcInterfaceAttachment&& value) { SetVpcInterfaceAttachment(std::move(value)); return *this;}
 
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline const Aws::String& GetBridgeArn() const{ return m_bridgeArn; }
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline bool BridgeArnHasBeenSet() const { return m_bridgeArnHasBeenSet; }
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline void SetBridgeArn(const Aws::String& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = value; }
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline void SetBridgeArn(Aws::String&& value) { m_bridgeArnHasBeenSet = true; m_bridgeArn = std::move(value); }
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline void SetBridgeArn(const char* value) { m_bridgeArnHasBeenSet = true; m_bridgeArn.assign(value); }
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline Output& WithBridgeArn(const Aws::String& value) { SetBridgeArn(value); return *this;}
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline Output& WithBridgeArn(Aws::String&& value) { SetBridgeArn(std::move(value)); return *this;}
+
+    /**
+     * The ARN of the bridge that added this output.
+     */
+    inline Output& WithBridgeArn(const char* value) { SetBridgeArn(value); return *this;}
+
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline const Aws::Vector<int>& GetBridgePorts() const{ return m_bridgePorts; }
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline bool BridgePortsHasBeenSet() const { return m_bridgePortsHasBeenSet; }
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline void SetBridgePorts(const Aws::Vector<int>& value) { m_bridgePortsHasBeenSet = true; m_bridgePorts = value; }
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline void SetBridgePorts(Aws::Vector<int>&& value) { m_bridgePortsHasBeenSet = true; m_bridgePorts = std::move(value); }
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline Output& WithBridgePorts(const Aws::Vector<int>& value) { SetBridgePorts(value); return *this;}
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline Output& WithBridgePorts(Aws::Vector<int>&& value) { SetBridgePorts(std::move(value)); return *this;}
+
+    /**
+     * The bridge output ports currently in use.
+     */
+    inline Output& AddBridgePorts(int value) { m_bridgePortsHasBeenSet = true; m_bridgePorts.push_back(value); return *this; }
+
   private:
 
     int m_dataTransferSubscriberFeePercent;
@@ -598,6 +675,12 @@ namespace Model
 
     VpcInterfaceAttachment m_vpcInterfaceAttachment;
     bool m_vpcInterfaceAttachmentHasBeenSet = false;
+
+    Aws::String m_bridgeArn;
+    bool m_bridgeArnHasBeenSet = false;
+
+    Aws::Vector<int> m_bridgePorts;
+    bool m_bridgePortsHasBeenSet = false;
   };
 
 } // namespace Model

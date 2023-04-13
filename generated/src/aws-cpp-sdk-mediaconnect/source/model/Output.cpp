@@ -33,7 +33,9 @@ Output::Output() :
     m_port(0),
     m_portHasBeenSet(false),
     m_transportHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+    m_vpcInterfaceAttachmentHasBeenSet(false),
+    m_bridgeArnHasBeenSet(false),
+    m_bridgePortsHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ Output::Output(JsonView jsonValue) :
     m_port(0),
     m_portHasBeenSet(false),
     m_transportHasBeenSet(false),
-    m_vpcInterfaceAttachmentHasBeenSet(false)
+    m_vpcInterfaceAttachmentHasBeenSet(false),
+    m_bridgeArnHasBeenSet(false),
+    m_bridgePortsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -153,6 +157,23 @@ Output& Output::operator =(JsonView jsonValue)
     m_vpcInterfaceAttachmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("bridgeArn"))
+  {
+    m_bridgeArn = jsonValue.GetString("bridgeArn");
+
+    m_bridgeArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("bridgePorts"))
+  {
+    Aws::Utils::Array<JsonView> bridgePortsJsonList = jsonValue.GetArray("bridgePorts");
+    for(unsigned bridgePortsIndex = 0; bridgePortsIndex < bridgePortsJsonList.GetLength(); ++bridgePortsIndex)
+    {
+      m_bridgePorts.push_back(bridgePortsJsonList[bridgePortsIndex].AsInteger());
+    }
+    m_bridgePortsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -240,6 +261,23 @@ JsonValue Output::Jsonize() const
   if(m_vpcInterfaceAttachmentHasBeenSet)
   {
    payload.WithObject("vpcInterfaceAttachment", m_vpcInterfaceAttachment.Jsonize());
+
+  }
+
+  if(m_bridgeArnHasBeenSet)
+  {
+   payload.WithString("bridgeArn", m_bridgeArn);
+
+  }
+
+  if(m_bridgePortsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> bridgePortsJsonList(m_bridgePorts.size());
+   for(unsigned bridgePortsIndex = 0; bridgePortsIndex < bridgePortsJsonList.GetLength(); ++bridgePortsIndex)
+   {
+     bridgePortsJsonList[bridgePortsIndex].AsInteger(m_bridgePorts[bridgePortsIndex]);
+   }
+   payload.WithArray("bridgePorts", std::move(bridgePortsJsonList));
 
   }
 

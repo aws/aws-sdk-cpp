@@ -17,7 +17,8 @@ CreateVoiceConnectorRequest::CreateVoiceConnectorRequest() :
     m_awsRegion(VoiceConnectorAwsRegion::NOT_SET),
     m_awsRegionHasBeenSet(false),
     m_requireEncryption(false),
-    m_requireEncryptionHasBeenSet(false)
+    m_requireEncryptionHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -39,6 +40,17 @@ Aws::String CreateVoiceConnectorRequest::SerializePayload() const
   if(m_requireEncryptionHasBeenSet)
   {
    payload.WithBool("RequireEncryption", m_requireEncryption);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

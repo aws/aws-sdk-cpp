@@ -24,7 +24,8 @@ SipMediaApplication::SipMediaApplication() :
     m_nameHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_sipMediaApplicationArnHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ SipMediaApplication::SipMediaApplication(JsonView jsonValue) :
     m_nameHasBeenSet(false),
     m_endpointsHasBeenSet(false),
     m_createdTimestampHasBeenSet(false),
-    m_updatedTimestampHasBeenSet(false)
+    m_updatedTimestampHasBeenSet(false),
+    m_sipMediaApplicationArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -86,6 +88,13 @@ SipMediaApplication& SipMediaApplication::operator =(JsonView jsonValue)
     m_updatedTimestampHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SipMediaApplicationArn"))
+  {
+    m_sipMediaApplicationArn = jsonValue.GetString("SipMediaApplicationArn");
+
+    m_sipMediaApplicationArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -130,6 +139,12 @@ JsonValue SipMediaApplication::Jsonize() const
   if(m_updatedTimestampHasBeenSet)
   {
    payload.WithString("UpdatedTimestamp", m_updatedTimestamp.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_sipMediaApplicationArnHasBeenSet)
+  {
+   payload.WithString("SipMediaApplicationArn", m_sipMediaApplicationArn);
+
   }
 
   return payload;

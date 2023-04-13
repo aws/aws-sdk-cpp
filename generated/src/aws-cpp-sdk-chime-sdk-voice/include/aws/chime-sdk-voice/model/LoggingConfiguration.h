@@ -38,22 +38,22 @@ namespace Model
 
 
     /**
-     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
      */
     inline bool GetEnableSIPLogs() const{ return m_enableSIPLogs; }
 
     /**
-     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
      */
     inline bool EnableSIPLogsHasBeenSet() const { return m_enableSIPLogsHasBeenSet; }
 
     /**
-     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
      */
     inline void SetEnableSIPLogs(bool value) { m_enableSIPLogsHasBeenSet = true; m_enableSIPLogs = value; }
 
     /**
-     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch logs.</p>
+     * <p>Boolean that enables sending SIP message logs to Amazon CloudWatch.</p>
      */
     inline LoggingConfiguration& WithEnableSIPLogs(bool value) { SetEnableSIPLogs(value); return *this;}
 

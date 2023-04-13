@@ -166,50 +166,50 @@ namespace Model
 
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline const Aws::Vector<SipMediaApplicationEndpoint>& GetEndpoints() const{ return m_endpoints; }
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline void SetEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { m_endpointsHasBeenSet = true; m_endpoints = value; }
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline void SetEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { m_endpointsHasBeenSet = true; m_endpoints = std::move(value); }
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline SipMediaApplication& WithEndpoints(const Aws::Vector<SipMediaApplicationEndpoint>& value) { SetEndpoints(value); return *this;}
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline SipMediaApplication& WithEndpoints(Aws::Vector<SipMediaApplicationEndpoint>&& value) { SetEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline SipMediaApplication& AddEndpoints(const SipMediaApplicationEndpoint& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(value); return *this; }
 
     /**
-     * <p>List of endpoints for SIP media application. Currently, only one endpoint per
-     * SIP media application is permitted.</p>
+     * <p>List of endpoints for a SIP media application. Currently, only one endpoint
+     * per SIP media application is permitted.</p>
      */
     inline SipMediaApplication& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
 
@@ -275,6 +275,47 @@ namespace Model
      */
     inline SipMediaApplication& WithUpdatedTimestamp(Aws::Utils::DateTime&& value) { SetUpdatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline const Aws::String& GetSipMediaApplicationArn() const{ return m_sipMediaApplicationArn; }
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline bool SipMediaApplicationArnHasBeenSet() const { return m_sipMediaApplicationArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline void SetSipMediaApplicationArn(const Aws::String& value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn = value; }
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline void SetSipMediaApplicationArn(Aws::String&& value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn = std::move(value); }
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline void SetSipMediaApplicationArn(const char* value) { m_sipMediaApplicationArnHasBeenSet = true; m_sipMediaApplicationArn.assign(value); }
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline SipMediaApplication& WithSipMediaApplicationArn(const Aws::String& value) { SetSipMediaApplicationArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline SipMediaApplication& WithSipMediaApplicationArn(Aws::String&& value) { SetSipMediaApplicationArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the SIP media application.</p>
+     */
+    inline SipMediaApplication& WithSipMediaApplicationArn(const char* value) { SetSipMediaApplicationArn(value); return *this;}
+
   private:
 
     Aws::String m_sipMediaApplicationId;
@@ -294,6 +335,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedTimestamp;
     bool m_updatedTimestampHasBeenSet = false;
+
+    Aws::String m_sipMediaApplicationArn;
+    bool m_sipMediaApplicationArnHasBeenSet = false;
   };
 
 } // namespace Model

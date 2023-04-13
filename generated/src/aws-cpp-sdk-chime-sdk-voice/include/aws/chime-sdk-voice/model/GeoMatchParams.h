@@ -39,42 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline const Aws::String& GetCountry() const{ return m_country; }
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline void SetCountry(Aws::String&& value) { m_countryHasBeenSet = true; m_country = std::move(value); }
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline void SetCountry(const char* value) { m_countryHasBeenSet = true; m_country.assign(value); }
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline GeoMatchParams& WithCountry(const Aws::String& value) { SetCountry(value); return *this;}
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline GeoMatchParams& WithCountry(Aws::String&& value) { SetCountry(std::move(value)); return *this;}
 
     /**
-     * <p>The country. </p>
+     * <p>The country.</p>
      */
     inline GeoMatchParams& WithCountry(const char* value) { SetCountry(value); return *this;}
 

@@ -25,7 +25,8 @@ namespace Model
     cdi,
     srt_listener,
     srt_caller,
-    fujitsu_qos
+    fujitsu_qos,
+    udp
   };
 
 namespace ProtocolMapper

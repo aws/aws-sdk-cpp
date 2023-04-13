@@ -228,50 +228,42 @@ namespace Model
 
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline const Aws::String& GetFlowArn() const{ return m_flowArn; }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline bool FlowArnHasBeenSet() const { return m_flowArnHasBeenSet; }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline void SetFlowArn(const Aws::String& value) { m_flowArnHasBeenSet = true; m_flowArn = value; }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline void SetFlowArn(Aws::String&& value) { m_flowArnHasBeenSet = true; m_flowArn = std::move(value); }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline void SetFlowArn(const char* value) { m_flowArnHasBeenSet = true; m_flowArn.assign(value); }
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline Flow& WithFlowArn(const Aws::String& value) { SetFlowArn(value); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline Flow& WithFlowArn(Aws::String&& value) { SetFlowArn(std::move(value)); return *this;}
 
     /**
-     * The Amazon Resource Name (ARN), a unique identifier for any AWS resource, of the
-     * flow.
+     * The Amazon Resource Name (ARN) of the flow.
      */
     inline Flow& WithFlowArn(const char* value) { SetFlowArn(value); return *this;}
 

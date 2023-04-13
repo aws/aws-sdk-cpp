@@ -198,37 +198,43 @@ namespace Model
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline const Encryption& GetEncryption() const{ return m_encryption; }
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline AddOutputRequest& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
 
     /**
      * The type of key used for the encryption. If no keyType is provided, the service
-     * will use the default setting (static-key).
+     * will use the default setting (static-key). Allowable encryption types:
+     * static-key.
      */
     inline AddOutputRequest& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 
@@ -526,49 +532,49 @@ namespace Model
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline AddOutputRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline AddOutputRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline AddOutputRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 

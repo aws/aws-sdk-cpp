@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/chime-sdk-voice/model/SipMediaApplicationEndpoint.h>
+#include <aws/chime-sdk-voice/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -156,6 +157,47 @@ namespace Model
      */
     inline CreateSipMediaApplicationRequest& AddEndpoints(SipMediaApplicationEndpoint&& value) { m_endpointsHasBeenSet = true; m_endpoints.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline CreateSipMediaApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline CreateSipMediaApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline CreateSipMediaApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags assigned to the SIP media application.</p>
+     */
+    inline CreateSipMediaApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_awsRegion;
@@ -166,6 +208,9 @@ namespace Model
 
     Aws::Vector<SipMediaApplicationEndpoint> m_endpoints;
     bool m_endpointsHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model
