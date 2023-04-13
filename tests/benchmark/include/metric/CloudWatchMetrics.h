@@ -19,5 +19,7 @@ namespace Benchmark {
     private:
         std::shared_ptr<Aws::CloudWatch::CloudWatchClient> cloudWatchClient;
         Aws::CloudWatch::Model::MetricDatum ConvertToCloudWatchMetric(const Benchmark::Metric &metric) const;
+        std::vector<std::vector<Aws::CloudWatch::Model::MetricDatum>>
+        divideIntoSizedChunks(const std::vector<Aws::CloudWatch::Model::MetricDatum>& data, int chunkSize = 1000) const;
     };
 }
