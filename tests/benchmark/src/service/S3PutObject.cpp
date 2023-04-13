@@ -66,7 +66,7 @@ Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
                 {{"Service", "S3"}, {"Operation", "DeleteObject"}},
                 metrics,
                 [&]() -> bool {
-                    auto response = s3->DeleteObject(DeleteObjectRequest().WithKey(key));
+                    auto response = s3->DeleteObject(DeleteObjectRequest().WithBucket(bucketName).WithKey(key));
                     return response.IsSuccess();
                 });
         });
