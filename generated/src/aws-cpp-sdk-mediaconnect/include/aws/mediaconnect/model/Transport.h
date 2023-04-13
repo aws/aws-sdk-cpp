@@ -105,22 +105,22 @@ namespace Model
 
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline Transport& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -439,49 +439,49 @@ namespace Model
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline Transport& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline Transport& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline Transport& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 

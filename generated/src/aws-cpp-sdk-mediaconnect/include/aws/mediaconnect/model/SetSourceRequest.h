@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconnect/model/Protocol.h>
+#include <aws/mediaconnect/model/SetGatewayBridgeSourceRequest.h>
 #include <aws/mediaconnect/model/MediaStreamSourceConfigurationRequest.h>
 #include <utility>
 
@@ -43,31 +44,37 @@ namespace Model
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline const Encryption& GetDecryption() const{ return m_decryption; }
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline bool DecryptionHasBeenSet() const { return m_decryptionHasBeenSet; }
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline void SetDecryption(const Encryption& value) { m_decryptionHasBeenSet = true; m_decryption = value; }
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline void SetDecryption(Encryption&& value) { m_decryptionHasBeenSet = true; m_decryption = std::move(value); }
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline SetSourceRequest& WithDecryption(const Encryption& value) { SetDecryption(value); return *this;}
 
     /**
      * The type of encryption that is used on the content ingested from this source.
+     * Allowable encryption types: static-key.
      */
     inline SetSourceRequest& WithDecryption(Encryption&& value) { SetDecryption(std::move(value)); return *this;}
 
@@ -200,22 +207,22 @@ namespace Model
 
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline int GetMaxBitrate() const{ return m_maxBitrate; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline bool MaxBitrateHasBeenSet() const { return m_maxBitrateHasBeenSet; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline void SetMaxBitrate(int value) { m_maxBitrateHasBeenSet = true; m_maxBitrate = value; }
 
     /**
-     * The smoothing max bitrate for RIST, RTP, and RTP-FEC streams.
+     * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
      */
     inline SetSourceRequest& WithMaxBitrate(int value) { SetMaxBitrate(value); return *this;}
 
@@ -562,49 +569,49 @@ namespace Model
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(Aws::String&& value) { m_streamIdHasBeenSet = true; m_streamId = std::move(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline void SetStreamId(const char* value) { m_streamIdHasBeenSet = true; m_streamId.assign(value); }
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline SetSourceRequest& WithStreamId(const Aws::String& value) { SetStreamId(value); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline SetSourceRequest& WithStreamId(Aws::String&& value) { SetStreamId(std::move(value)); return *this;}
 
     /**
      * The stream ID that you want to use for this transport. This parameter applies
-     * only to Zixi-based streams.
+     * only to Zixi and SRT caller-based streams.
      */
     inline SetSourceRequest& WithStreamId(const char* value) { SetStreamId(value); return *this;}
 
@@ -706,6 +713,37 @@ namespace Model
      */
     inline SetSourceRequest& WithWhitelistCidr(const char* value) { SetWhitelistCidr(value); return *this;}
 
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline const SetGatewayBridgeSourceRequest& GetGatewayBridgeSource() const{ return m_gatewayBridgeSource; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline bool GatewayBridgeSourceHasBeenSet() const { return m_gatewayBridgeSourceHasBeenSet; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline void SetGatewayBridgeSource(const SetGatewayBridgeSourceRequest& value) { m_gatewayBridgeSourceHasBeenSet = true; m_gatewayBridgeSource = value; }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline void SetGatewayBridgeSource(SetGatewayBridgeSourceRequest&& value) { m_gatewayBridgeSourceHasBeenSet = true; m_gatewayBridgeSource = std::move(value); }
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline SetSourceRequest& WithGatewayBridgeSource(const SetGatewayBridgeSourceRequest& value) { SetGatewayBridgeSource(value); return *this;}
+
+    /**
+     * The source configuration for cloud flows receiving a stream from a bridge.
+     */
+    inline SetSourceRequest& WithGatewayBridgeSource(SetGatewayBridgeSourceRequest&& value) { SetGatewayBridgeSource(std::move(value)); return *this;}
+
   private:
 
     Encryption m_decryption;
@@ -761,6 +799,9 @@ namespace Model
 
     Aws::String m_whitelistCidr;
     bool m_whitelistCidrHasBeenSet = false;
+
+    SetGatewayBridgeSourceRequest m_gatewayBridgeSource;
+    bool m_gatewayBridgeSourceHasBeenSet = false;
   };
 
 } // namespace Model

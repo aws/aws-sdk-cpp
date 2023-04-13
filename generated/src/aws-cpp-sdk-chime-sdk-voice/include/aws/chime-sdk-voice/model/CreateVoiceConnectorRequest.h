@@ -8,6 +8,8 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/chime-sdk-voice/model/VoiceConnectorAwsRegion.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/chime-sdk-voice/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -131,6 +133,47 @@ namespace Model
      */
     inline CreateVoiceConnectorRequest& WithRequireEncryption(bool value) { SetRequireEncryption(value); return *this;}
 
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline CreateVoiceConnectorRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline CreateVoiceConnectorRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline CreateVoiceConnectorRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags assigned to the Voice Connector.</p>
+     */
+    inline CreateVoiceConnectorRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -141,6 +184,9 @@ namespace Model
 
     bool m_requireEncryption;
     bool m_requireEncryptionHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

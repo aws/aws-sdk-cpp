@@ -74,6 +74,56 @@ namespace MediaConnect
         virtual ~MediaConnectClient();
 
         /**
+         * Adds outputs to an existing bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeOutputs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddBridgeOutputsOutcome AddBridgeOutputs(const Model::AddBridgeOutputsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddBridgeOutputs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddBridgeOutputsRequestT = Model::AddBridgeOutputsRequest>
+        Model::AddBridgeOutputsOutcomeCallable AddBridgeOutputsCallable(const AddBridgeOutputsRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::AddBridgeOutputs, request);
+        }
+
+        /**
+         * An Async wrapper for AddBridgeOutputs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddBridgeOutputsRequestT = Model::AddBridgeOutputsRequest>
+        void AddBridgeOutputsAsync(const AddBridgeOutputsRequestT& request, const AddBridgeOutputsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::AddBridgeOutputs, request, handler, context);
+        }
+
+        /**
+         * Adds sources to an existing bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/AddBridgeSources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AddBridgeSourcesOutcome AddBridgeSources(const Model::AddBridgeSourcesRequest& request) const;
+
+        /**
+         * A Callable wrapper for AddBridgeSources that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AddBridgeSourcesRequestT = Model::AddBridgeSourcesRequest>
+        Model::AddBridgeSourcesOutcomeCallable AddBridgeSourcesCallable(const AddBridgeSourcesRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::AddBridgeSources, request);
+        }
+
+        /**
+         * An Async wrapper for AddBridgeSources that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AddBridgeSourcesRequestT = Model::AddBridgeSourcesRequest>
+        void AddBridgeSourcesAsync(const AddBridgeSourcesRequestT& request, const AddBridgeSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::AddBridgeSources, request, handler, context);
+        }
+
+        /**
          * Adds media streams to an existing flow. After you add a media stream to a flow,
          * you can associate it with a source and/or an output that uses the ST 2110 JPEG
          * XS or CDI protocol.<p><h3>See Also:</h3>   <a
@@ -177,6 +227,32 @@ namespace MediaConnect
         }
 
         /**
+         * Creates a new bridge. The request must include one source.<p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateBridge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateBridgeOutcome CreateBridge(const Model::CreateBridgeRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateBridge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateBridgeRequestT = Model::CreateBridgeRequest>
+        Model::CreateBridgeOutcomeCallable CreateBridgeCallable(const CreateBridgeRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::CreateBridge, request);
+        }
+
+        /**
+         * An Async wrapper for CreateBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateBridgeRequestT = Model::CreateBridgeRequest>
+        void CreateBridgeAsync(const CreateBridgeRequestT& request, const CreateBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::CreateBridge, request, handler, context);
+        }
+
+        /**
          * Creates a new flow. The request must include one source. The request optionally
          * can include outputs (up to 50) and entitlements (up to 50).<p><h3>See Also:</h3>
          * <a
@@ -201,6 +277,58 @@ namespace MediaConnect
         void CreateFlowAsync(const CreateFlowRequestT& request, const CreateFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::CreateFlow, request, handler, context);
+        }
+
+        /**
+         * Creates a new gateway. The request must include at least one network (up to
+         * 4).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/CreateGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGatewayOutcome CreateGateway(const Model::CreateGatewayRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateGatewayRequestT = Model::CreateGatewayRequest>
+        Model::CreateGatewayOutcomeCallable CreateGatewayCallable(const CreateGatewayRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::CreateGateway, request);
+        }
+
+        /**
+         * An Async wrapper for CreateGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateGatewayRequestT = Model::CreateGatewayRequest>
+        void CreateGatewayAsync(const CreateGatewayRequestT& request, const CreateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::CreateGateway, request, handler, context);
+        }
+
+        /**
+         * Deletes a bridge. Before you can delete a bridge, you must stop the
+         * bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteBridge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteBridgeOutcome DeleteBridge(const Model::DeleteBridgeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteBridge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteBridgeRequestT = Model::DeleteBridgeRequest>
+        Model::DeleteBridgeOutcomeCallable DeleteBridgeCallable(const DeleteBridgeRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DeleteBridge, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteBridgeRequestT = Model::DeleteBridgeRequest>
+        void DeleteBridgeAsync(const DeleteBridgeRequestT& request, const DeleteBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DeleteBridge, request, handler, context);
         }
 
         /**
@@ -230,6 +358,84 @@ namespace MediaConnect
         }
 
         /**
+         * Deletes a gateway. Before you can delete a gateway, you must deregister its
+         * instances and delete its bridges.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeleteGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGatewayOutcome DeleteGateway(const Model::DeleteGatewayRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteGatewayRequestT = Model::DeleteGatewayRequest>
+        Model::DeleteGatewayOutcomeCallable DeleteGatewayCallable(const DeleteGatewayRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DeleteGateway, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteGatewayRequestT = Model::DeleteGatewayRequest>
+        void DeleteGatewayAsync(const DeleteGatewayRequestT& request, const DeleteGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DeleteGateway, request, handler, context);
+        }
+
+        /**
+         * Deregisters an instance. Before you deregister an instance, all bridges running
+         * on the instance must be stopped. If you want to deregister an instance without
+         * stopping the bridges, you must use the --force option.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DeregisterGatewayInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeregisterGatewayInstanceOutcome DeregisterGatewayInstance(const Model::DeregisterGatewayInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeregisterGatewayInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeregisterGatewayInstanceRequestT = Model::DeregisterGatewayInstanceRequest>
+        Model::DeregisterGatewayInstanceOutcomeCallable DeregisterGatewayInstanceCallable(const DeregisterGatewayInstanceRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DeregisterGatewayInstance, request);
+        }
+
+        /**
+         * An Async wrapper for DeregisterGatewayInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeregisterGatewayInstanceRequestT = Model::DeregisterGatewayInstanceRequest>
+        void DeregisterGatewayInstanceAsync(const DeregisterGatewayInstanceRequestT& request, const DeregisterGatewayInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DeregisterGatewayInstance, request, handler, context);
+        }
+
+        /**
+         * Displays the details of a bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeBridge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeBridgeOutcome DescribeBridge(const Model::DescribeBridgeRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeBridge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeBridgeRequestT = Model::DescribeBridgeRequest>
+        Model::DescribeBridgeOutcomeCallable DescribeBridgeCallable(const DescribeBridgeRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DescribeBridge, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeBridgeRequestT = Model::DescribeBridgeRequest>
+        void DescribeBridgeAsync(const DescribeBridgeRequestT& request, const DescribeBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DescribeBridge, request, handler, context);
+        }
+
+        /**
          * Displays the details of a flow. The response includes the flow ARN, name, and
          * Availability Zone, as well as details about the source, outputs, and
          * entitlements.<p><h3>See Also:</h3>   <a
@@ -254,6 +460,58 @@ namespace MediaConnect
         void DescribeFlowAsync(const DescribeFlowRequestT& request, const DescribeFlowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::DescribeFlow, request, handler, context);
+        }
+
+        /**
+         * Displays the details of a gateway. The response includes the gateway ARN, name,
+         * and CIDR blocks, as well as details about the networks.<p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGateway">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGatewayOutcome DescribeGateway(const Model::DescribeGatewayRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeGateway that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeGatewayRequestT = Model::DescribeGatewayRequest>
+        Model::DescribeGatewayOutcomeCallable DescribeGatewayCallable(const DescribeGatewayRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DescribeGateway, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeGateway that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeGatewayRequestT = Model::DescribeGatewayRequest>
+        void DescribeGatewayAsync(const DescribeGatewayRequestT& request, const DescribeGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DescribeGateway, request, handler, context);
+        }
+
+        /**
+         * Displays the details of an instance.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/DescribeGatewayInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeGatewayInstanceOutcome DescribeGatewayInstance(const Model::DescribeGatewayInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeGatewayInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeGatewayInstanceRequestT = Model::DescribeGatewayInstanceRequest>
+        Model::DescribeGatewayInstanceOutcomeCallable DescribeGatewayInstanceCallable(const DescribeGatewayInstanceRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::DescribeGatewayInstance, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeGatewayInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeGatewayInstanceRequestT = Model::DescribeGatewayInstanceRequest>
+        void DescribeGatewayInstanceAsync(const DescribeGatewayInstanceRequestT& request, const DescribeGatewayInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::DescribeGatewayInstance, request, handler, context);
         }
 
         /**
@@ -337,6 +595,33 @@ namespace MediaConnect
         }
 
         /**
+         * Displays a list of bridges that are associated with this account and an
+         * optionally specified Arn. This request returns a paginated result.<p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListBridges">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListBridgesOutcome ListBridges(const Model::ListBridgesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListBridges that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListBridgesRequestT = Model::ListBridgesRequest>
+        Model::ListBridgesOutcomeCallable ListBridgesCallable(const ListBridgesRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::ListBridges, request);
+        }
+
+        /**
+         * An Async wrapper for ListBridges that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListBridgesRequestT = Model::ListBridgesRequest>
+        void ListBridgesAsync(const ListBridgesRequestT& request, const ListBridgesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::ListBridges, request, handler, context);
+        }
+
+        /**
          * Displays a list of all entitlements that have been granted to this account. This
          * request returns 20 results per page.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListEntitlements">AWS
@@ -386,6 +671,60 @@ namespace MediaConnect
         void ListFlowsAsync(const ListFlowsRequestT& request, const ListFlowsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::ListFlows, request, handler, context);
+        }
+
+        /**
+         * Displays a list of instances associated with the AWS account. This request
+         * returns a paginated result. You can use the filterArn property to display only
+         * the instances associated with the selected Gateway Amazon Resource Name
+         * (ARN).<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGatewayInstances">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGatewayInstancesOutcome ListGatewayInstances(const Model::ListGatewayInstancesRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGatewayInstances that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGatewayInstancesRequestT = Model::ListGatewayInstancesRequest>
+        Model::ListGatewayInstancesOutcomeCallable ListGatewayInstancesCallable(const ListGatewayInstancesRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::ListGatewayInstances, request);
+        }
+
+        /**
+         * An Async wrapper for ListGatewayInstances that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGatewayInstancesRequestT = Model::ListGatewayInstancesRequest>
+        void ListGatewayInstancesAsync(const ListGatewayInstancesRequestT& request, const ListGatewayInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::ListGatewayInstances, request, handler, context);
+        }
+
+        /**
+         * Displays a list of gateways that are associated with this account. This request
+         * returns a paginated result.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/ListGateways">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListGatewaysOutcome ListGateways(const Model::ListGatewaysRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListGateways that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
+        Model::ListGatewaysOutcomeCallable ListGatewaysCallable(const ListGatewaysRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::ListGateways, request);
+        }
+
+        /**
+         * An Async wrapper for ListGateways that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListGatewaysRequestT = Model::ListGatewaysRequest>
+        void ListGatewaysAsync(const ListGatewaysRequestT& request, const ListGatewaysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::ListGateways, request, handler, context);
         }
 
         /**
@@ -493,6 +832,56 @@ namespace MediaConnect
         void PurchaseOfferingAsync(const PurchaseOfferingRequestT& request, const PurchaseOfferingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::PurchaseOffering, request, handler, context);
+        }
+
+        /**
+         * Removes an output from a bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeOutput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveBridgeOutputOutcome RemoveBridgeOutput(const Model::RemoveBridgeOutputRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveBridgeOutput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveBridgeOutputRequestT = Model::RemoveBridgeOutputRequest>
+        Model::RemoveBridgeOutputOutcomeCallable RemoveBridgeOutputCallable(const RemoveBridgeOutputRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::RemoveBridgeOutput, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveBridgeOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveBridgeOutputRequestT = Model::RemoveBridgeOutputRequest>
+        void RemoveBridgeOutputAsync(const RemoveBridgeOutputRequestT& request, const RemoveBridgeOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::RemoveBridgeOutput, request, handler, context);
+        }
+
+        /**
+         * Removes a source from a bridge.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/RemoveBridgeSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::RemoveBridgeSourceOutcome RemoveBridgeSource(const Model::RemoveBridgeSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for RemoveBridgeSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename RemoveBridgeSourceRequestT = Model::RemoveBridgeSourceRequest>
+        Model::RemoveBridgeSourceOutcomeCallable RemoveBridgeSourceCallable(const RemoveBridgeSourceRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::RemoveBridgeSource, request);
+        }
+
+        /**
+         * An Async wrapper for RemoveBridgeSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename RemoveBridgeSourceRequestT = Model::RemoveBridgeSourceRequest>
+        void RemoveBridgeSourceAsync(const RemoveBridgeSourceRequestT& request, const RemoveBridgeSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::RemoveBridgeSource, request, handler, context);
         }
 
         /**
@@ -736,6 +1125,106 @@ namespace MediaConnect
         }
 
         /**
+         * Updates the bridge<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBridgeOutcome UpdateBridge(const Model::UpdateBridgeRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBridge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBridgeRequestT = Model::UpdateBridgeRequest>
+        Model::UpdateBridgeOutcomeCallable UpdateBridgeCallable(const UpdateBridgeRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::UpdateBridge, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBridge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBridgeRequestT = Model::UpdateBridgeRequest>
+        void UpdateBridgeAsync(const UpdateBridgeRequestT& request, const UpdateBridgeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::UpdateBridge, request, handler, context);
+        }
+
+        /**
+         * Updates an existing bridge output.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeOutput">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBridgeOutputOutcome UpdateBridgeOutput(const Model::UpdateBridgeOutputRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBridgeOutput that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBridgeOutputRequestT = Model::UpdateBridgeOutputRequest>
+        Model::UpdateBridgeOutputOutcomeCallable UpdateBridgeOutputCallable(const UpdateBridgeOutputRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::UpdateBridgeOutput, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBridgeOutput that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBridgeOutputRequestT = Model::UpdateBridgeOutputRequest>
+        void UpdateBridgeOutputAsync(const UpdateBridgeOutputRequestT& request, const UpdateBridgeOutputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::UpdateBridgeOutput, request, handler, context);
+        }
+
+        /**
+         * Updates an existing bridge source.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeSource">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBridgeSourceOutcome UpdateBridgeSource(const Model::UpdateBridgeSourceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBridgeSource that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBridgeSourceRequestT = Model::UpdateBridgeSourceRequest>
+        Model::UpdateBridgeSourceOutcomeCallable UpdateBridgeSourceCallable(const UpdateBridgeSourceRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::UpdateBridgeSource, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBridgeSource that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBridgeSourceRequestT = Model::UpdateBridgeSourceRequest>
+        void UpdateBridgeSourceAsync(const UpdateBridgeSourceRequestT& request, const UpdateBridgeSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::UpdateBridgeSource, request, handler, context);
+        }
+
+        /**
+         * Updates the bridge state<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateBridgeState">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateBridgeStateOutcome UpdateBridgeState(const Model::UpdateBridgeStateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateBridgeState that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateBridgeStateRequestT = Model::UpdateBridgeStateRequest>
+        Model::UpdateBridgeStateOutcomeCallable UpdateBridgeStateCallable(const UpdateBridgeStateRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::UpdateBridgeState, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateBridgeState that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateBridgeStateRequestT = Model::UpdateBridgeStateRequest>
+        void UpdateBridgeStateAsync(const UpdateBridgeStateRequestT& request, const UpdateBridgeStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::UpdateBridgeState, request, handler, context);
+        }
+
+        /**
          * Updates flow<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateFlow">AWS
          * API Reference</a></p>
@@ -860,6 +1349,32 @@ namespace MediaConnect
         void UpdateFlowSourceAsync(const UpdateFlowSourceRequestT& request, const UpdateFlowSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&MediaConnectClient::UpdateFlowSource, request, handler, context);
+        }
+
+        /**
+         * Updates the configuration of an existing Gateway Instance.<p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconnect-2018-11-14/UpdateGatewayInstance">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGatewayInstanceOutcome UpdateGatewayInstance(const Model::UpdateGatewayInstanceRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateGatewayInstance that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateGatewayInstanceRequestT = Model::UpdateGatewayInstanceRequest>
+        Model::UpdateGatewayInstanceOutcomeCallable UpdateGatewayInstanceCallable(const UpdateGatewayInstanceRequestT& request) const
+        {
+            return SubmitCallable(&MediaConnectClient::UpdateGatewayInstance, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateGatewayInstance that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateGatewayInstanceRequestT = Model::UpdateGatewayInstanceRequest>
+        void UpdateGatewayInstanceAsync(const UpdateGatewayInstanceRequestT& request, const UpdateGatewayInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&MediaConnectClient::UpdateGatewayInstance, request, handler, context);
         }
 
 

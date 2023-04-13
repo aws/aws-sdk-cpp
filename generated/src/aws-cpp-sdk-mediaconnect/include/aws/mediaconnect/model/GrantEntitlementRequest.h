@@ -120,37 +120,37 @@ namespace Model
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline const Encryption& GetEncryption() const{ return m_encryption; }
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline void SetEncryption(const Encryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline void SetEncryption(Encryption&& value) { m_encryptionHasBeenSet = true; m_encryption = std::move(value); }
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline GrantEntitlementRequest& WithEncryption(const Encryption& value) { SetEncryption(value); return *this;}
 
     /**
      * The type of encryption that will be used on the output that is associated with
-     * this entitlement.
+     * this entitlement. Allowable encryption types: static-key, speke.
      */
     inline GrantEntitlementRequest& WithEncryption(Encryption&& value) { SetEncryption(std::move(value)); return *this;}
 

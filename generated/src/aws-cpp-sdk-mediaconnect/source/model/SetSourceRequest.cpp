@@ -44,7 +44,8 @@ SetSourceRequest::SetSourceRequest() :
     m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false)
+    m_whitelistCidrHasBeenSet(false),
+    m_gatewayBridgeSourceHasBeenSet(false)
 {
 }
 
@@ -74,7 +75,8 @@ SetSourceRequest::SetSourceRequest(JsonView jsonValue) :
     m_sourceListenerPortHasBeenSet(false),
     m_streamIdHasBeenSet(false),
     m_vpcInterfaceNameHasBeenSet(false),
-    m_whitelistCidrHasBeenSet(false)
+    m_whitelistCidrHasBeenSet(false),
+    m_gatewayBridgeSourceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -210,6 +212,13 @@ SetSourceRequest& SetSourceRequest::operator =(JsonView jsonValue)
     m_whitelistCidrHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("gatewayBridgeSource"))
+  {
+    m_gatewayBridgeSource = jsonValue.GetObject("gatewayBridgeSource");
+
+    m_gatewayBridgeSourceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -326,6 +335,12 @@ JsonValue SetSourceRequest::Jsonize() const
   if(m_whitelistCidrHasBeenSet)
   {
    payload.WithString("whitelistCidr", m_whitelistCidr);
+
+  }
+
+  if(m_gatewayBridgeSourceHasBeenSet)
+  {
+   payload.WithObject("gatewayBridgeSource", m_gatewayBridgeSource.Jsonize());
 
   }
 
