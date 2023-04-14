@@ -14,7 +14,7 @@ add_executable(${PROJECT_NAME} benchmark.cpp
         src/service/S3PutObject.cpp
         src/service/S3GetObject.cpp
         src/metric/Metrics.cpp
-        src/metric/PrintMetrics.cpp
+        src/metric/PrintEmbeddedCloudWatchMetrics.cpp
         src/metric/CloudWatchMetrics.cpp)
 set_compiler_flags(${PROJECT_NAME})
 set_compiler_warnings(${PROJECT_NAME})

@@ -13,20 +13,22 @@ using namespace Aws::CloudWatch::Model;
 Benchmark::CloudWatchMetrics::CloudWatchMetrics(
     const std::shared_ptr<Aws::CloudWatch::CloudWatchClient> &cloudWatchClient) : cloudWatchClient(cloudWatchClient) {}
 
-void Benchmark::CloudWatchMetrics::EmitMetric(std::vector<Metric> &&metrics) const {
+void Benchmark::CloudWatchMetrics::EmitMetricForOp(const std::string &metricName,
+    const std::vector<Dimension> &dimensions,
+    const std::function<bool()> &op) const {
+
+    auto metrics = CreateMetricsForOp(metricName, dimensions, op);
     std::vector<MetricDatum> data{metrics.size()};
     std::transform(metrics.cbegin(),
         metrics.cend(),
         data.begin(),
         [this](const Metric &metric) -> MetricDatum { return this->ConvertToCloudWatchMetric(metric); });
 
-    auto dataChunks = this->divideIntoSizedChunks(data);
-    std::for_each(dataChunks.cbegin(), dataChunks.cend(), [this](const std::vector<MetricDatum> &chunk) {
-        this->cloudWatchClient->PutMetricData(PutMetricDataRequest()
-            .WithNamespace("AwsCppSdkBenchmarks")
-            .WithMetricData(chunk));
-    });
+    this->cloudWatchClient->PutMetricData(PutMetricDataRequest()
+        .WithNamespace("AwsCppSdkBenchmarks")
+        .WithMetricData(data));
 }
+
 
 Aws::CloudWatch::Model::MetricDatum
 Benchmark::CloudWatchMetrics::ConvertToCloudWatchMetric(const Benchmark::Metric &metric) const {
@@ -50,14 +52,4 @@ Benchmark::CloudWatchMetrics::ConvertToCloudWatchMetric(const Benchmark::Metric 
             .WithValue(std::atof(metric.value.c_str()));
     }
     return data;
-}
-
-std::vector<std::vector<MetricDatum>>
-Benchmark::CloudWatchMetrics::divideIntoSizedChunks(const std::vector<MetricDatum> &data, int chunkSize) const {
-    std::vector<std::vector<MetricDatum>> dataChunks;
-    for (size_t i = 0; i < data.size(); i += chunkSize) {
-        auto last = std::min(data.size(), i + chunkSize);
-        dataChunks.emplace_back(data.begin() + i, data.begin() + last);
-    }
-    return dataChunks;
 }
