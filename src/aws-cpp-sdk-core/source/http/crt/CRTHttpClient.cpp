@@ -317,8 +317,8 @@ namespace Aws
             for (size_t i = 0; i < headersCount; ++i)
             {
                 const Crt::Http::HttpHeader* header = &headersArray[i];
-                Aws::String headerNameStr((const char* const)header->name.ptr, header->name.len);
-                Aws::String headerValueStr((const char* const)header->value.ptr, header->value.len);
+                Aws::String headerNameStr((const char*)header->name.ptr, header->name.len);
+                Aws::String headerValueStr((const char*)header->value.ptr, header->value.len);
                 AWS_LOGSTREAM_TRACE(CRT_HTTP_CLIENT_TAG, headerNameStr << ": " << headerValueStr);
                 response->AddHeader(headerNameStr, std::move(headerValueStr));
             }

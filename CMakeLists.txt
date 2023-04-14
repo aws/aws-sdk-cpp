@@ -39,7 +39,7 @@ if (LEGACY_BUILD)
     option(USE_IXML_HTTP_REQUEST_2 "If enabled on windows, the com object IXmlHttpRequest2 will be used for the http stack" OFF)
     option(ENABLE_RTTI "Flag to enable/disable rtti within the library" ON)
     option(ENABLE_TESTING "Flag to enable/disable building unit and integration tests" ON)
-    option(AUTORUN_UNIT_TESTS "Flag to enable/disable automatically run unit tests after building" ON)
+    option(AUTORUN_UNIT_TESTS "Flag to enable/disable automatically run unit tests after building" OFF)
     option(ANDROID_BUILD_CURL "When building for Android, should curl be built as well" ON)
     option(ANDROID_BUILD_OPENSSL "When building for Android, should Openssl be built as well" ON)
     option(ANDROID_BUILD_ZLIB "When building for Android, should Zlib be built as well" ON)
@@ -160,7 +160,7 @@ if (LEGACY_BUILD)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
     # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
-    if(ENABLE_ZLIB_REQUEST_COMPRESSION)
+    if(ENABLE_ZLIB_REQUEST_COMPRESSION AND NOT USE_CRT_HTTP_CLIENT)
         find_package(ZLIB QUIET)
         if ( NOT ZLIB_FOUND)
             set(ENABLE_ZLIB_REQUEST_COMPRESSION

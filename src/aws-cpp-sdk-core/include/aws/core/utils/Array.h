@@ -39,6 +39,7 @@ namespace Aws
              */
             Array(size_t arraySize = 0) :
                 m_size(arraySize),
+                m_length(0),
                 m_data(arraySize > 0 ? Aws::MakeUniqueArray<T>(arraySize, ARRAY_ALLOCATION_TAG) : nullptr)
             {
             }
@@ -48,6 +49,7 @@ namespace Aws
              */
             Array(const T* arrayToCopy, size_t arraySize) :
                 m_size(arraySize),
+                m_length(arraySize),
                 m_data(nullptr)
             {
                 if (arrayToCopy != nullptr && m_size > 0)
@@ -90,11 +92,13 @@ namespace Aws
                         location += arraySize;
                     }
                 }
+                m_length = totalSize;
             }
 
             Array(const Array& other)
             {
                 m_size = other.m_size;
+                m_length = other.m_length;
                 m_data = nullptr;
 
                 if (m_size > 0)
@@ -112,6 +116,7 @@ namespace Aws
             //move c_tor
             Array(Array&& other) :
                 m_size(other.m_size),
+                m_length(other.m_length),
                 m_data(std::move(other.m_data))
             {
                 other.m_size = 0;
@@ -128,6 +133,7 @@ namespace Aws
                 }
 
                 m_size = other.m_size;
+                m_length = other.m_length;
                 m_data = nullptr;
 
                 if (m_size > 0)
@@ -135,9 +141,9 @@ namespace Aws
                     m_data.reset(Aws::NewArray<T>(m_size, ARRAY_ALLOCATION_TAG));
 
 #ifdef _WIN32
-                    std::copy(other.m_data.get(), other.m_data.get() + other.m_size, stdext::checked_array_iterator< T * >(m_data.get(), m_size));
+                    std::copy(other.m_data.get(), other.m_data.get() + other.m_length, stdext::checked_array_iterator< T * >(m_data.get(), m_size));
 #else
-                    std::copy(other.m_data.get(), other.m_data.get() + other.m_size, m_data.get());
+                    std::copy(other.m_data.get(), other.m_data.get() + other.m_length, m_data.get());
 #endif // MSVC
                 }
 
@@ -147,6 +153,7 @@ namespace Aws
             Array& operator=(Array&& other)
             {
                 m_size = other.m_size;
+                m_length = other.m_length;
                 m_data = std::move(other.m_data);
 
                 return *this;
@@ -162,9 +169,14 @@ namespace Aws
                     return true;
                 }
 
-                if (m_size == other.m_size && m_data && other.m_data)
+                if (m_length != other.m_length)
                 {
-                    for (unsigned i = 0; i < m_size; ++i)
+                    return false;
+                }
+
+                if (m_length == other.m_length && m_size == other.m_size && m_data && other.m_data)
+                {
+                    for (unsigned i = 0; i < m_length; ++i)
                     {
                         if (m_data.get()[i] != other.m_data.get()[i])
                             return false;
@@ -183,13 +195,13 @@ namespace Aws
 
             T const& GetItem(size_t index) const
             {
-                assert(index < m_size);
+                assert(index < m_length);
                 return m_data.get()[index];
             }
 
             T& GetItem(size_t index)
             {
-                assert(index < m_size);
+                assert(index < m_length);
                 return m_data.get()[index];
             }
 
@@ -205,6 +217,11 @@ namespace Aws
 
             inline size_t GetLength() const
             {
+                return m_length;
+            }
+
+            inline size_t GetSize() const
+            {
                 return m_size;
             }
 
@@ -213,9 +230,14 @@ namespace Aws
                 return m_data.get();
             }
 
+            inline void SetLength(size_t len)
+            {
+                m_length = len;
+            }
+
         protected:
             size_t m_size;
-
+            size_t m_length;
             Aws::UniqueArrayPtr<T> m_data;
         };
 
