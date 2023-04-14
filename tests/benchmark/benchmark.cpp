@@ -6,7 +6,7 @@
 #include <Configuration.h>
 #include <TestDelegator.h>
 #include <metric/Metrics.h>
-#include <metric/PrintMetrics.h>
+#include <metric/PrintEmbeddedCloudWatchMetrics.h>
 #include <metric/CloudWatchMetrics.h>
 
 int main(int argc, char *argv[]) {
@@ -20,10 +20,9 @@ int main(int argc, char *argv[]) {
             if (configuration.GetConfiguration().shouldReportToCloudWatch) {
                 return std::make_shared<Benchmark::CloudWatchMetrics>();
             }
-            return std::make_shared<Benchmark::PrintMetrics>();
+            return std::make_shared<Benchmark::PrintEmbeddedCloudWatchMetrics>();
         }();
-        auto metrics = testFunc(configuration);
-        metricsEmitter->EmitMetric(std::move(metrics));
+        testFunc(configuration, metricsEmitter);
     }
     Aws::ShutdownAPI(options);
     return 0;
