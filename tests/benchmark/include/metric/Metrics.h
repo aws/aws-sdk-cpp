@@ -30,14 +30,13 @@ namespace Benchmark {
 
     class MetricsEmitter {
     public:
-        static void CreateMetricsForOp(
-            const std::string &metricName,
-            const std::vector<Dimension> &dimensions,
-            std::vector<Benchmark::Metric> &trackingMetrics,
-            const std::function<bool()> &op);
-
         virtual ~MetricsEmitter() = default;
-
-        virtual void EmitMetric(std::vector<Metric> &&metrics) const = 0;
+        virtual void EmitMetricForOp(const std::string &metricName,
+            const std::vector<Dimension> &dimensions,
+            const std::function<bool()> &op) const = 0;
+    protected:
+        std::vector<Benchmark::Metric> CreateMetricsForOp(const std::string &metricName,
+            const std::vector<Dimension> &dimensions,
+            const std::function<bool()> &op) const;
     };
 }

@@ -14,6 +14,7 @@
 #include <aws/s3/model/DeleteObjectRequest.h>
 #include <iostream>
 #include <chrono>
+#include <memory>
 
 using namespace Aws;
 using namespace Aws::Utils;
@@ -24,15 +25,12 @@ using namespace std::chrono;
 const static char *ALLOC_TAG = "PUT_OBJECT_BENCHMARK";
 
 Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
-    return [](const Configuration &configuration) -> std::vector<Metric> {
-        std::vector<Metric> metrics;
-
+    return [](const Configuration &configuration, const std::shared_ptr<MetricsEmitter> metricsEmitter) -> void {
         //Create Bucket
         auto s3 = Aws::MakeUnique<S3Client>(ALLOC_TAG);
         const auto bucketName = "put-bucket-benchmark-" + RandomString(8);
-        Benchmark::MetricsEmitter::CreateMetricsForOp("CreateBucket",
+        metricsEmitter->EmitMetricForOp("CreateBucket",
             {{"Service", "S3"}, {"Operation", "CreateBucket"}},
-            metrics,
             [&]() -> bool {
                 auto response = s3->CreateBucket(CreateBucketRequest().WithBucket(bucketName));
                 return response.IsSuccess();
@@ -50,10 +48,9 @@ Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
             const std::shared_ptr<Aws::IOStream> inputData = Aws::MakeShared<Aws::StringStream>("");
             *inputData << randomBody64K.c_str();
             putObjectRequest.SetBody(inputData);
-            Benchmark::MetricsEmitter::CreateMetricsForOp(
+            metricsEmitter->EmitMetricForOp(
                 "PutObject",
                 {{"Service", "S3"}, {"Operation", "PutObject"}},
-                metrics,
                 [&]() -> bool {
                     auto response = s3->PutObject(putObjectRequest);
                     return response.IsSuccess();
@@ -62,22 +59,19 @@ Benchmark::TestFunction Benchmark::S3PutObject::CreateTestFunction() {
 
         // Clean up
         std::for_each(keysToDelete.begin(), keysToDelete.end(), [&](const std::string &key) {
-            Benchmark::MetricsEmitter::CreateMetricsForOp("DeleteObject",
+            metricsEmitter->EmitMetricForOp("DeleteObject",
                 {{"Service", "S3"}, {"Operation", "DeleteObject"}},
-                metrics,
                 [&]() -> bool {
                     auto response = s3->DeleteObject(DeleteObjectRequest().WithBucket(bucketName).WithKey(key));
                     return response.IsSuccess();
                 });
         });
 
-        Benchmark::MetricsEmitter::CreateMetricsForOp(
+        metricsEmitter->EmitMetricForOp(
             "DeleteBucket",
-            {{"Service", "S3"}, {"Operation", "DeleteBucket"}}, metrics, [&]() -> bool {
+            {{"Service", "S3"}, {"Operation", "DeleteBucket"}}, [&]() -> bool {
                 auto response = s3->DeleteBucket(DeleteBucketRequest().WithBucket(bucketName));
                 return response.IsSuccess();
             });
-
-        return metrics;
     };
 }

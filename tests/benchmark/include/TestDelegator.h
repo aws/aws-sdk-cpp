@@ -9,9 +9,11 @@
 #include <functional>
 #include <map>
 #include <vector>
+#include <memory>
 
 namespace Benchmark {
-    using TestFunction = std::function<std::vector<Benchmark::Metric>(const Benchmark::Configuration &configuration)>;
+    using TestFunction = std::function<void(const Benchmark::Configuration &configuration,
+        const std::shared_ptr<MetricsEmitter> metricsEmitter)>;
     using StringPair = std::pair<std::string, std::string>;
 
     class TestDelegator {

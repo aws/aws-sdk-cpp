@@ -17,10 +17,11 @@ Benchmark::TestDelegator::GetTestRunForConfiguration(const Benchmark::Configurat
     if (it != testFunctionMap.end()) {
         return it->second;
     }
-    return [](const Benchmark::Configuration &configuration) -> std::vector<Metric> {
+    return [](const Benchmark::Configuration &configuration, const std::shared_ptr<MetricsEmitter> metricsEmitter) -> void {
+        (void) metricsEmitter;
         std::cout << "Could not find test to run for service: " << configuration.GetConfiguration().service
                   << "and api: " << configuration.GetConfiguration().api << "\n";
-        return {};
+        return;
     };
 }
 
