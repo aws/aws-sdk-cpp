@@ -1792,29 +1792,25 @@ namespace Model
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
-     * the Multi-AZ DB cluster.</p> <p>Type: Integer</p> <p>Valid for: Multi-AZ DB
-     * clusters only</p>
+     * the Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline int GetAllocatedStorage() const{ return m_allocatedStorage; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
-     * the Multi-AZ DB cluster.</p> <p>Type: Integer</p> <p>Valid for: Multi-AZ DB
-     * clusters only</p>
+     * the Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
-     * the Multi-AZ DB cluster.</p> <p>Type: Integer</p> <p>Valid for: Multi-AZ DB
-     * clusters only</p>
+     * the Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
      * <p>The amount of storage in gibibytes (GiB) to allocate to each DB instance in
-     * the Multi-AZ DB cluster.</p> <p>Type: Integer</p> <p>Valid for: Multi-AZ DB
-     * clusters only</p>
+     * the Multi-AZ DB cluster.</p> <p>Valid for: Multi-AZ DB clusters only</p>
      */
     inline ModifyDBClusterRequest& WithAllocatedStorage(int value) { SetAllocatedStorage(value); return *this;}
 
@@ -2753,6 +2749,124 @@ namespace Model
      */
     inline ModifyDBClusterRequest& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
+
+    /**
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p>  <p>The DB engine mode can be modified only
+     * from <code>serverless</code> to <code>provisioned</code>.</p>  <p>For
+     * more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
+     * CreateDBCluster</a>.</p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
+
+
+    /**
+     * <p>A value that indicates whether engine mode changes from
+     * <code>serverless</code> to <code>provisioned</code> are allowed.</p>
+     * <p>Constraints: You must allow engine mode changes when specifying a different
+     * value for the <code>EngineMode</code> parameter from the DB cluster's current
+     * engine mode.</p> <p>Valid for: Aurora Serverless v1 DB clusters only</p>
+     */
+    inline bool GetAllowEngineModeChange() const{ return m_allowEngineModeChange; }
+
+    /**
+     * <p>A value that indicates whether engine mode changes from
+     * <code>serverless</code> to <code>provisioned</code> are allowed.</p>
+     * <p>Constraints: You must allow engine mode changes when specifying a different
+     * value for the <code>EngineMode</code> parameter from the DB cluster's current
+     * engine mode.</p> <p>Valid for: Aurora Serverless v1 DB clusters only</p>
+     */
+    inline bool AllowEngineModeChangeHasBeenSet() const { return m_allowEngineModeChangeHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether engine mode changes from
+     * <code>serverless</code> to <code>provisioned</code> are allowed.</p>
+     * <p>Constraints: You must allow engine mode changes when specifying a different
+     * value for the <code>EngineMode</code> parameter from the DB cluster's current
+     * engine mode.</p> <p>Valid for: Aurora Serverless v1 DB clusters only</p>
+     */
+    inline void SetAllowEngineModeChange(bool value) { m_allowEngineModeChangeHasBeenSet = true; m_allowEngineModeChange = value; }
+
+    /**
+     * <p>A value that indicates whether engine mode changes from
+     * <code>serverless</code> to <code>provisioned</code> are allowed.</p>
+     * <p>Constraints: You must allow engine mode changes when specifying a different
+     * value for the <code>EngineMode</code> parameter from the DB cluster's current
+     * engine mode.</p> <p>Valid for: Aurora Serverless v1 DB clusters only</p>
+     */
+    inline ModifyDBClusterRequest& WithAllowEngineModeChange(bool value) { SetAllowEngineModeChange(value); return *this;}
+
   private:
 
     Aws::String m_dBClusterIdentifier;
@@ -2871,6 +2985,12 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_engineMode;
+    bool m_engineModeHasBeenSet = false;
+
+    bool m_allowEngineModeChange;
+    bool m_allowEngineModeChangeHasBeenSet = false;
   };
 
 } // namespace Model

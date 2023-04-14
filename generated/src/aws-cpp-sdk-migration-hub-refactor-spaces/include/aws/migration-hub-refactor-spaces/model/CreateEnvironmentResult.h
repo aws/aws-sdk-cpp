@@ -171,27 +171,27 @@ namespace Model
 
 
     /**
-     * <p>A timestamp that indicates when the environment was last updated. </p>
+     * <p>A timestamp that indicates when the environment was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>A timestamp that indicates when the environment was last updated. </p>
+     * <p>A timestamp that indicates when the environment was last updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTime = value; }
 
     /**
-     * <p>A timestamp that indicates when the environment was last updated. </p>
+     * <p>A timestamp that indicates when the environment was last updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>A timestamp that indicates when the environment was last updated. </p>
+     * <p>A timestamp that indicates when the environment was last updated.</p>
      */
     inline CreateEnvironmentResult& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>A timestamp that indicates when the environment was last updated. </p>
+     * <p>A timestamp that indicates when the environment was last updated.</p>
      */
     inline CreateEnvironmentResult& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 

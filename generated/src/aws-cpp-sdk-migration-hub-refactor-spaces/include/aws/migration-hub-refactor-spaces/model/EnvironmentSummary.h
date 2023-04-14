@@ -470,42 +470,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline const Aws::String& GetTransitGatewayId() const{ return m_transitGatewayId; }
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline bool TransitGatewayIdHasBeenSet() const { return m_transitGatewayIdHasBeenSet; }
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline void SetTransitGatewayId(const Aws::String& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = value; }
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline void SetTransitGatewayId(Aws::String&& value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId = std::move(value); }
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline void SetTransitGatewayId(const char* value) { m_transitGatewayIdHasBeenSet = true; m_transitGatewayId.assign(value); }
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline EnvironmentSummary& WithTransitGatewayId(const Aws::String& value) { SetTransitGatewayId(value); return *this;}
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline EnvironmentSummary& WithTransitGatewayId(Aws::String&& value) { SetTransitGatewayId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the transit gateway set up by the environment. </p>
+     * <p>The ID of the Transit Gateway set up by the environment. </p>
      */
     inline EnvironmentSummary& WithTransitGatewayId(const char* value) { SetTransitGatewayId(value); return *this;}
 
