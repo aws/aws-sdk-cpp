@@ -338,6 +338,27 @@ namespace Model
      */
     inline SourceProperties& WithRecommendedInstanceType(const char* value) { SetRecommendedInstanceType(value); return *this;}
 
+
+    /**
+     * <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
+     */
+    inline bool GetSupportsNitroInstances() const{ return m_supportsNitroInstances; }
+
+    /**
+     * <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
+     */
+    inline bool SupportsNitroInstancesHasBeenSet() const { return m_supportsNitroInstancesHasBeenSet; }
+
+    /**
+     * <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
+     */
+    inline void SetSupportsNitroInstances(bool value) { m_supportsNitroInstancesHasBeenSet = true; m_supportsNitroInstances = value; }
+
+    /**
+     * <p>Are EC2 nitro instance types supported when recovering the Source Server.</p>
+     */
+    inline SourceProperties& WithSupportsNitroInstances(bool value) { SetSupportsNitroInstances(value); return *this;}
+
   private:
 
     Aws::Vector<CPU> m_cpus;
@@ -363,6 +384,9 @@ namespace Model
 
     Aws::String m_recommendedInstanceType;
     bool m_recommendedInstanceTypeHasBeenSet = false;
+
+    bool m_supportsNitroInstances;
+    bool m_supportsNitroInstancesHasBeenSet = false;
   };
 
 } // namespace Model

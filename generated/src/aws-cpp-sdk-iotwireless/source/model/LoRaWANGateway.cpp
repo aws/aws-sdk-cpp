@@ -24,7 +24,9 @@ LoRaWANGateway::LoRaWANGateway() :
     m_joinEuiFiltersHasBeenSet(false),
     m_netIdFiltersHasBeenSet(false),
     m_subBandsHasBeenSet(false),
-    m_beaconingHasBeenSet(false)
+    m_beaconingHasBeenSet(false),
+    m_maxEirp(0.0),
+    m_maxEirpHasBeenSet(false)
 {
 }
 
@@ -34,7 +36,9 @@ LoRaWANGateway::LoRaWANGateway(JsonView jsonValue) :
     m_joinEuiFiltersHasBeenSet(false),
     m_netIdFiltersHasBeenSet(false),
     m_subBandsHasBeenSet(false),
-    m_beaconingHasBeenSet(false)
+    m_beaconingHasBeenSet(false),
+    m_maxEirp(0.0),
+    m_maxEirpHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +103,13 @@ LoRaWANGateway& LoRaWANGateway::operator =(JsonView jsonValue)
     m_beaconingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MaxEirp"))
+  {
+    m_maxEirp = jsonValue.GetDouble("MaxEirp");
+
+    m_maxEirpHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -159,6 +170,12 @@ JsonValue LoRaWANGateway::Jsonize() const
   if(m_beaconingHasBeenSet)
   {
    payload.WithObject("Beaconing", m_beaconing.Jsonize());
+
+  }
+
+  if(m_maxEirpHasBeenSet)
+  {
+   payload.WithDouble("MaxEirp", m_maxEirp);
 
   }
 

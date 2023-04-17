@@ -43,7 +43,8 @@ namespace Model
     ruby2_7,
     provided,
     provided_al2,
-    nodejs18_x
+    nodejs18_x,
+    python3_10
   };
 
 namespace RuntimeMapper

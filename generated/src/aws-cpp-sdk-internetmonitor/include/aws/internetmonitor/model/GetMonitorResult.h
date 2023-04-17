@@ -440,6 +440,25 @@ namespace Model
     inline GetMonitorResult& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitor = value; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline GetMonitorResult& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -484,6 +503,8 @@ namespace Model
     int m_maxCityNetworksToMonitor;
 
     InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
+
+    int m_trafficPercentageToMonitor;
 
     Aws::String m_requestId;
   };

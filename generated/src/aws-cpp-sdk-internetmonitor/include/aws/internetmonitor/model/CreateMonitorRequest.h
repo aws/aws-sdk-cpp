@@ -354,46 +354,65 @@ namespace Model
 
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline const InternetMeasurementsLogDelivery& GetInternetMeasurementsLogDelivery() const{ return m_internetMeasurementsLogDelivery; }
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline bool InternetMeasurementsLogDeliveryHasBeenSet() const { return m_internetMeasurementsLogDeliveryHasBeenSet; }
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline void SetInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = value; }
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline void SetInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { m_internetMeasurementsLogDeliveryHasBeenSet = true; m_internetMeasurementsLogDelivery = std::move(value); }
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline CreateMonitorRequest& WithInternetMeasurementsLogDelivery(const InternetMeasurementsLogDelivery& value) { SetInternetMeasurementsLogDelivery(value); return *this;}
 
     /**
-     * <p>Publish internet measurements for Internet Monitor to another location, such
-     * as an Amazon S3 bucket. The measurements are also published to Amazon CloudWatch
-     * Logs.</p>
+     * <p>Publish internet measurements for Internet Monitor to an Amazon S3 bucket in
+     * addition to CloudWatch Logs.</p>
      */
     inline CreateMonitorRequest& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline bool TrafficPercentageToMonitorHasBeenSet() const { return m_trafficPercentageToMonitorHasBeenSet; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitorHasBeenSet = true; m_trafficPercentageToMonitor = value; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline CreateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
 
   private:
 
@@ -414,6 +433,9 @@ namespace Model
 
     InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
     bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
+
+    int m_trafficPercentageToMonitor;
+    bool m_trafficPercentageToMonitorHasBeenSet = false;
   };
 
 } // namespace Model

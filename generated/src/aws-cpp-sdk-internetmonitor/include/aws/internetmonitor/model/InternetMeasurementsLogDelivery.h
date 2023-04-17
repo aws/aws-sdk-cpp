@@ -24,10 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for other locations that you choose to publish
-   * Amazon CloudWatch Internet Monitor internet measurements to, such as Amazon S3.
-   * The measurements are also published to Amazon CloudWatch Logs.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Publish internet measurements to an Amazon S3 bucket in addition to
+   * CloudWatch Logs.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/internetmonitor-2021-06-03/InternetMeasurementsLogDelivery">AWS
    * API Reference</a></p>
    */

@@ -20,7 +20,9 @@ CreateMonitorRequest::CreateMonitorRequest() :
     m_tagsHasBeenSet(false),
     m_maxCityNetworksToMonitor(0),
     m_maxCityNetworksToMonitorHasBeenSet(false),
-    m_internetMeasurementsLogDeliveryHasBeenSet(false)
+    m_internetMeasurementsLogDeliveryHasBeenSet(false),
+    m_trafficPercentageToMonitor(0),
+    m_trafficPercentageToMonitorHasBeenSet(false)
 {
 }
 
@@ -71,6 +73,12 @@ Aws::String CreateMonitorRequest::SerializePayload() const
   if(m_internetMeasurementsLogDeliveryHasBeenSet)
   {
    payload.WithObject("InternetMeasurementsLogDelivery", m_internetMeasurementsLogDelivery.Jsonize());
+
+  }
+
+  if(m_trafficPercentageToMonitorHasBeenSet)
+  {
+   payload.WithInteger("TrafficPercentageToMonitor", m_trafficPercentageToMonitor);
 
   }
 

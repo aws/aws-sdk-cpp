@@ -13,7 +13,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartFlowRequest::StartFlowRequest() : 
-    m_flowNameHasBeenSet(false)
+    m_flowNameHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -24,6 +26,12 @@ Aws::String StartFlowRequest::SerializePayload() const
   if(m_flowNameHasBeenSet)
   {
    payload.WithString("flowName", m_flowName);
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

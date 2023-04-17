@@ -20,14 +20,16 @@ using namespace Aws;
 GetMonitorResult::GetMonitorResult() : 
     m_status(MonitorConfigState::NOT_SET),
     m_processingStatus(MonitorProcessingStatusCode::NOT_SET),
-    m_maxCityNetworksToMonitor(0)
+    m_maxCityNetworksToMonitor(0),
+    m_trafficPercentageToMonitor(0)
 {
 }
 
 GetMonitorResult::GetMonitorResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_status(MonitorConfigState::NOT_SET),
     m_processingStatus(MonitorProcessingStatusCode::NOT_SET),
-    m_maxCityNetworksToMonitor(0)
+    m_maxCityNetworksToMonitor(0),
+    m_trafficPercentageToMonitor(0)
 {
   *this = result;
 }
@@ -104,6 +106,12 @@ GetMonitorResult& GetMonitorResult::operator =(const Aws::AmazonWebServiceResult
   if(jsonValue.ValueExists("InternetMeasurementsLogDelivery"))
   {
     m_internetMeasurementsLogDelivery = jsonValue.GetObject("InternetMeasurementsLogDelivery");
+
+  }
+
+  if(jsonValue.ValueExists("TrafficPercentageToMonitor"))
+  {
+    m_trafficPercentageToMonitor = jsonValue.GetInteger("TrafficPercentageToMonitor");
 
   }
 

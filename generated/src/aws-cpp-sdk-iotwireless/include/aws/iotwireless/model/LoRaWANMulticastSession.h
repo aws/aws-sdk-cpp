@@ -95,6 +95,27 @@ namespace Model
     
     inline LoRaWANMulticastSession& WithSessionTimeout(int value) { SetSessionTimeout(value); return *this;}
 
+
+    /**
+     * <p>The PingSlotPeriod value.</p>
+     */
+    inline int GetPingSlotPeriod() const{ return m_pingSlotPeriod; }
+
+    /**
+     * <p>The PingSlotPeriod value.</p>
+     */
+    inline bool PingSlotPeriodHasBeenSet() const { return m_pingSlotPeriodHasBeenSet; }
+
+    /**
+     * <p>The PingSlotPeriod value.</p>
+     */
+    inline void SetPingSlotPeriod(int value) { m_pingSlotPeriodHasBeenSet = true; m_pingSlotPeriod = value; }
+
+    /**
+     * <p>The PingSlotPeriod value.</p>
+     */
+    inline LoRaWANMulticastSession& WithPingSlotPeriod(int value) { SetPingSlotPeriod(value); return *this;}
+
   private:
 
     int m_dlDr;
@@ -108,6 +129,9 @@ namespace Model
 
     int m_sessionTimeout;
     bool m_sessionTimeoutHasBeenSet = false;
+
+    int m_pingSlotPeriod;
+    bool m_pingSlotPeriodHasBeenSet = false;
   };
 
 } // namespace Model
