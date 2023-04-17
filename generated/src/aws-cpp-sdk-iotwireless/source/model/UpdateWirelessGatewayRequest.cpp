@@ -17,7 +17,9 @@ UpdateWirelessGatewayRequest::UpdateWirelessGatewayRequest() :
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_joinEuiFiltersHasBeenSet(false),
-    m_netIdFiltersHasBeenSet(false)
+    m_netIdFiltersHasBeenSet(false),
+    m_maxEirp(0.0),
+    m_maxEirpHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,12 @@ Aws::String UpdateWirelessGatewayRequest::SerializePayload() const
      netIdFiltersJsonList[netIdFiltersIndex].AsString(m_netIdFilters[netIdFiltersIndex]);
    }
    payload.WithArray("NetIdFilters", std::move(netIdFiltersJsonList));
+
+  }
+
+  if(m_maxEirpHasBeenSet)
+  {
+   payload.WithDouble("MaxEirp", m_maxEirp);
 
   }
 

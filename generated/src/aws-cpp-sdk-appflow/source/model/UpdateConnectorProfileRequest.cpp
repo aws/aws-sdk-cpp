@@ -16,7 +16,9 @@ UpdateConnectorProfileRequest::UpdateConnectorProfileRequest() :
     m_connectorProfileNameHasBeenSet(false),
     m_connectionMode(ConnectionMode::NOT_SET),
     m_connectionModeHasBeenSet(false),
-    m_connectorProfileConfigHasBeenSet(false)
+    m_connectorProfileConfigHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -38,6 +40,12 @@ Aws::String UpdateConnectorProfileRequest::SerializePayload() const
   if(m_connectorProfileConfigHasBeenSet)
   {
    payload.WithObject("connectorProfileConfig", m_connectorProfileConfig.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

@@ -39,7 +39,8 @@ JobRun::JobRun() :
     m_totalExecutionDurationSeconds(0),
     m_totalExecutionDurationSecondsHasBeenSet(false),
     m_executionTimeoutMinutes(0),
-    m_executionTimeoutMinutesHasBeenSet(false)
+    m_executionTimeoutMinutesHasBeenSet(false),
+    m_billedResourceUtilizationHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ JobRun::JobRun(JsonView jsonValue) :
     m_totalExecutionDurationSeconds(0),
     m_totalExecutionDurationSecondsHasBeenSet(false),
     m_executionTimeoutMinutes(0),
-    m_executionTimeoutMinutesHasBeenSet(false)
+    m_executionTimeoutMinutesHasBeenSet(false),
+    m_billedResourceUtilizationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -200,6 +202,13 @@ JobRun& JobRun::operator =(JsonView jsonValue)
     m_executionTimeoutMinutesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("billedResourceUtilization"))
+  {
+    m_billedResourceUtilization = jsonValue.GetObject("billedResourceUtilization");
+
+    m_billedResourceUtilizationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -314,6 +323,12 @@ JsonValue JobRun::Jsonize() const
   if(m_executionTimeoutMinutesHasBeenSet)
   {
    payload.WithInt64("executionTimeoutMinutes", m_executionTimeoutMinutes);
+
+  }
+
+  if(m_billedResourceUtilizationHasBeenSet)
+  {
+   payload.WithObject("billedResourceUtilization", m_billedResourceUtilization.Jsonize());
 
   }
 
