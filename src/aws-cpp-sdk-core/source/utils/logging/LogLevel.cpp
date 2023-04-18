@@ -34,6 +34,8 @@ Aws::String GetLogLevelName(LogLevel logLevel)
 		return "DEBUG";
 	case LogLevel::Trace:
 		return "TRACE";
+	case LogLevel::Off:
+		return "OFF";
 	default:
 		assert(0);
 		return "";
