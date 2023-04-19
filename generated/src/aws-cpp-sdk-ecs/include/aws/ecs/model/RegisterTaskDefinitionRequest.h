@@ -1794,6 +1794,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline const EphemeralStorage& GetEphemeralStorage() const{ return m_ephemeralStorage; }
@@ -1806,6 +1807,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline bool EphemeralStorageHasBeenSet() const { return m_ephemeralStorageHasBeenSet; }
@@ -1818,6 +1820,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(const EphemeralStorage& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = value; }
@@ -1830,6 +1833,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline void SetEphemeralStorage(EphemeralStorage&& value) { m_ephemeralStorageHasBeenSet = true; m_ephemeralStorage = std::move(value); }
@@ -1842,6 +1846,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(const EphemeralStorage& value) { SetEphemeralStorage(value); return *this;}
@@ -1854,6 +1859,7 @@ namespace Model
      * task storage</a> in the <i>Amazon ECS User Guide for Fargate</i>.</p> 
      * <p>For tasks using the Fargate launch type, the task requires the following
      * platforms:</p> <ul> <li> <p>Linux platform version <code>1.4.0</code> or
+     * later.</p> </li> <li> <p>Windows platform version <code>1.0.0</code> or
      * later.</p> </li> </ul> 
      */
     inline RegisterTaskDefinitionRequest& WithEphemeralStorage(EphemeralStorage&& value) { SetEphemeralStorage(std::move(value)); return *this;}

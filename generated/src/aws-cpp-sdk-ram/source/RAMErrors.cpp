@@ -18,37 +18,39 @@ namespace RAM
 namespace RAMErrorMapper
 {
 
-static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
 static const int RESOURCE_SHARE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ResourceShareLimitExceededException");
 static const int RESOURCE_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceArnNotFoundException");
 static const int INVALID_CLIENT_TOKEN_HASH = HashingUtils::HashString("InvalidClientTokenException");
 static const int INVALID_MAX_RESULTS_HASH = HashingUtils::HashString("InvalidMaxResultsException");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameterException");
-static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
-static const int MALFORMED_ARN_HASH = HashingUtils::HashString("MalformedArnException");
-static const int RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("ResourceShareInvitationAlreadyAcceptedException");
+static const int PERMISSION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PermissionLimitExceededException");
 static const int UNKNOWN_RESOURCE_HASH = HashingUtils::HashString("UnknownResourceException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
-static const int RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceShareInvitationArnNotFoundException");
-static const int SERVER_INTERNAL_HASH = HashingUtils::HashString("ServerInternalException");
-static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceTypeException");
 static const int INVALID_PARAMETER_HASH = HashingUtils::HashString("InvalidParameterException");
 static const int RESOURCE_SHARE_INVITATION_EXPIRED_HASH = HashingUtils::HashString("ResourceShareInvitationExpiredException");
 static const int TAG_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TagLimitExceededException");
 static const int RESOURCE_SHARE_INVITATION_ALREADY_REJECTED_HASH = HashingUtils::HashString("ResourceShareInvitationAlreadyRejectedException");
 static const int INVALID_STATE_TRANSITION_HASH = HashingUtils::HashString("InvalidStateTransitionException");
+static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
+static const int OPERATION_NOT_PERMITTED_HASH = HashingUtils::HashString("OperationNotPermittedException");
+static const int PERMISSION_VERSIONS_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PermissionVersionsLimitExceededException");
+static const int UNMATCHED_POLICY_PERMISSION_HASH = HashingUtils::HashString("UnmatchedPolicyPermissionException");
+static const int PERMISSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("PermissionAlreadyExistsException");
+static const int IDEMPOTENT_PARAMETER_MISMATCH_HASH = HashingUtils::HashString("IdempotentParameterMismatchException");
+static const int MALFORMED_ARN_HASH = HashingUtils::HashString("MalformedArnException");
+static const int RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("ResourceShareInvitationAlreadyAcceptedException");
+static const int RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH = HashingUtils::HashString("ResourceShareInvitationArnNotFoundException");
+static const int SERVER_INTERNAL_HASH = HashingUtils::HashString("ServerInternalException");
+static const int TAG_POLICY_VIOLATION_HASH = HashingUtils::HashString("TagPolicyViolationException");
+static const int MALFORMED_POLICY_TEMPLATE_HASH = HashingUtils::HashString("MalformedPolicyTemplateException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == OPERATION_NOT_PERMITTED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::OPERATION_NOT_PERMITTED), false);
-  }
-  else if (hashCode == RESOURCE_SHARE_LIMIT_EXCEEDED_HASH)
+  if (hashCode == RESOURCE_SHARE_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_LIMIT_EXCEEDED), false);
   }
@@ -68,17 +70,9 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MISSING_REQUIRED_PARAMETER), false);
   }
-  else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
+  else if (hashCode == PERMISSION_LIMIT_EXCEEDED_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
-  }
-  else if (hashCode == MALFORMED_ARN_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_ARN), false);
-  }
-  else if (hashCode == RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_LIMIT_EXCEEDED), false);
   }
   else if (hashCode == UNKNOWN_RESOURCE_HASH)
   {
@@ -87,18 +81,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_NEXT_TOKEN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_NEXT_TOKEN), false);
-  }
-  else if (hashCode == RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND), false);
-  }
-  else if (hashCode == SERVER_INTERNAL_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), false);
-  }
-  else if (hashCode == TAG_POLICY_VIOLATION_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_POLICY_VIOLATION), false);
   }
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
@@ -123,6 +105,54 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_STATE_TRANSITION_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_STATE_TRANSITION), false);
+  }
+  else if (hashCode == INVALID_POLICY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::INVALID_POLICY), false);
+  }
+  else if (hashCode == OPERATION_NOT_PERMITTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::OPERATION_NOT_PERMITTED), false);
+  }
+  else if (hashCode == PERMISSION_VERSIONS_LIMIT_EXCEEDED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_VERSIONS_LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == UNMATCHED_POLICY_PERMISSION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::UNMATCHED_POLICY_PERMISSION), false);
+  }
+  else if (hashCode == PERMISSION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::PERMISSION_ALREADY_EXISTS), false);
+  }
+  else if (hashCode == IDEMPOTENT_PARAMETER_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::IDEMPOTENT_PARAMETER_MISMATCH), false);
+  }
+  else if (hashCode == MALFORMED_ARN_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_ARN), false);
+  }
+  else if (hashCode == RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ALREADY_ACCEPTED), false);
+  }
+  else if (hashCode == RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::RESOURCE_SHARE_INVITATION_ARN_NOT_FOUND), false);
+  }
+  else if (hashCode == SERVER_INTERNAL_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::SERVER_INTERNAL), false);
+  }
+  else if (hashCode == TAG_POLICY_VIOLATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::TAG_POLICY_VIOLATION), false);
+  }
+  else if (hashCode == MALFORMED_POLICY_TEMPLATE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(RAMErrors::MALFORMED_POLICY_TEMPLATE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

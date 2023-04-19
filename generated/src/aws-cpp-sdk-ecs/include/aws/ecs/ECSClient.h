@@ -1205,6 +1205,15 @@ namespace ECS
          * creation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cloudwatch-container-insights.html">CloudWatch
          * Container Insights</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>Amazon ECS is introducing tagging authorization for resource
+         * creation. Users must have permissions for actions that create the resource, such
+         * as <code>ecsCreateCluster</code>. If tags are specified when you create a
+         * resource, Amazon Web Services performs additional authorization to verify if
+         * users or roles have permissions to create tags. Therefore, you must grant
+         * explicit permissions to use the <code>ecs:TagResource</code> action. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/supported-iam-actions-tagging.html">Grant
+         * permission to tag resources on creation</a> in the <i>Amazon ECS Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>

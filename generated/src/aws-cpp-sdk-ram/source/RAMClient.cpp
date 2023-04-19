@@ -24,7 +24,11 @@
 #include <aws/ram/model/AcceptResourceShareInvitationRequest.h>
 #include <aws/ram/model/AssociateResourceShareRequest.h>
 #include <aws/ram/model/AssociateResourceSharePermissionRequest.h>
+#include <aws/ram/model/CreatePermissionRequest.h>
+#include <aws/ram/model/CreatePermissionVersionRequest.h>
 #include <aws/ram/model/CreateResourceShareRequest.h>
+#include <aws/ram/model/DeletePermissionRequest.h>
+#include <aws/ram/model/DeletePermissionVersionRequest.h>
 #include <aws/ram/model/DeleteResourceShareRequest.h>
 #include <aws/ram/model/DisassociateResourceShareRequest.h>
 #include <aws/ram/model/DisassociateResourceSharePermissionRequest.h>
@@ -35,14 +39,19 @@
 #include <aws/ram/model/GetResourceShareInvitationsRequest.h>
 #include <aws/ram/model/GetResourceSharesRequest.h>
 #include <aws/ram/model/ListPendingInvitationResourcesRequest.h>
+#include <aws/ram/model/ListPermissionAssociationsRequest.h>
 #include <aws/ram/model/ListPermissionVersionsRequest.h>
 #include <aws/ram/model/ListPermissionsRequest.h>
 #include <aws/ram/model/ListPrincipalsRequest.h>
+#include <aws/ram/model/ListReplacePermissionAssociationsWorkRequest.h>
 #include <aws/ram/model/ListResourceSharePermissionsRequest.h>
 #include <aws/ram/model/ListResourceTypesRequest.h>
 #include <aws/ram/model/ListResourcesRequest.h>
+#include <aws/ram/model/PromotePermissionCreatedFromPolicyRequest.h>
 #include <aws/ram/model/PromoteResourceShareCreatedFromPolicyRequest.h>
 #include <aws/ram/model/RejectResourceShareInvitationRequest.h>
+#include <aws/ram/model/ReplacePermissionAssociationsRequest.h>
+#include <aws/ram/model/SetDefaultPermissionVersionRequest.h>
 #include <aws/ram/model/TagResourceRequest.h>
 #include <aws/ram/model/UntagResourceRequest.h>
 #include <aws/ram/model/UpdateResourceShareRequest.h>
@@ -201,6 +210,24 @@ AssociateResourceSharePermissionOutcome RAMClient::AssociateResourceSharePermiss
   return AssociateResourceSharePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreatePermissionOutcome RAMClient::CreatePermission(const CreatePermissionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/createpermission");
+  return CreatePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreatePermissionVersionOutcome RAMClient::CreatePermissionVersion(const CreatePermissionVersionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/createpermissionversion");
+  return CreatePermissionVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceShareRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -208,6 +235,39 @@ CreateResourceShareOutcome RAMClient::CreateResourceShare(const CreateResourceSh
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateResourceShare, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/createresourceshare");
   return CreateResourceShareOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePermissionOutcome RAMClient::DeletePermission(const DeletePermissionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PermissionArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePermission", "Required field: PermissionArn, is not set");
+    return DeletePermissionOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PermissionArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/deletepermission");
+  return DeletePermissionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePermissionVersionOutcome RAMClient::DeletePermissionVersion(const DeletePermissionVersionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PermissionArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePermissionVersion", "Required field: PermissionArn, is not set");
+    return DeletePermissionVersionOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PermissionArn]", false));
+  }
+  if (!request.PermissionVersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePermissionVersion", "Required field: PermissionVersion, is not set");
+    return DeletePermissionVersionOutcome(Aws::Client::AWSError<RAMErrors>(RAMErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PermissionVersion]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/deletepermissionversion");
+  return DeletePermissionVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteResourceShareOutcome RAMClient::DeleteResourceShare(const DeleteResourceShareRequest& request) const
@@ -305,6 +365,15 @@ ListPendingInvitationResourcesOutcome RAMClient::ListPendingInvitationResources(
   return ListPendingInvitationResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListPermissionAssociationsOutcome RAMClient::ListPermissionAssociations(const ListPermissionAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/listpermissionassociations");
+  return ListPermissionAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListPermissionVersionsOutcome RAMClient::ListPermissionVersions(const ListPermissionVersionsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListPermissionVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -330,6 +399,15 @@ ListPrincipalsOutcome RAMClient::ListPrincipals(const ListPrincipalsRequest& req
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListPrincipals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/listprincipals");
   return ListPrincipalsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListReplacePermissionAssociationsWorkOutcome RAMClient::ListReplacePermissionAssociationsWork(const ListReplacePermissionAssociationsWorkRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListReplacePermissionAssociationsWork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListReplacePermissionAssociationsWork, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/listreplacepermissionassociationswork");
+  return ListReplacePermissionAssociationsWorkOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListResourceSharePermissionsOutcome RAMClient::ListResourceSharePermissions(const ListResourceSharePermissionsRequest& request) const
@@ -359,6 +437,15 @@ ListResourcesOutcome RAMClient::ListResources(const ListResourcesRequest& reques
   return ListResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+PromotePermissionCreatedFromPolicyOutcome RAMClient::PromotePermissionCreatedFromPolicy(const PromotePermissionCreatedFromPolicyRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PromotePermissionCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PromotePermissionCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/promotepermissioncreatedfrompolicy");
+  return PromotePermissionCreatedFromPolicyOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 PromoteResourceShareCreatedFromPolicyOutcome RAMClient::PromoteResourceShareCreatedFromPolicy(const PromoteResourceShareCreatedFromPolicyRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PromoteResourceShareCreatedFromPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -380,6 +467,24 @@ RejectResourceShareInvitationOutcome RAMClient::RejectResourceShareInvitation(co
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RejectResourceShareInvitation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/rejectresourceshareinvitation");
   return RejectResourceShareInvitationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ReplacePermissionAssociationsOutcome RAMClient::ReplacePermissionAssociations(const ReplacePermissionAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ReplacePermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ReplacePermissionAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/replacepermissionassociations");
+  return ReplacePermissionAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SetDefaultPermissionVersionOutcome RAMClient::SetDefaultPermissionVersion(const SetDefaultPermissionVersionRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SetDefaultPermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SetDefaultPermissionVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/setdefaultpermissionversion");
+  return SetDefaultPermissionVersionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome RAMClient::TagResource(const TagResourceRequest& request) const

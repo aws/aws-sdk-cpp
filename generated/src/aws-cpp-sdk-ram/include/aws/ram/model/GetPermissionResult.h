@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>An object that contains information about the permission.</p>
+     * <p>An object with details about the permission.</p>
      */
     inline const ResourceSharePermissionDetail& GetPermission() const{ return m_permission; }
 
     /**
-     * <p>An object that contains information about the permission.</p>
+     * <p>An object with details about the permission.</p>
      */
     inline void SetPermission(const ResourceSharePermissionDetail& value) { m_permission = value; }
 
     /**
-     * <p>An object that contains information about the permission.</p>
+     * <p>An object with details about the permission.</p>
      */
     inline void SetPermission(ResourceSharePermissionDetail&& value) { m_permission = std::move(value); }
 
     /**
-     * <p>An object that contains information about the permission.</p>
+     * <p>An object with details about the permission.</p>
      */
     inline GetPermissionResult& WithPermission(const ResourceSharePermissionDetail& value) { SetPermission(value); return *this;}
 
     /**
-     * <p>An object that contains information about the permission.</p>
+     * <p>An object with details about the permission.</p>
      */
     inline GetPermissionResult& WithPermission(ResourceSharePermissionDetail&& value) { SetPermission(std::move(value)); return *this;}
 

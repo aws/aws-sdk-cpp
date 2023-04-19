@@ -43,8 +43,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -87,8 +87,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -131,8 +131,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -175,8 +175,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -219,8 +219,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -263,8 +263,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -307,8 +307,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>
@@ -351,8 +351,8 @@ namespace Model
 
     /**
      * <p>The name of the DB parameter group family.</p> <p>Valid Values:</p> <ul> <li>
-     * <p> <code>aurora5.6</code> </p> </li> <li> <p> <code>aurora-mysql5.7</code> </p>
-     * </li> <li> <p> <code>aurora-mysql8.0</code> </p> </li> <li> <p>
+     * <p> <code>aurora-mysql5.7</code> </p> </li> <li> <p>
+     * <code>aurora-mysql8.0</code> </p> </li> <li> <p>
      * <code>aurora-postgresql10</code> </p> </li> <li> <p>
      * <code>aurora-postgresql11</code> </p> </li> <li> <p>
      * <code>aurora-postgresql12</code> </p> </li> <li> <p>

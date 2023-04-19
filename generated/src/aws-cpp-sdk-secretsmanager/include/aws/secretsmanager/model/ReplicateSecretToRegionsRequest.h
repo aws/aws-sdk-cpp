@@ -120,25 +120,25 @@ namespace Model
 
     /**
      * <p>Specifies whether to overwrite a secret with the same name in the destination
-     * Region.</p>
+     * Region. By default, secrets aren't overwritten.</p>
      */
     inline bool GetForceOverwriteReplicaSecret() const{ return m_forceOverwriteReplicaSecret; }
 
     /**
      * <p>Specifies whether to overwrite a secret with the same name in the destination
-     * Region.</p>
+     * Region. By default, secrets aren't overwritten.</p>
      */
     inline bool ForceOverwriteReplicaSecretHasBeenSet() const { return m_forceOverwriteReplicaSecretHasBeenSet; }
 
     /**
      * <p>Specifies whether to overwrite a secret with the same name in the destination
-     * Region.</p>
+     * Region. By default, secrets aren't overwritten.</p>
      */
     inline void SetForceOverwriteReplicaSecret(bool value) { m_forceOverwriteReplicaSecretHasBeenSet = true; m_forceOverwriteReplicaSecret = value; }
 
     /**
      * <p>Specifies whether to overwrite a secret with the same name in the destination
-     * Region.</p>
+     * Region. By default, secrets aren't overwritten.</p>
      */
     inline ReplicateSecretToRegionsRequest& WithForceOverwriteReplicaSecret(bool value) { SetForceOverwriteReplicaSecret(value); return *this;}
 

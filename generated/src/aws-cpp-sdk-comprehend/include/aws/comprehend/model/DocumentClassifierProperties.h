@@ -126,49 +126,67 @@ namespace Model
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline const ModelStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline void SetStatus(ModelStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline DocumentClassifierProperties& WithStatus(const ModelStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>The status of the document classifier. If the status is <code>TRAINED</code>
-     * the classifier is ready to use. If the status is <code>FAILED</code> you can see
-     * additional information about why the classifier wasn't trained in the
-     * <code>Message</code> field.</p>
+     * the classifier is ready to use. If the status is
+     * <code>TRAINED_WITH_WARNINGS</code> the classifier training succeeded, but you
+     * should review the warnings returned in the <code>CreateDocumentClassifier</code>
+     * response.</p> <p> If the status is <code>FAILED</code> you can see additional
+     * information about why the classifier wasn't trained in the <code>Message</code>
+     * field.</p>
      */
     inline DocumentClassifierProperties& WithStatus(ModelStatus&& value) { SetStatus(std::move(value)); return *this;}
 
