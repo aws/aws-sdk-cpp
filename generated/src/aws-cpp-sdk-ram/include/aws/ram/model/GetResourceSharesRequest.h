@@ -427,67 +427,92 @@ namespace Model
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline const Aws::String& GetPermissionArn() const{ return m_permissionArn; }
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline bool PermissionArnHasBeenSet() const { return m_permissionArnHasBeenSet; }
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetPermissionArn(const Aws::String& value) { m_permissionArnHasBeenSet = true; m_permissionArn = value; }
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetPermissionArn(Aws::String&& value) { m_permissionArnHasBeenSet = true; m_permissionArn = std::move(value); }
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline void SetPermissionArn(const char* value) { m_permissionArnHasBeenSet = true; m_permissionArn.assign(value); }
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline GetResourceSharesRequest& WithPermissionArn(const Aws::String& value) { SetPermissionArn(value); return *this;}
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline GetResourceSharesRequest& WithPermissionArn(Aws::String&& value) { SetPermissionArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies that you want to retrieve details of only those resource shares
-     * that use the RAM permission with this <a
+     * that use the managed permission with this <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a>.</p>
+     * Resource Name (ARN)</a>.</p>
      */
     inline GetResourceSharesRequest& WithPermissionArn(const char* value) { SetPermissionArn(value); return *this;}
+
+
+    /**
+     * <p>Specifies that you want to retrieve details for only those resource shares
+     * that use the specified version of the managed permission.</p>
+     */
+    inline int GetPermissionVersion() const{ return m_permissionVersion; }
+
+    /**
+     * <p>Specifies that you want to retrieve details for only those resource shares
+     * that use the specified version of the managed permission.</p>
+     */
+    inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies that you want to retrieve details for only those resource shares
+     * that use the specified version of the managed permission.</p>
+     */
+    inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
+
+    /**
+     * <p>Specifies that you want to retrieve details for only those resource shares
+     * that use the specified version of the managed permission.</p>
+     */
+    inline GetResourceSharesRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
 
   private:
 
@@ -514,6 +539,9 @@ namespace Model
 
     Aws::String m_permissionArn;
     bool m_permissionArnHasBeenSet = false;
+
+    int m_permissionVersion;
+    bool m_permissionVersionHasBeenSet = false;
   };
 
 } // namespace Model

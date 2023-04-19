@@ -35,56 +35,56 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline UpdateResourceShareRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline UpdateResourceShareRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share that you want to modify.</p>
+     * Resource Name (ARN)</a> of the resource share that you want to modify.</p>
      */
     inline UpdateResourceShareRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -163,7 +163,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -175,7 +177,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -187,7 +191,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -199,7 +205,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -211,7 +219,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -223,7 +233,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline UpdateResourceShareRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -235,7 +247,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline UpdateResourceShareRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -247,7 +261,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline UpdateResourceShareRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

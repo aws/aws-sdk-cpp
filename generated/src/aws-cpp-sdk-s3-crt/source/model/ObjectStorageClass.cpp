@@ -29,6 +29,7 @@ namespace Aws
         static const int DEEP_ARCHIVE_HASH = HashingUtils::HashString("DEEP_ARCHIVE");
         static const int OUTPOSTS_HASH = HashingUtils::HashString("OUTPOSTS");
         static const int GLACIER_IR_HASH = HashingUtils::HashString("GLACIER_IR");
+        static const int SNOW_HASH = HashingUtils::HashString("SNOW");
 
 
         ObjectStorageClass GetObjectStorageClassForName(const Aws::String& name)
@@ -70,6 +71,10 @@ namespace Aws
           {
             return ObjectStorageClass::GLACIER_IR;
           }
+          else if (hashCode == SNOW_HASH)
+          {
+            return ObjectStorageClass::SNOW;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -102,6 +107,8 @@ namespace Aws
             return "OUTPOSTS";
           case ObjectStorageClass::GLACIER_IR:
             return "GLACIER_IR";
+          case ObjectStorageClass::SNOW:
+            return "SNOW";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

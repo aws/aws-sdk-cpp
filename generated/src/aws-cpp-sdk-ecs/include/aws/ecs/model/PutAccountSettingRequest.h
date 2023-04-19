@@ -47,7 +47,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline const SettingName& GetName() const{ return m_name; }
 
@@ -63,7 +67,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -79,7 +87,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetName(const SettingName& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -95,7 +107,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline void SetName(SettingName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -111,7 +127,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline PutAccountSettingRequest& WithName(const SettingName& value) { SetName(value); return *this;}
 
@@ -127,7 +147,11 @@ namespace Model
      * <code>containerInsights</code> is specified, the default setting for Amazon Web
      * Services CloudWatch Container Insights for your clusters is affected. If
      * <code>fargateFIPSMode</code> is specified, Fargate FIPS 140 compliance is
-     * affected.</p>
+     * affected. If <code>tagResourceAuthorization</code> is specified, the opt-in
+     * option for tagging resources on creation is affected. For information about the
+     * opt-in timeline, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-account-settings.html#tag-resources">Tagging
+     * authorization timeline</a> in the <i>Amazon ECS Developer Guide</i>.</p>
      */
     inline PutAccountSettingRequest& WithName(SettingName&& value) { SetName(std::move(value)); return *this;}
 

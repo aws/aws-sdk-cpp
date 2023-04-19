@@ -296,65 +296,65 @@ namespace Model
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline const Aws::String& GetDBClusterParameterGroupName() const{ return m_dBClusterParameterGroupName; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline bool DBClusterParameterGroupNameHasBeenSet() const { return m_dBClusterParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const Aws::String& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = value; }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(Aws::String&& value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName = std::move(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline void SetDBClusterParameterGroupName(const char* value) { m_dBClusterParameterGroupNameHasBeenSet = true; m_dBClusterParameterGroupName.assign(value); }
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const Aws::String& value) { SetDBClusterParameterGroupName(value); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(Aws::String&& value) { SetDBClusterParameterGroupName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the DB cluster parameter group to associate with the restored DB
-     * cluster. If this argument is omitted, <code>default.aurora5.6</code> is
-     * used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match the name of
-     * an existing DBClusterParameterGroup.</p> </li> </ul>
+     * cluster. If this argument is omitted, the default parameter group for the engine
+     * version is used.</p> <p>Constraints:</p> <ul> <li> <p>If supplied, must match
+     * the name of an existing DBClusterParameterGroup.</p> </li> </ul>
      */
     inline RestoreDBClusterFromS3Request& WithDBClusterParameterGroupName(const char* value) { SetDBClusterParameterGroupName(value); return *this;}
 
@@ -473,145 +473,129 @@ namespace Model
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the database engine to be used for this DB cluster.</p> <p>Valid
-     * Values: <code>aurora-mysql</code> (for MySQL 5.7-compatible and MySQL
-     * 8.0-compatible Aurora)</p>
+     * Values: <code>aurora-mysql</code> (for Aurora MySQL)</p>
      */
     inline RestoreDBClusterFromS3Request& WithEngine(const char* value) { SetEngine(value); return *this;}
 
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersionHasBeenSet = true; m_engineVersion = std::move(value); }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline void SetEngineVersion(const char* value) { m_engineVersionHasBeenSet = true; m_engineVersion.assign(value); }
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version number of the database engine to use.</p> <p>To list all of the
-     * available engine versions for <code>aurora-mysql</code> (MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora), use the following command:</p> <p> <code>aws
-     * rds describe-db-engine-versions --engine aurora-mysql --query
-     * "DBEngineVersions[].EngineVersion"</code> </p> <p> <b>Aurora MySQL</b> </p>
-     * <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
+     * available engine versions for <code>aurora-mysql</code> (Aurora MySQL), use the
+     * following command:</p> <p> <code>aws rds describe-db-engine-versions --engine
+     * aurora-mysql --query "DBEngineVersions[].EngineVersion"</code> </p> <p>
+     * <b>Aurora MySQL</b> </p> <p>Examples: <code>5.7.mysql_aurora.2.07.1</code>,
      * <code>8.0.mysql_aurora.3.02.0</code> </p>
      */
     inline RestoreDBClusterFromS3Request& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}

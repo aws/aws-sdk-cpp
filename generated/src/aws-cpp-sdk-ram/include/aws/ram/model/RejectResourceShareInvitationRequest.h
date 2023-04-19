@@ -35,56 +35,56 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline const Aws::String& GetResourceShareInvitationArn() const{ return m_resourceShareInvitationArn; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline void SetResourceShareInvitationArn(Aws::String&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::move(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline void SetResourceShareInvitationArn(const char* value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn.assign(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(const Aws::String& value) { SetResourceShareInvitationArn(value); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(Aws::String&& value) { SetResourceShareInvitationArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation that you want to reject.</p>
+     * Resource Name (ARN)</a> of the invitation that you want to reject.</p>
      */
     inline RejectResourceShareInvitationRequest& WithResourceShareInvitationArn(const char* value) { SetResourceShareInvitationArn(value); return *this;}
 
@@ -97,7 +97,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -109,7 +111,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -121,7 +125,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -133,7 +139,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -145,7 +153,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -157,7 +167,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline RejectResourceShareInvitationRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -169,7 +181,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline RejectResourceShareInvitationRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -181,7 +195,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline RejectResourceShareInvitationRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 

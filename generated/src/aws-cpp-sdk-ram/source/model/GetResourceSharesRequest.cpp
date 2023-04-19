@@ -23,7 +23,9 @@ GetResourceSharesRequest::GetResourceSharesRequest() :
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_permissionArnHasBeenSet(false)
+    m_permissionArnHasBeenSet(false),
+    m_permissionVersion(0),
+    m_permissionVersionHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,12 @@ Aws::String GetResourceSharesRequest::SerializePayload() const
   if(m_permissionArnHasBeenSet)
   {
    payload.WithString("permissionArn", m_permissionArn);
+
+  }
+
+  if(m_permissionVersionHasBeenSet)
+  {
+   payload.WithInteger("permissionVersion", m_permissionVersion);
 
   }
 

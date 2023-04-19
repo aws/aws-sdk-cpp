@@ -204,28 +204,32 @@ namespace Model
     /**
      * <p>Specifies whether to include versions of secrets that don't have any staging
      * labels attached to them. Versions without staging labels are considered
-     * deprecated and are subject to deletion by Secrets Manager.</p>
+     * deprecated and are subject to deletion by Secrets Manager. By default, versions
+     * without staging labels aren't included.</p>
      */
     inline bool GetIncludeDeprecated() const{ return m_includeDeprecated; }
 
     /**
      * <p>Specifies whether to include versions of secrets that don't have any staging
      * labels attached to them. Versions without staging labels are considered
-     * deprecated and are subject to deletion by Secrets Manager.</p>
+     * deprecated and are subject to deletion by Secrets Manager. By default, versions
+     * without staging labels aren't included.</p>
      */
     inline bool IncludeDeprecatedHasBeenSet() const { return m_includeDeprecatedHasBeenSet; }
 
     /**
      * <p>Specifies whether to include versions of secrets that don't have any staging
      * labels attached to them. Versions without staging labels are considered
-     * deprecated and are subject to deletion by Secrets Manager.</p>
+     * deprecated and are subject to deletion by Secrets Manager. By default, versions
+     * without staging labels aren't included.</p>
      */
     inline void SetIncludeDeprecated(bool value) { m_includeDeprecatedHasBeenSet = true; m_includeDeprecated = value; }
 
     /**
      * <p>Specifies whether to include versions of secrets that don't have any staging
      * labels attached to them. Versions without staging labels are considered
-     * deprecated and are subject to deletion by Secrets Manager.</p>
+     * deprecated and are subject to deletion by Secrets Manager. By default, versions
+     * without staging labels aren't included.</p>
      */
     inline ListSecretVersionIdsRequest& WithIncludeDeprecated(bool value) { SetIncludeDeprecated(value); return *this;}
 

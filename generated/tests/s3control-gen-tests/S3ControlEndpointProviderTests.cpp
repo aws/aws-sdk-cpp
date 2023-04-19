@@ -1033,6 +1033,55 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
        {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
                                       EpProp("signingName", "s3-outposts")}}},
        {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 107*/
+  {"S3 Snow Control with bucket", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"),
+     EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://10.0.1.12:433",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 108*/
+  {"S3 Snow Control without bucket", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://10.0.1.12:433",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 109*/
+  {"S3 Snow Control with bucket and without port", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12"), EpParam("Bucket", "bucketName"),
+     EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://10.0.1.12",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 110*/
+  {"S3 Snow Control with bucket and with DNS", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "http://s3snow.com"), EpParam("Bucket", "bucketName"),
+     EpParam("Region", "snow"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"http://s3snow.com",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "snow"), EpProp("name", "sigv4"), EpProp("signingName", "s3")}}},
+       {/*headers*/}}, {/*No error*/}} // expect
+  },
+  /*TEST CASE 111*/
+  {"S3 Snow Control with FIPS enabled", // documentation
+    {EpParam("UseFIPS", true), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"),
+     EpParam("Region", "snow"), EpParam("Accelerate", false), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"S3 Snow does not support FIPS"} // expect
+  },
+  /*TEST CASE 112*/
+  {"S3 Snow Control with Dual-stack enabled", // documentation
+    {EpParam("UseFIPS", false), EpParam("Endpoint", "https://10.0.1.12:433"), EpParam("Bucket", "bucketName"),
+     EpParam("Region", "snow"), EpParam("Accelerate", false), EpParam("UseDualStack", true)}, // params
+    {}, // tags
+    {{/*No endpoint expected*/}, /*error*/"S3 Snow does not support Dual-stack"} // expect
   }
 };
 

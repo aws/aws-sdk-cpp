@@ -38,22 +38,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     * <p>Specifies whether to include secrets scheduled for deletion. By default,
+     * secrets scheduled for deletion aren't included.</p>
      */
     inline bool GetIncludePlannedDeletion() const{ return m_includePlannedDeletion; }
 
     /**
-     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     * <p>Specifies whether to include secrets scheduled for deletion. By default,
+     * secrets scheduled for deletion aren't included.</p>
      */
     inline bool IncludePlannedDeletionHasBeenSet() const { return m_includePlannedDeletionHasBeenSet; }
 
     /**
-     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     * <p>Specifies whether to include secrets scheduled for deletion. By default,
+     * secrets scheduled for deletion aren't included.</p>
      */
     inline void SetIncludePlannedDeletion(bool value) { m_includePlannedDeletionHasBeenSet = true; m_includePlannedDeletion = value; }
 
     /**
-     * <p>Specifies whether to include secrets scheduled for deletion.</p>
+     * <p>Specifies whether to include secrets scheduled for deletion. By default,
+     * secrets scheduled for deletion aren't included.</p>
      */
     inline ListSecretsRequest& WithIncludePlannedDeletion(bool value) { SetIncludePlannedDeletion(value); return *this;}
 

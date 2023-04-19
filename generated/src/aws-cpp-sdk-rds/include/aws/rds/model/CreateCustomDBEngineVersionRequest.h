@@ -275,50 +275,82 @@ namespace Model
 
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline void SetImageId(Aws::String&& value) { m_imageIdHasBeenSet = true; m_imageId = std::move(value); }
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline void SetImageId(const char* value) { m_imageIdHasBeenSet = true; m_imageId.assign(value); }
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithImageId(const Aws::String& value) { SetImageId(value); return *this;}
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithImageId(Aws::String&& value) { SetImageId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the AMI. An AMI ID is required to create a CEV for RDS Custom for
-     * SQL Server.</p>
+     * <p>The ID of the Amazon Machine Image (AMI). For RDS Custom for SQL Server, an
+     * AMI ID is required to create a CEV. For RDS Custom for Oracle, the default is
+     * the most recent AMI available, but you can specify an AMI ID that was used in a
+     * different Oracle CEV. Find the AMIs used by your CEVs by calling the <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_DescribeDBEngineVersions.html">DescribeDBEngineVersions</a>
+     * operation.</p>
      */
     inline CreateCustomDBEngineVersionRequest& WithImageId(const char* value) { SetImageId(value); return *this;}
 

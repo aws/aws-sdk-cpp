@@ -26,6 +26,7 @@ namespace Aws
         static const int awsvpcTrunking_HASH = HashingUtils::HashString("awsvpcTrunking");
         static const int containerInsights_HASH = HashingUtils::HashString("containerInsights");
         static const int fargateFIPSMode_HASH = HashingUtils::HashString("fargateFIPSMode");
+        static const int tagResourceAuthorization_HASH = HashingUtils::HashString("tagResourceAuthorization");
 
 
         SettingName GetSettingNameForName(const Aws::String& name)
@@ -55,6 +56,10 @@ namespace Aws
           {
             return SettingName::fargateFIPSMode;
           }
+          else if (hashCode == tagResourceAuthorization_HASH)
+          {
+            return SettingName::tagResourceAuthorization;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -81,6 +86,8 @@ namespace Aws
             return "containerInsights";
           case SettingName::fargateFIPSMode:
             return "fargateFIPSMode";
+          case SettingName::tagResourceAuthorization:
+            return "tagResourceAuthorization";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

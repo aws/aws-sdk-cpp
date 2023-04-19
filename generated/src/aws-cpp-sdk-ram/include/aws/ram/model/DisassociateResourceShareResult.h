@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline const Aws::Vector<ResourceShareAssociation>& GetResourceShareAssociations() const{ return m_resourceShareAssociations; }
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline void SetResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { m_resourceShareAssociations = value; }
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline void SetResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { m_resourceShareAssociations = std::move(value); }
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline DisassociateResourceShareResult& WithResourceShareAssociations(const Aws::Vector<ResourceShareAssociation>& value) { SetResourceShareAssociations(value); return *this;}
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline DisassociateResourceShareResult& WithResourceShareAssociations(Aws::Vector<ResourceShareAssociation>&& value) { SetResourceShareAssociations(std::move(value)); return *this;}
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline DisassociateResourceShareResult& AddResourceShareAssociations(const ResourceShareAssociation& value) { m_resourceShareAssociations.push_back(value); return *this; }
 
     /**
-     * <p>An array of objects that contain information about the updated associations
-     * for this resource share.</p>
+     * <p>An array of objects with information about the updated associations for this
+     * resource share.</p>
      */
     inline DisassociateResourceShareResult& AddResourceShareAssociations(ResourceShareAssociation&& value) { m_resourceShareAssociations.push_back(std::move(value)); return *this; }
 

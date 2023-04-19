@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 TagResourceRequest::TagResourceRequest() : 
     m_resourceShareArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_resourceArnHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,12 @@ Aws::String TagResourceRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
 
   }
 

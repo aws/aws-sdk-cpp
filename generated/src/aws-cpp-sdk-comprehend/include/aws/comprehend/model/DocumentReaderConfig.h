@@ -38,8 +38,9 @@ namespace Model
    * <code>DocumentReaderConfig</code> does not apply to plain text files or Word
    * files.</p> <p> For image files and PDF documents, you can override these default
    * actions using the fields listed below. For more information, see <a
-   * href="https://docs.aws.amazon.com/comprehend/latest/dg/detecting-cer.html#detecting-cer-pdf">
-   * Setting text extraction options</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/comprehend/latest/dg/idp-set-textract-options.html">
+   * Setting text extraction options</a> in the Comprehend Developer Guide.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/comprehend-2017-11-27/DocumentReaderConfig">AWS
    * API Reference</a></p>
    */

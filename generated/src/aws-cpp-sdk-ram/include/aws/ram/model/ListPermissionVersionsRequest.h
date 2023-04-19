@@ -35,7 +35,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -45,7 +45,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -55,7 +55,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -65,7 +65,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -75,7 +75,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -85,7 +85,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -95,7 +95,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>
@@ -105,7 +105,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission whose versions you want to list.
+     * Resource Name (ARN)</a> of the RAM permission whose versions you want to list.
      * You can use the <code>permissionVersion</code> parameter on the
      * <a>AssociateResourceSharePermission</a> operation to specify a non-default
      * version to attach.</p>

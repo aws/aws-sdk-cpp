@@ -21,7 +21,8 @@ namespace Model
     containerInstanceLongArnFormat,
     awsvpcTrunking,
     containerInsights,
-    fargateFIPSMode
+    fargateFIPSMode,
+    tagResourceAuthorization
   };
 
 namespace SettingNameMapper

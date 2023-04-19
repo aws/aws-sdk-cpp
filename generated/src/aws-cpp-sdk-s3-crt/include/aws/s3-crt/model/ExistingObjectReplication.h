@@ -42,32 +42,32 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline const ExistingObjectReplicationStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline void SetStatus(const ExistingObjectReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline void SetStatus(ExistingObjectReplicationStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline ExistingObjectReplication& WithStatus(const ExistingObjectReplicationStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>Specifies whether Amazon S3 replicates existing source bucket objects. </p>
+     * <p/>
      */
     inline ExistingObjectReplication& WithStatus(ExistingObjectReplicationStatus&& value) { SetStatus(std::move(value)); return *this;}
 

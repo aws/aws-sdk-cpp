@@ -45,56 +45,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShare& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShare& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShare& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -183,25 +183,41 @@ namespace Model
 
     /**
      * <p>Indicates whether principals outside your organization in Organizations can
-     * be associated with a resource share.</p>
+     * be associated with a resource share.</p> <ul> <li> <p> <code>True</code> – the
+     * resource share can be shared with any Amazon Web Services account.</p> </li>
+     * <li> <p> <code>False</code> – the resource share can be shared with only
+     * accounts in the same organization as the account that owns the resource
+     * share.</p> </li> </ul>
      */
     inline bool GetAllowExternalPrincipals() const{ return m_allowExternalPrincipals; }
 
     /**
      * <p>Indicates whether principals outside your organization in Organizations can
-     * be associated with a resource share.</p>
+     * be associated with a resource share.</p> <ul> <li> <p> <code>True</code> – the
+     * resource share can be shared with any Amazon Web Services account.</p> </li>
+     * <li> <p> <code>False</code> – the resource share can be shared with only
+     * accounts in the same organization as the account that owns the resource
+     * share.</p> </li> </ul>
      */
     inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
 
     /**
      * <p>Indicates whether principals outside your organization in Organizations can
-     * be associated with a resource share.</p>
+     * be associated with a resource share.</p> <ul> <li> <p> <code>True</code> – the
+     * resource share can be shared with any Amazon Web Services account.</p> </li>
+     * <li> <p> <code>False</code> – the resource share can be shared with only
+     * accounts in the same organization as the account that owns the resource
+     * share.</p> </li> </ul>
      */
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
 
     /**
      * <p>Indicates whether principals outside your organization in Organizations can
-     * be associated with a resource share.</p>
+     * be associated with a resource share.</p> <ul> <li> <p> <code>True</code> – the
+     * resource share can be shared with any Amazon Web Services account.</p> </li>
+     * <li> <p> <code>False</code> – the resource share can be shared with only
+     * accounts in the same organization as the account that owns the resource
+     * share.</p> </li> </ul>
      */
     inline ResourceShare& WithAllowExternalPrincipals(bool value) { SetAllowExternalPrincipals(value); return *this;}
 
@@ -382,110 +398,134 @@ namespace Model
 
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline const ResourceShareFeatureSet& GetFeatureSet() const{ return m_featureSet; }
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline void SetFeatureSet(const ResourceShareFeatureSet& value) { m_featureSetHasBeenSet = true; m_featureSet = value; }
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline void SetFeatureSet(ResourceShareFeatureSet&& value) { m_featureSetHasBeenSet = true; m_featureSet = std::move(value); }
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline ResourceShare& WithFeatureSet(const ResourceShareFeatureSet& value) { SetFeatureSet(value); return *this;}
 
     /**
-     * <p>Indicates how the resource share was created. Possible values include:</p>
-     * <ul> <li> <p> <code>CREATED_FROM_POLICY</code> - Indicates that the resource
-     * share was created from an Identity and Access Management (IAM) resource-based
-     * permission policy attached to the resource. This type of resource share is
-     * visible only to the Amazon Web Services account that created it. You can't
-     * modify it in RAM unless you promote it. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>PROMOTING_TO_STANDARD</code> - The resource share is in the process of
-     * being promoted. For more information, see
-     * <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li> <li> <p>
-     * <code>STANDARD</code> - Indicates that the resource share was created in RAM
-     * using the console or APIs. These resource shares are visible to all principals
-     * you share the resource share with. You can modify these resource shares in RAM
-     * using the console or APIs.</p> </li> </ul>
+     * <p>Indicates what features are available for this resource share. This parameter
+     * can have one of the following values:</p> <ul> <li> <p> <b>STANDARD</b> – A
+     * resource share that supports all functionality. These resource shares are
+     * visible to all principals you share the resource share with. You can modify
+     * these resource shares in RAM using the console or APIs. This resource share
+     * might have been created by RAM, or it might have been <b>CREATED_FROM_POLICY</b>
+     * and then promoted.</p> </li> <li> <p> <b>CREATED_FROM_POLICY</b> – The customer
+     * manually shared a resource by attaching a resource-based policy. That policy did
+     * not match any existing managed permissions, so RAM created this customer managed
+     * permission automatically on the customer's behalf based on the attached policy
+     * document. This type of resource share is visible only to the Amazon Web Services
+     * account that created it. You can't modify it in RAM unless you promote it. For
+     * more information, see <a>PromoteResourceShareCreatedFromPolicy</a>.</p> </li>
+     * <li> <p> <b>PROMOTING_TO_STANDARD</b> – This resource share was originally
+     * <code>CREATED_FROM_POLICY</code>, but the customer ran the
+     * <a>PromoteResourceShareCreatedFromPolicy</a> and that operation is still in
+     * progress. This value changes to <code>STANDARD</code> when complete.</p> </li>
+     * </ul>
      */
     inline ResourceShare& WithFeatureSet(ResourceShareFeatureSet&& value) { SetFeatureSet(std::move(value)); return *this;}
 

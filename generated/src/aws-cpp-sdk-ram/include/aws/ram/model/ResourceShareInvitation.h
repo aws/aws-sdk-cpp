@@ -43,56 +43,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline const Aws::String& GetResourceShareInvitationArn() const{ return m_resourceShareInvitationArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(Aws::String&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(const char* value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline ResourceShareInvitation& WithResourceShareInvitationArn(const Aws::String& value) { SetResourceShareInvitationArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline ResourceShareInvitation& WithResourceShareInvitationArn(Aws::String&& value) { SetResourceShareInvitationArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation.</p>
+     * Resource Name (ARN)</a> of the invitation.</p>
      */
     inline ResourceShareInvitation& WithResourceShareInvitationArn(const char* value) { SetResourceShareInvitationArn(value); return *this;}
 
@@ -141,56 +141,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShareInvitation& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShareInvitation& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share</p>
+     * Resource Name (ARN)</a> of the resource share</p>
      */
     inline ResourceShareInvitation& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -342,56 +342,64 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline const Aws::String& GetReceiverArn() const{ return m_receiverArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline bool ReceiverArnHasBeenSet() const { return m_receiverArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline void SetReceiverArn(const Aws::String& value) { m_receiverArnHasBeenSet = true; m_receiverArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline void SetReceiverArn(Aws::String&& value) { m_receiverArnHasBeenSet = true; m_receiverArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline void SetReceiverArn(const char* value) { m_receiverArnHasBeenSet = true; m_receiverArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverArn(const Aws::String& value) { SetReceiverArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverArn(Aws::String&& value) { SetReceiverArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the IAM user or role that received the invitation.</p>
+     * Resource Name (ARN)</a> of the IAM user or role that received the
+     * invitation.</p>
      */
     inline ResourceShareInvitation& WithReceiverArn(const char* value) { SetReceiverArn(value); return *this;}
 
