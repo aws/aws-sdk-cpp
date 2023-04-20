@@ -131,11 +131,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -144,11 +144,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -157,11 +157,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -170,11 +170,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -183,11 +183,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -196,11 +196,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -209,11 +209,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -222,11 +222,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -235,11 +235,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift game session queue resource and uniquely
+     * that is assigned to a Amazon GameLift game session queue resource and uniquely
      * identifies it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::gamesessionqueue/&lt;queue
      * name&gt;</code>. Queues can be located in any Region. Queues are used to start
-     * new GameLift-hosted game sessions for matches that are created with this
+     * new Amazon GameLift-hosted game sessions for matches that are created with this
      * matchmaking configuration. If <code>FlexMatchMode</code> is set to
      * <code>STANDALONE</code>, do not set this parameter.</p>
      */
@@ -797,74 +797,74 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline const FlexMatchMode& GetFlexMatchMode() const{ return m_flexMatchMode; }
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline bool FlexMatchModeHasBeenSet() const { return m_flexMatchModeHasBeenSet; }
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline void SetFlexMatchMode(const FlexMatchMode& value) { m_flexMatchModeHasBeenSet = true; m_flexMatchMode = value; }
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline void SetFlexMatchMode(FlexMatchMode&& value) { m_flexMatchModeHasBeenSet = true; m_flexMatchMode = std::move(value); }
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline UpdateMatchmakingConfigurationRequest& WithFlexMatchMode(const FlexMatchMode& value) { SetFlexMatchMode(value); return *this;}
 
     /**
-     * <p>Indicates whether this matchmaking configuration is being used with GameLift
-     * hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
+     * <p>Indicates whether this matchmaking configuration is being used with Amazon
+     * GameLift hosting or as a standalone matchmaking solution. </p> <ul> <li> <p>
      * <b>STANDALONE</b> - FlexMatch forms matches and returns match information,
      * including players and team assignments, in a <a
      * href="https://docs.aws.amazon.com/gamelift/latest/flexmatchguide/match-events.html#match-events-matchmakingsucceeded">
      * MatchmakingSucceeded</a> event.</p> </li> <li> <p> <b>WITH_QUEUE</b> - FlexMatch
-     * forms matches and uses the specified GameLift queue to start a game session for
-     * the match. </p> </li> </ul>
+     * forms matches and uses the specified Amazon GameLift queue to start a game
+     * session for the match. </p> </li> </ul>
      */
     inline UpdateMatchmakingConfigurationRequest& WithFlexMatchMode(FlexMatchMode&& value) { SetFlexMatchMode(std::move(value)); return *this;}
 

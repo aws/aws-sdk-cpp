@@ -31,10 +31,12 @@ namespace Model
 
   /**
    * <p>The production variant summary for a deployment when an endpoint is creating
-   * or updating with the <code> <a>CreateEndpoint</a> </code> or <code>
-   * <a>UpdateEndpoint</a> </code> operations. Describes the <code>VariantStatus
-   * </code>, weight and capacity for a production variant associated with an
-   * endpoint. </p><p><h3>See Also:</h3>   <a
+   * or updating with the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+   * or <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html">UpdateEndpoint</a>
+   * operations. Describes the <code>VariantStatus </code>, weight and capacity for a
+   * production variant associated with an endpoint. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/PendingProductionVariantSummary">AWS
    * API Reference</a></p>
    */
@@ -169,28 +171,36 @@ namespace Model
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline double GetDesiredWeight() const{ return m_desiredWeight; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline bool DesiredWeightHasBeenSet() const { return m_desiredWeightHasBeenSet; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
 
     /**
      * <p>The requested weight for the variant in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline PendingProductionVariantSummary& WithDesiredWeight(double value) { SetDesiredWeight(value); return *this;}
 
@@ -219,28 +229,36 @@ namespace Model
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline bool DesiredInstanceCountHasBeenSet() const { return m_desiredInstanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline void SetDesiredInstanceCount(int value) { m_desiredInstanceCountHasBeenSet = true; m_desiredInstanceCount = value; }
 
     /**
      * <p>The number of instances requested in this deployment, as specified in the
      * endpoint configuration for the endpoint. The value is taken from the request to
-     * the <code> <a>CreateEndpointConfig</a> </code> operation.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+     * operation.</p>
      */
     inline PendingProductionVariantSummary& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 

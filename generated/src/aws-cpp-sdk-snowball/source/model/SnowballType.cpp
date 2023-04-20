@@ -28,6 +28,7 @@ namespace Aws
         static const int SNC1_HDD_HASH = HashingUtils::HashString("SNC1_HDD");
         static const int SNC1_SSD_HASH = HashingUtils::HashString("SNC1_SSD");
         static const int V3_5C_HASH = HashingUtils::HashString("V3_5C");
+        static const int V3_5S_HASH = HashingUtils::HashString("V3_5S");
 
 
         SnowballType GetSnowballTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return SnowballType::V3_5C;
           }
+          else if (hashCode == V3_5S_HASH)
+          {
+            return SnowballType::V3_5S;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "SNC1_SSD";
           case SnowballType::V3_5C:
             return "V3_5C";
+          case SnowballType::V3_5S:
+            return "V3_5S";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

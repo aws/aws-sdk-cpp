@@ -29,7 +29,14 @@ CreateClusterRequest::CreateClusterRequest() :
     m_forwardingAddressIdHasBeenSet(false),
     m_taxDocumentsHasBeenSet(false),
     m_remoteManagement(RemoteManagement::NOT_SET),
-    m_remoteManagementHasBeenSet(false)
+    m_remoteManagementHasBeenSet(false),
+    m_initialClusterSize(0),
+    m_initialClusterSizeHasBeenSet(false),
+    m_forceCreateJobs(false),
+    m_forceCreateJobsHasBeenSet(false),
+    m_longTermPricingIdsHasBeenSet(false),
+    m_snowballCapacityPreference(SnowballCapacity::NOT_SET),
+    m_snowballCapacityPreferenceHasBeenSet(false)
 {
 }
 
@@ -109,6 +116,34 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_remoteManagementHasBeenSet)
   {
    payload.WithString("RemoteManagement", RemoteManagementMapper::GetNameForRemoteManagement(m_remoteManagement));
+  }
+
+  if(m_initialClusterSizeHasBeenSet)
+  {
+   payload.WithInteger("InitialClusterSize", m_initialClusterSize);
+
+  }
+
+  if(m_forceCreateJobsHasBeenSet)
+  {
+   payload.WithBool("ForceCreateJobs", m_forceCreateJobs);
+
+  }
+
+  if(m_longTermPricingIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> longTermPricingIdsJsonList(m_longTermPricingIds.size());
+   for(unsigned longTermPricingIdsIndex = 0; longTermPricingIdsIndex < longTermPricingIdsJsonList.GetLength(); ++longTermPricingIdsIndex)
+   {
+     longTermPricingIdsJsonList[longTermPricingIdsIndex].AsString(m_longTermPricingIds[longTermPricingIdsIndex]);
+   }
+   payload.WithArray("LongTermPricingIds", std::move(longTermPricingIdsJsonList));
+
+  }
+
+  if(m_snowballCapacityPreferenceHasBeenSet)
+  {
+   payload.WithString("SnowballCapacityPreference", SnowballCapacityMapper::GetNameForSnowballCapacity(m_snowballCapacityPreference));
   }
 
   return payload.View().WriteReadable();

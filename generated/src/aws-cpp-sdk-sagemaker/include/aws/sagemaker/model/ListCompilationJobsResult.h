@@ -35,44 +35,51 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline const Aws::Vector<CompilationJobSummary>& GetCompilationJobSummaries() const{ return m_compilationJobSummaries; }
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline void SetCompilationJobSummaries(const Aws::Vector<CompilationJobSummary>& value) { m_compilationJobSummaries = value; }
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline void SetCompilationJobSummaries(Aws::Vector<CompilationJobSummary>&& value) { m_compilationJobSummaries = std::move(value); }
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline ListCompilationJobsResult& WithCompilationJobSummaries(const Aws::Vector<CompilationJobSummary>& value) { SetCompilationJobSummaries(value); return *this;}
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline ListCompilationJobsResult& WithCompilationJobSummaries(Aws::Vector<CompilationJobSummary>&& value) { SetCompilationJobSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline ListCompilationJobsResult& AddCompilationJobSummaries(const CompilationJobSummary& value) { m_compilationJobSummaries.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>CompilationJobSummary</a> objects, each describing a model
-     * compilation job. </p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CompilationJobSummary.html">CompilationJobSummary</a>
+     * objects, each describing a model compilation job. </p>
      */
     inline ListCompilationJobsResult& AddCompilationJobSummaries(CompilationJobSummary&& value) { m_compilationJobSummaries.push_back(std::move(value)); return *this; }
 

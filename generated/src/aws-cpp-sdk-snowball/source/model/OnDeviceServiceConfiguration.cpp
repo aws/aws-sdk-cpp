@@ -21,14 +21,16 @@ namespace Model
 OnDeviceServiceConfiguration::OnDeviceServiceConfiguration() : 
     m_nFSOnDeviceServiceHasBeenSet(false),
     m_tGWOnDeviceServiceHasBeenSet(false),
-    m_eKSOnDeviceServiceHasBeenSet(false)
+    m_eKSOnDeviceServiceHasBeenSet(false),
+    m_s3OnDeviceServiceHasBeenSet(false)
 {
 }
 
 OnDeviceServiceConfiguration::OnDeviceServiceConfiguration(JsonView jsonValue) : 
     m_nFSOnDeviceServiceHasBeenSet(false),
     m_tGWOnDeviceServiceHasBeenSet(false),
-    m_eKSOnDeviceServiceHasBeenSet(false)
+    m_eKSOnDeviceServiceHasBeenSet(false),
+    m_s3OnDeviceServiceHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ OnDeviceServiceConfiguration& OnDeviceServiceConfiguration::operator =(JsonView 
     m_eKSOnDeviceServiceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("S3OnDeviceService"))
+  {
+    m_s3OnDeviceService = jsonValue.GetObject("S3OnDeviceService");
+
+    m_s3OnDeviceServiceHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -78,6 +87,12 @@ JsonValue OnDeviceServiceConfiguration::Jsonize() const
   if(m_eKSOnDeviceServiceHasBeenSet)
   {
    payload.WithObject("EKSOnDeviceService", m_eKSOnDeviceService.Jsonize());
+
+  }
+
+  if(m_s3OnDeviceServiceHasBeenSet)
+  {
+   payload.WithObject("S3OnDeviceService", m_s3OnDeviceService.Jsonize());
 
   }
 

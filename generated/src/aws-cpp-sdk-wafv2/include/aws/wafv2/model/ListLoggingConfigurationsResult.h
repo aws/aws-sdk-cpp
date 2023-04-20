@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline const Aws::Vector<LoggingConfiguration>& GetLoggingConfigurations() const{ return m_loggingConfigurations; }
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline void SetLoggingConfigurations(const Aws::Vector<LoggingConfiguration>& value) { m_loggingConfigurations = value; }
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline void SetLoggingConfigurations(Aws::Vector<LoggingConfiguration>&& value) { m_loggingConfigurations = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline ListLoggingConfigurationsResult& WithLoggingConfigurations(const Aws::Vector<LoggingConfiguration>& value) { SetLoggingConfigurations(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline ListLoggingConfigurationsResult& WithLoggingConfigurations(Aws::Vector<LoggingConfiguration>&& value) { SetLoggingConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline ListLoggingConfigurationsResult& AddLoggingConfigurations(const LoggingConfiguration& value) { m_loggingConfigurations.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Array of logging configurations. If you specified a <code>Limit</code> in
+     * your request, this might not be the full list. </p>
      */
     inline ListLoggingConfigurationsResult& AddLoggingConfigurations(LoggingConfiguration&& value) { m_loggingConfigurations.push_back(std::move(value)); return *this; }
 

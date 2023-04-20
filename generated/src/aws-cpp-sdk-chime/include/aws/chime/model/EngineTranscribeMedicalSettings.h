@@ -215,38 +215,50 @@ namespace Model
 
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline const TranscribeMedicalContentIdentificationType& GetContentIdentificationType() const{ return m_contentIdentificationType; }
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline bool ContentIdentificationTypeHasBeenSet() const { return m_contentIdentificationTypeHasBeenSet; }
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline void SetContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = value; }
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline void SetContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { m_contentIdentificationTypeHasBeenSet = true; m_contentIdentificationType = std::move(value); }
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline EngineTranscribeMedicalSettings& WithContentIdentificationType(const TranscribeMedicalContentIdentificationType& value) { SetContentIdentificationType(value); return *this;}
 
     /**
-     * <p>Set this field to <code>PHI</code> to identify personal health information in
-     * the transcription output.</p>
+     * <p>Labels all personally identifiable information (PII) identified in your
+     * transcript. If you don't include <code>PiiEntityTypes</code>, all PII is
+     * identified.</p> <p>You can’t set <code>ContentIdentificationType</code> and
+     * <code>ContentRedactionType</code>.</p>
      */
     inline EngineTranscribeMedicalSettings& WithContentIdentificationType(TranscribeMedicalContentIdentificationType&& value) { SetContentIdentificationType(std::move(value)); return *this;}
 

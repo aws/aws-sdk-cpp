@@ -28,9 +28,10 @@ namespace Model
    * metadata for SageMaker Amazon Web Services resources.</p> <p>You can add tags to
    * notebook instances, training jobs, hyperparameter tuning jobs, batch transform
    * jobs, models, labeling jobs, work teams, endpoint configurations, and endpoints.
-   * For more information on adding tags to SageMaker resources, see
-   * <a>AddTags</a>.</p> <p>For more information on adding metadata to your Amazon
-   * Web Services resources with tagging, see <a
+   * For more information on adding tags to SageMaker resources, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>.</p>
+   * <p>For more information on adding metadata to your Amazon Web Services resources
+   * with tagging, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging
    * Amazon Web Services resources</a>. For advice on best practices for managing
    * Amazon Web Services resources with tagging, see <a

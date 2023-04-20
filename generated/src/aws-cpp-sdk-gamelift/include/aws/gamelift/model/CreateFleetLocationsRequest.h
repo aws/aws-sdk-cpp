@@ -87,64 +87,64 @@ namespace Model
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline const Aws::Vector<LocationConfiguration>& GetLocations() const{ return m_locations; }
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline bool LocationsHasBeenSet() const { return m_locationsHasBeenSet; }
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline void SetLocations(const Aws::Vector<LocationConfiguration>& value) { m_locationsHasBeenSet = true; m_locations = value; }
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline void SetLocations(Aws::Vector<LocationConfiguration>&& value) { m_locationsHasBeenSet = true; m_locations = std::move(value); }
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline CreateFleetLocationsRequest& WithLocations(const Aws::Vector<LocationConfiguration>& value) { SetLocations(value); return *this;}
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline CreateFleetLocationsRequest& WithLocations(Aws::Vector<LocationConfiguration>&& value) { SetLocations(std::move(value)); return *this;}
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline CreateFleetLocationsRequest& AddLocations(const LocationConfiguration& value) { m_locationsHasBeenSet = true; m_locations.push_back(value); return *this; }
 
     /**
      * <p>A list of locations to deploy additional instances to and manage as part of
-     * the fleet. You can add any GameLift-supported Amazon Web Services Region as a
-     * remote location, in the form of an Amazon Web Services Region code such as
+     * the fleet. You can add any Amazon GameLift-supported Amazon Web Services Region
+     * as a remote location, in the form of an Amazon Web Services Region code such as
      * <code>us-west-2</code>. </p>
      */
     inline CreateFleetLocationsRequest& AddLocations(LocationConfiguration&& value) { m_locationsHasBeenSet = true; m_locations.push_back(std::move(value)); return *this; }

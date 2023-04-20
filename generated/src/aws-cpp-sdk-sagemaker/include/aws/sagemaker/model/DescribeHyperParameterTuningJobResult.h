@@ -116,106 +116,128 @@ namespace Model
 
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
-     * configuration of the tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that specifies the configuration of the tuning job.</p>
      */
     inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const{ return m_hyperParameterTuningJobConfig; }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
-     * configuration of the tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that specifies the configuration of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { m_hyperParameterTuningJobConfig = value; }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
-     * configuration of the tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that specifies the configuration of the tuning job.</p>
      */
     inline void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { m_hyperParameterTuningJobConfig = std::move(value); }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
-     * configuration of the tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that specifies the configuration of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { SetHyperParameterTuningJobConfig(value); return *this;}
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that specifies the
-     * configuration of the tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that specifies the configuration of the tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { SetHyperParameterTuningJobConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
-     * definition of the training jobs that this tuning job launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that specifies the definition of the training jobs that this tuning job
+     * launches.</p>
      */
     inline const HyperParameterTrainingJobDefinition& GetTrainingJobDefinition() const{ return m_trainingJobDefinition; }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
-     * definition of the training jobs that this tuning job launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that specifies the definition of the training jobs that this tuning job
+     * launches.</p>
      */
     inline void SetTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinition = value; }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
-     * definition of the training jobs that this tuning job launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that specifies the definition of the training jobs that this tuning job
+     * launches.</p>
      */
     inline void SetTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinition = std::move(value); }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
-     * definition of the training jobs that this tuning job launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that specifies the definition of the training jobs that this tuning job
+     * launches.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { SetTrainingJobDefinition(value); return *this;}
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that specifies the
-     * definition of the training jobs that this tuning job launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that specifies the definition of the training jobs that this tuning job
+     * launches.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { SetTrainingJobDefinition(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitions = value; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitions = std::move(value); }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
 
@@ -330,99 +352,124 @@ namespace Model
 
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline const TrainingJobStatusCounters& GetTrainingJobStatusCounters() const{ return m_trainingJobStatusCounters; }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { m_trainingJobStatusCounters = value; }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { m_trainingJobStatusCounters = std::move(value); }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { SetTrainingJobStatusCounters(value); return *this;}
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { SetTrainingJobStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by the status of their final objective metric, that
-     * this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by the status of
+     * their final objective metric, that this tuning job launched.</p>
      */
     inline const ObjectiveStatusCounters& GetObjectiveStatusCounters() const{ return m_objectiveStatusCounters; }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by the status of their final objective metric, that
-     * this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by the status of
+     * their final objective metric, that this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(const ObjectiveStatusCounters& value) { m_objectiveStatusCounters = value; }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by the status of their final objective metric, that
-     * this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by the status of
+     * their final objective metric, that this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(ObjectiveStatusCounters&& value) { m_objectiveStatusCounters = std::move(value); }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by the status of their final objective metric, that
-     * this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by the status of
+     * their final objective metric, that this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithObjectiveStatusCounters(const ObjectiveStatusCounters& value) { SetObjectiveStatusCounters(value); return *this;}
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the number of
-     * training jobs, categorized by the status of their final objective metric, that
-     * this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the number of training jobs, categorized by the status of
+     * their final objective metric, that this tuning job launched.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithObjectiveStatusCounters(ObjectiveStatusCounters&& value) { SetObjectiveStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
-     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * object that describes the training job that completed with the best current <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
      */
     inline const HyperParameterTrainingJobSummary& GetBestTrainingJob() const{ return m_bestTrainingJob; }
 
     /**
-     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
-     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * object that describes the training job that completed with the best current <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
      */
     inline void SetBestTrainingJob(const HyperParameterTrainingJobSummary& value) { m_bestTrainingJob = value; }
 
     /**
-     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
-     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * object that describes the training job that completed with the best current <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
      */
     inline void SetBestTrainingJob(HyperParameterTrainingJobSummary&& value) { m_bestTrainingJob = std::move(value); }
 
     /**
-     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
-     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * object that describes the training job that completed with the best current <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithBestTrainingJob(const HyperParameterTrainingJobSummary& value) { SetBestTrainingJob(value); return *this;}
 
     /**
-     * <p>A <a>TrainingJobSummary</a> object that describes the training job that
-     * completed with the best current <a>HyperParameterTuningJobObjective</a>.</p>
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * object that describes the training job that completed with the best current <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobObjective.html">HyperParameterTuningJobObjective</a>.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithBestTrainingJob(HyperParameterTrainingJobSummary&& value) { SetBestTrainingJob(std::move(value)); return *this;}
 
@@ -430,45 +477,55 @@ namespace Model
     /**
      * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
-     * the <a>TrainingJobSummary</a> for the training job with the best objective
-     * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the warm start tuning job.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * for the training job with the best objective metric value of all training jobs
+     * launched by this tuning job and all parent jobs specified for the warm start
+     * tuning job.</p>
      */
     inline const HyperParameterTrainingJobSummary& GetOverallBestTrainingJob() const{ return m_overallBestTrainingJob; }
 
     /**
      * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
-     * the <a>TrainingJobSummary</a> for the training job with the best objective
-     * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the warm start tuning job.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * for the training job with the best objective metric value of all training jobs
+     * launched by this tuning job and all parent jobs specified for the warm start
+     * tuning job.</p>
      */
     inline void SetOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { m_overallBestTrainingJob = value; }
 
     /**
      * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
-     * the <a>TrainingJobSummary</a> for the training job with the best objective
-     * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the warm start tuning job.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * for the training job with the best objective metric value of all training jobs
+     * launched by this tuning job and all parent jobs specified for the warm start
+     * tuning job.</p>
      */
     inline void SetOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { m_overallBestTrainingJob = std::move(value); }
 
     /**
      * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
-     * the <a>TrainingJobSummary</a> for the training job with the best objective
-     * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the warm start tuning job.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * for the training job with the best objective metric value of all training jobs
+     * launched by this tuning job and all parent jobs specified for the warm start
+     * tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(const HyperParameterTrainingJobSummary& value) { SetOverallBestTrainingJob(value); return *this;}
 
     /**
      * <p>If the hyperparameter tuning job is an warm start tuning job with a
      * <code>WarmStartType</code> of <code>IDENTICAL_DATA_AND_ALGORITHM</code>, this is
-     * the <a>TrainingJobSummary</a> for the training job with the best objective
-     * metric value of all training jobs launched by this tuning job and all parent
-     * jobs specified for the warm start tuning job.</p>
+     * the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * for the training job with the best objective metric value of all training jobs
+     * launched by this tuning job and all parent jobs specified for the warm start
+     * tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithOverallBestTrainingJob(HyperParameterTrainingJobSummary&& value) { SetOverallBestTrainingJob(std::move(value)); return *this;}
 

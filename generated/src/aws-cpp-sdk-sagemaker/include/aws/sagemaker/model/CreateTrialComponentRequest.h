@@ -474,50 +474,58 @@ namespace Model
 
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline CreateTrialComponentRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline CreateTrialComponentRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline CreateTrialComponentRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
-     * <p>A list of tags to associate with the component. You can use <a>Search</a> API
-     * to search on the tags.</p>
+     * <p>A list of tags to associate with the component. You can use <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+     * API to search on the tags.</p>
      */
     inline CreateTrialComponentRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 

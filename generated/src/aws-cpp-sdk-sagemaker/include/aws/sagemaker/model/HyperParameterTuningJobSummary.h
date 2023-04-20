@@ -288,118 +288,148 @@ namespace Model
 
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline const TrainingJobStatusCounters& GetTrainingJobStatusCounters() const{ return m_trainingJobStatusCounters; }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline bool TrainingJobStatusCountersHasBeenSet() const { return m_trainingJobStatusCountersHasBeenSet; }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { m_trainingJobStatusCountersHasBeenSet = true; m_trainingJobStatusCounters = value; }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline void SetTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { m_trainingJobStatusCountersHasBeenSet = true; m_trainingJobStatusCounters = std::move(value); }
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline HyperParameterTuningJobSummary& WithTrainingJobStatusCounters(const TrainingJobStatusCounters& value) { SetTrainingJobStatusCounters(value); return *this;}
 
     /**
-     * <p>The <a>TrainingJobStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by status, that this tuning job launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobStatusCounters.html">TrainingJobStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by status, that
+     * this tuning job launched.</p>
      */
     inline HyperParameterTuningJobSummary& WithTrainingJobStatusCounters(TrainingJobStatusCounters&& value) { SetTrainingJobStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline const ObjectiveStatusCounters& GetObjectiveStatusCounters() const{ return m_objectiveStatusCounters; }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline bool ObjectiveStatusCountersHasBeenSet() const { return m_objectiveStatusCountersHasBeenSet; }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(const ObjectiveStatusCounters& value) { m_objectiveStatusCountersHasBeenSet = true; m_objectiveStatusCounters = value; }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline void SetObjectiveStatusCounters(ObjectiveStatusCounters&& value) { m_objectiveStatusCountersHasBeenSet = true; m_objectiveStatusCounters = std::move(value); }
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline HyperParameterTuningJobSummary& WithObjectiveStatusCounters(const ObjectiveStatusCounters& value) { SetObjectiveStatusCounters(value); return *this;}
 
     /**
-     * <p>The <a>ObjectiveStatusCounters</a> object that specifies the numbers of
-     * training jobs, categorized by objective metric status, that this tuning job
-     * launched.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ObjectiveStatusCounters.html">ObjectiveStatusCounters</a>
+     * object that specifies the numbers of training jobs, categorized by objective
+     * metric status, that this tuning job launched.</p>
      */
     inline HyperParameterTuningJobSummary& WithObjectiveStatusCounters(ObjectiveStatusCounters&& value) { SetObjectiveStatusCounters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline const ResourceLimits& GetResourceLimits() const{ return m_resourceLimits; }
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline bool ResourceLimitsHasBeenSet() const { return m_resourceLimitsHasBeenSet; }
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline void SetResourceLimits(const ResourceLimits& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = value; }
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline void SetResourceLimits(ResourceLimits&& value) { m_resourceLimitsHasBeenSet = true; m_resourceLimits = std::move(value); }
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline HyperParameterTuningJobSummary& WithResourceLimits(const ResourceLimits& value) { SetResourceLimits(value); return *this;}
 
     /**
-     * <p>The <a>ResourceLimits</a> object that specifies the maximum number of
-     * training jobs and parallel training jobs allowed for this tuning job.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>
+     * object that specifies the maximum number of training jobs and parallel training
+     * jobs allowed for this tuning job.</p>
      */
     inline HyperParameterTuningJobSummary& WithResourceLimits(ResourceLimits&& value) { SetResourceLimits(std::move(value)); return *this;}
 

@@ -99,37 +99,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline const Aws::Vector<RuleGroupSummary>& GetRuleGroups() const{ return m_ruleGroups; }
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline void SetRuleGroups(const Aws::Vector<RuleGroupSummary>& value) { m_ruleGroups = value; }
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline void SetRuleGroups(Aws::Vector<RuleGroupSummary>&& value) { m_ruleGroups = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListRuleGroupsResult& WithRuleGroups(const Aws::Vector<RuleGroupSummary>& value) { SetRuleGroups(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListRuleGroupsResult& WithRuleGroups(Aws::Vector<RuleGroupSummary>&& value) { SetRuleGroups(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListRuleGroupsResult& AddRuleGroups(const RuleGroupSummary& value) { m_ruleGroups.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Array of rule groups. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListRuleGroupsResult& AddRuleGroups(RuleGroupSummary&& value) { m_ruleGroups.push_back(std::move(value)); return *this; }
 

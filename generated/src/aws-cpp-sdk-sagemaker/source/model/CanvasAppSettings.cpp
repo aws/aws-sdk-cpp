@@ -19,12 +19,14 @@ namespace Model
 {
 
 CanvasAppSettings::CanvasAppSettings() : 
-    m_timeSeriesForecastingSettingsHasBeenSet(false)
+    m_timeSeriesForecastingSettingsHasBeenSet(false),
+    m_modelRegisterSettingsHasBeenSet(false)
 {
 }
 
 CanvasAppSettings::CanvasAppSettings(JsonView jsonValue) : 
-    m_timeSeriesForecastingSettingsHasBeenSet(false)
+    m_timeSeriesForecastingSettingsHasBeenSet(false),
+    m_modelRegisterSettingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ CanvasAppSettings& CanvasAppSettings::operator =(JsonView jsonValue)
     m_timeSeriesForecastingSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelRegisterSettings"))
+  {
+    m_modelRegisterSettings = jsonValue.GetObject("ModelRegisterSettings");
+
+    m_modelRegisterSettingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue CanvasAppSettings::Jsonize() const
   if(m_timeSeriesForecastingSettingsHasBeenSet)
   {
    payload.WithObject("TimeSeriesForecastingSettings", m_timeSeriesForecastingSettings.Jsonize());
+
+  }
+
+  if(m_modelRegisterSettingsHasBeenSet)
+  {
+   payload.WithObject("ModelRegisterSettings", m_modelRegisterSettings.Jsonize());
 
   }
 

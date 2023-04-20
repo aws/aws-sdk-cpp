@@ -99,26 +99,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -147,7 +146,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -169,25 +168,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -210,26 +211,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -258,7 +258,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -280,25 +280,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -321,26 +323,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -369,7 +370,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -391,25 +392,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -432,26 +435,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -480,7 +482,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -502,25 +504,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -543,26 +547,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -591,7 +594,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -613,25 +616,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -654,26 +659,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -702,7 +706,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -724,25 +728,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -765,26 +771,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -813,7 +818,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -835,25 +840,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for
@@ -876,26 +883,25 @@ namespace Model
 
     /**
      * <p>Specifies the name and shape of the expected data inputs for your trained
-     * model with a JSON dictionary form. The data inputs are
-     * <a>InputConfig$Framework</a> specific. </p> <ul> <li> <p>
-     * <code>TensorFlow</code>: You must specify the name and shape (NHWC format) of
-     * the expected data inputs using a dictionary format for your trained model. The
-     * dictionary formats required for the console and CLI are different.</p> <ul> <li>
-     * <p>Examples for one input:</p> <ul> <li> <p>If using the console,
-     * <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li> <li> <p>Examples
-     * for two inputs:</p> <ul> <li> <p>If using the console, <code>{"data1":
-     * [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If using the CLI,
-     * <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p> </li> </ul>
-     * </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the name and
-     * shape (NCHW format) of expected data inputs using a dictionary format for your
-     * trained model. Note that while Keras model artifacts should be uploaded in NHWC
-     * (channel-last) format, <code>DataInputConfig</code> should be specified in NCHW
-     * (channel-first) format. The dictionary formats required for the console and CLI
+     * model with a JSON dictionary form. The data inputs are <code>Framework</code>
+     * specific. </p> <ul> <li> <p> <code>TensorFlow</code>: You must specify the name
+     * and shape (NHWC format) of the expected data inputs using a dictionary format
+     * for your trained model. The dictionary formats required for the console and CLI
      * are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li> <p>If
-     * using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li> <p>If
-     * using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul> </li>
+     * using the console, <code>{"input":[1,1024,1024,3]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"input\":[1,1024,1024,3]}</code> </p> </li> </ul> </li>
      * <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
+     * <code>{"data1": [1,28,28,1], "data2":[1,28,28,1]}</code> </p> </li> <li> <p>If
+     * using the CLI, <code>{\"data1\": [1,28,28,1], \"data2\":[1,28,28,1]}</code> </p>
+     * </li> </ul> </li> </ul> </li> <li> <p> <code>KERAS</code>: You must specify the
+     * name and shape (NCHW format) of expected data inputs using a dictionary format
+     * for your trained model. Note that while Keras model artifacts should be uploaded
+     * in NHWC (channel-last) format, <code>DataInputConfig</code> should be specified
+     * in NCHW (channel-first) format. The dictionary formats required for the console
+     * and CLI are different.</p> <ul> <li> <p>Examples for one input:</p> <ul> <li>
+     * <p>If using the console, <code>{"input_1":[1,3,224,224]}</code> </p> </li> <li>
+     * <p>If using the CLI, <code>{\"input_1\":[1,3,224,224]}</code> </p> </li> </ul>
+     * </li> <li> <p>Examples for two inputs:</p> <ul> <li> <p>If using the console,
      * <code>{"input_1": [1,3,224,224], "input_2":[1,3,224,224]} </code> </p> </li>
      * <li> <p>If using the CLI, <code>{\"input_1\": [1,3,224,224],
      * \"input_2\":[1,3,224,224]}</code> </p> </li> </ul> </li> </ul> </li> <li> <p>
@@ -924,7 +930,7 @@ namespace Model
      * inputs in list format: <code>[[1,3,224,224], [1,3,224,224]]</code> </p> </li>
      * </ul> </li> <li> <p> <code>XGBOOST</code>: input data name and shape are not
      * needed.</p> </li> </ul> <p> <code>DataInputConfig</code> supports the following
-     * parameters for <code>CoreML</code> <a>OutputConfig$TargetDevice</a> (ML Model
+     * parameters for <code>CoreML</code> <code>TargetDevice</code> (ML Model
      * format):</p> <ul> <li> <p> <code>shape</code>: Input shape, for example
      * <code>{"input_1": {"shape": [1,224,224,3]}}</code>. In addition to static input
      * shapes, CoreML converter supports Flexible input shapes:</p> <ul> <li> <p>Range
@@ -946,25 +952,27 @@ namespace Model
      * an Image, you need to provide the bias vector.</p> </li> <li> <p>
      * <code>scale</code>: If the input type is an Image, you need to provide a scale
      * factor.</p> </li> </ul> <p>CoreML <code>ClassifierConfig</code> parameters can
-     * be specified using <a>OutputConfig$CompilerOptions</a>. CoreML converter
-     * supports Tensorflow and PyTorch models. CoreML conversion examples:</p> <ul>
-     * <li> <p>Tensor type input:</p> <ul> <li> <p> <code>"DataInputConfig":
-     * {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]], "default_shape":
-     * [1,224,224,3]}}</code> </p> </li> </ul> </li> <li> <p>Tensor type input without
-     * input name (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape":
-     * [[1,3,224,224], [1,3,160,160]], "default_shape": [1,3,224,224]}]</code> </p>
-     * </li> </ul> </li> <li> <p>Image type input:</p> <ul> <li> <p>
-     * <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3], [1,160,160,3]],
-     * "default_shape": [1,224,224,3], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}}</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> <li>
-     * <p>Image type input without input name (PyTorch):</p> <ul> <li> <p>
+     * be specified using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>CompilerOptions</code>. CoreML converter supports Tensorflow and PyTorch
+     * models. CoreML conversion examples:</p> <ul> <li> <p>Tensor type input:</p> <ul>
+     * <li> <p> <code>"DataInputConfig": {"input_1": {"shape": [[1,224,224,3],
+     * [1,160,160,3]], "default_shape": [1,224,224,3]}}</code> </p> </li> </ul> </li>
+     * <li> <p>Tensor type input without input name (PyTorch):</p> <ul> <li> <p>
      * <code>"DataInputConfig": [{"shape": [[1,3,224,224], [1,3,160,160]],
-     * "default_shape": [1,3,224,224], "type": "Image", "bias": [-1,-1,-1], "scale":
-     * 0.007843137255}]</code> </p> </li> <li> <p> <code>"CompilerOptions":
-     * {"class_labels": "imagenet_labels_1000.txt"}</code> </p> </li> </ul> </li> </ul>
-     * <p>Depending on the model format, <code>DataInputConfig</code> requires the
-     * following parameters for <code>ml_eia2</code> <a
+     * "default_shape": [1,3,224,224]}]</code> </p> </li> </ul> </li> <li> <p>Image
+     * type input:</p> <ul> <li> <p> <code>"DataInputConfig": {"input_1": {"shape":
+     * [[1,224,224,3], [1,160,160,3]], "default_shape": [1,224,224,3], "type": "Image",
+     * "bias": [-1,-1,-1], "scale": 0.007843137255}}</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> <li> <p>Image type input without input name
+     * (PyTorch):</p> <ul> <li> <p> <code>"DataInputConfig": [{"shape": [[1,3,224,224],
+     * [1,3,160,160]], "default_shape": [1,3,224,224], "type": "Image", "bias":
+     * [-1,-1,-1], "scale": 0.007843137255}]</code> </p> </li> <li> <p>
+     * <code>"CompilerOptions": {"class_labels": "imagenet_labels_1000.txt"}</code>
+     * </p> </li> </ul> </li> </ul> <p>Depending on the model format,
+     * <code>DataInputConfig</code> requires the following parameters for
+     * <code>ml_eia2</code> <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html#sagemaker-Type-OutputConfig-TargetDevice">OutputConfig:TargetDevice</a>.</p>
      * <ul> <li> <p>For TensorFlow models saved in the SavedModel format, specify the
      * input names from <code>signature_def_key</code> and the input model shapes for

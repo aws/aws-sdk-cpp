@@ -564,7 +564,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline const Aws::String& GetPiiEntityTypes() const{ return m_piiEntityTypes; }
 
@@ -579,7 +580,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline bool PiiEntityTypesHasBeenSet() const { return m_piiEntityTypesHasBeenSet; }
 
@@ -594,7 +596,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const Aws::String& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = value; }
 
@@ -609,7 +612,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(Aws::String&& value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes = std::move(value); }
 
@@ -624,7 +628,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline void SetPiiEntityTypes(const char* value) { m_piiEntityTypesHasBeenSet = true; m_piiEntityTypes.assign(value); }
 
@@ -639,7 +644,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline AmazonTranscribeProcessorConfiguration& WithPiiEntityTypes(const Aws::String& value) { SetPiiEntityTypes(value); return *this;}
 
@@ -654,7 +660,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline AmazonTranscribeProcessorConfiguration& WithPiiEntityTypes(Aws::String&& value) { SetPiiEntityTypes(std::move(value)); return *this;}
 
@@ -669,7 +676,8 @@ namespace Model
      * <code>CREDIT_DEBIT_CVV</code>, <code>CREDIT_DEBIT_EXPIRY</code>,
      * <code>CREDIT_DEBIT_NUMBER</code>, <code>EMAIL</code>, <code>NAME</code>,
      * <code>PHONE</code>, <code>PIN</code>, <code>SSN</code>, or <code>ALL</code>.</p>
-     * <p>Length Constraints: Minimum length of 1. Maximum length of 300.</p>
+     * <p>If you leave this parameter empty, the default behavior is equivalent to
+     * <code>ALL</code>.</p>
      */
     inline AmazonTranscribeProcessorConfiguration& WithPiiEntityTypes(const char* value) { SetPiiEntityTypes(value); return *this;}
 

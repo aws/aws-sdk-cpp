@@ -26,9 +26,10 @@ namespace Model
 
   /**
    * <p>Gets the Amazon EC2 Container Registry path of the docker image of the model
-   * that is hosted in this <a>ProductionVariant</a>.</p> <p>If you used the
-   * <code>registry/repository[:tag]</code> form to specify the image path of the
-   * primary container when you created the model hosted in this
+   * that is hosted in this <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ProductionVariant.html">ProductionVariant</a>.</p>
+   * <p>If you used the <code>registry/repository[:tag]</code> form to specify the
+   * image path of the primary container when you created the model hosted in this
    * <code>ProductionVariant</code>, the path resolves to a path of the form
    * <code>registry/repository[@digest]</code>. A digest is a hash value that
    * identifies a specific version of an image. For information about Amazon ECR

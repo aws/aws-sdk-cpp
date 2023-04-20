@@ -25,8 +25,8 @@ namespace Model
 {
 
   /**
-   * <p>Time series forecast settings for the SageMaker Canvas app.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Time series forecast settings for the SageMaker Canvas
+   * application.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TimeSeriesForecastingSettings">AWS
    * API Reference</a></p>
    */
@@ -41,37 +41,37 @@ namespace Model
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline const FeatureStatus& GetStatus() const{ return m_status; }
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline void SetStatus(const FeatureStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline void SetStatus(FeatureStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline TimeSeriesForecastingSettings& WithStatus(const FeatureStatus& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Describes whether time series forecasting is enabled or disabled in the
-     * Canvas app.</p>
+     * Canvas application.</p>
      */
     inline TimeSeriesForecastingSettings& WithStatus(FeatureStatus&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -79,10 +79,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -93,10 +93,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -107,10 +107,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -121,10 +121,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -135,10 +135,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -149,10 +149,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -163,10 +163,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service
@@ -177,10 +177,10 @@ namespace Model
     /**
      * <p>The IAM role that Canvas passes to Amazon Forecast for time series
      * forecasting. By default, Canvas uses the execution role specified in the
-     * <code>UserProfile</code> that launches the Canvas app. If an execution role is
-     * not specified in the <code>UserProfile</code>, Canvas uses the execution role
-     * specified in the Domain that owns the <code>UserProfile</code>. To allow time
-     * series forecasting, this IAM role should have the <a
+     * <code>UserProfile</code> that launches the Canvas application. If an execution
+     * role is not specified in the <code>UserProfile</code>, Canvas uses the execution
+     * role specified in the Domain that owns the <code>UserProfile</code>. To allow
+     * time series forecasting, this IAM role should have the <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security-iam-awsmanpol-canvas.html#security-iam-awsmanpol-AmazonSageMakerCanvasForecastAccess">
      * AmazonSageMakerCanvasForecastAccess</a> policy attached and
      * <code>forecast.amazonaws.com</code> added in the trust relationship as a service

@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIME_API PutSipMediaApplicationLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The logging configuration of the SIP media application.</p>
+     */
     inline const SipMediaApplicationLoggingConfiguration& GetSipMediaApplicationLoggingConfiguration() const{ return m_sipMediaApplicationLoggingConfiguration; }
 
-    
+    /**
+     * <p>The logging configuration of the SIP media application.</p>
+     */
     inline void SetSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { m_sipMediaApplicationLoggingConfiguration = value; }
 
-    
+    /**
+     * <p>The logging configuration of the SIP media application.</p>
+     */
     inline void SetSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { m_sipMediaApplicationLoggingConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The logging configuration of the SIP media application.</p>
+     */
     inline PutSipMediaApplicationLoggingConfigurationResult& WithSipMediaApplicationLoggingConfiguration(const SipMediaApplicationLoggingConfiguration& value) { SetSipMediaApplicationLoggingConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The logging configuration of the SIP media application.</p>
+     */
     inline PutSipMediaApplicationLoggingConfigurationResult& WithSipMediaApplicationLoggingConfiguration(SipMediaApplicationLoggingConfiguration&& value) { SetSipMediaApplicationLoggingConfiguration(std::move(value)); return *this;}
 
 

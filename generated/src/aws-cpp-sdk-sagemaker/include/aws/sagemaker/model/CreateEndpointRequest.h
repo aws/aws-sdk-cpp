@@ -41,7 +41,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline const Aws::String& GetEndpointName() const{ return m_endpointName; }
 
@@ -49,7 +50,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
 
@@ -57,7 +59,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
@@ -65,7 +68,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline void SetEndpointName(Aws::String&& value) { m_endpointNameHasBeenSet = true; m_endpointName = std::move(value); }
 
@@ -73,7 +77,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline void SetEndpointName(const char* value) { m_endpointNameHasBeenSet = true; m_endpointName.assign(value); }
 
@@ -81,7 +86,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline CreateEndpointRequest& WithEndpointName(const Aws::String& value) { SetEndpointName(value); return *this;}
 
@@ -89,7 +95,8 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline CreateEndpointRequest& WithEndpointName(Aws::String&& value) { SetEndpointName(std::move(value)); return *this;}
 
@@ -97,56 +104,65 @@ namespace Model
      * <p>The name of the endpoint.The name must be unique within an Amazon Web
      * Services Region in your Amazon Web Services account. The name is
      * case-insensitive in <code>CreateEndpoint</code>, but the case is preserved and
-     * must be matched in .</p>
+     * must be matched in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_runtime_InvokeEndpoint.html">InvokeEndpoint</a>.</p>
      */
     inline CreateEndpointRequest& WithEndpointName(const char* value) { SetEndpointName(value); return *this;}
 
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = std::move(value); }
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline void SetEndpointConfigName(const char* value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName.assign(value); }
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline CreateEndpointRequest& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline CreateEndpointRequest& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an endpoint configuration. For more information, see
-     * <a>CreateEndpointConfig</a>. </p>
+     * <p>The name of an endpoint configuration. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>.
+     * </p>
      */
     inline CreateEndpointRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
 

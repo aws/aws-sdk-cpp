@@ -122,37 +122,49 @@ namespace Model
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline const EndpointStatus& GetEndpointStatus() const{ return m_endpointStatus; }
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline void SetEndpointStatus(const EndpointStatus& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline void SetEndpointStatus(EndpointStatus&& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = std::move(value); }
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline EndpointMetadata& WithEndpointStatus(const EndpointStatus& value) { SetEndpointStatus(value); return *this;}
 
     /**
      * <p> The status of the endpoint. For possible values of the status of an
-     * endpoint, see <a>EndpointSummary$EndpointStatus</a>. </p>
+     * endpoint, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_EndpointSummary.html">EndpointSummary</a>.
+     * </p>
      */
     inline EndpointMetadata& WithEndpointStatus(EndpointStatus&& value) { SetEndpointStatus(std::move(value)); return *this;}
 

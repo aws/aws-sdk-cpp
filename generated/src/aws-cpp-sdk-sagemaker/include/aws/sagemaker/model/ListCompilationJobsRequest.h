@@ -315,37 +315,37 @@ namespace Model
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline const CompilationJobStatus& GetStatusEquals() const{ return m_statusEquals; }
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline void SetStatusEquals(const CompilationJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline void SetStatusEquals(CompilationJobStatus&& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = std::move(value); }
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline ListCompilationJobsRequest& WithStatusEquals(const CompilationJobStatus& value) { SetStatusEquals(value); return *this;}
 
     /**
      * <p>A filter that retrieves model compilation jobs with a specific
-     * <a>DescribeCompilationJobResponse$CompilationJobStatus</a> status.</p>
+     * <code>CompilationJobStatus</code> status.</p>
      */
     inline ListCompilationJobsRequest& WithStatusEquals(CompilationJobStatus&& value) { SetStatusEquals(std::move(value)); return *this;}
 

@@ -298,82 +298,122 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(const Aws::String& value) { m_creatorIdHasBeenSet = true; m_creatorId = value; }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(Aws::String&& value) { m_creatorIdHasBeenSet = true; m_creatorId = std::move(value); }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline void SetCreatorId(const char* value) { m_creatorIdHasBeenSet = true; m_creatorId.assign(value); }
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const Aws::String& value) { SetCreatorId(value); return *this;}
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(Aws::String&& value) { SetCreatorId(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for a player or entity creating the game session. This
-     * parameter is required when requesting a new game session on a fleet with a
-     * resource creation limit policy. This type of policy limits the number of
-     * concurrent active game sessions that one player can create within a certain time
-     * span. GameLift uses the CreatorId to evaluate the new request against the
-     * policy.</p>
+     * <p>A unique identifier for a player or entity creating the game session. </p>
+     * <p>If you add a resource creation limit policy to a fleet, the
+     * <code>CreateGameSession</code> operation requires a <code>CreatorId</code>.
+     * Amazon GameLift limits the number of game session creation requests with the
+     * same <code>CreatorId</code> in a specified time period.</p> <p>If you your fleet
+     * doesn't have a resource creation limit policy and you provide a
+     * <code>CreatorId</code> in your <code>CreateGameSession</code> requests, Amazon
+     * GameLift limits requests to one request per <code>CreatorId</code> per
+     * second.</p> <p>To not limit <code>CreateGameSession</code> requests with the
+     * same <code>CreatorId</code>, don't provide a <code>CreatorId</code> in your
+     * <code>CreateGameSession</code> request.</p>
      */
     inline CreateGameSessionRequest& WithCreatorId(const char* value) { SetCreatorId(value); return *this;}
 

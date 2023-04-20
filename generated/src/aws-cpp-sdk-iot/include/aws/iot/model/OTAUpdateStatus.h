@@ -19,7 +19,9 @@ namespace Model
     CREATE_PENDING,
     CREATE_IN_PROGRESS,
     CREATE_COMPLETE,
-    CREATE_FAILED
+    CREATE_FAILED,
+    DELETE_IN_PROGRESS,
+    DELETE_FAILED
   };
 
 namespace OTAUpdateStatusMapper

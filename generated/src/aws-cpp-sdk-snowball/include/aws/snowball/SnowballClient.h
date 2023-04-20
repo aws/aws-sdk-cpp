@@ -207,27 +207,31 @@ namespace Snowball
          * availability, see <a
          * href="https://aws.amazon.com/about-aws/global-infrastructure/regional-product-services/?p=ngi&amp;loc=4">Amazon
          * Web Services Regional Services</a>.</p>  <p/> <p class="title"> <b>Snow
-         * Family devices and their capacities.</b> </p> <ul> <li> <p>Snow Family device
-         * type: <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li>
-         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Snow Family device
-         * type: <b>SNC1_HDD</b> </p> <ul> <li> <p>Capacity: T8</p> </li> <li>
-         * <p>Description: Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type:
-         * <b>EDGE_S</b> </p> <ul> <li> <p>Capacity: T98</p> </li> <li> <p>Description:
-         * Snowball Edge Storage Optimized for data transfer only </p> </li> </ul> <p/>
-         * </li> <li> <p>Device type: <b>EDGE_CG</b> </p> <ul> <li> <p>Capacity: T42</p>
-         * </li> <li> <p>Description: Snowball Edge Compute Optimized with GPU</p> </li>
-         * </ul> <p/> </li> <li> <p>Device type: <b>EDGE_C</b> </p> <ul> <li> <p>Capacity:
-         * T42</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
-         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE</b> </p> <ul> <li>
-         * <p>Capacity: T100</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
-         * with EC2 Compute</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>STANDARD</b>
-         * </p> <ul> <li> <p>Capacity: T50</p> </li> <li> <p>Description: Original Snowball
-         * device</p>  <p>This device is only available in the Ningxia, Beijing, and
-         * Singapore Amazon Web Services Region </p>  </li> </ul> <p/> </li> <li>
-         * <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li>
-         * <p>Description: Original Snowball device</p>  <p>This device is only
-         * available in the Ningxia, Beijing, and Singapore Amazon Web Services Region.
-         * </p>  </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
+         * Family devices and their capacities.</b> </p> <ul> <li> <p>Device type:
+         * <b>SNC1_SSD</b> </p> <ul> <li> <p>Capacity: T14</p> </li> <li> <p>Description:
+         * Snowcone </p> </li> </ul> <p/> </li> <li> <p>Device type: <b>SNC1_HDD</b> </p>
+         * <ul> <li> <p>Capacity: T8</p> </li> <li> <p>Description: Snowcone </p> </li>
+         * </ul> <p/> </li> <li> <p>Device type: <b>EDGE_S</b> </p> <ul> <li> <p>Capacity:
+         * T98</p> </li> <li> <p>Description: Snowball Edge Storage Optimized for data
+         * transfer only </p> </li> </ul> <p/> </li> <li> <p>Device type: <b>EDGE_CG</b>
+         * </p> <ul> <li> <p>Capacity: T42</p> </li> <li> <p>Description: Snowball Edge
+         * Compute Optimized with GPU</p> </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>EDGE_C</b> </p> <ul> <li> <p>Capacity: T42</p> </li> <li> <p>Description:
+         * Snowball Edge Compute Optimized without GPU</p> </li> </ul> <p/> </li> <li>
+         * <p>Device type: <b>EDGE</b> </p> <ul> <li> <p>Capacity: T100</p> </li> <li>
+         * <p>Description: Snowball Edge Storage Optimized with EC2 Compute</p> </li> </ul>
+         * <p/> </li> <li> <p>Device type: <b>STANDARD</b> </p> <ul> <li> <p>Capacity:
+         * T50</p> </li> <li> <p>Description: Original Snowball device</p>  <p>This
+         * device is only available in the Ningxia, Beijing, and Singapore Amazon Web
+         * Services Region </p>  </li> </ul> <p/> </li> <li> <p>Device type:
+         * <b>STANDARD</b> </p> <ul> <li> <p>Capacity: T80</p> </li> <li> <p>Description:
+         * Original Snowball device</p>  <p>This device is only available in the
+         * Ningxia, Beijing, and Singapore Amazon Web Services Region. </p>  </li>
+         * </ul> <p/> </li> <li> <p>Device type: <b>V3_5C</b> </p> <ul> <li> <p>Capacity:
+         * T32</p> </li> <li> <p>Description: Snowball Edge Compute Optimized without
+         * GPU</p> </li> </ul> <p/> </li> <li> <p>Device type: <b>V3_5S</b> </p> <ul> <li>
+         * <p>Capacity: T240</p> </li> <li> <p>Description: Snowball Edge Storage Optimized
+         * 210TB</p> </li> </ul> <p/> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CreateJob">AWS
          * API Reference</a></p>
          */
@@ -630,10 +634,12 @@ namespace Snowball
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
          * (AMIs) that are owned by your Amazon Web Services accountthat would be supported
-         * for use on a Snow device. Currently, supported AMIs are based on the CentOS 7
-         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
-         * - Xenial (HVM) images, available on the Amazon Web Services
-         * Marketplace.</p><p><h3>See Also:</h3>   <a
+         * for use on a Snow device. Currently, supported AMIs are based on the Amazon
+         * Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available
+         * on the Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images
+         * are no longer supported in the Market, but still supported for use on devices
+         * through Amazon EC2 VM Import/Export and running locally in AMIs.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
