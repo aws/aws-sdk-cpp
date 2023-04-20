@@ -545,50 +545,50 @@ namespace Model
 
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -707,26 +707,26 @@ namespace Model
 
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number.</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline GameSession& WithPort(int value) { SetPort(value); return *this;}
 

@@ -877,65 +877,65 @@ namespace Model
 
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline const Aws::Vector<Aws::String>& GetCallAnalyticsStreamCategories() const{ return m_callAnalyticsStreamCategories; }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline bool CallAnalyticsStreamCategoriesHasBeenSet() const { return m_callAnalyticsStreamCategoriesHasBeenSet; }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline void SetCallAnalyticsStreamCategories(const Aws::Vector<Aws::String>& value) { m_callAnalyticsStreamCategoriesHasBeenSet = true; m_callAnalyticsStreamCategories = value; }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline void SetCallAnalyticsStreamCategories(Aws::Vector<Aws::String>&& value) { m_callAnalyticsStreamCategoriesHasBeenSet = true; m_callAnalyticsStreamCategories = std::move(value); }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline AmazonTranscribeCallAnalyticsProcessorConfiguration& WithCallAnalyticsStreamCategories(const Aws::Vector<Aws::String>& value) { SetCallAnalyticsStreamCategories(value); return *this;}
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline AmazonTranscribeCallAnalyticsProcessorConfiguration& WithCallAnalyticsStreamCategories(Aws::Vector<Aws::String>&& value) { SetCallAnalyticsStreamCategories(std::move(value)); return *this;}
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline AmazonTranscribeCallAnalyticsProcessorConfiguration& AddCallAnalyticsStreamCategories(const Aws::String& value) { m_callAnalyticsStreamCategoriesHasBeenSet = true; m_callAnalyticsStreamCategories.push_back(value); return *this; }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline AmazonTranscribeCallAnalyticsProcessorConfiguration& AddCallAnalyticsStreamCategories(Aws::String&& value) { m_callAnalyticsStreamCategoriesHasBeenSet = true; m_callAnalyticsStreamCategories.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>By default, all <code>CategoryEvents</code> will be sent to the insights
-     * target. If this parameter is specified, only included categories will be sent to
-     * the insights target. </p>
+     * <p>By default, all <code>CategoryEvents</code> are sent to the insights target.
+     * If this parameter is specified, only included categories are sent to the
+     * insights target. </p>
      */
     inline AmazonTranscribeCallAnalyticsProcessorConfiguration& AddCallAnalyticsStreamCategories(const char* value) { m_callAnalyticsStreamCategoriesHasBeenSet = true; m_callAnalyticsStreamCategories.push_back(value); return *this; }
 

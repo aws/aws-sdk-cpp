@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>The URL of the SQS sink.</p><p><h3>See Also:</h3>   <a
+   * <p>The configuration settings for the SQS sink.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/SqsQueueSinkConfiguration">AWS
    * API Reference</a></p>
    */
@@ -38,50 +38,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline const Aws::String& GetInsightsTarget() const{ return m_insightsTarget; }
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline bool InsightsTargetHasBeenSet() const { return m_insightsTargetHasBeenSet; }
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline void SetInsightsTarget(const Aws::String& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = value; }
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline void SetInsightsTarget(Aws::String&& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = std::move(value); }
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline void SetInsightsTarget(const char* value) { m_insightsTargetHasBeenSet = true; m_insightsTarget.assign(value); }
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline SqsQueueSinkConfiguration& WithInsightsTarget(const Aws::String& value) { SetInsightsTarget(value); return *this;}
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline SqsQueueSinkConfiguration& WithInsightsTarget(Aws::String&& value) { SetInsightsTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the SQS sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the SQS sink.</p>
      */
     inline SqsQueueSinkConfiguration& WithInsightsTarget(const char* value) { SetInsightsTarget(value); return *this;}
 

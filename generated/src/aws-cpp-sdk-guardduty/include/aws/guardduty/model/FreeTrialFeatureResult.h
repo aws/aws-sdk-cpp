@@ -23,7 +23,8 @@ namespace Model
     EKS_AUDIT_LOGS,
     EBS_MALWARE_PROTECTION,
     RDS_LOGIN_EVENTS,
-    EKS_RUNTIME_MONITORING
+    EKS_RUNTIME_MONITORING,
+    LAMBDA_NETWORK_LOGS
   };
 
 namespace FreeTrialFeatureResultMapper

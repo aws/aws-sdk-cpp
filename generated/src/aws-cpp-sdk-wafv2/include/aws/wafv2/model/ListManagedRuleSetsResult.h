@@ -99,37 +99,44 @@ namespace Model
 
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline const Aws::Vector<ManagedRuleSetSummary>& GetManagedRuleSets() const{ return m_managedRuleSets; }
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline void SetManagedRuleSets(const Aws::Vector<ManagedRuleSetSummary>& value) { m_managedRuleSets = value; }
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline void SetManagedRuleSets(Aws::Vector<ManagedRuleSetSummary>&& value) { m_managedRuleSets = std::move(value); }
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListManagedRuleSetsResult& WithManagedRuleSets(const Aws::Vector<ManagedRuleSetSummary>& value) { SetManagedRuleSets(value); return *this;}
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListManagedRuleSetsResult& WithManagedRuleSets(Aws::Vector<ManagedRuleSetSummary>&& value) { SetManagedRuleSets(std::move(value)); return *this;}
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListManagedRuleSetsResult& AddManagedRuleSets(const ManagedRuleSetSummary& value) { m_managedRuleSets.push_back(value); return *this; }
 
     /**
-     * <p>Your managed rule sets. </p>
+     * <p>Your managed rule sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListManagedRuleSetsResult& AddManagedRuleSets(ManagedRuleSetSummary&& value) { m_managedRuleSets.push_back(std::move(value)); return *this; }
 

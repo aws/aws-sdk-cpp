@@ -99,9 +99,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
@@ -111,9 +113,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
@@ -123,9 +127,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
@@ -135,9 +141,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
@@ -147,9 +155,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline UserSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
@@ -159,9 +169,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline UserSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
@@ -171,9 +183,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
@@ -183,9 +197,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline UserSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
@@ -195,9 +211,11 @@ namespace Model
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
      * <code>PublicInternetOnly</code>.</p> <p>Required when the
      * <code>CreateDomain.AppNetworkAccessType</code> parameter is set to
-     * <code>VpcOnly</code>.</p> <p>Amazon SageMaker adds a security group to allow NFS
-     * traffic from SageMaker Studio. Therefore, the number of security groups that you
-     * can specify is one less than the maximum number shown.</p>
+     * <code>VpcOnly</code>, unless specified as part of the
+     * <code>DefaultUserSettings</code> for the domain.</p> <p>Amazon SageMaker adds a
+     * security group to allow NFS traffic from SageMaker Studio. Therefore, the number
+     * of security groups that you can specify is one less than the maximum number
+     * shown.</p>
      */
     inline UserSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

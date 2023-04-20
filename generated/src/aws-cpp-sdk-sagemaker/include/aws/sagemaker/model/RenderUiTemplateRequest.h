@@ -163,7 +163,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline const Aws::String& GetHumanTaskUiArn() const{ return m_humanTaskUiArn; }
 
@@ -171,7 +172,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline bool HumanTaskUiArnHasBeenSet() const { return m_humanTaskUiArnHasBeenSet; }
 
@@ -179,7 +181,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline void SetHumanTaskUiArn(const Aws::String& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = value; }
 
@@ -187,7 +190,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline void SetHumanTaskUiArn(Aws::String&& value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn = std::move(value); }
 
@@ -195,7 +199,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline void SetHumanTaskUiArn(const char* value) { m_humanTaskUiArnHasBeenSet = true; m_humanTaskUiArn.assign(value); }
 
@@ -203,7 +208,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline RenderUiTemplateRequest& WithHumanTaskUiArn(const Aws::String& value) { SetHumanTaskUiArn(value); return *this;}
 
@@ -211,7 +217,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline RenderUiTemplateRequest& WithHumanTaskUiArn(Aws::String&& value) { SetHumanTaskUiArn(std::move(value)); return *this;}
 
@@ -219,7 +226,8 @@ namespace Model
      * <p>The <code>HumanTaskUiArn</code> of the worker UI that you want to render. Do
      * not provide a <code>HumanTaskUiArn</code> if you use the <code>UiTemplate</code>
      * parameter.</p> <p>See a list of available Human Ui Amazon Resource Names (ARNs)
-     * in <a>UiConfig</a>.</p>
+     * in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UiConfig.html">UiConfig</a>.</p>
      */
     inline RenderUiTemplateRequest& WithHumanTaskUiArn(const char* value) { SetHumanTaskUiArn(value); return *this;}
 

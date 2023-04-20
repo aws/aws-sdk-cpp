@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
    * groups.</b> </p> <p>Properties describing a game server that is running on an
    * instance in a game server group. </p> <p>A game server is created by a
    * successful call to <code>RegisterGameServer</code> and deleted by calling

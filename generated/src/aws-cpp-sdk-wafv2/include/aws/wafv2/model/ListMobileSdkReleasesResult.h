@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline const Aws::Vector<ReleaseSummary>& GetReleaseSummaries() const{ return m_releaseSummaries; }
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetReleaseSummaries(const Aws::Vector<ReleaseSummary>& value) { m_releaseSummaries = value; }
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetReleaseSummaries(Aws::Vector<ReleaseSummary>&& value) { m_releaseSummaries = std::move(value); }
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListMobileSdkReleasesResult& WithReleaseSummaries(const Aws::Vector<ReleaseSummary>& value) { SetReleaseSummaries(value); return *this;}
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListMobileSdkReleasesResult& WithReleaseSummaries(Aws::Vector<ReleaseSummary>&& value) { SetReleaseSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListMobileSdkReleasesResult& AddReleaseSummaries(const ReleaseSummary& value) { m_releaseSummaries.push_back(value); return *this; }
 
     /**
-     * <p>High level information for the available SDK releases. </p>
+     * <p>The high level information for the available SDK releases. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListMobileSdkReleasesResult& AddReleaseSummaries(ReleaseSummary&& value) { m_releaseSummaries.push_back(std::move(value)); return *this; }
 

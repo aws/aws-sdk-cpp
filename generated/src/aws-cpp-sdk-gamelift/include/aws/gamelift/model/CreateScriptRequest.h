@@ -39,64 +39,64 @@ namespace Model
 
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline CreateScriptRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
     inline CreateScriptRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique. You can use <a
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
      */
@@ -104,7 +104,7 @@ namespace Model
 
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -112,7 +112,7 @@ namespace Model
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -120,7 +120,7 @@ namespace Model
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -128,7 +128,7 @@ namespace Model
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -136,7 +136,7 @@ namespace Model
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -144,7 +144,7 @@ namespace Model
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -152,7 +152,7 @@ namespace Model
     inline CreateScriptRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>
@@ -160,7 +160,7 @@ namespace Model
     inline CreateScriptRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can use <a
      * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_UpdateScript.html">UpdateScript</a>
      * to change this value later. </p>

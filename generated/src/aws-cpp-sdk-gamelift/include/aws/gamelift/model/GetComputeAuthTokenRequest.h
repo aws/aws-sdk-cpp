@@ -76,49 +76,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline bool ComputeNameHasBeenSet() const { return m_computeNameHasBeenSet; }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(const Aws::String& value) { m_computeNameHasBeenSet = true; m_computeName = value; }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(Aws::String&& value) { m_computeNameHasBeenSet = true; m_computeName = std::move(value); }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(const char* value) { m_computeNameHasBeenSet = true; m_computeName.assign(value); }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenRequest& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenRequest& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenRequest& WithComputeName(const char* value) { SetComputeName(value); return *this;}

@@ -25,12 +25,12 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
    * groups.</b> </p> <p>An allowed instance type for a game server group. All game
-   * server groups must have at least two instance types defined for it. GameLift
-   * FleetIQ periodically evaluates each defined instance type for viability. It then
-   * updates the Auto Scaling group with the list of viable instance
-   * types.</p><p><h3>See Also:</h3>   <a
+   * server groups must have at least two instance types defined for it. Amazon
+   * GameLift FleetIQ periodically evaluates each defined instance type for
+   * viability. It then updates the Auto Scaling group with the list of viable
+   * instance types.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/InstanceDefinition">AWS
    * API Reference</a></p>
    */
@@ -76,10 +76,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -88,10 +88,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -100,10 +100,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -112,10 +112,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -124,10 +124,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -136,10 +136,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -148,10 +148,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>
@@ -160,10 +160,10 @@ namespace Model
 
     /**
      * <p>Instance weighting that indicates how much this instance type contributes to
-     * the total capacity of a game server group. Instance weights are used by GameLift
-     * FleetIQ to calculate the instance type's cost per unit hour and better identify
-     * the most cost-effective options. For detailed information on weighting instance
-     * capacity, see <a
+     * the total capacity of a game server group. Instance weights are used by Amazon
+     * GameLift FleetIQ to calculate the instance type's cost per unit hour and better
+     * identify the most cost-effective options. For detailed information on weighting
+     * instance capacity, see <a
      * href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/asg-instance-weighting.html">Instance
      * Weighting</a> in the <i>Amazon Elastic Compute Cloud Auto Scaling User
      * Guide</i>. Default value is "1".</p>

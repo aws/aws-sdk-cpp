@@ -98,48 +98,54 @@ namespace Model
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline const TargetDevice& GetTargetDevice() const{ return m_targetDevice; }
 
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline bool TargetDeviceHasBeenSet() const { return m_targetDeviceHasBeenSet; }
 
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline void SetTargetDevice(const TargetDevice& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = value; }
 
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline void SetTargetDevice(TargetDevice&& value) { m_targetDeviceHasBeenSet = true; m_targetDevice = std::move(value); }
 
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline OutputConfig& WithTargetDevice(const TargetDevice& value) { SetTargetDevice(value); return *this;}
 
     /**
      * <p>Identifies the target device or the machine learning instance that you want
      * to run your model on after the compilation has completed. Alternatively, you can
-     * specify OS, architecture, and accelerator using <a>TargetPlatform</a> fields. It
-     * can be used instead of <code>TargetPlatform</code>.</p>
+     * specify OS, architecture, and accelerator using <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TargetPlatform.html">TargetPlatform</a>
+     * fields. It can be used instead of <code>TargetPlatform</code>.</p>
      */
     inline OutputConfig& WithTargetDevice(TargetDevice&& value) { SetTargetDevice(std::move(value)); return *this;}
 
@@ -328,21 +334,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline const Aws::String& GetCompilerOptions() const{ return m_compilerOptions; }
@@ -386,21 +394,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline bool CompilerOptionsHasBeenSet() const { return m_compilerOptionsHasBeenSet; }
@@ -444,21 +454,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(const Aws::String& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = value; }
@@ -502,21 +514,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(Aws::String&& value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions = std::move(value); }
@@ -560,21 +574,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline void SetCompilerOptions(const char* value) { m_compilerOptionsHasBeenSet = true; m_compilerOptions.assign(value); }
@@ -618,21 +634,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const Aws::String& value) { SetCompilerOptions(value); return *this;}
@@ -676,21 +694,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(Aws::String&& value) { SetCompilerOptions(std::move(value)); return *this;}
@@ -734,21 +754,23 @@ namespace Model
      * supported compiler options, see <a
      * href="https://github.com/aws/aws-neuron-sdk/blob/master/docs/neuron-cc/command-line-reference.md">
      * Neuron Compiler CLI</a>. </p> </li> <li> <p> <code>CoreML</code>: Compilation
-     * for the CoreML <a>OutputConfig$TargetDevice</a> supports the following compiler
-     * options:</p> <ul> <li> <p> <code>class_labels</code>: Specifies the
-     * classification labels file name inside input tar.gz file. For example,
-     * <code>{"class_labels": "imagenet_labels_1000.txt"}</code>. Labels inside the txt
-     * file should be separated by newlines.</p> </li> </ul> </li> <li> <p>
-     * <code>EIA</code>: Compilation for the Elastic Inference Accelerator supports the
-     * following compiler options:</p> <ul> <li> <p> <code>precision_mode</code>:
-     * Specifies the precision of compiled artifacts. Supported values are
-     * <code>"FP16"</code> and <code>"FP32"</code>. Default is <code>"FP32"</code>.</p>
-     * </li> <li> <p> <code>signature_def_key</code>: Specifies the signature to use
-     * for models in SavedModel format. Defaults is TensorFlow's default signature def
-     * key.</p> </li> <li> <p> <code>output_names</code>: Specifies a list of output
-     * tensor names for models in FrozenGraph format. Set at most one API field,
-     * either: <code>signature_def_key</code> or <code>output_names</code>.</p> </li>
-     * </ul> <p>For example: <code>{"precision_mode": "FP32", "output_names":
+     * for the CoreML <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OutputConfig.html">OutputConfig</a>
+     * <code>TargetDevice</code> supports the following compiler options:</p> <ul> <li>
+     * <p> <code>class_labels</code>: Specifies the classification labels file name
+     * inside input tar.gz file. For example, <code>{"class_labels":
+     * "imagenet_labels_1000.txt"}</code>. Labels inside the txt file should be
+     * separated by newlines.</p> </li> </ul> </li> <li> <p> <code>EIA</code>:
+     * Compilation for the Elastic Inference Accelerator supports the following
+     * compiler options:</p> <ul> <li> <p> <code>precision_mode</code>: Specifies the
+     * precision of compiled artifacts. Supported values are <code>"FP16"</code> and
+     * <code>"FP32"</code>. Default is <code>"FP32"</code>.</p> </li> <li> <p>
+     * <code>signature_def_key</code>: Specifies the signature to use for models in
+     * SavedModel format. Defaults is TensorFlow's default signature def key.</p> </li>
+     * <li> <p> <code>output_names</code>: Specifies a list of output tensor names for
+     * models in FrozenGraph format. Set at most one API field, either:
+     * <code>signature_def_key</code> or <code>output_names</code>.</p> </li> </ul>
+     * <p>For example: <code>{"precision_mode": "FP32", "output_names":
      * ["output:0"]}</code> </p> </li> </ul>
      */
     inline OutputConfig& WithCompilerOptions(const char* value) { SetCompilerOptions(value); return *this;}

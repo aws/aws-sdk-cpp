@@ -33,19 +33,34 @@ namespace Model
     AWS_CHIME_API PutEventsConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The configuration that allows a bot to receive outgoing events. Can be an
+     * HTTPS endpoint or an AWS Lambda function ARN.</p>
+     */
     inline const EventsConfiguration& GetEventsConfiguration() const{ return m_eventsConfiguration; }
 
-    
+    /**
+     * <p>The configuration that allows a bot to receive outgoing events. Can be an
+     * HTTPS endpoint or an AWS Lambda function ARN.</p>
+     */
     inline void SetEventsConfiguration(const EventsConfiguration& value) { m_eventsConfiguration = value; }
 
-    
+    /**
+     * <p>The configuration that allows a bot to receive outgoing events. Can be an
+     * HTTPS endpoint or an AWS Lambda function ARN.</p>
+     */
     inline void SetEventsConfiguration(EventsConfiguration&& value) { m_eventsConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The configuration that allows a bot to receive outgoing events. Can be an
+     * HTTPS endpoint or an AWS Lambda function ARN.</p>
+     */
     inline PutEventsConfigurationResult& WithEventsConfiguration(const EventsConfiguration& value) { SetEventsConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The configuration that allows a bot to receive outgoing events. Can be an
+     * HTTPS endpoint or an AWS Lambda function ARN.</p>
+     */
     inline PutEventsConfigurationResult& WithEventsConfiguration(EventsConfiguration&& value) { SetEventsConfiguration(std::move(value)); return *this;}
 
 

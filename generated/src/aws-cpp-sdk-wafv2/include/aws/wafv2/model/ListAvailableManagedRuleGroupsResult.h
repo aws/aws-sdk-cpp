@@ -99,37 +99,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline const Aws::Vector<ManagedRuleGroupSummary>& GetManagedRuleGroups() const{ return m_managedRuleGroups; }
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetManagedRuleGroups(const Aws::Vector<ManagedRuleGroupSummary>& value) { m_managedRuleGroups = value; }
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline void SetManagedRuleGroups(Aws::Vector<ManagedRuleGroupSummary>&& value) { m_managedRuleGroups = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListAvailableManagedRuleGroupsResult& WithManagedRuleGroups(const Aws::Vector<ManagedRuleGroupSummary>& value) { SetManagedRuleGroups(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListAvailableManagedRuleGroupsResult& WithManagedRuleGroups(Aws::Vector<ManagedRuleGroupSummary>&& value) { SetManagedRuleGroups(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListAvailableManagedRuleGroupsResult& AddManagedRuleGroups(const ManagedRuleGroupSummary& value) { m_managedRuleGroups.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Array of managed rule groups that you can use. If you specified a
+     * <code>Limit</code> in your request, this might not be the full list. </p>
      */
     inline ListAvailableManagedRuleGroupsResult& AddManagedRuleGroups(ManagedRuleGroupSummary&& value) { m_managedRuleGroups.push_back(std::move(value)); return *this; }
 

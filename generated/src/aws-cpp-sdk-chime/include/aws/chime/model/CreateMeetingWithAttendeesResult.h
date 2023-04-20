@@ -36,19 +36,29 @@ namespace Model
     AWS_CHIME_API CreateMeetingWithAttendeesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A meeting created using the Amazon Chime SDK.</p>
+     */
     inline const Meeting& GetMeeting() const{ return m_meeting; }
 
-    
+    /**
+     * <p>A meeting created using the Amazon Chime SDK.</p>
+     */
     inline void SetMeeting(const Meeting& value) { m_meeting = value; }
 
-    
+    /**
+     * <p>A meeting created using the Amazon Chime SDK.</p>
+     */
     inline void SetMeeting(Meeting&& value) { m_meeting = std::move(value); }
 
-    
+    /**
+     * <p>A meeting created using the Amazon Chime SDK.</p>
+     */
     inline CreateMeetingWithAttendeesResult& WithMeeting(const Meeting& value) { SetMeeting(value); return *this;}
 
-    
+    /**
+     * <p>A meeting created using the Amazon Chime SDK.</p>
+     */
     inline CreateMeetingWithAttendeesResult& WithMeeting(Meeting&& value) { SetMeeting(std::move(value)); return *this;}
 
 

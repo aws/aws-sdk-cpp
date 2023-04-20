@@ -15,6 +15,8 @@
 #include <aws/snowball/model/Notification.h>
 #include <aws/snowball/model/TaxDocuments.h>
 #include <aws/snowball/model/RemoteManagement.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/snowball/model/SnowballCapacity.h>
 #include <utility>
 
 namespace Aws
@@ -780,6 +782,190 @@ namespace Model
      */
     inline CreateClusterRequest& WithRemoteManagement(RemoteManagement&& value) { SetRemoteManagement(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If provided, each job will be automatically created and associated with the
+     * new cluster. If not provided, will be treated as 0.</p>
+     */
+    inline int GetInitialClusterSize() const{ return m_initialClusterSize; }
+
+    /**
+     * <p>If provided, each job will be automatically created and associated with the
+     * new cluster. If not provided, will be treated as 0.</p>
+     */
+    inline bool InitialClusterSizeHasBeenSet() const { return m_initialClusterSizeHasBeenSet; }
+
+    /**
+     * <p>If provided, each job will be automatically created and associated with the
+     * new cluster. If not provided, will be treated as 0.</p>
+     */
+    inline void SetInitialClusterSize(int value) { m_initialClusterSizeHasBeenSet = true; m_initialClusterSize = value; }
+
+    /**
+     * <p>If provided, each job will be automatically created and associated with the
+     * new cluster. If not provided, will be treated as 0.</p>
+     */
+    inline CreateClusterRequest& WithInitialClusterSize(int value) { SetInitialClusterSize(value); return *this;}
+
+
+    /**
+     * <p>Force to create cluster when user attempts to overprovision or underprovision
+     * a cluster. A cluster is overprovisioned or underprovisioned if the initial size
+     * of the cluster is more (overprovisioned) or less (underprovisioned) than what
+     * needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.</p>
+     */
+    inline bool GetForceCreateJobs() const{ return m_forceCreateJobs; }
+
+    /**
+     * <p>Force to create cluster when user attempts to overprovision or underprovision
+     * a cluster. A cluster is overprovisioned or underprovisioned if the initial size
+     * of the cluster is more (overprovisioned) or less (underprovisioned) than what
+     * needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.</p>
+     */
+    inline bool ForceCreateJobsHasBeenSet() const { return m_forceCreateJobsHasBeenSet; }
+
+    /**
+     * <p>Force to create cluster when user attempts to overprovision or underprovision
+     * a cluster. A cluster is overprovisioned or underprovisioned if the initial size
+     * of the cluster is more (overprovisioned) or less (underprovisioned) than what
+     * needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.</p>
+     */
+    inline void SetForceCreateJobs(bool value) { m_forceCreateJobsHasBeenSet = true; m_forceCreateJobs = value; }
+
+    /**
+     * <p>Force to create cluster when user attempts to overprovision or underprovision
+     * a cluster. A cluster is overprovisioned or underprovisioned if the initial size
+     * of the cluster is more (overprovisioned) or less (underprovisioned) than what
+     * needed to meet capacity requirement specified with
+     * <code>OnDeviceServiceConfiguration</code>.</p>
+     */
+    inline CreateClusterRequest& WithForceCreateJobs(bool value) { SetForceCreateJobs(value); return *this;}
+
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetLongTermPricingIds() const{ return m_longTermPricingIds; }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline bool LongTermPricingIdsHasBeenSet() const { return m_longTermPricingIdsHasBeenSet; }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline void SetLongTermPricingIds(const Aws::Vector<Aws::String>& value) { m_longTermPricingIdsHasBeenSet = true; m_longTermPricingIds = value; }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline void SetLongTermPricingIds(Aws::Vector<Aws::String>&& value) { m_longTermPricingIdsHasBeenSet = true; m_longTermPricingIds = std::move(value); }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline CreateClusterRequest& WithLongTermPricingIds(const Aws::Vector<Aws::String>& value) { SetLongTermPricingIds(value); return *this;}
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline CreateClusterRequest& WithLongTermPricingIds(Aws::Vector<Aws::String>&& value) { SetLongTermPricingIds(std::move(value)); return *this;}
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline CreateClusterRequest& AddLongTermPricingIds(const Aws::String& value) { m_longTermPricingIdsHasBeenSet = true; m_longTermPricingIds.push_back(value); return *this; }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline CreateClusterRequest& AddLongTermPricingIds(Aws::String&& value) { m_longTermPricingIdsHasBeenSet = true; m_longTermPricingIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Lists long-term pricing id that will be used to associate with jobs
+     * automatically created for the new cluster.</p>
+     */
+    inline CreateClusterRequest& AddLongTermPricingIds(const char* value) { m_longTermPricingIdsHasBeenSet = true; m_longTermPricingIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline void SetSnowballCapacityPreference(const SnowballCapacity& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = value; }
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline void SetSnowballCapacityPreference(SnowballCapacity&& value) { m_snowballCapacityPreferenceHasBeenSet = true; m_snowballCapacityPreference = std::move(value); }
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline CreateClusterRequest& WithSnowballCapacityPreference(const SnowballCapacity& value) { SetSnowballCapacityPreference(value); return *this;}
+
+    /**
+     * <p>If your job is being created in one of the US regions, you have the option of
+     * specifying what size Snow device you'd like for this job. In all other regions,
+     * Snowballs come with 80 TB in storage capacity.</p> <p>For more information, see
+     * "https://docs.aws.amazon.com/snowball/latest/snowcone-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i> or
+     * "https://docs.aws.amazon.com/snowball/latest/developer-guide/snow-device-types.html"
+     * (Snow Family Devices and Capacity) in the <i>Snowcone User Guide</i>.</p>
+     */
+    inline CreateClusterRequest& WithSnowballCapacityPreference(SnowballCapacity&& value) { SetSnowballCapacityPreference(std::move(value)); return *this;}
+
   private:
 
     JobType m_jobType;
@@ -820,6 +1006,18 @@ namespace Model
 
     RemoteManagement m_remoteManagement;
     bool m_remoteManagementHasBeenSet = false;
+
+    int m_initialClusterSize;
+    bool m_initialClusterSizeHasBeenSet = false;
+
+    bool m_forceCreateJobs;
+    bool m_forceCreateJobsHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_longTermPricingIds;
+    bool m_longTermPricingIdsHasBeenSet = false;
+
+    SnowballCapacity m_snowballCapacityPreference;
+    bool m_snowballCapacityPreferenceHasBeenSet = false;
   };
 
 } // namespace Model

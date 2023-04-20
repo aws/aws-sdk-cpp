@@ -86,169 +86,169 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline const Aws::String& GetScriptArn() const{ return m_scriptArn; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline bool ScriptArnHasBeenSet() const { return m_scriptArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline void SetScriptArn(const Aws::String& value) { m_scriptArnHasBeenSet = true; m_scriptArn = value; }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline void SetScriptArn(Aws::String&& value) { m_scriptArnHasBeenSet = true; m_scriptArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline void SetScriptArn(const char* value) { m_scriptArnHasBeenSet = true; m_scriptArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline Script& WithScriptArn(const Aws::String& value) { SetScriptArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline Script& WithScriptArn(Aws::String&& value) { SetScriptArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift script resource and uniquely identifies it. ARNs
-     * are unique across all Regions. In a GameLift script ARN, the resource ID matches
-     * the <i>ScriptId</i> value.</p>
+     * that is assigned to a Amazon GameLift script resource and uniquely identifies
+     * it. ARNs are unique across all Regions. In a GameLift script ARN, the resource
+     * ID matches the <i>ScriptId</i> value.</p>
      */
     inline Script& WithScriptArn(const char* value) { SetScriptArn(value); return *this;}
 
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline Script& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline Script& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label that is associated with a script. Script names do not
-     * need to be unique.</p>
+     * <p>A descriptive label that is associated with a script. Script names don't need
+     * to be unique.</p>
      */
     inline Script& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline Script& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline Script& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique.</p>
      */
     inline Script& WithVersion(const char* value) { SetVersion(value); return *this;}

@@ -22,6 +22,7 @@ namespace Aws
 
         static const int OneYear_HASH = HashingUtils::HashString("OneYear");
         static const int ThreeYear_HASH = HashingUtils::HashString("ThreeYear");
+        static const int OneMonth_HASH = HashingUtils::HashString("OneMonth");
 
 
         LongTermPricingType GetLongTermPricingTypeForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == ThreeYear_HASH)
           {
             return LongTermPricingType::ThreeYear;
+          }
+          else if (hashCode == OneMonth_HASH)
+          {
+            return LongTermPricingType::OneMonth;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "OneYear";
           case LongTermPricingType::ThreeYear:
             return "ThreeYear";
+          case LongTermPricingType::OneMonth:
+            return "OneMonth";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

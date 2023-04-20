@@ -72,8 +72,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
@@ -81,8 +81,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArn = value; }
@@ -90,8 +90,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArn = std::move(value); }
@@ -99,8 +99,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArn.assign(value); }
@@ -108,8 +108,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline GetComputeAuthTokenResult& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
@@ -117,8 +117,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline GetComputeAuthTokenResult& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
@@ -126,51 +126,51 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline GetComputeAuthTokenResult& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
 
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline const Aws::String& GetComputeName() const{ return m_computeName; }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(const Aws::String& value) { m_computeName = value; }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(Aws::String&& value) { m_computeName = std::move(value); }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline void SetComputeName(const char* value) { m_computeName.assign(value); }
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenResult& WithComputeName(const Aws::String& value) { SetComputeName(value); return *this;}
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenResult& WithComputeName(Aws::String&& value) { SetComputeName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the compute resource you are requesting the authorization token
+     * <p>The name of the compute resource you are requesting the authentication token
      * for.</p>
      */
     inline GetComputeAuthTokenResult& WithComputeName(const char* value) { SetComputeName(value); return *this;}
@@ -179,8 +179,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -189,8 +189,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -199,8 +199,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -209,8 +209,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -219,8 +219,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -229,8 +229,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -239,8 +239,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift compute resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift compute resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::compute/compute-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>
      * </p>
      */
@@ -248,80 +248,80 @@ namespace Model
 
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline const Aws::String& GetAuthToken() const{ return m_authToken; }
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline void SetAuthToken(const Aws::String& value) { m_authToken = value; }
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline void SetAuthToken(Aws::String&& value) { m_authToken = std::move(value); }
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline void SetAuthToken(const char* value) { m_authToken.assign(value); }
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline GetComputeAuthTokenResult& WithAuthToken(const Aws::String& value) { SetAuthToken(value); return *this;}
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline GetComputeAuthTokenResult& WithAuthToken(Aws::String&& value) { SetAuthToken(std::move(value)); return *this;}
 
     /**
-     * <p>The authorization token that your game server uses to authenticate with
-     * GameLift.</p>
+     * <p>The authentication token that your game server uses to authenticate with
+     * Amazon GameLift.</p>
      */
     inline GetComputeAuthTokenResult& WithAuthToken(const char* value) { SetAuthToken(value); return *this;}
 
 
     /**
-     * <p>The amount of time until the authorization token is no longer valid. To
+     * <p>The amount of time until the authentication token is no longer valid. To
      * continue using the compute resource for game server hosting, renew the
-     * authorization token by using this operation again.</p>
+     * authentication token by using this operation again.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTimestamp() const{ return m_expirationTimestamp; }
 
     /**
-     * <p>The amount of time until the authorization token is no longer valid. To
+     * <p>The amount of time until the authentication token is no longer valid. To
      * continue using the compute resource for game server hosting, renew the
-     * authorization token by using this operation again.</p>
+     * authentication token by using this operation again.</p>
      */
     inline void SetExpirationTimestamp(const Aws::Utils::DateTime& value) { m_expirationTimestamp = value; }
 
     /**
-     * <p>The amount of time until the authorization token is no longer valid. To
+     * <p>The amount of time until the authentication token is no longer valid. To
      * continue using the compute resource for game server hosting, renew the
-     * authorization token by using this operation again.</p>
+     * authentication token by using this operation again.</p>
      */
     inline void SetExpirationTimestamp(Aws::Utils::DateTime&& value) { m_expirationTimestamp = std::move(value); }
 
     /**
-     * <p>The amount of time until the authorization token is no longer valid. To
+     * <p>The amount of time until the authentication token is no longer valid. To
      * continue using the compute resource for game server hosting, renew the
-     * authorization token by using this operation again.</p>
+     * authentication token by using this operation again.</p>
      */
     inline GetComputeAuthTokenResult& WithExpirationTimestamp(const Aws::Utils::DateTime& value) { SetExpirationTimestamp(value); return *this;}
 
     /**
-     * <p>The amount of time until the authorization token is no longer valid. To
+     * <p>The amount of time until the authentication token is no longer valid. To
      * continue using the compute resource for game server hosting, renew the
-     * authorization token by using this operation again.</p>
+     * authentication token by using this operation again.</p>
      */
     inline GetComputeAuthTokenResult& WithExpirationTimestamp(Aws::Utils::DateTime&& value) { SetExpirationTimestamp(std::move(value)); return *this;}
 

@@ -202,6 +202,40 @@ namespace WAFV2
         }
 
         /**
+         * <p>Creates an API key for use in the integration of the CAPTCHA API in your
+         * JavaScript client applications. The integration lets you customize the placement
+         * and characteristics of the CAPTCHA puzzle for your end users. For more
+         * information about the CAPTCHA JavaScript integration, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+         * client application integration</a> in the <i>WAF Developer Guide</i>.</p> <p>The
+         * CAPTCHA API requires a key that authorizes CAPTCHA use from the client
+         * application domain. You can use a single key for up to 5 domains. After you
+         * generate a key, you can copy it for use in your JavaScript integration.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateAPIKeyOutcome CreateAPIKey(const Model::CreateAPIKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateAPIKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateAPIKeyRequestT = Model::CreateAPIKeyRequest>
+        Model::CreateAPIKeyOutcomeCallable CreateAPIKeyCallable(const CreateAPIKeyRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::CreateAPIKey, request);
+        }
+
+        /**
+         * An Async wrapper for CreateAPIKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateAPIKeyRequestT = Model::CreateAPIKeyRequest>
+        void CreateAPIKeyAsync(const CreateAPIKeyRequestT& request, const CreateAPIKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::CreateAPIKey, request, handler, context);
+        }
+
+        /**
          * <p>Creates an <a>IPSet</a>, which you use to identify web requests that
          * originate from specific IP addresses or ranges of IP addresses. For example, if
          * you're receiving a lot of requests from a ranges of IP addresses, you can
@@ -611,6 +645,32 @@ namespace WAFV2
         }
 
         /**
+         * <p>Returns your API key in decrypted form. Use this to check the token domains
+         * that you have defined for the key. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetDecryptedAPIKeyOutcome GetDecryptedAPIKey(const Model::GetDecryptedAPIKeyRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetDecryptedAPIKey that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetDecryptedAPIKeyRequestT = Model::GetDecryptedAPIKeyRequest>
+        Model::GetDecryptedAPIKeyOutcomeCallable GetDecryptedAPIKeyCallable(const GetDecryptedAPIKeyRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::GetDecryptedAPIKey, request);
+        }
+
+        /**
+         * An Async wrapper for GetDecryptedAPIKey that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetDecryptedAPIKeyRequestT = Model::GetDecryptedAPIKeyRequest>
+        void GetDecryptedAPIKeyAsync(const GetDecryptedAPIKeyRequestT& request, const GetDecryptedAPIKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::GetDecryptedAPIKey, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the specified <a>IPSet</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetIPSet">AWS API
          * Reference</a></p>
@@ -925,6 +985,32 @@ namespace WAFV2
         void GetWebACLForResourceAsync(const GetWebACLForResourceRequestT& request, const GetWebACLForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WAFV2Client::GetWebACLForResource, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of the API keys that you've defined for the specified scope.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAPIKeysOutcome ListAPIKeys(const Model::ListAPIKeysRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAPIKeys that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAPIKeysRequestT = Model::ListAPIKeysRequest>
+        Model::ListAPIKeysOutcomeCallable ListAPIKeysCallable(const ListAPIKeysRequestT& request) const
+        {
+            return SubmitCallable(&WAFV2Client::ListAPIKeys, request);
+        }
+
+        /**
+         * An Async wrapper for ListAPIKeys that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAPIKeysRequestT = Model::ListAPIKeysRequest>
+        void ListAPIKeysAsync(const ListAPIKeysRequestT& request, const ListAPIKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WAFV2Client::ListAPIKeys, request, handler, context);
         }
 
         /**

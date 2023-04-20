@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p> <b>This data type is used with the GameLift FleetIQ and game server
+   * <p> <b>This data type is used with the Amazon GameLift FleetIQ and game server
    * groups.</b> </p> <p> Additional properties, including status, that describe an
    * EC2 instance in a game server group. Instance configurations are set with game
    * server group properties (see <code>DescribeGameServerGroup</code> and with the

@@ -39,49 +39,65 @@ namespace Model
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline const Aws::String& GetWorkforceName() const{ return m_workforceName; }
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline bool WorkforceNameHasBeenSet() const { return m_workforceNameHasBeenSet; }
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline void SetWorkforceName(const Aws::String& value) { m_workforceNameHasBeenSet = true; m_workforceName = value; }
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline void SetWorkforceName(Aws::String&& value) { m_workforceNameHasBeenSet = true; m_workforceName = std::move(value); }
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline void SetWorkforceName(const char* value) { m_workforceNameHasBeenSet = true; m_workforceName.assign(value); }
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(const Aws::String& value) { SetWorkforceName(value); return *this;}
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(Aws::String&& value) { SetWorkforceName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the private workforce that you want to update. You can find your
-     * workforce name by using the operation.</p>
+     * workforce name by using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListWorkforces.html">ListWorkforces</a>
+     * operation.</p>
      */
     inline UpdateWorkforceRequest& WithWorkforceName(const char* value) { SetWorkforceName(value); return *this;}
 

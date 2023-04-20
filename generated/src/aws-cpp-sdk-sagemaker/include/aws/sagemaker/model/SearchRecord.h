@@ -38,8 +38,9 @@ namespace Model
 {
 
   /**
-   * <p>A single resource returned as part of the <a>Search</a> API
-   * response.</p><p><h3>See Also:</h3>   <a
+   * <p>A single resource returned as part of the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+   * API response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/SearchRecord">AWS
    * API Reference</a></p>
    */

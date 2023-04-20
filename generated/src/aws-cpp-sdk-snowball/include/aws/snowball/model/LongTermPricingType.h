@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     OneYear,
-    ThreeYear
+    ThreeYear,
+    OneMonth
   };
 
 namespace LongTermPricingTypeMapper

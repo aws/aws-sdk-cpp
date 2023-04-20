@@ -177,9 +177,10 @@ namespace Model
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early using the
-     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
-     * error, it shows as cancelled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, or if any operation fails with an unexpected error, it shows as cancelled.
+     * </p> </li> </ul>
      */
     inline const InferenceExperimentStatus& GetStatus() const{ return m_status; }
 
@@ -195,9 +196,10 @@ namespace Model
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early using the
-     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
-     * error, it shows as cancelled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, or if any operation fails with an unexpected error, it shows as cancelled.
+     * </p> </li> </ul>
      */
     inline void SetStatus(const InferenceExperimentStatus& value) { m_status = value; }
 
@@ -213,9 +215,10 @@ namespace Model
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early using the
-     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
-     * error, it shows as cancelled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, or if any operation fails with an unexpected error, it shows as cancelled.
+     * </p> </li> </ul>
      */
     inline void SetStatus(InferenceExperimentStatus&& value) { m_status = std::move(value); }
 
@@ -231,9 +234,10 @@ namespace Model
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early using the
-     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
-     * error, it shows as cancelled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, or if any operation fails with an unexpected error, it shows as cancelled.
+     * </p> </li> </ul>
      */
     inline DescribeInferenceExperimentResult& WithStatus(const InferenceExperimentStatus& value) { SetStatus(value); return *this;}
 
@@ -249,59 +253,60 @@ namespace Model
      * - Your experiment is in progress. </p> </li> <li> <p> <code>Stopping</code> -
      * Amazon SageMaker is stopping your experiment. </p> </li> <li> <p>
      * <code>Completed</code> - Your experiment has completed. </p> </li> <li> <p>
-     * <code>Cancelled</code> - When you conclude your experiment early using the
-     * <a>StopInferenceExperiment</a> API, or if any operation fails with an unexpected
-     * error, it shows as cancelled. </p> </li> </ul>
+     * <code>Cancelled</code> - When you conclude your experiment early using the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, or if any operation fails with an unexpected error, it shows as cancelled.
+     * </p> </li> </ul>
      */
     inline DescribeInferenceExperimentResult& WithStatus(InferenceExperimentStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline void SetStatusReason(const Aws::String& value) { m_statusReason = value; }
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline void SetStatusReason(Aws::String&& value) { m_statusReason = std::move(value); }
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline void SetStatusReason(const char* value) { m_statusReason.assign(value); }
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(const Aws::String& value) { SetStatusReason(value); return *this;}
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(Aws::String&& value) { SetStatusReason(std::move(value)); return *this;}
 
     /**
-     * <p> The error message or client-specified <code>Reason</code> from the
-     * <a>StopInferenceExperiment</a> API, that explains the status of the inference
-     * experiment. </p>
+     * <p> The error message or client-specified <code>Reason</code> from the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopInferenceExperiment.html">StopInferenceExperiment</a>
+     * API, that explains the status of the inference experiment. </p>
      */
     inline DescribeInferenceExperimentResult& WithStatusReason(const char* value) { SetStatusReason(value); return *this;}
 
@@ -633,56 +638,63 @@ namespace Model
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline const Aws::String& GetKmsKey() const{ return m_kmsKey; }
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline void SetKmsKey(const Aws::String& value) { m_kmsKey = value; }
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline void SetKmsKey(Aws::String&& value) { m_kmsKey = std::move(value); }
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline void SetKmsKey(const char* value) { m_kmsKey.assign(value); }
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline DescribeInferenceExperimentResult& WithKmsKey(const Aws::String& value) { SetKmsKey(value); return *this;}
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline DescribeInferenceExperimentResult& WithKmsKey(Aws::String&& value) { SetKmsKey(std::move(value)); return *this;}
 
     /**
      * <p> The Amazon Web Services Key Management Service (Amazon Web Services KMS) key
      * that Amazon SageMaker uses to encrypt data on the storage volume attached to the
-     * ML compute instance that hosts the endpoint. For more information, see
-     * <a>CreateInferenceExperimentRequest$KmsKey</a>. </p>
+     * ML compute instance that hosts the endpoint. For more information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceExperiment.html">CreateInferenceExperiment</a>.
+     * </p>
      */
     inline DescribeInferenceExperimentResult& WithKmsKey(const char* value) { SetKmsKey(value); return *this;}
 

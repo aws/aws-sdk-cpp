@@ -42,97 +42,97 @@ namespace Model
 
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline const Aws::String& GetExecutionRole() const{ return m_executionRole; }
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline bool ExecutionRoleHasBeenSet() const { return m_executionRoleHasBeenSet; }
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline void SetExecutionRole(const Aws::String& value) { m_executionRoleHasBeenSet = true; m_executionRole = value; }
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline void SetExecutionRole(Aws::String&& value) { m_executionRoleHasBeenSet = true; m_executionRole = std::move(value); }
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline void SetExecutionRole(const char* value) { m_executionRoleHasBeenSet = true; m_executionRole.assign(value); }
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline DefaultSpaceSettings& WithExecutionRole(const Aws::String& value) { SetExecutionRole(value); return *this;}
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline DefaultSpaceSettings& WithExecutionRole(Aws::String&& value) { SetExecutionRole(std::move(value)); return *this;}
 
     /**
-     * <p>The execution role for the space.</p>
+     * <p>The ARN of the execution role for the space.</p>
      */
     inline DefaultSpaceSettings& WithExecutionRole(const char* value) { SetExecutionRole(value); return *this;}
 
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<Aws::String>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<Aws::String>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline DefaultSpaceSettings& WithSecurityGroups(const Aws::Vector<Aws::String>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline DefaultSpaceSettings& WithSecurityGroups(Aws::Vector<Aws::String>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline DefaultSpaceSettings& AddSecurityGroups(const Aws::String& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline DefaultSpaceSettings& AddSecurityGroups(Aws::String&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The security groups for the Amazon Virtual Private Cloud that the space uses
-     * for communication.</p>
+     * <p>The security group IDs for the Amazon Virtual Private Cloud that the space
+     * uses for communication.</p>
      */
     inline DefaultSpaceSettings& AddSecurityGroups(const char* value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 

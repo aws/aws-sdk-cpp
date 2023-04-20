@@ -265,7 +265,7 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
 
-const char* IoTClient::SERVICE_NAME = "execute-api";
+const char* IoTClient::SERVICE_NAME = "iot";
 const char* IoTClient::ALLOCATION_TAG = "IoTClient";
 
 IoTClient::IoTClient(const IoT::IoTClientConfiguration& clientConfiguration,

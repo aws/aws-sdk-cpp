@@ -8,6 +8,7 @@
 #include <aws/snowball/model/NFSOnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/TGWOnDeviceServiceConfiguration.h>
 #include <aws/snowball/model/EKSOnDeviceServiceConfiguration.h>
+#include <aws/snowball/model/S3OnDeviceServiceConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -139,6 +140,37 @@ namespace Model
      */
     inline OnDeviceServiceConfiguration& WithEKSOnDeviceService(EKSOnDeviceServiceConfiguration&& value) { SetEKSOnDeviceService(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline const S3OnDeviceServiceConfiguration& GetS3OnDeviceService() const{ return m_s3OnDeviceService; }
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline bool S3OnDeviceServiceHasBeenSet() const { return m_s3OnDeviceServiceHasBeenSet; }
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline void SetS3OnDeviceService(const S3OnDeviceServiceConfiguration& value) { m_s3OnDeviceServiceHasBeenSet = true; m_s3OnDeviceService = value; }
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline void SetS3OnDeviceService(S3OnDeviceServiceConfiguration&& value) { m_s3OnDeviceServiceHasBeenSet = true; m_s3OnDeviceService = std::move(value); }
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline OnDeviceServiceConfiguration& WithS3OnDeviceService(const S3OnDeviceServiceConfiguration& value) { SetS3OnDeviceService(value); return *this;}
+
+    /**
+     * <p>Configuration for Amazon S3 compatible storage on Snow family devices.</p>
+     */
+    inline OnDeviceServiceConfiguration& WithS3OnDeviceService(S3OnDeviceServiceConfiguration&& value) { SetS3OnDeviceService(std::move(value)); return *this;}
+
   private:
 
     NFSOnDeviceServiceConfiguration m_nFSOnDeviceService;
@@ -149,6 +181,9 @@ namespace Model
 
     EKSOnDeviceServiceConfiguration m_eKSOnDeviceService;
     bool m_eKSOnDeviceServiceHasBeenSet = false;
+
+    S3OnDeviceServiceConfiguration m_s3OnDeviceService;
+    bool m_s3OnDeviceServiceHasBeenSet = false;
   };
 
 } // namespace Model

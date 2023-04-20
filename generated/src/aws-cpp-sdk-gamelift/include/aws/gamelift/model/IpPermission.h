@@ -29,8 +29,8 @@ namespace Model
    * connect to server processes on an instance in a fleet. New game sessions are
    * assigned an IP address/port number combination, which must fall into the fleet's
    * allowed ranges. Fleets with custom game builds must have permissions explicitly
-   * set. For Realtime Servers fleets, GameLift automatically opens two port ranges,
-   * one for TCP messaging and one for UDP.</p><p><h3>See Also:</h3>   <a
+   * set. For Realtime Servers fleets, Amazon GameLift automatically opens two port
+   * ranges, one for TCP messaging and one for UDP.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/IpPermission">AWS
    * API Reference</a></p>
    */
@@ -45,54 +45,70 @@ namespace Model
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * Linux builds, only ports <code>22</code> and <code>1026-60000</code> are
+     * valid.</p> <p>For fleets using Windows builds, only ports
+     * <code>1026-60000</code> are valid.</p>
      */
     inline int GetFromPort() const{ return m_fromPort; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * Linux builds, only ports <code>22</code> and <code>1026-60000</code> are
+     * valid.</p> <p>For fleets using Windows builds, only ports
+     * <code>1026-60000</code> are valid.</p>
      */
     inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * Linux builds, only ports <code>22</code> and <code>1026-60000</code> are
+     * valid.</p> <p>For fleets using Windows builds, only ports
+     * <code>1026-60000</code> are valid.</p>
      */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
      * <p>A starting value for a range of allowed port numbers.</p> <p>For fleets using
-     * Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * Linux builds, only ports <code>22</code> and <code>1026-60000</code> are
+     * valid.</p> <p>For fleets using Windows builds, only ports
+     * <code>1026-60000</code> are valid.</p>
      */
     inline IpPermission& WithFromPort(int value) { SetFromPort(value); return *this;}
 
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * end-inclusive. This value must be equal to or greater than
+     * <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports
+     * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
+     * Windows builds, only ports <code>1026-60000</code> are valid.</p>
      */
     inline int GetToPort() const{ return m_toPort; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * end-inclusive. This value must be equal to or greater than
+     * <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports
+     * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
+     * Windows builds, only ports <code>1026-60000</code> are valid.</p>
      */
     inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * end-inclusive. This value must be equal to or greater than
+     * <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports
+     * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
+     * Windows builds, only ports <code>1026-60000</code> are valid.</p>
      */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
      * <p>An ending value for a range of allowed port numbers. Port numbers are
-     * end-inclusive. This value must be higher than <code>FromPort</code>.</p> <p>For
-     * fleets using Windows and Linux builds, only ports 1026-60000 are valid.</p>
+     * end-inclusive. This value must be equal to or greater than
+     * <code>FromPort</code>.</p> <p>For fleets using Linux builds, only ports
+     * <code>22</code> and <code>1026-60000</code> are valid.</p> <p>For fleets using
+     * Windows builds, only ports <code>1026-60000</code> are valid.</p>
      */
     inline IpPermission& WithToPort(int value) { SetToPort(value); return *this;}
 

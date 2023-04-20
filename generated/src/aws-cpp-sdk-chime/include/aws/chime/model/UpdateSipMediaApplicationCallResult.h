@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIME_API UpdateSipMediaApplicationCallResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A <code>Call</code> instance for a SIP media application.</p>
+     */
     inline const SipMediaApplicationCall& GetSipMediaApplicationCall() const{ return m_sipMediaApplicationCall; }
 
-    
+    /**
+     * <p>A <code>Call</code> instance for a SIP media application.</p>
+     */
     inline void SetSipMediaApplicationCall(const SipMediaApplicationCall& value) { m_sipMediaApplicationCall = value; }
 
-    
+    /**
+     * <p>A <code>Call</code> instance for a SIP media application.</p>
+     */
     inline void SetSipMediaApplicationCall(SipMediaApplicationCall&& value) { m_sipMediaApplicationCall = std::move(value); }
 
-    
+    /**
+     * <p>A <code>Call</code> instance for a SIP media application.</p>
+     */
     inline UpdateSipMediaApplicationCallResult& WithSipMediaApplicationCall(const SipMediaApplicationCall& value) { SetSipMediaApplicationCall(value); return *this;}
 
-    
+    /**
+     * <p>A <code>Call</code> instance for a SIP media application.</p>
+     */
     inline UpdateSipMediaApplicationCallResult& WithSipMediaApplicationCall(SipMediaApplicationCall&& value) { SetSipMediaApplicationCall(std::move(value)); return *this;}
 
 

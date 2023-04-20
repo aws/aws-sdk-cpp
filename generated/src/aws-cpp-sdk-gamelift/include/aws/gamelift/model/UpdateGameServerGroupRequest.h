@@ -155,9 +155,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -172,9 +172,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -189,9 +189,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -206,9 +206,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -223,9 +223,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -240,9 +240,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -257,9 +257,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -274,9 +274,9 @@ namespace Model
     /**
      * <p>An updated list of Amazon EC2 instance types to use in the Auto Scaling
      * group. The instance definitions must specify at least two different instance
-     * types that are supported by GameLift FleetIQ. This updated list replaces the
-     * entire current list of instance definitions for the game server group. For more
-     * information on instance types, see <a
+     * types that are supported by Amazon GameLift FleetIQ. This updated list replaces
+     * the entire current list of instance definitions for the game server group. For
+     * more information on instance types, see <a
      * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">EC2
      * Instance Types</a> in the <i>Amazon EC2 User Guide</i>. You can optionally
      * specify capacity weighting for each instance type. If no weight value is
@@ -363,7 +363,7 @@ namespace Model
 
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -383,7 +383,7 @@ namespace Model
     inline const BalancingStrategy& GetBalancingStrategy() const{ return m_balancingStrategy; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -403,7 +403,7 @@ namespace Model
     inline bool BalancingStrategyHasBeenSet() const { return m_balancingStrategyHasBeenSet; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -423,7 +423,7 @@ namespace Model
     inline void SetBalancingStrategy(const BalancingStrategy& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = value; }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -443,7 +443,7 @@ namespace Model
     inline void SetBalancingStrategy(BalancingStrategy&& value) { m_balancingStrategyHasBeenSet = true; m_balancingStrategy = std::move(value); }
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable
@@ -463,7 +463,7 @@ namespace Model
     inline UpdateGameServerGroupRequest& WithBalancingStrategy(const BalancingStrategy& value) { SetBalancingStrategy(value); return *this;}
 
     /**
-     * <p>Indicates how GameLift FleetIQ balances the use of Spot Instances and
+     * <p>Indicates how Amazon GameLift FleetIQ balances the use of Spot Instances and
      * On-Demand Instances in the game server group. Method options include the
      * following:</p> <ul> <li> <p> <code>SPOT_ONLY</code> - Only Spot Instances are
      * used in the game server group. If Spot Instances are unavailable or not viable

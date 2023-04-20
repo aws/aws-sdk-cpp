@@ -35,51 +35,58 @@ namespace Model
 
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline const Aws::Vector<HyperParameterTrainingJobSummary>& GetTrainingJobSummaries() const{ return m_trainingJobSummaries; }
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline void SetTrainingJobSummaries(const Aws::Vector<HyperParameterTrainingJobSummary>& value) { m_trainingJobSummaries = value; }
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline void SetTrainingJobSummaries(Aws::Vector<HyperParameterTrainingJobSummary>&& value) { m_trainingJobSummaries = std::move(value); }
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobResult& WithTrainingJobSummaries(const Aws::Vector<HyperParameterTrainingJobSummary>& value) { SetTrainingJobSummaries(value); return *this;}
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobResult& WithTrainingJobSummaries(Aws::Vector<HyperParameterTrainingJobSummary>&& value) { SetTrainingJobSummaries(std::move(value)); return *this;}
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobResult& AddTrainingJobSummaries(const HyperParameterTrainingJobSummary& value) { m_trainingJobSummaries.push_back(value); return *this; }
 
     /**
-     * <p>A list of <a>TrainingJobSummary</a> objects that describe the training jobs
-     * that the <code>ListTrainingJobsForHyperParameterTuningJob</code> request
-     * returned.</p>
+     * <p>A list of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+     * objects that describe the training jobs that the
+     * <code>ListTrainingJobsForHyperParameterTuningJob</code> request returned.</p>
      */
     inline ListTrainingJobsForHyperParameterTuningJobResult& AddTrainingJobSummaries(HyperParameterTrainingJobSummary&& value) { m_trainingJobSummaries.push_back(std::move(value)); return *this; }
 

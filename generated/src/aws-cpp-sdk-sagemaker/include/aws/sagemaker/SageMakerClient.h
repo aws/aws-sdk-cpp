@@ -123,16 +123,19 @@ namespace SageMaker
          * called this API. To make sure that the tags associated with a hyperparameter
          * tuning job are also added to all training jobs that the hyperparameter tuning
          * job launches, add the tags when you first create the tuning job by specifying
-         * them in the <code>Tags</code> parameter of <a>CreateHyperParameterTuningJob</a>
+         * them in the <code>Tags</code> parameter of <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateHyperParameterTuningJob.html">CreateHyperParameterTuningJob</a>
          * </p>   <p>Tags that you add to a SageMaker Studio Domain or User
          * Profile by calling this API are also added to any Apps that the Domain or User
          * Profile launches after you call this API, but not to Apps that the Domain or
          * User Profile launched before you called this API. To make sure that the tags
          * associated with a Domain or User Profile are also added to all Apps that the
          * Domain or User Profile launches, add the tags when you first create the Domain
-         * or User Profile by specifying them in the <code>Tags</code> parameter of
-         * <a>CreateDomain</a> or <a>CreateUserProfile</a>.</p> <p><h3>See
-         * Also:</h3>   <a
+         * or User Profile by specifying them in the <code>Tags</code> parameter of <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateDomain.html">CreateDomain</a>
+         * or <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateUserProfile.html">CreateUserProfile</a>.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AddTags">AWS
          * API Reference</a></p>
          */
@@ -159,7 +162,9 @@ namespace SageMaker
         /**
          * <p>Associates a trial component with a trial. A trial component can be
          * associated with multiple trials. To disassociate a trial component from a trial,
-         * call the <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/AssociateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -462,10 +467,13 @@ namespace SageMaker
          * compilation job. </p> </li> </ul> <p>You can also provide a <code>Tag</code> to
          * track the model compilation job's resource use and costs. The response body
          * contains the <code>CompilationJobArn</code> for the compiled job.</p> <p>To stop
-         * a model compilation job, use <a>StopCompilationJob</a>. To get information about
-         * a particular model compilation job, use <a>DescribeCompilationJob</a>. To get
-         * information about multiple model compilation jobs, use
-         * <a>ListCompilationJobs</a>.</p><p><h3>See Also:</h3>   <a
+         * a model compilation job, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_StopCompilationJob.html">StopCompilationJob</a>.
+         * To get information about a particular model compilation job, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.
+         * To get information about multiple model compilation jobs, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateCompilationJob">AWS
          * API Reference</a></p>
          */
@@ -712,10 +720,11 @@ namespace SageMaker
         /**
          * <p>Creates an endpoint using the endpoint configuration specified in the
          * request. SageMaker uses the endpoint to provision resources and deploy models.
-         * You create the endpoint configuration with the <a>CreateEndpointConfig</a> API.
-         * </p> <p> Use this API to deploy models using SageMaker hosting services. </p>
-         * <p>For an example that calls this method when deploying a model to SageMaker
-         * hosting services, see the <a
+         * You create the endpoint configuration with the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+         * API. </p> <p> Use this API to deploy models using SageMaker hosting services.
+         * </p> <p>For an example that calls this method when deploying a model to
+         * SageMaker hosting services, see the <a
          * href="https://github.com/aws/amazon-sagemaker-examples/blob/master/sagemaker-fundamentals/create-endpoint/create_endpoint.ipynb">Create
          * Endpoint example notebook.</a> </p>  <p> You must not delete an
          * <code>EndpointConfig</code> that is in use by an endpoint that is live or while
@@ -725,22 +734,26 @@ namespace SageMaker
          * within an Amazon Web Services Region in your Amazon Web Services account. </p>
          * <p>When it receives the request, SageMaker creates the endpoint, launches the
          * resources (ML compute instances), and deploys the model(s) on them. </p> 
-         * <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to
-         * verify that your endpoint configuration exists. When you read data from a
-         * DynamoDB table supporting <a
+         * <p>When you call <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+         * a load call is made to DynamoDB to verify that your endpoint configuration
+         * exists. When you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
          * some stale data. If the dependent entities are not yet in DynamoDB, this causes
          * a validation error. If you repeat your read request after a short time, the
          * response should return the latest data. So retry logic is recommended to handle
-         * these possible issues. We also recommend that customers call
-         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
-         * the potential impact of a DynamoDB eventually consistent read.</p> 
-         * <p>When SageMaker receives the request, it sets the endpoint status to
+         * these possible issues. We also recommend that customers call <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+         * before calling <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+         * to minimize the potential impact of a DynamoDB eventually consistent read.</p>
+         *  <p>When SageMaker receives the request, it sets the endpoint status to
          * <code>Creating</code>. After it creates the endpoint, it sets the status to
          * <code>InService</code>. SageMaker can then process incoming requests for
-         * inferences. To check the status of an endpoint, use the <a>DescribeEndpoint</a>
+         * inferences. To check the status of an endpoint, use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
          * API.</p> <p>If any of the models hosted at this endpoint get model data from an
          * Amazon S3 location, SageMaker uses Amazon Web Services Security Token Service to
          * download model artifacts from the S3 path you provided. Amazon Web Services STS
@@ -753,14 +766,17 @@ namespace SageMaker
          *  <p> To add the IAM role policies for using this API operation, go to the
          * <a href="https://console.aws.amazon.com/iam/">IAM console</a>, and choose Roles
          * in the left navigation pane. Search the IAM role that you want to grant access
-         * to use the <a>CreateEndpoint</a> and <a>CreateEndpointConfig</a> API operations,
-         * add the following policies to the role. </p> <ul> <li> <p>Option 1: For a full
-         * SageMaker access, search and attach the <code>AmazonSageMakerFullAccess</code>
-         * policy.</p> </li> <li> <p>Option 2: For granting a limited access to an IAM
-         * role, paste the following Action elements manually into the JSON file of the IAM
-         * role: </p> <p> <code>"Action": ["sagemaker:CreateEndpoint",
-         * "sagemaker:CreateEndpointConfig"]</code> </p> <p> <code>"Resource": [</code>
-         * </p> <p>
+         * to use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpointConfig.html">CreateEndpointConfig</a>
+         * API operations, add the following policies to the role. </p> <ul> <li> <p>Option
+         * 1: For a full SageMaker access, search and attach the
+         * <code>AmazonSageMakerFullAccess</code> policy.</p> </li> <li> <p>Option 2: For
+         * granting a limited access to an IAM role, paste the following Action elements
+         * manually into the JSON file of the IAM role: </p> <p> <code>"Action":
+         * ["sagemaker:CreateEndpoint", "sagemaker:CreateEndpointConfig"]</code> </p> <p>
+         * <code>"Resource": [</code> </p> <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint/endpointName"</code> </p>
          * <p>
          * <code>"arn:aws:sagemaker:region:account-id:endpoint-config/endpointConfigName"</code>
@@ -795,9 +811,10 @@ namespace SageMaker
          * <p>Creates an endpoint configuration that SageMaker hosting services uses to
          * deploy models. In the configuration, you identify one or more models, created
          * using the <code>CreateModel</code> API, to deploy and the resources that you
-         * want SageMaker to provision. Then you call the <a>CreateEndpoint</a> API.</p>
-         *  <p> Use this API if you want to use SageMaker hosting services to deploy
-         * models into production. </p>  <p>In the request, you define a
+         * want SageMaker to provision. Then you call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+         * API.</p>  <p> Use this API if you want to use SageMaker hosting services
+         * to deploy models into production. </p>  <p>In the request, you define a
          * <code>ProductionVariant</code>, for each model that you want to deploy. Each
          * <code>ProductionVariant</code> parameter also describes the resources that you
          * want SageMaker to provision. This includes the number and type of ML compute
@@ -806,18 +823,21 @@ namespace SageMaker
          * each model. For example, suppose that you want to host two models, A and B, and
          * you assign traffic weight 2 for model A and 1 for model B. SageMaker distributes
          * two-thirds of the traffic to Model A, and one-third to model B. </p> 
-         * <p>When you call <a>CreateEndpoint</a>, a load call is made to DynamoDB to
-         * verify that your endpoint configuration exists. When you read data from a
-         * DynamoDB table supporting <a
+         * <p>When you call <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>,
+         * a load call is made to DynamoDB to verify that your endpoint configuration
+         * exists. When you read data from a DynamoDB table supporting <a
          * href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.ReadConsistency.html">
          * <code>Eventually Consistent Reads</code> </a>, the response might not reflect
          * the results of a recently completed write operation. The response might include
          * some stale data. If the dependent entities are not yet in DynamoDB, this causes
          * a validation error. If you repeat your read request after a short time, the
          * response should return the latest data. So retry logic is recommended to handle
-         * these possible issues. We also recommend that customers call
-         * <a>DescribeEndpointConfig</a> before calling <a>CreateEndpoint</a> to minimize
-         * the potential impact of a DynamoDB eventually consistent read.</p>
+         * these possible issues. We also recommend that customers call <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpointConfig.html">DescribeEndpointConfig</a>
+         * before calling <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a>
+         * to minimize the potential impact of a DynamoDB eventually consistent read.</p>
          * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateEndpointConfig">AWS
          * API Reference</a></p>
@@ -855,14 +875,21 @@ namespace SageMaker
          * experiments, trials, and trial components are automatically tracked, logged, and
          * indexed. When you use the Amazon Web Services SDK for Python (Boto), you must
          * use the logging APIs provided by the SDK.</p> <p>You can add tags to
-         * experiments, trials, trial components and then use the <a>Search</a> API to
-         * search for the tags.</p> <p>To add a description to an experiment, specify the
-         * optional <code>Description</code> parameter. To add a description later, or to
-         * change the description, call the <a>UpdateExperiment</a> API.</p> <p>To get a
-         * list of all your experiments, call the <a>ListExperiments</a> API. To view an
-         * experiment's properties, call the <a>DescribeExperiment</a> API. To get a list
-         * of all the trials associated with an experiment, call the <a>ListTrials</a> API.
-         * To create a trial call the <a>CreateTrial</a> API.</p><p><h3>See Also:</h3>   <a
+         * experiments, trials, trial components and then use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+         * API to search for the tags.</p> <p>To add a description to an experiment,
+         * specify the optional <code>Description</code> parameter. To add a description
+         * later, or to change the description, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>
+         * API.</p> <p>To get a list of all your experiments, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListExperiments.html">ListExperiments</a>
+         * API. To view an experiment's properties, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeExperiment.html">DescribeExperiment</a>
+         * API. To get a list of all the trials associated with an experiment, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+         * API. To create a trial call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrial.html">CreateTrial</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateExperiment">AWS
          * API Reference</a></p>
          */
@@ -1661,10 +1688,11 @@ namespace SageMaker
          * information, see <a
          * href="https://docs.aws.amazon.com/sagemaker/latest/dg/security_iam_id-based-policy-examples.html#nbi-ip-filter">Limit
          * Access to a Notebook Instance by IP Address</a>.</p>  <p>The URL that you
-         * get from a call to <a>CreatePresignedNotebookInstanceUrl</a> is valid only for 5
-         * minutes. If you try to use the URL after the 5-minute limit expires, you are
-         * directed to the Amazon Web Services console sign-in page.</p> <p><h3>See
-         * Also:</h3>   <a
+         * get from a call to <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreatePresignedNotebookInstanceUrl.html">CreatePresignedNotebookInstanceUrl</a>
+         * is valid only for 5 minutes. If you try to use the URL after the 5-minute limit
+         * expires, you are directed to the Amazon Web Services console sign-in page.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreatePresignedNotebookInstanceUrl">AWS
          * API Reference</a></p>
          */
@@ -1909,11 +1937,15 @@ namespace SageMaker
          * SageMaker Python SDK, all experiments, trials, and trial components are
          * automatically tracked, logged, and indexed. When you use the Amazon Web Services
          * SDK for Python (Boto), you must use the logging APIs provided by the SDK.</p>
-         * <p>You can add tags to a trial and then use the <a>Search</a> API to search for
-         * the tags.</p> <p>To get a list of all your trials, call the <a>ListTrials</a>
-         * API. To view a trial's properties, call the <a>DescribeTrial</a> API. To create
-         * a trial component, call the <a>CreateTrialComponent</a> API.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>You can add tags to a trial and then use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+         * API to search for the tags.</p> <p>To get a list of all your trials, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+         * API. To view a trial's properties, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html">DescribeTrial</a>
+         * API. To create a trial component, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateTrialComponent.html">CreateTrialComponent</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrial">AWS
          * API Reference</a></p>
          */
@@ -1946,7 +1978,9 @@ namespace SageMaker
          * trial components are automatically tracked, logged, and indexed. When you use
          * the Amazon Web Services SDK for Python (Boto), you must use the logging APIs
          * provided by the SDK.</p> <p>You can add tags to a trial component and then use
-         * the <a>Search</a> API to search for the tags.</p><p><h3>See Also:</h3>   <a
+         * the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+         * API to search for the tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/CreateTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -2007,8 +2041,9 @@ namespace SageMaker
          * if a workforce already exists in the Amazon Web Services Region that you
          * specify. You can only create one workforce in each Amazon Web Services Region
          * per Amazon Web Services account.</p> <p>If you want to create a new workforce in
-         * an Amazon Web Services Region where a workforce already exists, use the API
-         * operation to delete the existing workforce and then use
+         * an Amazon Web Services Region where a workforce already exists, use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkforce.html">DeleteWorkforce</a>
+         * API operation to delete the existing workforce and then use
          * <code>CreateWorkforce</code> to create a new workforce.</p> <p>To create a
          * private workforce using Amazon Cognito, you must specify a Cognito user pool in
          * <code>CognitoConfig</code>. You can also create an Amazon Cognito workforce
@@ -2476,8 +2511,10 @@ namespace SageMaker
 
         /**
          * <p>Deletes an SageMaker experiment. All trials associated with the experiment
-         * must be deleted first. Use the <a>ListTrials</a> API to get a list of the trials
-         * associated with the experiment.</p><p><h3>See Also:</h3>   <a
+         * must be deleted first. Use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a>
+         * API to get a list of the trials associated with the experiment.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteExperiment">AWS
          * API Reference</a></p>
          */
@@ -2612,9 +2649,10 @@ namespace SageMaker
         /**
          * <p>Use this operation to delete a human task user interface (worker task
          * template).</p> <p> To see a list of human task user interfaces (work task
-         * templates) in your account, use . When you delete a worker task template, it no
-         * longer appears when you call <code>ListHumanTaskUis</code>.</p><p><h3>See
-         * Also:</h3>   <a
+         * templates) in your account, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListHumanTaskUis.html">ListHumanTaskUis</a>.
+         * When you delete a worker task template, it no longer appears when you call
+         * <code>ListHumanTaskUis</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteHumanTaskUi">AWS
          * API Reference</a></p>
          */
@@ -3149,8 +3187,9 @@ namespace SageMaker
 
         /**
          * <p>Deletes the specified trial. All trial components that make up the trial must
-         * be deleted first. Use the <a>DescribeTrialComponent</a> API to get the list of
-         * trial components.</p><p><h3>See Also:</h3>   <a
+         * be deleted first. Use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a>
+         * API to get the list of trial components.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrial">AWS
          * API Reference</a></p>
          */
@@ -3177,8 +3216,9 @@ namespace SageMaker
         /**
          * <p>Deletes the specified trial component. A trial component must be
          * disassociated from all trials before the trial component can be deleted. To
-         * disassociate a trial component from a trial, call the
-         * <a>DisassociateTrialComponent</a> API.</p><p><h3>See Also:</h3>   <a
+         * disassociate a trial component from a trial, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteTrialComponent">AWS
          * API Reference</a></p>
          */
@@ -3232,12 +3272,14 @@ namespace SageMaker
         /**
          * <p>Use this operation to delete a workforce.</p> <p>If you want to create a new
          * workforce in an Amazon Web Services Region where a workforce already exists, use
-         * this operation to delete the existing workforce and then use to create a new
-         * workforce.</p>  <p>If a private workforce contains one or more work
-         * teams, you must use the operation to delete all work teams before you delete the
-         * workforce. If you try to delete a workforce that contains one or more work
-         * teams, you will recieve a <code>ResourceInUse</code> error.</p>
-         * <p><h3>See Also:</h3>   <a
+         * this operation to delete the existing workforce and then use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateWorkforce.html">CreateWorkforce</a>
+         * to create a new workforce.</p>  <p>If a private workforce contains
+         * one or more work teams, you must use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+         * operation to delete all work teams before you delete the workforce. If you try
+         * to delete a workforce that contains one or more work teams, you will recieve a
+         * <code>ResourceInUse</code> error.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeleteWorkforce">AWS
          * API Reference</a></p>
          */
@@ -3521,8 +3563,10 @@ namespace SageMaker
 
         /**
          * <p>Returns information about a model compilation job.</p> <p>To create a model
-         * compilation job, use <a>CreateCompilationJob</a>. To get information about
-         * multiple model compilation jobs, use <a>ListCompilationJobs</a>.</p><p><h3>See
+         * compilation job, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+         * To get information about multiple model compilation jobs, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListCompilationJobs.html">ListCompilationJobs</a>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeCompilationJob">AWS
          * API Reference</a></p>
@@ -4851,11 +4895,13 @@ namespace SageMaker
          * <p>Disassociates a trial component from a trial. This doesn't effect other
          * trials the component is associated with. Before you can delete a component, you
          * must disassociate the component from all trials it is associated with. To
-         * associate a trial component with a trial, call the
-         * <a>AssociateTrialComponent</a> API.</p> <p>To get a list of the trials a
-         * component is associated with, use the <a>Search</a> API. Specify
-         * <code>ExperimentTrialComponent</code> for the <code>Resource</code> parameter.
-         * The list appears in the response under
+         * associate a trial component with a trial, call the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AssociateTrialComponent.html">AssociateTrialComponent</a>
+         * API.</p> <p>To get a list of the trials a component is associated with, use the
+         * <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Search.html">Search</a>
+         * API. Specify <code>ExperimentTrialComponent</code> for the <code>Resource</code>
+         * parameter. The list appears in the response under
          * <code>Results.TrialComponent.Parents</code>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DisassociateTrialComponent">AWS
          * API Reference</a></p>
@@ -5326,9 +5372,12 @@ namespace SageMaker
 
         /**
          * <p>Lists model compilation jobs that satisfy various filters.</p> <p>To create a
-         * model compilation job, use <a>CreateCompilationJob</a>. To get information about
-         * a particular model compilation job you have created, use
-         * <a>DescribeCompilationJob</a>.</p><p><h3>See Also:</h3>   <a
+         * model compilation job, use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateCompilationJob.html">CreateCompilationJob</a>.
+         * To get information about a particular model compilation job you have created,
+         * use <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeCompilationJob.html">DescribeCompilationJob</a>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListCompilationJobs">AWS
          * API Reference</a></p>
          */
@@ -5763,9 +5812,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Gets a list of <a>HyperParameterTuningJobSummary</a> objects that describe
-         * the hyperparameter tuning jobs launched in your account.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Gets a list of <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a>
+         * objects that describe the hyperparameter tuning jobs launched in your
+         * account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListHyperParameterTuningJobs">AWS
          * API Reference</a></p>
          */
@@ -6362,8 +6412,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>Lists notebook instance lifestyle configurations created with the
-         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Lists notebook instance lifestyle configurations created with the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListNotebookInstanceLifecycleConfigs">AWS
          * API Reference</a></p>
          */
@@ -6737,8 +6788,10 @@ namespace SageMaker
         }
 
         /**
-         * <p>Gets a list of <a>TrainingJobSummary</a> objects that describe the training
-         * jobs that a hyperparameter tuning job launched.</p><p><h3>See Also:</h3>   <a
+         * <p>Gets a list of <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a>
+         * objects that describe the training jobs that a hyperparameter tuning job
+         * launched.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/ListTrainingJobsForHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
@@ -7311,10 +7364,9 @@ namespace SageMaker
          * the algorithm the SIGTERM signal. This gracefully shuts the job down. If the job
          * hasn't stopped, it sends the SIGKILL signal.</p> <p>When it receives a
          * <code>StopCompilationJob</code> request, Amazon SageMaker changes the
-         * <a>CompilationJobSummary$CompilationJobStatus</a> of the job to
-         * <code>Stopping</code>. After Amazon SageMaker stops the job, it sets the
-         * <a>CompilationJobSummary$CompilationJobStatus</a> to <code>Stopped</code>.
-         * </p><p><h3>See Also:</h3>   <a
+         * <code>CompilationJobStatus</code> of the job to <code>Stopping</code>. After
+         * Amazon SageMaker stops the job, it sets the <code>CompilationJobStatus</code> to
+         * <code>Stopped</code>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/StopCompilationJob">AWS
          * API Reference</a></p>
          */
@@ -7890,15 +7942,16 @@ namespace SageMaker
          * availability loss). </p> <p>When SageMaker receives the request, it sets the
          * endpoint status to <code>Updating</code>. After updating the endpoint, it sets
          * the status to <code>InService</code>. To check the status of an endpoint, use
-         * the <a>DescribeEndpoint</a> API. </p>  <p>You must not delete an
-         * <code>EndpointConfig</code> in use by an endpoint that is live or while the
-         * <code>UpdateEndpoint</code> or <code>CreateEndpoint</code> operations are being
-         * performed on the endpoint. To update an endpoint, you must create a new
-         * <code>EndpointConfig</code>.</p> <p>If you delete the
-         * <code>EndpointConfig</code> of an endpoint that is active or being created or
-         * updated you may lose visibility into the instance type the endpoint is using.
-         * The endpoint must be deleted in order to stop incurring charges.</p>
-         * <p><h3>See Also:</h3>   <a
+         * the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+         * API. </p>  <p>You must not delete an <code>EndpointConfig</code> in use by
+         * an endpoint that is live or while the <code>UpdateEndpoint</code> or
+         * <code>CreateEndpoint</code> operations are being performed on the endpoint. To
+         * update an endpoint, you must create a new <code>EndpointConfig</code>.</p> <p>If
+         * you delete the <code>EndpointConfig</code> of an endpoint that is active or
+         * being created or updated you may lose visibility into the instance type the
+         * endpoint is using. The endpoint must be deleted in order to stop incurring
+         * charges.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpoint">AWS
          * API Reference</a></p>
          */
@@ -7927,8 +7980,9 @@ namespace SageMaker
          * endpoint, or capacity of one variant associated with an existing endpoint. When
          * it receives the request, SageMaker sets the endpoint status to
          * <code>Updating</code>. After updating the endpoint, it sets the status to
-         * <code>InService</code>. To check the status of an endpoint, use the
-         * <a>DescribeEndpoint</a> API. </p><p><h3>See Also:</h3>   <a
+         * <code>InService</code>. To check the status of an endpoint, use the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a>
+         * API. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateEndpointWeightsAndCapacities">AWS
          * API Reference</a></p>
          */
@@ -8057,7 +8111,11 @@ namespace SageMaker
 
         /**
          * <p>Updates the properties of a SageMaker image. To change the image's tags, use
-         * the <a>AddTags</a> and <a>DeleteTags</a> APIs.</p><p><h3>See Also:</h3>   <a
+         * the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AddTags.html">AddTags</a>
+         * and <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteTags.html">DeleteTags</a>
+         * APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateImage">AWS
          * API Reference</a></p>
          */
@@ -8111,7 +8169,8 @@ namespace SageMaker
          * <p> Updates an inference experiment that you created. The status of the
          * inference experiment has to be either <code>Created</code>,
          * <code>Running</code>. For more information on the status of an inference
-         * experiment, see <a>DescribeInferenceExperimentResponse$Status</a>.
+         * experiment, see <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateInferenceExperiment">AWS
          * API Reference</a></p>
@@ -8266,8 +8325,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>Updates a notebook instance lifecycle configuration created with the
-         * <a>CreateNotebookInstanceLifecycleConfig</a> API.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a notebook instance lifecycle configuration created with the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateNotebookInstanceLifecycleConfig.html">CreateNotebookInstanceLifecycleConfig</a>
+         * API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateNotebookInstanceLifecycleConfig">AWS
          * API Reference</a></p>
          */
@@ -8517,9 +8577,12 @@ namespace SageMaker
          * <code>OidcConfig</code> to update the configuration of a workforce created using
          * your own OIDC IdP. </p>  <p>You can only update your OIDC IdP
          * configuration when there are no work teams associated with your workforce. You
-         * can delete work teams using the operation.</p>  <p>After restricting
-         * access to a range of IP addresses or updating your OIDC IdP configuration with
-         * this operation, you can view details about your update workforce using the
+         * can delete work teams using the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteWorkteam.html">DeleteWorkteam</a>
+         * operation.</p>  <p>After restricting access to a range of IP
+         * addresses or updating your OIDC IdP configuration with this operation, you can
+         * view details about your update workforce using the <a
+         * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeWorkforce.html">DescribeWorkforce</a>
          * operation.</p>  <p>This operation only applies to private
          * workforces.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/UpdateWorkforce">AWS

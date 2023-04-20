@@ -83,50 +83,66 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline const Aws::Vector<PendingProductionVariantSummary>& GetProductionVariants() const{ return m_productionVariants; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline bool ProductionVariantsHasBeenSet() const { return m_productionVariantsHasBeenSet; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline void SetProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { m_productionVariantsHasBeenSet = true; m_productionVariants = value; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline void SetProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { m_productionVariantsHasBeenSet = true; m_productionVariants = std::move(value); }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline PendingDeploymentSummary& WithProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { SetProductionVariants(value); return *this;}
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline PendingDeploymentSummary& WithProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { SetProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline PendingDeploymentSummary& AddProductionVariants(const PendingProductionVariantSummary& value) { m_productionVariantsHasBeenSet = true; m_productionVariants.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint for the in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint for the in-progress
+     * deployment.</p>
      */
     inline PendingDeploymentSummary& AddProductionVariants(PendingProductionVariantSummary&& value) { m_productionVariantsHasBeenSet = true; m_productionVariants.push_back(std::move(value)); return *this; }
 
@@ -163,66 +179,74 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline const Aws::Vector<PendingProductionVariantSummary>& GetShadowProductionVariants() const{ return m_shadowProductionVariants; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline bool ShadowProductionVariantsHasBeenSet() const { return m_shadowProductionVariantsHasBeenSet; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline void SetShadowProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = value; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline void SetShadowProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants = std::move(value); }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithShadowProductionVariants(const Aws::Vector<PendingProductionVariantSummary>& value) { SetShadowProductionVariants(value); return *this;}
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& WithShadowProductionVariants(Aws::Vector<PendingProductionVariantSummary>&& value) { SetShadowProductionVariants(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddShadowProductionVariants(const PendingProductionVariantSummary& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>PendingProductionVariantSummary</a> objects, one for each
-     * model hosted behind this endpoint in shadow mode with production traffic
-     * replicated from the model specified on <code>ProductionVariants</code> for the
-     * in-progress deployment.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_PendingProductionVariantSummary.html">PendingProductionVariantSummary</a>
+     * objects, one for each model hosted behind this endpoint in shadow mode with
+     * production traffic replicated from the model specified on
+     * <code>ProductionVariants</code> for the in-progress deployment.</p>
      */
     inline PendingDeploymentSummary& AddShadowProductionVariants(PendingProductionVariantSummary&& value) { m_shadowProductionVariantsHasBeenSet = true; m_shadowProductionVariants.push_back(std::move(value)); return *this; }
 

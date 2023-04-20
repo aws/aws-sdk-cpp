@@ -16,6 +16,7 @@
 #include <aws/guardduty/model/Container.h>
 #include <aws/guardduty/model/RdsDbInstanceDetails.h>
 #include <aws/guardduty/model/RdsDbUserDetails.h>
+#include <aws/guardduty/model/LambdaDetails.h>
 #include <aws/guardduty/model/S3BucketDetail.h>
 #include <utility>
 
@@ -428,6 +429,43 @@ namespace Model
      */
     inline Resource& WithRdsDbUserDetails(RdsDbUserDetails&& value) { SetRdsDbUserDetails(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline const LambdaDetails& GetLambdaDetails() const{ return m_lambdaDetails; }
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline bool LambdaDetailsHasBeenSet() const { return m_lambdaDetailsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline void SetLambdaDetails(const LambdaDetails& value) { m_lambdaDetailsHasBeenSet = true; m_lambdaDetails = value; }
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline void SetLambdaDetails(LambdaDetails&& value) { m_lambdaDetailsHasBeenSet = true; m_lambdaDetails = std::move(value); }
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline Resource& WithLambdaDetails(const LambdaDetails& value) { SetLambdaDetails(value); return *this;}
+
+    /**
+     * <p>Contains information about the Lambda function that was involved in a
+     * finding.</p>
+     */
+    inline Resource& WithLambdaDetails(LambdaDetails&& value) { SetLambdaDetails(std::move(value)); return *this;}
+
   private:
 
     AccessKeyDetails m_accessKeyDetails;
@@ -462,6 +500,9 @@ namespace Model
 
     RdsDbUserDetails m_rdsDbUserDetails;
     bool m_rdsDbUserDetailsHasBeenSet = false;
+
+    LambdaDetails m_lambdaDetails;
+    bool m_lambdaDetailsHasBeenSet = false;
   };
 
 } // namespace Model

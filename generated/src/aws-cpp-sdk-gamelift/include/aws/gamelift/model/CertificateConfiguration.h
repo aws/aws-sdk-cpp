@@ -27,9 +27,9 @@ namespace Model
    * <p>Determines whether a TLS/SSL certificate is generated for a fleet. This
    * feature must be enabled when creating the fleet. All instances in a fleet share
    * the same certificate. The certificate can be retrieved by calling the <a
-   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">GameLift
-   * Server SDK</a> operation <code>GetInstanceCertificate</code>. </p><p><h3>See
-   * Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/reference-serversdk.html">Amazon
+   * GameLift Server SDK</a> operation <code>GetInstanceCertificate</code>.
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/CertificateConfiguration">AWS
    * API Reference</a></p>
    */

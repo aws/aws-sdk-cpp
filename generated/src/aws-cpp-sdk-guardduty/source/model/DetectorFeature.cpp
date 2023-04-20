@@ -25,6 +25,7 @@ namespace Aws
         static const int EBS_MALWARE_PROTECTION_HASH = HashingUtils::HashString("EBS_MALWARE_PROTECTION");
         static const int RDS_LOGIN_EVENTS_HASH = HashingUtils::HashString("RDS_LOGIN_EVENTS");
         static const int EKS_RUNTIME_MONITORING_HASH = HashingUtils::HashString("EKS_RUNTIME_MONITORING");
+        static const int LAMBDA_NETWORK_LOGS_HASH = HashingUtils::HashString("LAMBDA_NETWORK_LOGS");
 
 
         DetectorFeature GetDetectorFeatureForName(const Aws::String& name)
@@ -50,6 +51,10 @@ namespace Aws
           {
             return DetectorFeature::EKS_RUNTIME_MONITORING;
           }
+          else if (hashCode == LAMBDA_NETWORK_LOGS_HASH)
+          {
+            return DetectorFeature::LAMBDA_NETWORK_LOGS;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -74,6 +79,8 @@ namespace Aws
             return "RDS_LOGIN_EVENTS";
           case DetectorFeature::EKS_RUNTIME_MONITORING:
             return "EKS_RUNTIME_MONITORING";
+          case DetectorFeature::LAMBDA_NETWORK_LOGS:
+            return "LAMBDA_NETWORK_LOGS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

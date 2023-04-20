@@ -35,6 +35,15 @@ CreateClusterResult& CreateClusterResult::operator =(const Aws::AmazonWebService
 
   }
 
+  if(jsonValue.ValueExists("JobListEntries"))
+  {
+    Aws::Utils::Array<JsonView> jobListEntriesJsonList = jsonValue.GetArray("JobListEntries");
+    for(unsigned jobListEntriesIndex = 0; jobListEntriesIndex < jobListEntriesJsonList.GetLength(); ++jobListEntriesIndex)
+    {
+      m_jobListEntries.push_back(jobListEntriesJsonList[jobListEntriesIndex].AsObject());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

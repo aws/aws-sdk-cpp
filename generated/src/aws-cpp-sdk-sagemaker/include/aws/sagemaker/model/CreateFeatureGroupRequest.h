@@ -478,60 +478,54 @@ namespace Model
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline const OnlineStoreConfig& GetOnlineStoreConfig() const{ return m_onlineStoreConfig; }
 
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline bool OnlineStoreConfigHasBeenSet() const { return m_onlineStoreConfigHasBeenSet; }
 
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline void SetOnlineStoreConfig(const OnlineStoreConfig& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = value; }
 
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline void SetOnlineStoreConfig(OnlineStoreConfig&& value) { m_onlineStoreConfigHasBeenSet = true; m_onlineStoreConfig = std::move(value); }
 
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline CreateFeatureGroupRequest& WithOnlineStoreConfig(const OnlineStoreConfig& value) { SetOnlineStoreConfig(value); return *this;}
 
     /**
      * <p>You can turn the <code>OnlineStore</code> on or off by specifying
      * <code>True</code> for the <code>EnableOnlineStore</code> flag in
-     * <code>OnlineStoreConfig</code>; the default value is <code>False</code>.</p>
-     * <p>You can also include an Amazon Web Services KMS key ID
-     * (<code>KMSKeyId</code>) for at-rest encryption of the
-     * <code>OnlineStore</code>.</p>
+     * <code>OnlineStoreConfig</code>.</p> <p>You can also include an Amazon Web
+     * Services KMS key ID (<code>KMSKeyId</code>) for at-rest encryption of the
+     * <code>OnlineStore</code>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline CreateFeatureGroupRequest& WithOnlineStoreConfig(OnlineStoreConfig&& value) { SetOnlineStoreConfig(std::move(value)); return *this;}
 
@@ -549,8 +543,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline const OfflineStoreConfig& GetOfflineStoreConfig() const{ return m_offlineStoreConfig; }
 
@@ -567,8 +561,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline bool OfflineStoreConfigHasBeenSet() const { return m_offlineStoreConfigHasBeenSet; }
 
@@ -585,8 +579,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(const OfflineStoreConfig& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = value; }
 
@@ -603,8 +597,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline void SetOfflineStoreConfig(OfflineStoreConfig&& value) { m_offlineStoreConfigHasBeenSet = true; m_offlineStoreConfig = std::move(value); }
 
@@ -621,8 +615,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(const OfflineStoreConfig& value) { SetOfflineStoreConfig(value); return *this;}
 
@@ -639,8 +633,8 @@ namespace Model
      * key</a> for SSE, you can reduce Amazon Web Services KMS requests costs by up to
      * 99 percent.</p> </li> <li> <p>Format for the offline store table. Supported
      * formats are Glue (Default) and <a href="https://iceberg.apache.org/">Apache
-     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see
-     * <a>OfflineStoreConfig</a>.</p>
+     * Iceberg</a>.</p> </li> </ul> <p>To learn more about this parameter, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_OfflineStoreConfig.html">OfflineStoreConfig</a>.</p>
      */
     inline CreateFeatureGroupRequest& WithOfflineStoreConfig(OfflineStoreConfig&& value) { SetOfflineStoreConfig(std::move(value)); return *this;}
 

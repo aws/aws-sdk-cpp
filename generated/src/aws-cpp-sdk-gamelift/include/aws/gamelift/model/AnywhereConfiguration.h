@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>GameLift Anywhere configuration options for your Anywhere
+   * <p>Amazon GameLift Anywhere configuration options for your Anywhere
    * fleets.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AnywhereConfiguration">AWS
    * API Reference</a></p>
@@ -39,66 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline const Aws::String& GetCost() const{ return m_cost; }
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline void SetCost(const Aws::String& value) { m_costHasBeenSet = true; m_cost = value; }
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline void SetCost(Aws::String&& value) { m_costHasBeenSet = true; m_cost = std::move(value); }
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline void SetCost(const char* value) { m_costHasBeenSet = true; m_cost.assign(value); }
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline AnywhereConfiguration& WithCost(const Aws::String& value) { SetCost(value); return *this;}
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline AnywhereConfiguration& WithCost(Aws::String&& value) { SetCost(std::move(value)); return *this;}
 
     /**
-     * <p>The cost to run your fleet per hour. GameLift uses the provided cost of your
-     * fleet to balance usage in queues. For more information about queues, see <a
+     * <p>The cost to run your fleet per hour. Amazon GameLift uses the provided cost
+     * of your fleet to balance usage in queues. For more information about queues, see
+     * <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
-     * up queues</a>.</p>
+     * up queues</a> in the <i>Amazon GameLift Developer Guide</i>.</p>
      */
     inline AnywhereConfiguration& WithCost(const char* value) { SetCost(value); return *this;}
 

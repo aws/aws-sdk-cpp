@@ -27,13 +27,13 @@ namespace Model
   /**
    * <p>A collection of server process configurations that describe the set of
    * processes to run on each instance in a fleet. Server processes run either an
-   * executable in a custom game build or a Realtime Servers script. GameLift
+   * executable in a custom game build or a Realtime Servers script. Amazon GameLift
    * launches the configured processes, manages their life cycle, and replaces them
    * as needed. Each instance checks regularly for an updated runtime configuration.
-   * </p> <p>A GameLift instance is limited to 50 processes running concurrently. To
-   * calculate the total number of processes in a runtime configuration, add the
-   * values of the <code>ConcurrentExecutions</code> parameter for each server
-   * process. Learn more about <a
+   * </p> <p>A Amazon GameLift instance is limited to 50 processes running
+   * concurrently. To calculate the total number of processes in a runtime
+   * configuration, add the values of the <code>ConcurrentExecutions</code> parameter
+   * for each server process. Learn more about <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-multiprocess.html">
    * Running Multiple Processes on a Fleet</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/RuntimeConfiguration">AWS
