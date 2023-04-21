@@ -17,7 +17,7 @@ namespace Aws
                 auto secretCur = Crt::ByteCursorFromArray(secret.GetUnderlyingData(), secret.GetLength());
 
                 ByteBuffer resultBuf(Crt::Crypto::SHA256_HMAC_DIGEST_SIZE);
-                Crt::ByteBuf outBuf = Crt::ByteBufFromArray(resultBuf.GetUnderlyingData(), resultBuf.GetSize());
+                Crt::ByteBuf outBuf = Crt::ByteBufFromEmptyArray(resultBuf.GetUnderlyingData(), resultBuf.GetSize());
 
                 if (Crt::Crypto::ComputeSHA256HMAC(secretCur, toSignCur,outBuf))
                 {

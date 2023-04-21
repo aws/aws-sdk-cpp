@@ -14,7 +14,7 @@ namespace Aws
         {
             void CRTSecureRandomBytes::GetBytes(unsigned char *buffer, std::size_t bufferSize)
             {
-                auto outputBuf = Crt::ByteBufFromArray(buffer, bufferSize);
+                auto outputBuf = Crt::ByteBufFromEmptyArray(buffer, bufferSize);
                 (void)Crt::Crypto::GenerateRandomBytes(outputBuf, bufferSize);
             }
         }

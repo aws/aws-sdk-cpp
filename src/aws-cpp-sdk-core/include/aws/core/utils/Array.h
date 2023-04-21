@@ -39,7 +39,7 @@ namespace Aws
              */
             Array(size_t arraySize = 0) :
                 m_size(arraySize),
-                m_length(0),
+                m_length(arraySize),
                 m_data(arraySize > 0 ? Aws::MakeUniqueArray<T>(arraySize, ARRAY_ALLOCATION_TAG) : nullptr)
             {
             }
@@ -72,7 +72,7 @@ namespace Aws
                 size_t totalSize = 0;
                 for(auto& array : toMerge)
                 {
-                    totalSize += array->m_size;
+                    totalSize += array->m_length;
                 }
 
                 m_size = totalSize;
@@ -83,16 +83,16 @@ namespace Aws
                 {
                     if(arr->m_size > 0 && arr->m_data)
                     {
-                        size_t arraySize = arr->m_size;
+                        size_t arraySize = arr->m_length;
 #ifdef _WIN32
-                        std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, stdext::checked_array_iterator< T * >(m_data.get() + location, m_size));
+                        std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, stdext::checked_array_iterator< T * >(m_data.get() + location, m_length));
 #else
                         std::copy(arr->m_data.get(), arr->m_data.get() + arraySize, m_data.get() + location);
 #endif // MSVC
                         location += arraySize;
                     }
                 }
-                m_length = totalSize;
+                m_length = location;
             }
 
             Array(const Array& other)

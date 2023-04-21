@@ -327,24 +327,19 @@ public:
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer& aad) const override
     {
-        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
-        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
-        auto tagCur = Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength());
-        auto aadCur = Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength());
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> keyCur = key.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> ivCur = iv.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> tagCur = tag.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> aadCur = aad.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
 
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, tagCur, aadCur));
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, aadCur, tagCur));
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad) const override
     {
-        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
-        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
-        auto tagCur = Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength());
-        auto aadCur = Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength());
-
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, tagCur, aadCur));
+        return CreateImplementation(key, iv, tag, aad);
     }
 
     /**

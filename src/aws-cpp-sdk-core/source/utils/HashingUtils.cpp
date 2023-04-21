@@ -22,20 +22,19 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Base64;
 using namespace Aws::Utils::Crypto;
 
-// internal buffers are fixed-size arrays, so this is harmless memory-management wise
-static Aws::Utils::Base64::Base64 s_base64;
-
 // Aws Glacier Tree Hash calculates hash value for each 1MB data
 const static size_t TREE_HASH_ONE_MB = 1024 * 1024;
 
 Aws::String HashingUtils::Base64Encode(const ByteBuffer& message)
 {
-    return s_base64.Encode(message);
+    Base64::Base64 base64Encoder;
+    return base64Encoder.Encode(message);
 }
 
 ByteBuffer HashingUtils::Base64Decode(const Aws::String& encodedMessage)
 {
-    return s_base64.Decode(encodedMessage);
+    Base64::Base64 base64Decoder;
+    return base64Decoder.Decode(encodedMessage);
 }
 
 ByteBuffer HashingUtils::CalculateSHA256HMAC(const ByteBuffer& toSign, const ByteBuffer& secret)

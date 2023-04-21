@@ -16,7 +16,7 @@ namespace Aws
             {
                 auto inputCur = Crt::ByteCursorFromArray((uint8_t *)str.data(), str.size());
                 ByteBuffer resultBuffer(m_hash.DigestSize());
-                Crt::ByteBuf outBuf = Crt::ByteBufFromArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
+                Crt::ByteBuf outBuf = Crt::ByteBufFromEmptyArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
 
                 if (m_hash.ComputeOneShot(inputCur, outBuf))
                 {
@@ -51,7 +51,7 @@ namespace Aws
                 }
 
                 ByteBuffer resultBuffer(m_hash.DigestSize());
-                auto outBuffer = Crt::ByteBufFromArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
+                auto outBuffer = Crt::ByteBufFromEmptyArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
                 if (!m_hash.Digest(outBuffer))
                 {
                     //log
@@ -70,7 +70,7 @@ namespace Aws
 
             Crypto::HashResult Crypto::CRTHash::GetHash() {
                 ByteBuffer resultBuffer(m_hash.DigestSize());
-                auto outBuffer = Crt::ByteBufFromArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
+                auto outBuffer = Crt::ByteBufFromEmptyArray(resultBuffer.GetUnderlyingData(), resultBuffer.GetSize());
                 if (!m_hash.Digest(outBuffer))
                 {
                     //log

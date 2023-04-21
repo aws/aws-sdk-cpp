@@ -12,17 +12,20 @@ namespace Aws
         {
             CRTSymmetricCipher::CRTSymmetricCipher(Crt::Crypto::SymmetricCipher &&toMove) : SymmetricCipher(), m_cipher(std::move(toMove))
             {
-                auto ivCur = m_cipher.GetTag();
-                m_initializationVector = CryptoBuffer(ivCur.ptr, ivCur.len);
-
-                auto keyCur = m_cipher.GetKey();
-                m_key = CryptoBuffer(keyCur.ptr, keyCur.len);
-
-                auto tagCur = m_cipher.GetTag();
-
-                if (tagCur.len)
+                if (m_cipher)
                 {
-                    m_tag = CryptoBuffer(tagCur.ptr, tagCur.len);
+                    auto ivCur = m_cipher.GetIV();
+                    m_initializationVector = CryptoBuffer(ivCur.ptr, ivCur.len);
+
+                    auto keyCur = m_cipher.GetKey();
+                    m_key = CryptoBuffer(keyCur.ptr, keyCur.len);
+
+                    auto tagCur = m_cipher.GetTag();
+
+                    if (tagCur.len)
+                    {
+                        m_tag = CryptoBuffer(tagCur.ptr, tagCur.len);
+                    }
                 }
             }
 
@@ -43,11 +46,11 @@ namespace Aws
 
             CryptoBuffer CRTSymmetricCipher::FinalizeEncryption()
             {
-                /* For AES key-wrap the encrypted size for a 256-bit key is 40 bytes. */
+                // For AES key-wrap the encrypted size for a 256-bit key is 40 bytes.
                 CryptoBuffer result(Crt::Crypto::AES_256_CIPHER_BLOCK_SIZE * 3);
                 Crt::ByteBuf resultBuffer = Crt::ByteBufFromEmptyArray(result.GetUnderlyingData(), result.GetSize());
 
-                if (m_cipher.FinalizeDecryption(resultBuffer))
+                if (m_cipher.FinalizeEncryption(resultBuffer))
                 {
                     auto tagCur = m_cipher.GetTag();
                     m_tag = CryptoBuffer(tagCur.ptr, tagCur.len);
