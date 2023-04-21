@@ -38,6 +38,7 @@
 #include <aws/connect/model/CreateHoursOfOperationRequest.h>
 #include <aws/connect/model/CreateInstanceRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
+#include <aws/connect/model/CreateParticipantRequest.h>
 #include <aws/connect/model/CreateQueueRequest.h>
 #include <aws/connect/model/CreateQuickConnectRequest.h>
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
@@ -588,6 +589,15 @@ CreateIntegrationAssociationOutcome ConnectClient::CreateIntegrationAssociation(
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/integration-associations");
   return CreateIntegrationAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipantRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateParticipant, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/contact/create-participant");
+  return CreateParticipantOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request) const

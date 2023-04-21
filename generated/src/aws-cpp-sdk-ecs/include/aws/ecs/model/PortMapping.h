@@ -31,12 +31,22 @@ namespace Model
    * definition.</p> <p>If you use containers in a task with the <code>awsvpc</code>
    * or <code>host</code> network mode, specify the exposed ports using
    * <code>containerPort</code>. The <code>hostPort</code> can be left blank or it
-   * must be the same value as the <code>containerPort</code>.</p>  <p>You
-   * can't expose the same container port for multiple protocols. If you attempt
-   * this, an error is returned.</p>  <p>After a task reaches the
-   * <code>RUNNING</code> status, manual and automatic host and container port
-   * assignments are visible in the <code>networkBindings</code> section of
-   * <a>DescribeTasks</a> API responses.</p><p><h3>See Also:</h3>   <a
+   * must be the same value as the <code>containerPort</code>.</p> <p>Most fields of
+   * this parameter (<code>containerPort</code>, <code>hostPort</code>,
+   * <code>protocol</code>) maps to <code>PortBindings</code> in the <a
+   * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
+   * a container</a> section of the <a
+   * href="https://docs.docker.com/engine/api/v1.35/">Docker Remote API</a> and the
+   * <code>--publish</code> option to <a
+   * href="https://docs.docker.com/engine/reference/commandline/run/"> <code>docker
+   * run</code> </a>. If the network mode of a task definition is set to
+   * <code>host</code>, host ports must either be undefined or match the container
+   * port in the port mapping.</p>  <p>You can't expose the same container port
+   * for multiple protocols. If you attempt this, an error is returned.</p> 
+   * <p>After a task reaches the <code>RUNNING</code> status, manual and automatic
+   * host and container port assignments are visible in the
+   * <code>networkBindings</code> section of <a>DescribeTasks</a> API
+   * responses.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PortMapping">AWS API
    * Reference</a></p>
    */
