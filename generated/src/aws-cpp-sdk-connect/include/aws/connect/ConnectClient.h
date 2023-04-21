@@ -576,6 +576,35 @@ namespace Connect
         }
 
         /**
+         * <p>Adds a new participant into an on-going chat contact. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize
+         * chat flow experiences by integrating custom participants</a>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateParticipant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateParticipantOutcome CreateParticipant(const Model::CreateParticipantRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateParticipant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateParticipantRequestT = Model::CreateParticipantRequest>
+        Model::CreateParticipantOutcomeCallable CreateParticipantCallable(const CreateParticipantRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateParticipant, request);
+        }
+
+        /**
+         * An Async wrapper for CreateParticipant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateParticipantRequestT = Model::CreateParticipantRequest>
+        void CreateParticipantAsync(const CreateParticipantRequestT& request, const CreateParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateParticipant, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
          * instance.</p>  <p>If the number being used in the input is claimed to

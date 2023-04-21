@@ -44,49 +44,89 @@ namespace Model
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline const Aws::String& GetMetricFilterKey() const{ return m_metricFilterKey; }
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline bool MetricFilterKeyHasBeenSet() const { return m_metricFilterKeyHasBeenSet; }
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline void SetMetricFilterKey(const Aws::String& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = value; }
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline void SetMetricFilterKey(Aws::String&& value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey = std::move(value); }
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline void SetMetricFilterKey(const char* value) { m_metricFilterKeyHasBeenSet = true; m_metricFilterKey.assign(value); }
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(const Aws::String& value) { SetMetricFilterKey(value); return *this;}
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(Aws::String&& value) { SetMetricFilterKey(std::move(value)); return *this;}
 
     /**
      * <p>The key to use for filtering data. </p> <p>Valid metric filter keys:
-     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code> </p>
+     * <code>INITIATION_METHOD</code>, <code>DISCONNECT_REASON</code>. These are the
+     * same values as the <code>InitiationMethod</code> and
+     * <code>DisconnectReason</code> in the contact record. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/connect/latest/adminguide/ctr-data-model.html#ctr-ContactTraceRecord">ContactTraceRecord</a>
+     * in the <i>Amazon Connect Administrator's Guide</i>. </p>
      */
     inline MetricFilterV2& WithMetricFilterKey(const char* value) { SetMetricFilterKey(value); return *this;}
 

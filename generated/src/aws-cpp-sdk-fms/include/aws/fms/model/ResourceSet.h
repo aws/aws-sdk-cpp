@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/fms/model/ResourceSetStatus.h>
 #include <utility>
 
 namespace Aws
@@ -425,6 +426,67 @@ namespace Model
      */
     inline ResourceSet& WithLastUpdateTime(Aws::Utils::DateTime&& value) { SetLastUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline const ResourceSetStatus& GetResourceSetStatus() const{ return m_resourceSetStatus; }
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline bool ResourceSetStatusHasBeenSet() const { return m_resourceSetStatusHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline void SetResourceSetStatus(const ResourceSetStatus& value) { m_resourceSetStatusHasBeenSet = true; m_resourceSetStatus = value; }
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline void SetResourceSetStatus(ResourceSetStatus&& value) { m_resourceSetStatusHasBeenSet = true; m_resourceSetStatus = std::move(value); }
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline ResourceSet& WithResourceSetStatus(const ResourceSetStatus& value) { SetResourceSetStatus(value); return *this;}
+
+    /**
+     * <p>Indicates whether the resource set is in or out of an admin's Region
+     * scope.</p> <ul> <li> <p> <code>ACTIVE</code> - The administrator can manage and
+     * delete the resource set.</p> </li> <li> <p> <code>OUT_OF_ADMIN_SCOPE</code> -
+     * The administrator can view the resource set, but they can't edit or delete the
+     * resource set. Existing protections stay in place. Any new resource that come
+     * into scope of the resource set won't be protected.</p> </li> </ul>
+     */
+    inline ResourceSet& WithResourceSetStatus(ResourceSetStatus&& value) { SetResourceSetStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -444,6 +506,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastUpdateTime;
     bool m_lastUpdateTimeHasBeenSet = false;
+
+    ResourceSetStatus m_resourceSetStatus;
+    bool m_resourceSetStatusHasBeenSet = false;
   };
 
 } // namespace Model
