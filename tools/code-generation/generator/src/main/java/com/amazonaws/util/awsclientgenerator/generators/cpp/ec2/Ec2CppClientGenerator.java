@@ -8,17 +8,25 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp.ec2;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.*;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Error;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import com.amazonaws.util.awsclientgenerator.generators.cpp.QueryCppClientGenerator;
+import com.google.common.collect.ImmutableSet;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
 import java.util.Collection;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Map;
+import java.util.Set;
 
-public class Ec2CppClientGenerator extends QueryCppClientGenerator{
+public class Ec2CppClientGenerator extends QueryCppClientGenerator {
+
+    private static final Set<String> OPS_WITH_PRESIGNED_URLS = ImmutableSet.of(
+            "CopySnapshot"
+    );
 
     public Ec2CppClientGenerator() throws Exception {
         super();
@@ -669,7 +677,7 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         final Error securityGroupsPerInterfaceLimitExceeded = new Error();
         securityGroupsPerInterfaceLimitExceeded.setName("SecurityGroupsPerInterfaceLimitExceeded");
         securityGroupsPerInterfaceLimitExceeded.setText("SecurityGroupsPerInterfaceLimitExceeded");
-        serviceErrors.add(securityGroupsPerInterfaceLimitExceeded);        
+        serviceErrors.add(securityGroupsPerInterfaceLimitExceeded);
         final Error snapshotLimitExceeded = new Error();
         snapshotLimitExceeded.setName("SnapshotLimitExceeded");
         snapshotLimitExceeded.setText("SnapshotLimitExceeded");
@@ -742,6 +750,17 @@ public class Ec2CppClientGenerator extends QueryCppClientGenerator{
         vpnGatewayLimitExceeded.setName("VpnGatewayLimitExceeded");
         vpnGatewayLimitExceeded.setText("VpnGatewayLimitExceeded");
         serviceErrors.add(vpnGatewayLimitExceeded);
+
+        // Add customization for operations with presigned URLs
+        serviceModel.getMetadata().setHasPreSignedUrl(true);
+
+        serviceModel.getOperations().values().stream()
+                .filter(operationEntry -> OPS_WITH_PRESIGNED_URLS.contains(operationEntry.getName()))
+                .forEach(operationEntry -> {
+                    operationEntry.setHasPreSignedUrl(true);
+                    operationEntry.getRequest().getShape().setHasPreSignedUrl(true);
+                });
+
         return super.generateSourceFiles(serviceModel);
     }
 
