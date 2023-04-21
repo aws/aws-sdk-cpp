@@ -33,7 +33,9 @@ Aws::String ${typeInfo.className}::SerializePayload() const
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($member.key))
 #set($varName = $CppViewHelper.computeVariableName($member.key))
 #set($spaces = '')
-#if(!$member.value.usedForPayload || ($shape.hasPreSignedUrl && $member.key.equals("SourceRegion")))
+#if(!$member.value.usedForPayload ||
+    ($shape.hasPreSignedUrl && $member.key.equals("SourceRegion") && ${serviceNamespace} != "EC2") ||
+    ($shape.hasPreSignedUrl && $member.key.equals("DestinationRegion") && ${serviceNamespace} == "EC2"))
 #set($shouldSkipSerialize = true)
 #else
 #set($shouldSkipSerialize = false)

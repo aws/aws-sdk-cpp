@@ -40,11 +40,6 @@ Aws::String CopySnapshotRequest::SerializePayload() const
     ss << "DestinationOutpostArn=" << StringUtils::URLEncode(m_destinationOutpostArn.c_str()) << "&";
   }
 
-  if(m_destinationRegionHasBeenSet)
-  {
-    ss << "DestinationRegion=" << StringUtils::URLEncode(m_destinationRegion.c_str()) << "&";
-  }
-
   if(m_encryptedHasBeenSet)
   {
     ss << "Encrypted=" << std::boolalpha << m_encrypted << "&";
