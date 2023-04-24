@@ -46,74 +46,104 @@ namespace Model
 
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline const WebvttAccessibilitySubs& GetAccessibility() const{ return m_accessibility; }
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline bool AccessibilityHasBeenSet() const { return m_accessibilityHasBeenSet; }
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline void SetAccessibility(const WebvttAccessibilitySubs& value) { m_accessibilityHasBeenSet = true; m_accessibility = value; }
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline void SetAccessibility(WebvttAccessibilitySubs&& value) { m_accessibilityHasBeenSet = true; m_accessibility = std::move(value); }
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline WebvttDestinationSettings& WithAccessibility(const WebvttAccessibilitySubs& value) { SetAccessibility(value); return *this;}
 
     /**
-     * Set Accessibility subtitles to Enabled if the ISMC or WebVTT captions track is
-     * intended to provide accessibility for people who are deaf or hard of hearing.
-     * When you enable this feature, MediaConvert adds the following attributes under
-     * EXT-X-MEDIA in the HLS or CMAF manifest for this track:
+     * If the WebVTT captions track is intended to provide accessibility for people who
+     * are deaf or hard of hearing: Set Accessibility subtitles to Enabled. When you
+     * do, MediaConvert adds accessibility attributes to your output HLS or DASH
+     * manifest. For HLS manifests, MediaConvert adds the following accessibility
+     * attributes under EXT-X-MEDIA for this track:
      * CHARACTERISTICS="public.accessibility.describes-spoken-dialog,public.accessibility.describes-music-and-sound"
-     * and AUTOSELECT="YES". Keep the default value, Disabled, if the captions track is
-     * not intended to provide such accessibility. MediaConvert will not add the above
-     * attributes.
+     * and AUTOSELECT="YES". For DASH manifests, MediaConvert adds the following in the
+     * adaptation set for this track: <Accessibility
+     * schemeIdUri="urn:mpeg:dash:role:2011" value="caption"/>. If the captions track
+     * is not intended to provide such accessibility: Keep the default value, Disabled.
+     * When you do, for DASH manifests, MediaConvert instead adds the following in the
+     * adaptation set for this track: <Role schemeIDUri="urn:mpeg:dash:role:2011"
+     * value="subtitle"/>.
      */
     inline WebvttDestinationSettings& WithAccessibility(WebvttAccessibilitySubs&& value) { SetAccessibility(std::move(value)); return *this;}
 

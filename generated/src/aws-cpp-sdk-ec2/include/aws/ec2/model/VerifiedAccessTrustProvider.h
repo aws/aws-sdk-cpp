@@ -222,69 +222,69 @@ namespace Model
 
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline const OidcOptions& GetOidcOptions() const{ return m_oidcOptions; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline bool OidcOptionsHasBeenSet() const { return m_oidcOptionsHasBeenSet; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline void SetOidcOptions(const OidcOptions& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = value; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline void SetOidcOptions(OidcOptions&& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = std::move(value); }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline VerifiedAccessTrustProvider& WithOidcOptions(const OidcOptions& value) { SetOidcOptions(value); return *this;}
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline VerifiedAccessTrustProvider& WithOidcOptions(OidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline const DeviceOptions& GetDeviceOptions() const{ return m_deviceOptions; }
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline bool DeviceOptionsHasBeenSet() const { return m_deviceOptionsHasBeenSet; }
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline void SetDeviceOptions(const DeviceOptions& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = value; }
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline void SetDeviceOptions(DeviceOptions&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::move(value); }
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline VerifiedAccessTrustProvider& WithDeviceOptions(const DeviceOptions& value) { SetDeviceOptions(value); return *this;}
 
     /**
-     * <p>The options for device-identity type trust provider.</p>
+     * <p>The options for device-identity trust provider.</p>
      */
     inline VerifiedAccessTrustProvider& WithDeviceOptions(DeviceOptions&& value) { SetDeviceOptions(std::move(value)); return *this;}
 

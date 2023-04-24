@@ -13,29 +13,20 @@ namespace MediaConvert
 {
 namespace Model
 {
-  enum class VideoCodec
+  enum class AdvancedInputFilterSharpen
   {
     NOT_SET,
-    AV1,
-    AVC_INTRA,
-    FRAME_CAPTURE,
-    H_264,
-    H_265,
-    MPEG2,
-    PASSTHROUGH,
-    PRORES,
-    VC3,
-    VP8,
-    VP9,
-    XAVC
+    OFF,
+    LOW,
+    HIGH
   };
 
-namespace VideoCodecMapper
+namespace AdvancedInputFilterSharpenMapper
 {
-AWS_MEDIACONVERT_API VideoCodec GetVideoCodecForName(const Aws::String& name);
+AWS_MEDIACONVERT_API AdvancedInputFilterSharpen GetAdvancedInputFilterSharpenForName(const Aws::String& name);
 
-AWS_MEDIACONVERT_API Aws::String GetNameForVideoCodec(VideoCodec value);
-} // namespace VideoCodecMapper
+AWS_MEDIACONVERT_API Aws::String GetNameForAdvancedInputFilterSharpen(AdvancedInputFilterSharpen value);
+} // namespace AdvancedInputFilterSharpenMapper
 } // namespace Model
 } // namespace MediaConvert
 } // namespace Aws

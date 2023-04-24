@@ -36,44 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& GetLoggingConfigurations() const{ return m_loggingConfigurations; }
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline void SetLoggingConfigurations(const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& value) { m_loggingConfigurations = value; }
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline void SetLoggingConfigurations(Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>&& value) { m_loggingConfigurations = std::move(value); }
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithLoggingConfigurations(const Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>& value) { SetLoggingConfigurations(value); return *this;}
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& WithLoggingConfigurations(Aws::Vector<VerifiedAccessInstanceLoggingConfiguration>&& value) { SetLoggingConfigurations(std::move(value)); return *this;}
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& AddLoggingConfigurations(const VerifiedAccessInstanceLoggingConfiguration& value) { m_loggingConfigurations.push_back(value); return *this; }
 
     /**
-     * <p>The current logging configuration for the Amazon Web Services Verified Access
-     * instances.</p>
+     * <p>The current logging configuration for the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstanceLoggingConfigurationsResponse& AddLoggingConfigurations(VerifiedAccessInstanceLoggingConfiguration&& value) { m_loggingConfigurations.push_back(std::move(value)); return *this; }
 

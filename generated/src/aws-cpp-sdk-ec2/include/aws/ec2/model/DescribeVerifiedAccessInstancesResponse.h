@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline const Aws::Vector<VerifiedAccessInstance>& GetVerifiedAccessInstances() const{ return m_verifiedAccessInstances; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline void SetVerifiedAccessInstances(const Aws::Vector<VerifiedAccessInstance>& value) { m_verifiedAccessInstances = value; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline void SetVerifiedAccessInstances(Aws::Vector<VerifiedAccessInstance>&& value) { m_verifiedAccessInstances = std::move(value); }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstancesResponse& WithVerifiedAccessInstances(const Aws::Vector<VerifiedAccessInstance>& value) { SetVerifiedAccessInstances(value); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstancesResponse& WithVerifiedAccessInstances(Aws::Vector<VerifiedAccessInstance>&& value) { SetVerifiedAccessInstances(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstancesResponse& AddVerifiedAccessInstances(const VerifiedAccessInstance& value) { m_verifiedAccessInstances.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access instances.</p>
+     * <p>The IDs of the Verified Access instances.</p>
      */
     inline DescribeVerifiedAccessInstancesResponse& AddVerifiedAccessInstances(VerifiedAccessInstance&& value) { m_verifiedAccessInstances.push_back(std::move(value)); return *this; }
 

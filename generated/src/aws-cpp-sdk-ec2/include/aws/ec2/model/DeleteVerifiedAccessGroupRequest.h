@@ -38,42 +38,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline const Aws::String& GetVerifiedAccessGroupId() const{ return m_verifiedAccessGroupId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline bool VerifiedAccessGroupIdHasBeenSet() const { return m_verifiedAccessGroupIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(const Aws::String& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(Aws::String&& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(const char* value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline DeleteVerifiedAccessGroupRequest& WithVerifiedAccessGroupId(const Aws::String& value) { SetVerifiedAccessGroupId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline DeleteVerifiedAccessGroupRequest& WithVerifiedAccessGroupId(Aws::String&& value) { SetVerifiedAccessGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline DeleteVerifiedAccessGroupRequest& WithVerifiedAccessGroupId(const char* value) { SetVerifiedAccessGroupId(value); return *this;}
 

@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline const Aws::Vector<VerifiedAccessTrustProvider>& GetVerifiedAccessTrustProviders() const{ return m_verifiedAccessTrustProviders; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline void SetVerifiedAccessTrustProviders(const Aws::Vector<VerifiedAccessTrustProvider>& value) { m_verifiedAccessTrustProviders = value; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline void SetVerifiedAccessTrustProviders(Aws::Vector<VerifiedAccessTrustProvider>&& value) { m_verifiedAccessTrustProviders = std::move(value); }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersResponse& WithVerifiedAccessTrustProviders(const Aws::Vector<VerifiedAccessTrustProvider>& value) { SetVerifiedAccessTrustProviders(value); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersResponse& WithVerifiedAccessTrustProviders(Aws::Vector<VerifiedAccessTrustProvider>&& value) { SetVerifiedAccessTrustProviders(std::move(value)); return *this;}
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersResponse& AddVerifiedAccessTrustProviders(const VerifiedAccessTrustProvider& value) { m_verifiedAccessTrustProviders.push_back(value); return *this; }
 
     /**
-     * <p>The IDs of the Amazon Web Services Verified Access trust providers.</p>
+     * <p>The IDs of the Verified Access trust providers.</p>
      */
     inline DescribeVerifiedAccessTrustProvidersResponse& AddVerifiedAccessTrustProviders(VerifiedAccessTrustProvider&& value) { m_verifiedAccessTrustProviders.push_back(std::move(value)); return *this; }
 

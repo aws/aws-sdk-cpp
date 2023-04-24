@@ -150,37 +150,61 @@ namespace Model
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline const VideoCodec& GetCodec() const{ return m_codec; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline void SetCodec(const VideoCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline void SetCodec(VideoCodec&& value) { m_codecHasBeenSet = true; m_codec = std::move(value); }
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline VideoCodecSettings& WithCodec(const VideoCodec& value) { SetCodec(value); return *this;}
 
     /**
      * Specifies the video codec. This must be equal to one of the enum values defined
-     * by the object VideoCodec.
+     * by the object VideoCodec. To passthrough the video stream of your input
+     * JPEG2000, VC-3, AVC-INTRA or Apple ProRes  video without any video encoding:
+     * Choose Passthrough. If you have multiple input videos, note that they must have
+     * identical encoding attributes. When you choose Passthrough, your output
+     * container must be MXF or QuickTime MOV.
      */
     inline VideoCodecSettings& WithCodec(VideoCodec&& value) { SetCodec(std::move(value)); return *this;}
 

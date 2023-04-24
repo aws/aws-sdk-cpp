@@ -34,49 +34,57 @@ namespace Model
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline DeleteAccessTokenRequest& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline DeleteAccessTokenRequest& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the personal access token to delete. You can find the IDs of all
-     * PATs associated with your user account by calling <a>ListAccessTokens</a>.</p>
+     * PATs associated with your Amazon Web Services Builder ID in a space by calling
+     * <a>ListAccessTokens</a>.</p>
      */
     inline DeleteAccessTokenRequest& WithId(const char* value) { SetId(value); return *this;}
 

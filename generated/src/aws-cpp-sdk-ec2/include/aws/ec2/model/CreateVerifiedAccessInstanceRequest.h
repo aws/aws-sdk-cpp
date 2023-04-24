@@ -40,83 +40,83 @@ namespace Model
   public:
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access instance.</p>
+     * <p>A description for the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access instance.</p>
+     * <p>The tags to assign to the Verified Access instance.</p>
      */
     inline CreateVerifiedAccessInstanceRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

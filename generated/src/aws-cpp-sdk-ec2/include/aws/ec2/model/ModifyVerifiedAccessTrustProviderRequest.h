@@ -39,120 +39,120 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline const Aws::String& GetVerifiedAccessTrustProviderId() const{ return m_verifiedAccessTrustProviderId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline bool VerifiedAccessTrustProviderIdHasBeenSet() const { return m_verifiedAccessTrustProviderIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const Aws::String& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(Aws::String&& value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProviderId(const char* value) { m_verifiedAccessTrustProviderIdHasBeenSet = true; m_verifiedAccessTrustProviderId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const Aws::String& value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(Aws::String&& value) { SetVerifiedAccessTrustProviderId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithVerifiedAccessTrustProviderId(const char* value) { SetVerifiedAccessTrustProviderId(value); return *this;}
 
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline const ModifyVerifiedAccessTrustProviderOidcOptions& GetOidcOptions() const{ return m_oidcOptions; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline bool OidcOptionsHasBeenSet() const { return m_oidcOptionsHasBeenSet; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline void SetOidcOptions(const ModifyVerifiedAccessTrustProviderOidcOptions& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = value; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline void SetOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions&& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = std::move(value); }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithOidcOptions(const ModifyVerifiedAccessTrustProviderOidcOptions& value) { SetOidcOptions(value); return *this;}
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for an OpenID Connect-compatible user-identity trust
+     * provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithOidcOptions(ModifyVerifiedAccessTrustProviderOidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline ModifyVerifiedAccessTrustProviderRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

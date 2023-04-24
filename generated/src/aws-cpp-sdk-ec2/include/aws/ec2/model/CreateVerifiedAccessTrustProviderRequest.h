@@ -45,162 +45,180 @@ namespace Model
   public:
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline const TrustProviderType& GetTrustProviderType() const{ return m_trustProviderType; }
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline bool TrustProviderTypeHasBeenSet() const { return m_trustProviderTypeHasBeenSet; }
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline void SetTrustProviderType(const TrustProviderType& value) { m_trustProviderTypeHasBeenSet = true; m_trustProviderType = value; }
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline void SetTrustProviderType(TrustProviderType&& value) { m_trustProviderTypeHasBeenSet = true; m_trustProviderType = std::move(value); }
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithTrustProviderType(const TrustProviderType& value) { SetTrustProviderType(value); return *this;}
 
     /**
-     * <p>The type of trust provider can be either user or device-based.</p>
+     * <p>The type of trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithTrustProviderType(TrustProviderType&& value) { SetTrustProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline const UserTrustProviderType& GetUserTrustProviderType() const{ return m_userTrustProviderType; }
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline bool UserTrustProviderTypeHasBeenSet() const { return m_userTrustProviderTypeHasBeenSet; }
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline void SetUserTrustProviderType(const UserTrustProviderType& value) { m_userTrustProviderTypeHasBeenSet = true; m_userTrustProviderType = value; }
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline void SetUserTrustProviderType(UserTrustProviderType&& value) { m_userTrustProviderTypeHasBeenSet = true; m_userTrustProviderType = std::move(value); }
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithUserTrustProviderType(const UserTrustProviderType& value) { SetUserTrustProviderType(value); return *this;}
 
     /**
-     * <p>The type of user-based trust provider.</p>
+     * <p>The type of user-based trust provider. This parameter is required when the
+     * provider type is <code>user</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithUserTrustProviderType(UserTrustProviderType&& value) { SetUserTrustProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline const DeviceTrustProviderType& GetDeviceTrustProviderType() const{ return m_deviceTrustProviderType; }
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline bool DeviceTrustProviderTypeHasBeenSet() const { return m_deviceTrustProviderTypeHasBeenSet; }
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline void SetDeviceTrustProviderType(const DeviceTrustProviderType& value) { m_deviceTrustProviderTypeHasBeenSet = true; m_deviceTrustProviderType = value; }
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline void SetDeviceTrustProviderType(DeviceTrustProviderType&& value) { m_deviceTrustProviderTypeHasBeenSet = true; m_deviceTrustProviderType = std::move(value); }
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDeviceTrustProviderType(const DeviceTrustProviderType& value) { SetDeviceTrustProviderType(value); return *this;}
 
     /**
-     * <p>The type of device-based trust provider.</p>
+     * <p>The type of device-based trust provider. This parameter is required when the
+     * provider type is <code>device</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDeviceTrustProviderType(DeviceTrustProviderType&& value) { SetDeviceTrustProviderType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline const CreateVerifiedAccessTrustProviderOidcOptions& GetOidcOptions() const{ return m_oidcOptions; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline bool OidcOptionsHasBeenSet() const { return m_oidcOptionsHasBeenSet; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline void SetOidcOptions(const CreateVerifiedAccessTrustProviderOidcOptions& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = value; }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline void SetOidcOptions(CreateVerifiedAccessTrustProviderOidcOptions&& value) { m_oidcOptionsHasBeenSet = true; m_oidcOptions = std::move(value); }
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithOidcOptions(const CreateVerifiedAccessTrustProviderOidcOptions& value) { SetOidcOptions(value); return *this;}
 
     /**
-     * <p>The OpenID Connect details for an <code>oidc</code>-type, user-identity based
-     * trust provider.</p>
+     * <p>The options for a OpenID Connect-compatible user-identity trust provider.
+     * This parameter is required when the provider type is <code>user</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithOidcOptions(CreateVerifiedAccessTrustProviderOidcOptions&& value) { SetOidcOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline const CreateVerifiedAccessTrustProviderDeviceOptions& GetDeviceOptions() const{ return m_deviceOptions; }
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline bool DeviceOptionsHasBeenSet() const { return m_deviceOptionsHasBeenSet; }
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline void SetDeviceOptions(const CreateVerifiedAccessTrustProviderDeviceOptions& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = value; }
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline void SetDeviceOptions(CreateVerifiedAccessTrustProviderDeviceOptions&& value) { m_deviceOptionsHasBeenSet = true; m_deviceOptions = std::move(value); }
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDeviceOptions(const CreateVerifiedAccessTrustProviderDeviceOptions& value) { SetDeviceOptions(value); return *this;}
 
     /**
-     * <p>The options for device identity based trust providers.</p>
+     * <p>The options for a device-based trust provider. This parameter is required
+     * when the provider type is <code>device</code>.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDeviceOptions(CreateVerifiedAccessTrustProviderDeviceOptions&& value) { SetDeviceOptions(std::move(value)); return *this;}
 
@@ -247,91 +265,83 @@ namespace Model
 
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access trust provider.</p>
+     * <p>A description for the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access trust
-     * provider.</p>
+     * <p>The tags to assign to the Verified Access trust provider.</p>
      */
     inline CreateVerifiedAccessTrustProviderRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

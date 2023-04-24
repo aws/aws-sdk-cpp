@@ -16,28 +16,28 @@ namespace Aws
 namespace CodeCatalyst
 {
   /**
-   *  <p> <b>Amazon CodeCatalyst is in preview release and subject to
-   * change.</b> </p>  <p>Welcome to the Amazon CodeCatalyst API reference.
-   * This reference provides descriptions of operations and data types for Amazon
-   * CodeCatalyst. You can use the Amazon CodeCatalyst API to work with the following
-   * objects. </p> <p>Dev Environments and the Amazon Web Services Toolkits, by
-   * calling the following:</p> <ul> <li> <p> <a>CreateAccessToken</a>, which creates
-   * a personal access token (PAT) for the current user.</p> </li> <li> <p>
-   * <a>CreateDevEnvironment</a>, which creates a Dev Environment, where you can
-   * quickly work on the code stored in the source repositories of your project.</p>
-   * </li> <li> <p> <a>CreateProject</a> which creates a project in a specified
-   * space.</p> </li> <li> <p> <a>CreateSourceRepositoryBranch</a>, which creates a
-   * branch in a specified repository where you can work on code.</p> </li> <li> <p>
+   * <p>Welcome to the Amazon CodeCatalyst API reference. This reference provides
+   * descriptions of operations and data types for Amazon CodeCatalyst. You can use
+   * the Amazon CodeCatalyst API to work with the following objects. </p> <p>Dev
+   * Environments and the Amazon Web Services Toolkits, by calling the following:</p>
+   * <ul> <li> <p> <a>CreateAccessToken</a>, which creates a personal access token
+   * (PAT) for the current user.</p> </li> <li> <p> <a>CreateDevEnvironment</a>,
+   * which creates a Dev Environment, where you can quickly work on the code stored
+   * in the source repositories of your project.</p> </li> <li> <p>
+   * <a>CreateProject</a> which creates a project in a specified space.</p> </li>
+   * <li> <p> <a>CreateSourceRepositoryBranch</a>, which creates a branch in a
+   * specified repository where you can work on code.</p> </li> <li> <p>
    * <a>DeleteDevEnvironment</a>, which deletes a Dev Environment.</p> </li> <li> <p>
    * <a>GetDevEnvironment</a>, which returns information about a Dev Environment.</p>
    * </li> <li> <p> <a>GetProject</a>, which returns information about a project.</p>
    * </li> <li> <p> <a>GetSourceRepositoryCloneUrls</a>, which returns information
    * about the URLs that can be used with a Git client to clone a source
-   * repository.</p> </li> <li> <p> <a>GetSubscription</a>, which returns information
+   * repository.</p> </li> <li> <p> <a>GetSpace</a>, which returns information about
+   * a space.</p> </li> <li> <p> <a>GetSubscription</a>, which returns information
    * about the Amazon Web Services account used for billing purposes and the billing
    * plan for the space.</p> </li> <li> <p> <a>GetUserDetails</a>, which returns
    * information about a user in Amazon CodeCatalyst.</p> </li> <li> <p>
-   * <a>ListDevEnvironments</a>, which retrives a list of Dev Environments in a
+   * <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a
    * project.</p> </li> <li> <p> <a>ListProjects</a>, which retrieves a list of
    * projects in a space.</p> </li> <li> <p> <a>ListSourceRepositories</a>, which
    * retrieves a list of source repositories in a project.</p> </li> <li> <p>
@@ -58,7 +58,13 @@ namespace CodeCatalyst
    * (PAT).</p> </li> <li> <p> <a>ListAccessTokens</a>, which lists all personal
    * access tokens (PATs) associated with a user.</p> </li> <li> <p>
    * <a>ListEventLogs</a>, which retrieves a list of events that occurred during a
-   * specified time period in a space.</p> </li> </ul>
+   * specified time period in a space.</p> </li> </ul>  <p>If you are using the
+   * Amazon CodeCatalyst APIs with an SDK or the CLI, you must configure your
+   * computer to work with Amazon CodeCatalyst and single sign-on (SSO). For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/set-up-cli.html">Setting
+   * up to use the CLI with Amazon CodeCatalyst</a> and the SSO documentation for
+   * your SDK.</p> 
    */
   class AWS_CODECATALYST_API CodeCatalystClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<CodeCatalystClient>
   {
@@ -87,10 +93,12 @@ namespace CodeCatalyst
 
         /**
          * <p>Creates a personal access token (PAT) for the current user. A personal access
-         * token (PAT) is similar to a password. It is associated with your user account.
-         * You use PATs to access Amazon CodeCatalyst resources such as source repositories
-         * from third-party applications like Git and integrated development environments
-         * (IDEs). For more information, see <a
+         * token (PAT) is similar to a password. It is associated with your user identity
+         * for use across all spaces and projects in Amazon CodeCatalyst. You use PATs to
+         * access CodeCatalyst from resources that include integrated development
+         * environments (IDEs) and Git-based source repositories. PATs represent you in
+         * Amazon CodeCatalyst and you can manage them in your user settings.For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html">Managing
          * personal access tokens in Amazon CodeCatalyst</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/CreateAccessToken">AWS
@@ -118,8 +126,8 @@ namespace CodeCatalyst
 
         /**
          * <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development
-         * Dev Environment that you can use to quickly work on the code stored in the
-         * source repositories of your project. </p>  <p>When created in the Amazon
+         * environment that you can use to quickly work on the code stored in the source
+         * repositories of your project. </p>  <p>When created in the Amazon
          * CodeCatalyst console, by default a Dev Environment is configured to have a 2
          * core processor, 4GB of RAM, and 16GB of persistent storage. None of these
          * defaults apply to a Dev Environment created programmatically.</p>
@@ -407,8 +415,8 @@ namespace CodeCatalyst
 
         /**
          * <p>Lists all personal access tokens (PATs) associated with the user who calls
-         * the API. You can only list PATs associated with your user account.</p><p><h3>See
-         * Also:</h3>   <a
+         * the API. You can only list PATs associated with your Amazon Web Services Builder
+         * ID.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListAccessTokens">AWS
          * API Reference</a></p>
          */
@@ -433,7 +441,7 @@ namespace CodeCatalyst
         }
 
         /**
-         * <p>Retrives a list of Dev Environments in a project.</p><p><h3>See Also:</h3>  
+         * <p>Retrieves a list of Dev Environments in a project.</p><p><h3>See Also:</h3>  
          * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironments">AWS
          * API Reference</a></p>

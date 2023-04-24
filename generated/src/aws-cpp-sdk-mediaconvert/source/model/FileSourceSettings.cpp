@@ -21,6 +21,8 @@ namespace Model
 FileSourceSettings::FileSourceSettings() : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_convertPaintToPop(CaptionSourceConvertPaintOnToPopOn::NOT_SET),
+    m_convertPaintToPopHasBeenSet(false),
     m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
@@ -33,6 +35,8 @@ FileSourceSettings::FileSourceSettings() :
 FileSourceSettings::FileSourceSettings(JsonView jsonValue) : 
     m_convert608To708(FileSourceConvert608To708::NOT_SET),
     m_convert608To708HasBeenSet(false),
+    m_convertPaintToPop(CaptionSourceConvertPaintOnToPopOn::NOT_SET),
+    m_convertPaintToPopHasBeenSet(false),
     m_framerateHasBeenSet(false),
     m_sourceFileHasBeenSet(false),
     m_timeDelta(0),
@@ -50,6 +54,13 @@ FileSourceSettings& FileSourceSettings::operator =(JsonView jsonValue)
     m_convert608To708 = FileSourceConvert608To708Mapper::GetFileSourceConvert608To708ForName(jsonValue.GetString("convert608To708"));
 
     m_convert608To708HasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("convertPaintToPop"))
+  {
+    m_convertPaintToPop = CaptionSourceConvertPaintOnToPopOnMapper::GetCaptionSourceConvertPaintOnToPopOnForName(jsonValue.GetString("convertPaintToPop"));
+
+    m_convertPaintToPopHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("framerate"))
@@ -90,6 +101,11 @@ JsonValue FileSourceSettings::Jsonize() const
   if(m_convert608To708HasBeenSet)
   {
    payload.WithString("convert608To708", FileSourceConvert608To708Mapper::GetNameForFileSourceConvert608To708(m_convert608To708));
+  }
+
+  if(m_convertPaintToPopHasBeenSet)
+  {
+   payload.WithString("convertPaintToPop", CaptionSourceConvertPaintOnToPopOnMapper::GetNameForCaptionSourceConvertPaintOnToPopOn(m_convertPaintToPop));
   }
 
   if(m_framerateHasBeenSet)

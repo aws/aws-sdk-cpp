@@ -78,37 +78,37 @@ namespace Model
 
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline const Aws::Vector<SpaceSummary>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline void SetItems(const Aws::Vector<SpaceSummary>& value) { m_items = value; }
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline void SetItems(Aws::Vector<SpaceSummary>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline ListSpacesResult& WithItems(const Aws::Vector<SpaceSummary>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline ListSpacesResult& WithItems(Aws::Vector<SpaceSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline ListSpacesResult& AddItems(const SpaceSummary& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Information about the space. </p>
+     * <p>Information about the spaces. </p>
      */
     inline ListSpacesResult& AddItems(SpaceSummary&& value) { m_items.push_back(std::move(value)); return *this; }
 

@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Options for OIDC-based, user-identity type trust provider.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the options for an OpenID Connect-compatible user-identity trust
+   * provider.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/OidcOptions">AWS API
    * Reference</a></p>
    */

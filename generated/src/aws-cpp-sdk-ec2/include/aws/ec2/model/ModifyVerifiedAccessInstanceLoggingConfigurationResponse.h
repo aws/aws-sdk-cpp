@@ -34,32 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The logging configuration for Amazon Web Services Verified Access
-     * instance.</p>
+     * <p>The logging configuration for the Verified Access instance.</p>
      */
     inline const VerifiedAccessInstanceLoggingConfiguration& GetLoggingConfiguration() const{ return m_loggingConfiguration; }
 
     /**
-     * <p>The logging configuration for Amazon Web Services Verified Access
-     * instance.</p>
+     * <p>The logging configuration for the Verified Access instance.</p>
      */
     inline void SetLoggingConfiguration(const VerifiedAccessInstanceLoggingConfiguration& value) { m_loggingConfiguration = value; }
 
     /**
-     * <p>The logging configuration for Amazon Web Services Verified Access
-     * instance.</p>
+     * <p>The logging configuration for the Verified Access instance.</p>
      */
     inline void SetLoggingConfiguration(VerifiedAccessInstanceLoggingConfiguration&& value) { m_loggingConfiguration = std::move(value); }
 
     /**
-     * <p>The logging configuration for Amazon Web Services Verified Access
-     * instance.</p>
+     * <p>The logging configuration for the Verified Access instance.</p>
      */
     inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithLoggingConfiguration(const VerifiedAccessInstanceLoggingConfiguration& value) { SetLoggingConfiguration(value); return *this;}
 
     /**
-     * <p>The logging configuration for Amazon Web Services Verified Access
-     * instance.</p>
+     * <p>The logging configuration for the Verified Access instance.</p>
      */
     inline ModifyVerifiedAccessInstanceLoggingConfigurationResponse& WithLoggingConfiguration(VerifiedAccessInstanceLoggingConfiguration&& value) { SetLoggingConfiguration(std::move(value)); return *this;}
 

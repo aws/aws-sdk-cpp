@@ -35,37 +35,44 @@ namespace Model
 
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline const Aws::Vector<AccessTokenSummary>& GetItems() const{ return m_items; }
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline void SetItems(const Aws::Vector<AccessTokenSummary>& value) { m_items = value; }
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline void SetItems(Aws::Vector<AccessTokenSummary>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline ListAccessTokensResult& WithItems(const Aws::Vector<AccessTokenSummary>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline ListAccessTokensResult& WithItems(Aws::Vector<AccessTokenSummary>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline ListAccessTokensResult& AddItems(const AccessTokenSummary& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>A list of personal access tokens (PATs) associated with the calling user.</p>
+     * <p>A list of personal access tokens (PATs) associated with the calling user
+     * identity.</p>
      */
     inline ListAccessTokensResult& AddItems(AccessTokenSummary&& value) { m_items.push_back(std::move(value)); return *this; }
 

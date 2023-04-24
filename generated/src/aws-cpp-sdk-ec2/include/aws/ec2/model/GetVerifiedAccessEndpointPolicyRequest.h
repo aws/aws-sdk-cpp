@@ -37,42 +37,42 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline const Aws::String& GetVerifiedAccessEndpointId() const{ return m_verifiedAccessEndpointId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline bool VerifiedAccessEndpointIdHasBeenSet() const { return m_verifiedAccessEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(const Aws::String& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(Aws::String&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(const char* value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline GetVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(const Aws::String& value) { SetVerifiedAccessEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline GetVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(Aws::String&& value) { SetVerifiedAccessEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline GetVerifiedAccessEndpointPolicyRequest& WithVerifiedAccessEndpointId(const char* value) { SetVerifiedAccessEndpointId(value); return *this;}
 

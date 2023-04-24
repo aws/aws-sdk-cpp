@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/FileSourceConvert608To708.h>
+#include <aws/mediaconvert/model/CaptionSourceConvertPaintOnToPopOn.h>
 #include <aws/mediaconvert/model/CaptionSourceFramerate.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/FileSourceTimeDeltaUnits.h>
@@ -96,6 +97,55 @@ namespace Model
      * data into 708.
      */
     inline FileSourceSettings& WithConvert608To708(FileSourceConvert608To708&& value) { SetConvert608To708(std::move(value)); return *this;}
+
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline const CaptionSourceConvertPaintOnToPopOn& GetConvertPaintToPop() const{ return m_convertPaintToPop; }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline bool ConvertPaintToPopHasBeenSet() const { return m_convertPaintToPopHasBeenSet; }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline void SetConvertPaintToPop(const CaptionSourceConvertPaintOnToPopOn& value) { m_convertPaintToPopHasBeenSet = true; m_convertPaintToPop = value; }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline void SetConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn&& value) { m_convertPaintToPopHasBeenSet = true; m_convertPaintToPop = std::move(value); }
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline FileSourceSettings& WithConvertPaintToPop(const CaptionSourceConvertPaintOnToPopOn& value) { SetConvertPaintToPop(value); return *this;}
+
+    /**
+     * Choose the presentation style of your input SCC captions. To use the same
+     * presentation style as your input: Keep the default value, Disabled. To convert
+     * paint-on captions to pop-on: Choose Enabled. We also recommend that you choose
+     * Enabled if you notice additional repeated lines in your output captions.
+     */
+    inline FileSourceSettings& WithConvertPaintToPop(CaptionSourceConvertPaintOnToPopOn&& value) { SetConvertPaintToPop(std::move(value)); return *this;}
 
 
     /**
@@ -335,6 +385,9 @@ namespace Model
 
     FileSourceConvert608To708 m_convert608To708;
     bool m_convert608To708HasBeenSet = false;
+
+    CaptionSourceConvertPaintOnToPopOn m_convertPaintToPop;
+    bool m_convertPaintToPopHasBeenSet = false;
 
     CaptionSourceFramerate m_framerate;
     bool m_framerateHasBeenSet = false;

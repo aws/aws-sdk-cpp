@@ -26,6 +26,7 @@ namespace Aws
         static const int H_264_HASH = HashingUtils::HashString("H_264");
         static const int H_265_HASH = HashingUtils::HashString("H_265");
         static const int MPEG2_HASH = HashingUtils::HashString("MPEG2");
+        static const int PASSTHROUGH_HASH = HashingUtils::HashString("PASSTHROUGH");
         static const int PRORES_HASH = HashingUtils::HashString("PRORES");
         static const int VC3_HASH = HashingUtils::HashString("VC3");
         static const int VP8_HASH = HashingUtils::HashString("VP8");
@@ -59,6 +60,10 @@ namespace Aws
           else if (hashCode == MPEG2_HASH)
           {
             return VideoCodec::MPEG2;
+          }
+          else if (hashCode == PASSTHROUGH_HASH)
+          {
+            return VideoCodec::PASSTHROUGH;
           }
           else if (hashCode == PRORES_HASH)
           {
@@ -106,6 +111,8 @@ namespace Aws
             return "H_265";
           case VideoCodec::MPEG2:
             return "MPEG2";
+          case VideoCodec::PASSTHROUGH:
+            return "PASSTHROUGH";
           case VideoCodec::PRORES:
             return "PRORES";
           case VideoCodec::VC3:
