@@ -25,7 +25,9 @@ namespace Model
 {
 
   /**
-   * <p>Options for a network interface-type endpoint.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the network interface options when creating an Amazon Web Services
+   * Verified Access endpoint using the <code>network-interface</code>
+   * type.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessEndpointEniOptions">AWS
    * API Reference</a></p>
    */

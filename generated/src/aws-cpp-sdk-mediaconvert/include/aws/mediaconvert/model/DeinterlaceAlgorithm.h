@@ -19,7 +19,8 @@ namespace Model
     INTERPOLATE,
     INTERPOLATE_TICKER,
     BLEND,
-    BLEND_TICKER
+    BLEND_TICKER,
+    LINEAR_INTERPOLATION
   };
 
 namespace DeinterlaceAlgorithmMapper

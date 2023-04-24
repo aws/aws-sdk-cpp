@@ -297,7 +297,7 @@ namespace Model
      * Specify the True-peak limiter threshold in decibels relative to full scale
      * (dBFS). The peak inter-audio sample loudness in your output will be limited to
      * the value that you specify, without affecting the overall target LKFS. Enter a
-     * value from 0 to -20. Leave blank to use the default value 0.
+     * value from 0 to -8. Leave blank to use the default value 0.
      */
     inline double GetTruePeakLimiterThreshold() const{ return m_truePeakLimiterThreshold; }
 
@@ -305,7 +305,7 @@ namespace Model
      * Specify the True-peak limiter threshold in decibels relative to full scale
      * (dBFS). The peak inter-audio sample loudness in your output will be limited to
      * the value that you specify, without affecting the overall target LKFS. Enter a
-     * value from 0 to -20. Leave blank to use the default value 0.
+     * value from 0 to -8. Leave blank to use the default value 0.
      */
     inline bool TruePeakLimiterThresholdHasBeenSet() const { return m_truePeakLimiterThresholdHasBeenSet; }
 
@@ -313,7 +313,7 @@ namespace Model
      * Specify the True-peak limiter threshold in decibels relative to full scale
      * (dBFS). The peak inter-audio sample loudness in your output will be limited to
      * the value that you specify, without affecting the overall target LKFS. Enter a
-     * value from 0 to -20. Leave blank to use the default value 0.
+     * value from 0 to -8. Leave blank to use the default value 0.
      */
     inline void SetTruePeakLimiterThreshold(double value) { m_truePeakLimiterThresholdHasBeenSet = true; m_truePeakLimiterThreshold = value; }
 
@@ -321,7 +321,7 @@ namespace Model
      * Specify the True-peak limiter threshold in decibels relative to full scale
      * (dBFS). The peak inter-audio sample loudness in your output will be limited to
      * the value that you specify, without affecting the overall target LKFS. Enter a
-     * value from 0 to -20. Leave blank to use the default value 0.
+     * value from 0 to -8. Leave blank to use the default value 0.
      */
     inline AudioNormalizationSettings& WithTruePeakLimiterThreshold(double value) { SetTruePeakLimiterThreshold(value); return *this;}
 

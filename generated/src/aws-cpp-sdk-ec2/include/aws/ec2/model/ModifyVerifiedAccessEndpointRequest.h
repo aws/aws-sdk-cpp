@@ -40,120 +40,120 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline const Aws::String& GetVerifiedAccessEndpointId() const{ return m_verifiedAccessEndpointId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline bool VerifiedAccessEndpointIdHasBeenSet() const { return m_verifiedAccessEndpointIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(const Aws::String& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(Aws::String&& value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpointId(const char* value) { m_verifiedAccessEndpointIdHasBeenSet = true; m_verifiedAccessEndpointId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessEndpointId(const Aws::String& value) { SetVerifiedAccessEndpointId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessEndpointId(Aws::String&& value) { SetVerifiedAccessEndpointId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessEndpointId(const char* value) { SetVerifiedAccessEndpointId(value); return *this;}
 
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline const Aws::String& GetVerifiedAccessGroupId() const{ return m_verifiedAccessGroupId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline bool VerifiedAccessGroupIdHasBeenSet() const { return m_verifiedAccessGroupIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(const Aws::String& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(Aws::String&& value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroupId(const char* value) { m_verifiedAccessGroupIdHasBeenSet = true; m_verifiedAccessGroupId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(const Aws::String& value) { SetVerifiedAccessGroupId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(Aws::String&& value) { SetVerifiedAccessGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access group.</p>
+     * <p>The ID of the Verified Access group.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithVerifiedAccessGroupId(const char* value) { SetVerifiedAccessGroupId(value); return *this;}
 
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline const ModifyVerifiedAccessEndpointLoadBalancerOptions& GetLoadBalancerOptions() const{ return m_loadBalancerOptions; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline bool LoadBalancerOptionsHasBeenSet() const { return m_loadBalancerOptionsHasBeenSet; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline void SetLoadBalancerOptions(const ModifyVerifiedAccessEndpointLoadBalancerOptions& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = value; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline void SetLoadBalancerOptions(ModifyVerifiedAccessEndpointLoadBalancerOptions&& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = std::move(value); }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithLoadBalancerOptions(const ModifyVerifiedAccessEndpointLoadBalancerOptions& value) { SetLoadBalancerOptions(value); return *this;}
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details if creating the Verified Access endpoint as
+     * <code>load-balancer</code>type.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithLoadBalancerOptions(ModifyVerifiedAccessEndpointLoadBalancerOptions&& value) { SetLoadBalancerOptions(std::move(value)); return *this;}
 
@@ -190,42 +190,42 @@ namespace Model
 
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline ModifyVerifiedAccessEndpointRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline const VerifiedAccessTrustProvider& GetVerifiedAccessTrustProvider() const{ return m_verifiedAccessTrustProvider; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { m_verifiedAccessTrustProvider = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline void SetVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { m_verifiedAccessTrustProvider = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DeleteVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(const VerifiedAccessTrustProvider& value) { SetVerifiedAccessTrustProvider(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access trust provider.</p>
+     * <p>The ID of the Verified Access trust provider.</p>
      */
     inline DeleteVerifiedAccessTrustProviderResponse& WithVerifiedAccessTrustProvider(VerifiedAccessTrustProvider&& value) { SetVerifiedAccessTrustProvider(std::move(value)); return *this;}
 

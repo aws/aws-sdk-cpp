@@ -5,6 +5,8 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AdvancedInputFilter.h>
+#include <aws/mediaconvert/model/AdvancedInputFilterSettings.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconvert/model/Rectangle.h>
 #include <aws/mediaconvert/model/InputDeblockFilter.h>
@@ -50,6 +52,134 @@ namespace Model
     AWS_MEDIACONVERT_API InputTemplate(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API InputTemplate& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_MEDIACONVERT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline const AdvancedInputFilter& GetAdvancedInputFilter() const{ return m_advancedInputFilter; }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline bool AdvancedInputFilterHasBeenSet() const { return m_advancedInputFilterHasBeenSet; }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline void SetAdvancedInputFilter(const AdvancedInputFilter& value) { m_advancedInputFilterHasBeenSet = true; m_advancedInputFilter = value; }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline void SetAdvancedInputFilter(AdvancedInputFilter&& value) { m_advancedInputFilterHasBeenSet = true; m_advancedInputFilter = std::move(value); }
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline InputTemplate& WithAdvancedInputFilter(const AdvancedInputFilter& value) { SetAdvancedInputFilter(value); return *this;}
+
+    /**
+     * Use to remove noise, blocking, blurriness, or ringing from your input as a
+     * pre-filter step before encoding. The Advanced input filter removes more types of
+     * compression artifacts and is an improvement when compared to basic Deblock and
+     * Denoise filters. To remove video compression artifacts from your input and
+     * improve the video quality: Choose Enabled. Additionally, this filter can help
+     * increase the video quality of your output relative to its bitrate, since noisy
+     * inputs are more complex and require more bits to encode. To help restore loss of
+     * detail after applying the filter, you can optionally add texture or sharpening
+     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * apply advanced input filtering: Choose Disabled. Note that you can still apply
+     * basic filtering with Deblock and Denoise.
+     */
+    inline InputTemplate& WithAdvancedInputFilter(AdvancedInputFilter&& value) { SetAdvancedInputFilter(std::move(value)); return *this;}
+
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline const AdvancedInputFilterSettings& GetAdvancedInputFilterSettings() const{ return m_advancedInputFilterSettings; }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline bool AdvancedInputFilterSettingsHasBeenSet() const { return m_advancedInputFilterSettingsHasBeenSet; }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline void SetAdvancedInputFilterSettings(const AdvancedInputFilterSettings& value) { m_advancedInputFilterSettingsHasBeenSet = true; m_advancedInputFilterSettings = value; }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline void SetAdvancedInputFilterSettings(AdvancedInputFilterSettings&& value) { m_advancedInputFilterSettingsHasBeenSet = true; m_advancedInputFilterSettings = std::move(value); }
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline InputTemplate& WithAdvancedInputFilterSettings(const AdvancedInputFilterSettings& value) { SetAdvancedInputFilterSettings(value); return *this;}
+
+    /**
+     * Optional settings for Advanced input filter when you set Advanced input filter
+     * to Enabled.
+     */
+    inline InputTemplate& WithAdvancedInputFilterSettings(AdvancedInputFilterSettings&& value) { SetAdvancedInputFilterSettings(std::move(value)); return *this;}
 
 
     /**
@@ -536,93 +666,97 @@ namespace Model
 
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline const InputFilterEnable& GetFilterEnable() const{ return m_filterEnable; }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline bool FilterEnableHasBeenSet() const { return m_filterEnableHasBeenSet; }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline void SetFilterEnable(const InputFilterEnable& value) { m_filterEnableHasBeenSet = true; m_filterEnable = value; }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline void SetFilterEnable(InputFilterEnable&& value) { m_filterEnableHasBeenSet = true; m_filterEnable = std::move(value); }
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline InputTemplate& WithFilterEnable(const InputFilterEnable& value) { SetFilterEnable(value); return *this;}
 
     /**
-     * Specify how the transcoding service applies the denoise and deblock filters. You
-     * must also enable the filters separately, with Denoise (InputDenoiseFilter) and
-     * Deblock (InputDeblockFilter). * Auto - The transcoding service determines
-     * whether to apply filtering, depending on input type and quality. * Disable - The
-     * input is not filtered. This is true even if you use the API to enable them in
-     * (InputDeblockFilter) and (InputDeblockFilter). * Force - The input is filtered
-     * regardless of input type.
+     * Specify whether to apply input filtering to improve the video quality of your
+     * input. To apply filtering depending on your input type and quality: Choose Auto.
+     * To apply no filtering: Choose Disable. To apply filtering regardless of your
+     * input type and quality: Choose Force. When you do, you must also specify a value
+     * for Filter strength.
      */
     inline InputTemplate& WithFilterEnable(InputFilterEnable&& value) { SetFilterEnable(std::move(value)); return *this;}
 
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of
+     * filtering based the compression artifacts measured in your input: We recommend
+     * that you leave Filter strength blank and set Filter enable to Auto. To manually
+     * apply filtering: Enter a value from 1 to 5, where 1 is the least amount of
+     * filtering and 5 is the most. The value that you enter applies to the strength of
+     * the Deblock or Denoise filters, or to the strength of the Advanced input filter.
      */
     inline int GetFilterStrength() const{ return m_filterStrength; }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of
+     * filtering based the compression artifacts measured in your input: We recommend
+     * that you leave Filter strength blank and set Filter enable to Auto. To manually
+     * apply filtering: Enter a value from 1 to 5, where 1 is the least amount of
+     * filtering and 5 is the most. The value that you enter applies to the strength of
+     * the Deblock or Denoise filters, or to the strength of the Advanced input filter.
      */
     inline bool FilterStrengthHasBeenSet() const { return m_filterStrengthHasBeenSet; }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of
+     * filtering based the compression artifacts measured in your input: We recommend
+     * that you leave Filter strength blank and set Filter enable to Auto. To manually
+     * apply filtering: Enter a value from 1 to 5, where 1 is the least amount of
+     * filtering and 5 is the most. The value that you enter applies to the strength of
+     * the Deblock or Denoise filters, or to the strength of the Advanced input filter.
      */
     inline void SetFilterStrength(int value) { m_filterStrengthHasBeenSet = true; m_filterStrength = value; }
 
     /**
-     * Use Filter strength (FilterStrength) to adjust the magnitude the input filter
-     * settings (Deblock and Denoise). The range is 0 to 5. Default is 0.
+     * Specify the strength of the input filter. To apply an automatic amount of
+     * filtering based the compression artifacts measured in your input: We recommend
+     * that you leave Filter strength blank and set Filter enable to Auto. To manually
+     * apply filtering: Enter a value from 1 to 5, where 1 is the least amount of
+     * filtering and 5 is the most. The value that you enter applies to the strength of
+     * the Deblock or Denoise filters, or to the strength of the Advanced input filter.
      */
     inline InputTemplate& WithFilterStrength(int value) { SetFilterStrength(value); return *this;}
 
@@ -1168,6 +1302,12 @@ namespace Model
     inline InputTemplate& WithVideoSelector(VideoSelector&& value) { SetVideoSelector(std::move(value)); return *this;}
 
   private:
+
+    AdvancedInputFilter m_advancedInputFilter;
+    bool m_advancedInputFilterHasBeenSet = false;
+
+    AdvancedInputFilterSettings m_advancedInputFilterSettings;
+    bool m_advancedInputFilterSettingsHasBeenSet = false;
 
     Aws::Map<Aws::String, AudioSelectorGroup> m_audioSelectorGroups;
     bool m_audioSelectorGroupsHasBeenSet = false;

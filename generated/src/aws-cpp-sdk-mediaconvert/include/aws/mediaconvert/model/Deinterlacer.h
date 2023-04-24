@@ -40,56 +40,62 @@ namespace Model
 
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline const DeinterlaceAlgorithm& GetAlgorithm() const{ return m_algorithm; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline void SetAlgorithm(const DeinterlaceAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline void SetAlgorithm(DeinterlaceAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline Deinterlacer& WithAlgorithm(const DeinterlaceAlgorithm& value) { SetAlgorithm(value); return *this;}
 
     /**
-     * Only applies when you set Deinterlacer (DeinterlaceMode) to Deinterlace
-     * (DEINTERLACE) or Adaptive (ADAPTIVE). Motion adaptive interpolate (INTERPOLATE)
-     * produces sharper pictures, while blend (BLEND) produces smoother motion. Use
-     * (INTERPOLATE_TICKER) OR (BLEND_TICKER) if your source file includes a ticker,
-     * such as a scrolling headline at the bottom of the frame.
+     * Only applies when you set Deinterlace mode to Deinterlace or Adaptive.
+     * Interpolate produces sharper pictures, while blend produces smoother motion. If
+     * your source file includes a ticker, such as a scrolling headline at the bottom
+     * of the frame: Choose Interpolate ticker or Blend ticker. To apply field
+     * doubling: Choose Linear interpolation. Note that Linear interpolation may
+     * introduce video artifacts into your output.
      */
     inline Deinterlacer& WithAlgorithm(DeinterlaceAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
 

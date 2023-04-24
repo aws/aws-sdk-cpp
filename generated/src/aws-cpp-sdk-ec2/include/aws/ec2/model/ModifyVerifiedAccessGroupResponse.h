@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>Details of Amazon Web Services Verified Access group.</p>
+     * <p>Details of Verified Access group.</p>
      */
     inline const VerifiedAccessGroup& GetVerifiedAccessGroup() const{ return m_verifiedAccessGroup; }
 
     /**
-     * <p>Details of Amazon Web Services Verified Access group.</p>
+     * <p>Details of Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroup(const VerifiedAccessGroup& value) { m_verifiedAccessGroup = value; }
 
     /**
-     * <p>Details of Amazon Web Services Verified Access group.</p>
+     * <p>Details of Verified Access group.</p>
      */
     inline void SetVerifiedAccessGroup(VerifiedAccessGroup&& value) { m_verifiedAccessGroup = std::move(value); }
 
     /**
-     * <p>Details of Amazon Web Services Verified Access group.</p>
+     * <p>Details of Verified Access group.</p>
      */
     inline ModifyVerifiedAccessGroupResponse& WithVerifiedAccessGroup(const VerifiedAccessGroup& value) { SetVerifiedAccessGroup(value); return *this;}
 
     /**
-     * <p>Details of Amazon Web Services Verified Access group.</p>
+     * <p>Details of Verified Access group.</p>
      */
     inline ModifyVerifiedAccessGroupResponse& WithVerifiedAccessGroup(VerifiedAccessGroup&& value) { SetVerifiedAccessGroup(std::move(value)); return *this;}
 

@@ -19,6 +19,9 @@ namespace Model
 {
 
 Input::Input() : 
+    m_advancedInputFilter(AdvancedInputFilter::NOT_SET),
+    m_advancedInputFilterHasBeenSet(false),
+    m_advancedInputFilterSettingsHasBeenSet(false),
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
@@ -53,6 +56,9 @@ Input::Input() :
 }
 
 Input::Input(JsonView jsonValue) : 
+    m_advancedInputFilter(AdvancedInputFilter::NOT_SET),
+    m_advancedInputFilterHasBeenSet(false),
+    m_advancedInputFilterSettingsHasBeenSet(false),
     m_audioSelectorGroupsHasBeenSet(false),
     m_audioSelectorsHasBeenSet(false),
     m_captionSelectorsHasBeenSet(false),
@@ -89,6 +95,20 @@ Input::Input(JsonView jsonValue) :
 
 Input& Input::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("advancedInputFilter"))
+  {
+    m_advancedInputFilter = AdvancedInputFilterMapper::GetAdvancedInputFilterForName(jsonValue.GetString("advancedInputFilter"));
+
+    m_advancedInputFilterHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("advancedInputFilterSettings"))
+  {
+    m_advancedInputFilterSettings = jsonValue.GetObject("advancedInputFilterSettings");
+
+    m_advancedInputFilterSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("audioSelectorGroups"))
   {
     Aws::Map<Aws::String, JsonView> audioSelectorGroupsJsonMap = jsonValue.GetObject("audioSelectorGroups").GetAllObjects();
@@ -264,6 +284,17 @@ Input& Input::operator =(JsonView jsonValue)
 JsonValue Input::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_advancedInputFilterHasBeenSet)
+  {
+   payload.WithString("advancedInputFilter", AdvancedInputFilterMapper::GetNameForAdvancedInputFilter(m_advancedInputFilter));
+  }
+
+  if(m_advancedInputFilterSettingsHasBeenSet)
+  {
+   payload.WithObject("advancedInputFilterSettings", m_advancedInputFilterSettings.Jsonize());
+
+  }
 
   if(m_audioSelectorGroupsHasBeenSet)
   {

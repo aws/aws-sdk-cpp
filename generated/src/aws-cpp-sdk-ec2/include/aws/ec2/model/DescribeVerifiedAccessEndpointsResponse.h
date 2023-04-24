@@ -36,37 +36,37 @@ namespace Model
 
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline const Aws::Vector<VerifiedAccessEndpoint>& GetVerifiedAccessEndpoints() const{ return m_verifiedAccessEndpoints; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpoints(const Aws::Vector<VerifiedAccessEndpoint>& value) { m_verifiedAccessEndpoints = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline void SetVerifiedAccessEndpoints(Aws::Vector<VerifiedAccessEndpoint>&& value) { m_verifiedAccessEndpoints = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline DescribeVerifiedAccessEndpointsResponse& WithVerifiedAccessEndpoints(const Aws::Vector<VerifiedAccessEndpoint>& value) { SetVerifiedAccessEndpoints(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline DescribeVerifiedAccessEndpointsResponse& WithVerifiedAccessEndpoints(Aws::Vector<VerifiedAccessEndpoint>&& value) { SetVerifiedAccessEndpoints(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline DescribeVerifiedAccessEndpointsResponse& AddVerifiedAccessEndpoints(const VerifiedAccessEndpoint& value) { m_verifiedAccessEndpoints.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The ID of the Verified Access endpoint.</p>
      */
     inline DescribeVerifiedAccessEndpointsResponse& AddVerifiedAccessEndpoints(VerifiedAccessEndpoint&& value) { m_verifiedAccessEndpoints.push_back(std::move(value)); return *this; }
 

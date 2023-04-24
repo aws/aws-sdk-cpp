@@ -404,10 +404,10 @@ namespace Rekognition
          * and get the results for a Face Liveness session. You can use the
          * <code>OutputConfig</code> option in the Settings parameter to provide an Amazon
          * S3 bucket location. The Amazon S3 bucket stores reference images and audit
-         * images. You can use <code>AuditImagesLimit</code> to limit of audit images
-         * returned. This number is between 0 and 4. By default, it is set to 0. The limit
-         * is best effort and based on the duration of the selfie-video. </p><p><h3>See
-         * Also:</h3>   <a
+         * images. You can use <code>AuditImagesLimit</code> to limit the number of audit
+         * images returned. This number is between 0 and 4. By default, it is set to 0. The
+         * limit is best effort and based on the duration of the selfie-video.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/CreateFaceLivenessSession">AWS
          * API Reference</a></p>
          */

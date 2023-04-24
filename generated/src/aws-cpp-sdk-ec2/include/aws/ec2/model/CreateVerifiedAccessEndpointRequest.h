@@ -85,63 +85,63 @@ namespace Model
 
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline const VerifiedAccessEndpointType& GetEndpointType() const{ return m_endpointType; }
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline void SetEndpointType(const VerifiedAccessEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline void SetEndpointType(VerifiedAccessEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithEndpointType(const VerifiedAccessEndpointType& value) { SetEndpointType(value); return *this;}
 
     /**
-     * <p>The type of Amazon Web Services Verified Access endpoint to create.</p>
+     * <p>The type of Verified Access endpoint to create.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithEndpointType(VerifiedAccessEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline const VerifiedAccessEndpointAttachmentType& GetAttachmentType() const{ return m_attachmentType; }
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline bool AttachmentTypeHasBeenSet() const { return m_attachmentTypeHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline void SetAttachmentType(const VerifiedAccessEndpointAttachmentType& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = value; }
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline void SetAttachmentType(VerifiedAccessEndpointAttachmentType&& value) { m_attachmentTypeHasBeenSet = true; m_attachmentType = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithAttachmentType(const VerifiedAccessEndpointAttachmentType& value) { SetAttachmentType(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services network component Verified Access attaches to.</p>
+     * <p>The type of attachment.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithAttachmentType(VerifiedAccessEndpointAttachmentType&& value) { SetAttachmentType(std::move(value)); return *this;}
 
@@ -245,302 +245,302 @@ namespace Model
 
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline const Aws::String& GetEndpointDomainPrefix() const{ return m_endpointDomainPrefix; }
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline bool EndpointDomainPrefixHasBeenSet() const { return m_endpointDomainPrefixHasBeenSet; }
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline void SetEndpointDomainPrefix(const Aws::String& value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix = value; }
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline void SetEndpointDomainPrefix(Aws::String&& value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix = std::move(value); }
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline void SetEndpointDomainPrefix(const char* value) { m_endpointDomainPrefixHasBeenSet = true; m_endpointDomainPrefix.assign(value); }
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(const Aws::String& value) { SetEndpointDomainPrefix(value); return *this;}
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(Aws::String&& value) { SetEndpointDomainPrefix(std::move(value)); return *this;}
 
     /**
-     * <p>A custom identifier that gets prepended to a DNS name that is generated for
+     * <p>A custom identifier that is prepended to the DNS name that is generated for
      * the endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithEndpointDomainPrefix(const char* value) { SetEndpointDomainPrefix(value); return *this;}
 
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The Amazon EC2 security groups to associate with the Amazon Web Services
-     * Verified Access endpoint.</p>
+     * <p>The IDs of the security groups to associate with the Verified Access
+     * endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline const CreateVerifiedAccessEndpointLoadBalancerOptions& GetLoadBalancerOptions() const{ return m_loadBalancerOptions; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline bool LoadBalancerOptionsHasBeenSet() const { return m_loadBalancerOptionsHasBeenSet; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline void SetLoadBalancerOptions(const CreateVerifiedAccessEndpointLoadBalancerOptions& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = value; }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline void SetLoadBalancerOptions(CreateVerifiedAccessEndpointLoadBalancerOptions&& value) { m_loadBalancerOptionsHasBeenSet = true; m_loadBalancerOptions = std::move(value); }
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithLoadBalancerOptions(const CreateVerifiedAccessEndpointLoadBalancerOptions& value) { SetLoadBalancerOptions(value); return *this;}
 
     /**
-     * <p>The load balancer details if creating the Amazon Web Services Verified Access
-     * endpoint as <code>load-balancer</code>type.</p>
+     * <p>The load balancer details. This parameter is required if the endpoint type is
+     * <code>load-balancer</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithLoadBalancerOptions(CreateVerifiedAccessEndpointLoadBalancerOptions&& value) { SetLoadBalancerOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline const CreateVerifiedAccessEndpointEniOptions& GetNetworkInterfaceOptions() const{ return m_networkInterfaceOptions; }
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline bool NetworkInterfaceOptionsHasBeenSet() const { return m_networkInterfaceOptionsHasBeenSet; }
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline void SetNetworkInterfaceOptions(const CreateVerifiedAccessEndpointEniOptions& value) { m_networkInterfaceOptionsHasBeenSet = true; m_networkInterfaceOptions = value; }
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline void SetNetworkInterfaceOptions(CreateVerifiedAccessEndpointEniOptions&& value) { m_networkInterfaceOptionsHasBeenSet = true; m_networkInterfaceOptions = std::move(value); }
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithNetworkInterfaceOptions(const CreateVerifiedAccessEndpointEniOptions& value) { SetNetworkInterfaceOptions(value); return *this;}
 
     /**
-     * <p>The network interface details if creating the Amazon Web Services Verified
-     * Access endpoint as <code>network-interface</code>type.</p>
+     * <p>The network interface details. This parameter is required if the endpoint
+     * type is <code>network-interface</code>.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithNetworkInterfaceOptions(CreateVerifiedAccessEndpointEniOptions&& value) { SetNetworkInterfaceOptions(std::move(value)); return *this;}
 
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description for the Amazon Web Services Verified Access endpoint.</p>
+     * <p>A description for the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(Aws::String&& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline void SetPolicyDocument(const char* value) { m_policyDocumentHasBeenSet = true; m_policyDocument.assign(value); }
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(const Aws::String& value) { SetPolicyDocument(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(Aws::String&& value) { SetPolicyDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services Verified Access policy document.</p>
+     * <p>The Verified Access policy document.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithPolicyDocument(const char* value) { SetPolicyDocument(value); return *this;}
 
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline const Aws::Vector<TagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline void SetTagSpecifications(const Aws::Vector<TagSpecification>& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = value; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline void SetTagSpecifications(Aws::Vector<TagSpecification>&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications = std::move(value); }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithTagSpecifications(const Aws::Vector<TagSpecification>& value) { SetTagSpecifications(value); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& WithTagSpecifications(Aws::Vector<TagSpecification>&& value) { SetTagSpecifications(std::move(value)); return *this;}
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddTagSpecifications(const TagSpecification& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(value); return *this; }
 
     /**
-     * <p>The tags to assign to the Amazon Web Services Verified Access endpoint.</p>
+     * <p>The tags to assign to the Verified Access endpoint.</p>
      */
     inline CreateVerifiedAccessEndpointRequest& AddTagSpecifications(TagSpecification&& value) { m_tagSpecificationsHasBeenSet = true; m_tagSpecifications.push_back(std::move(value)); return *this; }
 

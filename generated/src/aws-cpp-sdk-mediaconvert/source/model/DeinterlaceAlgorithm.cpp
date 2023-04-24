@@ -24,6 +24,7 @@ namespace Aws
         static const int INTERPOLATE_TICKER_HASH = HashingUtils::HashString("INTERPOLATE_TICKER");
         static const int BLEND_HASH = HashingUtils::HashString("BLEND");
         static const int BLEND_TICKER_HASH = HashingUtils::HashString("BLEND_TICKER");
+        static const int LINEAR_INTERPOLATION_HASH = HashingUtils::HashString("LINEAR_INTERPOLATION");
 
 
         DeinterlaceAlgorithm GetDeinterlaceAlgorithmForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == BLEND_TICKER_HASH)
           {
             return DeinterlaceAlgorithm::BLEND_TICKER;
+          }
+          else if (hashCode == LINEAR_INTERPOLATION_HASH)
+          {
+            return DeinterlaceAlgorithm::LINEAR_INTERPOLATION;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +72,8 @@ namespace Aws
             return "BLEND";
           case DeinterlaceAlgorithm::BLEND_TICKER:
             return "BLEND_TICKER";
+          case DeinterlaceAlgorithm::LINEAR_INTERPOLATION:
+            return "LINEAR_INTERPOLATION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

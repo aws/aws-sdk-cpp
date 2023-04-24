@@ -1167,9 +1167,8 @@ namespace EC2
         }
 
         /**
-         * <p>A trust provider is a third-party entity that creates, maintains, and manages
-         * identity information for users and devices. One or more trust providers can be
-         * attached to an Amazon Web Services Verified Access instance.</p><p><h3>See
+         * <p>Attaches the specified Amazon Web Services Verified Access trust provider to
+         * the specified Amazon Web Services Verified Access instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/AttachVerifiedAccessTrustProvider">AWS
          * API Reference</a></p>
@@ -4119,11 +4118,10 @@ namespace EC2
         /**
          * <p>An Amazon Web Services Verified Access group is a collection of Amazon Web
          * Services Verified Access endpoints who's associated applications have similar
-         * security requirements. Each instance within an Amazon Web Services Verified
-         * Access group shares an Amazon Web Services Verified Access policy. For example,
-         * you can group all Amazon Web Services Verified Access instances associated with
-         * “sales” applications together and use one common Amazon Web Services Verified
-         * Access policy.</p><p><h3>See Also:</h3>   <a
+         * security requirements. Each instance within a Verified Access group shares an
+         * Verified Access policy. For example, you can group all Verified Access instances
+         * associated with "sales" applications together and use one common Verified Access
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessGroup">AWS
          * API Reference</a></p>
          */
@@ -4177,9 +4175,9 @@ namespace EC2
         /**
          * <p>A trust provider is a third-party entity that creates, maintains, and manages
          * identity information for users and devices. When an application request is made,
-         * the identity information sent by the trust provider will be evaluated by Amazon
-         * Web Services Verified Access, before allowing or denying the application
-         * request.</p><p><h3>See Also:</h3>   <a
+         * the identity information sent by the trust provider is evaluated by Verified
+         * Access before allowing or denying the application request.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreateVerifiedAccessTrustProvider">AWS
          * API Reference</a></p>
          */
@@ -10305,8 +10303,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describe Amazon Web Services Verified Access endpoints.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified Amazon Web Services Verified Access
+         * endpoints.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessEndpoints">AWS
          * API Reference</a></p>
          */
@@ -10331,8 +10329,7 @@ namespace EC2
         }
 
         /**
-         * <p>Describe details of existing Verified Access groups.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Describes the specified Verified Access groups.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessGroups">AWS
          * API Reference</a></p>
          */
@@ -10357,8 +10354,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describes the current logging configuration for the Amazon Web Services
-         * Verified Access instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified Amazon Web Services Verified Access
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstanceLoggingConfigurations">AWS
          * API Reference</a></p>
          */
@@ -10383,7 +10380,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describe Verified Access instances.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the specified Amazon Web Services Verified Access
+         * instances.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessInstances">AWS
          * API Reference</a></p>
          */
@@ -10408,8 +10406,8 @@ namespace EC2
         }
 
         /**
-         * <p>Describe details of existing Verified Access trust providers.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Describes the specified Amazon Web Services Verified Access trust
+         * providers.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeVerifiedAccessTrustProviders">AWS
          * API Reference</a></p>
          */
@@ -11035,8 +11033,9 @@ namespace EC2
         }
 
         /**
-         * <p>Detach a trust provider from an Amazon Web Services Verified Access
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Detaches the specified Amazon Web Services Verified Access trust provider
+         * from the specified Amazon Web Services Verified Access instance.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DetachVerifiedAccessTrustProvider">AWS
          * API Reference</a></p>
          */
@@ -15295,8 +15294,8 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the configuration of an Amazon Web Services Verified Access
-         * endpoint.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the configuration of the specified Amazon Web Services Verified
+         * Access endpoint.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpoint">AWS
          * API Reference</a></p>
          */
@@ -15321,8 +15320,8 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the specified Verified Access endpoint policy.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Modifies the specified Amazon Web Services Verified Access endpoint
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessEndpointPolicy">AWS
          * API Reference</a></p>
          */
@@ -15347,8 +15346,8 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the specified Verified Access group configuration.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Modifies the specified Amazon Web Services Verified Access group
+         * configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroup">AWS
          * API Reference</a></p>
          */
@@ -15373,8 +15372,8 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the specified Verified Access group policy.</p><p><h3>See Also:</h3>
-         * <a
+         * <p>Modifies the specified Amazon Web Services Verified Access group
+         * policy.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessGroupPolicy">AWS
          * API Reference</a></p>
          */
@@ -15399,8 +15398,8 @@ namespace EC2
         }
 
         /**
-         * <p>Modifies the configuration of the specified Verified Access
-         * instance.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the configuration of the specified Amazon Web Services Verified
+         * Access instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyVerifiedAccessInstance">AWS
          * API Reference</a></p>
          */

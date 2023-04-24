@@ -39,88 +39,88 @@ namespace Model
   public:
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVerifiedAccessGroupIds() const{ return m_verifiedAccessGroupIds; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline bool VerifiedAccessGroupIdsHasBeenSet() const { return m_verifiedAccessGroupIdsHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline void SetVerifiedAccessGroupIds(const Aws::Vector<Aws::String>& value) { m_verifiedAccessGroupIdsHasBeenSet = true; m_verifiedAccessGroupIds = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline void SetVerifiedAccessGroupIds(Aws::Vector<Aws::String>&& value) { m_verifiedAccessGroupIdsHasBeenSet = true; m_verifiedAccessGroupIds = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& WithVerifiedAccessGroupIds(const Aws::Vector<Aws::String>& value) { SetVerifiedAccessGroupIds(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& WithVerifiedAccessGroupIds(Aws::Vector<Aws::String>&& value) { SetVerifiedAccessGroupIds(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& AddVerifiedAccessGroupIds(const Aws::String& value) { m_verifiedAccessGroupIdsHasBeenSet = true; m_verifiedAccessGroupIds.push_back(value); return *this; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& AddVerifiedAccessGroupIds(Aws::String&& value) { m_verifiedAccessGroupIdsHasBeenSet = true; m_verifiedAccessGroupIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access groups.</p>
+     * <p>The ID of the Verified Access groups.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& AddVerifiedAccessGroupIds(const char* value) { m_verifiedAccessGroupIdsHasBeenSet = true; m_verifiedAccessGroupIds.push_back(value); return *this; }
 
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline const Aws::String& GetVerifiedAccessInstanceId() const{ return m_verifiedAccessInstanceId; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline bool VerifiedAccessInstanceIdHasBeenSet() const { return m_verifiedAccessInstanceIdHasBeenSet; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const Aws::String& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = value; }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(Aws::String&& value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId = std::move(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline void SetVerifiedAccessInstanceId(const char* value) { m_verifiedAccessInstanceIdHasBeenSet = true; m_verifiedAccessInstanceId.assign(value); }
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& WithVerifiedAccessInstanceId(const Aws::String& value) { SetVerifiedAccessInstanceId(value); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& WithVerifiedAccessInstanceId(Aws::String&& value) { SetVerifiedAccessInstanceId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the Amazon Web Services Verified Access instance.</p>
+     * <p>The ID of the Verified Access instance.</p>
      */
     inline DescribeVerifiedAccessGroupsRequest& WithVerifiedAccessInstanceId(const char* value) { SetVerifiedAccessInstanceId(value); return *this;}
 

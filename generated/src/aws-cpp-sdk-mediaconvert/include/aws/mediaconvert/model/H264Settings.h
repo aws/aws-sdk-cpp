@@ -325,62 +325,68 @@ namespace Model
 
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline const H264DynamicSubGop& GetDynamicSubGop() const{ return m_dynamicSubGop; }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline bool DynamicSubGopHasBeenSet() const { return m_dynamicSubGopHasBeenSet; }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline void SetDynamicSubGop(const H264DynamicSubGop& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = value; }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline void SetDynamicSubGop(H264DynamicSubGop&& value) { m_dynamicSubGopHasBeenSet = true; m_dynamicSubGop = std::move(value); }
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline H264Settings& WithDynamicSubGop(const H264DynamicSubGop& value) { SetDynamicSubGop(value); return *this;}
 
     /**
-     * Choose Adaptive to improve subjective video quality for high-motion content.
-     * This will cause the service to use fewer B-frames (which infer information based
-     * on other frames) for high-motion portions of the video and more B-frames for
-     * low-motion portions. The maximum number of B-frames is limited by the value you
-     * provide for the setting B frames between reference frames
-     * (numberBFramesBetweenReferenceFrames).
+     * Specify whether to allow the number of B-frames in your output GOP structure to
+     * vary or not depending on your input video content. To improve the subjective
+     * video quality of your output that has high-motion content: Leave blank or keep
+     * the default value Adaptive. MediaConvert will use fewer B-frames for high-motion
+     * video content than low-motion content. The maximum number of B- frames is
+     * limited by the value that you choose for B-frames between reference frames. To
+     * use the same number B-frames for all types of content: Choose Static.
      */
     inline H264Settings& WithDynamicSubGop(H264DynamicSubGop&& value) { SetDynamicSubGop(std::move(value)); return *this;}
 
@@ -667,85 +673,91 @@ namespace Model
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline const H264FramerateConversionAlgorithm& GetFramerateConversionAlgorithm() const{ return m_framerateConversionAlgorithm; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline bool FramerateConversionAlgorithmHasBeenSet() const { return m_framerateConversionAlgorithmHasBeenSet; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = value; }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline void SetFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { m_framerateConversionAlgorithmHasBeenSet = true; m_framerateConversionAlgorithm = std::move(value); }
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(const H264FramerateConversionAlgorithm& value) { SetFramerateConversionAlgorithm(value); return *this;}
 
     /**
      * Choose the method that you want MediaConvert to use when increasing or
-     * decreasing the frame rate. We recommend using drop duplicate (DUPLICATE_DROP)
-     * for numerically simple conversions, such as 60 fps to 30 fps. For numerically
-     * complex conversions, you can use interpolate (INTERPOLATE) to avoid stutter.
-     * This results in a smooth picture, but might introduce undesirable video
-     * artifacts. For complex frame rate conversions, especially if your source video
-     * has already been converted from its original cadence, use FrameFormer
-     * (FRAMEFORMER) to do motion-compensated interpolation. FrameFormer chooses the
-     * best conversion method frame by frame. Note that using FrameFormer increases the
-     * transcoding time and incurs a significant add-on cost.
+     * decreasing the frame rate. For numerically simple conversions, such as 60 fps to
+     * 30 fps: We recommend that you keep the default value, Drop duplicate. For
+     * numerically complex conversions, to avoid stutter: Choose Interpolate. This
+     * results in a smooth picture, but might introduce undesirable video artifacts.
+     * For complex frame rate conversions, especially if your source video has already
+     * been converted from its original cadence: Choose FrameFormer to do
+     * motion-compensated interpolation. FrameFormer uses the best conversion method
+     * frame by frame. Note that using FrameFormer increases the transcoding time and
+     * incurs a significant add-on cost. When you choose FrameFormer, your input video
+     * resolution must be at least 128x96.
      */
     inline H264Settings& WithFramerateConversionAlgorithm(H264FramerateConversionAlgorithm&& value) { SetFramerateConversionAlgorithm(std::move(value)); return *this;}
 
@@ -833,32 +845,56 @@ namespace Model
 
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline const H264GopBReference& GetGopBReference() const{ return m_gopBReference; }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline bool GopBReferenceHasBeenSet() const { return m_gopBReferenceHasBeenSet; }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline void SetGopBReference(const H264GopBReference& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = value; }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline void SetGopBReference(H264GopBReference&& value) { m_gopBReferenceHasBeenSet = true; m_gopBReference = std::move(value); }
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline H264Settings& WithGopBReference(const H264GopBReference& value) { SetGopBReference(value); return *this;}
 
     /**
-     * If enable, use reference B frames for GOP structures that have B frames > 1.
+     * Specify whether to allow B-frames to be referenced by other frame types. To use
+     * reference B-frames when your GOP structure has 1 or more B-frames: Leave blank
+     * or keep the default value Enabled. We recommend that you choose Enabled to help
+     * improve the video quality of your output relative to its bitrate. To not use
+     * reference B-frames: Choose Disabled.
      */
     inline H264Settings& WithGopBReference(H264GopBReference&& value) { SetGopBReference(std::move(value)); return *this;}
 
@@ -1329,46 +1365,38 @@ namespace Model
 
 
     /**
-     * This setting to determines the number of B-frames that MediaConvert puts between
-     * reference frames in this output. We recommend that you use automatic behavior to
-     * allow the transcoder to choose the best value based on characteristics of your
-     * input video. In the console, choose AUTO to select this automatic behavior. When
-     * you manually edit your JSON job specification, leave this setting out to choose
-     * automatic behavior. When you want to specify this number explicitly, choose a
-     * whole number from 0 through 7.
+     * Specify the number of B-frames between reference frames in this output. For the
+     * best video quality: Leave blank. MediaConvert automatically determines the
+     * number of B-frames to use based on the characteristics of your input video. To
+     * manually specify the number of B-frames between reference frames: Enter an
+     * integer from 0 to 7.
      */
     inline int GetNumberBFramesBetweenReferenceFrames() const{ return m_numberBFramesBetweenReferenceFrames; }
 
     /**
-     * This setting to determines the number of B-frames that MediaConvert puts between
-     * reference frames in this output. We recommend that you use automatic behavior to
-     * allow the transcoder to choose the best value based on characteristics of your
-     * input video. In the console, choose AUTO to select this automatic behavior. When
-     * you manually edit your JSON job specification, leave this setting out to choose
-     * automatic behavior. When you want to specify this number explicitly, choose a
-     * whole number from 0 through 7.
+     * Specify the number of B-frames between reference frames in this output. For the
+     * best video quality: Leave blank. MediaConvert automatically determines the
+     * number of B-frames to use based on the characteristics of your input video. To
+     * manually specify the number of B-frames between reference frames: Enter an
+     * integer from 0 to 7.
      */
     inline bool NumberBFramesBetweenReferenceFramesHasBeenSet() const { return m_numberBFramesBetweenReferenceFramesHasBeenSet; }
 
     /**
-     * This setting to determines the number of B-frames that MediaConvert puts between
-     * reference frames in this output. We recommend that you use automatic behavior to
-     * allow the transcoder to choose the best value based on characteristics of your
-     * input video. In the console, choose AUTO to select this automatic behavior. When
-     * you manually edit your JSON job specification, leave this setting out to choose
-     * automatic behavior. When you want to specify this number explicitly, choose a
-     * whole number from 0 through 7.
+     * Specify the number of B-frames between reference frames in this output. For the
+     * best video quality: Leave blank. MediaConvert automatically determines the
+     * number of B-frames to use based on the characteristics of your input video. To
+     * manually specify the number of B-frames between reference frames: Enter an
+     * integer from 0 to 7.
      */
     inline void SetNumberBFramesBetweenReferenceFrames(int value) { m_numberBFramesBetweenReferenceFramesHasBeenSet = true; m_numberBFramesBetweenReferenceFrames = value; }
 
     /**
-     * This setting to determines the number of B-frames that MediaConvert puts between
-     * reference frames in this output. We recommend that you use automatic behavior to
-     * allow the transcoder to choose the best value based on characteristics of your
-     * input video. In the console, choose AUTO to select this automatic behavior. When
-     * you manually edit your JSON job specification, leave this setting out to choose
-     * automatic behavior. When you want to specify this number explicitly, choose a
-     * whole number from 0 through 7.
+     * Specify the number of B-frames between reference frames in this output. For the
+     * best video quality: Leave blank. MediaConvert automatically determines the
+     * number of B-frames to use based on the characteristics of your input video. To
+     * manually specify the number of B-frames between reference frames: Enter an
+     * integer from 0 to 7.
      */
     inline H264Settings& WithNumberBFramesBetweenReferenceFrames(int value) { SetNumberBFramesBetweenReferenceFrames(value); return *this;}
 
@@ -1548,44 +1576,68 @@ namespace Model
 
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline const H264QualityTuningLevel& GetQualityTuningLevel() const{ return m_qualityTuningLevel; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline bool QualityTuningLevelHasBeenSet() const { return m_qualityTuningLevelHasBeenSet; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline void SetQualityTuningLevel(const H264QualityTuningLevel& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = value; }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline void SetQualityTuningLevel(H264QualityTuningLevel&& value) { m_qualityTuningLevelHasBeenSet = true; m_qualityTuningLevel = std::move(value); }
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline H264Settings& WithQualityTuningLevel(const H264QualityTuningLevel& value) { SetQualityTuningLevel(value); return *this;}
 
     /**
-     * Optional. Use Quality tuning level (qualityTuningLevel) to choose how you want
-     * to trade off encoding speed for output video quality. The default behavior is
-     * faster, lower quality, single-pass encoding.
+     * The Quality tuning level you choose represents a trade-off between the encoding
+     * speed of your job and the output video quality. For the fastest encoding speed
+     * at the cost of video quality: Choose Single pass. For a good balance between
+     * encoding speed and video quality: Leave blank or keep the default value Single
+     * pass HQ. For the best video quality, at the cost of encoding speed: Choose Multi
+     * pass HQ. MediaConvert performs an analysis pass on your input followed by an
+     * encoding pass. Outputs that use this feature incur pro-tier pricing.
      */
     inline H264Settings& WithQualityTuningLevel(H264QualityTuningLevel&& value) { SetQualityTuningLevel(std::move(value)); return *this;}
 
