@@ -99,37 +99,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline const Aws::Vector<RegexPatternSetSummary>& GetRegexPatternSets() const{ return m_regexPatternSets; }
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline void SetRegexPatternSets(const Aws::Vector<RegexPatternSetSummary>& value) { m_regexPatternSets = value; }
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline void SetRegexPatternSets(Aws::Vector<RegexPatternSetSummary>&& value) { m_regexPatternSets = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListRegexPatternSetsResult& WithRegexPatternSets(const Aws::Vector<RegexPatternSetSummary>& value) { SetRegexPatternSets(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListRegexPatternSetsResult& WithRegexPatternSets(Aws::Vector<RegexPatternSetSummary>&& value) { SetRegexPatternSets(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListRegexPatternSetsResult& AddRegexPatternSets(const RegexPatternSetSummary& value) { m_regexPatternSets.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Array of regex pattern sets. If you specified a <code>Limit</code> in your
+     * request, this might not be the full list. </p>
      */
     inline ListRegexPatternSetsResult& AddRegexPatternSets(RegexPatternSetSummary&& value) { m_regexPatternSets.push_back(std::move(value)); return *this; }
 

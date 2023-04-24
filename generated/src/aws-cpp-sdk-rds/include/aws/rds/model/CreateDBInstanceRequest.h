@@ -789,11 +789,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -812,11 +811,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -835,11 +833,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -858,11 +855,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -881,11 +877,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -904,11 +899,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -927,11 +921,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom
@@ -950,11 +943,10 @@ namespace Model
     /**
      * <p>The name of the database engine to be used for this instance.</p> <p>Not
      * every database engine is available for every Amazon Web Services Region.</p>
-     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee (for
-     * RDS Custom for Oracle DB instances)</code> </p> </li> <li> <p>
+     * <p>Valid Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for Aurora MySQL
+     * DB instances)</p> </li> <li> <p> <code>aurora-postgresql</code> (for Aurora
+     * PostgreSQL DB instances)</p> </li> <li> <p> <code>custom-oracle-ee (for RDS
+     * Custom for Oracle DB instances)</code> </p> </li> <li> <p>
      * <code>custom-oracle-ee-cdb (for RDS Custom for Oracle DB instances)</code> </p>
      * </li> <li> <p> <code>custom-sqlserver-ee (for RDS Custom for SQL Server DB
      * instances)</code> </p> </li> <li> <p> <code>custom-sqlserver-se (for RDS Custom

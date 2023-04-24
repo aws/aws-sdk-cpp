@@ -29,8 +29,8 @@ namespace Model
 
   /**
    * <p>Represents an EC2 instance of virtual computing resources that hosts one or
-   * more game servers. In GameLift, a fleet can contain zero or more instances.</p>
-   * <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
+   * more game servers. In Amazon GameLift, a fleet can contain zero or more
+   * instances.</p> <p> <b>Related actions</b> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Instance">AWS
    * API Reference</a></p>
    */
@@ -87,8 +87,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetFleetArn() const{ return m_fleetArn; }
@@ -96,8 +96,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline bool FleetArnHasBeenSet() const { return m_fleetArnHasBeenSet; }
@@ -105,8 +105,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const Aws::String& value) { m_fleetArnHasBeenSet = true; m_fleetArn = value; }
@@ -114,8 +114,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(Aws::String&& value) { m_fleetArnHasBeenSet = true; m_fleetArn = std::move(value); }
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetFleetArn(const char* value) { m_fleetArnHasBeenSet = true; m_fleetArn.assign(value); }
@@ -132,8 +132,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(const Aws::String& value) { SetFleetArn(value); return *this;}
@@ -141,8 +141,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(Aws::String&& value) { SetFleetArn(std::move(value)); return *this;}
@@ -150,8 +150,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline Instance& WithFleetArn(const char* value) { SetFleetArn(value); return *this;}
@@ -426,10 +426,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
@@ -440,10 +440,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
@@ -454,10 +454,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
@@ -468,10 +468,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline void SetStatus(InstanceStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
@@ -482,10 +482,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(const InstanceStatus& value) { SetStatus(value); return *this;}
@@ -496,10 +496,10 @@ namespace Model
      * and launching server processes as defined in the fleet's run-time configuration.
      * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
      * and at least one server process has successfully launched and reported back to
-     * GameLift that it is ready to host a game session. The instance is now considered
-     * ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b> -- The
-     * instance is in the process of shutting down. This may happen to reduce capacity
-     * during a scaling down event or to recycle resources in the event of a
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
      * problem.</p> </li> </ul>
      */
     inline Instance& WithStatus(InstanceStatus&& value) { SetStatus(std::move(value)); return *this;}

@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Defines the configuration for a presenter only video tile.</p><p><h3>See
+   * <p>Defines the configuration for a presenter-only video tile.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/PresenterOnlyConfiguration">AWS
    * API Reference</a></p>

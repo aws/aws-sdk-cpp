@@ -99,37 +99,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline const Aws::Vector<WebACLSummary>& GetWebACLs() const{ return m_webACLs; }
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline void SetWebACLs(const Aws::Vector<WebACLSummary>& value) { m_webACLs = value; }
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline void SetWebACLs(Aws::Vector<WebACLSummary>&& value) { m_webACLs = std::move(value); }
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListWebACLsResult& WithWebACLs(const Aws::Vector<WebACLSummary>& value) { SetWebACLs(value); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListWebACLsResult& WithWebACLs(Aws::Vector<WebACLSummary>&& value) { SetWebACLs(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListWebACLsResult& AddWebACLs(const WebACLSummary& value) { m_webACLs.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>Array of web ACLs. If you specified a <code>Limit</code> in your request,
+     * this might not be the full list. </p>
      */
     inline ListWebACLsResult& AddWebACLs(WebACLSummary&& value) { m_webACLs.push_back(std::move(value)); return *this; }
 

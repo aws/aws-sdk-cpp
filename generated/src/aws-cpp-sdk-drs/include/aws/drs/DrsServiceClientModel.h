@@ -19,12 +19,15 @@
 
 /* Service model headers required in DrsClient header */
 #include <aws/drs/model/CreateExtendedSourceServerResult.h>
+#include <aws/drs/model/CreateLaunchConfigurationTemplateResult.h>
 #include <aws/drs/model/CreateReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteJobResult.h>
+#include <aws/drs/model/DeleteLaunchConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteReplicationConfigurationTemplateResult.h>
 #include <aws/drs/model/DeleteSourceServerResult.h>
 #include <aws/drs/model/DescribeJobLogItemsResult.h>
 #include <aws/drs/model/DescribeJobsResult.h>
+#include <aws/drs/model/DescribeLaunchConfigurationTemplatesResult.h>
 #include <aws/drs/model/DescribeRecoveryInstancesResult.h>
 #include <aws/drs/model/DescribeRecoverySnapshotsResult.h>
 #include <aws/drs/model/DescribeReplicationConfigurationTemplatesResult.h>
@@ -44,6 +47,7 @@
 #include <aws/drs/model/StopReplicationResult.h>
 #include <aws/drs/model/TerminateRecoveryInstancesResult.h>
 #include <aws/drs/model/UpdateLaunchConfigurationResult.h>
+#include <aws/drs/model/UpdateLaunchConfigurationTemplateResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationResult.h>
 #include <aws/drs/model/UpdateReplicationConfigurationTemplateResult.h>
 #include <aws/core/NoResult.h>
@@ -88,13 +92,16 @@ namespace Aws
     {
       /* Service model forward declarations required in DrsClient header */
       class CreateExtendedSourceServerRequest;
+      class CreateLaunchConfigurationTemplateRequest;
       class CreateReplicationConfigurationTemplateRequest;
       class DeleteJobRequest;
+      class DeleteLaunchConfigurationTemplateRequest;
       class DeleteRecoveryInstanceRequest;
       class DeleteReplicationConfigurationTemplateRequest;
       class DeleteSourceServerRequest;
       class DescribeJobLogItemsRequest;
       class DescribeJobsRequest;
+      class DescribeLaunchConfigurationTemplatesRequest;
       class DescribeRecoveryInstancesRequest;
       class DescribeRecoverySnapshotsRequest;
       class DescribeReplicationConfigurationTemplatesRequest;
@@ -119,19 +126,23 @@ namespace Aws
       class UntagResourceRequest;
       class UpdateFailbackReplicationConfigurationRequest;
       class UpdateLaunchConfigurationRequest;
+      class UpdateLaunchConfigurationTemplateRequest;
       class UpdateReplicationConfigurationRequest;
       class UpdateReplicationConfigurationTemplateRequest;
       /* End of service model forward declarations required in DrsClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateExtendedSourceServerResult, DrsError> CreateExtendedSourceServerOutcome;
+      typedef Aws::Utils::Outcome<CreateLaunchConfigurationTemplateResult, DrsError> CreateLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<CreateReplicationConfigurationTemplateResult, DrsError> CreateReplicationConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteJobResult, DrsError> DeleteJobOutcome;
+      typedef Aws::Utils::Outcome<DeleteLaunchConfigurationTemplateResult, DrsError> DeleteLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> DeleteRecoveryInstanceOutcome;
       typedef Aws::Utils::Outcome<DeleteReplicationConfigurationTemplateResult, DrsError> DeleteReplicationConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<DeleteSourceServerResult, DrsError> DeleteSourceServerOutcome;
       typedef Aws::Utils::Outcome<DescribeJobLogItemsResult, DrsError> DescribeJobLogItemsOutcome;
       typedef Aws::Utils::Outcome<DescribeJobsResult, DrsError> DescribeJobsOutcome;
+      typedef Aws::Utils::Outcome<DescribeLaunchConfigurationTemplatesResult, DrsError> DescribeLaunchConfigurationTemplatesOutcome;
       typedef Aws::Utils::Outcome<DescribeRecoveryInstancesResult, DrsError> DescribeRecoveryInstancesOutcome;
       typedef Aws::Utils::Outcome<DescribeRecoverySnapshotsResult, DrsError> DescribeRecoverySnapshotsOutcome;
       typedef Aws::Utils::Outcome<DescribeReplicationConfigurationTemplatesResult, DrsError> DescribeReplicationConfigurationTemplatesOutcome;
@@ -156,19 +167,23 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, DrsError> UpdateFailbackReplicationConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateLaunchConfigurationResult, DrsError> UpdateLaunchConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateLaunchConfigurationTemplateResult, DrsError> UpdateLaunchConfigurationTemplateOutcome;
       typedef Aws::Utils::Outcome<UpdateReplicationConfigurationResult, DrsError> UpdateReplicationConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateReplicationConfigurationTemplateResult, DrsError> UpdateReplicationConfigurationTemplateOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateExtendedSourceServerOutcome> CreateExtendedSourceServerOutcomeCallable;
+      typedef std::future<CreateLaunchConfigurationTemplateOutcome> CreateLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<CreateReplicationConfigurationTemplateOutcome> CreateReplicationConfigurationTemplateOutcomeCallable;
       typedef std::future<DeleteJobOutcome> DeleteJobOutcomeCallable;
+      typedef std::future<DeleteLaunchConfigurationTemplateOutcome> DeleteLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<DeleteRecoveryInstanceOutcome> DeleteRecoveryInstanceOutcomeCallable;
       typedef std::future<DeleteReplicationConfigurationTemplateOutcome> DeleteReplicationConfigurationTemplateOutcomeCallable;
       typedef std::future<DeleteSourceServerOutcome> DeleteSourceServerOutcomeCallable;
       typedef std::future<DescribeJobLogItemsOutcome> DescribeJobLogItemsOutcomeCallable;
       typedef std::future<DescribeJobsOutcome> DescribeJobsOutcomeCallable;
+      typedef std::future<DescribeLaunchConfigurationTemplatesOutcome> DescribeLaunchConfigurationTemplatesOutcomeCallable;
       typedef std::future<DescribeRecoveryInstancesOutcome> DescribeRecoveryInstancesOutcomeCallable;
       typedef std::future<DescribeRecoverySnapshotsOutcome> DescribeRecoverySnapshotsOutcomeCallable;
       typedef std::future<DescribeReplicationConfigurationTemplatesOutcome> DescribeReplicationConfigurationTemplatesOutcomeCallable;
@@ -193,6 +208,7 @@ namespace Aws
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateFailbackReplicationConfigurationOutcome> UpdateFailbackReplicationConfigurationOutcomeCallable;
       typedef std::future<UpdateLaunchConfigurationOutcome> UpdateLaunchConfigurationOutcomeCallable;
+      typedef std::future<UpdateLaunchConfigurationTemplateOutcome> UpdateLaunchConfigurationTemplateOutcomeCallable;
       typedef std::future<UpdateReplicationConfigurationOutcome> UpdateReplicationConfigurationOutcomeCallable;
       typedef std::future<UpdateReplicationConfigurationTemplateOutcome> UpdateReplicationConfigurationTemplateOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -202,13 +218,16 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const DrsClient*, const Model::CreateExtendedSourceServerRequest&, const Model::CreateExtendedSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateExtendedSourceServerResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::CreateLaunchConfigurationTemplateRequest&, const Model::CreateLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::CreateReplicationConfigurationTemplateRequest&, const Model::CreateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReplicationConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteJobRequest&, const Model::DeleteJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteJobResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::DeleteLaunchConfigurationTemplateRequest&, const Model::DeleteLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteRecoveryInstanceRequest&, const Model::DeleteRecoveryInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteRecoveryInstanceResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteReplicationConfigurationTemplateRequest&, const Model::DeleteReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteReplicationConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DeleteSourceServerRequest&, const Model::DeleteSourceServerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSourceServerResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DescribeJobLogItemsRequest&, const Model::DescribeJobLogItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobLogItemsResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DescribeJobsRequest&, const Model::DescribeJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobsResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::DescribeLaunchConfigurationTemplatesRequest&, const Model::DescribeLaunchConfigurationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeLaunchConfigurationTemplatesResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DescribeRecoveryInstancesRequest&, const Model::DescribeRecoveryInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoveryInstancesResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DescribeRecoverySnapshotsRequest&, const Model::DescribeRecoverySnapshotsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeRecoverySnapshotsResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::DescribeReplicationConfigurationTemplatesRequest&, const Model::DescribeReplicationConfigurationTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeReplicationConfigurationTemplatesResponseReceivedHandler;
@@ -233,6 +252,7 @@ namespace Aws
     typedef std::function<void(const DrsClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::UpdateFailbackReplicationConfigurationRequest&, const Model::UpdateFailbackReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFailbackReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::UpdateLaunchConfigurationRequest&, const Model::UpdateLaunchConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationResponseReceivedHandler;
+    typedef std::function<void(const DrsClient*, const Model::UpdateLaunchConfigurationTemplateRequest&, const Model::UpdateLaunchConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateLaunchConfigurationTemplateResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::UpdateReplicationConfigurationRequest&, const Model::UpdateReplicationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationResponseReceivedHandler;
     typedef std::function<void(const DrsClient*, const Model::UpdateReplicationConfigurationTemplateRequest&, const Model::UpdateReplicationConfigurationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateReplicationConfigurationTemplateResponseReceivedHandler;
     /* End of service model async handlers definitions */

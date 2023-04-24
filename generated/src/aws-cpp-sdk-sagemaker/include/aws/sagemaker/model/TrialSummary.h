@@ -27,8 +27,9 @@ namespace Model
 
   /**
    * <p>A summary of the properties of a trial. To get the complete set of
-   * properties, call the <a>DescribeTrial</a> API and provide the
-   * <code>TrialName</code>.</p><p><h3>See Also:</h3>   <a
+   * properties, call the <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrial.html">DescribeTrial</a>
+   * API and provide the <code>TrialName</code>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TrialSummary">AWS
    * API Reference</a></p>
    */

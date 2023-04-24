@@ -126,9 +126,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -152,9 +150,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -178,9 +174,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -204,9 +198,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -230,9 +222,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -256,9 +246,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -282,9 +270,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
@@ -308,9 +294,7 @@ namespace Model
      * <p> <code>aws rds describe-db-engine-versions --query
      * "DBEngineVersions[].DBParameterGroupFamily" --engine mysql</code> </p> 
      * <p>The output contains duplicates.</p>  <p>The following are the valid DB
-     * engine values:</p> <ul> <li> <p> <code>aurora</code> (for MySQL 5.6-compatible
-     * Aurora)</p> </li> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
+     * engine values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
      * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
      * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
      * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>

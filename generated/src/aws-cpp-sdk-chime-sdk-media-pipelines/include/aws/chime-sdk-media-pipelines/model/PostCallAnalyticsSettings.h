@@ -25,8 +25,15 @@ namespace Model
 {
 
   /**
-   * <p>The settings for a post-call voice analytics task.</p><p><h3>See Also:</h3>  
-   * <a
+   * <p>Allows you to specify additional settings for your Call Analytics post-call
+   * request, including output locations for your redacted transcript, which IAM role
+   * to use, and which encryption key to use.</p> <p> <code>DataAccessRoleArn</code>
+   * and <code>OutputLocation</code> are required fields.</p> <p>
+   * <code>PostCallAnalyticsSettings</code> provides the same insights as a Call
+   * Analytics post-call transcription. For more information, refer to <a
+   * href="https://docs.aws.amazon.com/transcribe/latest/dg/tca-post-call.html">Post-call
+   * analytics with real-time transcriptions</a> in the <i>Amazon Transcribe
+   * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/PostCallAnalyticsSettings">AWS
    * API Reference</a></p>
    */
@@ -185,42 +192,50 @@ namespace Model
 
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline const Aws::String& GetOutputEncryptionKMSKeyId() const{ return m_outputEncryptionKMSKeyId; }
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline bool OutputEncryptionKMSKeyIdHasBeenSet() const { return m_outputEncryptionKMSKeyIdHasBeenSet; }
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const Aws::String& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = value; }
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(Aws::String&& value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId = std::move(value); }
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline void SetOutputEncryptionKMSKeyId(const char* value) { m_outputEncryptionKMSKeyIdHasBeenSet = true; m_outputEncryptionKMSKeyId.assign(value); }
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(const Aws::String& value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(Aws::String&& value) { SetOutputEncryptionKMSKeyId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the KMS (Key Management System) key used to encrypt the output.</p>
+     * <p>The ID of the KMS (Key Management Service) key used to encrypt the
+     * output.</p>
      */
     inline PostCallAnalyticsSettings& WithOutputEncryptionKMSKeyId(const char* value) { SetOutputEncryptionKMSKeyId(value); return *this;}
 

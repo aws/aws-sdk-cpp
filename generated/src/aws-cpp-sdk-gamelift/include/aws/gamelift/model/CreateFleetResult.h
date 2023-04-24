@@ -69,7 +69,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -79,7 +79,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -89,7 +89,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -99,7 +99,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -109,7 +109,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -119,7 +119,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>
@@ -129,7 +129,7 @@ namespace Model
     /**
      * <p>The fleet's locations and life-cycle status of each location. For new fleets,
      * the status of all locations is set to <code>NEW</code>. During fleet creation,
-     * GameLift updates each location status as instances are deployed there and
+     * Amazon GameLift updates each location status as instances are deployed there and
      * prepared for game hosting. This list includes an entry for the fleet's home
      * Region. For fleets with no remote locations, only one entry, representing the
      * home Region, is returned.</p>

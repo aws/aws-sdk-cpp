@@ -100,6 +100,31 @@ namespace drs
         }
 
         /**
+         * <p>Creates a new Launch Configuration Template.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateLaunchConfigurationTemplateOutcome CreateLaunchConfigurationTemplate(const Model::CreateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateLaunchConfigurationTemplateRequestT = Model::CreateLaunchConfigurationTemplateRequest>
+        Model::CreateLaunchConfigurationTemplateOutcomeCallable CreateLaunchConfigurationTemplateCallable(const CreateLaunchConfigurationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::CreateLaunchConfigurationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for CreateLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateLaunchConfigurationTemplateRequestT = Model::CreateLaunchConfigurationTemplateRequest>
+        void CreateLaunchConfigurationTemplateAsync(const CreateLaunchConfigurationTemplateRequestT& request, const CreateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::CreateLaunchConfigurationTemplate, request, handler, context);
+        }
+
+        /**
          * <p>Creates a new ReplicationConfigurationTemplate.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/CreateReplicationConfigurationTemplate">AWS
          * API Reference</a></p>
@@ -147,6 +172,32 @@ namespace drs
         void DeleteJobAsync(const DeleteJobRequestT& request, const DeleteJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::DeleteJob, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a single Launch Configuration Template by ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DeleteLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteLaunchConfigurationTemplateOutcome DeleteLaunchConfigurationTemplate(const Model::DeleteLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteLaunchConfigurationTemplateRequestT = Model::DeleteLaunchConfigurationTemplateRequest>
+        Model::DeleteLaunchConfigurationTemplateOutcomeCallable DeleteLaunchConfigurationTemplateCallable(const DeleteLaunchConfigurationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::DeleteLaunchConfigurationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteLaunchConfigurationTemplateRequestT = Model::DeleteLaunchConfigurationTemplateRequest>
+        void DeleteLaunchConfigurationTemplateAsync(const DeleteLaunchConfigurationTemplateRequestT& request, const DeleteLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::DeleteLaunchConfigurationTemplate, request, handler, context);
         }
 
         /**
@@ -282,6 +333,32 @@ namespace drs
         void DescribeJobsAsync(const DescribeJobsRequestT& request, const DescribeJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::DescribeJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all Launch Configuration Templates, filtered by Launch Configuration
+         * Template IDs</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/DescribeLaunchConfigurationTemplates">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeLaunchConfigurationTemplatesOutcome DescribeLaunchConfigurationTemplates(const Model::DescribeLaunchConfigurationTemplatesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeLaunchConfigurationTemplates that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeLaunchConfigurationTemplatesRequestT = Model::DescribeLaunchConfigurationTemplatesRequest>
+        Model::DescribeLaunchConfigurationTemplatesOutcomeCallable DescribeLaunchConfigurationTemplatesCallable(const DescribeLaunchConfigurationTemplatesRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::DescribeLaunchConfigurationTemplates, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeLaunchConfigurationTemplates that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeLaunchConfigurationTemplatesRequestT = Model::DescribeLaunchConfigurationTemplatesRequest>
+        void DescribeLaunchConfigurationTemplatesAsync(const DescribeLaunchConfigurationTemplatesRequestT& request, const DescribeLaunchConfigurationTemplatesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::DescribeLaunchConfigurationTemplates, request, handler, context);
         }
 
         /**
@@ -939,6 +1016,32 @@ namespace drs
         void UpdateLaunchConfigurationAsync(const UpdateLaunchConfigurationRequestT& request, const UpdateLaunchConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&DrsClient::UpdateLaunchConfiguration, request, handler, context);
+        }
+
+        /**
+         * <p>Updates an existing Launch Configuration Template by ID.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/drs-2020-02-26/UpdateLaunchConfigurationTemplate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateLaunchConfigurationTemplateOutcome UpdateLaunchConfigurationTemplate(const Model::UpdateLaunchConfigurationTemplateRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateLaunchConfigurationTemplate that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateLaunchConfigurationTemplateRequestT = Model::UpdateLaunchConfigurationTemplateRequest>
+        Model::UpdateLaunchConfigurationTemplateOutcomeCallable UpdateLaunchConfigurationTemplateCallable(const UpdateLaunchConfigurationTemplateRequestT& request) const
+        {
+            return SubmitCallable(&DrsClient::UpdateLaunchConfigurationTemplate, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateLaunchConfigurationTemplate that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateLaunchConfigurationTemplateRequestT = Model::UpdateLaunchConfigurationTemplateRequest>
+        void UpdateLaunchConfigurationTemplateAsync(const UpdateLaunchConfigurationTemplateRequestT& request, const UpdateLaunchConfigurationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&DrsClient::UpdateLaunchConfigurationTemplate, request, handler, context);
         }
 
         /**

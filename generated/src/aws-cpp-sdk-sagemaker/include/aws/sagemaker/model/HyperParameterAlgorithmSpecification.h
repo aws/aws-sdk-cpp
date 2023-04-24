@@ -224,50 +224,58 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline const Aws::Vector<MetricDefinition>& GetMetricDefinitions() const{ return m_metricDefinitions; }
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline bool MetricDefinitionsHasBeenSet() const { return m_metricDefinitionsHasBeenSet; }
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline void SetMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = value; }
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline void SetMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions = std::move(value); }
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline HyperParameterAlgorithmSpecification& WithMetricDefinitions(const Aws::Vector<MetricDefinition>& value) { SetMetricDefinitions(value); return *this;}
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline HyperParameterAlgorithmSpecification& WithMetricDefinitions(Aws::Vector<MetricDefinition>&& value) { SetMetricDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline HyperParameterAlgorithmSpecification& AddMetricDefinitions(const MetricDefinition& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>MetricDefinition</a> objects that specify the metrics that the
-     * algorithm emits.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_MetricDefinition.html">MetricDefinition</a>
+     * objects that specify the metrics that the algorithm emits.</p>
      */
     inline HyperParameterAlgorithmSpecification& AddMetricDefinitions(MetricDefinition&& value) { m_metricDefinitionsHasBeenSet = true; m_metricDefinitions.push_back(std::move(value)); return *this; }
 

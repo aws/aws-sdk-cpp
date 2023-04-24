@@ -276,7 +276,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the
@@ -291,7 +292,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the
@@ -306,7 +308,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the
@@ -321,7 +324,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the
@@ -336,7 +340,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the
@@ -351,7 +356,8 @@ namespace Model
      * <p>(Optional) The input mode to use for the data channel in a training job. If
      * you don't set a value for <code>InputMode</code>, SageMaker uses the value set
      * for <code>TrainingInputMode</code>. Use this parameter to override the
-     * <code>TrainingInputMode</code> setting in a <a>AlgorithmSpecification</a>
+     * <code>TrainingInputMode</code> setting in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AlgorithmSpecification.html">AlgorithmSpecification</a>
      * request when you have a channel that needs a different input mode from the
      * training job's general setting. To download the data from Amazon Simple Storage
      * Service (Amazon S3) to the provisioned ML storage volume, and mount the

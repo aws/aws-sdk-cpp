@@ -132,48 +132,54 @@ namespace Model
 
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */
     inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */
     inline void SetLastUpdatedDate(Aws::Utils::DateTime&& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = std::move(value); }
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */
     inline Workforce& WithLastUpdatedDate(const Aws::Utils::DateTime& value) { SetLastUpdatedDate(value); return *this;}
 
     /**
-     * <p>The most recent date that was used to successfully add one or more IP address
-     * ranges (<a
+     * <p>The most recent date that <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateWorkforce.html">UpdateWorkforce</a>
+     * was used to successfully add one or more IP address ranges (<a
      * href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>)
      * to a private workforce's allow list.</p>
      */

@@ -404,6 +404,31 @@ namespace Model
      */
     inline UpdateMonitorRequest& WithInternetMeasurementsLogDelivery(InternetMeasurementsLogDelivery&& value) { SetInternetMeasurementsLogDelivery(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline int GetTrafficPercentageToMonitor() const{ return m_trafficPercentageToMonitor; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline bool TrafficPercentageToMonitorHasBeenSet() const { return m_trafficPercentageToMonitorHasBeenSet; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline void SetTrafficPercentageToMonitor(int value) { m_trafficPercentageToMonitorHasBeenSet = true; m_trafficPercentageToMonitor = value; }
+
+    /**
+     * <p>The percentage of the internet-facing traffic for your application that you
+     * want to monitor with this monitor.</p>
+     */
+    inline UpdateMonitorRequest& WithTrafficPercentageToMonitor(int value) { SetTrafficPercentageToMonitor(value); return *this;}
+
   private:
 
     Aws::String m_monitorName;
@@ -426,6 +451,9 @@ namespace Model
 
     InternetMeasurementsLogDelivery m_internetMeasurementsLogDelivery;
     bool m_internetMeasurementsLogDeliveryHasBeenSet = false;
+
+    int m_trafficPercentageToMonitor;
+    bool m_trafficPercentageToMonitorHasBeenSet = false;
   };
 
 } // namespace Model

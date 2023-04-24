@@ -39,50 +39,58 @@ namespace Model
 
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline const Aws::String& GetLambdaArn() const{ return m_lambdaArn; }
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline bool LambdaArnHasBeenSet() const { return m_lambdaArnHasBeenSet; }
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline void SetLambdaArn(const Aws::String& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = value; }
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline void SetLambdaArn(Aws::String&& value) { m_lambdaArnHasBeenSet = true; m_lambdaArn = std::move(value); }
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline void SetLambdaArn(const char* value) { m_lambdaArnHasBeenSet = true; m_lambdaArn.assign(value); }
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline SipMediaApplicationEndpoint& WithLambdaArn(const Aws::String& value) { SetLambdaArn(value); return *this;}
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline SipMediaApplicationEndpoint& WithLambdaArn(Aws::String&& value) { SetLambdaArn(std::move(value)); return *this;}
 
     /**
-     * <p>Valid Amazon Resource Name (ARN) of the Lambda function. The function must be
-     * created in the same AWS Region as the SIP media application.</p>
+     * <p>Valid Amazon Resource Name (ARN) of the Lambda function, version, or alias.
+     * The function must be created in the same AWS Region as the SIP media
+     * application.</p>
      */
     inline SipMediaApplicationEndpoint& WithLambdaArn(const char* value) { SetLambdaArn(value); return *this;}
 

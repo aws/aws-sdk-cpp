@@ -193,42 +193,50 @@ namespace Model
 
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token assigned to the client making the pipeline request.</p>
+     * <p>The unique identifier for the client request. The token makes the API request
+     * idempotent. Use a different token for different media pipeline requests.</p>
      */
     inline CreateMediaCapturePipelineRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 

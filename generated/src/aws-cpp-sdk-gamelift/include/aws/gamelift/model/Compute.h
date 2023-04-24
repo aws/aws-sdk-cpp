@@ -29,8 +29,9 @@ namespace Model
 
   /**
    * <p>Resources used to host your game servers. A compute resource can be managed
-   * GameLift Amazon EC2 instances or your own resources.</p><p><h3>See Also:</h3>  
-   * <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
+   * Amazon GameLift Amazon EC2 instances or your own resources.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Compute">AWS
    * API Reference</a></p>
    */
   class Compute
@@ -231,99 +232,99 @@ namespace Model
 
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The IP address of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline const Aws::String& GetDnsName() const{ return m_dnsName; }
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetDnsName(Aws::String&& value) { m_dnsNameHasBeenSet = true; m_dnsName = std::move(value); }
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline void SetDnsName(const char* value) { m_dnsNameHasBeenSet = true; m_dnsName.assign(value); }
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithDnsName(const Aws::String& value) { SetDnsName(value); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithDnsName(Aws::String&& value) { SetDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS name of the compute resource. GameLift requires the DNS name or IP
-     * address to manage your compute resource.</p>
+     * <p>The DNS name of the compute resource. Amazon GameLift requires the DNS name
+     * or IP address to manage your compute resource.</p>
      */
     inline Compute& WithDnsName(const char* value) { SetDnsName(value); return *this;}
 
@@ -489,87 +490,87 @@ namespace Model
 
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline void SetType(const EC2InstanceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline void SetType(EC2InstanceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline Compute& WithType(const EC2InstanceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Which compute type that the fleet uses. A fleet can use Anywhere compute
-     * resources owned by you or managed Amazon EC2 instances.</p>
+     * <p>The compute type that the fleet uses. A fleet can use Anywhere compute
+     * resources that you own, or use managed Amazon EC2 instances.</p>
      */
     inline Compute& WithType(EC2InstanceType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline const Aws::String& GetGameLiftServiceSdkEndpoint() const{ return m_gameLiftServiceSdkEndpoint; }
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline bool GameLiftServiceSdkEndpointHasBeenSet() const { return m_gameLiftServiceSdkEndpointHasBeenSet; }
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(const Aws::String& value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint = value; }
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(Aws::String&& value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint = std::move(value); }
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline void SetGameLiftServiceSdkEndpoint(const char* value) { m_gameLiftServiceSdkEndpointHasBeenSet = true; m_gameLiftServiceSdkEndpoint.assign(value); }
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(const Aws::String& value) { SetGameLiftServiceSdkEndpoint(value); return *this;}
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(Aws::String&& value) { SetGameLiftServiceSdkEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The endpoint connection details of the GameLift SDK endpoint that your game
-     * server connects to.</p>
+     * <p>The endpoint connection details of the Amazon GameLift SDK endpoint that your
+     * game server connects to.</p>
      */
     inline Compute& WithGameLiftServiceSdkEndpoint(const char* value) { SetGameLiftServiceSdkEndpoint(value); return *this;}
 

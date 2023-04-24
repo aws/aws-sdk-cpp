@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/emr-serverless/model/TotalResourceUtilization.h>
 #include <aws/emr-serverless/model/NetworkConfiguration.h>
+#include <aws/emr-serverless/model/ResourceUtilization.h>
 #include <utility>
 
 namespace Aws
@@ -602,43 +603,43 @@ namespace Model
 
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline const TotalResourceUtilization& GetTotalResourceUtilization() const{ return m_totalResourceUtilization; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline bool TotalResourceUtilizationHasBeenSet() const { return m_totalResourceUtilizationHasBeenSet; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline void SetTotalResourceUtilization(const TotalResourceUtilization& value) { m_totalResourceUtilizationHasBeenSet = true; m_totalResourceUtilization = value; }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline void SetTotalResourceUtilization(TotalResourceUtilization&& value) { m_totalResourceUtilizationHasBeenSet = true; m_totalResourceUtilization = std::move(value); }
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline JobRun& WithTotalResourceUtilization(const TotalResourceUtilization& value) { SetTotalResourceUtilization(value); return *this;}
 
     /**
-     * <p>The aggregate vCPU, memory, and storage resources used from the time job
-     * start executing till the time job is terminated, rounded up to the nearest
+     * <p>The aggregate vCPU, memory, and storage resources used from the time the job
+     * starts to execute, until the time the job terminates, rounded up to the nearest
      * second.</p>
      */
     inline JobRun& WithTotalResourceUtilization(TotalResourceUtilization&& value) { SetTotalResourceUtilization(std::move(value)); return *this;}
@@ -693,28 +694,81 @@ namespace Model
 
 
     /**
-     * <p>Maximum duration for the job run to run. If the job run runs beyond this
-     * duration, it will be automatically cancelled.</p>
+     * <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If
+     * no timeout was specified, then it returns the default timeout of 720
+     * minutes.</p>
      */
     inline long long GetExecutionTimeoutMinutes() const{ return m_executionTimeoutMinutes; }
 
     /**
-     * <p>Maximum duration for the job run to run. If the job run runs beyond this
-     * duration, it will be automatically cancelled.</p>
+     * <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If
+     * no timeout was specified, then it returns the default timeout of 720
+     * minutes.</p>
      */
     inline bool ExecutionTimeoutMinutesHasBeenSet() const { return m_executionTimeoutMinutesHasBeenSet; }
 
     /**
-     * <p>Maximum duration for the job run to run. If the job run runs beyond this
-     * duration, it will be automatically cancelled.</p>
+     * <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If
+     * no timeout was specified, then it returns the default timeout of 720
+     * minutes.</p>
      */
     inline void SetExecutionTimeoutMinutes(long long value) { m_executionTimeoutMinutesHasBeenSet = true; m_executionTimeoutMinutes = value; }
 
     /**
-     * <p>Maximum duration for the job run to run. If the job run runs beyond this
-     * duration, it will be automatically cancelled.</p>
+     * <p>Returns the job run timeout value from the <code>StartJobRun</code> call. If
+     * no timeout was specified, then it returns the default timeout of 720
+     * minutes.</p>
      */
     inline JobRun& WithExecutionTimeoutMinutes(long long value) { SetExecutionTimeoutMinutes(value); return *this;}
+
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline const ResourceUtilization& GetBilledResourceUtilization() const{ return m_billedResourceUtilization; }
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline bool BilledResourceUtilizationHasBeenSet() const { return m_billedResourceUtilizationHasBeenSet; }
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline void SetBilledResourceUtilization(const ResourceUtilization& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = value; }
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline void SetBilledResourceUtilization(ResourceUtilization&& value) { m_billedResourceUtilizationHasBeenSet = true; m_billedResourceUtilization = std::move(value); }
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline JobRun& WithBilledResourceUtilization(const ResourceUtilization& value) { SetBilledResourceUtilization(value); return *this;}
+
+    /**
+     * <p>The aggregate vCPU, memory, and storage that AWS has billed for the job run.
+     * The billed resources include a 1-minute minimum usage for workers, plus
+     * additional storage over 20 GB per worker. Note that billed resources do not
+     * include usage for idle pre-initialized workers.</p>
+     */
+    inline JobRun& WithBilledResourceUtilization(ResourceUtilization&& value) { SetBilledResourceUtilization(std::move(value)); return *this;}
 
   private:
 
@@ -771,6 +825,9 @@ namespace Model
 
     long long m_executionTimeoutMinutes;
     bool m_executionTimeoutMinutesHasBeenSet = false;
+
+    ResourceUtilization m_billedResourceUtilization;
+    bool m_billedResourceUtilizationHasBeenSet = false;
   };
 
 } // namespace Model

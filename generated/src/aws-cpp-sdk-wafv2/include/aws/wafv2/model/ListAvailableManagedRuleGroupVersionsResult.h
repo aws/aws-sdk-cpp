@@ -100,43 +100,50 @@ namespace Model
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline const Aws::Vector<ManagedRuleGroupVersion>& GetVersions() const{ return m_versions; }
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline void SetVersions(const Aws::Vector<ManagedRuleGroupVersion>& value) { m_versions = value; }
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline void SetVersions(Aws::Vector<ManagedRuleGroupVersion>&& value) { m_versions = std::move(value); }
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline ListAvailableManagedRuleGroupVersionsResult& WithVersions(const Aws::Vector<ManagedRuleGroupVersion>& value) { SetVersions(value); return *this;}
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline ListAvailableManagedRuleGroupVersionsResult& WithVersions(Aws::Vector<ManagedRuleGroupVersion>&& value) { SetVersions(std::move(value)); return *this;}
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline ListAvailableManagedRuleGroupVersionsResult& AddVersions(const ManagedRuleGroupVersion& value) { m_versions.push_back(value); return *this; }
 
     /**
      * <p>The versions that are currently available for the specified managed rule
-     * group. </p>
+     * group. If you specified a <code>Limit</code> in your request, this might not be
+     * the full list. </p>
      */
     inline ListAvailableManagedRuleGroupVersionsResult& AddVersions(ManagedRuleGroupVersion&& value) { m_versions.push_back(std::move(value)); return *this; }
 

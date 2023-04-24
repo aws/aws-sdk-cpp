@@ -159,7 +159,7 @@ namespace DynamoDB
          * eventually consistent reads on every table in the request. If you want strongly
          * consistent reads instead, you can set <code>ConsistentRead</code> to
          * <code>true</code> for any or all tables.</p> <p>In order to minimize response
-         * latency, <code>BatchGetItem</code> retrieves items in parallel.</p> <p>When
+         * latency, <code>BatchGetItem</code> may retrieve items in parallel.</p> <p>When
          * designing your application, keep in mind that DynamoDB does not return items in
          * any particular order. To help parse the response by item, include the primary
          * key values for the items in your request in the
@@ -1479,7 +1479,7 @@ namespace DynamoDB
 
         /**
          * <p>Creates a new table from an existing backup. Any number of users can execute
-         * up to 4 concurrent restores (any type of restore) in a given account. </p>
+         * up to 50 concurrent restores (any type of restore) in a given account. </p>
          * <p>You can call <code>RestoreTableFromBackup</code> at a maximum rate of 10
          * times per second.</p> <p>You must manually set up the following on the restored
          * table:</p> <ul> <li> <p>Auto scaling policies</p> </li> <li> <p>IAM policies</p>

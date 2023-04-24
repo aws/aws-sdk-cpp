@@ -35,9 +35,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -47,9 +47,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -59,9 +59,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -71,9 +71,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -83,9 +83,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -95,9 +95,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -107,9 +107,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -119,9 +119,9 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the permission whose contents you want to retrieve. To
-     * find the ARN for a permission, use either the <a>ListPermissions</a> operation
-     * or go to the <a
+     * Resource Name (ARN)</a> of the permission whose contents you want to retrieve.
+     * To find the ARN for a permission, use either the <a>ListPermissions</a>
+     * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
      * library</a> page in the RAM console and then choose the name of the permission.
      * The ARN is displayed on the detail page.</p>
@@ -130,30 +130,30 @@ namespace Model
 
 
     /**
-     * <p>Specifies identifier for the version of the RAM permission to retrieve. If
-     * you don't specify this parameter, the operation retrieves the default
-     * version.</p>
+     * <p>Specifies the version number of the RAM permission to retrieve. If you don't
+     * specify this parameter, the operation retrieves the default version.</p> <p>To
+     * see the list of available versions, use <a>ListPermissionVersions</a>.</p>
      */
     inline int GetPermissionVersion() const{ return m_permissionVersion; }
 
     /**
-     * <p>Specifies identifier for the version of the RAM permission to retrieve. If
-     * you don't specify this parameter, the operation retrieves the default
-     * version.</p>
+     * <p>Specifies the version number of the RAM permission to retrieve. If you don't
+     * specify this parameter, the operation retrieves the default version.</p> <p>To
+     * see the list of available versions, use <a>ListPermissionVersions</a>.</p>
      */
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
 
     /**
-     * <p>Specifies identifier for the version of the RAM permission to retrieve. If
-     * you don't specify this parameter, the operation retrieves the default
-     * version.</p>
+     * <p>Specifies the version number of the RAM permission to retrieve. If you don't
+     * specify this parameter, the operation retrieves the default version.</p> <p>To
+     * see the list of available versions, use <a>ListPermissionVersions</a>.</p>
      */
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
 
     /**
-     * <p>Specifies identifier for the version of the RAM permission to retrieve. If
-     * you don't specify this parameter, the operation retrieves the default
-     * version.</p>
+     * <p>Specifies the version number of the RAM permission to retrieve. If you don't
+     * specify this parameter, the operation retrieves the default version.</p> <p>To
+     * see the list of available versions, use <a>ListPermissionVersions</a>.</p>
      */
     inline GetPermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
 

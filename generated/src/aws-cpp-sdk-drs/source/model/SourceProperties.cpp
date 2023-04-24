@@ -27,7 +27,9 @@ SourceProperties::SourceProperties() :
     m_osHasBeenSet(false),
     m_ramBytes(0),
     m_ramBytesHasBeenSet(false),
-    m_recommendedInstanceTypeHasBeenSet(false)
+    m_recommendedInstanceTypeHasBeenSet(false),
+    m_supportsNitroInstances(false),
+    m_supportsNitroInstancesHasBeenSet(false)
 {
 }
 
@@ -40,7 +42,9 @@ SourceProperties::SourceProperties(JsonView jsonValue) :
     m_osHasBeenSet(false),
     m_ramBytes(0),
     m_ramBytesHasBeenSet(false),
-    m_recommendedInstanceTypeHasBeenSet(false)
+    m_recommendedInstanceTypeHasBeenSet(false),
+    m_supportsNitroInstances(false),
+    m_supportsNitroInstancesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -112,6 +116,13 @@ SourceProperties& SourceProperties::operator =(JsonView jsonValue)
     m_recommendedInstanceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportsNitroInstances"))
+  {
+    m_supportsNitroInstances = jsonValue.GetBool("supportsNitroInstances");
+
+    m_supportsNitroInstancesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +190,12 @@ JsonValue SourceProperties::Jsonize() const
   if(m_recommendedInstanceTypeHasBeenSet)
   {
    payload.WithString("recommendedInstanceType", m_recommendedInstanceType);
+
+  }
+
+  if(m_supportsNitroInstancesHasBeenSet)
+  {
+   payload.WithBool("supportsNitroInstances", m_supportsNitroInstances);
 
   }
 

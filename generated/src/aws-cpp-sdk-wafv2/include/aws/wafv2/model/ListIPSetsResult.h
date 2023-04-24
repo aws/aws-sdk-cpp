@@ -99,44 +99,44 @@ namespace Model
 
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline const Aws::Vector<IPSetSummary>& GetIPSets() const{ return m_iPSets; }
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline void SetIPSets(const Aws::Vector<IPSetSummary>& value) { m_iPSets = value; }
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline void SetIPSets(Aws::Vector<IPSetSummary>&& value) { m_iPSets = std::move(value); }
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline ListIPSetsResult& WithIPSets(const Aws::Vector<IPSetSummary>& value) { SetIPSets(value); return *this;}
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline ListIPSetsResult& WithIPSets(Aws::Vector<IPSetSummary>&& value) { SetIPSets(std::move(value)); return *this;}
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline ListIPSetsResult& AddIPSets(const IPSetSummary& value) { m_iPSets.push_back(value); return *this; }
 
     /**
-     * <p>Array of IPSets. This may not be the full list of IPSets that you have
-     * defined. See the <code>Limit</code> specification for this request.</p>
+     * <p>Array of IPSets. If you specified a <code>Limit</code> in your request, this
+     * might not be the full list. </p>
      */
     inline ListIPSetsResult& AddIPSets(IPSetSummary&& value) { m_iPSets.push_back(std::move(value)); return *this; }
 

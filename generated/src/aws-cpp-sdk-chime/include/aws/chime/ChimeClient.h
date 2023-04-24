@@ -16,22 +16,18 @@ namespace Aws
 namespace Chime
 {
   /**
-   * <p>The Amazon Chime API (application programming interface) is designed for
-   * developers to perform key tasks, such as creating and managing Amazon Chime
+   * <p>The Amazon Chime application programming interface (API) is designed so
+   * administrators can perform key tasks, such as creating and managing Amazon Chime
    * accounts, users, and Voice Connectors. This guide provides detailed information
    * about the Amazon Chime API, including operations, types, inputs and outputs, and
-   * error codes. It also includes API actions for use with the Amazon Chime SDK,
-   * which developers use to build their own communication applications. For more
-   * information about the Amazon Chime SDK, see <a
-   * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html"> Using the
-   * Amazon Chime SDK </a> in the <i>Amazon Chime Developer Guide</i>.</p> <p>You can
-   * use an AWS SDK, the AWS Command Line Interface (AWS CLI), or the REST API to
-   * make API calls. We recommend using an AWS SDK or the AWS CLI. Each API operation
-   * includes links to information about using it with a language-specific AWS SDK or
-   * the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt> <dd> <p> You don't need to write
-   * code to calculate a signature for request authentication. The SDK clients
-   * authenticate your requests by using access keys that you provide. For more
-   * information about AWS SDKs, see the <a
+   * error codes.</p> <p>You can use an AWS SDK, the AWS Command Line Interface (AWS
+   * CLI), or the REST API to make API calls for Amazon Chime. We recommend using an
+   * AWS SDK or the AWS CLI. The page for each API action contains a <i>See Also</i>
+   * section that includes links to information about using the action with a
+   * language-specific AWS SDK or the AWS CLI.</p> <dl> <dt>Using an AWS SDK</dt>
+   * <dd> <p> You don't need to write code to calculate a signature for request
+   * authentication. The SDK clients authenticate your requests by using access keys
+   * that you provide. For more information about AWS SDKs, see the <a
    * href="http://aws.amazon.com/developer/">AWS Developer Center</a>. </p> </dd>
    * <dt>Using the AWS CLI</dt> <dd> <p>Use your access keys with the AWS CLI to make
    * API calls. For information about setting up the AWS CLI, see <a
@@ -41,7 +37,7 @@ namespace Chime
    * href="https://docs.aws.amazon.com/cli/latest/reference/chime/index.html">Amazon
    * Chime commands</a> in the <i>AWS CLI Command Reference</i>. </p> </dd> <dt>Using
    * REST APIs</dt> <dd> <p>If you use REST to make API calls, you must authenticate
-   * your request by providing a signature. Amazon Chime supports signature version
+   * your request by providing a signature. Amazon Chime supports Signature Version
    * 4. For more information, see <a
    * href="https://docs.aws.amazon.com/general/latest/gr/signature-version-4.html">Signature
    * Version 4 Signing Process</a> in the <i>Amazon Web Services General
@@ -216,9 +212,9 @@ namespace Chime
         /**
          * <p> Creates up to 100 new attendees for an active Amazon Chime SDK meeting. For
          * more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/BatchCreateAttendee">AWS
          * API Reference</a></p>
          */
@@ -574,9 +570,9 @@ namespace Chime
         /**
          * <p> Creates a new attendee for an active Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateAttendee">AWS
          * API Reference</a></p>
          */
@@ -782,12 +778,12 @@ namespace Chime
         /**
          * <p> Creates a new Amazon Chime SDK meeting in the specified media Region with no
          * initial attendees. For more information about specifying media Regions, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For
          * more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeeting">AWS
          * API Reference</a></p>
          */
@@ -845,12 +841,12 @@ namespace Chime
         /**
          * <p> Creates a new Amazon Chime SDK meeting in the specified media Region, with
          * attendees. For more information about specifying media Regions, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/chime-sdk-meetings-regions.html">Amazon
-         * Chime SDK Media Regions</a> in the <i>Amazon Chime Developer Guide</i> . For
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon
+         * Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For
          * more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/CreateMeetingWithAttendees">AWS
          * API Reference</a></p>
          */
@@ -1289,9 +1285,9 @@ namespace Chime
          * their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon
          * Chime SDK meeting is deleted. For more information about the Amazon Chime SDK,
          * see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteAttendee">AWS
          * API Reference</a></p>
          */
@@ -1513,9 +1509,9 @@ namespace Chime
          * <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all
          * attendees, disconnects all clients, and prevents new clients from joining the
          * meeting. For more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/DeleteMeeting">AWS
          * API Reference</a></p>
          */
@@ -2374,9 +2370,9 @@ namespace Chime
         /**
          * <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and
          * attendee ID. For more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetAttendee">AWS
          * API Reference</a></p>
          */
@@ -2535,9 +2531,9 @@ namespace Chime
         /**
          * <p> Gets the Amazon Chime SDK meeting details for the specified meeting ID. For
          * more information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i> . </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i> .
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/GetMeeting">AWS
          * API Reference</a></p>
          */
@@ -3280,9 +3276,9 @@ namespace Chime
         /**
          * <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more
          * information about the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>. </p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.
+         * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListAttendees">AWS
          * API Reference</a></p>
          */
@@ -3593,9 +3589,9 @@ namespace Chime
         /**
          * <p> Lists up to 100 active Amazon Chime SDK meetings. For more information about
          * the Amazon Chime SDK, see <a
-         * href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the
-         * Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using
+         * the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/ListMeetings">AWS
          * API Reference</a></p>
          */
@@ -4539,8 +4535,20 @@ namespace Chime
         }
 
         /**
-         * <p>Starts transcription for the specified <code>meetingId</code>. </p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Starts transcription for the specified <code>meetingId</code>. For more
+         * information, refer to <a
+         * href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html">
+         * Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK
+         * Developer Guide</i>.</p> <p>If you specify an invalid configuration, a
+         * <code>TranscriptFailed</code> event will be sent with the contents of the
+         * <code>BadRequestException</code> generated by Amazon Transcribe. For more
+         * information on each parameter and which combinations are valid, refer to the <a
+         * href="https://docs.aws.amazon.com/transcribe/latest/APIReference/API_streaming_StartStreamTranscription.html">StartStreamTranscription</a>
+         * API in the <i>Amazon Transcribe Developer Guide</i>.</p>  <p>Amazon
+         * Chime SDK live transcription is powered by Amazon Transcribe. Use of Amazon
+         * Transcribe is subject to the <a href="https://aws.amazon.com/service-terms/">AWS
+         * Service Terms</a>, including the terms specific to the AWS Machine Learning and
+         * Artificial Intelligence Services.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/StartMeetingTranscription">AWS
          * API Reference</a></p>
          */

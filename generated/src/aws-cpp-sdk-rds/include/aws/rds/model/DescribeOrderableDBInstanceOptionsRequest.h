@@ -43,121 +43,113 @@ namespace Model
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
 
     /**
      * <p>The name of the engine to retrieve DB instance options for.</p> <p>Valid
-     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> (for MySQL 5.7-compatible
-     * and MySQL 8.0-compatible Aurora)</p> </li> <li> <p>
-     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>mariadb</code> </p>
-     * </li> <li> <p> <code>mysql</code> </p> </li> <li> <p> <code>oracle-ee</code>
-     * </p> </li> <li> <p> <code>oracle-ee-cdb</code> </p> </li> <li> <p>
-     * <code>oracle-se2</code> </p> </li> <li> <p> <code>oracle-se2-cdb</code> </p>
-     * </li> <li> <p> <code>postgres</code> </p> </li> <li> <p>
-     * <code>sqlserver-ee</code> </p> </li> <li> <p> <code>sqlserver-se</code> </p>
-     * </li> <li> <p> <code>sqlserver-ex</code> </p> </li> <li> <p>
-     * <code>sqlserver-web</code> </p> </li> </ul>
+     * Values:</p> <ul> <li> <p> <code>aurora-mysql</code> </p> </li> <li> <p>
+     * <code>aurora-postgresql</code> </p> </li> <li> <p> <code>custom-oracle-ee</code>
+     * </p> </li> <li> <p> <code>mariadb</code> </p> </li> <li> <p> <code>mysql</code>
+     * </p> </li> <li> <p> <code>oracle-ee</code> </p> </li> <li> <p>
+     * <code>oracle-ee-cdb</code> </p> </li> <li> <p> <code>oracle-se2</code> </p>
+     * </li> <li> <p> <code>oracle-se2-cdb</code> </p> </li> <li> <p>
+     * <code>postgres</code> </p> </li> <li> <p> <code>sqlserver-ee</code> </p> </li>
+     * <li> <p> <code>sqlserver-se</code> </p> </li> <li> <p> <code>sqlserver-ex</code>
+     * </p> </li> <li> <p> <code>sqlserver-web</code> </p> </li> </ul>
      */
     inline DescribeOrderableDBInstanceOptionsRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
 

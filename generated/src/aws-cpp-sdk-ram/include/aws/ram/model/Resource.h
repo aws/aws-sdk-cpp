@@ -44,105 +44,121 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline Resource& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline Resource& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p>
+     * Resource Name (ARN)</a> of the resource.</p>
      */
     inline Resource& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline Resource& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline Resource& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
      * <p>The resource type. This takes the form of:
-     * <code>service-code</code>:<code>resource-code</code> </p>
+     * <code>service-code</code>:<code>resource-code</code>, and is case-insensitive.
+     * For example, an Amazon EC2 Subnet would be represented by the string
+     * <code>ec2:subnet</code>.</p>
      */
     inline Resource& WithType(const char* value) { SetType(value); return *this;}
 
@@ -150,7 +166,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
@@ -158,7 +174,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
@@ -166,7 +182,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
@@ -174,7 +190,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
@@ -182,7 +198,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
@@ -190,7 +206,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline Resource& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
@@ -198,7 +214,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline Resource& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
@@ -206,7 +222,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share this resource is associated
+     * Resource Name (ARN)</a> of the resource share this resource is associated
      * with.</p>
      */
     inline Resource& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
@@ -215,7 +231,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline const Aws::String& GetResourceGroupArn() const{ return m_resourceGroupArn; }
@@ -223,7 +239,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline bool ResourceGroupArnHasBeenSet() const { return m_resourceGroupArnHasBeenSet; }
@@ -231,7 +247,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline void SetResourceGroupArn(const Aws::String& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = value; }
@@ -239,7 +255,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline void SetResourceGroupArn(Aws::String&& value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn = std::move(value); }
@@ -247,7 +263,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline void SetResourceGroupArn(const char* value) { m_resourceGroupArnHasBeenSet = true; m_resourceGroupArn.assign(value); }
@@ -255,7 +271,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(const Aws::String& value) { SetResourceGroupArn(value); return *this;}
@@ -263,7 +279,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(Aws::String&& value) { SetResourceGroupArn(std::move(value)); return *this;}
@@ -271,7 +287,7 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource group. This value is available only if
+     * Resource Name (ARN)</a> of the resource group. This value is available only if
      * the resource is part of a resource group.</p>
      */
     inline Resource& WithResourceGroupArn(const char* value) { SetResourceGroupArn(value); return *this;}
@@ -387,32 +403,38 @@ namespace Model
 
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline void SetLastUpdatedTime(Aws::Utils::DateTime&& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = std::move(value); }
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline Resource& WithLastUpdatedTime(const Aws::Utils::DateTime& value) { SetLastUpdatedTime(value); return *this;}
 
     /**
-     * <p>The date an time when the association was last updated.</p>
+     * <p>The date an time when the association between the resource and the resource
+     * share was last updated.</p>
      */
     inline Resource& WithLastUpdatedTime(Aws::Utils::DateTime&& value) { SetLastUpdatedTime(std::move(value)); return *this;}
 

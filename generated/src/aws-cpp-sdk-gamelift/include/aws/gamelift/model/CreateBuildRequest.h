@@ -39,98 +39,98 @@ namespace Model
 
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>A descriptive label associated with a build. Build names do not need to be
+     * <p>A descriptive label associated with a build. Build names don't need to be
      * unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Version information associated with a build or script. Version strings do not
+     * <p>Version information associated with a build or script. Version strings don't
      * need to be unique. You can change this value later. </p>
      */
     inline CreateBuildRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
@@ -213,9 +213,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
@@ -223,9 +223,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
@@ -233,9 +233,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
@@ -243,9 +243,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
@@ -253,9 +253,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
@@ -263,9 +263,9 @@ namespace Model
      * <p>The operating system that you built the game server binaries to run on. This
      * value determines the type of fleet resources that you can use for this build. If
      * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system is not specified when creating a build,
-     * GameLift uses the default value (WINDOWS_2012). This value cannot be changed
-     * later.</p>
+     * operating system. If an operating system isn't specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
+     * changed later.</p>
      */
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 
@@ -417,65 +417,73 @@ namespace Model
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline const Aws::String& GetServerSdkVersion() const{ return m_serverSdkVersion; }
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline bool ServerSdkVersionHasBeenSet() const { return m_serverSdkVersionHasBeenSet; }
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline void SetServerSdkVersion(const Aws::String& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = value; }
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline void SetServerSdkVersion(Aws::String&& value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion = std::move(value); }
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline void SetServerSdkVersion(const char* value) { m_serverSdkVersionHasBeenSet = true; m_serverSdkVersion.assign(value); }
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline CreateBuildRequest& WithServerSdkVersion(const Aws::String& value) { SetServerSdkVersion(value); return *this;}
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline CreateBuildRequest& WithServerSdkVersion(Aws::String&& value) { SetServerSdkVersion(std::move(value)); return *this;}
 
     /**
      * <p>A server SDK version you used when integrating your game server build with
-     * GameLift. For more information see <a
+     * Amazon GameLift. For more information see <a
      * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/integration-custom-intro.html">Integrate
-     * games with custom game servers</a>.</p>
+     * games with custom game servers</a>. By default Amazon GameLift sets this value
+     * to <code>4.0.2</code>.</p>
      */
     inline CreateBuildRequest& WithServerSdkVersion(const char* value) { SetServerSdkVersion(value); return *this;}
 

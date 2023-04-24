@@ -191,7 +191,9 @@ namespace EMRServerless
         }
 
         /**
-         * <p>Returns a URL to access the job run dashboard.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns a URL to access the job run dashboard. The generated URL is valid for
+         * one hour, after which you must invoke the API again to generate a new
+         * URL.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetDashboardForJobRun">AWS
          * API Reference</a></p>
          */

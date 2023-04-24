@@ -24,7 +24,11 @@ DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig() :
     m_s3UriHasBeenSet(false),
     m_testS3UriHasBeenSet(false),
     m_labelDelimiterHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false)
+    m_augmentedManifestsHasBeenSet(false),
+    m_documentType(DocumentClassifierDocumentTypeFormat::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_documentsHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
 }
 
@@ -34,7 +38,11 @@ DocumentClassifierInputDataConfig::DocumentClassifierInputDataConfig(JsonView js
     m_s3UriHasBeenSet(false),
     m_testS3UriHasBeenSet(false),
     m_labelDelimiterHasBeenSet(false),
-    m_augmentedManifestsHasBeenSet(false)
+    m_augmentedManifestsHasBeenSet(false),
+    m_documentType(DocumentClassifierDocumentTypeFormat::NOT_SET),
+    m_documentTypeHasBeenSet(false),
+    m_documentsHasBeenSet(false),
+    m_documentReaderConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +87,27 @@ DocumentClassifierInputDataConfig& DocumentClassifierInputDataConfig::operator =
     m_augmentedManifestsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DocumentType"))
+  {
+    m_documentType = DocumentClassifierDocumentTypeFormatMapper::GetDocumentClassifierDocumentTypeFormatForName(jsonValue.GetString("DocumentType"));
+
+    m_documentTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("Documents"))
+  {
+    m_documents = jsonValue.GetObject("Documents");
+
+    m_documentsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DocumentReaderConfig"))
+  {
+    m_documentReaderConfig = jsonValue.GetObject("DocumentReaderConfig");
+
+    m_documentReaderConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +146,23 @@ JsonValue DocumentClassifierInputDataConfig::Jsonize() const
      augmentedManifestsJsonList[augmentedManifestsIndex].AsObject(m_augmentedManifests[augmentedManifestsIndex].Jsonize());
    }
    payload.WithArray("AugmentedManifests", std::move(augmentedManifestsJsonList));
+
+  }
+
+  if(m_documentTypeHasBeenSet)
+  {
+   payload.WithString("DocumentType", DocumentClassifierDocumentTypeFormatMapper::GetNameForDocumentClassifierDocumentTypeFormat(m_documentType));
+  }
+
+  if(m_documentsHasBeenSet)
+  {
+   payload.WithObject("Documents", m_documents.Jsonize());
+
+  }
+
+  if(m_documentReaderConfigHasBeenSet)
+  {
+   payload.WithObject("DocumentReaderConfig", m_documentReaderConfig.Jsonize());
 
   }
 

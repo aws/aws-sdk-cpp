@@ -41,7 +41,7 @@ namespace Model
    * the other meeting participants.</p> </li> <li> <p>When you change a
    * <code>video</code> or <code>content</code> capability from <code>None</code> or
    * <code>Receive</code> to <code>Send</code> or <code>SendReceive</code> , and if
-   * the attendee turned on their video or content streams, remote attendess can
+   * the attendee turned on their video or content streams, remote attendees can
    * receive those streams, but only after media renegotiation between the client and
    * the Amazon Chime back-end server.</p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-meetings-2021-07-15/AttendeeCapabilities">AWS

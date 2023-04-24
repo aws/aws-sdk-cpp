@@ -210,44 +210,50 @@ namespace Model
 
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline const HyperParameterAlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline bool AlgorithmSpecificationHasBeenSet() const { return m_algorithmSpecificationHasBeenSet; }
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline void SetAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline void SetAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
 
     /**
-     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * resource algorithm to use for the training jobs that the tuning job
-     * launches.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterAlgorithmSpecification.html">HyperParameterAlgorithmSpecification</a>
+     * object that specifies the resource algorithm to use for the training jobs that
+     * the tuning job launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
 
@@ -302,109 +308,131 @@ namespace Model
 
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
     /**
-     * <p>An array of <a>Channel</a> objects that specify the input for the training
-     * jobs that the tuning job launches.</p>
+     * <p>An array of <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_Channel.html">Channel</a>
+     * objects that specify the input for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
-     * jobs that this hyperparameter tuning job launches to connect to. Control access
-     * to and from your training container by configuring the VPC. For more
-     * information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want the training jobs that this
+     * hyperparameter tuning job launches to connect to. Control access to and from
+     * your training container by configuring the VPC. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */

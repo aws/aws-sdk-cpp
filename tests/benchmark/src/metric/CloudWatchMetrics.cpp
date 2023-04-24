@@ -13,7 +13,11 @@ using namespace Aws::CloudWatch::Model;
 Benchmark::CloudWatchMetrics::CloudWatchMetrics(
     const std::shared_ptr<Aws::CloudWatch::CloudWatchClient> &cloudWatchClient) : cloudWatchClient(cloudWatchClient) {}
 
-void Benchmark::CloudWatchMetrics::EmitMetric(std::vector<Metric> &&metrics) const {
+void Benchmark::CloudWatchMetrics::EmitMetricForOp(const std::string &metricName,
+    const std::vector<Dimension> &dimensions,
+    const std::function<bool()> &op) const {
+
+    auto metrics = CreateMetricsForOp(metricName, dimensions, op);
     std::vector<MetricDatum> data{metrics.size()};
     std::transform(metrics.cbegin(),
         metrics.cend(),
@@ -22,8 +26,9 @@ void Benchmark::CloudWatchMetrics::EmitMetric(std::vector<Metric> &&metrics) con
 
     this->cloudWatchClient->PutMetricData(PutMetricDataRequest()
         .WithNamespace("AwsCppSdkBenchmarks")
-        .WithMetricData(std::move(data)));
+        .WithMetricData(data));
 }
+
 
 Aws::CloudWatch::Model::MetricDatum
 Benchmark::CloudWatchMetrics::ConvertToCloudWatchMetric(const Benchmark::Metric &metric) const {

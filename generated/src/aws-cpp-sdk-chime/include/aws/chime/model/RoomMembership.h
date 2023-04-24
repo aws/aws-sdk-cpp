@@ -81,22 +81,40 @@ namespace Model
     inline RoomMembership& WithRoomId(const char* value) { SetRoomId(value); return *this;}
 
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline const Member& GetMember() const{ return m_member; }
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline bool MemberHasBeenSet() const { return m_memberHasBeenSet; }
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline void SetMember(const Member& value) { m_memberHasBeenSet = true; m_member = value; }
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline void SetMember(Member&& value) { m_memberHasBeenSet = true; m_member = std::move(value); }
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline RoomMembership& WithMember(const Member& value) { SetMember(value); return *this;}
 
-    
+    /**
+     * <p>The member details, such as email address, name, member ID, and member
+     * type.</p>
+     */
     inline RoomMembership& WithMember(Member&& value) { SetMember(std::move(value)); return *this;}
 
 

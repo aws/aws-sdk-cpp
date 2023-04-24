@@ -33,19 +33,29 @@ namespace Model
     AWS_CHIME_API CreateUserResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The user on the Amazon Chime account.</p>
+     */
     inline const User& GetUser() const{ return m_user; }
 
-    
+    /**
+     * <p>The user on the Amazon Chime account.</p>
+     */
     inline void SetUser(const User& value) { m_user = value; }
 
-    
+    /**
+     * <p>The user on the Amazon Chime account.</p>
+     */
     inline void SetUser(User&& value) { m_user = std::move(value); }
 
-    
+    /**
+     * <p>The user on the Amazon Chime account.</p>
+     */
     inline CreateUserResult& WithUser(const User& value) { SetUser(value); return *this;}
 
-    
+    /**
+     * <p>The user on the Amazon Chime account.</p>
+     */
     inline CreateUserResult& WithUser(User&& value) { SetUser(std::move(value)); return *this;}
 
 

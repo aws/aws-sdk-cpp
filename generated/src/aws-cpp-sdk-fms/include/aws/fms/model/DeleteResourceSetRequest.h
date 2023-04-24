@@ -35,49 +35,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetIdentifier(const Aws::String& value) { m_identifierHasBeenSet = true; m_identifier = value; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetIdentifier(Aws::String&& value) { m_identifierHasBeenSet = true; m_identifier = std::move(value); }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetIdentifier(const char* value) { m_identifierHasBeenSet = true; m_identifier.assign(value); }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline DeleteResourceSetRequest& WithIdentifier(const Aws::String& value) { SetIdentifier(value); return *this;}
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline DeleteResourceSetRequest& WithIdentifier(Aws::String&& value) { SetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline DeleteResourceSetRequest& WithIdentifier(const char* value) { SetIdentifier(value); return *this;}

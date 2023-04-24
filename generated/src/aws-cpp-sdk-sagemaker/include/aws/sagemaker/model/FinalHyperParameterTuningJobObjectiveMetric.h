@@ -27,8 +27,9 @@ namespace Model
   /**
    * <p>Shows the latest objective metric emitted by a training job that was launched
    * by a hyperparameter tuning job. You define the objective metric in the
-   * <code>HyperParameterTuningJobObjective</code> parameter of
-   * <a>HyperParameterTuningJobConfig</a>.</p><p><h3>See Also:</h3>   <a
+   * <code>HyperParameterTuningJobObjective</code> parameter of <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/FinalHyperParameterTuningJobObjectiveMetric">AWS
    * API Reference</a></p>
    */

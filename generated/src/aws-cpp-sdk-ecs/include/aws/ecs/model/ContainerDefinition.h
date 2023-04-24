@@ -3603,13 +3603,19 @@ namespace Model
 
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3633,13 +3639,19 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetDockerSecurityOptions() const{ return m_dockerSecurityOptions; }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3663,13 +3675,19 @@ namespace Model
     inline bool DockerSecurityOptionsHasBeenSet() const { return m_dockerSecurityOptionsHasBeenSet; }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3693,13 +3711,19 @@ namespace Model
     inline void SetDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = value; }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3723,13 +3747,19 @@ namespace Model
     inline void SetDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions = std::move(value); }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3753,13 +3783,19 @@ namespace Model
     inline ContainerDefinition& WithDockerSecurityOptions(const Aws::Vector<Aws::String>& value) { SetDockerSecurityOptions(value); return *this;}
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3783,13 +3819,19 @@ namespace Model
     inline ContainerDefinition& WithDockerSecurityOptions(Aws::Vector<Aws::String>&& value) { SetDockerSecurityOptions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3813,13 +3855,19 @@ namespace Model
     inline ContainerDefinition& AddDockerSecurityOptions(const Aws::String& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(value); return *this; }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create
@@ -3843,13 +3891,19 @@ namespace Model
     inline ContainerDefinition& AddDockerSecurityOptions(Aws::String&& value) { m_dockerSecurityOptionsHasBeenSet = true; m_dockerSecurityOptions.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of strings to provide custom labels for SELinux and AppArmor
-     * multi-level security systems. This field isn't valid for containers in tasks
-     * using the Fargate launch type.</p> <p>With Windows containers, this parameter
-     * can be used to reference a credential spec file when configuring a container for
-     * Active Directory authentication. For more information, see <a
+     * <p>A list of strings to provide custom configuration for multiple security
+     * systems. For more information about valid values, see <a
+     * href="https://docs.docker.com/engine/reference/run/#security-configuration">Docker
+     * Run Security Configuration</a>. This field isn't valid for containers in tasks
+     * using the Fargate launch type.</p> <p>For Linux tasks on EC2, this parameter can
+     * be used to reference custom labels for SELinux and AppArmor multi-level security
+     * systems.</p> <p>For any tasks on EC2, this parameter can be used to reference a
+     * credential spec file that configures a container for Active Directory
+     * authentication. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/windows-gmsa.html">Using
-     * gMSAs for Windows Containers</a> in the <i>Amazon Elastic Container Service
+     * gMSAs for Windows Containers</a> and <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/linux-gmsa.html">Using
+     * gMSAs for Linux Containers</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p> <p>This parameter maps to <code>SecurityOpt</code> in
      * the <a
      * href="https://docs.docker.com/engine/api/v1.35/#operation/ContainerCreate">Create

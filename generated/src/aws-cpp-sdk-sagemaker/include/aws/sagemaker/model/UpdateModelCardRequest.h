@@ -78,7 +78,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -86,7 +86,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -94,7 +94,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -102,7 +102,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -110,7 +110,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -118,7 +118,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -126,7 +126,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */
@@ -134,7 +134,7 @@ namespace Model
 
     /**
      * <p>The updated model card content. Content must be in <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p> <p>When updating model card
      * content, be sure to include the full content and not just updated content.</p>
      */

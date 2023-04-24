@@ -81,8 +81,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline const Aws::String& GetLocationArn() const{ return m_locationArn; }
@@ -90,8 +90,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline bool LocationArnHasBeenSet() const { return m_locationArnHasBeenSet; }
@@ -99,8 +99,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetLocationArn(const Aws::String& value) { m_locationArnHasBeenSet = true; m_locationArn = value; }
@@ -108,8 +108,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetLocationArn(Aws::String&& value) { m_locationArnHasBeenSet = true; m_locationArn = std::move(value); }
@@ -117,8 +117,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline void SetLocationArn(const char* value) { m_locationArnHasBeenSet = true; m_locationArn.assign(value); }
@@ -126,8 +126,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline LocationModel& WithLocationArn(const Aws::String& value) { SetLocationArn(value); return *this;}
@@ -135,8 +135,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline LocationModel& WithLocationArn(Aws::String&& value) { SetLocationArn(std::move(value)); return *this;}
@@ -144,8 +144,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift location resource and uniquely identifies it.
-     * ARNs are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift location resource and uniquely identifies
+     * it. ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::location/location-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.</p>
      */
     inline LocationModel& WithLocationArn(const char* value) { SetLocationArn(value); return *this;}

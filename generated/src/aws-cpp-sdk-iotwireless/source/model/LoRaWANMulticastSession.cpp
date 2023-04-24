@@ -25,7 +25,9 @@ LoRaWANMulticastSession::LoRaWANMulticastSession() :
     m_dlFreqHasBeenSet(false),
     m_sessionStartTimeHasBeenSet(false),
     m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false)
+    m_sessionTimeoutHasBeenSet(false),
+    m_pingSlotPeriod(0),
+    m_pingSlotPeriodHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ LoRaWANMulticastSession::LoRaWANMulticastSession(JsonView jsonValue) :
     m_dlFreqHasBeenSet(false),
     m_sessionStartTimeHasBeenSet(false),
     m_sessionTimeout(0),
-    m_sessionTimeoutHasBeenSet(false)
+    m_sessionTimeoutHasBeenSet(false),
+    m_pingSlotPeriod(0),
+    m_pingSlotPeriodHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -71,6 +75,13 @@ LoRaWANMulticastSession& LoRaWANMulticastSession::operator =(JsonView jsonValue)
     m_sessionTimeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PingSlotPeriod"))
+  {
+    m_pingSlotPeriod = jsonValue.GetInteger("PingSlotPeriod");
+
+    m_pingSlotPeriodHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -98,6 +109,12 @@ JsonValue LoRaWANMulticastSession::Jsonize() const
   if(m_sessionTimeoutHasBeenSet)
   {
    payload.WithInteger("SessionTimeout", m_sessionTimeout);
+
+  }
+
+  if(m_pingSlotPeriodHasBeenSet)
+  {
+   payload.WithInteger("PingSlotPeriod", m_pingSlotPeriod);
 
   }
 

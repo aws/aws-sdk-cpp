@@ -468,50 +468,50 @@ namespace Model
 
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number.</p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number.</p>
      */
     inline PlayerSession& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -655,50 +655,50 @@ namespace Model
 
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(const Aws::String& value) { m_playerDataHasBeenSet = true; m_playerData = value; }
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(Aws::String&& value) { m_playerDataHasBeenSet = true; m_playerData = std::move(value); }
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline void SetPlayerData(const char* value) { m_playerDataHasBeenSet = true; m_playerData.assign(value); }
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(const Aws::String& value) { SetPlayerData(value); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(Aws::String&& value) { SetPlayerData(std::move(value)); return *this;}
 
     /**
-     * <p>Developer-defined information related to a player. GameLift does not use this
-     * data, so it can be formatted as needed for use in the game. </p>
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. </p>
      */
     inline PlayerSession& WithPlayerData(const char* value) { SetPlayerData(value); return *this;}
 

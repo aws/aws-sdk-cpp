@@ -208,6 +208,27 @@ namespace Model
     
     inline UpdateWirelessGatewayRequest& AddNetIdFilters(const char* value) { m_netIdFiltersHasBeenSet = true; m_netIdFilters.push_back(value); return *this; }
 
+
+    /**
+     * <p>The MaxEIRP value.</p>
+     */
+    inline double GetMaxEirp() const{ return m_maxEirp; }
+
+    /**
+     * <p>The MaxEIRP value.</p>
+     */
+    inline bool MaxEirpHasBeenSet() const { return m_maxEirpHasBeenSet; }
+
+    /**
+     * <p>The MaxEIRP value.</p>
+     */
+    inline void SetMaxEirp(double value) { m_maxEirpHasBeenSet = true; m_maxEirp = value; }
+
+    /**
+     * <p>The MaxEIRP value.</p>
+     */
+    inline UpdateWirelessGatewayRequest& WithMaxEirp(double value) { SetMaxEirp(value); return *this;}
+
   private:
 
     Aws::String m_id;
@@ -224,6 +245,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_netIdFilters;
     bool m_netIdFiltersHasBeenSet = false;
+
+    double m_maxEirp;
+    bool m_maxEirpHasBeenSet = false;
   };
 
 } // namespace Model

@@ -24,7 +24,8 @@ namespace Model
     T8,
     T14,
     T32,
-    NoPreference
+    NoPreference,
+    T240
   };
 
 namespace SnowballCapacityMapper

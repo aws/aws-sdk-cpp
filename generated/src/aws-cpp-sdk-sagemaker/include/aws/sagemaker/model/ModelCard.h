@@ -148,56 +148,56 @@ namespace Model
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline void SetContent(const Aws::String& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline void SetContent(Aws::String&& value) { m_contentHasBeenSet = true; m_content = std::move(value); }
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline void SetContent(const char* value) { m_contentHasBeenSet = true; m_content.assign(value); }
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline ModelCard& WithContent(const Aws::String& value) { SetContent(value); return *this;}
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline ModelCard& WithContent(Aws::String&& value) { SetContent(std::move(value)); return *this;}
 
     /**
      * <p>The content of the model card. Content uses the <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards-api-json-schema.html">model
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-cards.html#model-cards-json-schema">model
      * card JSON schema</a> and provided as a string.</p>
      */
     inline ModelCard& WithContent(const char* value) { SetContent(value); return *this;}

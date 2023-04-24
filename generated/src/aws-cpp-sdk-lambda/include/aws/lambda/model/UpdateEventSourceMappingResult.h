@@ -736,21 +736,24 @@ namespace Model
     /**
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
-     * value is set to infinite, Lambda never discards old records. </p>
+     * value is set to infinite, Lambda never discards old records.</p>  <p>The
+     * minimum value that can be set is 60 seconds.</p> 
      */
     inline int GetMaximumRecordAgeInSeconds() const{ return m_maximumRecordAgeInSeconds; }
 
     /**
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
-     * value is set to infinite, Lambda never discards old records. </p>
+     * value is set to infinite, Lambda never discards old records.</p>  <p>The
+     * minimum value that can be set is 60 seconds.</p> 
      */
     inline void SetMaximumRecordAgeInSeconds(int value) { m_maximumRecordAgeInSeconds = value; }
 
     /**
      * <p>(Kinesis and DynamoDB Streams only) Discard records older than the specified
      * age. The default value is -1, which sets the maximum age to infinite. When the
-     * value is set to infinite, Lambda never discards old records. </p>
+     * value is set to infinite, Lambda never discards old records.</p>  <p>The
+     * minimum value that can be set is 60 seconds.</p> 
      */
     inline UpdateEventSourceMappingResult& WithMaximumRecordAgeInSeconds(int value) { SetMaximumRecordAgeInSeconds(value); return *this;}
 

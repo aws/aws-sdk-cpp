@@ -356,55 +356,61 @@ namespace Model
 
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const NeoVpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const NeoVpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(NeoVpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateCompilationJobRequest& WithVpcConfig(const NeoVpcConfig& value) { SetVpcConfig(value); return *this;}
 
     /**
-     * <p>A <a>VpcConfig</a> object that specifies the VPC that you want your
-     * compilation job to connect to. Control access to your models by configuring the
-     * VPC. For more information, see <a
-     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
+     * <p>A <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_VpcConfig.html">VpcConfig</a>
+     * object that specifies the VPC that you want your compilation job to connect to.
+     * Control access to your models by configuring the VPC. For more information, see
+     * <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/neo-vpc.html">Protect
      * Compilation Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline CreateCompilationJobRequest& WithVpcConfig(NeoVpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}

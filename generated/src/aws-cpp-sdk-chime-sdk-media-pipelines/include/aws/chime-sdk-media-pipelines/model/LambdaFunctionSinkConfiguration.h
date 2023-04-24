@@ -39,50 +39,42 @@ namespace Model
 
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline const Aws::String& GetInsightsTarget() const{ return m_insightsTarget; }
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline bool InsightsTargetHasBeenSet() const { return m_insightsTargetHasBeenSet; }
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline void SetInsightsTarget(const Aws::String& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = value; }
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline void SetInsightsTarget(Aws::String&& value) { m_insightsTargetHasBeenSet = true; m_insightsTarget = std::move(value); }
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline void SetInsightsTarget(const char* value) { m_insightsTargetHasBeenSet = true; m_insightsTarget.assign(value); }
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline LambdaFunctionSinkConfiguration& WithInsightsTarget(const Aws::String& value) { SetInsightsTarget(value); return *this;}
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline LambdaFunctionSinkConfiguration& WithInsightsTarget(Aws::String&& value) { SetInsightsTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The URL of the sink, <a
-     * href="https://aws.amazon.com/kinesis/data-streams/">https://aws.amazon.com/kinesis/data-streams/</a>.</p>
+     * <p>The ARN of the sink.</p>
      */
     inline LambdaFunctionSinkConfiguration& WithInsightsTarget(const char* value) { SetInsightsTarget(value); return *this;}
 

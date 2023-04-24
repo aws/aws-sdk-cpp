@@ -15,7 +15,9 @@ using namespace Aws::Utils;
 UpdateConnectorRegistrationRequest::UpdateConnectorRegistrationRequest() : 
     m_connectorLabelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_connectorProvisioningConfigHasBeenSet(false)
+    m_connectorProvisioningConfigHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -38,6 +40,12 @@ Aws::String UpdateConnectorRegistrationRequest::SerializePayload() const
   if(m_connectorProvisioningConfigHasBeenSet)
   {
    payload.WithObject("connectorProvisioningConfig", m_connectorProvisioningConfig.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

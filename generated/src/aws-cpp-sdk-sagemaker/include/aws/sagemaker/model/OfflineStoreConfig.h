@@ -83,25 +83,41 @@ namespace Model
 
     /**
      * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
-     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
+     * Services Glue table when configuring an <code>OfflineStore</code>. If set to
+     * <code>False</code>, Feature Store will name the <code>OfflineStore</code> Glue
+     * table following <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html">Athena's
+     * naming recommendations</a>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline bool GetDisableGlueTableCreation() const{ return m_disableGlueTableCreation; }
 
     /**
      * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
-     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
+     * Services Glue table when configuring an <code>OfflineStore</code>. If set to
+     * <code>False</code>, Feature Store will name the <code>OfflineStore</code> Glue
+     * table following <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html">Athena's
+     * naming recommendations</a>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline bool DisableGlueTableCreationHasBeenSet() const { return m_disableGlueTableCreationHasBeenSet; }
 
     /**
      * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
-     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
+     * Services Glue table when configuring an <code>OfflineStore</code>. If set to
+     * <code>False</code>, Feature Store will name the <code>OfflineStore</code> Glue
+     * table following <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html">Athena's
+     * naming recommendations</a>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline void SetDisableGlueTableCreation(bool value) { m_disableGlueTableCreationHasBeenSet = true; m_disableGlueTableCreation = value; }
 
     /**
      * <p>Set to <code>True</code> to disable the automatic creation of an Amazon Web
-     * Services Glue table when configuring an <code>OfflineStore</code>.</p>
+     * Services Glue table when configuring an <code>OfflineStore</code>. If set to
+     * <code>False</code>, Feature Store will name the <code>OfflineStore</code> Glue
+     * table following <a
+     * href="https://docs.aws.amazon.com/athena/latest/ug/tables-databases-columns-names.html">Athena's
+     * naming recommendations</a>.</p> <p>The default value is <code>False</code>.</p>
      */
     inline OfflineStoreConfig& WithDisableGlueTableCreation(bool value) { SetDisableGlueTableCreation(value); return *this;}
 

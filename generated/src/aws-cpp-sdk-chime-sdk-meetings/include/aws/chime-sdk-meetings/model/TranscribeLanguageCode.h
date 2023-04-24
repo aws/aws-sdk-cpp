@@ -27,7 +27,9 @@ namespace Model
     pt_BR,
     ja_JP,
     ko_KR,
-    zh_CN
+    zh_CN,
+    th_TH,
+    hi_IN
   };
 
 namespace TranscribeLanguageCodeMapper

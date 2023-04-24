@@ -73,8 +73,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -83,8 +83,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -93,8 +93,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -103,8 +103,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -113,8 +113,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -123,8 +123,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -133,8 +133,8 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (<a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-arn-format.html">ARN</a>)
-     * that is assigned to a GameLift fleet resource and uniquely identifies it. ARNs
-     * are unique across all Regions. Format is
+     * that is assigned to a Amazon GameLift fleet resource and uniquely identifies it.
+     * ARNs are unique across all Regions. Format is
      * <code>arn:aws:gamelift:&lt;region&gt;::fleet/fleet-a1234567-b8c9-0d1e-2fa3-b45c6d7e8912</code>.
      * </p>
      */
@@ -144,70 +144,70 @@ namespace Model
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline const Aws::Vector<LocationState>& GetLocationStates() const{ return m_locationStates; }
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline void SetLocationStates(const Aws::Vector<LocationState>& value) { m_locationStates = value; }
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline void SetLocationStates(Aws::Vector<LocationState>&& value) { m_locationStates = std::move(value); }
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline CreateFleetLocationsResult& WithLocationStates(const Aws::Vector<LocationState>& value) { SetLocationStates(value); return *this;}
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline CreateFleetLocationsResult& WithLocationStates(Aws::Vector<LocationState>&& value) { SetLocationStates(std::move(value)); return *this;}
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline CreateFleetLocationsResult& AddLocationStates(const LocationState& value) { m_locationStates.push_back(value); return *this; }
 
     /**
      * <p>The remote locations that are being added to the fleet, and the life-cycle
      * status of each location. For new locations, the status is set to
-     * <code>NEW</code>. During location creation, GameLift updates each location's
-     * status as instances are deployed there and prepared for game hosting. This list
-     * does not include the fleet home Region or any remote locations that were already
-     * added to the fleet.</p>
+     * <code>NEW</code>. During location creation, Amazon GameLift updates each
+     * location's status as instances are deployed there and prepared for game hosting.
+     * This list does not include the fleet home Region or any remote locations that
+     * were already added to the fleet.</p>
      */
     inline CreateFleetLocationsResult& AddLocationStates(LocationState&& value) { m_locationStates.push_back(std::move(value)); return *this; }
 

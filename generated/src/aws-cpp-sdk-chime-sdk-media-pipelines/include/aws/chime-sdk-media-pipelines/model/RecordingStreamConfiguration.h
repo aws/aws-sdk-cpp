@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>A structure the holds the settings for recording audio and
-   * video.</p><p><h3>See Also:</h3>   <a
+   * <p>A structure that holds the settings for recording media.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-sdk-media-pipelines-2021-07-15/RecordingStreamConfiguration">AWS
    * API Reference</a></p>
    */

@@ -143,10 +143,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline const GameSessionPlacementState& GetStatus() const{ return m_status; }
 
@@ -159,10 +159,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
@@ -175,10 +175,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline void SetStatus(const GameSessionPlacementState& value) { m_statusHasBeenSet = true; m_status = value; }
 
@@ -191,10 +191,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline void SetStatus(GameSessionPlacementState&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
@@ -207,10 +207,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline GameSessionPlacement& WithStatus(const GameSessionPlacementState& value) { SetStatus(value); return *this;}
 
@@ -223,10 +223,10 @@ namespace Model
      * <li> <p> <b>CANCELLED</b> -- The placement request was canceled.</p> </li> <li>
      * <p> <b>TIMED_OUT</b> -- A new game session was not successfully created before
      * the time limit expired. You can resubmit the placement request as needed.</p>
-     * </li> <li> <p> <b>FAILED</b> -- GameLift is not able to complete the process of
-     * placing the game session. Common reasons are the game session terminated before
-     * the placement process was completed, or an unexpected internal error.</p> </li>
-     * </ul>
+     * </li> <li> <p> <b>FAILED</b> -- Amazon GameLift is not able to complete the
+     * process of placing the game session. Common reasons are the game session
+     * terminated before the placement process was completed, or an unexpected internal
+     * error.</p> </li> </ul>
      */
     inline GameSessionPlacement& WithStatus(GameSessionPlacementState&& value) { SetStatus(std::move(value)); return *this;}
 
@@ -687,58 +687,66 @@ namespace Model
 
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline void SetIpAddress(Aws::String&& value) { m_ipAddressHasBeenSet = true; m_ipAddress = std::move(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline void SetIpAddress(const char* value) { m_ipAddressHasBeenSet = true; m_ipAddress.assign(value); }
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline GameSessionPlacement& WithIpAddress(const Aws::String& value) { SetIpAddress(value); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline GameSessionPlacement& WithIpAddress(Aws::String&& value) { SetIpAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The IP address of the game session. To connect to a GameLift game server, an
-     * app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>). </p>
+     * <p>The IP address of the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).
+     * </p>
      */
     inline GameSessionPlacement& WithIpAddress(const char* value) { SetIpAddress(value); return *this;}
 
@@ -857,30 +865,30 @@ namespace Model
 
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>The port number for the game session. To connect to a GameLift game server,
-     * an app needs both the IP address and port number. This value is set once the new
-     * game session is placed (placement status is <code>FULFILLED</code>).</p>
+     * <p>The port number for the game session. To connect to a Amazon GameLift game
+     * server, an app needs both the IP address and port number. This value is set once
+     * the new game session is placed (placement status is <code>FULFILLED</code>).</p>
      */
     inline GameSessionPlacement& WithPort(int value) { SetPort(value); return *this;}
 

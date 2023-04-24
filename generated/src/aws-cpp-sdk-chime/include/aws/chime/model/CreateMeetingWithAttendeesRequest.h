@@ -306,22 +306,46 @@ namespace Model
     inline CreateMeetingWithAttendeesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline const MeetingNotificationConfiguration& GetNotificationsConfiguration() const{ return m_notificationsConfiguration; }
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline bool NotificationsConfigurationHasBeenSet() const { return m_notificationsConfigurationHasBeenSet; }
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline void SetNotificationsConfiguration(const MeetingNotificationConfiguration& value) { m_notificationsConfigurationHasBeenSet = true; m_notificationsConfiguration = value; }
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline void SetNotificationsConfiguration(MeetingNotificationConfiguration&& value) { m_notificationsConfigurationHasBeenSet = true; m_notificationsConfiguration = std::move(value); }
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline CreateMeetingWithAttendeesRequest& WithNotificationsConfiguration(const MeetingNotificationConfiguration& value) { SetNotificationsConfiguration(value); return *this;}
 
-    
+    /**
+     * <p>The resource target configurations for receiving Amazon Chime SDK meeting and
+     * attendee event notifications. The Amazon Chime SDK supports resource targets
+     * located in the US East (N. Virginia) AWS Region (us-east-1).</p>
+     */
     inline CreateMeetingWithAttendeesRequest& WithNotificationsConfiguration(MeetingNotificationConfiguration&& value) { SetNotificationsConfiguration(std::move(value)); return *this;}
 
 

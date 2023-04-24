@@ -36,49 +36,49 @@ namespace Model
 
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline const Aws::String& GetResourceSetIdentifier() const{ return m_resourceSetIdentifier; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline bool ResourceSetIdentifierHasBeenSet() const { return m_resourceSetIdentifierHasBeenSet; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetResourceSetIdentifier(const Aws::String& value) { m_resourceSetIdentifierHasBeenSet = true; m_resourceSetIdentifier = value; }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetResourceSetIdentifier(Aws::String&& value) { m_resourceSetIdentifierHasBeenSet = true; m_resourceSetIdentifier = std::move(value); }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline void SetResourceSetIdentifier(const char* value) { m_resourceSetIdentifierHasBeenSet = true; m_resourceSetIdentifier.assign(value); }
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline BatchAssociateResourceRequest& WithResourceSetIdentifier(const Aws::String& value) { SetResourceSetIdentifier(value); return *this;}
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline BatchAssociateResourceRequest& WithResourceSetIdentifier(Aws::String&& value) { SetResourceSetIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A unique identifier for the resource set, used in a TODO to refer to the
+     * <p>A unique identifier for the resource set, used in a request to refer to the
      * resource set.</p>
      */
     inline BatchAssociateResourceRequest& WithResourceSetIdentifier(const char* value) { SetResourceSetIdentifier(value); return *this;}

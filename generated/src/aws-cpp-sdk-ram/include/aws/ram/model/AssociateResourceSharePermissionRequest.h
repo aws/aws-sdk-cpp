@@ -35,64 +35,64 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share to which you want to add or replace
-     * permissions.</p>
+     * Resource Name (ARN)</a> of the resource share to which you want to add or
+     * replace permissions.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -100,7 +100,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -112,7 +112,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -124,7 +124,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -136,7 +136,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -148,7 +148,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -160,7 +160,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -172,7 +172,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -184,7 +184,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the RAM permission to associate with the resource
+     * Resource Name (ARN)</a> of the RAM permission to associate with the resource
      * share. To find the ARN for a permission, use either the <a>ListPermissions</a>
      * operation or go to the <a
      * href="https://console.aws.amazon.com/ram/home#Permissions:">Permissions
@@ -195,50 +195,54 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the specified permission should replace or add to the
-     * existing permission associated with the resource share. Use <code>true</code> to
-     * replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission. The default value is <code>false</code>.</p>  <p>A
-     * resource share can have only one permission per resource type. If a resource
-     * share already has a permission for the specified resource type and you don't set
-     * <code>replace</code> to <code>true</code> then the operation returns an error.
-     * This helps prevent accidental overwriting of a permission.</p> 
+     * <p>Specifies whether the specified permission should replace the existing
+     * permission associated with the resource share. Use <code>true</code> to replace
+     * the current permissions. Use <code>false</code> to add the permission to a
+     * resource share that currently doesn't have a permission. The default value is
+     * <code>false</code>.</p>  <p>A resource share can have only one permission
+     * per resource type. If a resource share already has a permission for the
+     * specified resource type and you don't set <code>replace</code> to
+     * <code>true</code> then the operation returns an error. This helps prevent
+     * accidental overwriting of a permission.</p> 
      */
     inline bool GetReplace() const{ return m_replace; }
 
     /**
-     * <p>Specifies whether the specified permission should replace or add to the
-     * existing permission associated with the resource share. Use <code>true</code> to
-     * replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission. The default value is <code>false</code>.</p>  <p>A
-     * resource share can have only one permission per resource type. If a resource
-     * share already has a permission for the specified resource type and you don't set
-     * <code>replace</code> to <code>true</code> then the operation returns an error.
-     * This helps prevent accidental overwriting of a permission.</p> 
+     * <p>Specifies whether the specified permission should replace the existing
+     * permission associated with the resource share. Use <code>true</code> to replace
+     * the current permissions. Use <code>false</code> to add the permission to a
+     * resource share that currently doesn't have a permission. The default value is
+     * <code>false</code>.</p>  <p>A resource share can have only one permission
+     * per resource type. If a resource share already has a permission for the
+     * specified resource type and you don't set <code>replace</code> to
+     * <code>true</code> then the operation returns an error. This helps prevent
+     * accidental overwriting of a permission.</p> 
      */
     inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
-     * <p>Specifies whether the specified permission should replace or add to the
-     * existing permission associated with the resource share. Use <code>true</code> to
-     * replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission. The default value is <code>false</code>.</p>  <p>A
-     * resource share can have only one permission per resource type. If a resource
-     * share already has a permission for the specified resource type and you don't set
-     * <code>replace</code> to <code>true</code> then the operation returns an error.
-     * This helps prevent accidental overwriting of a permission.</p> 
+     * <p>Specifies whether the specified permission should replace the existing
+     * permission associated with the resource share. Use <code>true</code> to replace
+     * the current permissions. Use <code>false</code> to add the permission to a
+     * resource share that currently doesn't have a permission. The default value is
+     * <code>false</code>.</p>  <p>A resource share can have only one permission
+     * per resource type. If a resource share already has a permission for the
+     * specified resource type and you don't set <code>replace</code> to
+     * <code>true</code> then the operation returns an error. This helps prevent
+     * accidental overwriting of a permission.</p> 
      */
     inline void SetReplace(bool value) { m_replaceHasBeenSet = true; m_replace = value; }
 
     /**
-     * <p>Specifies whether the specified permission should replace or add to the
-     * existing permission associated with the resource share. Use <code>true</code> to
-     * replace the current permissions. Use <code>false</code> to add the permission to
-     * the current permission. The default value is <code>false</code>.</p>  <p>A
-     * resource share can have only one permission per resource type. If a resource
-     * share already has a permission for the specified resource type and you don't set
-     * <code>replace</code> to <code>true</code> then the operation returns an error.
-     * This helps prevent accidental overwriting of a permission.</p> 
+     * <p>Specifies whether the specified permission should replace the existing
+     * permission associated with the resource share. Use <code>true</code> to replace
+     * the current permissions. Use <code>false</code> to add the permission to a
+     * resource share that currently doesn't have a permission. The default value is
+     * <code>false</code>.</p>  <p>A resource share can have only one permission
+     * per resource type. If a resource share already has a permission for the
+     * specified resource type and you don't set <code>replace</code> to
+     * <code>true</code> then the operation returns an error. This helps prevent
+     * accidental overwriting of a permission.</p> 
      */
     inline AssociateResourceSharePermissionRequest& WithReplace(bool value) { SetReplace(value); return *this;}
 
@@ -251,7 +255,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
@@ -263,7 +269,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
@@ -275,7 +283,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
@@ -287,7 +297,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
@@ -299,7 +311,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
@@ -311,7 +325,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
@@ -323,7 +339,9 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
@@ -335,40 +353,58 @@ namespace Model
      * all other parameters. We recommend that you use a <a
      * href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID type of
      * value.</a>.</p> <p>If you don't provide this value, then Amazon Web Services
-     * generates a random one for you.</p>
+     * generates a random one for you.</p> <p>If you retry the operation with the same
+     * <code>ClientToken</code>, but with different parameters, the retry fails with an
+     * <code>IdempotentParameterMismatch</code> error.</p>
      */
     inline AssociateResourceSharePermissionRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
-     * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default. You can use the <a>ListPermissionVersions</a>
-     * operation to discover the available versions of a permission.</p>
+     * share. You can specify <i>only</i> the version that is currently set as the
+     * default version for the permission. If you also set the <code>replace</code>
+     * pararameter to <code>true</code>, then this operation updates an outdated
+     * version of the permission to the current default version.</p>  <p>You
+     * don't need to specify this parameter because the default behavior is to use the
+     * version that is currently set as the default version for the permission. This
+     * parameter is supported for backwards compatibility.</p> 
      */
     inline int GetPermissionVersion() const{ return m_permissionVersion; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
-     * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default. You can use the <a>ListPermissionVersions</a>
-     * operation to discover the available versions of a permission.</p>
+     * share. You can specify <i>only</i> the version that is currently set as the
+     * default version for the permission. If you also set the <code>replace</code>
+     * pararameter to <code>true</code>, then this operation updates an outdated
+     * version of the permission to the current default version.</p>  <p>You
+     * don't need to specify this parameter because the default behavior is to use the
+     * version that is currently set as the default version for the permission. This
+     * parameter is supported for backwards compatibility.</p> 
      */
     inline bool PermissionVersionHasBeenSet() const { return m_permissionVersionHasBeenSet; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
-     * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default. You can use the <a>ListPermissionVersions</a>
-     * operation to discover the available versions of a permission.</p>
+     * share. You can specify <i>only</i> the version that is currently set as the
+     * default version for the permission. If you also set the <code>replace</code>
+     * pararameter to <code>true</code>, then this operation updates an outdated
+     * version of the permission to the current default version.</p>  <p>You
+     * don't need to specify this parameter because the default behavior is to use the
+     * version that is currently set as the default version for the permission. This
+     * parameter is supported for backwards compatibility.</p> 
      */
     inline void SetPermissionVersion(int value) { m_permissionVersionHasBeenSet = true; m_permissionVersion = value; }
 
     /**
      * <p>Specifies the version of the RAM permission to associate with the resource
-     * share. If you don't specify this parameter, the operation uses the version
-     * designated as the default. You can use the <a>ListPermissionVersions</a>
-     * operation to discover the available versions of a permission.</p>
+     * share. You can specify <i>only</i> the version that is currently set as the
+     * default version for the permission. If you also set the <code>replace</code>
+     * pararameter to <code>true</code>, then this operation updates an outdated
+     * version of the permission to the current default version.</p>  <p>You
+     * don't need to specify this parameter because the default behavior is to use the
+     * version that is currently set as the default version for the permission. This
+     * parameter is supported for backwards compatibility.</p> 
      */
     inline AssociateResourceSharePermissionRequest& WithPermissionVersion(int value) { SetPermissionVersion(value); return *this;}
 

@@ -67,7 +67,10 @@ ModifyDBClusterRequest::ModifyDBClusterRequest() :
     m_manageMasterUserPasswordHasBeenSet(false),
     m_rotateMasterUserPassword(false),
     m_rotateMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false)
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_engineModeHasBeenSet(false),
+    m_allowEngineModeChange(false),
+    m_allowEngineModeChangeHasBeenSet(false)
 {
 }
 
@@ -274,6 +277,16 @@ Aws::String ModifyDBClusterRequest::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_engineModeHasBeenSet)
+  {
+    ss << "EngineMode=" << StringUtils::URLEncode(m_engineMode.c_str()) << "&";
+  }
+
+  if(m_allowEngineModeChangeHasBeenSet)
+  {
+    ss << "AllowEngineModeChange=" << std::boolalpha << m_allowEngineModeChange << "&";
   }
 
   ss << "Version=2014-10-31";

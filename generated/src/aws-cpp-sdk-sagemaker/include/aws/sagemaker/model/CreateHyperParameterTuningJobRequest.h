@@ -113,60 +113,66 @@ namespace Model
 
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline const HyperParameterTuningJobConfig& GetHyperParameterTuningJobConfig() const{ return m_hyperParameterTuningJobConfig; }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline bool HyperParameterTuningJobConfigHasBeenSet() const { return m_hyperParameterTuningJobConfigHasBeenSet; }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = value; }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline void SetHyperParameterTuningJobConfig(HyperParameterTuningJobConfig&& value) { m_hyperParameterTuningJobConfigHasBeenSet = true; m_hyperParameterTuningJobConfig = std::move(value); }
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithHyperParameterTuningJobConfig(const HyperParameterTuningJobConfig& value) { SetHyperParameterTuningJobConfig(value); return *this;}
 
     /**
-     * <p>The <a>HyperParameterTuningJobConfig</a> object that describes the tuning
-     * job, including the search strategy, the objective metric used to evaluate
-     * training jobs, ranges of parameters to search, and resource limits for the
-     * tuning job. For more information, see <a
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">HyperParameterTuningJobConfig</a>
+     * object that describes the tuning job, including the search strategy, the
+     * objective metric used to evaluate training jobs, ranges of parameters to search,
+     * and resource limits for the tuning job. For more information, see <a
      * href="https://docs.aws.amazon.com/sagemaker/latest/dg/automatic-model-tuning-how-it-works.html">How
      * Hyperparameter Tuning Works</a>.</p>
      */
@@ -174,99 +180,113 @@ namespace Model
 
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline const HyperParameterTrainingJobDefinition& GetTrainingJobDefinition() const{ return m_trainingJobDefinition; }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline bool TrainingJobDefinitionHasBeenSet() const { return m_trainingJobDefinitionHasBeenSet; }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline void SetTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = value; }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline void SetTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionHasBeenSet = true; m_trainingJobDefinition = std::move(value); }
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinition(const HyperParameterTrainingJobDefinition& value) { SetTrainingJobDefinition(value); return *this;}
 
     /**
-     * <p>The <a>HyperParameterTrainingJobDefinition</a> object that describes the
-     * training jobs that this tuning job launches, including static hyperparameters,
-     * input data configuration, output data configuration, resource configuration, and
-     * stopping condition.</p>
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * object that describes the training jobs that this tuning job launches, including
+     * static hyperparameters, input data configuration, output data configuration,
+     * resource configuration, and stopping condition.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinition(HyperParameterTrainingJobDefinition&& value) { SetTrainingJobDefinition(std::move(value)); return *this;}
 
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline const Aws::Vector<HyperParameterTrainingJobDefinition>& GetTrainingJobDefinitions() const{ return m_trainingJobDefinitions; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline bool TrainingJobDefinitionsHasBeenSet() const { return m_trainingJobDefinitionsHasBeenSet; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = value; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline void SetTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions = std::move(value); }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(const Aws::Vector<HyperParameterTrainingJobDefinition>& value) { SetTrainingJobDefinitions(value); return *this;}
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& WithTrainingJobDefinitions(Aws::Vector<HyperParameterTrainingJobDefinition>&& value) { SetTrainingJobDefinitions(std::move(value)); return *this;}
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(const HyperParameterTrainingJobDefinition& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(value); return *this; }
 
     /**
-     * <p>A list of the <a>HyperParameterTrainingJobDefinition</a> objects launched for
-     * this tuning job.</p>
+     * <p>A list of the <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html">HyperParameterTrainingJobDefinition</a>
+     * objects launched for this tuning job.</p>
      */
     inline CreateHyperParameterTuningJobRequest& AddTrainingJobDefinitions(HyperParameterTrainingJobDefinition&& value) { m_trainingJobDefinitionsHasBeenSet = true; m_trainingJobDefinitions.push_back(std::move(value)); return *this; }
 

@@ -361,32 +361,32 @@ namespace Model
 
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline const AnywhereConfiguration& GetAnywhereConfiguration() const{ return m_anywhereConfiguration; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline bool AnywhereConfigurationHasBeenSet() const { return m_anywhereConfigurationHasBeenSet; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline void SetAnywhereConfiguration(const AnywhereConfiguration& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = value; }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline void SetAnywhereConfiguration(AnywhereConfiguration&& value) { m_anywhereConfigurationHasBeenSet = true; m_anywhereConfiguration = std::move(value); }
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline UpdateFleetAttributesRequest& WithAnywhereConfiguration(const AnywhereConfiguration& value) { SetAnywhereConfiguration(value); return *this;}
 
     /**
-     * <p>GameLift Anywhere configuration options.</p>
+     * <p>Amazon GameLift Anywhere configuration options.</p>
      */
     inline UpdateFleetAttributesRequest& WithAnywhereConfiguration(AnywhereConfiguration&& value) { SetAnywhereConfiguration(std::move(value)); return *this;}
 

@@ -140,49 +140,57 @@ namespace Model
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline const Aws::Vector<AsyncNotificationTopicTypes>& GetIncludeInferenceResponseIn() const{ return m_includeInferenceResponseIn; }
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline bool IncludeInferenceResponseInHasBeenSet() const { return m_includeInferenceResponseInHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline void SetIncludeInferenceResponseIn(const Aws::Vector<AsyncNotificationTopicTypes>& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn = value; }
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline void SetIncludeInferenceResponseIn(Aws::Vector<AsyncNotificationTopicTypes>&& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn = std::move(value); }
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline AsyncInferenceNotificationConfig& WithIncludeInferenceResponseIn(const Aws::Vector<AsyncNotificationTopicTypes>& value) { SetIncludeInferenceResponseIn(value); return *this;}
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline AsyncInferenceNotificationConfig& WithIncludeInferenceResponseIn(Aws::Vector<AsyncNotificationTopicTypes>&& value) { SetIncludeInferenceResponseIn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline AsyncInferenceNotificationConfig& AddIncludeInferenceResponseIn(const AsyncNotificationTopicTypes& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn.push_back(value); return *this; }
 
     /**
      * <p>The Amazon SNS topics where you want the inference response to be
-     * included.</p>
+     * included.</p>  <p>The inference response is included only if the response
+     * size is less than or equal to 128 KB.</p> 
      */
     inline AsyncInferenceNotificationConfig& AddIncludeInferenceResponseIn(AsyncNotificationTopicTypes&& value) { m_includeInferenceResponseInHasBeenSet = true; m_includeInferenceResponseIn.push_back(std::move(value)); return *this; }
 

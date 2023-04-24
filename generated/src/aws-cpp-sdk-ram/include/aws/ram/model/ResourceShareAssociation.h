@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * <p>Describes an association with a resource share and either a principal or a
+   * <p>Describes an association between a resource share and either a principal or a
    * resource.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ram-2018-01-04/ResourceShareAssociation">AWS
    * API Reference</a></p>
@@ -44,56 +44,56 @@ namespace Model
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline const Aws::String& GetResourceShareArn() const{ return m_resourceShareArn; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline void SetResourceShareArn(Aws::String&& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = std::move(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline void SetResourceShareArn(const char* value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn.assign(value); }
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline ResourceShareAssociation& WithResourceShareArn(const Aws::String& value) { SetResourceShareArn(value); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline ResourceShareAssociation& WithResourceShareArn(Aws::String&& value) { SetResourceShareArn(std::move(value)); return *this;}
 
     /**
      * <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource share.</p>
+     * Resource Name (ARN)</a> of the resource share.</p>
      */
     inline ResourceShareAssociation& WithResourceShareArn(const char* value) { SetResourceShareArn(value); return *this;}
 
@@ -143,13 +143,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline const Aws::String& GetAssociatedEntity() const{ return m_associatedEntity; }
 
@@ -157,13 +158,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline bool AssociatedEntityHasBeenSet() const { return m_associatedEntityHasBeenSet; }
 
@@ -171,13 +173,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetAssociatedEntity(const Aws::String& value) { m_associatedEntityHasBeenSet = true; m_associatedEntity = value; }
 
@@ -185,13 +188,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetAssociatedEntity(Aws::String&& value) { m_associatedEntityHasBeenSet = true; m_associatedEntity = std::move(value); }
 
@@ -199,13 +203,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline void SetAssociatedEntity(const char* value) { m_associatedEntityHasBeenSet = true; m_associatedEntity.assign(value); }
 
@@ -213,13 +218,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(const Aws::String& value) { SetAssociatedEntity(value); return *this;}
 
@@ -227,13 +233,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(Aws::String&& value) { SetAssociatedEntity(std::move(value)); return *this;}
 
@@ -241,13 +248,14 @@ namespace Model
      * <p>The associated entity. This can be either of the following:</p> <ul> <li>
      * <p>For a resource association, this is the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
+     * Resource Name (ARN)</a> of the resource.</p> </li> <li> <p>For principal
      * associations, this is one of the following:</p> <ul> <li> <p>The ID of an Amazon
      * Web Services account</p> </li> <li> <p>The <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of an organization in Organizations</p> </li> <li> <p>The
-     * ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The ARN of
-     * an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul> </li> </ul>
+     * Resource Name (ARN)</a> of an organization in Organizations</p> </li> <li>
+     * <p>The ARN of an organizational unit (OU) in Organizations</p> </li> <li> <p>The
+     * ARN of an IAM role</p> </li> <li> <p>The ARN of an IAM user</p> </li> </ul>
+     * </li> </ul>
      */
     inline ResourceShareAssociation& WithAssociatedEntity(const char* value) { SetAssociatedEntity(value); return *this;}
 

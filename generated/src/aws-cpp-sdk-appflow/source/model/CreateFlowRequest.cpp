@@ -21,7 +21,9 @@ CreateFlowRequest::CreateFlowRequest() :
     m_destinationFlowConfigListHasBeenSet(false),
     m_tasksHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_metadataCatalogConfigHasBeenSet(false)
+    m_metadataCatalogConfigHasBeenSet(false),
+    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenHasBeenSet(true)
 {
 }
 
@@ -95,6 +97,12 @@ Aws::String CreateFlowRequest::SerializePayload() const
   if(m_metadataCatalogConfigHasBeenSet)
   {
    payload.WithObject("metadataCatalogConfig", m_metadataCatalogConfig.Jsonize());
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

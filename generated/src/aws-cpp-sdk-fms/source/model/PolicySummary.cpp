@@ -28,7 +28,9 @@ PolicySummary::PolicySummary() :
     m_remediationEnabled(false),
     m_remediationEnabledHasBeenSet(false),
     m_deleteUnusedFMManagedResources(false),
-    m_deleteUnusedFMManagedResourcesHasBeenSet(false)
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
+    m_policyStatus(CustomerPolicyStatus::NOT_SET),
+    m_policyStatusHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ PolicySummary::PolicySummary(JsonView jsonValue) :
     m_remediationEnabled(false),
     m_remediationEnabledHasBeenSet(false),
     m_deleteUnusedFMManagedResources(false),
-    m_deleteUnusedFMManagedResourcesHasBeenSet(false)
+    m_deleteUnusedFMManagedResourcesHasBeenSet(false),
+    m_policyStatus(CustomerPolicyStatus::NOT_SET),
+    m_policyStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +102,13 @@ PolicySummary& PolicySummary::operator =(JsonView jsonValue)
     m_deleteUnusedFMManagedResourcesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PolicyStatus"))
+  {
+    m_policyStatus = CustomerPolicyStatusMapper::GetCustomerPolicyStatusForName(jsonValue.GetString("PolicyStatus"));
+
+    m_policyStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -144,6 +155,11 @@ JsonValue PolicySummary::Jsonize() const
   {
    payload.WithBool("DeleteUnusedFMManagedResources", m_deleteUnusedFMManagedResources);
 
+  }
+
+  if(m_policyStatusHasBeenSet)
+  {
+   payload.WithString("PolicyStatus", CustomerPolicyStatusMapper::GetNameForCustomerPolicyStatus(m_policyStatus));
   }
 
   return payload;

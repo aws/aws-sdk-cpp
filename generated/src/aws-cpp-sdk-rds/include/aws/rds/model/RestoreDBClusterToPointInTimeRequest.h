@@ -122,11 +122,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline const Aws::String& GetRestoreType() const{ return m_restoreType; }
 
@@ -135,11 +134,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline bool RestoreTypeHasBeenSet() const { return m_restoreTypeHasBeenSet; }
 
@@ -148,11 +146,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(const Aws::String& value) { m_restoreTypeHasBeenSet = true; m_restoreType = value; }
 
@@ -161,11 +158,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(Aws::String&& value) { m_restoreTypeHasBeenSet = true; m_restoreType = std::move(value); }
 
@@ -174,11 +170,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline void SetRestoreType(const char* value) { m_restoreTypeHasBeenSet = true; m_restoreType.assign(value); }
 
@@ -187,11 +182,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const Aws::String& value) { SetRestoreType(value); return *this;}
 
@@ -200,11 +194,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(Aws::String&& value) { SetRestoreType(std::move(value)); return *this;}
 
@@ -213,11 +206,10 @@ namespace Model
      * values:</p> <ul> <li> <p> <code>full-copy</code> - The new DB cluster is
      * restored as a full copy of the source DB cluster.</p> </li> <li> <p>
      * <code>copy-on-write</code> - The new DB cluster is restored as a clone of the
-     * source DB cluster.</p> </li> </ul> <p>Constraints: You can't specify
-     * <code>copy-on-write</code> if the engine version of the source DB cluster is
-     * earlier than 1.11.</p> <p>If you don't specify a <code>RestoreType</code> value,
-     * then the new DB cluster is restored as a full copy of the source DB cluster.</p>
-     * <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * source DB cluster.</p> </li> </ul> <p>If you don't specify a
+     * <code>RestoreType</code> value, then the new DB cluster is restored as a full
+     * copy of the source DB cluster.</p> <p>Valid for: Aurora DB clusters and Multi-AZ
+     * DB clusters</p>
      */
     inline RestoreDBClusterToPointInTimeRequest& WithRestoreType(const char* value) { SetRestoreType(value); return *this;}
 

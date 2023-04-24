@@ -36,50 +36,50 @@ namespace Model
 
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline const EC2InstanceType& GetEC2InstanceType() const{ return m_eC2InstanceType; }
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline void SetEC2InstanceType(EC2InstanceType&& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = std::move(value); }
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline DescribeEC2InstanceLimitsRequest& WithEC2InstanceType(const EC2InstanceType& value) { SetEC2InstanceType(value); return *this;}
 
     /**
-     * <p>Name of an Amazon EC2 instance type that is supported in GameLift. A fleet
-     * instance type determines the computing resources of each instance in the fleet,
-     * including CPU, memory, storage, and networking capacity. Do not specify a value
-     * for this parameter to retrieve limits for all instance types.</p>
+     * <p>Name of an Amazon EC2 instance type that is supported in Amazon GameLift. A
+     * fleet instance type determines the computing resources of each instance in the
+     * fleet, including CPU, memory, storage, and networking capacity. Do not specify a
+     * value for this parameter to retrieve limits for all instance types.</p>
      */
     inline DescribeEC2InstanceLimitsRequest& WithEC2InstanceType(EC2InstanceType&& value) { SetEC2InstanceType(std::move(value)); return *this;}
 

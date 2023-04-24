@@ -36,7 +36,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline const Aws::String& GetResourceShareInvitationArn() const{ return m_resourceShareInvitationArn; }
@@ -44,7 +44,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline bool ResourceShareInvitationArnHasBeenSet() const { return m_resourceShareInvitationArnHasBeenSet; }
@@ -52,7 +52,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(const Aws::String& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = value; }
@@ -60,7 +60,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(Aws::String&& value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn = std::move(value); }
@@ -68,7 +68,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline void SetResourceShareInvitationArn(const char* value) { m_resourceShareInvitationArnHasBeenSet = true; m_resourceShareInvitationArn.assign(value); }
@@ -76,7 +76,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline ListPendingInvitationResourcesRequest& WithResourceShareInvitationArn(const Aws::String& value) { SetResourceShareInvitationArn(value); return *this;}
@@ -84,7 +84,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline ListPendingInvitationResourcesRequest& WithResourceShareInvitationArn(Aws::String&& value) { SetResourceShareInvitationArn(std::move(value)); return *this;}
@@ -92,7 +92,7 @@ namespace Model
     /**
      * <p>Specifies the <a
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
-     * Resoure Name (ARN)</a> of the invitation. You can use
+     * Resource Name (ARN)</a> of the invitation. You can use
      * <a>GetResourceShareInvitations</a> to find the ARN of the invitation.</p>
      */
     inline ListPendingInvitationResourcesRequest& WithResourceShareInvitationArn(const char* value) { SetResourceShareInvitationArn(value); return *this;}

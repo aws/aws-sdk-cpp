@@ -116,32 +116,32 @@ namespace Model
 
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline const AttendeeCapabilities& GetCapabilities() const{ return m_capabilities; }
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline void SetCapabilities(const AttendeeCapabilities& value) { m_capabilitiesHasBeenSet = true; m_capabilities = value; }
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline void SetCapabilities(AttendeeCapabilities&& value) { m_capabilitiesHasBeenSet = true; m_capabilities = std::move(value); }
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline UpdateAttendeeCapabilitiesRequest& WithCapabilities(const AttendeeCapabilities& value) { SetCapabilities(value); return *this;}
 
     /**
-     * <p>The capabilties that you want to update.</p>
+     * <p>The capabilities that you want to update.</p>
      */
     inline UpdateAttendeeCapabilitiesRequest& WithCapabilities(AttendeeCapabilities&& value) { SetCapabilities(std::move(value)); return *this;}
 

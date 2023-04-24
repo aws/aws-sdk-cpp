@@ -15,7 +15,9 @@ namespace Benchmark {
     public:
         explicit CloudWatchMetrics(const std::shared_ptr<Aws::CloudWatch::CloudWatchClient> &cloudWatchClient =
                 Aws::MakeShared<Aws::CloudWatch::CloudWatchClient>(ALLOC_TAG));
-        void EmitMetric(std::vector<Metric> &&metrics) const override;
+        void EmitMetricForOp(const std::string &metricName,
+            const std::vector<Dimension> &dimensions,
+            const std::function<bool()> &op) const override;
     private:
         std::shared_ptr<Aws::CloudWatch::CloudWatchClient> cloudWatchClient;
         Aws::CloudWatch::Model::MetricDatum ConvertToCloudWatchMetric(const Benchmark::Metric &metric) const;

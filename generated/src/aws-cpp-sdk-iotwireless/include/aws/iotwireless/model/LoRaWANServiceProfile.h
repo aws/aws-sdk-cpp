@@ -97,6 +97,48 @@ namespace Model
      */
     inline LoRaWANServiceProfile& WithDrMax(int value) { SetDrMax(value); return *this;}
 
+
+    /**
+     * <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+     */
+    inline bool GetPrAllowed() const{ return m_prAllowed; }
+
+    /**
+     * <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+     */
+    inline bool PrAllowedHasBeenSet() const { return m_prAllowedHasBeenSet; }
+
+    /**
+     * <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+     */
+    inline void SetPrAllowed(bool value) { m_prAllowedHasBeenSet = true; m_prAllowed = value; }
+
+    /**
+     * <p>The PRAllowed value that describes whether passive roaming is allowed.</p>
+     */
+    inline LoRaWANServiceProfile& WithPrAllowed(bool value) { SetPrAllowed(value); return *this;}
+
+
+    /**
+     * <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+     */
+    inline bool GetRaAllowed() const{ return m_raAllowed; }
+
+    /**
+     * <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+     */
+    inline bool RaAllowedHasBeenSet() const { return m_raAllowedHasBeenSet; }
+
+    /**
+     * <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+     */
+    inline void SetRaAllowed(bool value) { m_raAllowedHasBeenSet = true; m_raAllowed = value; }
+
+    /**
+     * <p>The RAAllowed value that describes whether roaming activation is allowed.</p>
+     */
+    inline LoRaWANServiceProfile& WithRaAllowed(bool value) { SetRaAllowed(value); return *this;}
+
   private:
 
     bool m_addGwMetadata;
@@ -107,6 +149,12 @@ namespace Model
 
     int m_drMax;
     bool m_drMaxHasBeenSet = false;
+
+    bool m_prAllowed;
+    bool m_prAllowedHasBeenSet = false;
+
+    bool m_raAllowed;
+    bool m_raAllowedHasBeenSet = false;
   };
 
 } // namespace Model

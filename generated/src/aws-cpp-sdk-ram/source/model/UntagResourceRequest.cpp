@@ -14,7 +14,8 @@ using namespace Aws::Utils;
 
 UntagResourceRequest::UntagResourceRequest() : 
     m_resourceShareArnHasBeenSet(false),
-    m_tagKeysHasBeenSet(false)
+    m_tagKeysHasBeenSet(false),
+    m_resourceArnHasBeenSet(false)
 {
 }
 
@@ -36,6 +37,12 @@ Aws::String UntagResourceRequest::SerializePayload() const
      tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
    }
    payload.WithArray("tagKeys", std::move(tagKeysJsonList));
+
+  }
+
+  if(m_resourceArnHasBeenSet)
+  {
+   payload.WithString("resourceArn", m_resourceArn);
 
   }
 

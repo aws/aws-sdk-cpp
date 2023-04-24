@@ -49,7 +49,7 @@ bool CompleteMultipartUploadRequest::HasEmbeddedError(Aws::IOStream &body,
     return false;
   }
 
-  if (doc.GetRootElement().GetName() == "Error") {
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
     body.seekg(readPointer);
     return true;
   }

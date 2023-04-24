@@ -2441,44 +2441,40 @@ namespace Model
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
      * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines</p>
-     * <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For
-     * MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or
-     * higher. To enable IAM database authentication for Aurora, see DBCluster
-     * Type.</p> </li> </ul>
+     * database authentication can be enabled for the following database engines:</p>
+     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
+     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
+     * </li> </ul>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
      * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines</p>
-     * <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For
-     * MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or
-     * higher. To enable IAM database authentication for Aurora, see DBCluster
-     * Type.</p> </li> </ul>
+     * database authentication can be enabled for the following database engines:</p>
+     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
+     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
+     * </li> </ul>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
      * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines</p>
-     * <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For
-     * MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or
-     * higher. To enable IAM database authentication for Aurora, see DBCluster
-     * Type.</p> </li> </ul>
+     * database authentication can be enabled for the following database engines:</p>
+     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
+     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
+     * </li> </ul>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
      * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines</p>
-     * <ul> <li> <p>For MySQL 5.6, minor version 5.6.34 or higher</p> </li> <li> <p>For
-     * MySQL 5.7, minor version 5.7.16 or higher</p> </li> <li> <p>Aurora 5.6 or
-     * higher. To enable IAM database authentication for Aurora, see DBCluster
-     * Type.</p> </li> </ul>
+     * database authentication can be enabled for the following database engines:</p>
+     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
+     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
+     * </li> </ul>
      */
     inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 
