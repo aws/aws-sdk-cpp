@@ -27,10 +27,13 @@ Aws::String Base64::Encode(const Aws::Utils::ByteBuffer& buffer) const
     auto toEncodeCur = Crt::ByteCursorFromArray(buffer.GetUnderlyingData(), buffer.GetLength());
     Aws::String retStr;
     //for the null character.
-    retStr.reserve(CalculateBase64EncodedLength(buffer) + 1);
+    // to avoid a copy, we want to allocate the string's memory ahead of time so we don't need to copy since base64 is
+    // the hot path for data-plane services. We do that by calling "resize" NOT
+    // "reserve". If you call reserve, the subsequent resize will overwrite the contents of the string.
+    retStr.resize(CalculateBase64EncodedLength(buffer) + 1);
     auto outputBuf = Crt::ByteBufFromEmptyArray((const uint8_t*)retStr.data(), retStr.capacity());
     Crt::UnsafeInteropHelpers::Base64Encode(toEncodeCur, outputBuf);
-
+    retStr.resize(outputBuf.len);
     return retStr;
 }
 

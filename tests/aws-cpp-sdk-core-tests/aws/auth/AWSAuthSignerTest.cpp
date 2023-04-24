@@ -445,6 +445,8 @@ static void RunTestCaseWithoutPayload(AWSAuthV4Signer::PayloadSigningPolicy poli
     ASSERT_TRUE(signer.SignRequest(request, requestSignPayload));
     ASSERT_STREQ(signPayload ? EMPTY_STRING_SHA256 : UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
 
+    // reset the request as the sigv4a signer checks it hasn't already been signed once.
+    request = Standard::StandardHttpRequest(scheme == Aws::Http::Scheme::HTTP ? "http://test.com/query?key=val" : "https://test.com/query?key=val", Aws::Http::HttpMethod::HTTP_GET);
     AWSAuthV4Signer signerV4a(credProvider, "service", "us-east-1", policy, false, Aws::Auth::AWSSigningAlgorithm::ASYMMETRIC_SIGV4);
     ASSERT_TRUE(signerV4a.SignRequest(request, requestSignPayload));
     ASSERT_STREQ(signPayload ? EMPTY_STRING_SHA256 : UNSIGNED_PAYLOAD, request.GetHeaderValue("x-amz-content-sha256").c_str());
