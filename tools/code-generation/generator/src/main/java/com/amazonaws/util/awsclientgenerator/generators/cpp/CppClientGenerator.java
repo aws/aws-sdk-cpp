@@ -103,21 +103,56 @@ public abstract class CppClientGenerator implements ClientGenerator {
     }
 
     protected void addRequestIdToResults(final ServiceModel serviceModel) {
+        // generate a RequestId in a Result
+        Shape requestId = new Shape();
+        requestId.setName("RequestId");
+        requestId.setType("string");
+        requestId.hasHeaderMembers();
+        requestId.setMembers(ImmutableMap.of());
+        ShapeMember requestIdMember = new ShapeMember();
+        requestIdMember.setShape(requestId);
+        requestIdMember.setLocation("header");
+        requestIdMember.setLocationName("x-amzn-requestid");
+
+        ShapeMember responseMetadataMember = new ShapeMember();
+        if (serviceModel.getMetadata().isAwsQueryCompatible()) {
+            // duplicate the RequestId under ResponseMetadata object in a Result for legacy compatibility with XML clients
+            responseMetadataMember.setRequired(true);
+            responseMetadataMember.setValidationNeeded(true);
+            responseMetadataMember.setLocation("header");
+            responseMetadataMember.setLocationName("x-amzn-requestid");
+            Shape responseMetadataShape = new Shape();
+            responseMetadataMember.setShape(responseMetadataShape);
+
+            responseMetadataShape.setName("ResponseMetadata");
+            responseMetadataShape.setReferenced(true);
+            responseMetadataShape.setType("structure");
+
+            Shape stringShape = new Shape();
+            stringShape.setName("RequestId");
+            stringShape.setType("string");
+
+            ShapeMember stringShapeMember = new ShapeMember();
+            stringShapeMember.setShape(stringShape);
+            stringShapeMember.setLocation("header");
+            stringShapeMember.setLocationName("x-amzn-requestid");
+            responseMetadataShape.setMembers(new HashMap<>());
+            responseMetadataShape.getMembers().put("RequestId", stringShapeMember);
+
+            if(!serviceModel.getShapes().containsKey("ResponseMetadata")) {
+                serviceModel.getShapes().put("ResponseMetadata", responseMetadataShape);
+            }
+        }
+
         serviceModel.getShapes().values().stream()
                 .filter(Shape::isResult)
                 .filter(shape -> !shape.getMembers().containsKey("requestId"))
                 .forEach(shape -> {
-                    Shape requestId = new Shape();
-                    requestId.setName("RequestId");
-                    requestId.setType("string");
-                    requestId.hasHeaderMembers();
-                    requestId.setMembers(ImmutableMap.of());
-
-                    ShapeMember requestIdMember = new ShapeMember();
-                    requestIdMember.setShape(requestId);
-                    requestIdMember.setLocation("header");
-                    requestIdMember.setLocationName("x-amzn-requestid");
                     shape.getMembers().put("RequestId", requestIdMember);
+                    if (serviceModel.getMetadata().isAwsQueryCompatible() &&
+                            !shape.getMembers().containsKey("ResponseMetadata")) {
+                        shape.getMembers().put("ResponseMetadata", responseMetadataMember);
+                    }
                 });
     }
 
