@@ -5,6 +5,7 @@
 
 #include <gtest/gtest.h>
 #include <aws/core/Aws.h>
+#include <aws/core/utils/logging/LogMacros.h>
 #include <aws/testing/TestingEnvironment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 #include <aws/testing/MemoryTesting.h>
@@ -12,6 +13,35 @@
 #if defined(HAS_UMASK)
 #include <sys/stat.h>
 #endif
+
+Aws::SDKOptions options;
+
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+class TestMemoryManager : public Aws::Utils::Memory::MemorySystemInterface
+{
+public:
+    void *AllocateMemory(std::size_t blockSize, std::size_t alignment,
+                         const char *allocationTag) override
+    {
+        (void)alignment;
+        (void)allocationTag;
+        return malloc(blockSize);
+    }
+
+    void FreeMemory(void* memoryPtr) override
+    {
+        free(memoryPtr);
+    }
+
+    void Begin() override
+    {
+    }
+
+    void End() override
+    {
+    }
+};
+#endif // USE_AWS_MEMORY_MANAGEMENT
 
 int main(int argc, char** argv)
 {
@@ -23,9 +53,13 @@ int main(int argc, char** argv)
 
     Aws::Testing::RedirectHomeToTempIfAppropriate();
 
-    Aws::SDKOptions options;
     options.loggingOptions.logLevel = Aws::Utils::Logging::LogLevel::Trace;
     options.httpOptions.installSigPipeHandler = true;
+#ifdef USE_AWS_MEMORY_MANAGEMENT
+    TestMemoryManager tmm;
+    options.memoryManagementOptions.memoryManager = &tmm;
+#endif // USE_AWS_MEMORY_MANAGEMENT
+
     AWS_BEGIN_MEMORY_TEST_EX(options, 1024, 128);
 
     Aws::Testing::InitPlatformTest(options);
@@ -42,4 +76,18 @@ int main(int argc, char** argv)
     Aws::Testing::ShutdownPlatformTest(options);
 
     return retVal;
+}
+
+TEST(InitShutdown, Repeatable)
+{
+    for (unsigned ii = 0; ii < 5; ++ii)
+    {
+        // queue up some work for the logger, enough for it to be live until shutdown
+        for (unsigned jj = 0; jj < 10000; ++jj) {
+            AWS_LOG_WARN("InitShutdown.Repeatable", "test warn level");
+        }
+
+        Aws::ShutdownAPI(options);
+        Aws::InitAPI(options);
+    }
 }

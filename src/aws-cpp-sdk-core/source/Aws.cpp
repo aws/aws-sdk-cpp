@@ -157,19 +157,27 @@ namespace Aws
         Aws::Monitoring::CleanupMonitoring();
         Aws::Internal::CleanupEC2MetadataClient();
         Aws::Net::CleanupNetwork();
+        cJSON_AS4CPP_InitHooks(nullptr);
         Aws::CleanupEnumOverflowContainer();
         Aws::Http::CleanupHttp();
         Aws::Utils::Crypto::CleanupCrypto();
 
         Aws::Config::CleanupConfigAndCredentialsCacheManager();
 
-        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
-        Aws::CleanupCrt();
+        // https://github.com/aws/aws-sdk-cpp/issues/2409
+        // undo https://github.com/aws/aws-sdk-cpp/issues/1996
+        // CRT is initialized before loggers, so loggers must be cleaned up before CRT
+        // otherwise the loggers might try to allocate after CleanupCrt() and get
+        // undefined behavior.
         if (options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             Aws::Utils::Logging::ShutdownCRTLogging();
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
+
+        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
+        Aws::CleanupCrt();
+
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)
         {

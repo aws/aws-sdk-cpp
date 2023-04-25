@@ -75,6 +75,13 @@ namespace Aws
                 if (aws_logger_get() == &m_logger)
                 {
                     aws_logger_set(NULL);
+                    // https://github.com/aws/aws-sdk-cpp/issues/2409
+                    // give other threads that may have grabbed the logger pointer 25ms to use it and lose it
+                    // this is an extremely poor (but cheap) way to mostly defeat the lack of thread safety
+                    // at the aws-c-common layer for logging, as another thread may have just acquired the
+                    // pointer and may decide to log, so we give it enough time to do that before we destroy
+                    // the pointer
+                    aws_thread_current_sleep(25000000);
                     aws_logger_clean_up(&m_logger);
                 }
             }
