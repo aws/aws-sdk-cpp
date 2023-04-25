@@ -5,7 +5,6 @@
 
 #include <aws/chime-sdk-messaging/model/DeleteChannelRequest.h>
 #include <aws/core/utils/json/JsonSerializer.h>
-#include <aws/core/http/URI.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
@@ -13,12 +12,10 @@
 using namespace Aws::ChimeSDKMessaging::Model;
 using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
-using namespace Aws::Http;
 
 DeleteChannelRequest::DeleteChannelRequest() : 
     m_channelArnHasBeenSet(false),
-    m_chimeBearerHasBeenSet(false),
-    m_subChannelIdHasBeenSet(false)
+    m_chimeBearerHasBeenSet(false)
 {
 }
 
@@ -42,17 +39,6 @@ Aws::Http::HeaderValueCollection DeleteChannelRequest::GetRequestSpecificHeaders
 
 }
 
-void DeleteChannelRequest::AddQueryStringParameters(URI& uri) const
-{
-    Aws::StringStream ss;
-    if(m_subChannelIdHasBeenSet)
-    {
-      ss << m_subChannelId;
-      uri.AddQueryStringParameter("sub-channel-id", ss.str());
-      ss.str("");
-    }
-
-}
 
 
 

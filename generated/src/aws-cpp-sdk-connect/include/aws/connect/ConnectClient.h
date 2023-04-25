@@ -87,6 +87,33 @@ namespace Connect
         virtual ~ConnectClient();
 
         /**
+         * <p>Activates an evaluation form in the specified Amazon Connect instance. After
+         * the evaluation form is activated, it is available to start new evaluations based
+         * on the form. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ActivateEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ActivateEvaluationFormOutcome ActivateEvaluationForm(const Model::ActivateEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for ActivateEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ActivateEvaluationFormRequestT = Model::ActivateEvaluationFormRequest>
+        Model::ActivateEvaluationFormOutcomeCallable ActivateEvaluationFormCallable(const ActivateEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ActivateEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for ActivateEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ActivateEvaluationFormRequestT = Model::ActivateEvaluationFormRequest>
+        void ActivateEvaluationFormAsync(const ActivateEvaluationFormRequestT& request, const ActivateEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ActivateEvaluationForm, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Associates an approved origin to an Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
@@ -487,6 +514,35 @@ namespace Connect
         void CreateContactFlowModuleAsync(const CreateContactFlowModuleRequestT& request, const CreateContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::CreateContactFlowModule, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an evaluation form in the specified Amazon Connect instance. The form
+         * can be used to define questions related to agent performance, and create
+         * sections to organize such questions. An evaluation form must have a unique title
+         * within an instance. Question and section identifiers cannot be duplicated within
+         * the same evaluation form.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateEvaluationFormOutcome CreateEvaluationForm(const Model::CreateEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateEvaluationFormRequestT = Model::CreateEvaluationFormRequest>
+        Model::CreateEvaluationFormOutcomeCallable CreateEvaluationFormCallable(const CreateEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreateEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for CreateEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateEvaluationFormRequestT = Model::CreateEvaluationFormRequest>
+        void CreateEvaluationFormAsync(const CreateEvaluationFormRequestT& request, const CreateEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreateEvaluationForm, request, handler, context);
         }
 
         /**
@@ -914,6 +970,59 @@ namespace Connect
         }
 
         /**
+         * <p>Deactivates an evaluation form in the specified Amazon Connect instance.
+         * After a form is deactivated, it is no longer available for users to start new
+         * evaluations based on the form. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeactivateEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeactivateEvaluationFormOutcome DeactivateEvaluationForm(const Model::DeactivateEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeactivateEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeactivateEvaluationFormRequestT = Model::DeactivateEvaluationFormRequest>
+        Model::DeactivateEvaluationFormOutcomeCallable DeactivateEvaluationFormCallable(const DeactivateEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeactivateEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for DeactivateEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeactivateEvaluationFormRequestT = Model::DeactivateEvaluationFormRequest>
+        void DeactivateEvaluationFormAsync(const DeactivateEvaluationFormRequestT& request, const DeactivateEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeactivateEvaluationForm, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a contact evaluation in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteContactEvaluationOutcome DeleteContactEvaluation(const Model::DeleteContactEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteContactEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteContactEvaluationRequestT = Model::DeleteContactEvaluationRequest>
+        Model::DeleteContactEvaluationOutcomeCallable DeleteContactEvaluationCallable(const DeleteContactEvaluationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteContactEvaluation, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteContactEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteContactEvaluationRequestT = Model::DeleteContactEvaluationRequest>
+        void DeleteContactEvaluationAsync(const DeleteContactEvaluationRequestT& request, const DeleteContactEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteContactEvaluation, request, handler, context);
+        }
+
+        /**
          * <p>Deletes a flow for the specified Amazon Connect instance.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteContactFlow">AWS
@@ -962,6 +1071,35 @@ namespace Connect
         void DeleteContactFlowModuleAsync(const DeleteContactFlowModuleRequestT& request, const DeleteContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeleteContactFlowModule, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an evaluation form in the specified Amazon Connect instance. </p>
+         * <ul> <li> <p>If the version property is provided, only the specified version of
+         * the evaluation form is deleted.</p> </li> <li> <p>If no version is provided,
+         * then the full form (all versions) is deleted.</p> </li> </ul><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeleteEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteEvaluationFormOutcome DeleteEvaluationForm(const Model::DeleteEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteEvaluationFormRequestT = Model::DeleteEvaluationFormRequest>
+        Model::DeleteEvaluationFormOutcomeCallable DeleteEvaluationFormCallable(const DeleteEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeleteEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteEvaluationFormRequestT = Model::DeleteEvaluationFormRequest>
+        void DeleteEvaluationFormAsync(const DeleteEvaluationFormRequestT& request, const DeleteEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeleteEvaluationForm, request, handler, context);
         }
 
         /**
@@ -1344,6 +1482,32 @@ namespace Connect
         }
 
         /**
+         * <p>Describes a contact evaluation in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeContactEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeContactEvaluationOutcome DescribeContactEvaluation(const Model::DescribeContactEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeContactEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeContactEvaluationRequestT = Model::DescribeContactEvaluationRequest>
+        Model::DescribeContactEvaluationOutcomeCallable DescribeContactEvaluationCallable(const DescribeContactEvaluationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeContactEvaluation, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeContactEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeContactEvaluationRequestT = Model::DescribeContactEvaluationRequest>
+        void DescribeContactEvaluationAsync(const DescribeContactEvaluationRequestT& request, const DescribeContactEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeContactEvaluation, request, handler, context);
+        }
+
+        /**
          * <p>Describes the specified flow.</p> <p>You can also create and update flows
          * using the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
@@ -1394,6 +1558,33 @@ namespace Connect
         void DescribeContactFlowModuleAsync(const DescribeContactFlowModuleRequestT& request, const DescribeContactFlowModuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DescribeContactFlowModule, request, handler, context);
+        }
+
+        /**
+         * <p>Describes an evaluation form in the specified Amazon Connect instance. If the
+         * version property is not provided, the latest version of the evaluation form is
+         * described.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeEvaluationFormOutcome DescribeEvaluationForm(const Model::DescribeEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeEvaluationFormRequestT = Model::DescribeEvaluationFormRequest>
+        Model::DescribeEvaluationFormOutcomeCallable DescribeEvaluationFormCallable(const DescribeEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribeEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeEvaluationFormRequestT = Model::DescribeEvaluationFormRequest>
+        void DescribeEvaluationFormAsync(const DescribeEvaluationFormRequestT& request, const DescribeEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribeEvaluationForm, request, handler, context);
         }
 
         /**
@@ -2392,6 +2583,32 @@ namespace Connect
         }
 
         /**
+         * <p>Lists contact evaluations in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactEvaluations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListContactEvaluationsOutcome ListContactEvaluations(const Model::ListContactEvaluationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListContactEvaluations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListContactEvaluationsRequestT = Model::ListContactEvaluationsRequest>
+        Model::ListContactEvaluationsOutcomeCallable ListContactEvaluationsCallable(const ListContactEvaluationsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListContactEvaluations, request);
+        }
+
+        /**
+         * An Async wrapper for ListContactEvaluations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListContactEvaluationsRequestT = Model::ListContactEvaluationsRequest>
+        void ListContactEvaluationsAsync(const ListContactEvaluationsRequestT& request, const ListContactEvaluationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListContactEvaluations, request, handler, context);
+        }
+
+        /**
          * <p>Provides information about the flow modules for the specified Amazon Connect
          * instance.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListContactFlowModules">AWS
@@ -2498,6 +2715,58 @@ namespace Connect
         void ListDefaultVocabulariesAsync(const ListDefaultVocabulariesRequestT& request, const ListDefaultVocabulariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::ListDefaultVocabularies, request, handler, context);
+        }
+
+        /**
+         * <p>Lists versions of an evaluation form in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationFormVersions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEvaluationFormVersionsOutcome ListEvaluationFormVersions(const Model::ListEvaluationFormVersionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEvaluationFormVersions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEvaluationFormVersionsRequestT = Model::ListEvaluationFormVersionsRequest>
+        Model::ListEvaluationFormVersionsOutcomeCallable ListEvaluationFormVersionsCallable(const ListEvaluationFormVersionsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListEvaluationFormVersions, request);
+        }
+
+        /**
+         * An Async wrapper for ListEvaluationFormVersions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEvaluationFormVersionsRequestT = Model::ListEvaluationFormVersionsRequest>
+        void ListEvaluationFormVersionsAsync(const ListEvaluationFormVersionsRequestT& request, const ListEvaluationFormVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListEvaluationFormVersions, request, handler, context);
+        }
+
+        /**
+         * <p>Lists evaluation forms in the specified Amazon Connect
+         * instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListEvaluationForms">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListEvaluationFormsOutcome ListEvaluationForms(const Model::ListEvaluationFormsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListEvaluationForms that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListEvaluationFormsRequestT = Model::ListEvaluationFormsRequest>
+        Model::ListEvaluationFormsOutcomeCallable ListEvaluationFormsCallable(const ListEvaluationFormsRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::ListEvaluationForms, request);
+        }
+
+        /**
+         * An Async wrapper for ListEvaluationForms that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListEvaluationFormsRequestT = Model::ListEvaluationFormsRequest>
+        void ListEvaluationFormsAsync(const ListEvaluationFormsRequestT& request, const ListEvaluationFormsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::ListEvaluationForms, request, handler, context);
         }
 
         /**
@@ -3564,6 +3833,37 @@ namespace Connect
         }
 
         /**
+         * <p>Starts an empty evaluation in the specified Amazon Connect instance, using
+         * the given evaluation form for the particular contact. The evaluation form
+         * version used for the contact evaluation corresponds to the currently activated
+         * version. If no version is activated for the evaluation form, the contact
+         * evaluation cannot be started. </p>  <p>Evaluations created through the
+         * public API do not contain answer values suggested from automation.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartContactEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartContactEvaluationOutcome StartContactEvaluation(const Model::StartContactEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartContactEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartContactEvaluationRequestT = Model::StartContactEvaluationRequest>
+        Model::StartContactEvaluationOutcomeCallable StartContactEvaluationCallable(const StartContactEvaluationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::StartContactEvaluation, request);
+        }
+
+        /**
+         * An Async wrapper for StartContactEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartContactEvaluationRequestT = Model::StartContactEvaluationRequest>
+        void StartContactEvaluationAsync(const StartContactEvaluationRequestT& request, const StartContactEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::StartContactEvaluation, request, handler, context);
+        }
+
+        /**
          * <p>Starts recording the contact: </p> <ul> <li> <p>If the API is called
          * <i>before</i> the agent joins the call, recording starts when the agent joins
          * the call.</p> </li> <li> <p>If the API is called <i>after</i> the agent joins
@@ -3780,6 +4080,37 @@ namespace Connect
         void StopContactStreamingAsync(const StopContactStreamingRequestT& request, const StopContactStreamingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::StopContactStreaming, request, handler, context);
+        }
+
+        /**
+         * <p>Submits a contact evaluation in the specified Amazon Connect instance.
+         * Answers included in the request are merged with existing answers for the given
+         * evaluation. If no answers or notes are passed, the evaluation is submitted with
+         * the existing answers and notes. You can delete an answer or note by passing an
+         * empty object (<code>{}</code>) to the question identifier. </p> <p>If a contact
+         * evaluation is already in submitted state, this operation will trigger a
+         * resubmission.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/SubmitContactEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SubmitContactEvaluationOutcome SubmitContactEvaluation(const Model::SubmitContactEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for SubmitContactEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SubmitContactEvaluationRequestT = Model::SubmitContactEvaluationRequest>
+        Model::SubmitContactEvaluationOutcomeCallable SubmitContactEvaluationCallable(const SubmitContactEvaluationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::SubmitContactEvaluation, request);
+        }
+
+        /**
+         * An Async wrapper for SubmitContactEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SubmitContactEvaluationRequestT = Model::SubmitContactEvaluationRequest>
+        void SubmitContactEvaluationAsync(const SubmitContactEvaluationRequestT& request, const SubmitContactEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::SubmitContactEvaluation, request, handler, context);
         }
 
         /**
@@ -4004,6 +4335,35 @@ namespace Connect
         }
 
         /**
+         * <p>Updates details about a contact evaluation in the specified Amazon Connect
+         * instance. A contact evaluation must be in draft state. Answers included in the
+         * request are merged with existing answers for the given evaluation. An answer or
+         * note can be deleted by passing an empty object (<code>{}</code>) to the question
+         * identifier. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateContactEvaluation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateContactEvaluationOutcome UpdateContactEvaluation(const Model::UpdateContactEvaluationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateContactEvaluation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateContactEvaluationRequestT = Model::UpdateContactEvaluationRequest>
+        Model::UpdateContactEvaluationOutcomeCallable UpdateContactEvaluationCallable(const UpdateContactEvaluationRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateContactEvaluation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateContactEvaluation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateContactEvaluationRequestT = Model::UpdateContactEvaluationRequest>
+        void UpdateContactEvaluationAsync(const UpdateContactEvaluationRequestT& request, const UpdateContactEvaluationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateContactEvaluation, request, handler, context);
+        }
+
+        /**
          * <p>Updates the specified flow.</p> <p>You can also create and update flows using
          * the <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon
@@ -4159,6 +4519,35 @@ namespace Connect
         void UpdateContactScheduleAsync(const UpdateContactScheduleRequestT& request, const UpdateContactScheduleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdateContactSchedule, request, handler, context);
+        }
+
+        /**
+         * <p>Updates details about a specific evaluation form version in the specified
+         * Amazon Connect instance. An evaluation form must have a unique title within an
+         * instance. Question and section identifiers cannot be duplicated within the same
+         * evaluation form.</p> <p>This operation does not support partial updates. Instead
+         * it does a full update of evaluation form content.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEvaluationFormOutcome UpdateEvaluationForm(const Model::UpdateEvaluationFormRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEvaluationForm that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEvaluationFormRequestT = Model::UpdateEvaluationFormRequest>
+        Model::UpdateEvaluationFormOutcomeCallable UpdateEvaluationFormCallable(const UpdateEvaluationFormRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdateEvaluationForm, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEvaluationForm that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEvaluationFormRequestT = Model::UpdateEvaluationFormRequest>
+        void UpdateEvaluationFormAsync(const UpdateEvaluationFormRequestT& request, const UpdateEvaluationFormResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdateEvaluationForm, request, handler, context);
         }
 
         /**

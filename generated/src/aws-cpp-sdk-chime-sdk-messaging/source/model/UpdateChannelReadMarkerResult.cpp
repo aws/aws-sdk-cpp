@@ -35,12 +35,6 @@ UpdateChannelReadMarkerResult& UpdateChannelReadMarkerResult::operator =(const A
 
   }
 
-  if(jsonValue.ValueExists("SubChannelId"))
-  {
-    m_subChannelId = jsonValue.GetString("SubChannelId");
-
-  }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -21,6 +21,7 @@
 #include <aws/datasync/DataSyncClient.h>
 #include <aws/datasync/DataSyncErrorMarshaller.h>
 #include <aws/datasync/DataSyncEndpointProvider.h>
+#include <aws/datasync/model/AddStorageSystemRequest.h>
 #include <aws/datasync/model/CancelTaskExecutionRequest.h>
 #include <aws/datasync/model/CreateAgentRequest.h>
 #include <aws/datasync/model/CreateLocationEfsRequest.h>
@@ -38,6 +39,7 @@
 #include <aws/datasync/model/DeleteLocationRequest.h>
 #include <aws/datasync/model/DeleteTaskRequest.h>
 #include <aws/datasync/model/DescribeAgentRequest.h>
+#include <aws/datasync/model/DescribeDiscoveryJobRequest.h>
 #include <aws/datasync/model/DescribeLocationEfsRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxLustreRequest.h>
 #include <aws/datasync/model/DescribeLocationFsxOntapRequest.h>
@@ -48,21 +50,32 @@
 #include <aws/datasync/model/DescribeLocationObjectStorageRequest.h>
 #include <aws/datasync/model/DescribeLocationS3Request.h>
 #include <aws/datasync/model/DescribeLocationSmbRequest.h>
+#include <aws/datasync/model/DescribeStorageSystemRequest.h>
+#include <aws/datasync/model/DescribeStorageSystemResourceMetricsRequest.h>
+#include <aws/datasync/model/DescribeStorageSystemResourcesRequest.h>
 #include <aws/datasync/model/DescribeTaskRequest.h>
 #include <aws/datasync/model/DescribeTaskExecutionRequest.h>
+#include <aws/datasync/model/GenerateRecommendationsRequest.h>
 #include <aws/datasync/model/ListAgentsRequest.h>
+#include <aws/datasync/model/ListDiscoveryJobsRequest.h>
 #include <aws/datasync/model/ListLocationsRequest.h>
+#include <aws/datasync/model/ListStorageSystemsRequest.h>
 #include <aws/datasync/model/ListTagsForResourceRequest.h>
 #include <aws/datasync/model/ListTaskExecutionsRequest.h>
 #include <aws/datasync/model/ListTasksRequest.h>
+#include <aws/datasync/model/RemoveStorageSystemRequest.h>
+#include <aws/datasync/model/StartDiscoveryJobRequest.h>
 #include <aws/datasync/model/StartTaskExecutionRequest.h>
+#include <aws/datasync/model/StopDiscoveryJobRequest.h>
 #include <aws/datasync/model/TagResourceRequest.h>
 #include <aws/datasync/model/UntagResourceRequest.h>
 #include <aws/datasync/model/UpdateAgentRequest.h>
+#include <aws/datasync/model/UpdateDiscoveryJobRequest.h>
 #include <aws/datasync/model/UpdateLocationHdfsRequest.h>
 #include <aws/datasync/model/UpdateLocationNfsRequest.h>
 #include <aws/datasync/model/UpdateLocationObjectStorageRequest.h>
 #include <aws/datasync/model/UpdateLocationSmbRequest.h>
+#include <aws/datasync/model/UpdateStorageSystemRequest.h>
 #include <aws/datasync/model/UpdateTaskRequest.h>
 #include <aws/datasync/model/UpdateTaskExecutionRequest.h>
 
@@ -191,6 +204,16 @@ void DataSyncClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+AddStorageSystemOutcome DataSyncClient::AddStorageSystem(const AddStorageSystemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AddStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), AddStorageSystemOutcome(addPrefixErr.value()));
+  return AddStorageSystemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CancelTaskExecutionOutcome DataSyncClient::CancelTaskExecution(const CancelTaskExecutionRequest& request) const
@@ -329,6 +352,16 @@ DescribeAgentOutcome DataSyncClient::DescribeAgent(const DescribeAgentRequest& r
   return DescribeAgentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeDiscoveryJobOutcome DataSyncClient::DescribeDiscoveryJob(const DescribeDiscoveryJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeDiscoveryJobOutcome(addPrefixErr.value()));
+  return DescribeDiscoveryJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeLocationEfsOutcome DataSyncClient::DescribeLocationEfs(const DescribeLocationEfsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeLocationEfs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -409,6 +442,36 @@ DescribeLocationSmbOutcome DataSyncClient::DescribeLocationSmb(const DescribeLoc
   return DescribeLocationSmbOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeStorageSystemOutcome DataSyncClient::DescribeStorageSystem(const DescribeStorageSystemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeStorageSystemOutcome(addPrefixErr.value()));
+  return DescribeStorageSystemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStorageSystemResourceMetricsOutcome DataSyncClient::DescribeStorageSystemResourceMetrics(const DescribeStorageSystemResourceMetricsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystemResourceMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystemResourceMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeStorageSystemResourceMetricsOutcome(addPrefixErr.value()));
+  return DescribeStorageSystemResourceMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeStorageSystemResourcesOutcome DataSyncClient::DescribeStorageSystemResources(const DescribeStorageSystemResourcesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeStorageSystemResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeStorageSystemResources, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), DescribeStorageSystemResourcesOutcome(addPrefixErr.value()));
+  return DescribeStorageSystemResourcesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeTaskOutcome DataSyncClient::DescribeTask(const DescribeTaskRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeTask, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -425,6 +488,16 @@ DescribeTaskExecutionOutcome DataSyncClient::DescribeTaskExecution(const Describ
   return DescribeTaskExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+GenerateRecommendationsOutcome DataSyncClient::GenerateRecommendations(const GenerateRecommendationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GenerateRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GenerateRecommendations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), GenerateRecommendationsOutcome(addPrefixErr.value()));
+  return GenerateRecommendationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAgents, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -433,12 +506,32 @@ ListAgentsOutcome DataSyncClient::ListAgents(const ListAgentsRequest& request) c
   return ListAgentsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListDiscoveryJobsOutcome DataSyncClient::ListDiscoveryJobs(const ListDiscoveryJobsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDiscoveryJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDiscoveryJobs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListDiscoveryJobsOutcome(addPrefixErr.value()));
+  return ListDiscoveryJobsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListLocationsOutcome DataSyncClient::ListLocations(const ListLocationsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLocations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return ListLocationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListStorageSystemsOutcome DataSyncClient::ListStorageSystems(const ListStorageSystemsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListStorageSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListStorageSystems, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), ListStorageSystemsOutcome(addPrefixErr.value()));
+  return ListStorageSystemsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListTagsForResourceOutcome DataSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
@@ -465,12 +558,42 @@ ListTasksOutcome DataSyncClient::ListTasks(const ListTasksRequest& request) cons
   return ListTasksOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+RemoveStorageSystemOutcome DataSyncClient::RemoveStorageSystem(const RemoveStorageSystemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, RemoveStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), RemoveStorageSystemOutcome(addPrefixErr.value()));
+  return RemoveStorageSystemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartDiscoveryJobOutcome DataSyncClient::StartDiscoveryJob(const StartDiscoveryJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StartDiscoveryJobOutcome(addPrefixErr.value()));
+  return StartDiscoveryJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 StartTaskExecutionOutcome DataSyncClient::StartTaskExecution(const StartTaskExecutionRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartTaskExecution, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return StartTaskExecutionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StopDiscoveryJobOutcome DataSyncClient::StopDiscoveryJob(const StopDiscoveryJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StopDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StopDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), StopDiscoveryJobOutcome(addPrefixErr.value()));
+  return StopDiscoveryJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome DataSyncClient::TagResource(const TagResourceRequest& request) const
@@ -495,6 +618,16 @@ UpdateAgentOutcome DataSyncClient::UpdateAgent(const UpdateAgentRequest& request
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateAgent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateAgentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateDiscoveryJobOutcome DataSyncClient::UpdateDiscoveryJob(const UpdateDiscoveryJobRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateDiscoveryJob, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateDiscoveryJobOutcome(addPrefixErr.value()));
+  return UpdateDiscoveryJobOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateLocationHdfsOutcome DataSyncClient::UpdateLocationHdfs(const UpdateLocationHdfsRequest& request) const
@@ -527,6 +660,16 @@ UpdateLocationSmbOutcome DataSyncClient::UpdateLocationSmb(const UpdateLocationS
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateLocationSmb, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return UpdateLocationSmbOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateStorageSystemOutcome DataSyncClient::UpdateStorageSystem(const UpdateStorageSystemRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateStorageSystem, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  auto addPrefixErr = endpointResolutionOutcome.GetResult().AddPrefixIfMissing("discovery-");
+  AWS_CHECK(SERVICE_NAME, !addPrefixErr, addPrefixErr->GetMessage(), UpdateStorageSystemOutcome(addPrefixErr.value()));
+  return UpdateStorageSystemOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTaskOutcome DataSyncClient::UpdateTask(const UpdateTaskRequest& request) const

@@ -88,6 +88,9 @@
 #include <aws/pinpoint/model/GetJourneyDateRangeKpiRequest.h>
 #include <aws/pinpoint/model/GetJourneyExecutionActivityMetricsRequest.h>
 #include <aws/pinpoint/model/GetJourneyExecutionMetricsRequest.h>
+#include <aws/pinpoint/model/GetJourneyRunExecutionActivityMetricsRequest.h>
+#include <aws/pinpoint/model/GetJourneyRunExecutionMetricsRequest.h>
+#include <aws/pinpoint/model/GetJourneyRunsRequest.h>
 #include <aws/pinpoint/model/GetPushTemplateRequest.h>
 #include <aws/pinpoint/model/GetRecommenderConfigurationRequest.h>
 #include <aws/pinpoint/model/GetRecommenderConfigurationsRequest.h>
@@ -1461,6 +1464,96 @@ GetJourneyExecutionMetricsOutcome PinpointClient::GetJourneyExecutionMetrics(con
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
   return GetJourneyExecutionMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetJourneyRunExecutionActivityMetricsOutcome PinpointClient::GetJourneyRunExecutionActivityMetrics(const GetJourneyRunExecutionActivityMetricsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRunExecutionActivityMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionActivityMetrics", "Required field: ApplicationId, is not set");
+    return GetJourneyRunExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyActivityIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionActivityMetrics", "Required field: JourneyActivityId, is not set");
+    return GetJourneyRunExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyActivityId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionActivityMetrics", "Required field: JourneyId, is not set");
+    return GetJourneyRunExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  if (!request.RunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionActivityMetrics", "Required field: RunId, is not set");
+    return GetJourneyRunExecutionActivityMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RunId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJourneyRunExecutionActivityMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apps/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/journeys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/runs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRunId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/activities/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyActivityId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
+  return GetJourneyRunExecutionActivityMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetJourneyRunExecutionMetricsOutcome PinpointClient::GetJourneyRunExecutionMetrics(const GetJourneyRunExecutionMetricsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRunExecutionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionMetrics", "Required field: ApplicationId, is not set");
+    return GetJourneyRunExecutionMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionMetrics", "Required field: JourneyId, is not set");
+    return GetJourneyRunExecutionMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  if (!request.RunIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRunExecutionMetrics", "Required field: RunId, is not set");
+    return GetJourneyRunExecutionMetricsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RunId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJourneyRunExecutionMetrics, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apps/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/journeys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/runs/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRunId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/execution-metrics");
+  return GetJourneyRunExecutionMetricsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetJourneyRunsOutcome PinpointClient::GetJourneyRuns(const GetJourneyRunsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetJourneyRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRuns", "Required field: ApplicationId, is not set");
+    return GetJourneyRunsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JourneyIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJourneyRuns", "Required field: JourneyId, is not set");
+    return GetJourneyRunsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JourneyId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetJourneyRuns, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apps/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/journeys/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetJourneyId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/runs");
+  return GetJourneyRunsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetPushTemplateOutcome PinpointClient::GetPushTemplate(const GetPushTemplateRequest& request) const

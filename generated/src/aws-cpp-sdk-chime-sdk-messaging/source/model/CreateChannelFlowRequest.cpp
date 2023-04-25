@@ -17,7 +17,8 @@ CreateChannelFlowRequest::CreateChannelFlowRequest() :
     m_processorsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestTokenHasBeenSet(false)
+    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestTokenHasBeenSet(true)
 {
 }
 
