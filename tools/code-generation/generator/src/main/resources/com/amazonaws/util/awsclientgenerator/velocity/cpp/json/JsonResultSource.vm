@@ -71,6 +71,7 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const Aws::AmazonWebSer
 #elseif($memberEntry.value.shape.primitive)
      ${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($memberEntry.value.shape)}(${varName}Iter->second.c_str());
 #elseif($metadata.awsQueryCompatible && $memberEntry.value.shape.structure && $memberEntry.value.shape.name == 'ResponseMetadata')
+     // for backward compatibility for customers used to an old XML Client interface
      m_responseMetadata.SetRequestId(${varName}Iter->second);
 #end
   }
