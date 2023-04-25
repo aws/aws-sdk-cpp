@@ -123,47 +123,6 @@ namespace Model
      */
     inline UpdateChannelReadMarkerRequest& WithChimeBearer(const char* value) { SetChimeBearer(value); return *this;}
 
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = value; }
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelIdHasBeenSet = true; m_subChannelId = std::move(value); }
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline void SetSubChannelId(const char* value) { m_subChannelIdHasBeenSet = true; m_subChannelId.assign(value); }
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline UpdateChannelReadMarkerRequest& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline UpdateChannelReadMarkerRequest& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the SubChannel in the request.</p>
-     */
-    inline UpdateChannelReadMarkerRequest& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
-
   private:
 
     Aws::String m_channelArn;
@@ -171,9 +130,6 @@ namespace Model
 
     Aws::String m_chimeBearer;
     bool m_chimeBearerHasBeenSet = false;
-
-    Aws::String m_subChannelId;
-    bool m_subChannelIdHasBeenSet = false;
   };
 
 } // namespace Model

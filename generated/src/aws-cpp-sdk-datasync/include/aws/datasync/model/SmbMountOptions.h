@@ -44,17 +44,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
@@ -66,17 +66,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
@@ -88,17 +88,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
@@ -110,17 +110,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
@@ -132,17 +132,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */
@@ -154,17 +154,17 @@ namespace Model
      * specific SMB version, but we recommend doing this only if DataSync has trouble
      * negotiating with the SMB file server automatically.</p> <p>These are the
      * following options for configuring the SMB version:</p> <ul> <li> <p>
-     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate a
-     * protocol version that they mutually support. (DataSync supports SMB versions 1.0
-     * and later.)</p> <p>This is the recommended option. If you instead choose a
-     * specific version that your file server doesn't support, you may get an
-     * <code>Operation Not Supported</code> error.</p> </li> <li> <p>
-     * <code>SMB3</code>: Restricts the protocol negotiation to only SMB version
-     * 3.0.2.</p> </li> <li> <p> <code>SMB2</code>: Restricts the protocol negotiation
-     * to only SMB version 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the
-     * protocol negotiation to only SMB version 2.0.</p> </li> <li> <p>
-     * <code>SMB1</code>: Restricts the protocol negotiation to only SMB version
-     * 1.0.</p>  <p>The <code>SMB1</code> option isn't available when <a
+     * <code>AUTOMATIC</code> (default): DataSync and the SMB file server negotiate the
+     * highest version of SMB that they mutually support between 2.1 and 3.1.1.</p>
+     * <p>This is the recommended option. If you instead choose a specific version that
+     * your file server doesn't support, you may get an <code>Operation Not
+     * Supported</code> error.</p> </li> <li> <p> <code>SMB3</code>: Restricts the
+     * protocol negotiation to only SMB version 3.0.2.</p> </li> <li> <p>
+     * <code>SMB2</code>: Restricts the protocol negotiation to only SMB version
+     * 2.1.</p> </li> <li> <p> <code>SMB2_0</code>: Restricts the protocol negotiation
+     * to only SMB version 2.0.</p> </li> <li> <p> <code>SMB1</code>: Restricts the
+     * protocol negotiation to only SMB version 1.0.</p>  <p>The
+     * <code>SMB1</code> option isn't available when <a
      * href="https://docs.aws.amazon.com/datasync/latest/userguide/API_CreateLocationFsxOntap.html">creating
      * an Amazon FSx for NetApp ONTAP location</a>.</p>  </li> </ul>
      */

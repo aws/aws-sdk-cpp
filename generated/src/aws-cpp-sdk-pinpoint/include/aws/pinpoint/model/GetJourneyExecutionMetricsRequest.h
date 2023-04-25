@@ -129,58 +129,58 @@ namespace Model
 
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetJourneyExecutionMetricsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetJourneyExecutionMetricsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The  string that specifies which page of results to return in a paginated
-     * response. This parameter is not supported for application, campaign, and journey
-     * metrics.</p>
+     * <p>The <code/> string that specifies which page of results to return in a
+     * paginated response. This parameter is not supported for application, campaign,
+     * and journey metrics.</p>
      */
     inline GetJourneyExecutionMetricsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

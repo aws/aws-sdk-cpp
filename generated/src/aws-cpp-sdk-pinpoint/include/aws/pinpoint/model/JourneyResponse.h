@@ -829,47 +829,51 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
-     * of their quiet hours.</p>
+     * <p>Indicates whether endpoints in quiet hours should enter a wait activity until
+     * quiet hours have elapsed.</p>
      */
     inline bool GetWaitForQuietTime() const{ return m_waitForQuietTime; }
 
     /**
-     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
-     * of their quiet hours.</p>
+     * <p>Indicates whether endpoints in quiet hours should enter a wait activity until
+     * quiet hours have elapsed.</p>
      */
     inline bool WaitForQuietTimeHasBeenSet() const { return m_waitForQuietTimeHasBeenSet; }
 
     /**
-     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
-     * of their quiet hours.</p>
+     * <p>Indicates whether endpoints in quiet hours should enter a wait activity until
+     * quiet hours have elapsed.</p>
      */
     inline void SetWaitForQuietTime(bool value) { m_waitForQuietTimeHasBeenSet = true; m_waitForQuietTime = value; }
 
     /**
-     * <p>Specifies whether endpoints in quiet hours should enter a wait till the end
-     * of their quiet hours.</p>
+     * <p>Indicates whether endpoints in quiet hours should enter a wait activity until
+     * quiet hours have elapsed.</p>
      */
     inline JourneyResponse& WithWaitForQuietTime(bool value) { SetWaitForQuietTime(value); return *this;}
 
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline JourneyResponse& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
 
@@ -906,99 +910,99 @@ namespace Model
 
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline bool GetSendingSchedule() const{ return m_sendingSchedule; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline bool SendingScheduleHasBeenSet() const { return m_sendingScheduleHasBeenSet; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline void SetSendingSchedule(bool value) { m_sendingScheduleHasBeenSet = true; m_sendingSchedule = value; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline JourneyResponse& WithSendingSchedule(bool value) { SetSendingSchedule(value); return *this;}
 
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline const OpenHours& GetOpenHours() const{ return m_openHours; }
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline bool OpenHoursHasBeenSet() const { return m_openHoursHasBeenSet; }
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline void SetOpenHours(const OpenHours& value) { m_openHoursHasBeenSet = true; m_openHours = value; }
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline void SetOpenHours(OpenHours&& value) { m_openHoursHasBeenSet = true; m_openHours = std::move(value); }
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline JourneyResponse& WithOpenHours(const OpenHours& value) { SetOpenHours(value); return *this;}
 
     /**
-     * <p>The time when journey allow to send messages. QuietTime should be configured
+     * <p>The time when a journey can send messages. QuietTime should be configured
      * first and SendingSchedule should be set to true.</p>
      */
     inline JourneyResponse& WithOpenHours(OpenHours&& value) { SetOpenHours(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline const ClosedDays& GetClosedDays() const{ return m_closedDays; }
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline bool ClosedDaysHasBeenSet() const { return m_closedDaysHasBeenSet; }
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline void SetClosedDays(const ClosedDays& value) { m_closedDaysHasBeenSet = true; m_closedDays = value; }
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline void SetClosedDays(ClosedDays&& value) { m_closedDaysHasBeenSet = true; m_closedDays = std::move(value); }
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline JourneyResponse& WithClosedDays(const ClosedDays& value) { SetClosedDays(value); return *this;}
 
     /**
-     * <p>The time when journey will stop sending messages. QuietTime should be
+     * <p>The time when a journey will not send messages. QuietTime should be
      * configured first and SendingSchedule should be set to true.</p>
      */
     inline JourneyResponse& WithClosedDays(ClosedDays&& value) { SetClosedDays(std::move(value)); return *this;}

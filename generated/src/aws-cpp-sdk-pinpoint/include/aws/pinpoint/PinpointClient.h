@@ -1807,6 +1807,84 @@ namespace Pinpoint
         }
 
         /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard run execution metric
+         * that applies to a journey activity.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionActivityMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetJourneyRunExecutionActivityMetricsOutcome GetJourneyRunExecutionActivityMetrics(const Model::GetJourneyRunExecutionActivityMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetJourneyRunExecutionActivityMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetJourneyRunExecutionActivityMetricsRequestT = Model::GetJourneyRunExecutionActivityMetricsRequest>
+        Model::GetJourneyRunExecutionActivityMetricsOutcomeCallable GetJourneyRunExecutionActivityMetricsCallable(const GetJourneyRunExecutionActivityMetricsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointClient::GetJourneyRunExecutionActivityMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetJourneyRunExecutionActivityMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetJourneyRunExecutionActivityMetricsRequestT = Model::GetJourneyRunExecutionActivityMetricsRequest>
+        void GetJourneyRunExecutionActivityMetricsAsync(const GetJourneyRunExecutionActivityMetricsRequestT& request, const GetJourneyRunExecutionActivityMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointClient::GetJourneyRunExecutionActivityMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves (queries) pre-aggregated data for a standard run execution metric
+         * that applies to a journey.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRunExecutionMetrics">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetJourneyRunExecutionMetricsOutcome GetJourneyRunExecutionMetrics(const Model::GetJourneyRunExecutionMetricsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetJourneyRunExecutionMetrics that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetJourneyRunExecutionMetricsRequestT = Model::GetJourneyRunExecutionMetricsRequest>
+        Model::GetJourneyRunExecutionMetricsOutcomeCallable GetJourneyRunExecutionMetricsCallable(const GetJourneyRunExecutionMetricsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointClient::GetJourneyRunExecutionMetrics, request);
+        }
+
+        /**
+         * An Async wrapper for GetJourneyRunExecutionMetrics that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetJourneyRunExecutionMetricsRequestT = Model::GetJourneyRunExecutionMetricsRequest>
+        void GetJourneyRunExecutionMetricsAsync(const GetJourneyRunExecutionMetricsRequestT& request, const GetJourneyRunExecutionMetricsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointClient::GetJourneyRunExecutionMetrics, request, handler, context);
+        }
+
+        /**
+         * <p>Provides information about the runs of a journey.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetJourneyRuns">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetJourneyRunsOutcome GetJourneyRuns(const Model::GetJourneyRunsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetJourneyRuns that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetJourneyRunsRequestT = Model::GetJourneyRunsRequest>
+        Model::GetJourneyRunsOutcomeCallable GetJourneyRunsCallable(const GetJourneyRunsRequestT& request) const
+        {
+            return SubmitCallable(&PinpointClient::GetJourneyRuns, request);
+        }
+
+        /**
+         * An Async wrapper for GetJourneyRuns that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetJourneyRunsRequestT = Model::GetJourneyRunsRequest>
+        void GetJourneyRunsAsync(const GetJourneyRunsRequestT& request, const GetJourneyRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&PinpointClient::GetJourneyRuns, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves the content and settings of a message template for messages that
          * are sent through a push notification channel.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-2016-12-01/GetPushTemplate">AWS

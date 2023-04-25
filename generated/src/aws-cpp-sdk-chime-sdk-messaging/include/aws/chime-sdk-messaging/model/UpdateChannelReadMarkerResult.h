@@ -68,42 +68,6 @@ namespace Model
     inline UpdateChannelReadMarkerResult& WithChannelArn(const char* value) { SetChannelArn(value); return *this;}
 
 
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline const Aws::String& GetSubChannelId() const{ return m_subChannelId; }
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline void SetSubChannelId(const Aws::String& value) { m_subChannelId = value; }
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline void SetSubChannelId(Aws::String&& value) { m_subChannelId = std::move(value); }
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline void SetSubChannelId(const char* value) { m_subChannelId.assign(value); }
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline UpdateChannelReadMarkerResult& WithSubChannelId(const Aws::String& value) { SetSubChannelId(value); return *this;}
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline UpdateChannelReadMarkerResult& WithSubChannelId(Aws::String&& value) { SetSubChannelId(std::move(value)); return *this;}
-
-    /**
-     * <p>The ID of the SubChannel in the response.</p>
-     */
-    inline UpdateChannelReadMarkerResult& WithSubChannelId(const char* value) { SetSubChannelId(value); return *this;}
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -128,8 +92,6 @@ namespace Model
   private:
 
     Aws::String m_channelArn;
-
-    Aws::String m_subChannelId;
 
     Aws::String m_requestId;
   };

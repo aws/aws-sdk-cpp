@@ -714,22 +714,26 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline bool GetRefreshOnSegmentUpdate() const{ return m_refreshOnSegmentUpdate; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline bool RefreshOnSegmentUpdateHasBeenSet() const { return m_refreshOnSegmentUpdateHasBeenSet; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline void SetRefreshOnSegmentUpdate(bool value) { m_refreshOnSegmentUpdateHasBeenSet = true; m_refreshOnSegmentUpdate = value; }
 
     /**
-     * <p>Specifies whether a journey should be refreshed on segment update.</p>
+     * <p>Indicates whether the journey participants should be refreshed when a segment
+     * is updated.</p>
      */
     inline WriteJourneyRequest& WithRefreshOnSegmentUpdate(bool value) { SetRefreshOnSegmentUpdate(value); return *this;}
 
@@ -766,26 +770,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline bool GetSendingSchedule() const{ return m_sendingSchedule; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline bool SendingScheduleHasBeenSet() const { return m_sendingScheduleHasBeenSet; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline void SetSendingSchedule(bool value) { m_sendingScheduleHasBeenSet = true; m_sendingSchedule = value; }
 
     /**
-     * <p>Indicates if journey have Advance Quiet Time (OpenHours and ClosedDays). This
-     * flag should be set to true in order to allow (OpenHours and ClosedDays)</p>
+     * <p>Indicates if journey has Advance Quiet Time enabled. This flag should be set
+     * to true in order to allow using OpenHours and ClosedDays.</p>
      */
     inline WriteJourneyRequest& WithSendingSchedule(bool value) { SetSendingSchedule(value); return *this;}
 

@@ -42,50 +42,58 @@ namespace Model
 
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline void SetType(Aws::String&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline void SetType(const char* value) { m_typeHasBeenSet = true; m_type.assign(value); }
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline SettingEntry& WithType(const Aws::String& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline SettingEntry& WithType(Aws::String&& value) { SetType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of directory setting. For example, <code>Protocol</code> or
-     * <code>Cipher</code>.</p>
+     * <p>The type, or category, of a directory setting. Similar settings have the same
+     * type. For example, <code>Protocol</code>, <code>Cipher</code>, or
+     * <code>Certificate-Based Authentication</code>.</p>
      */
     inline SettingEntry& WithType(const char* value) { SetType(value); return *this;}
 
@@ -140,42 +148,50 @@ namespace Model
 
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline void SetAllowedValues(Aws::String&& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = std::move(value); }
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline void SetAllowedValues(const char* value) { m_allowedValuesHasBeenSet = true; m_allowedValues.assign(value); }
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline SettingEntry& WithAllowedValues(const Aws::String& value) { SetAllowedValues(value); return *this;}
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline SettingEntry& WithAllowedValues(Aws::String&& value) { SetAllowedValues(std::move(value)); return *this;}
 
     /**
-     * <p>The valid range of values for the directory setting.</p>
+     * <p>The valid range of values for the directory setting. These values depend on
+     * the <code>DataType</code> of your directory.</p>
      */
     inline SettingEntry& WithAllowedValues(const char* value) { SetAllowedValues(value); return *this;}
 
@@ -498,6 +514,63 @@ namespace Model
      */
     inline SettingEntry& WithLastRequestedDateTime(Aws::Utils::DateTime&& value) { SetLastRequestedDateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline void SetDataType(Aws::String&& value) { m_dataTypeHasBeenSet = true; m_dataType = std::move(value); }
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline void SetDataType(const char* value) { m_dataTypeHasBeenSet = true; m_dataType.assign(value); }
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline SettingEntry& WithDataType(const Aws::String& value) { SetDataType(value); return *this;}
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline SettingEntry& WithDataType(Aws::String&& value) { SetDataType(std::move(value)); return *this;}
+
+    /**
+     * <p>The data type of a directory setting. This is used to define the
+     * <code>AllowedValues</code> of a setting. For example a data type can be
+     * <code>Boolean</code>, <code>DurationInSeconds</code>, or <code>Enum</code>.</p>
+     */
+    inline SettingEntry& WithDataType(const char* value) { SetDataType(value); return *this;}
+
   private:
 
     Aws::String m_type;
@@ -529,6 +602,9 @@ namespace Model
 
     Aws::Utils::DateTime m_lastRequestedDateTime;
     bool m_lastRequestedDateTimeHasBeenSet = false;
+
+    Aws::String m_dataType;
+    bool m_dataTypeHasBeenSet = false;
   };
 
 } // namespace Model
