@@ -81,57 +81,57 @@ namespace Model
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record, increasing the number of records sent per API call.</p> <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important
-     * implications for processing records and requires de-aggregation in your stream
-     * consumer. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p>
+     * <p>Default: <code>True</code> </p>  <p>Record aggregation has
+     * important implications for processing records and requires de-aggregation in
+     * your stream consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
      * Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> 
      */
     inline bool GetAggregationEnabled() const{ return m_aggregationEnabled; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record, increasing the number of records sent per API call.</p> <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important
-     * implications for processing records and requires de-aggregation in your stream
-     * consumer. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p>
+     * <p>Default: <code>True</code> </p>  <p>Record aggregation has
+     * important implications for processing records and requires de-aggregation in
+     * your stream consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
      * Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> 
      */
     inline bool AggregationEnabledHasBeenSet() const { return m_aggregationEnabledHasBeenSet; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record, increasing the number of records sent per API call.</p> <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important
-     * implications for processing records and requires de-aggregation in your stream
-     * consumer. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p>
+     * <p>Default: <code>True</code> </p>  <p>Record aggregation has
+     * important implications for processing records and requires de-aggregation in
+     * your stream consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
      * Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> 
      */
     inline void SetAggregationEnabled(bool value) { m_aggregationEnabledHasBeenSet = true; m_aggregationEnabled = value; }
 
     /**
      * <p>Enables QLDB to publish multiple data records in a single Kinesis Data
-     * Streams record, increasing the number of records sent per API call.</p> <p>
-     * <i>This option is enabled by default.</i> Record aggregation has important
-     * implications for processing records and requires de-aggregation in your stream
-     * consumer. To learn more, see <a
+     * Streams record, increasing the number of records sent per API call.</p>
+     * <p>Default: <code>True</code> </p>  <p>Record aggregation has
+     * important implications for processing records and requires de-aggregation in
+     * your stream consumer. To learn more, see <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-concepts.html">KPL
      * Key Concepts</a> and <a
      * href="https://docs.aws.amazon.com/streams/latest/dev/kinesis-kpl-consumer-deaggregation.html">Consumer
      * De-aggregation</a> in the <i>Amazon Kinesis Data Streams Developer
-     * Guide</i>.</p>
+     * Guide</i>.</p> 
      */
     inline KinesisConfiguration& WithAggregationEnabled(bool value) { SetAggregationEnabled(value); return *this;}
 

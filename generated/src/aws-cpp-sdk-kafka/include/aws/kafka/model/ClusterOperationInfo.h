@@ -10,6 +10,7 @@
 #include <aws/kafka/model/ErrorInfo.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/kafka/model/MutableClusterInfo.h>
+#include <aws/kafka/model/VpcConnectionInfo.h>
 #include <aws/kafka/model/ClusterOperationStep.h>
 #include <utility>
 
@@ -621,6 +622,55 @@ namespace Model
      */
     inline ClusterOperationInfo& WithTargetClusterInfo(MutableClusterInfo&& value) { SetTargetClusterInfo(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline const VpcConnectionInfo& GetVpcConnectionInfo() const{ return m_vpcConnectionInfo; }
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline bool VpcConnectionInfoHasBeenSet() const { return m_vpcConnectionInfoHasBeenSet; }
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline void SetVpcConnectionInfo(const VpcConnectionInfo& value) { m_vpcConnectionInfoHasBeenSet = true; m_vpcConnectionInfo = value; }
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline void SetVpcConnectionInfo(VpcConnectionInfo&& value) { m_vpcConnectionInfoHasBeenSet = true; m_vpcConnectionInfo = std::move(value); }
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline ClusterOperationInfo& WithVpcConnectionInfo(const VpcConnectionInfo& value) { SetVpcConnectionInfo(value); return *this;}
+
+    /**
+     * 
+            <p>Description of the VPC connection for CreateVpcConnection and
+     * DeleteVpcConnection operations.</p>
+         
+     */
+    inline ClusterOperationInfo& WithVpcConnectionInfo(VpcConnectionInfo&& value) { SetVpcConnectionInfo(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_clientRequestId;
@@ -655,6 +705,9 @@ namespace Model
 
     MutableClusterInfo m_targetClusterInfo;
     bool m_targetClusterInfoHasBeenSet = false;
+
+    VpcConnectionInfo m_vpcConnectionInfo;
+    bool m_vpcConnectionInfoHasBeenSet = false;
   };
 
 } // namespace Model

@@ -21,7 +21,8 @@ namespace Model
     ACCOUNT_ID,
     GUARDDUTY_FINDING_ID,
     SCAN_START_TIME,
-    SCAN_STATUS
+    SCAN_STATUS,
+    SCAN_TYPE
   };
 
 namespace CriterionKeyMapper

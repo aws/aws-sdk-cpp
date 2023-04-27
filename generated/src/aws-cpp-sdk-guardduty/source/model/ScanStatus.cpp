@@ -23,6 +23,7 @@ namespace Aws
         static const int RUNNING_HASH = HashingUtils::HashString("RUNNING");
         static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+        static const int SKIPPED_HASH = HashingUtils::HashString("SKIPPED");
 
 
         ScanStatus GetScanStatusForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == FAILED_HASH)
           {
             return ScanStatus::FAILED;
+          }
+          else if (hashCode == SKIPPED_HASH)
+          {
+            return ScanStatus::SKIPPED;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "COMPLETED";
           case ScanStatus::FAILED:
             return "FAILED";
+          case ScanStatus::SKIPPED:
+            return "SKIPPED";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

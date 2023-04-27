@@ -71,6 +71,7 @@
 #include <aws/guardduty/model/ListPublishingDestinationsRequest.h>
 #include <aws/guardduty/model/ListTagsForResourceRequest.h>
 #include <aws/guardduty/model/ListThreatIntelSetsRequest.h>
+#include <aws/guardduty/model/StartMalwareScanRequest.h>
 #include <aws/guardduty/model/StartMonitoringMembersRequest.h>
 #include <aws/guardduty/model/StopMonitoringMembersRequest.h>
 #include <aws/guardduty/model/TagResourceRequest.h>
@@ -993,6 +994,15 @@ ListThreatIntelSetsOutcome GuardDutyClient::ListThreatIntelSets(const ListThreat
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDetectorId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/threatintelset");
   return ListThreatIntelSetsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartMalwareScanOutcome GuardDutyClient::StartMalwareScan(const StartMalwareScanRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartMalwareScan, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/malware-scan/start");
+  return StartMalwareScanOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 StartMonitoringMembersOutcome GuardDutyClient::StartMonitoringMembers(const StartMonitoringMembersRequest& request) const

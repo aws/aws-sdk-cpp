@@ -78,6 +78,8 @@ namespace Aws
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
         static const int ml_geospatial_interactive_HASH = HashingUtils::HashString("ml.geospatial.interactive");
+        static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
+        static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
 
 
         AppInstanceType GetAppInstanceTypeForName(const Aws::String& name)
@@ -315,6 +317,14 @@ namespace Aws
           {
             return AppInstanceType::ml_geospatial_interactive;
           }
+          else if (hashCode == ml_p4d_24xlarge_HASH)
+          {
+            return AppInstanceType::ml_p4d_24xlarge;
+          }
+          else if (hashCode == ml_p4de_24xlarge_HASH)
+          {
+            return AppInstanceType::ml_p4de_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -445,6 +455,10 @@ namespace Aws
             return "ml.g5.48xlarge";
           case AppInstanceType::ml_geospatial_interactive:
             return "ml.geospatial.interactive";
+          case AppInstanceType::ml_p4d_24xlarge:
+            return "ml.p4d.24xlarge";
+          case AppInstanceType::ml_p4de_24xlarge:
+            return "ml.p4de.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

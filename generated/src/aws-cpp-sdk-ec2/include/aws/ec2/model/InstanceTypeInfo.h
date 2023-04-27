@@ -714,22 +714,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline bool GetAutoRecoverySupported() const{ return m_autoRecoverySupported; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline bool AutoRecoverySupportedHasBeenSet() const { return m_autoRecoverySupportedHasBeenSet; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline void SetAutoRecoverySupported(bool value) { m_autoRecoverySupportedHasBeenSet = true; m_autoRecoverySupported = value; }
 
     /**
-     * <p>Indicates whether auto recovery is supported.</p>
+     * <p>Indicates whether Amazon CloudWatch action based recovery is supported.</p>
      */
     inline InstanceTypeInfo& WithAutoRecoverySupported(bool value) { SetAutoRecoverySupported(value); return *this;}
 

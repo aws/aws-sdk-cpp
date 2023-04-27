@@ -44,7 +44,8 @@ namespace Model
     provided,
     provided_al2,
     nodejs18_x,
-    python3_10
+    python3_10,
+    java17
   };
 
 namespace RuntimeMapper

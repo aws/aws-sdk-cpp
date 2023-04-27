@@ -71,6 +71,24 @@ GetBootstrapBrokersResult& GetBootstrapBrokersResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("bootstrapBrokerStringVpcConnectivityTls"))
+  {
+    m_bootstrapBrokerStringVpcConnectivityTls = jsonValue.GetString("bootstrapBrokerStringVpcConnectivityTls");
+
+  }
+
+  if(jsonValue.ValueExists("bootstrapBrokerStringVpcConnectivitySaslScram"))
+  {
+    m_bootstrapBrokerStringVpcConnectivitySaslScram = jsonValue.GetString("bootstrapBrokerStringVpcConnectivitySaslScram");
+
+  }
+
+  if(jsonValue.ValueExists("bootstrapBrokerStringVpcConnectivitySaslIam"))
+  {
+    m_bootstrapBrokerStringVpcConnectivitySaslIam = jsonValue.GetString("bootstrapBrokerStringVpcConnectivitySaslIam");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

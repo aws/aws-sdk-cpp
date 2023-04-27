@@ -431,6 +431,177 @@ namespace Model
     inline GetBootstrapBrokersResult& WithBootstrapBrokerStringPublicSaslIam(const char* value) { SetBootstrapBrokerStringPublicSaslIam(value); return *this;}
 
 
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline const Aws::String& GetBootstrapBrokerStringVpcConnectivityTls() const{ return m_bootstrapBrokerStringVpcConnectivityTls; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivityTls(const Aws::String& value) { m_bootstrapBrokerStringVpcConnectivityTls = value; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivityTls(Aws::String&& value) { m_bootstrapBrokerStringVpcConnectivityTls = std::move(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivityTls(const char* value) { m_bootstrapBrokerStringVpcConnectivityTls.assign(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivityTls(const Aws::String& value) { SetBootstrapBrokerStringVpcConnectivityTls(value); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivityTls(Aws::String&& value) { SetBootstrapBrokerStringVpcConnectivityTls(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and TLS port
+     * pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivityTls(const char* value) { SetBootstrapBrokerStringVpcConnectivityTls(value); return *this;}
+
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline const Aws::String& GetBootstrapBrokerStringVpcConnectivitySaslScram() const{ return m_bootstrapBrokerStringVpcConnectivitySaslScram; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslScram(const Aws::String& value) { m_bootstrapBrokerStringVpcConnectivitySaslScram = value; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslScram(Aws::String&& value) { m_bootstrapBrokerStringVpcConnectivitySaslScram = std::move(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslScram(const char* value) { m_bootstrapBrokerStringVpcConnectivitySaslScram.assign(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslScram(const Aws::String& value) { SetBootstrapBrokerStringVpcConnectivitySaslScram(value); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslScram(Aws::String&& value) { SetBootstrapBrokerStringVpcConnectivitySaslScram(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/SCRAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslScram(const char* value) { SetBootstrapBrokerStringVpcConnectivitySaslScram(value); return *this;}
+
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline const Aws::String& GetBootstrapBrokerStringVpcConnectivitySaslIam() const{ return m_bootstrapBrokerStringVpcConnectivitySaslIam; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslIam(const Aws::String& value) { m_bootstrapBrokerStringVpcConnectivitySaslIam = value; }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslIam(Aws::String&& value) { m_bootstrapBrokerStringVpcConnectivitySaslIam = std::move(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline void SetBootstrapBrokerStringVpcConnectivitySaslIam(const char* value) { m_bootstrapBrokerStringVpcConnectivitySaslIam.assign(value); }
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslIam(const Aws::String& value) { SetBootstrapBrokerStringVpcConnectivitySaslIam(value); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslIam(Aws::String&& value) { SetBootstrapBrokerStringVpcConnectivitySaslIam(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>A string containing one or more DNS names (or IP) and SASL/IAM
+     * port pairs for VPC connectivity.</p>
+         
+     */
+    inline GetBootstrapBrokersResult& WithBootstrapBrokerStringVpcConnectivitySaslIam(const char* value) { SetBootstrapBrokerStringVpcConnectivitySaslIam(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -467,6 +638,12 @@ namespace Model
     Aws::String m_bootstrapBrokerStringPublicSaslScram;
 
     Aws::String m_bootstrapBrokerStringPublicSaslIam;
+
+    Aws::String m_bootstrapBrokerStringVpcConnectivityTls;
+
+    Aws::String m_bootstrapBrokerStringVpcConnectivitySaslScram;
+
+    Aws::String m_bootstrapBrokerStringVpcConnectivitySaslIam;
 
     Aws::String m_requestId;
   };

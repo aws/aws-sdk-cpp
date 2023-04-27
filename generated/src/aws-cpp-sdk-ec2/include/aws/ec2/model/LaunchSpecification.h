@@ -98,58 +98,42 @@ namespace Model
 
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline void SetSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = std::move(value); }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline LaunchSpecification& WithSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { SetSecurityGroups(value); return *this;}
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline LaunchSpecification& WithSecurityGroups(Aws::Vector<GroupIdentifier>&& value) { SetSecurityGroups(std::move(value)); return *this;}
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline LaunchSpecification& AddSecurityGroups(const GroupIdentifier& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(value); return *this; }
 
     /**
-     * <p>One or more security groups. When requesting instances in a VPC, you must
-     * specify the IDs of the security groups. When requesting instances in
-     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     * <p>The IDs of the security groups.</p>
      */
     inline LaunchSpecification& AddSecurityGroups(GroupIdentifier&& value) { m_securityGroupsHasBeenSet = true; m_securityGroups.push_back(std::move(value)); return *this; }
 
@@ -196,42 +180,42 @@ namespace Model
 
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline void SetBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = std::move(value); }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { SetBlockDeviceMappings(value); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline LaunchSpecification& WithBlockDeviceMappings(Aws::Vector<BlockDeviceMapping>&& value) { SetBlockDeviceMappings(std::move(value)); return *this;}
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(const BlockDeviceMapping& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(value); return *this; }
 
     /**
-     * <p>One or more block device mapping entries.</p>
+     * <p>The block device mapping entries.</p>
      */
     inline LaunchSpecification& AddBlockDeviceMappings(BlockDeviceMapping&& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings.push_back(std::move(value)); return *this; }
 
@@ -459,50 +443,50 @@ namespace Model
 
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline LaunchSpecification& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterfaceSpecification>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline LaunchSpecification& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterfaceSpecification>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline LaunchSpecification& AddNetworkInterfaces(const InstanceNetworkInterfaceSpecification& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>One or more network interfaces. If you specify a network interface, you must
-     * specify subnet IDs and security group IDs using the network interface.</p>
+     * <p>The network interfaces. If you specify a network interface, you must specify
+     * subnet IDs and security group IDs using the network interface.</p>
      */
     inline LaunchSpecification& AddNetworkInterfaces(InstanceNetworkInterfaceSpecification&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

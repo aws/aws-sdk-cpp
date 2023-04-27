@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline const Aws::Vector<JournalKinesisStreamDescription>& GetStreams() const{ return m_streams; }
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline void SetStreams(const Aws::Vector<JournalKinesisStreamDescription>& value) { m_streams = value; }
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline void SetStreams(Aws::Vector<JournalKinesisStreamDescription>&& value) { m_streams = std::move(value); }
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline ListJournalKinesisStreamsForLedgerResult& WithStreams(const Aws::Vector<JournalKinesisStreamDescription>& value) { SetStreams(value); return *this;}
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline ListJournalKinesisStreamsForLedgerResult& WithStreams(Aws::Vector<JournalKinesisStreamDescription>&& value) { SetStreams(std::move(value)); return *this;}
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline ListJournalKinesisStreamsForLedgerResult& AddStreams(const JournalKinesisStreamDescription& value) { m_streams.push_back(value); return *this; }
 
     /**
-     * <p>The array of QLDB journal stream descriptors that are associated with the
-     * given ledger.</p>
+     * <p>The QLDB journal streams that are currently associated with the given
+     * ledger.</p>
      */
     inline ListJournalKinesisStreamsForLedgerResult& AddStreams(JournalKinesisStreamDescription&& value) { m_streams.push_back(std::move(value)); return *this; }
 

@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline const Aws::Vector<JournalS3ExportDescription>& GetJournalS3Exports() const{ return m_journalS3Exports; }
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline void SetJournalS3Exports(const Aws::Vector<JournalS3ExportDescription>& value) { m_journalS3Exports = value; }
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline void SetJournalS3Exports(Aws::Vector<JournalS3ExportDescription>&& value) { m_journalS3Exports = std::move(value); }
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline ListJournalS3ExportsForLedgerResult& WithJournalS3Exports(const Aws::Vector<JournalS3ExportDescription>& value) { SetJournalS3Exports(value); return *this;}
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline ListJournalS3ExportsForLedgerResult& WithJournalS3Exports(Aws::Vector<JournalS3ExportDescription>&& value) { SetJournalS3Exports(std::move(value)); return *this;}
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline ListJournalS3ExportsForLedgerResult& AddJournalS3Exports(const JournalS3ExportDescription& value) { m_journalS3Exports.push_back(value); return *this; }
 
     /**
-     * <p>The array of journal export job descriptions that are associated with the
-     * specified ledger.</p>
+     * <p>The journal export jobs that are currently associated with the specified
+     * ledger.</p>
      */
     inline ListJournalS3ExportsForLedgerResult& AddJournalS3Exports(JournalS3ExportDescription&& value) { m_journalS3Exports.push_back(std::move(value)); return *this; }
 

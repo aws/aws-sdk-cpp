@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/guardduty/model/ScanDetections.h>
+#include <aws/guardduty/model/ScanType.h>
 #include <utility>
 
 namespace Aws
@@ -261,6 +262,37 @@ namespace Model
      */
     inline EbsVolumeScanDetails& WithScanDetections(ScanDetections&& value) { SetScanDetections(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline const ScanType& GetScanType() const{ return m_scanType; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline EbsVolumeScanDetails& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline EbsVolumeScanDetails& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_scanId;
@@ -280,6 +312,9 @@ namespace Model
 
     ScanDetections m_scanDetections;
     bool m_scanDetectionsHasBeenSet = false;
+
+    ScanType m_scanType;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

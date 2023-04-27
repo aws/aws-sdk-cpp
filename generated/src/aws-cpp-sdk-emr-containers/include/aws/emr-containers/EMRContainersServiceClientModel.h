@@ -29,6 +29,7 @@
 #include <aws/emr-containers/model/DescribeJobTemplateResult.h>
 #include <aws/emr-containers/model/DescribeManagedEndpointResult.h>
 #include <aws/emr-containers/model/DescribeVirtualClusterResult.h>
+#include <aws/emr-containers/model/GetManagedEndpointSessionCredentialsResult.h>
 #include <aws/emr-containers/model/ListJobRunsResult.h>
 #include <aws/emr-containers/model/ListJobTemplatesResult.h>
 #include <aws/emr-containers/model/ListManagedEndpointsResult.h>
@@ -88,6 +89,7 @@ namespace Aws
       class DescribeJobTemplateRequest;
       class DescribeManagedEndpointRequest;
       class DescribeVirtualClusterRequest;
+      class GetManagedEndpointSessionCredentialsRequest;
       class ListJobRunsRequest;
       class ListJobTemplatesRequest;
       class ListManagedEndpointsRequest;
@@ -110,6 +112,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeJobTemplateResult, EMRContainersError> DescribeJobTemplateOutcome;
       typedef Aws::Utils::Outcome<DescribeManagedEndpointResult, EMRContainersError> DescribeManagedEndpointOutcome;
       typedef Aws::Utils::Outcome<DescribeVirtualClusterResult, EMRContainersError> DescribeVirtualClusterOutcome;
+      typedef Aws::Utils::Outcome<GetManagedEndpointSessionCredentialsResult, EMRContainersError> GetManagedEndpointSessionCredentialsOutcome;
       typedef Aws::Utils::Outcome<ListJobRunsResult, EMRContainersError> ListJobRunsOutcome;
       typedef Aws::Utils::Outcome<ListJobTemplatesResult, EMRContainersError> ListJobTemplatesOutcome;
       typedef Aws::Utils::Outcome<ListManagedEndpointsResult, EMRContainersError> ListManagedEndpointsOutcome;
@@ -132,6 +135,7 @@ namespace Aws
       typedef std::future<DescribeJobTemplateOutcome> DescribeJobTemplateOutcomeCallable;
       typedef std::future<DescribeManagedEndpointOutcome> DescribeManagedEndpointOutcomeCallable;
       typedef std::future<DescribeVirtualClusterOutcome> DescribeVirtualClusterOutcomeCallable;
+      typedef std::future<GetManagedEndpointSessionCredentialsOutcome> GetManagedEndpointSessionCredentialsOutcomeCallable;
       typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
       typedef std::future<ListJobTemplatesOutcome> ListJobTemplatesOutcomeCallable;
       typedef std::future<ListManagedEndpointsOutcome> ListManagedEndpointsOutcomeCallable;
@@ -157,6 +161,7 @@ namespace Aws
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeJobTemplateRequest&, const Model::DescribeJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeJobTemplateResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeManagedEndpointRequest&, const Model::DescribeManagedEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeManagedEndpointResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::DescribeVirtualClusterRequest&, const Model::DescribeVirtualClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVirtualClusterResponseReceivedHandler;
+    typedef std::function<void(const EMRContainersClient*, const Model::GetManagedEndpointSessionCredentialsRequest&, const Model::GetManagedEndpointSessionCredentialsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetManagedEndpointSessionCredentialsResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobRunsResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListJobTemplatesRequest&, const Model::ListJobTemplatesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListJobTemplatesResponseReceivedHandler;
     typedef std::function<void(const EMRContainersClient*, const Model::ListManagedEndpointsRequest&, const Model::ListManagedEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListManagedEndpointsResponseReceivedHandler;

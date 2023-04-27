@@ -35,7 +35,9 @@ Scan::Scan() :
     m_totalBytesHasBeenSet(false),
     m_fileCount(0),
     m_fileCountHasBeenSet(false),
-    m_attachedVolumesHasBeenSet(false)
+    m_attachedVolumesHasBeenSet(false),
+    m_scanType(ScanType::NOT_SET),
+    m_scanTypeHasBeenSet(false)
 {
 }
 
@@ -56,7 +58,9 @@ Scan::Scan(JsonView jsonValue) :
     m_totalBytesHasBeenSet(false),
     m_fileCount(0),
     m_fileCountHasBeenSet(false),
-    m_attachedVolumesHasBeenSet(false)
+    m_attachedVolumesHasBeenSet(false),
+    m_scanType(ScanType::NOT_SET),
+    m_scanTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -164,6 +168,13 @@ Scan& Scan::operator =(JsonView jsonValue)
     m_attachedVolumesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("scanType"))
+  {
+    m_scanType = ScanTypeMapper::GetScanTypeForName(jsonValue.GetString("scanType"));
+
+    m_scanTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -255,6 +266,11 @@ JsonValue Scan::Jsonize() const
    }
    payload.WithArray("attachedVolumes", std::move(attachedVolumesJsonList));
 
+  }
+
+  if(m_scanTypeHasBeenSet)
+  {
+   payload.WithString("scanType", ScanTypeMapper::GetNameForScanType(m_scanType));
   }
 
   return payload;
