@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     MqttV3_1_1,
-    MqttV5
+    MqttV5,
+    MqttV3_1_1_OverWebSocket,
+    MqttV5_OverWebSocket
   };
 
 namespace ProtocolMapper

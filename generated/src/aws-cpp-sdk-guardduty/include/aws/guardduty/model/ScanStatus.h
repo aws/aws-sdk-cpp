@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     RUNNING,
     COMPLETED,
-    FAILED
+    FAILED,
+    SKIPPED
   };
 
 namespace ScanStatusMapper

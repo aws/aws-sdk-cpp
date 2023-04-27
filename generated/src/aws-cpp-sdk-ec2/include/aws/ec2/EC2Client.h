@@ -14391,9 +14391,9 @@ namespace EC2
          * <p>Modifies the specified attribute of the specified instance. You can specify
          * only one attribute at a time.</p> <p> <b>Note: </b>Using this action to change
          * the security groups associated with an elastic network interface (ENI) attached
-         * to an instance in a VPC can result in an error if the instance has more than one
-         * ENI. To change the security groups associated with an ENI attached to an
-         * instance that has multiple ENIs, we recommend that you use the
+         * to an instance can result in an error if the instance has more than one ENI. To
+         * change the security groups associated with an ENI attached to an instance that
+         * has multiple ENIs, we recommend that you use the
          * <a>ModifyNetworkInterfaceAttribute</a> action.</p> <p>To modify some attributes,
          * the instance must be stopped. For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_ChangingAttributesWhileInstanceStopped.html">Modify
@@ -14924,12 +14924,8 @@ namespace EC2
          * be modified must be identical, except for Availability Zone, network platform,
          * and instance type.</p> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-modifying.html">Modifying
-         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We are
-         * retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a VPC.
-         * For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Reserved Instances</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyReservedInstances">AWS
          * API Reference</a></p>
          */
@@ -16185,12 +16181,8 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/concepts-on-demand-reserved-instances.html">Reserved
          * Instances</a> and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ri-market-general.html">Reserved
-         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p>  <p>We
-         * are retiring EC2-Classic. We recommend that you migrate from EC2-Classic to a
-         * VPC. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon Elastic Compute Cloud User
-         * Guide</i>.</p> <p><h3>See Also:</h3>   <a
+         * Instance Marketplace</a> in the <i>Amazon EC2 User Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/PurchaseReservedInstancesOffering">AWS
          * API Reference</a></p>
          */
@@ -16984,12 +16976,7 @@ namespace EC2
          * For options for requesting Spot Instances, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-best-practices.html#which-spot-request-method-to-use">Which
          * is the best Spot request method to use?</a> in the <i>Amazon EC2 User Guide for
-         * Linux Instances</i>.</p>   <p>We are retiring EC2-Classic. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide for Linux
-         * Instances</i>.</p> <p><h3>See Also:</h3>   <a
+         * Linux Instances</i>.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RequestSpotInstances">AWS
          * API Reference</a></p>
          */
@@ -17473,19 +17460,13 @@ namespace EC2
         /**
          * <p>Launches the specified number of instances using an AMI for which you have
          * permissions.</p> <p>You can specify a number of options, or leave the default
-         * options. The following rules apply:</p> <ul> <li> <p>[EC2-VPC] If you don't
-         * specify a subnet ID, we choose a default subnet from your default VPC for you.
-         * If you don't have a default VPC, you must specify a subnet ID in the
-         * request.</p> </li> <li> <p>[EC2-Classic] If don't specify an Availability Zone,
-         * we choose one for you.</p> </li> <li> <p>Some instance types must be launched
-         * into a VPC. If you do not have a default VPC, or if you do not specify a subnet
-         * ID, the request fails. For more information, see <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-vpc.html#vpc-only-instance-types">Instance
-         * types available only in a VPC</a>.</p> </li> <li> <p>[EC2-VPC] All instances
-         * have a network interface with a primary private IPv4 address. If you don't
-         * specify this address, we choose one from the IPv4 range of your subnet.</p>
-         * </li> <li> <p>Not all instance types support IPv6 addresses. For more
-         * information, see <a
+         * options. The following rules apply:</p> <ul> <li> <p>If you don't specify a
+         * subnet ID, we choose a default subnet from your default VPC for you. If you
+         * don't have a default VPC, you must specify a subnet ID in the request.</p> </li>
+         * <li> <p>All instances have a network interface with a primary private IPv4
+         * address. If you don't specify this address, we choose one from the IPv4 range of
+         * your subnet.</p> </li> <li> <p>Not all instance types support IPv6 addresses.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
          * types</a>.</p> </li> <li> <p>If you don't specify a security group ID, we use
          * the default security group. For more information, see <a
@@ -17514,12 +17495,7 @@ namespace EC2
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Using_InstanceStraightToTerminated.html">What
          * to do if an instance immediately terminates</a>, and <a
          * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/TroubleshootingInstancesConnecting.html">Troubleshooting
-         * connecting to your instance</a>.</p>  <p>We are retiring EC2-Classic. We
-         * recommend that you migrate from EC2-Classic to a VPC. For more information, see
-         * <a
-         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/vpc-migrate.html">Migrate
-         * from EC2-Classic to a VPC</a> in the <i>Amazon EC2 User Guide</i>.</p>
-         * <p><h3>See Also:</h3>   <a
+         * connecting to your instance</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/RunInstances">AWS
          * API Reference</a></p>
          */

@@ -49,6 +49,7 @@ namespace Aws
         static const int provided_al2_HASH = HashingUtils::HashString("provided.al2");
         static const int nodejs18_x_HASH = HashingUtils::HashString("nodejs18.x");
         static const int python3_10_HASH = HashingUtils::HashString("python3.10");
+        static const int java17_HASH = HashingUtils::HashString("java17");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -170,6 +171,10 @@ namespace Aws
           {
             return Runtime::python3_10;
           }
+          else if (hashCode == java17_HASH)
+          {
+            return Runtime::java17;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -242,6 +247,8 @@ namespace Aws
             return "nodejs18.x";
           case Runtime::python3_10:
             return "python3.10";
+          case Runtime::java17:
+            return "java17";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

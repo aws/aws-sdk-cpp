@@ -25,7 +25,8 @@ BrokerNodeGroupInfo::BrokerNodeGroupInfo() :
     m_instanceTypeHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_storageInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false)
+    m_connectivityInfoHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_storageInfoHasBeenSet(false),
-    m_connectivityInfoHasBeenSet(false)
+    m_connectivityInfoHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +93,16 @@ BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
     m_connectivityInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("zoneIds"))
+  {
+    Aws::Utils::Array<JsonView> zoneIdsJsonList = jsonValue.GetArray("zoneIds");
+    for(unsigned zoneIdsIndex = 0; zoneIdsIndex < zoneIdsJsonList.GetLength(); ++zoneIdsIndex)
+    {
+      m_zoneIds.push_back(zoneIdsJsonList[zoneIdsIndex].AsString());
+    }
+    m_zoneIdsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -140,6 +152,17 @@ JsonValue BrokerNodeGroupInfo::Jsonize() const
   if(m_connectivityInfoHasBeenSet)
   {
    payload.WithObject("connectivityInfo", m_connectivityInfo.Jsonize());
+
+  }
+
+  if(m_zoneIdsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> zoneIdsJsonList(m_zoneIds.size());
+   for(unsigned zoneIdsIndex = 0; zoneIdsIndex < zoneIdsJsonList.GetLength(); ++zoneIdsIndex)
+   {
+     zoneIdsJsonList[zoneIdsIndex].AsString(m_zoneIds[zoneIdsIndex]);
+   }
+   payload.WithArray("zoneIds", std::move(zoneIdsJsonList));
 
   }
 

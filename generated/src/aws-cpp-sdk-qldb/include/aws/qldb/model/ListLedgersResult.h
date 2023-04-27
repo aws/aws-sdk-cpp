@@ -35,44 +35,44 @@ namespace Model
 
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline const Aws::Vector<LedgerSummary>& GetLedgers() const{ return m_ledgers; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline void SetLedgers(const Aws::Vector<LedgerSummary>& value) { m_ledgers = value; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline void SetLedgers(Aws::Vector<LedgerSummary>&& value) { m_ledgers = std::move(value); }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline ListLedgersResult& WithLedgers(const Aws::Vector<LedgerSummary>& value) { SetLedgers(value); return *this;}
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline ListLedgersResult& WithLedgers(Aws::Vector<LedgerSummary>&& value) { SetLedgers(std::move(value)); return *this;}
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline ListLedgersResult& AddLedgers(const LedgerSummary& value) { m_ledgers.push_back(value); return *this; }
 
     /**
-     * <p>The array of ledger summaries that are associated with the current Amazon Web
-     * Services account and Region.</p>
+     * <p>The ledgers that are associated with the current Amazon Web Services account
+     * and Region.</p>
      */
     inline ListLedgersResult& AddLedgers(LedgerSummary&& value) { m_ledgers.push_back(std::move(value)); return *this; }
 

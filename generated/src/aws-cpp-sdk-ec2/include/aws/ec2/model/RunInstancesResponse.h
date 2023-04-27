@@ -44,37 +44,37 @@ namespace Model
 
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline void SetGroups(const Aws::Vector<GroupIdentifier>& value) { m_groups = value; }
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline void SetGroups(Aws::Vector<GroupIdentifier>&& value) { m_groups = std::move(value); }
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RunInstancesResponse& WithGroups(const Aws::Vector<GroupIdentifier>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RunInstancesResponse& WithGroups(Aws::Vector<GroupIdentifier>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RunInstancesResponse& AddGroups(const GroupIdentifier& value) { m_groups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-Classic only] The security groups.</p>
+     * <p>Not supported.</p>
      */
     inline RunInstancesResponse& AddGroups(GroupIdentifier&& value) { m_groups.push_back(std::move(value)); return *this; }
 

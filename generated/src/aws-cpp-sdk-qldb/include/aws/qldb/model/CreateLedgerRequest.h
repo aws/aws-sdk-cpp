@@ -326,38 +326,42 @@ namespace Model
 
 
     /**
-     * <p>The flag that prevents a ledger from being deleted by any user. If not
-     * provided on ledger creation, this feature is enabled (<code>true</code>) by
-     * default.</p> <p>If deletion protection is enabled, you must first disable it
+     * <p>Specifies whether the ledger is protected from being deleted by any user. If
+     * not defined during ledger creation, this feature is enabled (<code>true</code>)
+     * by default.</p> <p>If deletion protection is enabled, you must first disable it
      * before you can delete the ledger. You can disable it by calling the
-     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+     * <code>UpdateLedger</code> operation to set this parameter to
+     * <code>false</code>.</p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
 
     /**
-     * <p>The flag that prevents a ledger from being deleted by any user. If not
-     * provided on ledger creation, this feature is enabled (<code>true</code>) by
-     * default.</p> <p>If deletion protection is enabled, you must first disable it
+     * <p>Specifies whether the ledger is protected from being deleted by any user. If
+     * not defined during ledger creation, this feature is enabled (<code>true</code>)
+     * by default.</p> <p>If deletion protection is enabled, you must first disable it
      * before you can delete the ledger. You can disable it by calling the
-     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+     * <code>UpdateLedger</code> operation to set this parameter to
+     * <code>false</code>.</p>
      */
     inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
 
     /**
-     * <p>The flag that prevents a ledger from being deleted by any user. If not
-     * provided on ledger creation, this feature is enabled (<code>true</code>) by
-     * default.</p> <p>If deletion protection is enabled, you must first disable it
+     * <p>Specifies whether the ledger is protected from being deleted by any user. If
+     * not defined during ledger creation, this feature is enabled (<code>true</code>)
+     * by default.</p> <p>If deletion protection is enabled, you must first disable it
      * before you can delete the ledger. You can disable it by calling the
-     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+     * <code>UpdateLedger</code> operation to set this parameter to
+     * <code>false</code>.</p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
 
     /**
-     * <p>The flag that prevents a ledger from being deleted by any user. If not
-     * provided on ledger creation, this feature is enabled (<code>true</code>) by
-     * default.</p> <p>If deletion protection is enabled, you must first disable it
+     * <p>Specifies whether the ledger is protected from being deleted by any user. If
+     * not defined during ledger creation, this feature is enabled (<code>true</code>)
+     * by default.</p> <p>If deletion protection is enabled, you must first disable it
      * before you can delete the ledger. You can disable it by calling the
-     * <code>UpdateLedger</code> operation to set the flag to <code>false</code>.</p>
+     * <code>UpdateLedger</code> operation to set this parameter to
+     * <code>false</code>.</p>
      */
     inline CreateLedgerRequest& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}
 
@@ -371,9 +375,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -401,9 +405,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -431,9 +435,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -461,9 +465,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -491,9 +495,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -521,9 +525,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -551,9 +555,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use
@@ -581,9 +585,9 @@ namespace Model
      * <code>AWS_OWNED_KMS_KEY</code>: Use an KMS key that is owned and managed by
      * Amazon Web Services on your behalf.</p> </li> <li> <p> <b>Undefined</b>: By
      * default, use an Amazon Web Services owned KMS key.</p> </li> <li> <p> <b>A valid
-     * symmetric customer managed KMS key</b>: Use the specified KMS key in your
-     * account that you create, own, and manage.</p> <p>Amazon QLDB does not support
-     * asymmetric keys. For more information, see <a
+     * symmetric customer managed KMS key</b>: Use the specified symmetric encryption
+     * KMS key in your account that you create, own, and manage.</p> <p>Amazon QLDB
+     * does not support asymmetric keys. For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Using
      * symmetric and asymmetric keys</a> in the <i>Key Management Service Developer
      * Guide</i>.</p> </li> </ul> <p>To specify a customer managed KMS key, you can use

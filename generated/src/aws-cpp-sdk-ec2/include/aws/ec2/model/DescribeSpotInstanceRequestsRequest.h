@@ -43,9 +43,9 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -120,9 +120,9 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -197,9 +197,9 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -274,9 +274,9 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -351,9 +351,9 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -428,9 +428,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -505,9 +505,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -582,9 +582,9 @@ namespace Model
     inline DescribeSpotInstanceRequestsRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone-group</code> -
-     * The Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The
-     * time stamp when the Spot Instance request was created.</p> </li> <li> <p>
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone-group</code> - The
+     * Availability Zone group.</p> </li> <li> <p> <code>create-time</code> - The time
+     * stamp when the Spot Instance request was created.</p> </li> <li> <p>
      * <code>fault-code</code> - The fault code related to the request.</p> </li> <li>
      * <p> <code>fault-message</code> - The fault message related to the request.</p>
      * </li> <li> <p> <code>instance-id</code> - The ID of the instance that fulfilled
@@ -693,47 +693,47 @@ namespace Model
 
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSpotInstanceRequestIds() const{ return m_spotInstanceRequestIds; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline bool SpotInstanceRequestIdsHasBeenSet() const { return m_spotInstanceRequestIdsHasBeenSet; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = value; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline void SetSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds = std::move(value); }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(const Aws::Vector<Aws::String>& value) { SetSpotInstanceRequestIds(value); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& WithSpotInstanceRequestIds(Aws::Vector<Aws::String>&& value) { SetSpotInstanceRequestIds(std::move(value)); return *this;}
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const Aws::String& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(Aws::String&& value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more Spot Instance request IDs.</p>
+     * <p>The IDs of the Spot Instance requests.</p>
      */
     inline DescribeSpotInstanceRequestsRequest& AddSpotInstanceRequestIds(const char* value) { m_spotInstanceRequestIdsHasBeenSet = true; m_spotInstanceRequestIds.push_back(value); return *this; }
 

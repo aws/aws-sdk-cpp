@@ -12,6 +12,7 @@
 #include <aws/guardduty/model/ResourceDetails.h>
 #include <aws/guardduty/model/ScanResultDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/guardduty/model/ScanType.h>
 #include <aws/guardduty/model/VolumeDetail.h>
 #include <utility>
 
@@ -541,6 +542,37 @@ namespace Model
      */
     inline Scan& AddAttachedVolumes(VolumeDetail&& value) { m_attachedVolumesHasBeenSet = true; m_attachedVolumes.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline const ScanType& GetScanType() const{ return m_scanType; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline bool ScanTypeHasBeenSet() const { return m_scanTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline void SetScanType(const ScanType& value) { m_scanTypeHasBeenSet = true; m_scanType = value; }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline void SetScanType(ScanType&& value) { m_scanTypeHasBeenSet = true; m_scanType = std::move(value); }
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline Scan& WithScanType(const ScanType& value) { SetScanType(value); return *this;}
+
+    /**
+     * <p>Specifies the scan type that invoked the malware scan.</p>
+     */
+    inline Scan& WithScanType(ScanType&& value) { SetScanType(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_detectorId;
@@ -584,6 +616,9 @@ namespace Model
 
     Aws::Vector<VolumeDetail> m_attachedVolumes;
     bool m_attachedVolumesHasBeenSet = false;
+
+    ScanType m_scanType;
+    bool m_scanTypeHasBeenSet = false;
   };
 
 } // namespace Model

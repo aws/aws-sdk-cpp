@@ -456,74 +456,65 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline void SetGroups(const Aws::Vector<Aws::String>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline void SetGroups(Aws::Vector<Aws::String>&& value) { m_groupsHasBeenSet = true; m_groups = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline ModifyInstanceAttributeRequest& WithGroups(const Aws::Vector<Aws::String>& value) { SetGroups(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline ModifyInstanceAttributeRequest& WithGroups(Aws::Vector<Aws::String>&& value) { SetGroups(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(const Aws::String& value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(Aws::String&& value) { m_groupsHasBeenSet = true; m_groups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>[EC2-VPC] Replaces the security groups of the instance with the specified
-     * security groups. You must specify at least one security group, even if it's just
-     * the default security group for the VPC. You must specify the security group ID,
-     * not the security group name.</p>
+     * <p>Replaces the security groups of the instance with the specified security
+     * groups. You must specify the ID of at least one security group, even if it's
+     * just the default security group for the VPC.</p>
      */
     inline ModifyInstanceAttributeRequest& AddGroups(const char* value) { m_groupsHasBeenSet = true; m_groups.push_back(value); return *this; }
 

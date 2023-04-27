@@ -45,7 +45,7 @@ namespace Model
   public:
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -64,7 +64,7 @@ namespace Model
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -83,7 +83,7 @@ namespace Model
     inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -102,7 +102,7 @@ namespace Model
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -121,7 +121,7 @@ namespace Model
     inline void SetFilters(Aws::Vector<Filter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -140,7 +140,7 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& WithFilters(const Aws::Vector<Filter>& value) { SetFilters(value); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -159,7 +159,7 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& WithFilters(Aws::Vector<Filter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
@@ -178,7 +178,7 @@ namespace Model
     inline DescribeSpotPriceHistoryRequest& AddFilters(const Filter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
-     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * <p>The filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
      * Availability Zone for which prices should be returned.</p> </li> <li> <p>
      * <code>instance-type</code> - The type of instance (for example,
      * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -

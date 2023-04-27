@@ -423,90 +423,90 @@ namespace Model
 
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(Aws::String&& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = std::move(value); }
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline void SetPrivateDnsName(const char* value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName.assign(value); }
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const Aws::String& value) { SetPrivateDnsName(value); return *this;}
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(Aws::String&& value) { SetPrivateDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>(IPv4 only) The private DNS hostname name assigned to the instance. This DNS
+     * <p>[IPv4 only] The private DNS hostname name assigned to the instance. This DNS
      * hostname can only be used inside the Amazon EC2 network. This name is not
-     * available until the instance enters the <code>running</code> state. </p>
-     * <p>[EC2-VPC] The Amazon-provided DNS server resolves Amazon-provided private DNS
-     * hostnames if you've enabled DNS resolution and DNS hostnames in your VPC. If you
-     * are not using the Amazon-provided DNS server in your VPC, your custom domain
-     * name servers must resolve the hostname as appropriate.</p>
+     * available until the instance enters the <code>running</code> state. </p> <p>The
+     * Amazon-provided DNS server resolves Amazon-provided private DNS hostnames if
+     * you've enabled DNS resolution and DNS hostnames in your VPC. If you are not
+     * using the Amazon-provided DNS server in your VPC, your custom domain name
+     * servers must resolve the hostname as appropriate.</p>
      */
     inline Instance& WithPrivateDnsName(const char* value) { SetPrivateDnsName(value); return *this;}
 
@@ -594,58 +594,58 @@ namespace Model
 
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline const Aws::String& GetPublicDnsName() const{ return m_publicDnsName; }
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(Aws::String&& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = std::move(value); }
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline void SetPublicDnsName(const char* value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName.assign(value); }
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const Aws::String& value) { SetPublicDnsName(value); return *this;}
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(Aws::String&& value) { SetPublicDnsName(std::move(value)); return *this;}
 
     /**
-     * <p>(IPv4 only) The public DNS name assigned to the instance. This name is not
-     * available until the instance enters the <code>running</code> state. For EC2-VPC,
-     * this name is only available if you've enabled DNS hostnames for your VPC.</p>
+     * <p>[IPv4 only] The public DNS name assigned to the instance. This name is not
+     * available until the instance enters the <code>running</code> state. This name is
+     * only available if you've enabled DNS hostnames for your VPC.</p>
      */
     inline Instance& WithPublicDnsName(const char* value) { SetPublicDnsName(value); return *this;}
 
@@ -829,83 +829,83 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the subnet in which the instance is running.</p>
+     * <p>The ID of the subnet in which the instance is running.</p>
      */
     inline Instance& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The ID of the VPC in which the instance is running.</p>
+     * <p>The ID of the VPC in which the instance is running.</p>
      */
     inline Instance& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
@@ -1271,42 +1271,42 @@ namespace Model
 
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline void SetNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline Instance& WithNetworkInterfaces(const Aws::Vector<InstanceNetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline Instance& WithNetworkInterfaces(Aws::Vector<InstanceNetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline Instance& AddNetworkInterfaces(const InstanceNetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
 
     /**
-     * <p>[EC2-VPC] The network interfaces for the instance.</p>
+     * <p>The network interfaces for the instance.</p>
      */
     inline Instance& AddNetworkInterfaces(InstanceNetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
 

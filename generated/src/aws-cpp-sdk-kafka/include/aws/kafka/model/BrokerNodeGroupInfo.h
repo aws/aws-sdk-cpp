@@ -485,6 +485,79 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
      */
     inline BrokerNodeGroupInfo& WithConnectivityInfo(ConnectivityInfo&& value) { SetConnectivityInfo(std::move(value)); return *this;}
 
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline const Aws::Vector<Aws::String>& GetZoneIds() const{ return m_zoneIds; }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline bool ZoneIdsHasBeenSet() const { return m_zoneIdsHasBeenSet; }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline void SetZoneIds(const Aws::Vector<Aws::String>& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = value; }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline void SetZoneIds(Aws::Vector<Aws::String>&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds = std::move(value); }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline BrokerNodeGroupInfo& WithZoneIds(const Aws::Vector<Aws::String>& value) { SetZoneIds(value); return *this;}
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline BrokerNodeGroupInfo& WithZoneIds(Aws::Vector<Aws::String>&& value) { SetZoneIds(std::move(value)); return *this;}
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline BrokerNodeGroupInfo& AddZoneIds(const Aws::String& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline BrokerNodeGroupInfo& AddZoneIds(Aws::String&& value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(std::move(value)); return *this; }
+
+    /**
+     * 
+            <p>The list of zoneIds for the cluster in the virtual private cloud
+     * (VPC).</p>
+         
+     */
+    inline BrokerNodeGroupInfo& AddZoneIds(const char* value) { m_zoneIdsHasBeenSet = true; m_zoneIds.push_back(value); return *this; }
+
   private:
 
     BrokerAZDistribution m_brokerAZDistribution;
@@ -504,6 +577,9 @@ kafka.m5.4xlarge, kafka.m5.12xlarge, and
 
     ConnectivityInfo m_connectivityInfo;
     bool m_connectivityInfoHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_zoneIds;
+    bool m_zoneIdsHasBeenSet = false;
   };
 
 } // namespace Model

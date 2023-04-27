@@ -32,6 +32,7 @@
 #include <aws/emr-containers/model/DescribeJobTemplateRequest.h>
 #include <aws/emr-containers/model/DescribeManagedEndpointRequest.h>
 #include <aws/emr-containers/model/DescribeVirtualClusterRequest.h>
+#include <aws/emr-containers/model/GetManagedEndpointSessionCredentialsRequest.h>
 #include <aws/emr-containers/model/ListJobRunsRequest.h>
 #include <aws/emr-containers/model/ListJobTemplatesRequest.h>
 #include <aws/emr-containers/model/ListManagedEndpointsRequest.h>
@@ -348,6 +349,29 @@ DescribeVirtualClusterOutcome EMRContainersClient::DescribeVirtualCluster(const 
   endpointResolutionOutcome.GetResult().AddPathSegments("/virtualclusters/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetId());
   return DescribeVirtualClusterOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetManagedEndpointSessionCredentialsOutcome EMRContainersClient::GetManagedEndpointSessionCredentials(const GetManagedEndpointSessionCredentialsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetManagedEndpointSessionCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.EndpointIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetManagedEndpointSessionCredentials", "Required field: EndpointIdentifier, is not set");
+    return GetManagedEndpointSessionCredentialsOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointIdentifier]", false));
+  }
+  if (!request.VirtualClusterIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetManagedEndpointSessionCredentials", "Required field: VirtualClusterIdentifier, is not set");
+    return GetManagedEndpointSessionCredentialsOutcome(Aws::Client::AWSError<EMRContainersErrors>(EMRContainersErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VirtualClusterIdentifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetManagedEndpointSessionCredentials, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/virtualclusters/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVirtualClusterIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/endpoints/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetEndpointIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/credentials");
+  return GetManagedEndpointSessionCredentialsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListJobRunsOutcome EMRContainersClient::ListJobRuns(const ListJobRunsRequest& request) const

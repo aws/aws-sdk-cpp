@@ -80,8 +80,8 @@ namespace OSIS
 
         /**
          * <p>Creates an OpenSearch Ingestion pipeline. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-         * and managing OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html">Creating
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/CreatePipeline">AWS
          * API Reference</a></p>
          */
@@ -107,8 +107,8 @@ namespace OSIS
 
         /**
          * <p>Deletes an OpenSearch Ingestion pipeline. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#delete-pipeline">Deleting
-         * pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/delete-pipeline.html">Deleting
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/DeletePipeline">AWS
          * API Reference</a></p>
          */
@@ -161,7 +161,9 @@ namespace OSIS
         /**
          * <p>Retrieves information about a specific blueprint for OpenSearch Ingestion.
          * Blueprints are templates for the configuration needed for a
-         * <code>CreatePipeline</code> request.</p><p><h3>See Also:</h3>   <a
+         * <code>CreatePipeline</code> request. For more information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using
+         * blueprints to create a pipeline</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineBlueprint">AWS
          * API Reference</a></p>
          */
@@ -190,8 +192,8 @@ namespace OSIS
          * OpenSearch Ingestion pipeline. Currently, this operation only returns
          * information when a pipeline is being created.</p> <p>For more information, see
          * <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-         * and managing OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#get-pipeline-progress">Tracking
+         * the status of pipeline creation</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/GetPipelineChangeProgress">AWS
          * API Reference</a></p>
          */
@@ -216,8 +218,10 @@ namespace OSIS
         }
 
         /**
-         * <p>Retrieves a list of all available blueprints for Data Prepper.</p><p><h3>See
-         * Also:</h3>   <a
+         * <p>Retrieves a list of all available blueprints for Data Prepper. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using
+         * blueprints to create a pipeline</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelineBlueprints">AWS
          * API Reference</a></p>
          */
@@ -244,8 +248,8 @@ namespace OSIS
         /**
          * <p>Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services
          * account and Region. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-         * and managing OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html">Viewing
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListPipelines">AWS
          * API Reference</a></p>
          */
@@ -273,7 +277,7 @@ namespace OSIS
          * <p>Lists all resource tags associated with an OpenSearch Ingestion pipeline. For
          * more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-         * OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ListTagsForResource">AWS
          * API Reference</a></p>
          */
@@ -299,8 +303,8 @@ namespace OSIS
 
         /**
          * <p>Starts an OpenSearch Ingestion pipeline. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#start-pipeline">Starting
-         * pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start">Starting
+         * an OpenSearch Ingestion pipeline</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StartPipeline">AWS
          * API Reference</a></p>
          */
@@ -326,8 +330,8 @@ namespace OSIS
 
         /**
          * <p>Stops an OpenSearch Ingestion pipeline. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html#stop-pipeline">Stopping
-         * pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop">Stopping
+         * an OpenSearch Ingestion pipeline</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/StopPipeline">AWS
          * API Reference</a></p>
          */
@@ -354,7 +358,7 @@ namespace OSIS
         /**
          * <p>Tags an OpenSearch Ingestion pipeline. For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-         * OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/TagResource">AWS
          * API Reference</a></p>
          */
@@ -382,7 +386,7 @@ namespace OSIS
          * <p>Removes one or more tags from an OpenSearch Ingestion pipeline. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/tag-pipeline.html">Tagging
-         * OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UntagResource">AWS
          * API Reference</a></p>
          */
@@ -408,8 +412,8 @@ namespace OSIS
 
         /**
          * <p>Updates an OpenSearch Ingestion pipeline. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-         * and managing OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/update-pipeline.html">Updating
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/UpdatePipeline">AWS
          * API Reference</a></p>
          */
@@ -436,8 +440,8 @@ namespace OSIS
         /**
          * <p>Checks whether an OpenSearch Ingestion pipeline configuration is valid prior
          * to creation. For more information, see <a
-         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/manage-pipeline.html">Creating
-         * and managing OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
+         * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html">Creating
+         * Amazon OpenSearch Ingestion pipelines</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/osis-2022-01-01/ValidatePipeline">AWS
          * API Reference</a></p>
          */

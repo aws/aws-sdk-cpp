@@ -17,7 +17,10 @@ using namespace Aws::Http;
 
 GetEndpointRequest::GetEndpointRequest() : 
     m_thingArnHasBeenSet(false),
-    m_certificateArnHasBeenSet(false)
+    m_certificateArnHasBeenSet(false),
+    m_deviceRoleArnHasBeenSet(false),
+    m_authenticationMethod(AuthenticationMethod::NOT_SET),
+    m_authenticationMethodHasBeenSet(false)
 {
 }
 
@@ -40,6 +43,20 @@ void GetEndpointRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_certificateArn;
       uri.AddQueryStringParameter("certificateArn", ss.str());
+      ss.str("");
+    }
+
+    if(m_deviceRoleArnHasBeenSet)
+    {
+      ss << m_deviceRoleArn;
+      uri.AddQueryStringParameter("deviceRoleArn", ss.str());
+      ss.str("");
+    }
+
+    if(m_authenticationMethodHasBeenSet)
+    {
+      ss << AuthenticationMethodMapper::GetNameForAuthenticationMethod(m_authenticationMethod);
+      uri.AddQueryStringParameter("authenticationMethod", ss.str());
       ss.str("");
     }
 

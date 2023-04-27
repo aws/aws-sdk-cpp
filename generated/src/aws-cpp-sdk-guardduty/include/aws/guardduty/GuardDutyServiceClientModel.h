@@ -68,6 +68,7 @@
 #include <aws/guardduty/model/ListPublishingDestinationsResult.h>
 #include <aws/guardduty/model/ListTagsForResourceResult.h>
 #include <aws/guardduty/model/ListThreatIntelSetsResult.h>
+#include <aws/guardduty/model/StartMalwareScanResult.h>
 #include <aws/guardduty/model/StartMonitoringMembersResult.h>
 #include <aws/guardduty/model/StopMonitoringMembersResult.h>
 #include <aws/guardduty/model/TagResourceResult.h>
@@ -172,6 +173,7 @@ namespace Aws
       class ListPublishingDestinationsRequest;
       class ListTagsForResourceRequest;
       class ListThreatIntelSetsRequest;
+      class StartMalwareScanRequest;
       class StartMonitoringMembersRequest;
       class StopMonitoringMembersRequest;
       class TagResourceRequest;
@@ -239,6 +241,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListPublishingDestinationsResult, GuardDutyError> ListPublishingDestinationsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, GuardDutyError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListThreatIntelSetsResult, GuardDutyError> ListThreatIntelSetsOutcome;
+      typedef Aws::Utils::Outcome<StartMalwareScanResult, GuardDutyError> StartMalwareScanOutcome;
       typedef Aws::Utils::Outcome<StartMonitoringMembersResult, GuardDutyError> StartMonitoringMembersOutcome;
       typedef Aws::Utils::Outcome<StopMonitoringMembersResult, GuardDutyError> StopMonitoringMembersOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, GuardDutyError> TagResourceOutcome;
@@ -306,6 +309,7 @@ namespace Aws
       typedef std::future<ListPublishingDestinationsOutcome> ListPublishingDestinationsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListThreatIntelSetsOutcome> ListThreatIntelSetsOutcomeCallable;
+      typedef std::future<StartMalwareScanOutcome> StartMalwareScanOutcomeCallable;
       typedef std::future<StartMonitoringMembersOutcome> StartMonitoringMembersOutcomeCallable;
       typedef std::future<StopMonitoringMembersOutcome> StopMonitoringMembersOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -376,6 +380,7 @@ namespace Aws
     typedef std::function<void(const GuardDutyClient*, const Model::ListPublishingDestinationsRequest&, const Model::ListPublishingDestinationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListPublishingDestinationsResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::ListThreatIntelSetsRequest&, const Model::ListThreatIntelSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThreatIntelSetsResponseReceivedHandler;
+    typedef std::function<void(const GuardDutyClient*, const Model::StartMalwareScanRequest&, const Model::StartMalwareScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMalwareScanResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StartMonitoringMembersRequest&, const Model::StartMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartMonitoringMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::StopMonitoringMembersRequest&, const Model::StopMonitoringMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopMonitoringMembersResponseReceivedHandler;
     typedef std::function<void(const GuardDutyClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

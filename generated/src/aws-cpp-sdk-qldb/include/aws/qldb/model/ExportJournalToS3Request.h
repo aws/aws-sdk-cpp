@@ -256,133 +256,175 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions
      * for a journal export job to do the following:</p> <ul> <li> <p>Write objects
-     * into your Amazon Simple Storage Service (Amazon S3) bucket.</p> </li> <li>
-     * <p>(Optional) Use your customer managed key in Key Management Service (KMS) for
-     * server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role
-     * to QLDB when requesting a journal export, you must have permissions to perform
-     * the <code>iam:PassRole</code> action on the IAM role resource. This is required
-     * for all journal export requests.</p>
+     * into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer
+     * managed key in Key Management Service (KMS) for server-side encryption of your
+     * exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a
+     * journal export, you must have permissions to perform the
+     * <code>iam:PassRole</code> action on the IAM role resource. This is required for
+     * all journal export requests.</p>
      */
     inline ExportJournalToS3Request& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline const OutputFormat& GetOutputFormat() const{ return m_outputFormat; }
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline bool OutputFormatHasBeenSet() const { return m_outputFormatHasBeenSet; }
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline void SetOutputFormat(const OutputFormat& value) { m_outputFormatHasBeenSet = true; m_outputFormat = value; }
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline void SetOutputFormat(OutputFormat&& value) { m_outputFormatHasBeenSet = true; m_outputFormat = std::move(value); }
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline ExportJournalToS3Request& WithOutputFormat(const OutputFormat& value) { SetOutputFormat(value); return *this;}
 
     /**
-     * <p>The output format of your exported journal data. If this parameter is not
-     * specified, the exported data defaults to <code>ION_TEXT</code> format.</p>
+     * <p>The output format of your exported journal data. A journal export job can
+     * write the data objects in either the text or binary representation of <a
+     * href="https://docs.aws.amazon.com/qldb/latest/developerguide/ion.html">Amazon
+     * Ion</a> format, or in <a href="https://jsonlines.org/">JSON Lines</a> text
+     * format.</p> <p>Default: <code>ION_TEXT</code> </p> <p>In JSON Lines format, each
+     * journal block in an exported data object is a valid JSON object that is
+     * delimited by a newline. You can use this format to directly integrate JSON
+     * exports with analytics tools such as Amazon Athena and Glue because these
+     * services can parse newline-delimited JSON automatically.</p>
      */
     inline ExportJournalToS3Request& WithOutputFormat(OutputFormat&& value) { SetOutputFormat(std::move(value)); return *this;}
 

@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/ec2/model/AmdSevSnpSpecification.h>
+#include <utility>
 
 namespace Aws
 {
@@ -87,6 +89,43 @@ namespace Model
      */
     inline CpuOptionsRequest& WithThreadsPerCore(int value) { SetThreadsPerCore(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline const AmdSevSnpSpecification& GetAmdSevSnp() const{ return m_amdSevSnp; }
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline bool AmdSevSnpHasBeenSet() const { return m_amdSevSnpHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline void SetAmdSevSnp(const AmdSevSnpSpecification& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = value; }
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline void SetAmdSevSnp(AmdSevSnpSpecification&& value) { m_amdSevSnpHasBeenSet = true; m_amdSevSnp = std::move(value); }
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline CpuOptionsRequest& WithAmdSevSnp(const AmdSevSnpSpecification& value) { SetAmdSevSnp(value); return *this;}
+
+    /**
+     * <p>Indicates whether to enable the instance for AMD SEV-SNP. AMD SEV-SNP is
+     * supported with M6a, R6a, and C6a instance types only.</p>
+     */
+    inline CpuOptionsRequest& WithAmdSevSnp(AmdSevSnpSpecification&& value) { SetAmdSevSnp(std::move(value)); return *this;}
+
   private:
 
     int m_coreCount;
@@ -94,6 +133,9 @@ namespace Model
 
     int m_threadsPerCore;
     bool m_threadsPerCoreHasBeenSet = false;
+
+    AmdSevSnpSpecification m_amdSevSnp;
+    bool m_amdSevSnpHasBeenSet = false;
   };
 
 } // namespace Model

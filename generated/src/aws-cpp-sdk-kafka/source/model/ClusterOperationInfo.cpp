@@ -29,7 +29,8 @@ ClusterOperationInfo::ClusterOperationInfo() :
     m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
-    m_targetClusterInfoHasBeenSet(false)
+    m_targetClusterInfoHasBeenSet(false),
+    m_vpcConnectionInfoHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ClusterOperationInfo::ClusterOperationInfo(JsonView jsonValue) :
     m_operationStepsHasBeenSet(false),
     m_operationTypeHasBeenSet(false),
     m_sourceClusterInfoHasBeenSet(false),
-    m_targetClusterInfoHasBeenSet(false)
+    m_targetClusterInfoHasBeenSet(false),
+    m_vpcConnectionInfoHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -131,6 +133,13 @@ ClusterOperationInfo& ClusterOperationInfo::operator =(JsonView jsonValue)
     m_targetClusterInfoHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("vpcConnectionInfo"))
+  {
+    m_vpcConnectionInfo = jsonValue.GetObject("vpcConnectionInfo");
+
+    m_vpcConnectionInfoHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -204,6 +213,12 @@ JsonValue ClusterOperationInfo::Jsonize() const
   if(m_targetClusterInfoHasBeenSet)
   {
    payload.WithObject("targetClusterInfo", m_targetClusterInfo.Jsonize());
+
+  }
+
+  if(m_vpcConnectionInfoHasBeenSet)
+  {
+   payload.WithObject("vpcConnectionInfo", m_vpcConnectionInfo.Jsonize());
 
   }
 

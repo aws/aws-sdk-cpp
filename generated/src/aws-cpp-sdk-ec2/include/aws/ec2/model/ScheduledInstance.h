@@ -217,42 +217,42 @@ namespace Model
 
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline const Aws::String& GetNetworkPlatform() const{ return m_networkPlatform; }
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline bool NetworkPlatformHasBeenSet() const { return m_networkPlatformHasBeenSet; }
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline void SetNetworkPlatform(const Aws::String& value) { m_networkPlatformHasBeenSet = true; m_networkPlatform = value; }
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline void SetNetworkPlatform(Aws::String&& value) { m_networkPlatformHasBeenSet = true; m_networkPlatform = std::move(value); }
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline void SetNetworkPlatform(const char* value) { m_networkPlatformHasBeenSet = true; m_networkPlatform.assign(value); }
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline ScheduledInstance& WithNetworkPlatform(const Aws::String& value) { SetNetworkPlatform(value); return *this;}
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline ScheduledInstance& WithNetworkPlatform(Aws::String&& value) { SetNetworkPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The network platform (<code>EC2-Classic</code> or <code>EC2-VPC</code>).</p>
+     * <p>The network platform.</p>
      */
     inline ScheduledInstance& WithNetworkPlatform(const char* value) { SetNetworkPlatform(value); return *this;}
 

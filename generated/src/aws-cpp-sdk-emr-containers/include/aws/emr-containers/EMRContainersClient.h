@@ -405,6 +405,32 @@ namespace EMRContainers
         }
 
         /**
+         * <p>Generate a session token to connect to a managed endpoint. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/emr-containers-2020-10-01/GetManagedEndpointSessionCredentials">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetManagedEndpointSessionCredentialsOutcome GetManagedEndpointSessionCredentials(const Model::GetManagedEndpointSessionCredentialsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetManagedEndpointSessionCredentials that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetManagedEndpointSessionCredentialsRequestT = Model::GetManagedEndpointSessionCredentialsRequest>
+        Model::GetManagedEndpointSessionCredentialsOutcomeCallable GetManagedEndpointSessionCredentialsCallable(const GetManagedEndpointSessionCredentialsRequestT& request) const
+        {
+            return SubmitCallable(&EMRContainersClient::GetManagedEndpointSessionCredentials, request);
+        }
+
+        /**
+         * An Async wrapper for GetManagedEndpointSessionCredentials that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetManagedEndpointSessionCredentialsRequestT = Model::GetManagedEndpointSessionCredentialsRequest>
+        void GetManagedEndpointSessionCredentialsAsync(const GetManagedEndpointSessionCredentialsRequestT& request, const GetManagedEndpointSessionCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&EMRContainersClient::GetManagedEndpointSessionCredentials, request, handler, context);
+        }
+
+        /**
          * <p>Lists job runs based on a set of parameters. A job run is a unit of work,
          * such as a Spark jar, PySpark script, or SparkSQL query, that you submit to
          * Amazon EMR on EKS.</p><p><h3>See Also:</h3>   <a

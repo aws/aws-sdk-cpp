@@ -140,50 +140,42 @@ namespace Model
 
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline void SetPlatform(Aws::String&& value) { m_platformHasBeenSet = true; m_platform = std::move(value); }
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline void SetPlatform(const char* value) { m_platformHasBeenSet = true; m_platform.assign(value); }
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline ReservedInstancesConfiguration& WithPlatform(const Aws::String& value) { SetPlatform(value); return *this;}
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline ReservedInstancesConfiguration& WithPlatform(Aws::String&& value) { SetPlatform(std::move(value)); return *this;}
 
     /**
-     * <p>The network platform of the modified Reserved Instances, which is either
-     * EC2-Classic or EC2-VPC.</p>
+     * <p>The network platform of the modified Reserved Instances.</p>
      */
     inline ReservedInstancesConfiguration& WithPlatform(const char* value) { SetPlatform(value); return *this;}
 

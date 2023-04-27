@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/model/ArchitectureType.h>
+#include <aws/ec2/model/SupportedAdditionalProcessorFeature.h>
 #include <utility>
 
 namespace Aws
@@ -102,6 +103,63 @@ namespace Model
      */
     inline ProcessorInfo& WithSustainedClockSpeedInGhz(double value) { SetSustainedClockSpeedInGhz(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline const Aws::Vector<SupportedAdditionalProcessorFeature>& GetSupportedFeatures() const{ return m_supportedFeatures; }
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline bool SupportedFeaturesHasBeenSet() const { return m_supportedFeaturesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline void SetSupportedFeatures(const Aws::Vector<SupportedAdditionalProcessorFeature>& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures = value; }
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline void SetSupportedFeatures(Aws::Vector<SupportedAdditionalProcessorFeature>&& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures = std::move(value); }
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline ProcessorInfo& WithSupportedFeatures(const Aws::Vector<SupportedAdditionalProcessorFeature>& value) { SetSupportedFeatures(value); return *this;}
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline ProcessorInfo& WithSupportedFeatures(Aws::Vector<SupportedAdditionalProcessorFeature>&& value) { SetSupportedFeatures(std::move(value)); return *this;}
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline ProcessorInfo& AddSupportedFeatures(const SupportedAdditionalProcessorFeature& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures.push_back(value); return *this; }
+
+    /**
+     * <p>Indicates whether the instance type supports AMD SEV-SNP. If the request
+     * returns <code>amd-sev-snp</code>, AMD SEV-SNP is supported. Otherwise, it is not
+     * supported.</p>
+     */
+    inline ProcessorInfo& AddSupportedFeatures(SupportedAdditionalProcessorFeature&& value) { m_supportedFeaturesHasBeenSet = true; m_supportedFeatures.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<ArchitectureType> m_supportedArchitectures;
@@ -109,6 +167,9 @@ namespace Model
 
     double m_sustainedClockSpeedInGhz;
     bool m_sustainedClockSpeedInGhzHasBeenSet = false;
+
+    Aws::Vector<SupportedAdditionalProcessorFeature> m_supportedFeatures;
+    bool m_supportedFeaturesHasBeenSet = false;
   };
 
 } // namespace Model

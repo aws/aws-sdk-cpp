@@ -205,38 +205,38 @@ namespace Model
 
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline const Tenancy& GetTenancy() const{ return m_tenancy; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline void SetTenancy(const Tenancy& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline void SetTenancy(Tenancy&& value) { m_tenancyHasBeenSet = true; m_tenancy = std::move(value); }
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline LaunchTemplatePlacementRequest& WithTenancy(const Tenancy& value) { SetTenancy(value); return *this;}
 
     /**
-     * <p>The tenancy of the instance (if the instance is running in a VPC). An
-     * instance with a tenancy of dedicated runs on single-tenant hardware.</p>
+     * <p>The tenancy of the instance. An instance with a tenancy of dedicated runs on
+     * single-tenant hardware.</p>
      */
     inline LaunchTemplatePlacementRequest& WithTenancy(Tenancy&& value) { SetTenancy(std::move(value)); return *this;}
 
