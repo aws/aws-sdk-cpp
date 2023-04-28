@@ -88,8 +88,11 @@ __Jump To:__
 #### Other Dependencies:
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
 
-Debian example:
+Debian based Linux distributions example:
    `sudo apt-get install libcurl-dev`
+
+RPM based Linux distributions example:
+   `sudo [yum|dnf|zypper] install libcurl-devel`
 
 ### Building for Android
 To build for Android, add `-DTARGET_ARCH=ANDROID` to your cmake command line. Currently we support Android APIs from 19 to 28 with Android NDK 19c and we are using build-in cmake toolchain file supplied by Android NDK, assuming you have the appropriate environment variables (ANDROID_NDK) set.
