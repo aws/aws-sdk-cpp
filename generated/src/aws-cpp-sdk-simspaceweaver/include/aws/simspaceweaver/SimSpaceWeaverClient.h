@@ -16,18 +16,18 @@ namespace Aws
 namespace SimSpaceWeaver
 {
   /**
-   * <p>Amazon Web Services SimSpace Weaver (SimSpace Weaver) is a managed service
-   * that you can use to build and operate large-scale spatial simulations in the
-   * Amazon Web Services Cloud. For example, you can create a digital twin of a city,
-   * crowd simulations with millions of people and objects, and
-   * massilvely-multiplayer games with hundreds of thousands of connected players.
-   * For more information about SimSpace Weaver, see the <i> <a
-   * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/">Amazon Web
-   * Services SimSpace Weaver User Guide</a> </i>.</p> <p>This API reference
-   * describes the API operations and data types that you can use to communicate
-   * directly with SimSpace Weaver.</p> <p>SimSpace Weaver also provides the SimSpace
-   * Weaver app SDK, which you use for app development. The SimSpace Weaver app SDK
-   * API reference is included in the SimSpace Weaver app SDK documentation, which is
+   * <p>SimSpace Weaver (SimSpace Weaver) is a managed service that you can use to
+   * build and operate large-scale spatial simulations in the Amazon Web Services
+   * Cloud. For example, you can create a digital twin of a city, crowd simulations
+   * with millions of people and objects, and massively multiplayer games with
+   * hundreds of thousands of connected players. For more information about SimSpace
+   * Weaver, see the <i> <a
+   * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/">SimSpace
+   * Weaver User Guide</a> </i>.</p> <p>This API reference describes the API
+   * operations and data types that you can use to communicate directly with SimSpace
+   * Weaver.</p> <p>SimSpace Weaver also provides the SimSpace Weaver app SDK, which
+   * you use for app development. The SimSpace Weaver app SDK API reference is
+   * included in the SimSpace Weaver app SDK documentation. This documentation is
    * part of the SimSpace Weaver app SDK distributable package.</p>
    */
   class AWS_SIMSPACEWEAVER_API SimSpaceWeaverClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<SimSpaceWeaverClient>
@@ -86,6 +86,52 @@ namespace SimSpaceWeaver
         virtual ~SimSpaceWeaverClient();
 
         /**
+         * <p>Creates a snapshot of the specified simulation. A snapshot is a file that
+         * contains simulation state data at a specific time. The state data saved in a
+         * snapshot includes entity data from the State Fabric, the simulation
+         * configuration specified in the schema, and the clock tick number. You can use
+         * the snapshot to initialize a new simulation. For more information about
+         * snapshots, see <a
+         * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+         * in the <i>SimSpace Weaver User Guide</i>. </p> <p>You specify a
+         * <code>Destination</code> when you create a snapshot. The
+         * <code>Destination</code> is the name of an Amazon S3 bucket and an optional
+         * <code>ObjectKeyPrefix</code>. The <code>ObjectKeyPrefix</code> is usually the
+         * name of a folder in the bucket. SimSpace Weaver creates a <code>snapshot</code>
+         * folder inside the <code>Destination</code> and places the snapshot file
+         * there.</p> <p>The snapshot file is an Amazon S3 object. It has an object key
+         * with the form: <code>
+         * <i>object-key-prefix</i>/snapshot/<i>simulation-name</i>-<i>YYMMdd</i>-<i>HHmm</i>-<i>ss</i>.zip</code>,
+         * where: </p> <ul> <li> <p> <code> <i>YY</i> </code> is the 2-digit year</p> </li>
+         * <li> <p> <code> <i>MM</i> </code> is the 2-digit month</p> </li> <li> <p> <code>
+         * <i>dd</i> </code> is the 2-digit day of the month</p> </li> <li> <p> <code>
+         * <i>HH</i> </code> is the 2-digit hour (24-hour clock)</p> </li> <li> <p> <code>
+         * <i>mm</i> </code> is the 2-digit minutes</p> </li> <li> <p> <code> <i>ss</i>
+         * </code> is the 2-digit seconds</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/CreateSnapshot">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateSnapshotOutcome CreateSnapshot(const Model::CreateSnapshotRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateSnapshot that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateSnapshotRequestT = Model::CreateSnapshotRequest>
+        Model::CreateSnapshotOutcomeCallable CreateSnapshotCallable(const CreateSnapshotRequestT& request) const
+        {
+            return SubmitCallable(&SimSpaceWeaverClient::CreateSnapshot, request);
+        }
+
+        /**
+         * An Async wrapper for CreateSnapshot that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateSnapshotRequestT = Model::CreateSnapshotRequest>
+        void CreateSnapshotAsync(const CreateSnapshotRequestT& request, const CreateSnapshotResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SimSpaceWeaverClient::CreateSnapshot, request, handler, context);
+        }
+
+        /**
          * <p>Deletes the instance of the given custom app.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteApp">AWS
          * API Reference</a></p>
@@ -112,9 +158,9 @@ namespace SimSpaceWeaver
 
         /**
          * <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p>
-         *  <p>Your simulation uses resources in other Amazon Web Services services.
-         * This API operation doesn't delete resources in other Amazon Web Services
-         * services.</p> <p><h3>See Also:</h3>   <a
+         *  <p>Your simulation uses resources in other Amazon Web Services. This API
+         * operation doesn't delete resources in other Amazon Web Services.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/DeleteSimulation">AWS
          * API Reference</a></p>
          */
@@ -318,8 +364,14 @@ namespace SimSpaceWeaver
         }
 
         /**
-         * <p>Starts a simulation with the given name and schema.</p><p><h3>See Also:</h3> 
-         * <a
+         * <p>Starts a simulation with the given name. You must choose to start your
+         * simulation from a schema or from a snapshot. For more information about the
+         * schema, see the <a
+         * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema
+         * reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information
+         * about snapshots, see <a
+         * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a>
+         * in the <i>SimSpace Weaver User Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StartSimulation">AWS
          * API Reference</a></p>
          */
@@ -396,8 +448,9 @@ namespace SimSpaceWeaver
 
         /**
          * <p>Stops the given simulation.</p>  <p>You can't restart a simulation
-         * after you stop it. If you need to restart a simulation, you must stop it, delete
-         * it, and start a new instance of it.</p> <p><h3>See Also:</h3>   <a
+         * after you stop it. If you want to restart a simulation, then you must stop it,
+         * delete it, and start a new instance of it.</p> <p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/StopSimulation">AWS
          * API Reference</a></p>
          */

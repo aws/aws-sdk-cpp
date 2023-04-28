@@ -85,6 +85,24 @@ GetSegmentDetectionResult& GetSegmentDetectionResult::operator =(const Aws::Amaz
     }
   }
 
+  if(jsonValue.ValueExists("JobId"))
+  {
+    m_jobId = jsonValue.GetString("JobId");
+
+  }
+
+  if(jsonValue.ValueExists("Video"))
+  {
+    m_video = jsonValue.GetObject("Video");
+
+  }
+
+  if(jsonValue.ValueExists("JobTag"))
+  {
+    m_jobTag = jsonValue.GetString("JobTag");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

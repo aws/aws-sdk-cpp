@@ -31,26 +31,28 @@ namespace WAFV2
    * Developer Guide</a>. </p>  <p>WAF is a web application firewall that lets
    * you monitor the HTTP and HTTPS requests that are forwarded to an Amazon
    * CloudFront distribution, Amazon API Gateway REST API, Application Load Balancer,
-   * AppSync GraphQL API, Amazon Cognito user pool, or App Runner service. WAF also
-   * lets you control access to your content, to protect the Amazon Web Services
-   * resource that WAF is monitoring. Based on conditions that you specify, such as
-   * the IP addresses that requests originate from or the values of query strings,
-   * the protected resource responds to requests with either the requested content,
-   * an HTTP 403 status code (Forbidden), or with a custom response. </p> <p>This API
-   * guide is for developers who need detailed information about WAF API actions,
-   * data types, and errors. For detailed information about WAF features and guidance
-   * for configuring and using WAF, see the <a
+   * AppSync GraphQL API, Amazon Cognito user pool, App Runner service, or Amazon Web
+   * Services Verified Access instance. WAF also lets you control access to your
+   * content, to protect the Amazon Web Services resource that WAF is monitoring.
+   * Based on conditions that you specify, such as the IP addresses that requests
+   * originate from or the values of query strings, the protected resource responds
+   * to requests with either the requested content, an HTTP 403 status code
+   * (Forbidden), or with a custom response. </p> <p>This API guide is for developers
+   * who need detailed information about WAF API actions, data types, and errors. For
+   * detailed information about WAF features and guidance for configuring and using
+   * WAF, see the <a
    * href="https://docs.aws.amazon.com/waf/latest/developerguide/what-is-aws-waf.html">WAF
    * Developer Guide</a>.</p> <p>You can make calls using the endpoints listed in <a
    * href="https://docs.aws.amazon.com/general/latest/gr/waf.html">WAF endpoints and
    * quotas</a>. </p> <ul> <li> <p>For regional applications, you can use any of the
    * endpoints in the list. A regional application can be an Application Load
    * Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an
-   * Amazon Cognito user pool, or an App Runner service. </p> </li> <li> <p>For
-   * Amazon CloudFront applications, you must use the API endpoint listed for US East
-   * (N. Virginia): us-east-1.</p> </li> </ul> <p>Alternatively, you can use one of
-   * the Amazon Web Services SDKs to access an API that's tailored to the programming
-   * language or platform that you're using. For more information, see <a
+   * Amazon Cognito user pool, an App Runner service, or an Amazon Web Services
+   * Verified Access instance. </p> </li> <li> <p>For Amazon CloudFront applications,
+   * you must use the API endpoint listed for US East (N. Virginia): us-east-1.</p>
+   * </li> </ul> <p>Alternatively, you can use one of the Amazon Web Services SDKs to
+   * access an API that's tailored to the programming language or platform that
+   * you're using. For more information, see <a
    * href="http://aws.amazon.com/tools/#SDKs">Amazon Web Services SDKs</a>.</p> <p>We
    * currently provide two versions of the WAF API: this API and the prior versions,
    * the classic WAF APIs. This new API provides the same functionality as the older
@@ -124,10 +126,11 @@ namespace WAFV2
          * <p>Associates a web ACL with a regional application resource, to protect the
          * resource. A regional application can be an Application Load Balancer (ALB), an
          * Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user
-         * pool, or an App Runner service. </p> <p>For Amazon CloudFront, don't use this
-         * call. Instead, use your CloudFront distribution configuration. To associate a
-         * web ACL, in the CloudFront call <code>UpdateDistribution</code>, set the web ACL
-         * ID to the Amazon Resource Name (ARN) of the web ACL. For information, see <a
+         * pool, an App Runner service, or an Amazon Web Services Verified Access instance.
+         * </p> <p>For Amazon CloudFront, don't use this call. Instead, use your CloudFront
+         * distribution configuration. To associate a web ACL, in the CloudFront call
+         * <code>UpdateDistribution</code>, set the web ACL ID to the Amazon Resource Name
+         * (ARN) of the web ACL. For information, see <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
          * in the <i>Amazon CloudFront Developer Guide</i>. </p> <p>When you make changes
          * to web ACLs or web ACL components, like rules and rule groups, WAF propagates
@@ -202,16 +205,15 @@ namespace WAFV2
         }
 
         /**
-         * <p>Creates an API key for use in the integration of the CAPTCHA API in your
-         * JavaScript client applications. The integration lets you customize the placement
-         * and characteristics of the CAPTCHA puzzle for your end users. For more
-         * information about the CAPTCHA JavaScript integration, see <a
+         * <p>Creates an API key that contains a set of token domains.</p> <p>API keys are
+         * required for the integration of the CAPTCHA API in your JavaScript client
+         * applications. The API lets you customize the placement and characteristics of
+         * the CAPTCHA puzzle for your end users. For more information about the CAPTCHA
+         * JavaScript integration, see <a
          * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-         * client application integration</a> in the <i>WAF Developer Guide</i>.</p> <p>The
-         * CAPTCHA API requires a key that authorizes CAPTCHA use from the client
-         * application domain. You can use a single key for up to 5 domains. After you
-         * generate a key, you can copy it for use in your JavaScript integration.
-         * </p><p><h3>See Also:</h3>   <a
+         * client application integration</a> in the <i>WAF Developer Guide</i>.</p> <p>You
+         * can use a single key for up to 5 domains. After you generate a key, you can copy
+         * it for use in your JavaScript integration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateAPIKey">AWS
          * API Reference</a></p>
          */
@@ -331,8 +333,8 @@ namespace WAFV2
          * and managed rule group. You can associate a web ACL with one or more Amazon Web
          * Services resources to protect. The resources can be an Amazon CloudFront
          * distribution, an Amazon API Gateway REST API, an Application Load Balancer, an
-         * AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner service.
-         * </p><p><h3>See Also:</h3>   <a
+         * AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an
+         * Amazon Web Services Verified Access instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/CreateWebACL">AWS
          * API Reference</a></p>
          */
@@ -583,11 +585,12 @@ namespace WAFV2
          * <p>Disassociates the specified regional application resource from any existing
          * web ACL association. A resource can have at most one web ACL association. A
          * regional application can be an Application Load Balancer (ALB), an Amazon API
-         * Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, or an App
-         * Runner service. </p> <p>For Amazon CloudFront, don't use this call. Instead, use
-         * your CloudFront distribution configuration. To disassociate a web ACL, provide
-         * an empty web ACL ID in the CloudFront call <code>UpdateDistribution</code>. For
-         * information, see <a
+         * Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App
+         * Runner service, or an Amazon Web Services Verified Access instance. </p> <p>For
+         * Amazon CloudFront, don't use this call. Instead, use your CloudFront
+         * distribution configuration. To disassociate a web ACL, provide an empty web ACL
+         * ID in the CloudFront call <code>UpdateDistribution</code>. For information, see
+         * <a
          * href="https://docs.aws.amazon.com/cloudfront/latest/APIReference/API_UpdateDistribution.html">UpdateDistribution</a>
          * in the <i>Amazon CloudFront API Reference</i>. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/DisassociateWebACL">AWS
@@ -646,7 +649,14 @@ namespace WAFV2
 
         /**
          * <p>Returns your API key in decrypted form. Use this to check the token domains
-         * that you have defined for the key. </p><p><h3>See Also:</h3>   <a
+         * that you have defined for the key. </p> <p>API keys are required for the
+         * integration of the CAPTCHA API in your JavaScript client applications. The API
+         * lets you customize the placement and characteristics of the CAPTCHA puzzle for
+         * your end users. For more information about the CAPTCHA JavaScript integration,
+         * see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+         * client application integration</a> in the <i>WAF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/GetDecryptedAPIKey">AWS
          * API Reference</a></p>
          */
@@ -989,7 +999,13 @@ namespace WAFV2
 
         /**
          * <p>Retrieves a list of the API keys that you've defined for the specified scope.
-         * </p><p><h3>See Also:</h3>   <a
+         * </p> <p>API keys are required for the integration of the CAPTCHA API in your
+         * JavaScript client applications. The API lets you customize the placement and
+         * characteristics of the CAPTCHA puzzle for your end users. For more information
+         * about the CAPTCHA JavaScript integration, see <a
+         * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
+         * client application integration</a> in the <i>WAF Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/ListAPIKeys">AWS
          * API Reference</a></p>
          */
@@ -1707,8 +1723,8 @@ namespace WAFV2
          * group. You can associate a web ACL with one or more Amazon Web Services
          * resources to protect. The resources can be an Amazon CloudFront distribution, an
          * Amazon API Gateway REST API, an Application Load Balancer, an AppSync GraphQL
-         * API, an Amazon Cognito user pool, or an App Runner service. </p><p><h3>See
-         * Also:</h3>   <a
+         * API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web
+         * Services Verified Access instance. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/UpdateWebACL">AWS
          * API Reference</a></p>
          */

@@ -28,9 +28,9 @@ namespace Model
    * <p>A collection of app instances that run the same executable app code and have
    * the same launch options and commands.</p> <p>For more information about domains,
    * see <a
-   * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-   * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User
-   * Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+   * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/Domain">AWS
    * API Reference</a></p>
    */
@@ -44,86 +44,80 @@ namespace Model
 
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline const LifecycleManagementStrategy& GetLifecycle() const{ return m_lifecycle; }
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline void SetLifecycle(const LifecycleManagementStrategy& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline void SetLifecycle(LifecycleManagementStrategy&& value) { m_lifecycleHasBeenSet = true; m_lifecycle = std::move(value); }
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline Domain& WithLifecycle(const LifecycleManagementStrategy& value) { SetLifecycle(value); return *this;}
 
     /**
-     * <p>The type of lifecycle management for apps in the domain. This value indicates
-     * whether apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops
-     * the apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
+     * <p>The type of lifecycle management for apps in the domain. Indicates whether
+     * apps in this domain are <i>managed</i> (SimSpace Weaver starts and stops the
+     * apps) or <i>unmanaged</i> (you must start and stop the apps).</p> <p
      * class="title"> <b>Lifecycle types</b> </p> <ul> <li> <p> <code>PerWorker</code>
-     * – Managed: SimSpace Weaver starts 1 app on each worker</p> </li> <li> <p>
-     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts 1 app for
-     * each spatial partition</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
-     * You use the <b>StartApp</b> API to start the apps and use the <b>StopApp</b> API
-     * to stop the apps.</p> </li> </ul>  <p>The lifecycle types will change when
-     * the service is released for general availability (GA).</p> 
+     * – Managed: SimSpace Weaver starts one app on each worker.</p> </li> <li> <p>
+     * <code>BySpatialSubdivision</code> – Managed: SimSpace Weaver starts one app for
+     * each spatial partition.</p> </li> <li> <p> <code>ByRequest</code> – Unmanaged:
+     * You use the <code>StartApp</code> API to start the apps and use the
+     * <code>StopApp</code> API to stop the apps.</p> </li> </ul>
      */
     inline Domain& WithLifecycle(LifecycleManagementStrategy&& value) { SetLifecycle(std::move(value)); return *this;}
 

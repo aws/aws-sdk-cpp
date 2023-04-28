@@ -20,7 +20,8 @@ CreateDomainConfigurationRequest::CreateDomainConfigurationRequest() :
     m_authorizerConfigHasBeenSet(false),
     m_serviceType(ServiceType::NOT_SET),
     m_serviceTypeHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_tlsConfigHasBeenSet(false)
 {
 }
 
@@ -70,6 +71,12 @@ Aws::String CreateDomainConfigurationRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_tlsConfigHasBeenSet)
+  {
+   payload.WithObject("tlsConfig", m_tlsConfig.Jsonize());
 
   }
 

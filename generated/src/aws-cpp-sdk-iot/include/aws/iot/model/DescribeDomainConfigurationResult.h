@@ -12,6 +12,7 @@
 #include <aws/iot/model/ServiceType.h>
 #include <aws/iot/model/DomainType.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/iot/model/TlsConfig.h>
 #include <aws/iot/model/ServerCertificateSummary.h>
 #include <utility>
 
@@ -325,6 +326,32 @@ namespace Model
     inline DescribeDomainConfigurationResult& WithLastStatusChangeDate(Aws::Utils::DateTime&& value) { SetLastStatusChangeDate(std::move(value)); return *this;}
 
 
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfig = value; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline DescribeDomainConfigurationResult& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -365,6 +392,8 @@ namespace Model
     DomainType m_domainType;
 
     Aws::Utils::DateTime m_lastStatusChangeDate;
+
+    TlsConfig m_tlsConfig;
 
     Aws::String m_requestId;
   };

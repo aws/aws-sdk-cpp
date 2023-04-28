@@ -21,6 +21,7 @@
 #include <aws/simspaceweaver/SimSpaceWeaverClient.h>
 #include <aws/simspaceweaver/SimSpaceWeaverErrorMarshaller.h>
 #include <aws/simspaceweaver/SimSpaceWeaverEndpointProvider.h>
+#include <aws/simspaceweaver/model/CreateSnapshotRequest.h>
 #include <aws/simspaceweaver/model/DeleteAppRequest.h>
 #include <aws/simspaceweaver/model/DeleteSimulationRequest.h>
 #include <aws/simspaceweaver/model/DescribeAppRequest.h>
@@ -162,6 +163,15 @@ void SimSpaceWeaverClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CreateSnapshotOutcome SimSpaceWeaverClient::CreateSnapshot(const CreateSnapshotRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateSnapshot, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/createsnapshot");
+  return CreateSnapshotOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteAppOutcome SimSpaceWeaverClient::DeleteApp(const DeleteAppRequest& request) const

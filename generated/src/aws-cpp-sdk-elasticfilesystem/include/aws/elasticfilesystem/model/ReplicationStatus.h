@@ -19,7 +19,9 @@ namespace Model
     ENABLED,
     ENABLING,
     DELETING,
-    ERROR_
+    ERROR_,
+    PAUSED,
+    PAUSING
   };
 
 namespace ReplicationStatusMapper

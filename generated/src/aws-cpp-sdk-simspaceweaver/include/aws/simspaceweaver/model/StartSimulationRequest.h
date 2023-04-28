@@ -142,58 +142,82 @@ namespace Model
 
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline const Aws::String& GetMaximumDuration() const{ return m_maximumDuration; }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline bool MaximumDurationHasBeenSet() const { return m_maximumDurationHasBeenSet; }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(const Aws::String& value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = value; }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(Aws::String&& value) { m_maximumDurationHasBeenSet = true; m_maximumDuration = std::move(value); }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(const char* value) { m_maximumDurationHasBeenSet = true; m_maximumDuration.assign(value); }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline StartSimulationRequest& WithMaximumDuration(const Aws::String& value) { SetMaximumDuration(value); return *this;}
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline StartSimulationRequest& WithMaximumDuration(Aws::String&& value) { SetMaximumDuration(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline StartSimulationRequest& WithMaximumDuration(const char* value) { SetMaximumDuration(value); return *this;}
 
@@ -340,7 +364,10 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline const S3Location& GetSchemaS3Location() const{ return m_schemaS3Location; }
 
@@ -348,7 +375,10 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline bool SchemaS3LocationHasBeenSet() const { return m_schemaS3LocationHasBeenSet; }
 
@@ -356,7 +386,10 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline void SetSchemaS3Location(const S3Location& value) { m_schemaS3LocationHasBeenSet = true; m_schemaS3Location = value; }
 
@@ -364,7 +397,10 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline void SetSchemaS3Location(S3Location&& value) { m_schemaS3LocationHasBeenSet = true; m_schemaS3Location = std::move(value); }
 
@@ -372,7 +408,10 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline StartSimulationRequest& WithSchemaS3Location(const S3Location& value) { SetSchemaS3Location(value); return *this;}
 
@@ -380,9 +419,79 @@ namespace Model
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
-     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SchemaS3Location</code> to start your simulation from a schema.</p> <p>If
+     * you provide a <code>SchemaS3Location</code> then you can't provide a
+     * <code>SnapshotS3Location</code>.</p>
      */
     inline StartSimulationRequest& WithSchemaS3Location(S3Location&& value) { SetSchemaS3Location(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline const S3Location& GetSnapshotS3Location() const{ return m_snapshotS3Location; }
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline bool SnapshotS3LocationHasBeenSet() const { return m_snapshotS3LocationHasBeenSet; }
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline void SetSnapshotS3Location(const S3Location& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = value; }
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline void SetSnapshotS3Location(S3Location&& value) { m_snapshotS3LocationHasBeenSet = true; m_snapshotS3Location = std::move(value); }
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline StartSimulationRequest& WithSnapshotS3Location(const S3Location& value) { SetSnapshotS3Location(value); return *this;}
+
+    /**
+     * <p>The location of the snapshot .zip file in Amazon Simple Storage Service
+     * (Amazon S3). For more information about Amazon S3, see the <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
+     * <i>Amazon Simple Storage Service User Guide</i> </a>.</p> <p>Provide a
+     * <code>SnapshotS3Location</code> to start your simulation from a snapshot.</p>
+     * <p>If you provide a <code>SnapshotS3Location</code> then you can't provide a
+     * <code>SchemaS3Location</code>.</p>
+     */
+    inline StartSimulationRequest& WithSnapshotS3Location(S3Location&& value) { SetSnapshotS3Location(std::move(value)); return *this;}
 
 
     /**
@@ -508,6 +617,9 @@ namespace Model
 
     S3Location m_schemaS3Location;
     bool m_schemaS3LocationHasBeenSet = false;
+
+    S3Location m_snapshotS3Location;
+    bool m_snapshotS3LocationHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

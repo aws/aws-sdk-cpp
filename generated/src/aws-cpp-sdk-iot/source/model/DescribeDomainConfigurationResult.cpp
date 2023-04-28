@@ -92,6 +92,12 @@ DescribeDomainConfigurationResult& DescribeDomainConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("tlsConfig"))
+  {
+    m_tlsConfig = jsonValue.GetObject("tlsConfig");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

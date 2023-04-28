@@ -22,7 +22,10 @@ SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials() :
     m_accessTokenHasBeenSet(false),
     m_refreshTokenHasBeenSet(false),
     m_oAuthRequestHasBeenSet(false),
-    m_clientCredentialsArnHasBeenSet(false)
+    m_clientCredentialsArnHasBeenSet(false),
+    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
+    m_oAuth2GrantTypeHasBeenSet(false),
+    m_jwtTokenHasBeenSet(false)
 {
 }
 
@@ -30,7 +33,10 @@ SalesforceConnectorProfileCredentials::SalesforceConnectorProfileCredentials(Jso
     m_accessTokenHasBeenSet(false),
     m_refreshTokenHasBeenSet(false),
     m_oAuthRequestHasBeenSet(false),
-    m_clientCredentialsArnHasBeenSet(false)
+    m_clientCredentialsArnHasBeenSet(false),
+    m_oAuth2GrantType(OAuth2GrantType::NOT_SET),
+    m_oAuth2GrantTypeHasBeenSet(false),
+    m_jwtTokenHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +71,20 @@ SalesforceConnectorProfileCredentials& SalesforceConnectorProfileCredentials::op
     m_clientCredentialsArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("oAuth2GrantType"))
+  {
+    m_oAuth2GrantType = OAuth2GrantTypeMapper::GetOAuth2GrantTypeForName(jsonValue.GetString("oAuth2GrantType"));
+
+    m_oAuth2GrantTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("jwtToken"))
+  {
+    m_jwtToken = jsonValue.GetString("jwtToken");
+
+    m_jwtTokenHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -93,6 +113,17 @@ JsonValue SalesforceConnectorProfileCredentials::Jsonize() const
   if(m_clientCredentialsArnHasBeenSet)
   {
    payload.WithString("clientCredentialsArn", m_clientCredentialsArn);
+
+  }
+
+  if(m_oAuth2GrantTypeHasBeenSet)
+  {
+   payload.WithString("oAuth2GrantType", OAuth2GrantTypeMapper::GetNameForOAuth2GrantType(m_oAuth2GrantType));
+  }
+
+  if(m_jwtTokenHasBeenSet)
+  {
+   payload.WithString("jwtToken", m_jwtToken);
 
   }
 

@@ -291,6 +291,55 @@ namespace Model
 
 
     /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline const Aws::String& GetGrafanaVersion() const{ return m_grafanaVersion; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline bool GrafanaVersionHasBeenSet() const { return m_grafanaVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline void SetGrafanaVersion(const Aws::String& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = value; }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline void SetGrafanaVersion(Aws::String&& value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion = std::move(value); }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline void SetGrafanaVersion(const char* value) { m_grafanaVersionHasBeenSet = true; m_grafanaVersion.assign(value); }
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(const Aws::String& value) { SetGrafanaVersion(value); return *this;}
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(Aws::String&& value) { SetGrafanaVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the version of Grafana to support in the new workspace.</p>
+     * <p>Supported values are <code>8.4</code> and <code>9.4</code>.</p>
+     */
+    inline CreateWorkspaceRequest& WithGrafanaVersion(const char* value) { SetGrafanaVersion(value); return *this;}
+
+
+    /**
      * <p>Configuration for network access to your workspace.</p> <p>When this is
      * configured, only listed IP addresses and VPC endpoints will be able to access
      * your workspace. Standard Grafana authentication and authorization will still be
@@ -1020,6 +1069,9 @@ namespace Model
 
     Aws::String m_configuration;
     bool m_configurationHasBeenSet = false;
+
+    Aws::String m_grafanaVersion;
+    bool m_grafanaVersionHasBeenSet = false;
 
     NetworkAccessConfiguration m_networkAccessControl;
     bool m_networkAccessControlHasBeenSet = false;

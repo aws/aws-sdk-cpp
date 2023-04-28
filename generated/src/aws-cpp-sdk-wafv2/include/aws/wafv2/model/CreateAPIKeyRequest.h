@@ -40,9 +40,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -52,9 +53,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -64,9 +66,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -76,9 +79,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -88,9 +92,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -100,9 +105,10 @@ namespace Model
      * <p>Specifies whether this is for an Amazon CloudFront distribution or for a
      * regional application. A regional application can be an Application Load Balancer
      * (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito
-     * user pool, or an App Runner service. </p> <p>To work with CloudFront, you must
-     * also specify the Region US East (N. Virginia) as follows: </p> <ul> <li> <p>CLI
-     * - Specify the Region when you use the CloudFront scope: <code>--scope=CLOUDFRONT
+     * user pool, an App Runner service, or an Amazon Web Services Verified Access
+     * instance. </p> <p>To work with CloudFront, you must also specify the Region US
+     * East (N. Virginia) as follows: </p> <ul> <li> <p>CLI - Specify the Region when
+     * you use the CloudFront scope: <code>--scope=CLOUDFRONT
      * --region=us-east-1</code>. </p> </li> <li> <p>API and SDKs - For all calls, use
      * the Region endpoint us-east-1. </p> </li> </ul>
      */
@@ -111,46 +117,73 @@ namespace Model
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTokenDomains() const{ return m_tokenDomains; }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline bool TokenDomainsHasBeenSet() const { return m_tokenDomainsHasBeenSet; }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline void SetTokenDomains(const Aws::Vector<Aws::String>& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = value; }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline void SetTokenDomains(Aws::Vector<Aws::String>&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains = std::move(value); }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& WithTokenDomains(const Aws::Vector<Aws::String>& value) { SetTokenDomains(value); return *this;}
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& WithTokenDomains(Aws::Vector<Aws::String>&& value) { SetTokenDomains(std::move(value)); return *this;}
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(const Aws::String& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(Aws::String&& value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(std::move(value)); return *this; }
 
     /**
      * <p>The client application domains that you want to use this API key for. </p>
+     * <p>Example JSON: <code>"TokenDomains": ["abc.com", "store.abc.com"]</code> </p>
+     * <p>Public suffixes aren't allowed. For example, you can't use
+     * <code>usa.gov</code> or <code>co.uk</code> as token domains.</p>
      */
     inline CreateAPIKeyRequest& AddTokenDomains(const char* value) { m_tokenDomainsHasBeenSet = true; m_tokenDomains.push_back(value); return *this; }
 

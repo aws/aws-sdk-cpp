@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/AuthorizerConfig.h>
 #include <aws/iot/model/DomainConfigurationStatus.h>
+#include <aws/iot/model/TlsConfig.h>
 #include <utility>
 
 namespace Aws
@@ -157,6 +158,37 @@ namespace Model
      */
     inline UpdateDomainConfigurationRequest& WithRemoveAuthorizerConfig(bool value) { SetRemoveAuthorizerConfig(value); return *this;}
 
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline const TlsConfig& GetTlsConfig() const{ return m_tlsConfig; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline bool TlsConfigHasBeenSet() const { return m_tlsConfigHasBeenSet; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(const TlsConfig& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = value; }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline void SetTlsConfig(TlsConfig&& value) { m_tlsConfigHasBeenSet = true; m_tlsConfig = std::move(value); }
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline UpdateDomainConfigurationRequest& WithTlsConfig(const TlsConfig& value) { SetTlsConfig(value); return *this;}
+
+    /**
+     * <p>An object that specifies the TLS configuration for a domain.</p>
+     */
+    inline UpdateDomainConfigurationRequest& WithTlsConfig(TlsConfig&& value) { SetTlsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_domainConfigurationName;
@@ -170,6 +202,9 @@ namespace Model
 
     bool m_removeAuthorizerConfig;
     bool m_removeAuthorizerConfigHasBeenSet = false;
+
+    TlsConfig m_tlsConfig;
+    bool m_tlsConfigHasBeenSet = false;
   };
 
 } // namespace Model
