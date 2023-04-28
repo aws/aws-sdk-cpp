@@ -21,6 +21,8 @@
 #include <aws/athena/model/BatchGetNamedQueryResult.h>
 #include <aws/athena/model/BatchGetPreparedStatementResult.h>
 #include <aws/athena/model/BatchGetQueryExecutionResult.h>
+#include <aws/athena/model/CancelCapacityReservationResult.h>
+#include <aws/athena/model/CreateCapacityReservationResult.h>
 #include <aws/athena/model/CreateDataCatalogResult.h>
 #include <aws/athena/model/CreateNamedQueryResult.h>
 #include <aws/athena/model/CreateNotebookResult.h>
@@ -36,6 +38,8 @@
 #include <aws/athena/model/GetCalculationExecutionResult.h>
 #include <aws/athena/model/GetCalculationExecutionCodeResult.h>
 #include <aws/athena/model/GetCalculationExecutionStatusResult.h>
+#include <aws/athena/model/GetCapacityAssignmentConfigurationResult.h>
+#include <aws/athena/model/GetCapacityReservationResult.h>
 #include <aws/athena/model/GetDataCatalogResult.h>
 #include <aws/athena/model/GetDatabaseResult.h>
 #include <aws/athena/model/GetNamedQueryResult.h>
@@ -51,6 +55,7 @@
 #include <aws/athena/model/ImportNotebookResult.h>
 #include <aws/athena/model/ListApplicationDPUSizesResult.h>
 #include <aws/athena/model/ListCalculationExecutionsResult.h>
+#include <aws/athena/model/ListCapacityReservationsResult.h>
 #include <aws/athena/model/ListDataCatalogsResult.h>
 #include <aws/athena/model/ListDatabasesResult.h>
 #include <aws/athena/model/ListEngineVersionsResult.h>
@@ -64,6 +69,7 @@
 #include <aws/athena/model/ListTableMetadataResult.h>
 #include <aws/athena/model/ListTagsForResourceResult.h>
 #include <aws/athena/model/ListWorkGroupsResult.h>
+#include <aws/athena/model/PutCapacityAssignmentConfigurationResult.h>
 #include <aws/athena/model/StartCalculationExecutionResult.h>
 #include <aws/athena/model/StartQueryExecutionResult.h>
 #include <aws/athena/model/StartSessionResult.h>
@@ -72,6 +78,7 @@
 #include <aws/athena/model/TagResourceResult.h>
 #include <aws/athena/model/TerminateSessionResult.h>
 #include <aws/athena/model/UntagResourceResult.h>
+#include <aws/athena/model/UpdateCapacityReservationResult.h>
 #include <aws/athena/model/UpdateDataCatalogResult.h>
 #include <aws/athena/model/UpdateNamedQueryResult.h>
 #include <aws/athena/model/UpdateNotebookResult.h>
@@ -121,6 +128,8 @@ namespace Aws
       class BatchGetNamedQueryRequest;
       class BatchGetPreparedStatementRequest;
       class BatchGetQueryExecutionRequest;
+      class CancelCapacityReservationRequest;
+      class CreateCapacityReservationRequest;
       class CreateDataCatalogRequest;
       class CreateNamedQueryRequest;
       class CreateNotebookRequest;
@@ -136,6 +145,8 @@ namespace Aws
       class GetCalculationExecutionRequest;
       class GetCalculationExecutionCodeRequest;
       class GetCalculationExecutionStatusRequest;
+      class GetCapacityAssignmentConfigurationRequest;
+      class GetCapacityReservationRequest;
       class GetDataCatalogRequest;
       class GetDatabaseRequest;
       class GetNamedQueryRequest;
@@ -151,6 +162,7 @@ namespace Aws
       class ImportNotebookRequest;
       class ListApplicationDPUSizesRequest;
       class ListCalculationExecutionsRequest;
+      class ListCapacityReservationsRequest;
       class ListDataCatalogsRequest;
       class ListDatabasesRequest;
       class ListEngineVersionsRequest;
@@ -164,6 +176,7 @@ namespace Aws
       class ListTableMetadataRequest;
       class ListTagsForResourceRequest;
       class ListWorkGroupsRequest;
+      class PutCapacityAssignmentConfigurationRequest;
       class StartCalculationExecutionRequest;
       class StartQueryExecutionRequest;
       class StartSessionRequest;
@@ -172,6 +185,7 @@ namespace Aws
       class TagResourceRequest;
       class TerminateSessionRequest;
       class UntagResourceRequest;
+      class UpdateCapacityReservationRequest;
       class UpdateDataCatalogRequest;
       class UpdateNamedQueryRequest;
       class UpdateNotebookRequest;
@@ -184,6 +198,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<BatchGetNamedQueryResult, Aws::Athena::AthenaError> BatchGetNamedQueryOutcome;
       typedef Aws::Utils::Outcome<BatchGetPreparedStatementResult, Aws::Athena::AthenaError> BatchGetPreparedStatementOutcome;
       typedef Aws::Utils::Outcome<BatchGetQueryExecutionResult, Aws::Athena::AthenaError> BatchGetQueryExecutionOutcome;
+      typedef Aws::Utils::Outcome<CancelCapacityReservationResult, Aws::Athena::AthenaError> CancelCapacityReservationOutcome;
+      typedef Aws::Utils::Outcome<CreateCapacityReservationResult, Aws::Athena::AthenaError> CreateCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<CreateDataCatalogResult, Aws::Athena::AthenaError> CreateDataCatalogOutcome;
       typedef Aws::Utils::Outcome<CreateNamedQueryResult, Aws::Athena::AthenaError> CreateNamedQueryOutcome;
       typedef Aws::Utils::Outcome<CreateNotebookResult, Aws::Athena::AthenaError> CreateNotebookOutcome;
@@ -199,6 +215,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetCalculationExecutionResult, Aws::Athena::AthenaError> GetCalculationExecutionOutcome;
       typedef Aws::Utils::Outcome<GetCalculationExecutionCodeResult, Aws::Athena::AthenaError> GetCalculationExecutionCodeOutcome;
       typedef Aws::Utils::Outcome<GetCalculationExecutionStatusResult, Aws::Athena::AthenaError> GetCalculationExecutionStatusOutcome;
+      typedef Aws::Utils::Outcome<GetCapacityAssignmentConfigurationResult, Aws::Athena::AthenaError> GetCapacityAssignmentConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetCapacityReservationResult, Aws::Athena::AthenaError> GetCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<GetDataCatalogResult, Aws::Athena::AthenaError> GetDataCatalogOutcome;
       typedef Aws::Utils::Outcome<GetDatabaseResult, Aws::Athena::AthenaError> GetDatabaseOutcome;
       typedef Aws::Utils::Outcome<GetNamedQueryResult, Aws::Athena::AthenaError> GetNamedQueryOutcome;
@@ -214,6 +232,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ImportNotebookResult, Aws::Athena::AthenaError> ImportNotebookOutcome;
       typedef Aws::Utils::Outcome<ListApplicationDPUSizesResult, Aws::Athena::AthenaError> ListApplicationDPUSizesOutcome;
       typedef Aws::Utils::Outcome<ListCalculationExecutionsResult, Aws::Athena::AthenaError> ListCalculationExecutionsOutcome;
+      typedef Aws::Utils::Outcome<ListCapacityReservationsResult, Aws::Athena::AthenaError> ListCapacityReservationsOutcome;
       typedef Aws::Utils::Outcome<ListDataCatalogsResult, Aws::Athena::AthenaError> ListDataCatalogsOutcome;
       typedef Aws::Utils::Outcome<ListDatabasesResult, Aws::Athena::AthenaError> ListDatabasesOutcome;
       typedef Aws::Utils::Outcome<ListEngineVersionsResult, Aws::Athena::AthenaError> ListEngineVersionsOutcome;
@@ -227,6 +246,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListTableMetadataResult, Aws::Athena::AthenaError> ListTableMetadataOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, Aws::Athena::AthenaError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListWorkGroupsResult, Aws::Athena::AthenaError> ListWorkGroupsOutcome;
+      typedef Aws::Utils::Outcome<PutCapacityAssignmentConfigurationResult, Aws::Athena::AthenaError> PutCapacityAssignmentConfigurationOutcome;
       typedef Aws::Utils::Outcome<StartCalculationExecutionResult, Aws::Athena::AthenaError> StartCalculationExecutionOutcome;
       typedef Aws::Utils::Outcome<StartQueryExecutionResult, Aws::Athena::AthenaError> StartQueryExecutionOutcome;
       typedef Aws::Utils::Outcome<StartSessionResult, Aws::Athena::AthenaError> StartSessionOutcome;
@@ -235,6 +255,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, Aws::Athena::AthenaError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<TerminateSessionResult, Aws::Athena::AthenaError> TerminateSessionOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, Aws::Athena::AthenaError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateCapacityReservationResult, Aws::Athena::AthenaError> UpdateCapacityReservationOutcome;
       typedef Aws::Utils::Outcome<UpdateDataCatalogResult, Aws::Athena::AthenaError> UpdateDataCatalogOutcome;
       typedef Aws::Utils::Outcome<UpdateNamedQueryResult, Aws::Athena::AthenaError> UpdateNamedQueryOutcome;
       typedef Aws::Utils::Outcome<UpdateNotebookResult, Aws::Athena::AthenaError> UpdateNotebookOutcome;
@@ -247,6 +268,8 @@ namespace Aws
       typedef std::future<BatchGetNamedQueryOutcome> BatchGetNamedQueryOutcomeCallable;
       typedef std::future<BatchGetPreparedStatementOutcome> BatchGetPreparedStatementOutcomeCallable;
       typedef std::future<BatchGetQueryExecutionOutcome> BatchGetQueryExecutionOutcomeCallable;
+      typedef std::future<CancelCapacityReservationOutcome> CancelCapacityReservationOutcomeCallable;
+      typedef std::future<CreateCapacityReservationOutcome> CreateCapacityReservationOutcomeCallable;
       typedef std::future<CreateDataCatalogOutcome> CreateDataCatalogOutcomeCallable;
       typedef std::future<CreateNamedQueryOutcome> CreateNamedQueryOutcomeCallable;
       typedef std::future<CreateNotebookOutcome> CreateNotebookOutcomeCallable;
@@ -262,6 +285,8 @@ namespace Aws
       typedef std::future<GetCalculationExecutionOutcome> GetCalculationExecutionOutcomeCallable;
       typedef std::future<GetCalculationExecutionCodeOutcome> GetCalculationExecutionCodeOutcomeCallable;
       typedef std::future<GetCalculationExecutionStatusOutcome> GetCalculationExecutionStatusOutcomeCallable;
+      typedef std::future<GetCapacityAssignmentConfigurationOutcome> GetCapacityAssignmentConfigurationOutcomeCallable;
+      typedef std::future<GetCapacityReservationOutcome> GetCapacityReservationOutcomeCallable;
       typedef std::future<GetDataCatalogOutcome> GetDataCatalogOutcomeCallable;
       typedef std::future<GetDatabaseOutcome> GetDatabaseOutcomeCallable;
       typedef std::future<GetNamedQueryOutcome> GetNamedQueryOutcomeCallable;
@@ -277,6 +302,7 @@ namespace Aws
       typedef std::future<ImportNotebookOutcome> ImportNotebookOutcomeCallable;
       typedef std::future<ListApplicationDPUSizesOutcome> ListApplicationDPUSizesOutcomeCallable;
       typedef std::future<ListCalculationExecutionsOutcome> ListCalculationExecutionsOutcomeCallable;
+      typedef std::future<ListCapacityReservationsOutcome> ListCapacityReservationsOutcomeCallable;
       typedef std::future<ListDataCatalogsOutcome> ListDataCatalogsOutcomeCallable;
       typedef std::future<ListDatabasesOutcome> ListDatabasesOutcomeCallable;
       typedef std::future<ListEngineVersionsOutcome> ListEngineVersionsOutcomeCallable;
@@ -290,6 +316,7 @@ namespace Aws
       typedef std::future<ListTableMetadataOutcome> ListTableMetadataOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListWorkGroupsOutcome> ListWorkGroupsOutcomeCallable;
+      typedef std::future<PutCapacityAssignmentConfigurationOutcome> PutCapacityAssignmentConfigurationOutcomeCallable;
       typedef std::future<StartCalculationExecutionOutcome> StartCalculationExecutionOutcomeCallable;
       typedef std::future<StartQueryExecutionOutcome> StartQueryExecutionOutcomeCallable;
       typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
@@ -298,6 +325,7 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateCapacityReservationOutcome> UpdateCapacityReservationOutcomeCallable;
       typedef std::future<UpdateDataCatalogOutcome> UpdateDataCatalogOutcomeCallable;
       typedef std::future<UpdateNamedQueryOutcome> UpdateNamedQueryOutcomeCallable;
       typedef std::future<UpdateNotebookOutcome> UpdateNotebookOutcomeCallable;
@@ -313,6 +341,8 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::BatchGetNamedQueryRequest&, const Model::BatchGetNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetNamedQueryResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::BatchGetPreparedStatementRequest&, const Model::BatchGetPreparedStatementOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetPreparedStatementResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::BatchGetQueryExecutionRequest&, const Model::BatchGetQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetQueryExecutionResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::CancelCapacityReservationRequest&, const Model::CancelCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelCapacityReservationResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::CreateCapacityReservationRequest&, const Model::CreateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateDataCatalogRequest&, const Model::CreateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateNamedQueryRequest&, const Model::CreateNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNamedQueryResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::CreateNotebookRequest&, const Model::CreateNotebookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateNotebookResponseReceivedHandler;
@@ -328,6 +358,8 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::GetCalculationExecutionRequest&, const Model::GetCalculationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculationExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetCalculationExecutionCodeRequest&, const Model::GetCalculationExecutionCodeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculationExecutionCodeResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetCalculationExecutionStatusRequest&, const Model::GetCalculationExecutionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculationExecutionStatusResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::GetCapacityAssignmentConfigurationRequest&, const Model::GetCapacityAssignmentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityAssignmentConfigurationResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::GetCapacityReservationRequest&, const Model::GetCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetDataCatalogRequest&, const Model::GetDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetDatabaseRequest&, const Model::GetDatabaseOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatabaseResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::GetNamedQueryRequest&, const Model::GetNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetNamedQueryResponseReceivedHandler;
@@ -343,6 +375,7 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::ImportNotebookRequest&, const Model::ImportNotebookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ImportNotebookResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListApplicationDPUSizesRequest&, const Model::ListApplicationDPUSizesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationDPUSizesResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListCalculationExecutionsRequest&, const Model::ListCalculationExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCalculationExecutionsResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::ListCapacityReservationsRequest&, const Model::ListCapacityReservationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCapacityReservationsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListDataCatalogsRequest&, const Model::ListDataCatalogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataCatalogsResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListDatabasesRequest&, const Model::ListDatabasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatabasesResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListEngineVersionsRequest&, const Model::ListEngineVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEngineVersionsResponseReceivedHandler;
@@ -356,6 +389,7 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::ListTableMetadataRequest&, const Model::ListTableMetadataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTableMetadataResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::ListWorkGroupsRequest&, const Model::ListWorkGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListWorkGroupsResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::PutCapacityAssignmentConfigurationRequest&, const Model::PutCapacityAssignmentConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutCapacityAssignmentConfigurationResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::StartCalculationExecutionRequest&, const Model::StartCalculationExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartCalculationExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::StartQueryExecutionRequest&, const Model::StartQueryExecutionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartQueryExecutionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSessionResponseReceivedHandler;
@@ -364,6 +398,7 @@ namespace Aws
     typedef std::function<void(const AthenaClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TerminateSessionResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const AthenaClient*, const Model::UpdateCapacityReservationRequest&, const Model::UpdateCapacityReservationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCapacityReservationResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateDataCatalogRequest&, const Model::UpdateDataCatalogOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataCatalogResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateNamedQueryRequest&, const Model::UpdateNamedQueryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNamedQueryResponseReceivedHandler;
     typedef std::function<void(const AthenaClient*, const Model::UpdateNotebookRequest&, const Model::UpdateNotebookOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateNotebookResponseReceivedHandler;

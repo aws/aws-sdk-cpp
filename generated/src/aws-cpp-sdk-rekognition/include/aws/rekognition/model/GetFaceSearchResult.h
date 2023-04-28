@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/rekognition/model/VideoMetadata.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rekognition/model/Video.h>
 #include <aws/rekognition/model/PersonMatch.h>
 #include <utility>
 
@@ -269,6 +270,122 @@ namespace Model
     inline GetFaceSearchResult& AddPersons(PersonMatch&& value) { m_persons.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline void SetJobId(const Aws::String& value) { m_jobId = value; }
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline void SetJobId(Aws::String&& value) { m_jobId = std::move(value); }
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline void SetJobId(const char* value) { m_jobId.assign(value); }
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline GetFaceSearchResult& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline GetFaceSearchResult& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
+
+    /**
+     * <p>Job identifier for the face search operation for which you want to obtain
+     * results. The job identifer is returned by an initial call to
+     * StartFaceSearch.</p>
+     */
+    inline GetFaceSearchResult& WithJobId(const char* value) { SetJobId(value); return *this;}
+
+
+    
+    inline const Video& GetVideo() const{ return m_video; }
+
+    
+    inline void SetVideo(const Video& value) { m_video = value; }
+
+    
+    inline void SetVideo(Video&& value) { m_video = std::move(value); }
+
+    
+    inline GetFaceSearchResult& WithVideo(const Video& value) { SetVideo(value); return *this;}
+
+    
+    inline GetFaceSearchResult& WithVideo(Video&& value) { SetVideo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline void SetJobTag(const Aws::String& value) { m_jobTag = value; }
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline void SetJobTag(Aws::String&& value) { m_jobTag = std::move(value); }
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline void SetJobTag(const char* value) { m_jobTag.assign(value); }
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline GetFaceSearchResult& WithJobTag(const Aws::String& value) { SetJobTag(value); return *this;}
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline GetFaceSearchResult& WithJobTag(Aws::String&& value) { SetJobTag(std::move(value)); return *this;}
+
+    /**
+     * <p>A job identifier specified in the call to StartFaceSearch and returned in the
+     * job completion notification sent to your Amazon Simple Notification Service
+     * topic.</p>
+     */
+    inline GetFaceSearchResult& WithJobTag(const char* value) { SetJobTag(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -301,6 +418,12 @@ namespace Model
     VideoMetadata m_videoMetadata;
 
     Aws::Vector<PersonMatch> m_persons;
+
+    Aws::String m_jobId;
+
+    Video m_video;
+
+    Aws::String m_jobTag;
 
     Aws::String m_requestId;
   };

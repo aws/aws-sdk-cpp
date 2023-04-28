@@ -313,81 +313,97 @@ namespace Model
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline ImportWorkspaceImageRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline ImportWorkspaceImageRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline ImportWorkspaceImageRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /**
      * <p>If specified, the version of Microsoft Office to subscribe to. Valid only for
-     * Windows 10 BYOL images. For more information about subscribing to Office for
-     * BYOL images, see <a
+     * Windows 10 and 11 BYOL images. For more information about subscribing to Office
+     * for BYOL images, see <a
      * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html">
-     * Bring Your Own Windows Desktop Licenses</a>.</p>  <p>Although this
-     * parameter is an array, only one item is allowed at this time.</p> 
+     * Bring Your Own Windows Desktop Licenses</a>.</p>  <ul> <li> <p>Although
+     * this parameter is an array, only one item is allowed at this time.</p> </li>
+     * <li> <p>Windows 11 only supports <code>Microsoft_Office_2019</code>.</p> </li>
+     * </ul> 
      */
     inline ImportWorkspaceImageRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 

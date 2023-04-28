@@ -20,6 +20,7 @@ StartSimulationRequest::StartSimulationRequest() :
     m_nameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_schemaS3LocationHasBeenSet(false),
+    m_snapshotS3LocationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -61,6 +62,12 @@ Aws::String StartSimulationRequest::SerializePayload() const
   if(m_schemaS3LocationHasBeenSet)
   {
    payload.WithObject("SchemaS3Location", m_schemaS3Location.Jsonize());
+
+  }
+
+  if(m_snapshotS3LocationHasBeenSet)
+  {
+   payload.WithObject("SnapshotS3Location", m_snapshotS3Location.Jsonize());
 
   }
 

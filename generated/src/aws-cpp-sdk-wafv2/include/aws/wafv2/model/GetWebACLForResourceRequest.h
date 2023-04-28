@@ -47,6 +47,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
@@ -64,6 +66,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -81,6 +85,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
@@ -98,6 +104,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
@@ -115,6 +123,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
@@ -132,6 +142,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline GetWebACLForResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
@@ -149,6 +161,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline GetWebACLForResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
@@ -166,6 +180,8 @@ namespace Model
      * <code>arn:<i>partition</i>:cognito-idp:<i>region</i>:<i>account-id</i>:userpool/<i>user-pool-id</i>
      * </code> </p> </li> <li> <p>For an App Runner service:
      * <code>arn:<i>partition</i>:apprunner:<i>region</i>:<i>account-id</i>:service/<i>apprunner-service-name</i>/<i>apprunner-service-id</i>
+     * </code> </p> </li> <li> <p>For an Amazon Web Services Verified Access instance:
+     * <code>arn:<i>partition</i>:ec2:<i>region</i>:<i>account-id</i>:verified-access-instance/<i>instance-id</i>
      * </code> </p> </li> </ul>
      */
     inline GetWebACLForResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}

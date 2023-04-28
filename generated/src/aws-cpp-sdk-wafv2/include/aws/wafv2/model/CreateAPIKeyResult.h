@@ -34,64 +34,43 @@ namespace Model
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline const Aws::String& GetAPIKey() const{ return m_aPIKey; }
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline void SetAPIKey(const Aws::String& value) { m_aPIKey = value; }
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline void SetAPIKey(Aws::String&& value) { m_aPIKey = std::move(value); }
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline void SetAPIKey(const char* value) { m_aPIKey.assign(value); }
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline CreateAPIKeyResult& WithAPIKey(const Aws::String& value) { SetAPIKey(value); return *this;}
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline CreateAPIKeyResult& WithAPIKey(Aws::String&& value) { SetAPIKey(std::move(value)); return *this;}
 
     /**
      * <p>The generated, encrypted API key. You can copy this for use in your
-     * JavaScript CAPTCHA integration. </p> <p>For information about how to use this in
-     * your CAPTCHA JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * JavaScript CAPTCHA integration. </p>
      */
     inline CreateAPIKeyResult& WithAPIKey(const char* value) { SetAPIKey(value); return *this;}
 

@@ -26,7 +26,7 @@ namespace Model
 {
 
   /**
-   * <p>A collection of metadata about an app.</p><p><h3>See Also:</h3>   <a
+   * <p>A collection of metadata about the app.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationAppMetadata">AWS
    * API Reference</a></p>
    */
@@ -41,57 +41,57 @@ namespace Model
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline SimulationAppMetadata& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline SimulationAppMetadata& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
      * <p>The domain of the app. For more information about domains, see <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline SimulationAppMetadata& WithDomain(const char* value) { SetDomain(value); return *this;}
 

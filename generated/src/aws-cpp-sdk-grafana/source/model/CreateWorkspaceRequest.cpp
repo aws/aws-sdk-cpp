@@ -19,6 +19,7 @@ CreateWorkspaceRequest::CreateWorkspaceRequest() :
     m_clientToken(Aws::Utils::UUID::RandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_configurationHasBeenSet(false),
+    m_grafanaVersionHasBeenSet(false),
     m_networkAccessControlHasBeenSet(false),
     m_organizationRoleNameHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
@@ -64,6 +65,12 @@ Aws::String CreateWorkspaceRequest::SerializePayload() const
   if(m_configurationHasBeenSet)
   {
    payload.WithString("configuration", m_configuration);
+
+  }
+
+  if(m_grafanaVersionHasBeenSet)
+  {
+   payload.WithString("grafanaVersion", m_grafanaVersion);
 
   }
 

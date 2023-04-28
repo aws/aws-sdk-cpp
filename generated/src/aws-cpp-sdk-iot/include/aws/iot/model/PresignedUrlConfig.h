@@ -38,8 +38,8 @@ namespace Model
 
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -49,8 +49,8 @@ namespace Model
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -60,8 +60,8 @@ namespace Model
     inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -71,8 +71,8 @@ namespace Model
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -82,8 +82,8 @@ namespace Model
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -93,8 +93,8 @@ namespace Model
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -104,8 +104,8 @@ namespace Model
     inline PresignedUrlConfig& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service
@@ -115,8 +115,8 @@ namespace Model
     inline PresignedUrlConfig& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of an IAM role that grants grants permission to download files from
-     * the S3 bucket where the job data/updates are stored. The role must also grant
+     * <p>The ARN of an IAM role that grants permission to download files from the S3
+     * bucket where the job data/updates are stored. The role must also grant
      * permission for IoT to download the files.</p>  <p>For information
      * about addressing the confused deputy problem, see <a
      * href="https://docs.aws.amazon.com/iot/latest/developerguide/cross-service-confused-deputy-prevention.html">cross-service

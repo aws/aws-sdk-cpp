@@ -24,6 +24,8 @@ namespace Aws
         static const int ENABLING_HASH = HashingUtils::HashString("ENABLING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int PAUSED_HASH = HashingUtils::HashString("PAUSED");
+        static const int PAUSING_HASH = HashingUtils::HashString("PAUSING");
 
 
         ReplicationStatus GetReplicationStatusForName(const Aws::String& name)
@@ -44,6 +46,14 @@ namespace Aws
           else if (hashCode == ERROR__HASH)
           {
             return ReplicationStatus::ERROR_;
+          }
+          else if (hashCode == PAUSED_HASH)
+          {
+            return ReplicationStatus::PAUSED;
+          }
+          else if (hashCode == PAUSING_HASH)
+          {
+            return ReplicationStatus::PAUSING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -67,6 +77,10 @@ namespace Aws
             return "DELETING";
           case ReplicationStatus::ERROR_:
             return "ERROR";
+          case ReplicationStatus::PAUSED:
+            return "PAUSED";
+          case ReplicationStatus::PAUSING:
+            return "PAUSING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

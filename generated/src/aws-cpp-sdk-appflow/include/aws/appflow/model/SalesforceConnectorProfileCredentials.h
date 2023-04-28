@@ -7,6 +7,7 @@
 #include <aws/appflow/Appflow_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/appflow/model/ConnectorOAuthRequest.h>
+#include <aws/appflow/model/OAuth2GrantType.h>
 #include <utility>
 
 namespace Aws
@@ -206,6 +207,176 @@ namespace Model
      */
     inline SalesforceConnectorProfileCredentials& WithClientCredentialsArn(const char* value) { SetClientCredentialsArn(value); return *this;}
 
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline const OAuth2GrantType& GetOAuth2GrantType() const{ return m_oAuth2GrantType; }
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline bool OAuth2GrantTypeHasBeenSet() const { return m_oAuth2GrantTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline void SetOAuth2GrantType(const OAuth2GrantType& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = value; }
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline void SetOAuth2GrantType(OAuth2GrantType&& value) { m_oAuth2GrantTypeHasBeenSet = true; m_oAuth2GrantType = std::move(value); }
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline SalesforceConnectorProfileCredentials& WithOAuth2GrantType(const OAuth2GrantType& value) { SetOAuth2GrantType(value); return *this;}
+
+    /**
+     * <p>Specifies the OAuth 2.0 grant type that Amazon AppFlow uses when it requests
+     * an access token from Salesforce. Amazon AppFlow requires an access token each
+     * time it attempts to access your Salesforce records.</p> <p>You can specify one
+     * of the following values:</p> <dl> <dt>AUTHORIZATION_CODE</dt> <dd> <p>Amazon
+     * AppFlow passes an authorization code when it requests the access token from
+     * Salesforce. Amazon AppFlow receives the authorization code from Salesforce after
+     * you log in to your Salesforce account and authorize Amazon AppFlow to access
+     * your records.</p> </dd> <dt>CLIENT_CREDENTIALS</dt> <dd> <p>Amazon AppFlow
+     * passes client credentials (a client ID and client secret) when it requests the
+     * access token from Salesforce. You provide these credentials to Amazon AppFlow
+     * when you define the connection to your Salesforce account.</p> </dd>
+     * <dt>JWT_BEARER</dt> <dd> <p>Amazon AppFlow passes a JSON web token (JWT) when it
+     * requests the access token from Salesforce. You provide the JWT to Amazon AppFlow
+     * when you define the connection to your Salesforce account. When you use this
+     * grant type, you don't need to log in to your Salesforce account to authorize
+     * Amazon AppFlow to access your records.</p> </dd> </dl>
+     */
+    inline SalesforceConnectorProfileCredentials& WithOAuth2GrantType(OAuth2GrantType&& value) { SetOAuth2GrantType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline const Aws::String& GetJwtToken() const{ return m_jwtToken; }
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline bool JwtTokenHasBeenSet() const { return m_jwtTokenHasBeenSet; }
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline void SetJwtToken(const Aws::String& value) { m_jwtTokenHasBeenSet = true; m_jwtToken = value; }
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline void SetJwtToken(Aws::String&& value) { m_jwtTokenHasBeenSet = true; m_jwtToken = std::move(value); }
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline void SetJwtToken(const char* value) { m_jwtTokenHasBeenSet = true; m_jwtToken.assign(value); }
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithJwtToken(const Aws::String& value) { SetJwtToken(value); return *this;}
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithJwtToken(Aws::String&& value) { SetJwtToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A JSON web token (JWT) that authorizes Amazon AppFlow to access your
+     * Salesforce records.</p>
+     */
+    inline SalesforceConnectorProfileCredentials& WithJwtToken(const char* value) { SetJwtToken(value); return *this;}
+
   private:
 
     Aws::String m_accessToken;
@@ -219,6 +390,12 @@ namespace Model
 
     Aws::String m_clientCredentialsArn;
     bool m_clientCredentialsArnHasBeenSet = false;
+
+    OAuth2GrantType m_oAuth2GrantType;
+    bool m_oAuth2GrantTypeHasBeenSet = false;
+
+    Aws::String m_jwtToken;
+    bool m_jwtTokenHasBeenSet = false;
   };
 
 } // namespace Model

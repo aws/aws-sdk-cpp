@@ -42,8 +42,9 @@ namespace Model
    * <a>RuleGroup</a>, and managed rule group. You can associate a web ACL with one
    * or more Amazon Web Services resources to protect. The resources can be an Amazon
    * CloudFront distribution, an Amazon API Gateway REST API, an Application Load
-   * Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, or an App Runner
-   * service. </p><p><h3>See Also:</h3>   <a
+   * Balancer, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner
+   * service, or an Amazon Web Services Verified Access instance. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/WebACL">AWS API
    * Reference</a></p>
    */

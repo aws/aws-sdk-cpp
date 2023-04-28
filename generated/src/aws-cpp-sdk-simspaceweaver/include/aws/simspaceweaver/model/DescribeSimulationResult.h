@@ -268,51 +268,72 @@ namespace Model
 
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline const Aws::String& GetMaximumDuration() const{ return m_maximumDuration; }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(const Aws::String& value) { m_maximumDuration = value; }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(Aws::String&& value) { m_maximumDuration = std::move(value); }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline void SetMaximumDuration(const char* value) { m_maximumDuration.assign(value); }
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline DescribeSimulationResult& WithMaximumDuration(const Aws::String& value) { SetMaximumDuration(value); return *this;}
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline DescribeSimulationResult& WithMaximumDuration(Aws::String&& value) { SetMaximumDuration(std::move(value)); return *this;}
 
     /**
-     * <p>The maximum running time of the simulation, specified as a number of months
+     * <p>The maximum running time of the simulation, specified as a number of minutes
      * (m or M), hours (h or H), or days (d or D). The simulation stops when it reaches
-     * this limit.</p>
+     * this limit. The maximum value is <code>14D</code>, or its equivalent in the
+     * other units. The default value is <code>14D</code>. A value equivalent to
+     * <code>0</code> makes the simulation immediately transition to
+     * <code>Stopping</code> as soon as it reaches <code>Started</code>.</p>
      */
     inline DescribeSimulationResult& WithMaximumDuration(const char* value) { SetMaximumDuration(value); return *this;}
 
@@ -439,49 +460,6 @@ namespace Model
 
 
     /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline const Aws::String& GetSchemaError() const{ return m_schemaError; }
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline void SetSchemaError(const Aws::String& value) { m_schemaError = value; }
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline void SetSchemaError(Aws::String&& value) { m_schemaError = std::move(value); }
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline void SetSchemaError(const char* value) { m_schemaError.assign(value); }
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline DescribeSimulationResult& WithSchemaError(const Aws::String& value) { SetSchemaError(value); return *this;}
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline DescribeSimulationResult& WithSchemaError(Aws::String&& value) { SetSchemaError(std::move(value)); return *this;}
-
-    /**
-     * <p>An error message that SimSpace Weaver returns only if there is a problem with
-     * the simulation schema.</p>
-     */
-    inline DescribeSimulationResult& WithSchemaError(const char* value) { SetSchemaError(value); return *this;}
-
-
-    /**
      * <p>The location of the simulation schema in Amazon Simple Storage Service
      * (Amazon S3). For more information about Amazon S3, see the <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/Welcome.html">
@@ -520,6 +498,65 @@ namespace Model
      * <i>Amazon Simple Storage Service User Guide</i> </a>.</p>
      */
     inline DescribeSimulationResult& WithSchemaS3Location(S3Location&& value) { SetSchemaS3Location(std::move(value)); return *this;}
+
+
+    
+    inline const S3Location& GetSnapshotS3Location() const{ return m_snapshotS3Location; }
+
+    
+    inline void SetSnapshotS3Location(const S3Location& value) { m_snapshotS3Location = value; }
+
+    
+    inline void SetSnapshotS3Location(S3Location&& value) { m_snapshotS3Location = std::move(value); }
+
+    
+    inline DescribeSimulationResult& WithSnapshotS3Location(const S3Location& value) { SetSnapshotS3Location(value); return *this;}
+
+    
+    inline DescribeSimulationResult& WithSnapshotS3Location(S3Location&& value) { SetSnapshotS3Location(std::move(value)); return *this;}
+
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline const Aws::String& GetStartError() const{ return m_startError; }
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline void SetStartError(const Aws::String& value) { m_startError = value; }
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline void SetStartError(Aws::String&& value) { m_startError = std::move(value); }
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline void SetStartError(const char* value) { m_startError.assign(value); }
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline DescribeSimulationResult& WithStartError(const Aws::String& value) { SetStartError(value); return *this;}
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline DescribeSimulationResult& WithStartError(Aws::String&& value) { SetStartError(std::move(value)); return *this;}
+
+    /**
+     * <p>An error message that SimSpace Weaver returns only if a problem occurs when
+     * the simulation is in the <code>STARTING</code> state.</p>
+     */
+    inline DescribeSimulationResult& WithStartError(const char* value) { SetStartError(value); return *this;}
 
 
     /**
@@ -615,9 +652,11 @@ namespace Model
 
     Aws::String m_roleArn;
 
-    Aws::String m_schemaError;
-
     S3Location m_schemaS3Location;
+
+    S3Location m_snapshotS3Location;
+
+    Aws::String m_startError;
 
     SimulationStatus m_status;
 

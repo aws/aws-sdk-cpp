@@ -23,7 +23,8 @@ namespace Model
     STOPPED,
     FAILED,
     DELETING,
-    DELETED
+    DELETED,
+    SNAPSHOT_IN_PROGRESS
   };
 
 namespace SimulationStatusMapper

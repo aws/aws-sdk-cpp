@@ -35,79 +35,79 @@ namespace Model
 
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline ListSimulationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline ListSimulationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>If SimSpace Weaver returns <code>nextToken</code>, there are more results
-     * available. The value of <code>nextToken</code> is a unique pagination token for
-     * each page. To retrieve the next page, call the operation again using the
-     * returned token. Keep all other arguments unchanged. If no results remain,
-     * <code>nextToken</code> is set to <code>null</code>. Each pagination token
-     * expires after 24 hours. If you provide a token that isn't valid, you receive an
-     * <i>HTTP 400 ValidationException</i> error.</p>
+     * <p>If SimSpace Weaver returns <code>nextToken</code>, then there are more
+     * results available. The value of <code>nextToken</code> is a unique pagination
+     * token for each page. To retrieve the next page, call the operation again using
+     * the returned token. Keep all other arguments unchanged. If no results remain,
+     * then <code>nextToken</code> is set to <code>null</code>. Each pagination token
+     * expires after 24 hours. If you provide a token that isn't valid, then you
+     * receive an <i>HTTP 400 ValidationException</i> error.</p>
      */
     inline ListSimulationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

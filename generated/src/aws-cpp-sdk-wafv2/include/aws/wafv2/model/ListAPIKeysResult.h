@@ -143,64 +143,43 @@ namespace Model
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline const Aws::String& GetApplicationIntegrationURL() const{ return m_applicationIntegrationURL; }
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline void SetApplicationIntegrationURL(const Aws::String& value) { m_applicationIntegrationURL = value; }
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline void SetApplicationIntegrationURL(Aws::String&& value) { m_applicationIntegrationURL = std::move(value); }
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline void SetApplicationIntegrationURL(const char* value) { m_applicationIntegrationURL.assign(value); }
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline ListAPIKeysResult& WithApplicationIntegrationURL(const Aws::String& value) { SetApplicationIntegrationURL(value); return *this;}
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline ListAPIKeysResult& WithApplicationIntegrationURL(Aws::String&& value) { SetApplicationIntegrationURL(std::move(value)); return *this;}
 
     /**
      * <p>The CAPTCHA application integration URL, for use in your JavaScript
-     * implementation. </p> <p>For information about how to use this in your CAPTCHA
-     * JavaScript integration, see <a
-     * href="https://docs.aws.amazon.com/waf/latest/developerguide/waf-application-integration.html">WAF
-     * client application integration</a> in the <i>WAF Developer Guide</i>.</p>
+     * implementation. </p>
      */
     inline ListAPIKeysResult& WithApplicationIntegrationURL(const char* value) { SetApplicationIntegrationURL(value); return *this;}
 

@@ -92,64 +92,64 @@ namespace Model
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline const Aws::Vector<Domain>& GetDomains() const{ return m_domains; }
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline void SetDomains(const Aws::Vector<Domain>& value) { m_domainsHasBeenSet = true; m_domains = value; }
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline void SetDomains(Aws::Vector<Domain>&& value) { m_domainsHasBeenSet = true; m_domains = std::move(value); }
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline LiveSimulationState& WithDomains(const Aws::Vector<Domain>& value) { SetDomains(value); return *this;}
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline LiveSimulationState& WithDomains(Aws::Vector<Domain>&& value) { SetDomains(std::move(value)); return *this;}
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline LiveSimulationState& AddDomains(const Domain& value) { m_domainsHasBeenSet = true; m_domains.push_back(value); return *this; }
 
     /**
      * <p>A list of domains for the simulation. For more information about domains, see
      * <a
-     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html">Key
-     * concepts</a> in the <i>Amazon Web Services SimSpace Weaver User Guide</i>.</p>
+     * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_domains">Key
+     * concepts: Domains</a> in the <i>SimSpace Weaver User Guide</i>.</p>
      */
     inline LiveSimulationState& AddDomains(Domain&& value) { m_domainsHasBeenSet = true; m_domains.push_back(std::move(value)); return *this; }
 

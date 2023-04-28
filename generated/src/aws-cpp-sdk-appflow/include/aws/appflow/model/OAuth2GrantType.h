@@ -17,7 +17,8 @@ namespace Model
   {
     NOT_SET,
     CLIENT_CREDENTIALS,
-    AUTHORIZATION_CODE
+    AUTHORIZATION_CODE,
+    JWT_BEARER
   };
 
 namespace OAuth2GrantTypeMapper

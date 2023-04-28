@@ -27,7 +27,10 @@ namespace Model
 
   /**
    * <p>Information about the network endpoint that you can use to connect to your
-   * custom or service app.</p><p><h3>See Also:</h3>   <a
+   * custom or service app. For more information about SimSpace Weaver apps, see <a
+   * href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/what-is_key-concepts.html#what-is_key-concepts_apps">Key
+   * concepts: Apps</a> in the <i>SimSpace Weaver User Guide</i>..</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/simspaceweaver-2022-10-28/SimulationAppEndpointInfo">AWS
    * API Reference</a></p>
    */

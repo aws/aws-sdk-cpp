@@ -38,25 +38,29 @@ namespace Model
 
     /**
      * <p>The number of physical dedicated connections initially provisioned and
-     * bundled by the LAG.</p>
+     * bundled by the LAG. You can have a maximum of four connections when the port
+     * speed is 1G or 10G, or two when the port speed is 100G. </p>
      */
     inline int GetNumberOfConnections() const{ return m_numberOfConnections; }
 
     /**
      * <p>The number of physical dedicated connections initially provisioned and
-     * bundled by the LAG.</p>
+     * bundled by the LAG. You can have a maximum of four connections when the port
+     * speed is 1G or 10G, or two when the port speed is 100G. </p>
      */
     inline bool NumberOfConnectionsHasBeenSet() const { return m_numberOfConnectionsHasBeenSet; }
 
     /**
      * <p>The number of physical dedicated connections initially provisioned and
-     * bundled by the LAG.</p>
+     * bundled by the LAG. You can have a maximum of four connections when the port
+     * speed is 1G or 10G, or two when the port speed is 100G. </p>
      */
     inline void SetNumberOfConnections(int value) { m_numberOfConnectionsHasBeenSet = true; m_numberOfConnections = value; }
 
     /**
      * <p>The number of physical dedicated connections initially provisioned and
-     * bundled by the LAG.</p>
+     * bundled by the LAG. You can have a maximum of four connections when the port
+     * speed is 1G or 10G, or two when the port speed is 100G. </p>
      */
     inline CreateLagRequest& WithNumberOfConnections(int value) { SetNumberOfConnections(value); return *this;}
 

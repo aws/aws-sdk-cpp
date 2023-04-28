@@ -42,28 +42,28 @@ namespace Model
     /**
      * <p>The number of DPUs to use for the coordinator. A coordinator is a special
      * executor that orchestrates processing work and manages other executors in a
-     * notebook session.</p>
+     * notebook session. The default is 1.</p>
      */
     inline int GetCoordinatorDpuSize() const{ return m_coordinatorDpuSize; }
 
     /**
      * <p>The number of DPUs to use for the coordinator. A coordinator is a special
      * executor that orchestrates processing work and manages other executors in a
-     * notebook session.</p>
+     * notebook session. The default is 1.</p>
      */
     inline bool CoordinatorDpuSizeHasBeenSet() const { return m_coordinatorDpuSizeHasBeenSet; }
 
     /**
      * <p>The number of DPUs to use for the coordinator. A coordinator is a special
      * executor that orchestrates processing work and manages other executors in a
-     * notebook session.</p>
+     * notebook session. The default is 1.</p>
      */
     inline void SetCoordinatorDpuSize(int value) { m_coordinatorDpuSizeHasBeenSet = true; m_coordinatorDpuSize = value; }
 
     /**
      * <p>The number of DPUs to use for the coordinator. A coordinator is a special
      * executor that orchestrates processing work and manages other executors in a
-     * notebook session.</p>
+     * notebook session. The default is 1.</p>
      */
     inline EngineConfiguration& WithCoordinatorDpuSize(int value) { SetCoordinatorDpuSize(value); return *this;}
 
@@ -91,25 +91,29 @@ namespace Model
 
     /**
      * <p>The default number of DPUs to use for executors. An executor is the smallest
-     * unit of compute that a notebook session can request from Athena.</p>
+     * unit of compute that a notebook session can request from Athena. The default is
+     * 1.</p>
      */
     inline int GetDefaultExecutorDpuSize() const{ return m_defaultExecutorDpuSize; }
 
     /**
      * <p>The default number of DPUs to use for executors. An executor is the smallest
-     * unit of compute that a notebook session can request from Athena.</p>
+     * unit of compute that a notebook session can request from Athena. The default is
+     * 1.</p>
      */
     inline bool DefaultExecutorDpuSizeHasBeenSet() const { return m_defaultExecutorDpuSizeHasBeenSet; }
 
     /**
      * <p>The default number of DPUs to use for executors. An executor is the smallest
-     * unit of compute that a notebook session can request from Athena.</p>
+     * unit of compute that a notebook session can request from Athena. The default is
+     * 1.</p>
      */
     inline void SetDefaultExecutorDpuSize(int value) { m_defaultExecutorDpuSizeHasBeenSet = true; m_defaultExecutorDpuSize = value; }
 
     /**
      * <p>The default number of DPUs to use for executors. An executor is the smallest
-     * unit of compute that a notebook session can request from Athena.</p>
+     * unit of compute that a notebook session can request from Athena. The default is
+     * 1.</p>
      */
     inline EngineConfiguration& WithDefaultExecutorDpuSize(int value) { SetDefaultExecutorDpuSize(value); return *this;}
 
