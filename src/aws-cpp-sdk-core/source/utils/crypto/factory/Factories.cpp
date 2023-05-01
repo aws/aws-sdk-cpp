@@ -9,10 +9,18 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/CRC32.h>
 
+#ifndef NO_ENCRYPTION
 #include <aws/core/utils/crypto/crt/CRTSymmetricCipher.h>
 #include <aws/core/utils/crypto/crt/CRTHash.h>
 #include <aws/core/utils/crypto/crt/CRTHMAC.h>
 #include <aws/core/utils/crypto/crt/CRTSecureRandom.h>
+#else
+    // if you don't have any encryption you still need to pull in the interface definitions
+    #include <aws/core/utils/crypto/Hash.h>
+    #include <aws/core/utils/crypto/HMAC.h>
+    #include <aws/core/utils/crypto/Cipher.h>
+    #include <aws/core/utils/crypto/SecureRandom.h>
+#endif
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Crypto;
@@ -98,7 +106,11 @@ class DefaultMD5Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
+#ifndef NO_ENCRYPTION
         return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateMD5());
+#else
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -141,7 +153,11 @@ class DefaultSHA1Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
+#ifndef NO_ENCRYPTION
         return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA1());
+#else
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -166,7 +182,11 @@ class DefaultSHA256Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
+#ifndef NO_ENCRYPTION
         return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA256());
+#else
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -191,7 +211,11 @@ class DefaultSHA256HmacFactory : public HMACFactory
 public:
     std::shared_ptr<Aws::Utils::Crypto::HMAC> CreateImplementation() const override
     {
+#ifndef NO_ENCRYPTION
         return Aws::MakeShared<CRT_SHA256HMAC>(s_allocationTag);
+#else
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -217,26 +241,37 @@ class DefaultAES_CBCFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CBC_Cipher(keyCur));
+#else
+        (void)key;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
         auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CBC_Cipher(keyCur, ivCur));
+#else
+        (void)key;
+        (void)iv;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
+
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&&aad) const override
     {
-        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
-        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CBC_Cipher(keyCur, ivCur));
+        return CreateImplementation(key, iv, tag, aad);
+
     }
 
     /**
@@ -261,26 +296,35 @@ class DefaultAES_CTRFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
+#ifndef NO_ENCRYPTION
         Aws::Crt::ByteCursor keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CTR_Cipher(keyCur));
+#else
+        (void)key;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
         auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CTR_Cipher(keyCur, ivCur));
+#else
+        (void)key;
+        (void)iv;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad) const override
     {
-        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
-        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CTR_Cipher(keyCur, ivCur));
+        return CreateImplementation(key, iv, tag, aad);
     }
 
     /**
@@ -305,12 +349,18 @@ class DefaultAES_GCMFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur));
+#else
+        (void)key;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer* aad) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
 
         if (aad)
@@ -320,6 +370,11 @@ public:
         }
 
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur));
+#else
+        (void)key;
+        (void)aad;
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -327,12 +382,20 @@ public:
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer& aad) const override
     {
+#ifndef NO_ENCRYPTION
         Aws::Crt::Optional<Aws::Crt::ByteCursor> keyCur = key.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
         Aws::Crt::Optional<Aws::Crt::ByteCursor> ivCur = iv.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
         Aws::Crt::Optional<Aws::Crt::ByteCursor> tagCur = tag.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
         Aws::Crt::Optional<Aws::Crt::ByteCursor> aadCur = aad.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
 
         return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, aadCur, tagCur));
+#else
+        (void)key;
+        (void)iv;
+        (void)tag;
+        (void)aad;
+        return nullptr;
+#endif
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
@@ -364,8 +427,13 @@ class DefaultAES_KeyWrapFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
+#ifndef NO_ENCRYPTION
         auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
-        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_KeyWrap_Cipher(keyCur));    }
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_KeyWrap_Cipher(keyCur));
+#else
+        return nullptr;
+#endif /* NO_ENCRYPTION */
+    }
     /**
     * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
     */

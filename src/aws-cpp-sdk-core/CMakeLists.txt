@@ -212,8 +212,10 @@ else()
 endif()
 
 # encryption implementations
-file(GLOB UTILS_CRYPTO_CRT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/crt/*.h")
-file(GLOB UTILS_CRYPTO_CRT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/crt/*.cpp")
+if (NOT NO_ENCRYPTION)
+    file(GLOB UTILS_CRYPTO_CRT_HEADERS "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/utils/crypto/crt/*.h")
+    file(GLOB UTILS_CRYPTO_CRT_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/crt/*.cpp")
+endif()
 
 file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${AWS_TINYXML2_SOURCE}
@@ -440,7 +442,9 @@ if(MSVC)
         source_group("Source Files\\http\\crt" FILES ${CRT_HTTP_SOURCE})
     endif()
 
-    source_group("Source Files\\utils\\crypto\\crt" FILES ${UTILS_CRYPTO_CRT_SOURCE})
+    if (NOT NO_ENCRYPTION)
+        source_group("Source Files\\utils\\crypto\\crt" FILES ${UTILS_CRYPTO_CRT_SOURCE})
+    endif()
 endif(MSVC)
 
 add_library(${PROJECT_NAME} ${AWS_NATIVE_SDK_SRC})
@@ -466,6 +470,10 @@ if (CURL_HAS_TLS_PROXY)
     target_compile_definitions(${PROJECT_NAME} PRIVATE "CURL_HAS_TLS_PROXY")
 endif()
 
+if (NO_ENCRYPTION)
+    target_compile_definitions(${PROJECT_NAME} PRIVATE "NO_ENCRYPTION")
+endif()
+
 set(Core_INCLUDES "${CMAKE_CURRENT_SOURCE_DIR}/include/")
 
 if(PLATFORM_CUSTOM)
@@ -478,7 +486,6 @@ if(PLATFORM_CUSTOM)
     add_custom_definitions()
   endif()
 endif()
-
 
 if(NOT PLATFORM_CUSTOM)
     target_include_directories(${PROJECT_NAME} PRIVATE "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/platform/refs")
