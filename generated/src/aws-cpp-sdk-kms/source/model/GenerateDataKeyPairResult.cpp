@@ -59,6 +59,11 @@ GenerateDataKeyPairResult& GenerateDataKeyPairResult::operator =(const Aws::Amaz
 
   }
 
+  if(jsonValue.ValueExists("CiphertextForRecipient"))
+  {
+    m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

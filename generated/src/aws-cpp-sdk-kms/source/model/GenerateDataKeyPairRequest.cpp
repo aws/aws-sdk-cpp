@@ -17,7 +17,8 @@ GenerateDataKeyPairRequest::GenerateDataKeyPairRequest() :
     m_keyIdHasBeenSet(false),
     m_keyPairSpec(DataKeyPairSpec::NOT_SET),
     m_keyPairSpecHasBeenSet(false),
-    m_grantTokensHasBeenSet(false)
+    m_grantTokensHasBeenSet(false),
+    m_recipientHasBeenSet(false)
 {
 }
 
@@ -55,6 +56,12 @@ Aws::String GenerateDataKeyPairRequest::SerializePayload() const
      grantTokensJsonList[grantTokensIndex].AsString(m_grantTokens[grantTokensIndex]);
    }
    payload.WithArray("GrantTokens", std::move(grantTokensJsonList));
+
+  }
+
+  if(m_recipientHasBeenSet)
+  {
+   payload.WithObject("Recipient", m_recipient.Jsonize());
 
   }
 

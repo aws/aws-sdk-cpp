@@ -35,6 +35,11 @@ GenerateRandomResult& GenerateRandomResult::operator =(const Aws::AmazonWebServi
     m_plaintext = HashingUtils::Base64Decode(jsonValue.GetString("Plaintext"));
   }
 
+  if(jsonValue.ValueExists("CiphertextForRecipient"))
+  {
+    m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

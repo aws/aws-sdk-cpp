@@ -220,13 +220,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -238,13 +241,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -256,13 +262,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -274,13 +283,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -292,13 +304,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -310,13 +325,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -328,13 +346,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -346,13 +367,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -364,13 +388,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -382,13 +409,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -400,13 +430,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -418,13 +451,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */
@@ -436,13 +472,16 @@ namespace Model
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic
      * operations</a> with a symmetric encryption KMS key. The standard asymmetric
      * encryption algorithms and HMAC algorithms that KMS uses do not support an
-     * encryption context. </p> <p>An <i>encryption context</i> is a collection of
-     * non-secret key-value pairs that represent additional authenticated data. When
-     * you use an encryption context to encrypt data, you must specify the same (an
-     * exact case-sensitive match) encryption context to decrypt the data. An
-     * encryption context is supported only on operations with symmetric encryption KMS
-     * keys. On operations with symmetric encryption KMS keys, an encryption context is
-     * optional, but it is strongly recommended.</p> <p>For more information, see <a
+     * encryption context. </p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>An <i>encryption
+     * context</i> is a collection of non-secret key-value pairs that represent
+     * additional authenticated data. When you use an encryption context to encrypt
+     * data, you must specify the same (an exact case-sensitive match) encryption
+     * context to decrypt the data. An encryption context is supported only on
+     * operations with symmetric encryption KMS keys. On operations with symmetric
+     * encryption KMS keys, an encryption context is optional, but it is strongly
+     * recommended.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
      * context</a> in the <i>Key Management Service Developer Guide</i>.</p>
      */

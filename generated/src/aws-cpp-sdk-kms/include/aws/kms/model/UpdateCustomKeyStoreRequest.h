@@ -96,64 +96,88 @@ namespace Model
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline const Aws::String& GetNewCustomKeyStoreName() const{ return m_newCustomKeyStoreName; }
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline bool NewCustomKeyStoreNameHasBeenSet() const { return m_newCustomKeyStoreNameHasBeenSet; }
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline void SetNewCustomKeyStoreName(const Aws::String& value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName = value; }
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline void SetNewCustomKeyStoreName(Aws::String&& value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName = std::move(value); }
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline void SetNewCustomKeyStoreName(const char* value) { m_newCustomKeyStoreNameHasBeenSet = true; m_newCustomKeyStoreName.assign(value); }
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(const Aws::String& value) { SetNewCustomKeyStoreName(value); return *this;}
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(Aws::String&& value) { SetNewCustomKeyStoreName(std::move(value)); return *this;}
 
     /**
      * <p>Changes the friendly name of the custom key store to the value that you
      * specify. The custom key store name must be unique in the Amazon Web Services
-     * account.</p> <p>To change this value, an CloudHSM key store must be
-     * disconnected. An external key store can be connected or disconnected.</p>
+     * account.</p>  <p>Do not include confidential or sensitive information
+     * in this field. This field may be displayed in plaintext in CloudTrail logs and
+     * other output.</p>  <p>To change this value, an CloudHSM key store
+     * must be disconnected. An external key store can be connected or
+     * disconnected.</p>
      */
     inline UpdateCustomKeyStoreRequest& WithNewCustomKeyStoreName(const char* value) { SetNewCustomKeyStoreName(value); return *this;}
 

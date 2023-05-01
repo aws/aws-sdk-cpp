@@ -48,67 +48,145 @@ namespace Model
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline const FilterName& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline void SetName(const FilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline void SetName(FilterName&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline Filter& WithName(const FilterName& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the filter.</p> <p>Specify <code>Finding</code> to return
-     * recommendations with a specific finding classification (for example,
-     * <code>Underprovisioned</code>).</p> <p>Specify
+     * recommendations with a specific finding classification. For example,
+     * <code>Underprovisioned</code>.</p> <p>Specify
      * <code>RecommendationSourceType</code> to return recommendations of a specific
-     * resource type (for example, <code>Ec2Instance</code>).</p> <p>Specify
+     * resource type. For example, <code>Ec2Instance</code>.</p> <p>Specify
      * <code>FindingReasonCodes</code> to return recommendations with a specific
-     * finding reason code (for example, <code>CPUUnderprovisioned</code>).</p>
+     * finding reason code. For example, <code>CPUUnderprovisioned</code>.</p>
+     * <p>Specify <code>InferredWorkloadTypes</code> to return recommendations of a
+     * specific inferred workload. For example, <code>Redis</code>.</p> <p>You can
+     * filter your EC2 instance recommendations by <code>tag:key</code> and
+     * <code>tag-key</code> tags.</p> <p>A <code>tag:key</code> is a key and value
+     * combination of a tag assigned to your recommendations. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * recommendations that have a tag with the key of <code>Owner</code> and the value
+     * of <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> <p>A <code>tag-key</code> is the
+     * key of a tag assigned to your recommendations. Use this filter to find all of
+     * your recommendations that have a tag with a specific key. This doesn’t consider
+     * the tag value. For example, you can find your recommendations with a tag key
+     * value of <code>Owner</code> or without any tag keys assigned.</p>
      */
     inline Filter& WithName(FilterName&& value) { SetName(std::move(value)); return *this;}
 

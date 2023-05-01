@@ -49,6 +49,11 @@ DecryptResult& DecryptResult::operator =(const Aws::AmazonWebServiceResult<JsonV
 
   }
 
+  if(jsonValue.ValueExists("CiphertextForRecipient"))
+  {
+    m_ciphertextForRecipient = HashingUtils::Base64Decode(jsonValue.GetString("CiphertextForRecipient"));
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

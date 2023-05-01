@@ -23,7 +23,8 @@ namespace Model
     Nginx,
     PostgreSql,
     Redis,
-    Kafka
+    Kafka,
+    SQLServer
   };
 
 namespace InferredWorkloadTypeMapper

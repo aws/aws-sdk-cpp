@@ -36,11 +36,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -48,11 +50,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -60,11 +64,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -72,11 +78,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -84,11 +92,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -96,11 +106,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -108,11 +120,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */
@@ -120,11 +134,13 @@ namespace Model
 
     /**
      * <p>Specifies the alias name. This value must begin with <code>alias/</code>
-     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> <p>The
-     * <code>AliasName</code> value must be string of 1-256 characters. It can contain
-     * only alphanumeric characters, forward slashes (/), underscores (_), and dashes
-     * (-). The alias name cannot begin with <code>alias/aws/</code>. The
-     * <code>alias/aws/</code> prefix is reserved for <a
+     * followed by a name, such as <code>alias/ExampleAlias</code>. </p> 
+     * <p>Do not include confidential or sensitive information in this field. This
+     * field may be displayed in plaintext in CloudTrail logs and other output.</p>
+     *  <p>The <code>AliasName</code> value must be string of 1-256
+     * characters. It can contain only alphanumeric characters, forward slashes (/),
+     * underscores (_), and dashes (-). The alias name cannot begin with
+     * <code>alias/aws/</code>. The <code>alias/aws/</code> prefix is reserved for <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon
      * Web Services managed keys</a>.</p>
      */

@@ -116,42 +116,58 @@ namespace Model
 
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline UpdateKeyDescriptionRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline UpdateKeyDescriptionRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>New description for the KMS key.</p>
+     * <p>New description for the KMS key.</p>  <p>Do not include
+     * confidential or sensitive information in this field. This field may be displayed
+     * in plaintext in CloudTrail logs and other output.</p> 
      */
     inline UpdateKeyDescriptionRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 

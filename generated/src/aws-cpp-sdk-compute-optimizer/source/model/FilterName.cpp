@@ -23,6 +23,7 @@ namespace Aws
         static const int Finding_HASH = HashingUtils::HashString("Finding");
         static const int FindingReasonCodes_HASH = HashingUtils::HashString("FindingReasonCodes");
         static const int RecommendationSourceType_HASH = HashingUtils::HashString("RecommendationSourceType");
+        static const int InferredWorkloadTypes_HASH = HashingUtils::HashString("InferredWorkloadTypes");
 
 
         FilterName GetFilterNameForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           else if (hashCode == RecommendationSourceType_HASH)
           {
             return FilterName::RecommendationSourceType;
+          }
+          else if (hashCode == InferredWorkloadTypes_HASH)
+          {
+            return FilterName::InferredWorkloadTypes;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -60,6 +65,8 @@ namespace Aws
             return "FindingReasonCodes";
           case FilterName::RecommendationSourceType:
             return "RecommendationSourceType";
+          case FilterName::InferredWorkloadTypes:
+            return "InferredWorkloadTypes";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
