@@ -37,7 +37,8 @@ InstanceRecommendation::InstanceRecommendation() :
     m_effectiveRecommendationPreferencesHasBeenSet(false),
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,7 +61,8 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_effectiveRecommendationPreferencesHasBeenSet(false),
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
-    m_instanceStateHasBeenSet(false)
+    m_instanceStateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -187,6 +189,16 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_instanceStateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Utils::Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -303,6 +315,17 @@ JsonValue InstanceRecommendation::Jsonize() const
   if(m_instanceStateHasBeenSet)
   {
    payload.WithString("instanceState", InstanceStateMapper::GetNameForInstanceState(m_instanceState));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
   }
 
   return payload;

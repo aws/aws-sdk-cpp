@@ -40,56 +40,72 @@ namespace Model
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline const Aws::String& GetCustomKeyStoreName() const{ return m_customKeyStoreName; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline bool CustomKeyStoreNameHasBeenSet() const { return m_customKeyStoreNameHasBeenSet; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline void SetCustomKeyStoreName(const Aws::String& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = value; }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline void SetCustomKeyStoreName(Aws::String&& value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName = std::move(value); }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline void SetCustomKeyStoreName(const char* value) { m_customKeyStoreNameHasBeenSet = true; m_customKeyStoreName.assign(value); }
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const Aws::String& value) { SetCustomKeyStoreName(value); return *this;}
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(Aws::String&& value) { SetCustomKeyStoreName(std::move(value)); return *this;}
 
     /**
      * <p>Specifies a friendly name for the custom key store. The name must be unique
      * in your Amazon Web Services account and Region. This parameter is required for
-     * all custom key stores.</p>
+     * all custom key stores.</p>  <p>Do not include confidential or
+     * sensitive information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p> 
      */
     inline CreateCustomKeyStoreRequest& WithCustomKeyStoreName(const char* value) { SetCustomKeyStoreName(value); return *this;}
 

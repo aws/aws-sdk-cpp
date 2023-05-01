@@ -18,7 +18,8 @@ namespace Model
     NOT_SET,
     Finding,
     FindingReasonCodes,
-    RecommendationSourceType
+    RecommendationSourceType,
+    InferredWorkloadTypes
   };
 
 namespace FilterNameMapper

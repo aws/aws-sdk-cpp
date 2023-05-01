@@ -11,6 +11,7 @@
 #include <aws/compute-optimizer/model/SavingsOpportunity.h>
 #include <aws/compute-optimizer/model/CurrentPerformanceRiskRatings.h>
 #include <aws/compute-optimizer/model/Summary.h>
+#include <aws/compute-optimizer/model/InferredWorkloadSaving.h>
 #include <utility>
 
 namespace Aws
@@ -234,6 +235,71 @@ namespace Model
      */
     inline RecommendationSummary& WithCurrentPerformanceRiskRatings(CurrentPerformanceRiskRatings&& value) { SetCurrentPerformanceRiskRatings(std::move(value)); return *this;}
 
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline const Aws::Vector<InferredWorkloadSaving>& GetInferredWorkloadSavings() const{ return m_inferredWorkloadSavings; }
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline bool InferredWorkloadSavingsHasBeenSet() const { return m_inferredWorkloadSavingsHasBeenSet; }
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline void SetInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = value; }
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline void SetInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings = std::move(value); }
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline RecommendationSummary& WithInferredWorkloadSavings(const Aws::Vector<InferredWorkloadSaving>& value) { SetInferredWorkloadSavings(value); return *this;}
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline RecommendationSummary& WithInferredWorkloadSavings(Aws::Vector<InferredWorkloadSaving>&& value) { SetInferredWorkloadSavings(std::move(value)); return *this;}
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline RecommendationSummary& AddInferredWorkloadSavings(const InferredWorkloadSaving& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(value); return *this; }
+
+    /**
+     * <p> An array of objects that describes the estimated monthly saving amounts for
+     * the instances running on the specified <code>inferredWorkloadTypes</code>. The
+     * array contains the top three savings opportunites for the instances running
+     * inferred workload types. </p>
+     */
+    inline RecommendationSummary& AddInferredWorkloadSavings(InferredWorkloadSaving&& value) { m_inferredWorkloadSavingsHasBeenSet = true; m_inferredWorkloadSavings.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Summary> m_summaries;
@@ -250,6 +316,9 @@ namespace Model
 
     CurrentPerformanceRiskRatings m_currentPerformanceRiskRatings;
     bool m_currentPerformanceRiskRatingsHasBeenSet = false;
+
+    Aws::Vector<InferredWorkloadSaving> m_inferredWorkloadSavings;
+    bool m_inferredWorkloadSavingsHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,6 +13,7 @@
 #include <aws/compute-optimizer/model/LambdaFunctionUtilizationMetric.h>
 #include <aws/compute-optimizer/model/LambdaFunctionRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/LambdaFunctionMemoryRecommendationOption.h>
+#include <aws/compute-optimizer/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -779,6 +780,47 @@ namespace Model
      */
     inline LambdaFunctionRecommendation& WithCurrentPerformanceRisk(CurrentPerformanceRisk&& value) { SetCurrentPerformanceRisk(std::move(value)); return *this;}
 
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p> A list of tags assigned to your Lambda function recommendations. </p>
+     */
+    inline LambdaFunctionRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_functionArn;
@@ -816,6 +858,9 @@ namespace Model
 
     CurrentPerformanceRisk m_currentPerformanceRisk;
     bool m_currentPerformanceRiskHasBeenSet = false;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet = false;
   };
 
 } // namespace Model

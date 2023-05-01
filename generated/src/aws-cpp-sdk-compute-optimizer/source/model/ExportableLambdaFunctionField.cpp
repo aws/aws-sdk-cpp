@@ -46,6 +46,7 @@ namespace Aws
         static const int RecommendationOptionsSavingsOpportunityPercentage_HASH = HashingUtils::HashString("RecommendationOptionsSavingsOpportunityPercentage");
         static const int RecommendationOptionsEstimatedMonthlySavingsCurrency_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsCurrency");
         static const int RecommendationOptionsEstimatedMonthlySavingsValue_HASH = HashingUtils::HashString("RecommendationOptionsEstimatedMonthlySavingsValue");
+        static const int Tags_HASH = HashingUtils::HashString("Tags");
 
 
         ExportableLambdaFunctionField GetExportableLambdaFunctionFieldForName(const Aws::String& name)
@@ -155,6 +156,10 @@ namespace Aws
           {
             return ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue;
           }
+          else if (hashCode == Tags_HASH)
+          {
+            return ExportableLambdaFunctionField::Tags;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -221,6 +226,8 @@ namespace Aws
             return "RecommendationOptionsEstimatedMonthlySavingsCurrency";
           case ExportableLambdaFunctionField::RecommendationOptionsEstimatedMonthlySavingsValue:
             return "RecommendationOptionsEstimatedMonthlySavingsValue";
+          case ExportableLambdaFunctionField::Tags:
+            return "Tags";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

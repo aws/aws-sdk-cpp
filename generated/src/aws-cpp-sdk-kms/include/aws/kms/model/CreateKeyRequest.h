@@ -273,66 +273,82 @@ namespace Model
 
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline CreateKeyRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline CreateKeyRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A description of the KMS key.</p> <p>Use a description that helps you decide
-     * whether the KMS key is appropriate for a task. The default value is an empty
-     * string (no description).</p> <p>To set or change the description after the key
-     * is created, use <a>UpdateKeyDescription</a>.</p>
+     * <p>A description of the KMS key. Use a description that helps you decide whether
+     * the KMS key is appropriate for a task. The default value is an empty string (no
+     * description).</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>  <p>To set or change the
+     * description after the key is created, use <a>UpdateKeyDescription</a>.</p>
      */
     inline CreateKeyRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -1059,8 +1075,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1081,8 +1100,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1103,8 +1125,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1125,8 +1150,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1147,8 +1175,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1169,8 +1200,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1191,8 +1225,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
@@ -1213,8 +1250,11 @@ namespace Model
     /**
      * <p>Assigns one or more tags to the KMS key. Use this parameter to tag the KMS
      * key when it is created. To tag an existing KMS key, use the <a>TagResource</a>
-     * operation.</p>  <p>Tagging or untagging a KMS key can allow or deny
-     * permission to the KMS key. For details, see <a
+     * operation.</p>  <p>Do not include confidential or sensitive
+     * information in this field. This field may be displayed in plaintext in
+     * CloudTrail logs and other output.</p>   <p>Tagging or
+     * untagging a KMS key can allow or deny permission to the KMS key. For details,
+     * see <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/abac.html">ABAC for
      * KMS</a> in the <i>Key Management Service Developer Guide</i>.</p>  <p>To
      * use this parameter, you must have <a
