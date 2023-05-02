@@ -647,7 +647,9 @@ namespace
         auto ec2MetadataClient = Aws::MakeShared<Aws::Internal::EC2MetadataClient>(ALLOCATION_TAG, clientConfig);
 
         ASSERT_EQ("", ec2MetadataClient->GetDefaultCredentialsSecurely());
+#if !defined(DISABLE_IMDSV1)
         ASSERT_EQ("", ec2MetadataClient->GetDefaultCredentials());
+#endif
         ASSERT_EQ("", ec2MetadataClient->GetCurrentRegion());
     }
 
