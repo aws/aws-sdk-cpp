@@ -12,16 +12,19 @@
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/VersionConfig.h>
+#include <aws/core/utils/DateTime.h>
 
 #if defined(GetMessage)
 #undef GetMessage
 #endif
 
 #define AWS_ASSERT_SUCCESS(awsCppSdkOutcome) \
-  ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << awsCppSdkOutcome.GetError().GetMessage()
+  ASSERT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
+                                            << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
 
 #define AWS_EXPECT_SUCCESS(awsCppSdkOutcome) \
-  EXPECT_TRUE(awsCppSdkOutcome.IsSuccess()) << awsCppSdkOutcome.GetError().GetMessage()
+  EXPECT_TRUE(awsCppSdkOutcome.IsSuccess()) << "Error details: " << awsCppSdkOutcome.GetError() \
+                                            << "\nNow timestamp: " << Aws::Utils::DateTime::Now().ToGmtString(Aws::Utils::DateFormat::ISO_8601_BASIC)
 
 /**
  * AWS-CPP-SDK test utility helper function to un-conditionally retry not succeeded operation call.
