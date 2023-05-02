@@ -79,42 +79,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline const Aws::String& GetFeaturedResultsSetId() const{ return m_featuredResultsSetId; }
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline bool FeaturedResultsSetIdHasBeenSet() const { return m_featuredResultsSetIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline void SetFeaturedResultsSetId(const Aws::String& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = value; }
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline void SetFeaturedResultsSetId(Aws::String&& value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId = std::move(value); }
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline void SetFeaturedResultsSetId(const char* value) { m_featuredResultsSetIdHasBeenSet = true; m_featuredResultsSetId.assign(value); }
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline UpdateFeaturedResultsSetRequest& WithFeaturedResultsSetId(const Aws::String& value) { SetFeaturedResultsSetId(value); return *this;}
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline UpdateFeaturedResultsSetRequest& WithFeaturedResultsSetId(Aws::String&& value) { SetFeaturedResultsSetId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the index used for featuring results.</p>
+     * <p>The identifier of the set of featured results that you want to update.</p>
      */
     inline UpdateFeaturedResultsSetRequest& WithFeaturedResultsSetId(const char* value) { SetFeaturedResultsSetId(value); return *this;}
 

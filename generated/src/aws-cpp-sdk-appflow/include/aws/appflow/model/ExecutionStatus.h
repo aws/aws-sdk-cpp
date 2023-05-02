@@ -18,7 +18,9 @@ namespace Model
     NOT_SET,
     InProgress,
     Successful,
-    Error
+    Error,
+    CancelStarted,
+    Canceled
   };
 
 namespace ExecutionStatusMapper

@@ -23,7 +23,8 @@ UpdateQuerySuggestionsConfigRequest::UpdateQuerySuggestionsConfigRequest() :
     m_minimumNumberOfQueryingUsers(0),
     m_minimumNumberOfQueryingUsersHasBeenSet(false),
     m_minimumQueryCount(0),
-    m_minimumQueryCountHasBeenSet(false)
+    m_minimumQueryCountHasBeenSet(false),
+    m_attributeSuggestionsConfigHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String UpdateQuerySuggestionsConfigRequest::SerializePayload() const
   if(m_minimumQueryCountHasBeenSet)
   {
    payload.WithInteger("MinimumQueryCount", m_minimumQueryCount);
+
+  }
+
+  if(m_attributeSuggestionsConfigHasBeenSet)
+  {
+   payload.WithObject("AttributeSuggestionsConfig", m_attributeSuggestionsConfig.Jsonize());
 
   }
 

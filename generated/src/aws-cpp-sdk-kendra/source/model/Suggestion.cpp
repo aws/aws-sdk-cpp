@@ -20,13 +20,15 @@ namespace Model
 
 Suggestion::Suggestion() : 
     m_idHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_sourceDocumentsHasBeenSet(false)
 {
 }
 
 Suggestion::Suggestion(JsonView jsonValue) : 
     m_idHasBeenSet(false),
-    m_valueHasBeenSet(false)
+    m_valueHasBeenSet(false),
+    m_sourceDocumentsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,16 @@ Suggestion& Suggestion::operator =(JsonView jsonValue)
     m_valueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceDocuments"))
+  {
+    Aws::Utils::Array<JsonView> sourceDocumentsJsonList = jsonValue.GetArray("SourceDocuments");
+    for(unsigned sourceDocumentsIndex = 0; sourceDocumentsIndex < sourceDocumentsJsonList.GetLength(); ++sourceDocumentsIndex)
+    {
+      m_sourceDocuments.push_back(sourceDocumentsJsonList[sourceDocumentsIndex].AsObject());
+    }
+    m_sourceDocumentsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +75,17 @@ JsonValue Suggestion::Jsonize() const
   if(m_valueHasBeenSet)
   {
    payload.WithObject("Value", m_value.Jsonize());
+
+  }
+
+  if(m_sourceDocumentsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> sourceDocumentsJsonList(m_sourceDocuments.size());
+   for(unsigned sourceDocumentsIndex = 0; sourceDocumentsIndex < sourceDocumentsJsonList.GetLength(); ++sourceDocumentsIndex)
+   {
+     sourceDocumentsJsonList[sourceDocumentsIndex].AsObject(m_sourceDocuments[sourceDocumentsIndex].Jsonize());
+   }
+   payload.WithArray("SourceDocuments", std::move(sourceDocumentsJsonList));
 
   }
 

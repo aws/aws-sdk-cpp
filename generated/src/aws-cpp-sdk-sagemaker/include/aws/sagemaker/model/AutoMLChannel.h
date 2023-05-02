@@ -287,6 +287,135 @@ namespace Model
      */
     inline AutoMLChannel& WithChannelType(AutoMLChannelType&& value) { SetChannelType(std::move(value)); return *this;}
 
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline const Aws::String& GetSampleWeightAttributeName() const{ return m_sampleWeightAttributeName; }
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline bool SampleWeightAttributeNameHasBeenSet() const { return m_sampleWeightAttributeNameHasBeenSet; }
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline void SetSampleWeightAttributeName(const Aws::String& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = value; }
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline void SetSampleWeightAttributeName(Aws::String&& value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName = std::move(value); }
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline void SetSampleWeightAttributeName(const char* value) { m_sampleWeightAttributeNameHasBeenSet = true; m_sampleWeightAttributeName.assign(value); }
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline AutoMLChannel& WithSampleWeightAttributeName(const Aws::String& value) { SetSampleWeightAttributeName(value); return *this;}
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline AutoMLChannel& WithSampleWeightAttributeName(Aws::String&& value) { SetSampleWeightAttributeName(std::move(value)); return *this;}
+
+    /**
+     * <p>If specified, this column name indicates which column of the dataset should
+     * be treated as sample weights for use by the objective metric during the
+     * training, evaluation, and the selection of the best model. This column is not
+     * considered as a predictive feature. For more information on Autopilot metrics,
+     * see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/autopilot-metrics-validation.html">Metrics
+     * and validation</a>.</p> <p>Sample weights should be numeric, non-negative, with
+     * larger values indicating which rows are more important than others. Data points
+     * that have invalid or no weight value are excluded.</p> <p>Support for sample
+     * weights is available in <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_AutoMLAlgorithmConfig.html">Ensembling</a>
+     * mode only.</p>
+     */
+    inline AutoMLChannel& WithSampleWeightAttributeName(const char* value) { SetSampleWeightAttributeName(value); return *this;}
+
   private:
 
     AutoMLDataSource m_dataSource;
@@ -303,6 +432,9 @@ namespace Model
 
     AutoMLChannelType m_channelType;
     bool m_channelTypeHasBeenSet = false;
+
+    Aws::String m_sampleWeightAttributeName;
+    bool m_sampleWeightAttributeNameHasBeenSet = false;
   };
 
 } // namespace Model
