@@ -7,6 +7,9 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/kendra/KendraRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/AttributeSuggestionsGetConfig.h>
+#include <aws/kendra/model/SuggestionType.h>
 #include <utility>
 
 namespace Aws
@@ -176,6 +179,132 @@ namespace Model
      */
     inline GetQuerySuggestionsRequest& WithMaxSuggestionsCount(int value) { SetMaxSuggestionsCount(value); return *this;}
 
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline const Aws::Vector<SuggestionType>& GetSuggestionTypes() const{ return m_suggestionTypes; }
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline bool SuggestionTypesHasBeenSet() const { return m_suggestionTypesHasBeenSet; }
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline void SetSuggestionTypes(const Aws::Vector<SuggestionType>& value) { m_suggestionTypesHasBeenSet = true; m_suggestionTypes = value; }
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline void SetSuggestionTypes(Aws::Vector<SuggestionType>&& value) { m_suggestionTypesHasBeenSet = true; m_suggestionTypes = std::move(value); }
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline GetQuerySuggestionsRequest& WithSuggestionTypes(const Aws::Vector<SuggestionType>& value) { SetSuggestionTypes(value); return *this;}
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline GetQuerySuggestionsRequest& WithSuggestionTypes(Aws::Vector<SuggestionType>&& value) { SetSuggestionTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline GetQuerySuggestionsRequest& AddSuggestionTypes(const SuggestionType& value) { m_suggestionTypesHasBeenSet = true; m_suggestionTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The suggestions type to base query suggestions on. The suggestion types are
+     * query history or document fields/attributes. You can set one type or the
+     * other.</p> <p>If you set query history as your suggestions type, Amazon Kendra
+     * suggests queries relevant to your users based on popular queries in the query
+     * history.</p> <p>If you set document fields/attributes as your suggestions type,
+     * Amazon Kendra suggests queries relevant to your users based on the contents of
+     * document fields.</p>
+     */
+    inline GetQuerySuggestionsRequest& AddSuggestionTypes(SuggestionType&& value) { m_suggestionTypesHasBeenSet = true; m_suggestionTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline const AttributeSuggestionsGetConfig& GetAttributeSuggestionsConfig() const{ return m_attributeSuggestionsConfig; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline bool AttributeSuggestionsConfigHasBeenSet() const { return m_attributeSuggestionsConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(const AttributeSuggestionsGetConfig& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = value; }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline void SetAttributeSuggestionsConfig(AttributeSuggestionsGetConfig&& value) { m_attributeSuggestionsConfigHasBeenSet = true; m_attributeSuggestionsConfig = std::move(value); }
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline GetQuerySuggestionsRequest& WithAttributeSuggestionsConfig(const AttributeSuggestionsGetConfig& value) { SetAttributeSuggestionsConfig(value); return *this;}
+
+    /**
+     * <p>Configuration information for the document fields/attributes that you want to
+     * base query suggestions on.</p>
+     */
+    inline GetQuerySuggestionsRequest& WithAttributeSuggestionsConfig(AttributeSuggestionsGetConfig&& value) { SetAttributeSuggestionsConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_indexId;
@@ -186,6 +315,12 @@ namespace Model
 
     int m_maxSuggestionsCount;
     bool m_maxSuggestionsCountHasBeenSet = false;
+
+    Aws::Vector<SuggestionType> m_suggestionTypes;
+    bool m_suggestionTypesHasBeenSet = false;
+
+    AttributeSuggestionsGetConfig m_attributeSuggestionsConfig;
+    bool m_attributeSuggestionsConfigHasBeenSet = false;
   };
 
 } // namespace Model

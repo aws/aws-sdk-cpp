@@ -18,6 +18,7 @@
 /* End of generic header includes */
 
 /* Service model headers required in AppflowClient header */
+#include <aws/appflow/model/CancelFlowExecutionsResult.h>
 #include <aws/appflow/model/CreateConnectorProfileResult.h>
 #include <aws/appflow/model/CreateFlowResult.h>
 #include <aws/appflow/model/DeleteConnectorProfileResult.h>
@@ -81,6 +82,7 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in AppflowClient header */
+      class CancelFlowExecutionsRequest;
       class CreateConnectorProfileRequest;
       class CreateFlowRequest;
       class DeleteConnectorProfileRequest;
@@ -107,6 +109,7 @@ namespace Aws
       /* End of service model forward declarations required in AppflowClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<CancelFlowExecutionsResult, AppflowError> CancelFlowExecutionsOutcome;
       typedef Aws::Utils::Outcome<CreateConnectorProfileResult, AppflowError> CreateConnectorProfileOutcome;
       typedef Aws::Utils::Outcome<CreateFlowResult, AppflowError> CreateFlowOutcome;
       typedef Aws::Utils::Outcome<DeleteConnectorProfileResult, AppflowError> DeleteConnectorProfileOutcome;
@@ -133,6 +136,7 @@ namespace Aws
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<CancelFlowExecutionsOutcome> CancelFlowExecutionsOutcomeCallable;
       typedef std::future<CreateConnectorProfileOutcome> CreateConnectorProfileOutcomeCallable;
       typedef std::future<CreateFlowOutcome> CreateFlowOutcomeCallable;
       typedef std::future<DeleteConnectorProfileOutcome> DeleteConnectorProfileOutcomeCallable;
@@ -162,6 +166,7 @@ namespace Aws
     class AppflowClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const AppflowClient*, const Model::CancelFlowExecutionsRequest&, const Model::CancelFlowExecutionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelFlowExecutionsResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::CreateConnectorProfileRequest&, const Model::CreateConnectorProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateConnectorProfileResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::CreateFlowRequest&, const Model::CreateFlowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFlowResponseReceivedHandler;
     typedef std::function<void(const AppflowClient*, const Model::DeleteConnectorProfileRequest&, const Model::DeleteConnectorProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteConnectorProfileResponseReceivedHandler;

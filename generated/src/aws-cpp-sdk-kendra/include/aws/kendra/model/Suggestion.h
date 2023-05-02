@@ -7,6 +7,8 @@
 #include <aws/kendra/Kendra_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kendra/model/SuggestionValue.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra/model/SourceDocument.h>
 #include <utility>
 
 namespace Aws
@@ -115,6 +117,63 @@ namespace Model
      */
     inline Suggestion& WithValue(SuggestionValue&& value) { SetValue(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline const Aws::Vector<SourceDocument>& GetSourceDocuments() const{ return m_sourceDocuments; }
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline bool SourceDocumentsHasBeenSet() const { return m_sourceDocumentsHasBeenSet; }
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline void SetSourceDocuments(const Aws::Vector<SourceDocument>& value) { m_sourceDocumentsHasBeenSet = true; m_sourceDocuments = value; }
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline void SetSourceDocuments(Aws::Vector<SourceDocument>&& value) { m_sourceDocumentsHasBeenSet = true; m_sourceDocuments = std::move(value); }
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline Suggestion& WithSourceDocuments(const Aws::Vector<SourceDocument>& value) { SetSourceDocuments(value); return *this;}
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline Suggestion& WithSourceDocuments(Aws::Vector<SourceDocument>&& value) { SetSourceDocuments(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline Suggestion& AddSourceDocuments(const SourceDocument& value) { m_sourceDocumentsHasBeenSet = true; m_sourceDocuments.push_back(value); return *this; }
+
+    /**
+     * <p>The list of document IDs and their fields/attributes that are used for a
+     * single query suggestion, if document fields set to use for query
+     * suggestions.</p>
+     */
+    inline Suggestion& AddSourceDocuments(SourceDocument&& value) { m_sourceDocumentsHasBeenSet = true; m_sourceDocuments.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_id;
@@ -122,6 +181,9 @@ namespace Model
 
     SuggestionValue m_value;
     bool m_valueHasBeenSet = false;
+
+    Aws::Vector<SourceDocument> m_sourceDocuments;
+    bool m_sourceDocumentsHasBeenSet = false;
   };
 
 } // namespace Model

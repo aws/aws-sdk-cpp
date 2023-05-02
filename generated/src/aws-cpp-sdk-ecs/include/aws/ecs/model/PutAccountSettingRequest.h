@@ -158,49 +158,57 @@ namespace Model
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline void SetValue(Aws::String&& value) { m_valueHasBeenSet = true; m_value = std::move(value); }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline void SetValue(const char* value) { m_valueHasBeenSet = true; m_value.assign(value); }
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline PutAccountSettingRequest& WithValue(const Aws::String& value) { SetValue(value); return *this;}
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline PutAccountSettingRequest& WithValue(Aws::String&& value) { SetValue(std::move(value)); return *this;}
 
     /**
      * <p>The account setting value for the specified principal ARN. Accepted values
-     * are <code>enabled</code> and <code>disabled</code>.</p>
+     * are <code>enabled</code>, <code>disabled</code>, <code>on</code>, and
+     * <code>off</code>.</p>
      */
     inline PutAccountSettingRequest& WithValue(const char* value) { SetValue(value); return *this;}
 

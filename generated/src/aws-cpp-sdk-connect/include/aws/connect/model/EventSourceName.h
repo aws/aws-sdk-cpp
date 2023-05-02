@@ -21,7 +21,8 @@ namespace Model
     OnPostChatAnalysisAvailable,
     OnZendeskTicketCreate,
     OnZendeskTicketStatusUpdate,
-    OnSalesforceCaseCreate
+    OnSalesforceCaseCreate,
+    OnContactEvaluationSubmit
   };
 
 namespace EventSourceNameMapper

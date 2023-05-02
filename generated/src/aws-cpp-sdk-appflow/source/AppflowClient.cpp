@@ -21,6 +21,7 @@
 #include <aws/appflow/AppflowClient.h>
 #include <aws/appflow/AppflowErrorMarshaller.h>
 #include <aws/appflow/AppflowEndpointProvider.h>
+#include <aws/appflow/model/CancelFlowExecutionsRequest.h>
 #include <aws/appflow/model/CreateConnectorProfileRequest.h>
 #include <aws/appflow/model/CreateFlowRequest.h>
 #include <aws/appflow/model/DeleteConnectorProfileRequest.h>
@@ -170,6 +171,15 @@ void AppflowClient::OverrideEndpoint(const Aws::String& endpoint)
 {
   AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
   m_endpointProvider->OverrideEndpoint(endpoint);
+}
+
+CancelFlowExecutionsOutcome AppflowClient::CancelFlowExecutions(const CancelFlowExecutionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CancelFlowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CancelFlowExecutions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/cancel-flow-executions");
+  return CancelFlowExecutionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateConnectorProfileOutcome AppflowClient::CreateConnectorProfile(const CreateConnectorProfileRequest& request) const
