@@ -46,6 +46,9 @@ namespace EC2
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef EC2ClientConfiguration ClientConfigurationType;
+      typedef EC2EndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.

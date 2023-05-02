@@ -54,6 +54,9 @@ namespace Aws
         static const char* SERVICE_NAME;
         static const char* ALLOCATION_TAG;
 
+      typedef S3CrtClientConfiguration ClientConfigurationType;
+      typedef S3CrtEndpointProvider EndpointProviderType;
+
 
         /* Legacy constructors due deprecation */
        /**

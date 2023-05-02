@@ -32,6 +32,9 @@ namespace SESV2
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef SESV2ClientConfiguration ClientConfigurationType;
+      typedef SESV2EndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
