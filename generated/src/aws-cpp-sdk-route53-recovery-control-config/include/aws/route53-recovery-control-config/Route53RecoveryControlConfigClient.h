@@ -26,6 +26,9 @@ namespace Route53RecoveryControlConfig
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef Route53RecoveryControlConfigClientConfiguration ClientConfigurationType;
+      typedef Route53RecoveryControlConfigEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.

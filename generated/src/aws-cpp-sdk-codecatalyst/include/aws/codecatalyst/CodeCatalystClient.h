@@ -73,6 +73,9 @@ namespace CodeCatalyst
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CodeCatalystClientConfiguration ClientConfigurationType;
+      typedef CodeCatalystEndpointProvider EndpointProviderType;
+
         /**
         * Initializes client to use BearerTokenAuthSignerProvider, with default http client factory, and optional client config.
         */
