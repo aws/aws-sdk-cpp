@@ -36,6 +36,9 @@ namespace RAM
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef RAMClientConfiguration ClientConfigurationType;
+      typedef RAMEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
