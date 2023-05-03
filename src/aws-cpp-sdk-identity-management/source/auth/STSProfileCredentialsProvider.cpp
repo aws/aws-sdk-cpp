@@ -315,7 +315,7 @@ AWSCredentials STSProfileCredentialsProvider::GetCredentialsFromSTSInternal(cons
     AssumeRoleRequest assumeRoleRequest;
     assumeRoleRequest
         .WithRoleArn(roleArn)
-        .WithRoleSessionName(Aws::Utils::UUID::RandomUUID())
+        .WithRoleSessionName(Aws::Utils::UUID::PseudoRandomUUID())
         .WithDurationSeconds(static_cast<int>(std::chrono::seconds(m_duration).count()));
     auto outcome = client->AssumeRole(assumeRoleRequest);
     if (outcome.IsSuccess())

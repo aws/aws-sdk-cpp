@@ -249,7 +249,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;
@@ -383,7 +383,7 @@ HttpResponseOutcome AWSClient::AttemptExhaustively(const Aws::Http::URI& uri,
     const char* signerRegion = signerRegionOverride;
     Aws::String regionFromResponse;
 
-    Aws::String invocationId = Aws::Utils::UUID::RandomUUID();
+    Aws::String invocationId = Aws::Utils::UUID::PseudoRandomUUID();
     RequestInfo requestInfo;
     requestInfo.attempt = 1;
     requestInfo.maxAttempts = 0;

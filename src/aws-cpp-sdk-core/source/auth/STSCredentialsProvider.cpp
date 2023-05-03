@@ -90,7 +90,7 @@ STSAssumeRoleWebIdentityCredentialsProvider::STSAssumeRoleWebIdentityCredentials
 
     if (m_sessionName.empty())
     {
-        m_sessionName = Aws::Utils::UUID::RandomUUID();
+        m_sessionName = Aws::Utils::UUID::PseudoRandomUUID();
     }
     else
     {
