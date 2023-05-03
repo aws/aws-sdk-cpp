@@ -13,6 +13,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
+#include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -577,6 +578,121 @@ namespace Model
      */
     inline GraphqlApi& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetDns() const{ return m_dns; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline bool DnsHasBeenSet() const { return m_dnsHasBeenSet; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline void SetDns(const Aws::Map<Aws::String, Aws::String>& value) { m_dnsHasBeenSet = true; m_dns = value; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline void SetDns(Aws::Map<Aws::String, Aws::String>&& value) { m_dnsHasBeenSet = true; m_dns = std::move(value); }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& WithDns(const Aws::Map<Aws::String, Aws::String>& value) { SetDns(value); return *this;}
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& WithDns(Aws::Map<Aws::String, Aws::String>&& value) { SetDns(std::move(value)); return *this;}
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const Aws::String& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, const Aws::String& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const Aws::String& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const char* key, Aws::String&& value) { m_dnsHasBeenSet = true; m_dns.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(Aws::String&& key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The DNS records for the API.</p>
+     */
+    inline GraphqlApi& AddDns(const char* key, const char* value) { m_dnsHasBeenSet = true; m_dns.emplace(key, value); return *this; }
+
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline const GraphQLApiVisibility& GetVisibility() const{ return m_visibility; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(const GraphQLApiVisibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(GraphQLApiVisibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline GraphqlApi& WithVisibility(const GraphQLApiVisibility& value) { SetVisibility(value); return *this;}
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline GraphqlApi& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -617,6 +733,12 @@ namespace Model
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_dns;
+    bool m_dnsHasBeenSet = false;
+
+    GraphQLApiVisibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
   };
 
 } // namespace Model

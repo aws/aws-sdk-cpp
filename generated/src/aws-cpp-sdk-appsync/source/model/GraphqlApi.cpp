@@ -33,7 +33,10 @@ GraphqlApi::GraphqlApi() :
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
     m_wafWebAclArnHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_dnsHasBeenSet(false),
+    m_visibility(GraphQLApiVisibility::NOT_SET),
+    m_visibilityHasBeenSet(false)
 {
 }
 
@@ -52,7 +55,10 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
     m_wafWebAclArnHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_dnsHasBeenSet(false),
+    m_visibility(GraphQLApiVisibility::NOT_SET),
+    m_visibilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -159,6 +165,23 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_lambdaAuthorizerConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dns"))
+  {
+    Aws::Map<Aws::String, JsonView> dnsJsonMap = jsonValue.GetObject("dns").GetAllObjects();
+    for(auto& dnsItem : dnsJsonMap)
+    {
+      m_dns[dnsItem.first] = dnsItem.second.AsString();
+    }
+    m_dnsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("visibility"))
+  {
+    m_visibility = GraphQLApiVisibilityMapper::GetGraphQLApiVisibilityForName(jsonValue.GetString("visibility"));
+
+    m_visibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -256,6 +279,22 @@ JsonValue GraphqlApi::Jsonize() const
   {
    payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
 
+  }
+
+  if(m_dnsHasBeenSet)
+  {
+   JsonValue dnsJsonMap;
+   for(auto& dnsItem : m_dns)
+   {
+     dnsJsonMap.WithString(dnsItem.first, dnsItem.second);
+   }
+   payload.WithObject("dns", std::move(dnsJsonMap));
+
+  }
+
+  if(m_visibilityHasBeenSet)
+  {
+   payload.WithString("visibility", GraphQLApiVisibilityMapper::GetNameForGraphQLApiVisibility(m_visibility));
   }
 
   return payload;

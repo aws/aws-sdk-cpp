@@ -80,32 +80,32 @@ namespace Model
 
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline const PackageType& GetPackageType() const{ return m_packageType; }
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline bool PackageTypeHasBeenSet() const { return m_packageTypeHasBeenSet; }
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(const PackageType& value) { m_packageTypeHasBeenSet = true; m_packageType = value; }
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline void SetPackageType(PackageType&& value) { m_packageTypeHasBeenSet = true; m_packageType = std::move(value); }
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline CreatePackageRequest& WithPackageType(const PackageType& value) { SetPackageType(value); return *this;}
 
     /**
-     * <p>Type of package.</p>
+     * <p>The type of package.</p>
      */
     inline CreatePackageRequest& WithPackageType(PackageType&& value) { SetPackageType(std::move(value)); return *this;}
 

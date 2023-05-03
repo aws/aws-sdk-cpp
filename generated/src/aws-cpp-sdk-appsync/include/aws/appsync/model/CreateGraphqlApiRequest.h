@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
+#include <aws/appsync/model/GraphQLApiVisibility.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -381,6 +382,55 @@ namespace Model
      */
     inline CreateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline const GraphQLApiVisibility& GetVisibility() const{ return m_visibility; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(const GraphQLApiVisibility& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline void SetVisibility(GraphQLApiVisibility&& value) { m_visibilityHasBeenSet = true; m_visibility = std::move(value); }
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline CreateGraphqlApiRequest& WithVisibility(const GraphQLApiVisibility& value) { SetVisibility(value); return *this;}
+
+    /**
+     * <p>Sets the value of the GraphQL API to public (<code>GLOBAL</code>) or private
+     * (<code>PRIVATE</code>). If no value is provided, the visibility will be set to
+     * <code>GLOBAL</code> by default. This value cannot be changed once the API has
+     * been created.</p>
+     */
+    inline CreateGraphqlApiRequest& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -409,6 +459,9 @@ namespace Model
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
+
+    GraphQLApiVisibility m_visibility;
+    bool m_visibilityHasBeenSet = false;
   };
 
 } // namespace Model

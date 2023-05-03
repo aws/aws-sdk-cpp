@@ -238,25 +238,25 @@ namespace Model
 
     /**
      * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * than 2 and not 4, otherwise you receive a validation exception.</p>
      */
     inline int GetDedicatedMasterCount() const{ return m_dedicatedMasterCount; }
 
     /**
      * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * than 2 and not 4, otherwise you receive a validation exception.</p>
      */
     inline bool DedicatedMasterCountHasBeenSet() const { return m_dedicatedMasterCountHasBeenSet; }
 
     /**
      * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * than 2 and not 4, otherwise you receive a validation exception.</p>
      */
     inline void SetDedicatedMasterCount(int value) { m_dedicatedMasterCountHasBeenSet = true; m_dedicatedMasterCount = value; }
 
     /**
      * <p>Number of dedicated master nodes in the cluster. This number must be greater
-     * than 1, otherwise you receive a validation exception.</p>
+     * than 2 and not 4, otherwise you receive a validation exception.</p>
      */
     inline ClusterConfig& WithDedicatedMasterCount(int value) { SetDedicatedMasterCount(value); return *this;}
 
@@ -364,6 +364,39 @@ namespace Model
      */
     inline ClusterConfig& WithColdStorageOptions(ColdStorageOptions&& value) { SetColdStorageOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A boolean that indicates whether a multi-AZ domain is turned on with a
+     * standby AZ. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+     * a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+     */
+    inline bool GetMultiAZWithStandbyEnabled() const{ return m_multiAZWithStandbyEnabled; }
+
+    /**
+     * <p>A boolean that indicates whether a multi-AZ domain is turned on with a
+     * standby AZ. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+     * a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+     */
+    inline bool MultiAZWithStandbyEnabledHasBeenSet() const { return m_multiAZWithStandbyEnabledHasBeenSet; }
+
+    /**
+     * <p>A boolean that indicates whether a multi-AZ domain is turned on with a
+     * standby AZ. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+     * a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+     */
+    inline void SetMultiAZWithStandbyEnabled(bool value) { m_multiAZWithStandbyEnabledHasBeenSet = true; m_multiAZWithStandbyEnabled = value; }
+
+    /**
+     * <p>A boolean that indicates whether a multi-AZ domain is turned on with a
+     * standby AZ. For more information, see <a
+     * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-multiaz.html">Configuring
+     * a multi-AZ domain in Amazon OpenSearch Service</a>. </p>
+     */
+    inline ClusterConfig& WithMultiAZWithStandbyEnabled(bool value) { SetMultiAZWithStandbyEnabled(value); return *this;}
+
   private:
 
     OpenSearchPartitionInstanceType m_instanceType;
@@ -398,6 +431,9 @@ namespace Model
 
     ColdStorageOptions m_coldStorageOptions;
     bool m_coldStorageOptionsHasBeenSet = false;
+
+    bool m_multiAZWithStandbyEnabled;
+    bool m_multiAZWithStandbyEnabledHasBeenSet = false;
   };
 
 } // namespace Model

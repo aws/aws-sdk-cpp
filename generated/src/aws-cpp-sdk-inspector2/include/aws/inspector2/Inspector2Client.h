@@ -80,7 +80,13 @@ namespace Inspector2
 
         /**
          * <p>Associates an Amazon Web Services account with an Amazon Inspector delegated
-         * administrator.</p><p><h3>See Also:</h3>   <a
+         * administrator. An HTTP 200 response indicates the association was successfully
+         * started, but doesn’t indicate whether it was completed. You can check if the
+         * association completed by using <a
+         * href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a>
+         * for multiple accounts or <a
+         * href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a>
+         * for a single account.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/AssociateMember">AWS
          * API Reference</a></p>
          */
@@ -157,6 +163,62 @@ namespace Inspector2
         }
 
         /**
+         * <p>Retrieves Amazon Inspector deep inspection activation status of multiple
+         * member accounts within your organization. You must be the delegated
+         * administrator of an organization in Amazon Inspector to use this
+         * API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchGetMemberEc2DeepInspectionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchGetMemberEc2DeepInspectionStatusOutcome BatchGetMemberEc2DeepInspectionStatus(const Model::BatchGetMemberEc2DeepInspectionStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchGetMemberEc2DeepInspectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchGetMemberEc2DeepInspectionStatusRequestT = Model::BatchGetMemberEc2DeepInspectionStatusRequest>
+        Model::BatchGetMemberEc2DeepInspectionStatusOutcomeCallable BatchGetMemberEc2DeepInspectionStatusCallable(const BatchGetMemberEc2DeepInspectionStatusRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchGetMemberEc2DeepInspectionStatus, request);
+        }
+
+        /**
+         * An Async wrapper for BatchGetMemberEc2DeepInspectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchGetMemberEc2DeepInspectionStatusRequestT = Model::BatchGetMemberEc2DeepInspectionStatusRequest>
+        void BatchGetMemberEc2DeepInspectionStatusAsync(const BatchGetMemberEc2DeepInspectionStatusRequestT& request, const BatchGetMemberEc2DeepInspectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchGetMemberEc2DeepInspectionStatus, request, handler, context);
+        }
+
+        /**
+         * <p>Activates or deactivates Amazon Inspector deep inspection for the provided
+         * member accounts in your organization. You must be the delegated administrator of
+         * an organization in Amazon Inspector to use this API.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/BatchUpdateMemberEc2DeepInspectionStatus">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchUpdateMemberEc2DeepInspectionStatusOutcome BatchUpdateMemberEc2DeepInspectionStatus(const Model::BatchUpdateMemberEc2DeepInspectionStatusRequest& request) const;
+
+        /**
+         * A Callable wrapper for BatchUpdateMemberEc2DeepInspectionStatus that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename BatchUpdateMemberEc2DeepInspectionStatusRequestT = Model::BatchUpdateMemberEc2DeepInspectionStatusRequest>
+        Model::BatchUpdateMemberEc2DeepInspectionStatusOutcomeCallable BatchUpdateMemberEc2DeepInspectionStatusCallable(const BatchUpdateMemberEc2DeepInspectionStatusRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::BatchUpdateMemberEc2DeepInspectionStatus, request);
+        }
+
+        /**
+         * An Async wrapper for BatchUpdateMemberEc2DeepInspectionStatus that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename BatchUpdateMemberEc2DeepInspectionStatusRequestT = Model::BatchUpdateMemberEc2DeepInspectionStatusRequest>
+        void BatchUpdateMemberEc2DeepInspectionStatusAsync(const BatchUpdateMemberEc2DeepInspectionStatusRequestT& request, const BatchUpdateMemberEc2DeepInspectionStatusResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::BatchUpdateMemberEc2DeepInspectionStatus, request, handler, context);
+        }
+
+        /**
          * <p>Cancels the given findings report.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CancelFindingsReport">AWS
          * API Reference</a></p>
@@ -208,7 +270,10 @@ namespace Inspector2
         }
 
         /**
-         * <p>Creates a finding report.</p><p><h3>See Also:</h3>   <a
+         * <p>Creates a finding report. By default only <code>ACTIVE</code> findings are
+         * returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code>
+         * findings you must specify a value for the <code>findingStatus</code> filter
+         * criteria. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/CreateFindingsReport">AWS
          * API Reference</a></p>
          */
@@ -464,6 +529,32 @@ namespace Inspector2
         void GetDelegatedAdminAccountAsync(const GetDelegatedAdminAccountRequestT& request, const GetDelegatedAdminAccountResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::GetDelegatedAdminAccount, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves the activation status of Amazon Inspector deep inspection and
+         * custom paths associated with your account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/GetEc2DeepInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetEc2DeepInspectionConfigurationOutcome GetEc2DeepInspectionConfiguration(const Model::GetEc2DeepInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetEc2DeepInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetEc2DeepInspectionConfigurationRequestT = Model::GetEc2DeepInspectionConfigurationRequest>
+        Model::GetEc2DeepInspectionConfigurationOutcomeCallable GetEc2DeepInspectionConfigurationCallable(const GetEc2DeepInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::GetEc2DeepInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for GetEc2DeepInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetEc2DeepInspectionConfigurationRequestT = Model::GetEc2DeepInspectionConfigurationRequest>
+        void GetEc2DeepInspectionConfigurationAsync(const GetEc2DeepInspectionConfigurationRequestT& request, const GetEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::GetEc2DeepInspectionConfiguration, request, handler, context);
         }
 
         /**
@@ -851,6 +942,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Activates, deactivates Amazon Inspector deep inspection, or updates custom
+         * paths for your account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateEc2DeepInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateEc2DeepInspectionConfigurationOutcome UpdateEc2DeepInspectionConfiguration(const Model::UpdateEc2DeepInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateEc2DeepInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateEc2DeepInspectionConfigurationRequestT = Model::UpdateEc2DeepInspectionConfigurationRequest>
+        Model::UpdateEc2DeepInspectionConfigurationOutcomeCallable UpdateEc2DeepInspectionConfigurationCallable(const UpdateEc2DeepInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateEc2DeepInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateEc2DeepInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateEc2DeepInspectionConfigurationRequestT = Model::UpdateEc2DeepInspectionConfigurationRequest>
+        void UpdateEc2DeepInspectionConfigurationAsync(const UpdateEc2DeepInspectionConfigurationRequestT& request, const UpdateEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateEc2DeepInspectionConfiguration, request, handler, context);
+        }
+
+        /**
          * <p>Specifies the action that is to be applied to the findings that match the
          * filter.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateFilter">AWS
@@ -874,6 +991,33 @@ namespace Inspector2
         void UpdateFilterAsync(const UpdateFilterRequestT& request, const UpdateFilterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&Inspector2Client::UpdateFilter, request, handler, context);
+        }
+
+        /**
+         * <p>Updates the Amazon Inspector deep inspection custom paths for your
+         * organization. You must be an Amazon Inspector delegated administrator to use
+         * this API.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/UpdateOrgEc2DeepInspectionConfiguration">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateOrgEc2DeepInspectionConfigurationOutcome UpdateOrgEc2DeepInspectionConfiguration(const Model::UpdateOrgEc2DeepInspectionConfigurationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateOrgEc2DeepInspectionConfiguration that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateOrgEc2DeepInspectionConfigurationRequestT = Model::UpdateOrgEc2DeepInspectionConfigurationRequest>
+        Model::UpdateOrgEc2DeepInspectionConfigurationOutcomeCallable UpdateOrgEc2DeepInspectionConfigurationCallable(const UpdateOrgEc2DeepInspectionConfigurationRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::UpdateOrgEc2DeepInspectionConfiguration, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateOrgEc2DeepInspectionConfiguration that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateOrgEc2DeepInspectionConfigurationRequestT = Model::UpdateOrgEc2DeepInspectionConfigurationRequest>
+        void UpdateOrgEc2DeepInspectionConfigurationAsync(const UpdateOrgEc2DeepInspectionConfigurationRequestT& request, const UpdateOrgEc2DeepInspectionConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::UpdateOrgEc2DeepInspectionConfiguration, request, handler, context);
         }
 
         /**

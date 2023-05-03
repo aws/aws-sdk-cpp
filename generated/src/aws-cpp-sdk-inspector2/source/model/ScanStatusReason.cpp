@@ -38,6 +38,12 @@ namespace Aws
         static const int STALE_INVENTORY_HASH = HashingUtils::HashString("STALE_INVENTORY");
         static const int EXCLUDED_BY_TAG_HASH = HashingUtils::HashString("EXCLUDED_BY_TAG");
         static const int UNSUPPORTED_RUNTIME_HASH = HashingUtils::HashString("UNSUPPORTED_RUNTIME");
+        static const int UNSUPPORTED_MEDIA_TYPE_HASH = HashingUtils::HashString("UNSUPPORTED_MEDIA_TYPE");
+        static const int UNSUPPORTED_CONFIG_FILE_HASH = HashingUtils::HashString("UNSUPPORTED_CONFIG_FILE");
+        static const int DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED");
+        static const int DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED");
+        static const int DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED");
+        static const int DEEP_INSPECTION_NO_INVENTORY_HASH = HashingUtils::HashString("DEEP_INSPECTION_NO_INVENTORY");
 
 
         ScanStatusReason GetScanStatusReasonForName(const Aws::String& name)
@@ -115,6 +121,30 @@ namespace Aws
           {
             return ScanStatusReason::UNSUPPORTED_RUNTIME;
           }
+          else if (hashCode == UNSUPPORTED_MEDIA_TYPE_HASH)
+          {
+            return ScanStatusReason::UNSUPPORTED_MEDIA_TYPE;
+          }
+          else if (hashCode == UNSUPPORTED_CONFIG_FILE_HASH)
+          {
+            return ScanStatusReason::UNSUPPORTED_CONFIG_FILE;
+          }
+          else if (hashCode == DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED_HASH)
+          {
+            return ScanStatusReason::DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED_HASH)
+          {
+            return ScanStatusReason::DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED_HASH)
+          {
+            return ScanStatusReason::DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED;
+          }
+          else if (hashCode == DEEP_INSPECTION_NO_INVENTORY_HASH)
+          {
+            return ScanStatusReason::DEEP_INSPECTION_NO_INVENTORY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -165,6 +195,18 @@ namespace Aws
             return "EXCLUDED_BY_TAG";
           case ScanStatusReason::UNSUPPORTED_RUNTIME:
             return "UNSUPPORTED_RUNTIME";
+          case ScanStatusReason::UNSUPPORTED_MEDIA_TYPE:
+            return "UNSUPPORTED_MEDIA_TYPE";
+          case ScanStatusReason::UNSUPPORTED_CONFIG_FILE:
+            return "UNSUPPORTED_CONFIG_FILE";
+          case ScanStatusReason::DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED:
+            return "DEEP_INSPECTION_PACKAGE_COLLECTION_LIMIT_EXCEEDED";
+          case ScanStatusReason::DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED:
+            return "DEEP_INSPECTION_DAILY_SSM_INVENTORY_LIMIT_EXCEEDED";
+          case ScanStatusReason::DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED:
+            return "DEEP_INSPECTION_COLLECTION_TIME_LIMIT_EXCEEDED";
+          case ScanStatusReason::DEEP_INSPECTION_NO_INVENTORY:
+            return "DEEP_INSPECTION_NO_INVENTORY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

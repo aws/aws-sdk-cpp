@@ -92,10 +92,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -111,10 +109,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -130,10 +126,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -149,10 +143,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -168,10 +160,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -187,10 +177,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -206,10 +194,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>
@@ -225,10 +211,8 @@ namespace Model
      * <p>network-firewall:UpdateFirewallPolicy</p> </li> <li>
      * <p>network-firewall:ListRuleGroups</p> </li> </ul> <p>For a firewall policy
      * resource, you can specify the following operations in the Actions section of the
-     * statement:</p> <ul> <li> <p>network-firewall:CreateFirewall</p> </li> <li>
-     * <p>network-firewall:UpdateFirewall</p> </li> <li>
-     * <p>network-firewall:AssociateFirewallPolicy</p> </li> <li>
-     * <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
+     * statement:</p> <ul> <li> <p>network-firewall:AssociateFirewallPolicy</p> </li>
+     * <li> <p>network-firewall:ListFirewallPolicies</p> </li> </ul> <p>In the Resource
      * section of the statement, you specify the ARNs for the rule groups and firewall
      * policies that you want to share with the account that you specified in
      * <code>Arn</code>.</p>

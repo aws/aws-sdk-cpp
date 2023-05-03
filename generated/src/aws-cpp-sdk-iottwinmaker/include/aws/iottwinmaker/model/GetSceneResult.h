@@ -9,6 +9,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iottwinmaker/model/SceneError.h>
 #include <utility>
 
 namespace Aws
@@ -437,6 +438,32 @@ namespace Model
     inline GetSceneResult& AddGeneratedSceneMetadata(const char* key, const char* value) { m_generatedSceneMetadata.emplace(key, value); return *this; }
 
 
+    /**
+     * <p>The SceneResponse error.</p>
+     */
+    inline const SceneError& GetError() const{ return m_error; }
+
+    /**
+     * <p>The SceneResponse error.</p>
+     */
+    inline void SetError(const SceneError& value) { m_error = value; }
+
+    /**
+     * <p>The SceneResponse error.</p>
+     */
+    inline void SetError(SceneError&& value) { m_error = std::move(value); }
+
+    /**
+     * <p>The SceneResponse error.</p>
+     */
+    inline GetSceneResult& WithError(const SceneError& value) { SetError(value); return *this;}
+
+    /**
+     * <p>The SceneResponse error.</p>
+     */
+    inline GetSceneResult& WithError(SceneError&& value) { SetError(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -479,6 +506,8 @@ namespace Model
     Aws::Map<Aws::String, Aws::String> m_sceneMetadata;
 
     Aws::Map<Aws::String, Aws::String> m_generatedSceneMetadata;
+
+    SceneError m_error;
 
     Aws::String m_requestId;
   };

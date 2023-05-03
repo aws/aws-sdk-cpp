@@ -21,6 +21,8 @@
 #include <aws/inspector2/model/AssociateMemberResult.h>
 #include <aws/inspector2/model/BatchGetAccountStatusResult.h>
 #include <aws/inspector2/model/BatchGetFreeTrialInfoResult.h>
+#include <aws/inspector2/model/BatchGetMemberEc2DeepInspectionStatusResult.h>
+#include <aws/inspector2/model/BatchUpdateMemberEc2DeepInspectionStatusResult.h>
 #include <aws/inspector2/model/CancelFindingsReportResult.h>
 #include <aws/inspector2/model/CreateFilterResult.h>
 #include <aws/inspector2/model/CreateFindingsReportResult.h>
@@ -33,6 +35,7 @@
 #include <aws/inspector2/model/EnableDelegatedAdminAccountResult.h>
 #include <aws/inspector2/model/GetConfigurationResult.h>
 #include <aws/inspector2/model/GetDelegatedAdminAccountResult.h>
+#include <aws/inspector2/model/GetEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/GetFindingsReportStatusResult.h>
 #include <aws/inspector2/model/GetMemberResult.h>
 #include <aws/inspector2/model/ListAccountPermissionsResult.h>
@@ -48,7 +51,9 @@
 #include <aws/inspector2/model/TagResourceResult.h>
 #include <aws/inspector2/model/UntagResourceResult.h>
 #include <aws/inspector2/model/UpdateConfigurationResult.h>
+#include <aws/inspector2/model/UpdateEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateFilterResult.h>
+#include <aws/inspector2/model/UpdateOrgEc2DeepInspectionConfigurationResult.h>
 #include <aws/inspector2/model/UpdateOrganizationConfigurationResult.h>
 /* End of service model headers required in Inspector2Client header */
 
@@ -93,6 +98,8 @@ namespace Aws
       class AssociateMemberRequest;
       class BatchGetAccountStatusRequest;
       class BatchGetFreeTrialInfoRequest;
+      class BatchGetMemberEc2DeepInspectionStatusRequest;
+      class BatchUpdateMemberEc2DeepInspectionStatusRequest;
       class CancelFindingsReportRequest;
       class CreateFilterRequest;
       class CreateFindingsReportRequest;
@@ -105,6 +112,7 @@ namespace Aws
       class EnableDelegatedAdminAccountRequest;
       class GetConfigurationRequest;
       class GetDelegatedAdminAccountRequest;
+      class GetEc2DeepInspectionConfigurationRequest;
       class GetFindingsReportStatusRequest;
       class GetMemberRequest;
       class ListAccountPermissionsRequest;
@@ -120,7 +128,9 @@ namespace Aws
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateConfigurationRequest;
+      class UpdateEc2DeepInspectionConfigurationRequest;
       class UpdateFilterRequest;
+      class UpdateOrgEc2DeepInspectionConfigurationRequest;
       class UpdateOrganizationConfigurationRequest;
       /* End of service model forward declarations required in Inspector2Client header */
 
@@ -128,6 +138,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<AssociateMemberResult, Inspector2Error> AssociateMemberOutcome;
       typedef Aws::Utils::Outcome<BatchGetAccountStatusResult, Inspector2Error> BatchGetAccountStatusOutcome;
       typedef Aws::Utils::Outcome<BatchGetFreeTrialInfoResult, Inspector2Error> BatchGetFreeTrialInfoOutcome;
+      typedef Aws::Utils::Outcome<BatchGetMemberEc2DeepInspectionStatusResult, Inspector2Error> BatchGetMemberEc2DeepInspectionStatusOutcome;
+      typedef Aws::Utils::Outcome<BatchUpdateMemberEc2DeepInspectionStatusResult, Inspector2Error> BatchUpdateMemberEc2DeepInspectionStatusOutcome;
       typedef Aws::Utils::Outcome<CancelFindingsReportResult, Inspector2Error> CancelFindingsReportOutcome;
       typedef Aws::Utils::Outcome<CreateFilterResult, Inspector2Error> CreateFilterOutcome;
       typedef Aws::Utils::Outcome<CreateFindingsReportResult, Inspector2Error> CreateFindingsReportOutcome;
@@ -140,6 +152,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<EnableDelegatedAdminAccountResult, Inspector2Error> EnableDelegatedAdminAccountOutcome;
       typedef Aws::Utils::Outcome<GetConfigurationResult, Inspector2Error> GetConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetDelegatedAdminAccountResult, Inspector2Error> GetDelegatedAdminAccountOutcome;
+      typedef Aws::Utils::Outcome<GetEc2DeepInspectionConfigurationResult, Inspector2Error> GetEc2DeepInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<GetFindingsReportStatusResult, Inspector2Error> GetFindingsReportStatusOutcome;
       typedef Aws::Utils::Outcome<GetMemberResult, Inspector2Error> GetMemberOutcome;
       typedef Aws::Utils::Outcome<ListAccountPermissionsResult, Inspector2Error> ListAccountPermissionsOutcome;
@@ -155,7 +168,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<TagResourceResult, Inspector2Error> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, Inspector2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateConfigurationResult, Inspector2Error> UpdateConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateEc2DeepInspectionConfigurationResult, Inspector2Error> UpdateEc2DeepInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateFilterResult, Inspector2Error> UpdateFilterOutcome;
+      typedef Aws::Utils::Outcome<UpdateOrgEc2DeepInspectionConfigurationResult, Inspector2Error> UpdateOrgEc2DeepInspectionConfigurationOutcome;
       typedef Aws::Utils::Outcome<UpdateOrganizationConfigurationResult, Inspector2Error> UpdateOrganizationConfigurationOutcome;
       /* End of service model Outcome class definitions */
 
@@ -163,6 +178,8 @@ namespace Aws
       typedef std::future<AssociateMemberOutcome> AssociateMemberOutcomeCallable;
       typedef std::future<BatchGetAccountStatusOutcome> BatchGetAccountStatusOutcomeCallable;
       typedef std::future<BatchGetFreeTrialInfoOutcome> BatchGetFreeTrialInfoOutcomeCallable;
+      typedef std::future<BatchGetMemberEc2DeepInspectionStatusOutcome> BatchGetMemberEc2DeepInspectionStatusOutcomeCallable;
+      typedef std::future<BatchUpdateMemberEc2DeepInspectionStatusOutcome> BatchUpdateMemberEc2DeepInspectionStatusOutcomeCallable;
       typedef std::future<CancelFindingsReportOutcome> CancelFindingsReportOutcomeCallable;
       typedef std::future<CreateFilterOutcome> CreateFilterOutcomeCallable;
       typedef std::future<CreateFindingsReportOutcome> CreateFindingsReportOutcomeCallable;
@@ -175,6 +192,7 @@ namespace Aws
       typedef std::future<EnableDelegatedAdminAccountOutcome> EnableDelegatedAdminAccountOutcomeCallable;
       typedef std::future<GetConfigurationOutcome> GetConfigurationOutcomeCallable;
       typedef std::future<GetDelegatedAdminAccountOutcome> GetDelegatedAdminAccountOutcomeCallable;
+      typedef std::future<GetEc2DeepInspectionConfigurationOutcome> GetEc2DeepInspectionConfigurationOutcomeCallable;
       typedef std::future<GetFindingsReportStatusOutcome> GetFindingsReportStatusOutcomeCallable;
       typedef std::future<GetMemberOutcome> GetMemberOutcomeCallable;
       typedef std::future<ListAccountPermissionsOutcome> ListAccountPermissionsOutcomeCallable;
@@ -190,7 +208,9 @@ namespace Aws
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
+      typedef std::future<UpdateEc2DeepInspectionConfigurationOutcome> UpdateEc2DeepInspectionConfigurationOutcomeCallable;
       typedef std::future<UpdateFilterOutcome> UpdateFilterOutcomeCallable;
+      typedef std::future<UpdateOrgEc2DeepInspectionConfigurationOutcome> UpdateOrgEc2DeepInspectionConfigurationOutcomeCallable;
       typedef std::future<UpdateOrganizationConfigurationOutcome> UpdateOrganizationConfigurationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
@@ -201,6 +221,8 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::AssociateMemberRequest&, const Model::AssociateMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateMemberResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetAccountStatusRequest&, const Model::BatchGetAccountStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetAccountStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::BatchGetFreeTrialInfoRequest&, const Model::BatchGetFreeTrialInfoOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetFreeTrialInfoResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::BatchGetMemberEc2DeepInspectionStatusRequest&, const Model::BatchGetMemberEc2DeepInspectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetMemberEc2DeepInspectionStatusResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::BatchUpdateMemberEc2DeepInspectionStatusRequest&, const Model::BatchUpdateMemberEc2DeepInspectionStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchUpdateMemberEc2DeepInspectionStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CancelFindingsReportRequest&, const Model::CancelFindingsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelFindingsReportResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateFilterRequest&, const Model::CreateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFilterResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::CreateFindingsReportRequest&, const Model::CreateFindingsReportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFindingsReportResponseReceivedHandler;
@@ -213,6 +235,7 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::EnableDelegatedAdminAccountRequest&, const Model::EnableDelegatedAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > EnableDelegatedAdminAccountResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetConfigurationRequest&, const Model::GetConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetDelegatedAdminAccountRequest&, const Model::GetDelegatedAdminAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDelegatedAdminAccountResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::GetEc2DeepInspectionConfigurationRequest&, const Model::GetEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEc2DeepInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetFindingsReportStatusRequest&, const Model::GetFindingsReportStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsReportStatusResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::GetMemberRequest&, const Model::GetMemberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMemberResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListAccountPermissionsRequest&, const Model::ListAccountPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountPermissionsResponseReceivedHandler;
@@ -228,7 +251,9 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::UpdateEc2DeepInspectionConfigurationRequest&, const Model::UpdateEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateEc2DeepInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateFilterRequest&, const Model::UpdateFilterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFilterResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::UpdateOrgEc2DeepInspectionConfigurationRequest&, const Model::UpdateOrgEc2DeepInspectionConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrgEc2DeepInspectionConfigurationResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateOrganizationConfigurationRequest&, const Model::UpdateOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateOrganizationConfigurationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Inspector2

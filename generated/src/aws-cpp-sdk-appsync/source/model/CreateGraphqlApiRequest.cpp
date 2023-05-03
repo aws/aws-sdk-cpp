@@ -23,7 +23,9 @@ CreateGraphqlApiRequest::CreateGraphqlApiRequest() :
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_visibility(GraphQLApiVisibility::NOT_SET),
+    m_visibilityHasBeenSet(false)
 {
 }
 
@@ -92,6 +94,11 @@ Aws::String CreateGraphqlApiRequest::SerializePayload() const
   {
    payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
 
+  }
+
+  if(m_visibilityHasBeenSet)
+  {
+   payload.WithString("visibility", GraphQLApiVisibilityMapper::GetNameForGraphQLApiVisibility(m_visibility));
   }
 
   return payload.View().WriteReadable();
