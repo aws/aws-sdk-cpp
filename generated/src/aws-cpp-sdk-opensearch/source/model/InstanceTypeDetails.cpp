@@ -31,7 +31,8 @@ InstanceTypeDetails::InstanceTypeDetails() :
     m_advancedSecurityEnabledHasBeenSet(false),
     m_warmEnabled(false),
     m_warmEnabledHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false)
+    m_instanceRoleHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ InstanceTypeDetails::InstanceTypeDetails(JsonView jsonValue) :
     m_advancedSecurityEnabledHasBeenSet(false),
     m_warmEnabled(false),
     m_warmEnabledHasBeenSet(false),
-    m_instanceRoleHasBeenSet(false)
+    m_instanceRoleHasBeenSet(false),
+    m_availabilityZonesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -107,6 +109,16 @@ InstanceTypeDetails& InstanceTypeDetails::operator =(JsonView jsonValue)
     m_instanceRoleHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AvailabilityZones"))
+  {
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+    {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -157,6 +169,17 @@ JsonValue InstanceTypeDetails::Jsonize() const
      instanceRoleJsonList[instanceRoleIndex].AsString(m_instanceRole[instanceRoleIndex]);
    }
    payload.WithArray("InstanceRole", std::move(instanceRoleJsonList));
+
+  }
+
+  if(m_availabilityZonesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+   for(unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex)
+   {
+     availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+   }
+   payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
 
   }
 

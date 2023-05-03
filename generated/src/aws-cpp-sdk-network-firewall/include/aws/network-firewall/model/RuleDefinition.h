@@ -108,7 +108,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline const Aws::Vector<Aws::String>& GetActions() const{ return m_actions; }
 
@@ -135,7 +135,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
@@ -162,7 +162,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline void SetActions(const Aws::Vector<Aws::String>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
@@ -189,7 +189,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline void SetActions(Aws::Vector<Aws::String>&& value) { m_actionsHasBeenSet = true; m_actions = std::move(value); }
 
@@ -216,7 +216,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline RuleDefinition& WithActions(const Aws::Vector<Aws::String>& value) { SetActions(value); return *this;}
 
@@ -243,7 +243,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline RuleDefinition& WithActions(Aws::Vector<Aws::String>&& value) { SetActions(std::move(value)); return *this;}
 
@@ -270,7 +270,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline RuleDefinition& AddActions(const Aws::String& value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 
@@ -297,7 +297,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline RuleDefinition& AddActions(Aws::String&& value) { m_actionsHasBeenSet = true; m_actions.push_back(std::move(value)); return *this; }
 
@@ -324,7 +324,7 @@ namespace Model
      * <code>PublishMetrics</code> action that you've named
      * <code>MyMetricsAction</code>, then you could specify the standard action
      * <code>aws:pass</code> and the custom action with <code>[“aws:pass”,
-     * “MyMetricsAction”]</code>. </p>
+     * “MyMetricsAction��]</code>. </p>
      */
     inline RuleDefinition& AddActions(const char* value) { m_actionsHasBeenSet = true; m_actions.push_back(value); return *this; }
 

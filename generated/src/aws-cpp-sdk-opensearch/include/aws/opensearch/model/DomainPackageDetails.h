@@ -302,50 +302,50 @@ namespace Model
 
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline const Aws::String& GetReferencePath() const{ return m_referencePath; }
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline bool ReferencePathHasBeenSet() const { return m_referencePathHasBeenSet; }
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline void SetReferencePath(const Aws::String& value) { m_referencePathHasBeenSet = true; m_referencePath = value; }
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline void SetReferencePath(Aws::String&& value) { m_referencePathHasBeenSet = true; m_referencePath = std::move(value); }
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline void SetReferencePath(const char* value) { m_referencePathHasBeenSet = true; m_referencePath.assign(value); }
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(const Aws::String& value) { SetReferencePath(value); return *this;}
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(Aws::String&& value) { SetReferencePath(std::move(value)); return *this;}
 
     /**
-     * <p>Denotes the location of the package on the OpenSearch Service cluster nodes.
-     * It's the same as <code>synonym_path</code> for dictionary files.</p>
+     * <p>The relative path of the package on the OpenSearch Service cluster nodes.
+     * This is <code>synonym_path</code> when the package is for synonym files.</p>
      */
     inline DomainPackageDetails& WithReferencePath(const char* value) { SetReferencePath(value); return *this;}
 

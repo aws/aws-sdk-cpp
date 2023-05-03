@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/network-firewall/model/StatefulEngineOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/network-firewall/model/PolicyVariables.h>
 #include <aws/network-firewall/model/StatelessRuleGroupReference.h>
 #include <aws/network-firewall/model/CustomAction.h>
 #include <aws/network-firewall/model/StatefulRuleGroupReference.h>
@@ -665,6 +666,43 @@ namespace Model
      */
     inline FirewallPolicy& WithTLSInspectionConfigurationArn(const char* value) { SetTLSInspectionConfigurationArn(value); return *this;}
 
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline const PolicyVariables& GetPolicyVariables() const{ return m_policyVariables; }
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline bool PolicyVariablesHasBeenSet() const { return m_policyVariablesHasBeenSet; }
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline void SetPolicyVariables(const PolicyVariables& value) { m_policyVariablesHasBeenSet = true; m_policyVariables = value; }
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline void SetPolicyVariables(PolicyVariables&& value) { m_policyVariablesHasBeenSet = true; m_policyVariables = std::move(value); }
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline FirewallPolicy& WithPolicyVariables(const PolicyVariables& value) { SetPolicyVariables(value); return *this;}
+
+    /**
+     * <p>Contains variables that you can use to override default Suricata settings in
+     * your firewall policy.</p>
+     */
+    inline FirewallPolicy& WithPolicyVariables(PolicyVariables&& value) { SetPolicyVariables(std::move(value)); return *this;}
+
   private:
 
     Aws::Vector<StatelessRuleGroupReference> m_statelessRuleGroupReferences;
@@ -690,6 +728,9 @@ namespace Model
 
     Aws::String m_tLSInspectionConfigurationArn;
     bool m_tLSInspectionConfigurationArnHasBeenSet = false;
+
+    PolicyVariables m_policyVariables;
+    bool m_policyVariablesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -19,7 +19,9 @@ namespace Model
     CREATING,
     DELETING,
     SCALING,
-    READY
+    READY,
+    FAILED,
+    ERROR_
   };
 
 namespace AttachmentStatusMapper

@@ -42,7 +42,7 @@ namespace Model
 
     /**
      * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 13, 2023, not when creating a
+     * when modifying a domain created prior to February 16, 2023, not when creating a
      * new domain. All domains created after this date have the off-peak window enabled
      * by default. You can't disable the off-peak window after it's enabled for a
      * domain.</p>
@@ -51,7 +51,7 @@ namespace Model
 
     /**
      * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 13, 2023, not when creating a
+     * when modifying a domain created prior to February 16, 2023, not when creating a
      * new domain. All domains created after this date have the off-peak window enabled
      * by default. You can't disable the off-peak window after it's enabled for a
      * domain.</p>
@@ -60,7 +60,7 @@ namespace Model
 
     /**
      * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 13, 2023, not when creating a
+     * when modifying a domain created prior to February 16, 2023, not when creating a
      * new domain. All domains created after this date have the off-peak window enabled
      * by default. You can't disable the off-peak window after it's enabled for a
      * domain.</p>
@@ -69,7 +69,7 @@ namespace Model
 
     /**
      * <p>Whether to enable an off-peak window.</p> <p>This option is only available
-     * when modifying a domain created prior to February 13, 2023, not when creating a
+     * when modifying a domain created prior to February 16, 2023, not when creating a
      * new domain. All domains created after this date have the off-peak window enabled
      * by default. You can't disable the off-peak window after it's enabled for a
      * domain.</p>

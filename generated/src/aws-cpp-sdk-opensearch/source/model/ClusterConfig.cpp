@@ -38,7 +38,9 @@ ClusterConfig::ClusterConfig() :
     m_warmTypeHasBeenSet(false),
     m_warmCount(0),
     m_warmCountHasBeenSet(false),
-    m_coldStorageOptionsHasBeenSet(false)
+    m_coldStorageOptionsHasBeenSet(false),
+    m_multiAZWithStandbyEnabled(false),
+    m_multiAZWithStandbyEnabledHasBeenSet(false)
 {
 }
 
@@ -62,7 +64,9 @@ ClusterConfig::ClusterConfig(JsonView jsonValue) :
     m_warmTypeHasBeenSet(false),
     m_warmCount(0),
     m_warmCountHasBeenSet(false),
-    m_coldStorageOptionsHasBeenSet(false)
+    m_coldStorageOptionsHasBeenSet(false),
+    m_multiAZWithStandbyEnabled(false),
+    m_multiAZWithStandbyEnabledHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -146,6 +150,13 @@ ClusterConfig& ClusterConfig::operator =(JsonView jsonValue)
     m_coldStorageOptionsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MultiAZWithStandbyEnabled"))
+  {
+    m_multiAZWithStandbyEnabled = jsonValue.GetBool("MultiAZWithStandbyEnabled");
+
+    m_multiAZWithStandbyEnabledHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -213,6 +224,12 @@ JsonValue ClusterConfig::Jsonize() const
   if(m_coldStorageOptionsHasBeenSet)
   {
    payload.WithObject("ColdStorageOptions", m_coldStorageOptions.Jsonize());
+
+  }
+
+  if(m_multiAZWithStandbyEnabledHasBeenSet)
+  {
+   payload.WithBool("MultiAZWithStandbyEnabled", m_multiAZWithStandbyEnabled);
 
   }
 

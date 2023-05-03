@@ -1118,7 +1118,7 @@ namespace WellArchitected
 
         /**
          * <p>Updates whether the Amazon Web Services account is opted into organization
-         * sharing features.</p><p><h3>See Also:</h3>   <a
+         * sharing and discovery integration features.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/UpdateGlobalSettings">AWS
          * API Reference</a></p>
          */

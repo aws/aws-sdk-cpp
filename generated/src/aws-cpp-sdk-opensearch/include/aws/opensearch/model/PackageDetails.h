@@ -83,42 +83,42 @@ namespace Model
 
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline const Aws::String& GetPackageName() const{ return m_packageName; }
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline bool PackageNameHasBeenSet() const { return m_packageNameHasBeenSet; }
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline void SetPackageName(const Aws::String& value) { m_packageNameHasBeenSet = true; m_packageName = value; }
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline void SetPackageName(Aws::String&& value) { m_packageNameHasBeenSet = true; m_packageName = std::move(value); }
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline void SetPackageName(const char* value) { m_packageNameHasBeenSet = true; m_packageName.assign(value); }
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline PackageDetails& WithPackageName(const Aws::String& value) { SetPackageName(value); return *this;}
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline PackageDetails& WithPackageName(Aws::String&& value) { SetPackageName(std::move(value)); return *this;}
 
     /**
-     * <p>User-specified name of the package.</p>
+     * <p>The user-specified name of the package.</p>
      */
     inline PackageDetails& WithPackageName(const char* value) { SetPackageName(value); return *this;}
 
@@ -196,32 +196,50 @@ namespace Model
 
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline const PackageStatus& GetPackageStatus() const{ return m_packageStatus; }
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline bool PackageStatusHasBeenSet() const { return m_packageStatusHasBeenSet; }
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline void SetPackageStatus(const PackageStatus& value) { m_packageStatusHasBeenSet = true; m_packageStatus = value; }
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline void SetPackageStatus(PackageStatus&& value) { m_packageStatusHasBeenSet = true; m_packageStatus = std::move(value); }
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline PackageDetails& WithPackageStatus(const PackageStatus& value) { SetPackageStatus(value); return *this;}
 
     /**
-     * <p>Current status of the package.</p>
+     * <p>The current status of the package. The available options are
+     * <code>AVAILABLE</code>, <code>COPYING</code>, <code>COPY_FAILED</code>,
+     * <code>VALIDATNG</code>, <code>VALIDATION_FAILED</code>, <code>DELETING</code>,
+     * and <code>DELETE_FAILED</code>.</p>
      */
     inline PackageDetails& WithPackageStatus(PackageStatus&& value) { SetPackageStatus(std::move(value)); return *this;}
 
