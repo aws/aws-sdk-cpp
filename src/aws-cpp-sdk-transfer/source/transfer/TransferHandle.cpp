@@ -76,7 +76,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
@@ -96,7 +96,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(),
             m_downloadStream(nullptr)
         {}
@@ -116,7 +116,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(createDownloadStreamFn),
             m_downloadStream(nullptr)
         {}
@@ -139,7 +139,7 @@ namespace Aws
             m_versionId(""),
             m_status(TransferStatus::NOT_STARTED),
             m_cancel(false),
-            m_handleId(Utils::UUID::RandomUUID()),
+            m_handleId(Utils::UUID::PseudoRandomUUID()),
             m_createDownloadStreamFn(createDownloadStreamFn),
             m_downloadStream(nullptr)
         {}

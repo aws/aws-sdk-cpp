@@ -7,6 +7,8 @@
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
 
+#include <future>
+
 using namespace Aws::Utils;
 
 TEST(UUIDTest, TestPlatformGeneratesUUID)
@@ -50,4 +52,59 @@ TEST(UUIDTest, TestUUIDFromStringConversion)
     ASSERT_STREQ(originalStr.c_str(), convertedStr.c_str());
 }
 
+TEST(UUIDTest, TestPseudoRandomUUID)
+{
+    Aws::UnorderedSet<Aws::String> generatedUUids;
+
+    for(size_t i = 0u; i < 10000u; ++i)
+    {
+        UUID uuid = UUID::PseudoRandomUUID();
+        Aws::String uuidStr = uuid;
+        ASSERT_EQ(36u, uuidStr.length());
+        ByteBuffer rawUUID = uuid;
+        ASSERT_EQ(16u, rawUUID.GetLength());
+        ASSERT_EQ(0x40u, 0x40u & rawUUID[6]);
+        ASSERT_EQ(0x80u, 0x80u & rawUUID[8]);
+
+        auto foundIt = generatedUUids.find(uuidStr);
+        ASSERT_TRUE( foundIt == generatedUUids.end() ) << "Collision: " << uuidStr;
+
+        generatedUUids.insert(uuidStr);
+    }
+
+    ASSERT_EQ(10000u, generatedUUids.size());
+}
+
+TEST(UUIDTest, TestPseudoRandomParallelUUID)
+{
+    Aws::UnorderedSet<Aws::String> generatedAllUUids;
+
+    static const size_t BATCHES = 20;
+    Aws::Vector<std::future<Aws::UnorderedSet<Aws::String>>> futures(BATCHES);
+
+    for(size_t i = 0; i < BATCHES; ++i)
+    {
+        futures[i] = std::async(
+                []()
+                {
+                    Aws::UnorderedSet<Aws::String> generatedUUids;
+                    for(size_t i = 0u; i < 1000u; ++i)
+                    {
+                        UUID uuid = UUID::PseudoRandomUUID();
+                        Aws::String uuidStr = uuid;
+                        generatedUUids.insert(uuidStr);
+                    }
+
+                    return generatedUUids;
+                });
+    }
+
+    for(size_t i = 0; i < BATCHES; ++i)
+    {
+        Aws::UnorderedSet<Aws::String> batch = futures[i].get();
+        ASSERT_EQ(1000u, batch.size());
+        generatedAllUUids.insert(batch.begin(), batch.end());
+    }
+    ASSERT_EQ(BATCHES * 1000u, generatedAllUUids.size());
+}
 

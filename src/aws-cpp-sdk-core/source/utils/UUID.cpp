@@ -9,6 +9,9 @@
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/SecureRandom.h>
 #include <iomanip>
+#include <random>
+#include <chrono>
+#include <thread>
 
 namespace Aws
 {
@@ -77,6 +80,33 @@ namespace Aws
             unsigned char randomBytes[UUID_BINARY_SIZE];
             memset(randomBytes, 0, UUID_BINARY_SIZE);
             secureRandom->GetBytes(randomBytes, UUID_BINARY_SIZE);
+            //Set version bits to 0100
+            //https://tools.ietf.org/html/rfc4122#section-4.1.3
+            randomBytes[VERSION_LOCATION] = (randomBytes[VERSION_LOCATION] & VERSION_MASK) | VERSION;
+            //set variant bits to 10
+            //https://tools.ietf.org/html/rfc4122#section-4.1.1
+            randomBytes[VARIANT_LOCATION] = (randomBytes[VARIANT_LOCATION] & VARIANT_MASK) | VARIANT;
+
+            return UUID(randomBytes);
+        }
+
+        UUID UUID::PseudoRandomUUID()
+        {
+            static size_t randomSeed = std::random_device{}();
+            static const thread_local size_t threadId = std::hash<std::thread::id>{}(std::this_thread::get_id());
+#ifdef UINT64_MAX
+            static thread_local std::mt19937_64 gen(randomSeed ^ threadId);
+            using RandGenType = uint64_t;
+#else
+            static thread_local std::mt19937 gen(randomSeed ^ threadId);
+            using RandGenType = unsigned int;
+#endif
+            unsigned char randomBytes[UUID_BINARY_SIZE] = {0};
+
+            for (size_t i = 0; i < UUID_BINARY_SIZE / sizeof(RandGenType); i++) {
+                reinterpret_cast<RandGenType*>(randomBytes)[i] = gen();
+            }
+
             //Set version bits to 0100
             //https://tools.ietf.org/html/rfc4122#section-4.1.3
             randomBytes[VERSION_LOCATION] = (randomBytes[VERSION_LOCATION] & VERSION_MASK) | VERSION;
