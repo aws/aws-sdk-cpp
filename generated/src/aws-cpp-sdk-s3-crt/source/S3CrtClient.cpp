@@ -201,6 +201,10 @@ void S3CrtClient::init(const S3Crt::ClientConfiguration& config, const std::shar
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   s3CrtConfig.connect_timeout_ms = config.connectTimeoutMs;
 
+  // Download flow-control configuration:
+  s3CrtConfig.enable_read_backpressure = (config.downloadMemoryUsageWindow > 0);
+  s3CrtConfig.initial_read_window = config.downloadMemoryUsageWindow;
+
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
   if (config.enableTcpKeepAlive) {
     uint16_t configKeepAliveS = static_cast<uint16_t>(std::min(static_cast<unsigned long>(std::numeric_limits<uint16_t>::max()), config.tcpKeepAliveIntervalMs / 1000ul));
@@ -323,7 +327,6 @@ static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request,
 
 static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data)
 {
-  AWS_UNREFERENCED_PARAM(meta_request);
   AWS_UNREFERENCED_PARAM(range_start);
 
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
@@ -334,6 +337,9 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
     bodyStream.flush();
   }
+
+  // Replenish flow-control window (no-op if enable_read_backpressure is not set):
+  aws_s3_meta_request_increment_read_window(meta_request, body->len);
 
   // data sent handler and continuation handler will be supported later when aws_c_s3 support it.
   auto& receivedHandler = userData->request->GetDataReceivedEventHandler();
