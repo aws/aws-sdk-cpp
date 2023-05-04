@@ -38,42 +38,82 @@ namespace Model
 
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline Owner& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline Owner& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>Container for the display name of the owner.</p>
+     * <p>Container for the display name of the owner. This value is only supported in
+     * the following Amazon Web Services Regions:</p> <ul> <li> <p>US East (N.
+     * Virginia)</p> </li> <li> <p>US West (N. California)</p> </li> <li> <p>US West
+     * (Oregon)</p> </li> <li> <p>Asia Pacific (Singapore)</p> </li> <li> <p>Asia
+     * Pacific (Sydney)</p> </li> <li> <p>Asia Pacific (Tokyo)</p> </li> <li> <p>Europe
+     * (Ireland)</p> </li> <li> <p>South America (São Paulo)</p> </li> </ul>
      */
     inline Owner& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 

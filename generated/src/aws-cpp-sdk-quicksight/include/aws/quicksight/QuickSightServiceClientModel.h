@@ -37,6 +37,9 @@
 #include <aws/quicksight/model/CreateTemplateAliasResult.h>
 #include <aws/quicksight/model/CreateThemeResult.h>
 #include <aws/quicksight/model/CreateThemeAliasResult.h>
+#include <aws/quicksight/model/CreateTopicResult.h>
+#include <aws/quicksight/model/CreateTopicRefreshScheduleResult.h>
+#include <aws/quicksight/model/CreateVPCConnectionResult.h>
 #include <aws/quicksight/model/DeleteAccountCustomizationResult.h>
 #include <aws/quicksight/model/DeleteAccountSubscriptionResult.h>
 #include <aws/quicksight/model/DeleteAnalysisResult.h>
@@ -55,8 +58,11 @@
 #include <aws/quicksight/model/DeleteTemplateAliasResult.h>
 #include <aws/quicksight/model/DeleteThemeResult.h>
 #include <aws/quicksight/model/DeleteThemeAliasResult.h>
+#include <aws/quicksight/model/DeleteTopicResult.h>
+#include <aws/quicksight/model/DeleteTopicRefreshScheduleResult.h>
 #include <aws/quicksight/model/DeleteUserResult.h>
 #include <aws/quicksight/model/DeleteUserByPrincipalIdResult.h>
+#include <aws/quicksight/model/DeleteVPCConnectionResult.h>
 #include <aws/quicksight/model/DescribeAccountCustomizationResult.h>
 #include <aws/quicksight/model/DescribeAccountSettingsResult.h>
 #include <aws/quicksight/model/DescribeAccountSubscriptionResult.h>
@@ -88,7 +94,12 @@
 #include <aws/quicksight/model/DescribeThemeResult.h>
 #include <aws/quicksight/model/DescribeThemeAliasResult.h>
 #include <aws/quicksight/model/DescribeThemePermissionsResult.h>
+#include <aws/quicksight/model/DescribeTopicResult.h>
+#include <aws/quicksight/model/DescribeTopicPermissionsResult.h>
+#include <aws/quicksight/model/DescribeTopicRefreshResult.h>
+#include <aws/quicksight/model/DescribeTopicRefreshScheduleResult.h>
 #include <aws/quicksight/model/DescribeUserResult.h>
+#include <aws/quicksight/model/DescribeVPCConnectionResult.h>
 #include <aws/quicksight/model/GenerateEmbedUrlForAnonymousUserResult.h>
 #include <aws/quicksight/model/GenerateEmbedUrlForRegisteredUserResult.h>
 #include <aws/quicksight/model/GetDashboardEmbedUrlResult.h>
@@ -114,8 +125,11 @@
 #include <aws/quicksight/model/ListThemeAliasesResult.h>
 #include <aws/quicksight/model/ListThemeVersionsResult.h>
 #include <aws/quicksight/model/ListThemesResult.h>
+#include <aws/quicksight/model/ListTopicRefreshSchedulesResult.h>
+#include <aws/quicksight/model/ListTopicsResult.h>
 #include <aws/quicksight/model/ListUserGroupsResult.h>
 #include <aws/quicksight/model/ListUsersResult.h>
+#include <aws/quicksight/model/ListVPCConnectionsResult.h>
 #include <aws/quicksight/model/PutDataSetRefreshPropertiesResult.h>
 #include <aws/quicksight/model/RegisterUserResult.h>
 #include <aws/quicksight/model/RestoreAnalysisResult.h>
@@ -151,7 +165,11 @@
 #include <aws/quicksight/model/UpdateThemeResult.h>
 #include <aws/quicksight/model/UpdateThemeAliasResult.h>
 #include <aws/quicksight/model/UpdateThemePermissionsResult.h>
+#include <aws/quicksight/model/UpdateTopicResult.h>
+#include <aws/quicksight/model/UpdateTopicPermissionsResult.h>
+#include <aws/quicksight/model/UpdateTopicRefreshScheduleResult.h>
 #include <aws/quicksight/model/UpdateUserResult.h>
+#include <aws/quicksight/model/UpdateVPCConnectionResult.h>
 /* End of service model headers required in QuickSightClient header */
 
 namespace Aws
@@ -211,6 +229,9 @@ namespace Aws
       class CreateTemplateAliasRequest;
       class CreateThemeRequest;
       class CreateThemeAliasRequest;
+      class CreateTopicRequest;
+      class CreateTopicRefreshScheduleRequest;
+      class CreateVPCConnectionRequest;
       class DeleteAccountCustomizationRequest;
       class DeleteAccountSubscriptionRequest;
       class DeleteAnalysisRequest;
@@ -229,8 +250,11 @@ namespace Aws
       class DeleteTemplateAliasRequest;
       class DeleteThemeRequest;
       class DeleteThemeAliasRequest;
+      class DeleteTopicRequest;
+      class DeleteTopicRefreshScheduleRequest;
       class DeleteUserRequest;
       class DeleteUserByPrincipalIdRequest;
+      class DeleteVPCConnectionRequest;
       class DescribeAccountCustomizationRequest;
       class DescribeAccountSettingsRequest;
       class DescribeAccountSubscriptionRequest;
@@ -262,7 +286,12 @@ namespace Aws
       class DescribeThemeRequest;
       class DescribeThemeAliasRequest;
       class DescribeThemePermissionsRequest;
+      class DescribeTopicRequest;
+      class DescribeTopicPermissionsRequest;
+      class DescribeTopicRefreshRequest;
+      class DescribeTopicRefreshScheduleRequest;
       class DescribeUserRequest;
+      class DescribeVPCConnectionRequest;
       class GenerateEmbedUrlForAnonymousUserRequest;
       class GenerateEmbedUrlForRegisteredUserRequest;
       class GetDashboardEmbedUrlRequest;
@@ -288,8 +317,11 @@ namespace Aws
       class ListThemeAliasesRequest;
       class ListThemeVersionsRequest;
       class ListThemesRequest;
+      class ListTopicRefreshSchedulesRequest;
+      class ListTopicsRequest;
       class ListUserGroupsRequest;
       class ListUsersRequest;
+      class ListVPCConnectionsRequest;
       class PutDataSetRefreshPropertiesRequest;
       class RegisterUserRequest;
       class RestoreAnalysisRequest;
@@ -325,7 +357,11 @@ namespace Aws
       class UpdateThemeRequest;
       class UpdateThemeAliasRequest;
       class UpdateThemePermissionsRequest;
+      class UpdateTopicRequest;
+      class UpdateTopicPermissionsRequest;
+      class UpdateTopicRefreshScheduleRequest;
       class UpdateUserRequest;
+      class UpdateVPCConnectionRequest;
       /* End of service model forward declarations required in QuickSightClient header */
 
       /* Service model Outcome class definitions */
@@ -348,6 +384,9 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateTemplateAliasResult, QuickSightError> CreateTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<CreateThemeResult, QuickSightError> CreateThemeOutcome;
       typedef Aws::Utils::Outcome<CreateThemeAliasResult, QuickSightError> CreateThemeAliasOutcome;
+      typedef Aws::Utils::Outcome<CreateTopicResult, QuickSightError> CreateTopicOutcome;
+      typedef Aws::Utils::Outcome<CreateTopicRefreshScheduleResult, QuickSightError> CreateTopicRefreshScheduleOutcome;
+      typedef Aws::Utils::Outcome<CreateVPCConnectionResult, QuickSightError> CreateVPCConnectionOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountCustomizationResult, QuickSightError> DeleteAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DeleteAccountSubscriptionResult, QuickSightError> DeleteAccountSubscriptionOutcome;
       typedef Aws::Utils::Outcome<DeleteAnalysisResult, QuickSightError> DeleteAnalysisOutcome;
@@ -366,8 +405,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteTemplateAliasResult, QuickSightError> DeleteTemplateAliasOutcome;
       typedef Aws::Utils::Outcome<DeleteThemeResult, QuickSightError> DeleteThemeOutcome;
       typedef Aws::Utils::Outcome<DeleteThemeAliasResult, QuickSightError> DeleteThemeAliasOutcome;
+      typedef Aws::Utils::Outcome<DeleteTopicResult, QuickSightError> DeleteTopicOutcome;
+      typedef Aws::Utils::Outcome<DeleteTopicRefreshScheduleResult, QuickSightError> DeleteTopicRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<DeleteUserResult, QuickSightError> DeleteUserOutcome;
       typedef Aws::Utils::Outcome<DeleteUserByPrincipalIdResult, QuickSightError> DeleteUserByPrincipalIdOutcome;
+      typedef Aws::Utils::Outcome<DeleteVPCConnectionResult, QuickSightError> DeleteVPCConnectionOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountCustomizationResult, QuickSightError> DescribeAccountCustomizationOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSettingsResult, QuickSightError> DescribeAccountSettingsOutcome;
       typedef Aws::Utils::Outcome<DescribeAccountSubscriptionResult, QuickSightError> DescribeAccountSubscriptionOutcome;
@@ -399,7 +441,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeThemeResult, QuickSightError> DescribeThemeOutcome;
       typedef Aws::Utils::Outcome<DescribeThemeAliasResult, QuickSightError> DescribeThemeAliasOutcome;
       typedef Aws::Utils::Outcome<DescribeThemePermissionsResult, QuickSightError> DescribeThemePermissionsOutcome;
+      typedef Aws::Utils::Outcome<DescribeTopicResult, QuickSightError> DescribeTopicOutcome;
+      typedef Aws::Utils::Outcome<DescribeTopicPermissionsResult, QuickSightError> DescribeTopicPermissionsOutcome;
+      typedef Aws::Utils::Outcome<DescribeTopicRefreshResult, QuickSightError> DescribeTopicRefreshOutcome;
+      typedef Aws::Utils::Outcome<DescribeTopicRefreshScheduleResult, QuickSightError> DescribeTopicRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<DescribeUserResult, QuickSightError> DescribeUserOutcome;
+      typedef Aws::Utils::Outcome<DescribeVPCConnectionResult, QuickSightError> DescribeVPCConnectionOutcome;
       typedef Aws::Utils::Outcome<GenerateEmbedUrlForAnonymousUserResult, QuickSightError> GenerateEmbedUrlForAnonymousUserOutcome;
       typedef Aws::Utils::Outcome<GenerateEmbedUrlForRegisteredUserResult, QuickSightError> GenerateEmbedUrlForRegisteredUserOutcome;
       typedef Aws::Utils::Outcome<GetDashboardEmbedUrlResult, QuickSightError> GetDashboardEmbedUrlOutcome;
@@ -425,8 +472,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListThemeAliasesResult, QuickSightError> ListThemeAliasesOutcome;
       typedef Aws::Utils::Outcome<ListThemeVersionsResult, QuickSightError> ListThemeVersionsOutcome;
       typedef Aws::Utils::Outcome<ListThemesResult, QuickSightError> ListThemesOutcome;
+      typedef Aws::Utils::Outcome<ListTopicRefreshSchedulesResult, QuickSightError> ListTopicRefreshSchedulesOutcome;
+      typedef Aws::Utils::Outcome<ListTopicsResult, QuickSightError> ListTopicsOutcome;
       typedef Aws::Utils::Outcome<ListUserGroupsResult, QuickSightError> ListUserGroupsOutcome;
       typedef Aws::Utils::Outcome<ListUsersResult, QuickSightError> ListUsersOutcome;
+      typedef Aws::Utils::Outcome<ListVPCConnectionsResult, QuickSightError> ListVPCConnectionsOutcome;
       typedef Aws::Utils::Outcome<PutDataSetRefreshPropertiesResult, QuickSightError> PutDataSetRefreshPropertiesOutcome;
       typedef Aws::Utils::Outcome<RegisterUserResult, QuickSightError> RegisterUserOutcome;
       typedef Aws::Utils::Outcome<RestoreAnalysisResult, QuickSightError> RestoreAnalysisOutcome;
@@ -462,7 +512,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<UpdateThemeResult, QuickSightError> UpdateThemeOutcome;
       typedef Aws::Utils::Outcome<UpdateThemeAliasResult, QuickSightError> UpdateThemeAliasOutcome;
       typedef Aws::Utils::Outcome<UpdateThemePermissionsResult, QuickSightError> UpdateThemePermissionsOutcome;
+      typedef Aws::Utils::Outcome<UpdateTopicResult, QuickSightError> UpdateTopicOutcome;
+      typedef Aws::Utils::Outcome<UpdateTopicPermissionsResult, QuickSightError> UpdateTopicPermissionsOutcome;
+      typedef Aws::Utils::Outcome<UpdateTopicRefreshScheduleResult, QuickSightError> UpdateTopicRefreshScheduleOutcome;
       typedef Aws::Utils::Outcome<UpdateUserResult, QuickSightError> UpdateUserOutcome;
+      typedef Aws::Utils::Outcome<UpdateVPCConnectionResult, QuickSightError> UpdateVPCConnectionOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
@@ -485,6 +539,9 @@ namespace Aws
       typedef std::future<CreateTemplateAliasOutcome> CreateTemplateAliasOutcomeCallable;
       typedef std::future<CreateThemeOutcome> CreateThemeOutcomeCallable;
       typedef std::future<CreateThemeAliasOutcome> CreateThemeAliasOutcomeCallable;
+      typedef std::future<CreateTopicOutcome> CreateTopicOutcomeCallable;
+      typedef std::future<CreateTopicRefreshScheduleOutcome> CreateTopicRefreshScheduleOutcomeCallable;
+      typedef std::future<CreateVPCConnectionOutcome> CreateVPCConnectionOutcomeCallable;
       typedef std::future<DeleteAccountCustomizationOutcome> DeleteAccountCustomizationOutcomeCallable;
       typedef std::future<DeleteAccountSubscriptionOutcome> DeleteAccountSubscriptionOutcomeCallable;
       typedef std::future<DeleteAnalysisOutcome> DeleteAnalysisOutcomeCallable;
@@ -503,8 +560,11 @@ namespace Aws
       typedef std::future<DeleteTemplateAliasOutcome> DeleteTemplateAliasOutcomeCallable;
       typedef std::future<DeleteThemeOutcome> DeleteThemeOutcomeCallable;
       typedef std::future<DeleteThemeAliasOutcome> DeleteThemeAliasOutcomeCallable;
+      typedef std::future<DeleteTopicOutcome> DeleteTopicOutcomeCallable;
+      typedef std::future<DeleteTopicRefreshScheduleOutcome> DeleteTopicRefreshScheduleOutcomeCallable;
       typedef std::future<DeleteUserOutcome> DeleteUserOutcomeCallable;
       typedef std::future<DeleteUserByPrincipalIdOutcome> DeleteUserByPrincipalIdOutcomeCallable;
+      typedef std::future<DeleteVPCConnectionOutcome> DeleteVPCConnectionOutcomeCallable;
       typedef std::future<DescribeAccountCustomizationOutcome> DescribeAccountCustomizationOutcomeCallable;
       typedef std::future<DescribeAccountSettingsOutcome> DescribeAccountSettingsOutcomeCallable;
       typedef std::future<DescribeAccountSubscriptionOutcome> DescribeAccountSubscriptionOutcomeCallable;
@@ -536,7 +596,12 @@ namespace Aws
       typedef std::future<DescribeThemeOutcome> DescribeThemeOutcomeCallable;
       typedef std::future<DescribeThemeAliasOutcome> DescribeThemeAliasOutcomeCallable;
       typedef std::future<DescribeThemePermissionsOutcome> DescribeThemePermissionsOutcomeCallable;
+      typedef std::future<DescribeTopicOutcome> DescribeTopicOutcomeCallable;
+      typedef std::future<DescribeTopicPermissionsOutcome> DescribeTopicPermissionsOutcomeCallable;
+      typedef std::future<DescribeTopicRefreshOutcome> DescribeTopicRefreshOutcomeCallable;
+      typedef std::future<DescribeTopicRefreshScheduleOutcome> DescribeTopicRefreshScheduleOutcomeCallable;
       typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
+      typedef std::future<DescribeVPCConnectionOutcome> DescribeVPCConnectionOutcomeCallable;
       typedef std::future<GenerateEmbedUrlForAnonymousUserOutcome> GenerateEmbedUrlForAnonymousUserOutcomeCallable;
       typedef std::future<GenerateEmbedUrlForRegisteredUserOutcome> GenerateEmbedUrlForRegisteredUserOutcomeCallable;
       typedef std::future<GetDashboardEmbedUrlOutcome> GetDashboardEmbedUrlOutcomeCallable;
@@ -562,8 +627,11 @@ namespace Aws
       typedef std::future<ListThemeAliasesOutcome> ListThemeAliasesOutcomeCallable;
       typedef std::future<ListThemeVersionsOutcome> ListThemeVersionsOutcomeCallable;
       typedef std::future<ListThemesOutcome> ListThemesOutcomeCallable;
+      typedef std::future<ListTopicRefreshSchedulesOutcome> ListTopicRefreshSchedulesOutcomeCallable;
+      typedef std::future<ListTopicsOutcome> ListTopicsOutcomeCallable;
       typedef std::future<ListUserGroupsOutcome> ListUserGroupsOutcomeCallable;
       typedef std::future<ListUsersOutcome> ListUsersOutcomeCallable;
+      typedef std::future<ListVPCConnectionsOutcome> ListVPCConnectionsOutcomeCallable;
       typedef std::future<PutDataSetRefreshPropertiesOutcome> PutDataSetRefreshPropertiesOutcomeCallable;
       typedef std::future<RegisterUserOutcome> RegisterUserOutcomeCallable;
       typedef std::future<RestoreAnalysisOutcome> RestoreAnalysisOutcomeCallable;
@@ -599,7 +667,11 @@ namespace Aws
       typedef std::future<UpdateThemeOutcome> UpdateThemeOutcomeCallable;
       typedef std::future<UpdateThemeAliasOutcome> UpdateThemeAliasOutcomeCallable;
       typedef std::future<UpdateThemePermissionsOutcome> UpdateThemePermissionsOutcomeCallable;
+      typedef std::future<UpdateTopicOutcome> UpdateTopicOutcomeCallable;
+      typedef std::future<UpdateTopicPermissionsOutcome> UpdateTopicPermissionsOutcomeCallable;
+      typedef std::future<UpdateTopicRefreshScheduleOutcome> UpdateTopicRefreshScheduleOutcomeCallable;
       typedef std::future<UpdateUserOutcome> UpdateUserOutcomeCallable;
+      typedef std::future<UpdateVPCConnectionOutcome> UpdateVPCConnectionOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -625,6 +697,9 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::CreateTemplateAliasRequest&, const Model::CreateTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateThemeRequest&, const Model::CreateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::CreateThemeAliasRequest&, const Model::CreateThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateThemeAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateTopicRequest&, const Model::CreateTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateTopicRefreshScheduleRequest&, const Model::CreateTopicRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTopicRefreshScheduleResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::CreateVPCConnectionRequest&, const Model::CreateVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateVPCConnectionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountCustomizationRequest&, const Model::DeleteAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAccountSubscriptionRequest&, const Model::DeleteAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSubscriptionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteAnalysisRequest&, const Model::DeleteAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAnalysisResponseReceivedHandler;
@@ -643,8 +718,11 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DeleteTemplateAliasRequest&, const Model::DeleteTemplateAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTemplateAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteThemeRequest&, const Model::DeleteThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteThemeAliasRequest&, const Model::DeleteThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteThemeAliasResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteTopicRequest&, const Model::DeleteTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTopicResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteTopicRefreshScheduleRequest&, const Model::DeleteTopicRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTopicRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserRequest&, const Model::DeleteUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DeleteUserByPrincipalIdRequest&, const Model::DeleteUserByPrincipalIdOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteUserByPrincipalIdResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DeleteVPCConnectionRequest&, const Model::DeleteVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteVPCConnectionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountCustomizationRequest&, const Model::DescribeAccountCustomizationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountCustomizationResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSettingsRequest&, const Model::DescribeAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSettingsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeAccountSubscriptionRequest&, const Model::DescribeAccountSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAccountSubscriptionResponseReceivedHandler;
@@ -676,7 +754,12 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeRequest&, const Model::DescribeThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeThemeAliasRequest&, const Model::DescribeThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemeAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeThemePermissionsRequest&, const Model::DescribeThemePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeThemePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeTopicRequest&, const Model::DescribeTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTopicResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeTopicPermissionsRequest&, const Model::DescribeTopicPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTopicPermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeTopicRefreshRequest&, const Model::DescribeTopicRefreshOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTopicRefreshResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeTopicRefreshScheduleRequest&, const Model::DescribeTopicRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTopicRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::DescribeVPCConnectionRequest&, const Model::DescribeVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVPCConnectionResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GenerateEmbedUrlForAnonymousUserRequest&, const Model::GenerateEmbedUrlForAnonymousUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateEmbedUrlForAnonymousUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GenerateEmbedUrlForRegisteredUserRequest&, const Model::GenerateEmbedUrlForRegisteredUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GenerateEmbedUrlForRegisteredUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::GetDashboardEmbedUrlRequest&, const Model::GetDashboardEmbedUrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDashboardEmbedUrlResponseReceivedHandler;
@@ -702,8 +785,11 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::ListThemeAliasesRequest&, const Model::ListThemeAliasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemeAliasesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListThemeVersionsRequest&, const Model::ListThemeVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemeVersionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListThemesRequest&, const Model::ListThemesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListThemesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListTopicRefreshSchedulesRequest&, const Model::ListTopicRefreshSchedulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicRefreshSchedulesResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListTopicsRequest&, const Model::ListTopicsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTopicsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUserGroupsRequest&, const Model::ListUserGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUserGroupsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::ListUsersRequest&, const Model::ListUsersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsersResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::ListVPCConnectionsRequest&, const Model::ListVPCConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListVPCConnectionsResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::PutDataSetRefreshPropertiesRequest&, const Model::PutDataSetRefreshPropertiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDataSetRefreshPropertiesResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RegisterUserRequest&, const Model::RegisterUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterUserResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::RestoreAnalysisRequest&, const Model::RestoreAnalysisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreAnalysisResponseReceivedHandler;
@@ -739,7 +825,11 @@ namespace Aws
     typedef std::function<void(const QuickSightClient*, const Model::UpdateThemeRequest&, const Model::UpdateThemeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateThemeAliasRequest&, const Model::UpdateThemeAliasOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemeAliasResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateThemePermissionsRequest&, const Model::UpdateThemePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateThemePermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateTopicRequest&, const Model::UpdateTopicOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTopicResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateTopicPermissionsRequest&, const Model::UpdateTopicPermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTopicPermissionsResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateTopicRefreshScheduleRequest&, const Model::UpdateTopicRefreshScheduleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTopicRefreshScheduleResponseReceivedHandler;
     typedef std::function<void(const QuickSightClient*, const Model::UpdateUserRequest&, const Model::UpdateUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateUserResponseReceivedHandler;
+    typedef std::function<void(const QuickSightClient*, const Model::UpdateVPCConnectionRequest&, const Model::UpdateVPCConnectionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVPCConnectionResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace QuickSight
 } // namespace Aws

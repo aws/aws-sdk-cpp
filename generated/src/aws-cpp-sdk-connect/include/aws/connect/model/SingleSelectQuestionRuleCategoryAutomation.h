@@ -130,42 +130,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline const Aws::String& GetOptionRefId() const{ return m_optionRefId; }
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline bool OptionRefIdHasBeenSet() const { return m_optionRefIdHasBeenSet; }
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline void SetOptionRefId(const Aws::String& value) { m_optionRefIdHasBeenSet = true; m_optionRefId = value; }
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline void SetOptionRefId(Aws::String&& value) { m_optionRefIdHasBeenSet = true; m_optionRefId = std::move(value); }
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline void SetOptionRefId(const char* value) { m_optionRefIdHasBeenSet = true; m_optionRefId.assign(value); }
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline SingleSelectQuestionRuleCategoryAutomation& WithOptionRefId(const Aws::String& value) { SetOptionRefId(value); return *this;}
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline SingleSelectQuestionRuleCategoryAutomation& WithOptionRefId(Aws::String&& value) { SetOptionRefId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the answer option tha</p>
+     * <p>The identifier of the answer option.</p>
      */
     inline SingleSelectQuestionRuleCategoryAutomation& WithOptionRefId(const char* value) { SetOptionRefId(value); return *this;}
 

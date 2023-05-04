@@ -177,6 +177,88 @@ namespace Model
      */
     inline ScatterPlotUnaggregatedFieldWells& AddSize(MeasureField&& value) { m_sizeHasBeenSet = true; m_size.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline const Aws::Vector<DimensionField>& GetCategory() const{ return m_category; }
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline void SetCategory(const Aws::Vector<DimensionField>& value) { m_categoryHasBeenSet = true; m_category = value; }
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline void SetCategory(Aws::Vector<DimensionField>&& value) { m_categoryHasBeenSet = true; m_category = std::move(value); }
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& WithCategory(const Aws::Vector<DimensionField>& value) { SetCategory(value); return *this;}
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& WithCategory(Aws::Vector<DimensionField>&& value) { SetCategory(std::move(value)); return *this;}
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& AddCategory(const DimensionField& value) { m_categoryHasBeenSet = true; m_category.push_back(value); return *this; }
+
+    /**
+     * <p>The category field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& AddCategory(DimensionField&& value) { m_categoryHasBeenSet = true; m_category.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline const Aws::Vector<DimensionField>& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline void SetLabel(const Aws::Vector<DimensionField>& value) { m_labelHasBeenSet = true; m_label = value; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline void SetLabel(Aws::Vector<DimensionField>&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& WithLabel(const Aws::Vector<DimensionField>& value) { SetLabel(value); return *this;}
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& WithLabel(Aws::Vector<DimensionField>&& value) { SetLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& AddLabel(const DimensionField& value) { m_labelHasBeenSet = true; m_label.push_back(value); return *this; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotUnaggregatedFieldWells& AddLabel(DimensionField&& value) { m_labelHasBeenSet = true; m_label.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<DimensionField> m_xAxis;
@@ -187,6 +269,12 @@ namespace Model
 
     Aws::Vector<MeasureField> m_size;
     bool m_sizeHasBeenSet = false;
+
+    Aws::Vector<DimensionField> m_category;
+    bool m_categoryHasBeenSet = false;
+
+    Aws::Vector<DimensionField> m_label;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

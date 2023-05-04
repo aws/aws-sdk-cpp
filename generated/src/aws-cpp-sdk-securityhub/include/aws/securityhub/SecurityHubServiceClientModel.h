@@ -53,6 +53,7 @@
 #include <aws/securityhub/model/GetAdministratorAccountResult.h>
 #include <aws/securityhub/model/GetEnabledStandardsResult.h>
 #include <aws/securityhub/model/GetFindingAggregatorResult.h>
+#include <aws/securityhub/model/GetFindingHistoryResult.h>
 #include <aws/securityhub/model/GetFindingsResult.h>
 #include <aws/securityhub/model/GetInsightResultsResult.h>
 #include <aws/securityhub/model/GetInsightsResult.h>
@@ -151,6 +152,7 @@ namespace Aws
       class GetAdministratorAccountRequest;
       class GetEnabledStandardsRequest;
       class GetFindingAggregatorRequest;
+      class GetFindingHistoryRequest;
       class GetFindingsRequest;
       class GetInsightResultsRequest;
       class GetInsightsRequest;
@@ -212,6 +214,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetAdministratorAccountResult, SecurityHubError> GetAdministratorAccountOutcome;
       typedef Aws::Utils::Outcome<GetEnabledStandardsResult, SecurityHubError> GetEnabledStandardsOutcome;
       typedef Aws::Utils::Outcome<GetFindingAggregatorResult, SecurityHubError> GetFindingAggregatorOutcome;
+      typedef Aws::Utils::Outcome<GetFindingHistoryResult, SecurityHubError> GetFindingHistoryOutcome;
       typedef Aws::Utils::Outcome<GetFindingsResult, SecurityHubError> GetFindingsOutcome;
       typedef Aws::Utils::Outcome<GetInsightResultsResult, SecurityHubError> GetInsightResultsOutcome;
       typedef Aws::Utils::Outcome<GetInsightsResult, SecurityHubError> GetInsightsOutcome;
@@ -273,6 +276,7 @@ namespace Aws
       typedef std::future<GetAdministratorAccountOutcome> GetAdministratorAccountOutcomeCallable;
       typedef std::future<GetEnabledStandardsOutcome> GetEnabledStandardsOutcomeCallable;
       typedef std::future<GetFindingAggregatorOutcome> GetFindingAggregatorOutcomeCallable;
+      typedef std::future<GetFindingHistoryOutcome> GetFindingHistoryOutcomeCallable;
       typedef std::future<GetFindingsOutcome> GetFindingsOutcomeCallable;
       typedef std::future<GetInsightResultsOutcome> GetInsightResultsOutcomeCallable;
       typedef std::future<GetInsightsOutcome> GetInsightsOutcomeCallable;
@@ -337,6 +341,7 @@ namespace Aws
     typedef std::function<void(const SecurityHubClient*, const Model::GetAdministratorAccountRequest&, const Model::GetAdministratorAccountOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAdministratorAccountResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetEnabledStandardsRequest&, const Model::GetEnabledStandardsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEnabledStandardsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetFindingAggregatorRequest&, const Model::GetFindingAggregatorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingAggregatorResponseReceivedHandler;
+    typedef std::function<void(const SecurityHubClient*, const Model::GetFindingHistoryRequest&, const Model::GetFindingHistoryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingHistoryResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetFindingsRequest&, const Model::GetFindingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFindingsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightResultsRequest&, const Model::GetInsightResultsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightResultsResponseReceivedHandler;
     typedef std::function<void(const SecurityHubClient*, const Model::GetInsightsRequest&, const Model::GetInsightsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetInsightsResponseReceivedHandler;

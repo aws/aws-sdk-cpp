@@ -395,32 +395,32 @@ namespace Model
 
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline const LogPublishingOptionsStatus& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(const LogPublishingOptionsStatus& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(LogPublishingOptionsStatus&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline DomainConfig& WithLogPublishingOptions(const LogPublishingOptionsStatus& value) { SetLogPublishingOptions(value); return *this;}
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline DomainConfig& WithLogPublishingOptions(LogPublishingOptionsStatus&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
 

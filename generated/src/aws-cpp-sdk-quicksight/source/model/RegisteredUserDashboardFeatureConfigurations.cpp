@@ -19,12 +19,14 @@ namespace Model
 {
 
 RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConfigurations() : 
-    m_statePersistenceHasBeenSet(false)
+    m_statePersistenceHasBeenSet(false),
+    m_bookmarksHasBeenSet(false)
 {
 }
 
 RegisteredUserDashboardFeatureConfigurations::RegisteredUserDashboardFeatureConfigurations(JsonView jsonValue) : 
-    m_statePersistenceHasBeenSet(false)
+    m_statePersistenceHasBeenSet(false),
+    m_bookmarksHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -38,6 +40,13 @@ RegisteredUserDashboardFeatureConfigurations& RegisteredUserDashboardFeatureConf
     m_statePersistenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Bookmarks"))
+  {
+    m_bookmarks = jsonValue.GetObject("Bookmarks");
+
+    m_bookmarksHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -48,6 +57,12 @@ JsonValue RegisteredUserDashboardFeatureConfigurations::Jsonize() const
   if(m_statePersistenceHasBeenSet)
   {
    payload.WithObject("StatePersistence", m_statePersistence.Jsonize());
+
+  }
+
+  if(m_bookmarksHasBeenSet)
+  {
+   payload.WithObject("Bookmarks", m_bookmarks.Jsonize());
 
   }
 

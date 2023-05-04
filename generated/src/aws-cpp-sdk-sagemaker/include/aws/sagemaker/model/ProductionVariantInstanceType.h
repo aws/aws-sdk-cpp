@@ -156,7 +156,13 @@ namespace Model
     ml_r6gd_8xlarge,
     ml_r6gd_12xlarge,
     ml_r6gd_16xlarge,
-    ml_p4de_24xlarge
+    ml_p4de_24xlarge,
+    ml_trn1_2xlarge,
+    ml_trn1_32xlarge,
+    ml_inf2_xlarge,
+    ml_inf2_8xlarge,
+    ml_inf2_24xlarge,
+    ml_inf2_48xlarge
   };
 
 namespace ProductionVariantInstanceTypeMapper

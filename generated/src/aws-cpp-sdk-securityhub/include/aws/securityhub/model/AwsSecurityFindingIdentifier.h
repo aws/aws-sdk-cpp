@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>Identifies a finding to update using
-   * <code>BatchUpdateFindings</code>.</p><p><h3>See Also:</h3>   <a
+   * <p>Identifies which finding to get the finding history for.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/AwsSecurityFindingIdentifier">AWS
    * API Reference</a></p>
    */

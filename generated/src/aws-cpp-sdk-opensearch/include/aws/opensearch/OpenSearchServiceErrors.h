@@ -49,6 +49,7 @@ enum class OpenSearchServiceErrors
 
   BASE= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
+  DEPENDENCY_FAILURE,
   DISABLED_OPERATION,
   INTERNAL,
   INVALID_PAGINATION_TOKEN,

@@ -18,10 +18,10 @@ namespace Model
     NOT_SET,
     CREATING,
     DELETING,
-    SCALING,
-    READY,
     FAILED,
-    ERROR_
+    ERROR_,
+    SCALING,
+    READY
   };
 
 namespace AttachmentStatusMapper

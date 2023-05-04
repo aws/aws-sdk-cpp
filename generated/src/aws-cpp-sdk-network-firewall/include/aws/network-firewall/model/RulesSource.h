@@ -161,8 +161,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline const Aws::Vector<StatefulRule>& GetStatefulRules() const{ return m_statefulRules; }
 
@@ -171,8 +170,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline bool StatefulRulesHasBeenSet() const { return m_statefulRulesHasBeenSet; }
 
@@ -181,8 +179,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline void SetStatefulRules(const Aws::Vector<StatefulRule>& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = value; }
 
@@ -191,8 +188,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline void SetStatefulRules(Aws::Vector<StatefulRule>&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules = std::move(value); }
 
@@ -201,8 +197,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(const Aws::Vector<StatefulRule>& value) { SetStatefulRules(value); return *this;}
 
@@ -211,8 +206,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& WithStatefulRules(Aws::Vector<StatefulRule>&& value) { SetStatefulRules(std::move(value)); return *this;}
 
@@ -221,8 +215,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(const StatefulRule& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(value); return *this; }
 
@@ -231,8 +224,7 @@ namespace Model
      * in a stateful rule group. Use this option to specify simple Suricata rules with
      * protocol, source and destination, ports, direction, and rule options. For
      * information about the Suricata <code>Rules</code> format, see <a
-     * href="https://suricata.readthedocs.io/en/suricata-6.0.9/rules/intro.html">Rules
-     * Format</a>. </p>
+     * href="https://suricata.readthedocs.iorules/intro.html#">Rules Format</a>. </p>
      */
     inline RulesSource& AddStatefulRules(StatefulRule&& value) { m_statefulRulesHasBeenSet = true; m_statefulRules.push_back(std::move(value)); return *this; }
 

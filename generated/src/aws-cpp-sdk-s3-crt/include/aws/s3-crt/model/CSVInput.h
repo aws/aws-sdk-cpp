@@ -115,56 +115,64 @@ namespace Model
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline const Aws::String& GetComments() const{ return m_comments; }
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline bool CommentsHasBeenSet() const { return m_commentsHasBeenSet; }
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline void SetComments(const Aws::String& value) { m_commentsHasBeenSet = true; m_comments = value; }
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline void SetComments(Aws::String&& value) { m_commentsHasBeenSet = true; m_comments = std::move(value); }
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline void SetComments(const char* value) { m_commentsHasBeenSet = true; m_comments.assign(value); }
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline CSVInput& WithComments(const Aws::String& value) { SetComments(value); return *this;}
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline CSVInput& WithComments(Aws::String&& value) { SetComments(std::move(value)); return *this;}
 
     /**
      * <p>A single character used to indicate that a row should be ignored when the
      * character is present at the start of that row. You can specify any character to
-     * indicate a comment line.</p>
+     * indicate a comment line. The default character is <code>#</code>.</p>
+     * <p>Default: <code>#</code> </p>
      */
     inline CSVInput& WithComments(const char* value) { SetComments(value); return *this;}
 

@@ -47,9 +47,10 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
@@ -60,9 +61,10 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
@@ -73,9 +75,10 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
@@ -86,9 +89,10 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>
      */
     inline ListPartsResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
@@ -99,9 +103,10 @@ namespace Model
      * when the initiated multipart upload will become eligible for abort operation.
      * For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-     * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>The
-     * response will also include the <code>x-amz-abort-rule-id</code> header that will
-     * provide the ID of the lifecycle configuration rule that defines this action.</p>
+     * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+     * <p>The response will also include the <code>x-amz-abort-rule-id</code> header
+     * that will provide the ID of the lifecycle configuration rule that defines this
+     * action.</p>
      */
     inline ListPartsResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 

@@ -294,6 +294,29 @@ namespace Aws
         static const int AWS_CustomerProfiles_Domain_HASH = HashingUtils::HashString("AWS::CustomerProfiles::Domain");
         static const int AWS_AutoScaling_WarmPool_HASH = HashingUtils::HashString("AWS::AutoScaling::WarmPool");
         static const int AWS_Connect_PhoneNumber_HASH = HashingUtils::HashString("AWS::Connect::PhoneNumber");
+        static const int AWS_AppConfig_DeploymentStrategy_HASH = HashingUtils::HashString("AWS::AppConfig::DeploymentStrategy");
+        static const int AWS_AppFlow_Flow_HASH = HashingUtils::HashString("AWS::AppFlow::Flow");
+        static const int AWS_AuditManager_Assessment_HASH = HashingUtils::HashString("AWS::AuditManager::Assessment");
+        static const int AWS_CloudWatch_MetricStream_HASH = HashingUtils::HashString("AWS::CloudWatch::MetricStream");
+        static const int AWS_DeviceFarm_InstanceProfile_HASH = HashingUtils::HashString("AWS::DeviceFarm::InstanceProfile");
+        static const int AWS_DeviceFarm_Project_HASH = HashingUtils::HashString("AWS::DeviceFarm::Project");
+        static const int AWS_EC2_EC2Fleet_HASH = HashingUtils::HashString("AWS::EC2::EC2Fleet");
+        static const int AWS_EC2_SubnetRouteTableAssociation_HASH = HashingUtils::HashString("AWS::EC2::SubnetRouteTableAssociation");
+        static const int AWS_ECR_PullThroughCacheRule_HASH = HashingUtils::HashString("AWS::ECR::PullThroughCacheRule");
+        static const int AWS_GroundStation_Config_HASH = HashingUtils::HashString("AWS::GroundStation::Config");
+        static const int AWS_ImageBuilder_ImagePipeline_HASH = HashingUtils::HashString("AWS::ImageBuilder::ImagePipeline");
+        static const int AWS_IoT_FleetMetric_HASH = HashingUtils::HashString("AWS::IoT::FleetMetric");
+        static const int AWS_IoTWireless_ServiceProfile_HASH = HashingUtils::HashString("AWS::IoTWireless::ServiceProfile");
+        static const int AWS_NetworkManager_Device_HASH = HashingUtils::HashString("AWS::NetworkManager::Device");
+        static const int AWS_NetworkManager_GlobalNetwork_HASH = HashingUtils::HashString("AWS::NetworkManager::GlobalNetwork");
+        static const int AWS_NetworkManager_Link_HASH = HashingUtils::HashString("AWS::NetworkManager::Link");
+        static const int AWS_NetworkManager_Site_HASH = HashingUtils::HashString("AWS::NetworkManager::Site");
+        static const int AWS_Panorama_Package_HASH = HashingUtils::HashString("AWS::Panorama::Package");
+        static const int AWS_Pinpoint_App_HASH = HashingUtils::HashString("AWS::Pinpoint::App");
+        static const int AWS_Redshift_ScheduledAction_HASH = HashingUtils::HashString("AWS::Redshift::ScheduledAction");
+        static const int AWS_Route53Resolver_FirewallRuleGroupAssociation_HASH = HashingUtils::HashString("AWS::Route53Resolver::FirewallRuleGroupAssociation");
+        static const int AWS_SageMaker_AppImageConfig_HASH = HashingUtils::HashString("AWS::SageMaker::AppImageConfig");
+        static const int AWS_SageMaker_Image_HASH = HashingUtils::HashString("AWS::SageMaker::Image");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -1680,6 +1703,121 @@ namespace Aws
             enumValue = ResourceType::AWS_Connect_PhoneNumber;
             return true;
           }
+          else if (hashCode == AWS_AppConfig_DeploymentStrategy_HASH)
+          {
+            enumValue = ResourceType::AWS_AppConfig_DeploymentStrategy;
+            return true;
+          }
+          else if (hashCode == AWS_AppFlow_Flow_HASH)
+          {
+            enumValue = ResourceType::AWS_AppFlow_Flow;
+            return true;
+          }
+          else if (hashCode == AWS_AuditManager_Assessment_HASH)
+          {
+            enumValue = ResourceType::AWS_AuditManager_Assessment;
+            return true;
+          }
+          else if (hashCode == AWS_CloudWatch_MetricStream_HASH)
+          {
+            enumValue = ResourceType::AWS_CloudWatch_MetricStream;
+            return true;
+          }
+          else if (hashCode == AWS_DeviceFarm_InstanceProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_DeviceFarm_InstanceProfile;
+            return true;
+          }
+          else if (hashCode == AWS_DeviceFarm_Project_HASH)
+          {
+            enumValue = ResourceType::AWS_DeviceFarm_Project;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_EC2Fleet_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_EC2Fleet;
+            return true;
+          }
+          else if (hashCode == AWS_EC2_SubnetRouteTableAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_EC2_SubnetRouteTableAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_ECR_PullThroughCacheRule_HASH)
+          {
+            enumValue = ResourceType::AWS_ECR_PullThroughCacheRule;
+            return true;
+          }
+          else if (hashCode == AWS_GroundStation_Config_HASH)
+          {
+            enumValue = ResourceType::AWS_GroundStation_Config;
+            return true;
+          }
+          else if (hashCode == AWS_ImageBuilder_ImagePipeline_HASH)
+          {
+            enumValue = ResourceType::AWS_ImageBuilder_ImagePipeline;
+            return true;
+          }
+          else if (hashCode == AWS_IoT_FleetMetric_HASH)
+          {
+            enumValue = ResourceType::AWS_IoT_FleetMetric;
+            return true;
+          }
+          else if (hashCode == AWS_IoTWireless_ServiceProfile_HASH)
+          {
+            enumValue = ResourceType::AWS_IoTWireless_ServiceProfile;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_Device_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_Device;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_GlobalNetwork_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_GlobalNetwork;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_Link_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_Link;
+            return true;
+          }
+          else if (hashCode == AWS_NetworkManager_Site_HASH)
+          {
+            enumValue = ResourceType::AWS_NetworkManager_Site;
+            return true;
+          }
+          else if (hashCode == AWS_Panorama_Package_HASH)
+          {
+            enumValue = ResourceType::AWS_Panorama_Package;
+            return true;
+          }
+          else if (hashCode == AWS_Pinpoint_App_HASH)
+          {
+            enumValue = ResourceType::AWS_Pinpoint_App;
+            return true;
+          }
+          else if (hashCode == AWS_Redshift_ScheduledAction_HASH)
+          {
+            enumValue = ResourceType::AWS_Redshift_ScheduledAction;
+            return true;
+          }
+          else if (hashCode == AWS_Route53Resolver_FirewallRuleGroupAssociation_HASH)
+          {
+            enumValue = ResourceType::AWS_Route53Resolver_FirewallRuleGroupAssociation;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_AppImageConfig_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_AppImageConfig;
+            return true;
+          }
+          else if (hashCode == AWS_SageMaker_Image_HASH)
+          {
+            enumValue = ResourceType::AWS_SageMaker_Image;
+            return true;
+          }
           return false;
         }
 
@@ -2524,6 +2662,75 @@ namespace Aws
             return true;
           case ResourceType::AWS_Connect_PhoneNumber:
             value = "AWS::Connect::PhoneNumber";
+            return true;
+          case ResourceType::AWS_AppConfig_DeploymentStrategy:
+            value = "AWS::AppConfig::DeploymentStrategy";
+            return true;
+          case ResourceType::AWS_AppFlow_Flow:
+            value = "AWS::AppFlow::Flow";
+            return true;
+          case ResourceType::AWS_AuditManager_Assessment:
+            value = "AWS::AuditManager::Assessment";
+            return true;
+          case ResourceType::AWS_CloudWatch_MetricStream:
+            value = "AWS::CloudWatch::MetricStream";
+            return true;
+          case ResourceType::AWS_DeviceFarm_InstanceProfile:
+            value = "AWS::DeviceFarm::InstanceProfile";
+            return true;
+          case ResourceType::AWS_DeviceFarm_Project:
+            value = "AWS::DeviceFarm::Project";
+            return true;
+          case ResourceType::AWS_EC2_EC2Fleet:
+            value = "AWS::EC2::EC2Fleet";
+            return true;
+          case ResourceType::AWS_EC2_SubnetRouteTableAssociation:
+            value = "AWS::EC2::SubnetRouteTableAssociation";
+            return true;
+          case ResourceType::AWS_ECR_PullThroughCacheRule:
+            value = "AWS::ECR::PullThroughCacheRule";
+            return true;
+          case ResourceType::AWS_GroundStation_Config:
+            value = "AWS::GroundStation::Config";
+            return true;
+          case ResourceType::AWS_ImageBuilder_ImagePipeline:
+            value = "AWS::ImageBuilder::ImagePipeline";
+            return true;
+          case ResourceType::AWS_IoT_FleetMetric:
+            value = "AWS::IoT::FleetMetric";
+            return true;
+          case ResourceType::AWS_IoTWireless_ServiceProfile:
+            value = "AWS::IoTWireless::ServiceProfile";
+            return true;
+          case ResourceType::AWS_NetworkManager_Device:
+            value = "AWS::NetworkManager::Device";
+            return true;
+          case ResourceType::AWS_NetworkManager_GlobalNetwork:
+            value = "AWS::NetworkManager::GlobalNetwork";
+            return true;
+          case ResourceType::AWS_NetworkManager_Link:
+            value = "AWS::NetworkManager::Link";
+            return true;
+          case ResourceType::AWS_NetworkManager_Site:
+            value = "AWS::NetworkManager::Site";
+            return true;
+          case ResourceType::AWS_Panorama_Package:
+            value = "AWS::Panorama::Package";
+            return true;
+          case ResourceType::AWS_Pinpoint_App:
+            value = "AWS::Pinpoint::App";
+            return true;
+          case ResourceType::AWS_Redshift_ScheduledAction:
+            value = "AWS::Redshift::ScheduledAction";
+            return true;
+          case ResourceType::AWS_Route53Resolver_FirewallRuleGroupAssociation:
+            value = "AWS::Route53Resolver::FirewallRuleGroupAssociation";
+            return true;
+          case ResourceType::AWS_SageMaker_AppImageConfig:
+            value = "AWS::SageMaker::AppImageConfig";
+            return true;
+          case ResourceType::AWS_SageMaker_Image:
+            value = "AWS::SageMaker::Image";
             return true;
           default:
             return false;

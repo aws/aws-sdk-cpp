@@ -43,10 +43,10 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-     * <p>The response also includes the <code>x-amz-abort-rule-id</code> header that
-     * provides the ID of the lifecycle configuration rule that defines this
-     * action.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
+     * Configuration</a>.</p> <p>The response also includes the
+     * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
+     * configuration rule that defines this action.</p>
      */
     inline const Aws::Utils::DateTime& GetAbortDate() const{ return m_abortDate; }
 
@@ -57,10 +57,10 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-     * <p>The response also includes the <code>x-amz-abort-rule-id</code> header that
-     * provides the ID of the lifecycle configuration rule that defines this
-     * action.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
+     * Configuration</a>.</p> <p>The response also includes the
+     * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
+     * configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(const Aws::Utils::DateTime& value) { m_abortDate = value; }
 
@@ -71,10 +71,10 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-     * <p>The response also includes the <code>x-amz-abort-rule-id</code> header that
-     * provides the ID of the lifecycle configuration rule that defines this
-     * action.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
+     * Configuration</a>.</p> <p>The response also includes the
+     * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
+     * configuration rule that defines this action.</p>
      */
     inline void SetAbortDate(Aws::Utils::DateTime&& value) { m_abortDate = std::move(value); }
 
@@ -85,10 +85,10 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-     * <p>The response also includes the <code>x-amz-abort-rule-id</code> header that
-     * provides the ID of the lifecycle configuration rule that defines this
-     * action.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
+     * Configuration</a>.</p> <p>The response also includes the
+     * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
+     * configuration rule that defines this action.</p>
      */
     inline CreateMultipartUploadResult& WithAbortDate(const Aws::Utils::DateTime& value) { SetAbortDate(value); return *this;}
 
@@ -99,10 +99,10 @@ namespace Model
      * indicates when the initiated multipart upload becomes eligible for an abort
      * operation. For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p>
-     * <p>The response also includes the <code>x-amz-abort-rule-id</code> header that
-     * provides the ID of the lifecycle configuration rule that defines this
-     * action.</p>
+     * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle
+     * Configuration</a>.</p> <p>The response also includes the
+     * <code>x-amz-abort-rule-id</code> header that provides the ID of the lifecycle
+     * configuration rule that defines this action.</p>
      */
     inline CreateMultipartUploadResult& WithAbortDate(Aws::Utils::DateTime&& value) { SetAbortDate(std::move(value)); return *this;}
 
@@ -167,15 +167,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -189,15 +189,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucket = value; }
 
@@ -211,15 +211,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucket = std::move(value); }
 
@@ -233,15 +233,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucket.assign(value); }
 
@@ -255,15 +255,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadResult& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -277,15 +277,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadResult& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -299,15 +299,15 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
      * action with Amazon S3 on Outposts, you must direct requests to the S3 on
      * Outposts hostname. The S3 on Outposts hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline CreateMultipartUploadResult& WithBucket(const char* value) { SetBucket(value); return *this;}
 
@@ -386,31 +386,31 @@ namespace Model
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline const ServerSideEncryption& GetServerSideEncryption() const{ return m_serverSideEncryption; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(const ServerSideEncryption& value) { m_serverSideEncryption = value; }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline void SetServerSideEncryption(ServerSideEncryption&& value) { m_serverSideEncryption = std::move(value); }
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline CreateMultipartUploadResult& WithServerSideEncryption(const ServerSideEncryption& value) { SetServerSideEncryption(value); return *this;}
 
     /**
      * <p>The server-side encryption algorithm used when storing this object in Amazon
-     * S3 (for example, AES256, aws:kms).</p>
+     * S3 (for example, AES256, <code>aws:kms</code>).</p>
      */
     inline CreateMultipartUploadResult& WithServerSideEncryption(ServerSideEncryption&& value) { SetServerSideEncryption(std::move(value)); return *this;}
 
@@ -517,50 +517,50 @@ namespace Model
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline const Aws::String& GetSSEKMSKeyId() const{ return m_sSEKMSKeyId; }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const Aws::String& value) { m_sSEKMSKeyId = value; }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(Aws::String&& value) { m_sSEKMSKeyId = std::move(value); }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline void SetSSEKMSKeyId(const char* value) { m_sSEKMSKeyId.assign(value); }
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const Aws::String& value) { SetSSEKMSKeyId(value); return *this;}
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(Aws::String&& value) { SetSSEKMSKeyId(std::move(value)); return *this;}
 
     /**
      * <p>If present, specifies the ID of the Amazon Web Services Key Management
-     * Service (Amazon Web Services KMS) symmetric customer managed key that was used
-     * for the object.</p>
+     * Service (Amazon Web Services KMS) symmetric encryption customer managed key that
+     * was used for the object.</p>
      */
     inline CreateMultipartUploadResult& WithSSEKMSKeyId(const char* value) { SetSSEKMSKeyId(value); return *this;}
 
