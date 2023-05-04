@@ -25,7 +25,8 @@ TransformOperation::TransformOperation() :
     m_renameColumnOperationHasBeenSet(false),
     m_castColumnTypeOperationHasBeenSet(false),
     m_tagColumnOperationHasBeenSet(false),
-    m_untagColumnOperationHasBeenSet(false)
+    m_untagColumnOperationHasBeenSet(false),
+    m_overrideDatasetParameterOperationHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ TransformOperation::TransformOperation(JsonView jsonValue) :
     m_renameColumnOperationHasBeenSet(false),
     m_castColumnTypeOperationHasBeenSet(false),
     m_tagColumnOperationHasBeenSet(false),
-    m_untagColumnOperationHasBeenSet(false)
+    m_untagColumnOperationHasBeenSet(false),
+    m_overrideDatasetParameterOperationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -92,6 +94,13 @@ TransformOperation& TransformOperation::operator =(JsonView jsonValue)
     m_untagColumnOperationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OverrideDatasetParameterOperation"))
+  {
+    m_overrideDatasetParameterOperation = jsonValue.GetObject("OverrideDatasetParameterOperation");
+
+    m_overrideDatasetParameterOperationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -138,6 +147,12 @@ JsonValue TransformOperation::Jsonize() const
   if(m_untagColumnOperationHasBeenSet)
   {
    payload.WithObject("UntagColumnOperation", m_untagColumnOperation.Jsonize());
+
+  }
+
+  if(m_overrideDatasetParameterOperationHasBeenSet)
+  {
+   payload.WithObject("OverrideDatasetParameterOperation", m_overrideDatasetParameterOperation.Jsonize());
 
   }
 

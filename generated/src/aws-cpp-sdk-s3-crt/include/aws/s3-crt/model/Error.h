@@ -122,36 +122,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -450,14 +453,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -486,36 +489,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -814,14 +820,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -850,36 +856,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -1178,14 +1187,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1214,36 +1223,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -1542,14 +1554,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1578,36 +1590,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -1906,14 +1921,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -1942,36 +1957,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -2270,14 +2288,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -2306,36 +2324,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -2634,14 +2655,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token
@@ -2670,36 +2691,39 @@ namespace Model
     /**
      * <p>The error code is a string that uniquely identifies an error condition. It is
      * meant to be read and understood by programs that detect and handle errors by
-     * type. </p> <p class="title"> <b>Amazon S3 error codes</b> </p> <ul> <li> <ul>
-     * <li> <p> <i>Code:</i> AccessDenied </p> </li> <li> <p> <i>Description:</i>
-     * Access Denied</p> </li> <li> <p> <i>HTTP Status Code:</i> 403 Forbidden</p>
-     * </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li>
-     * <ul> <li> <p> <i>Code:</i> AccountProblem</p> </li> <li> <p> <i>Description:</i>
-     * There is a problem with your Amazon Web Services account that prevents the
-     * action from completing successfully. Contact Amazon Web Services Support for
+     * type. The following is a list of Amazon S3 error codes. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html">Error
+     * responses</a>.</p> <ul> <li> <ul> <li> <p> <i>Code:</i> AccessDenied </p> </li>
+     * <li> <p> <i>Description:</i> Access Denied</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AccountProblem</p>
+     * </li> <li> <p> <i>Description:</i> There is a problem with your Amazon Web
+     * Services account that prevents the action from completing successfully. Contact
+     * Amazon Web Services Support for further assistance.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * AllAccessDisabled</p> </li> <li> <p> <i>Description:</i> All access to this
+     * Amazon S3 resource has been disabled. Contact Amazon Web Services Support for
      * further assistance.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
-     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AllAccessDisabled</p> </li> <li> <p>
-     * <i>Description:</i> All access to this Amazon S3 resource has been disabled.
-     * Contact Amazon Web Services Support for further assistance.</p> </li> <li> <p>
-     * <i>HTTP Status Code:</i> 403 Forbidden</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AmbiguousGrantByEmailAddress</p> </li> <li> <p> <i>Description:</i> The email
-     * address you provided is associated with more than one account.</p> </li> <li>
-     * <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * AuthorizationHeaderMalformed</p> </li> <li> <p> <i>Description:</i> The
-     * authorization header you provided is invalid.</p> </li> <li> <p> <i>HTTP Status
-     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>HTTP Status Code:</i> N/A</p>
-     * </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i> BadDigest</p> </li> <li> <p>
-     * <i>Description:</i> The Content-MD5 you specified did not match what we
-     * received.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
-     * <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul>
-     * <li> <p> <i>Code:</i> BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i>
-     * The requested bucket name is not available. The bucket namespace is shared by
-     * all users of the system. Please select a different name and try again.</p> </li>
-     * <li> <p> <i>HTTP Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault
-     * Code Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> AmbiguousGrantByEmailAddress</p>
+     * </li> <li> <p> <i>Description:</i> The email address you provided is associated
+     * with more than one account.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad
+     * Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li> </ul>
+     * </li> <li> <ul> <li> <p> <i>Code:</i> AuthorizationHeaderMalformed</p> </li>
+     * <li> <p> <i>Description:</i> The authorization header you provided is
+     * invalid.</p> </li> <li> <p> <i>HTTP Status Code:</i> 400 Bad Request</p> </li>
+     * <li> <p> <i>HTTP Status Code:</i> N/A</p> </li> </ul> </li> <li> <ul> <li> <p>
+     * <i>Code:</i> BadDigest</p> </li> <li> <p> <i>Description:</i> The Content-MD5
+     * you specified did not match what we received.</p> </li> <li> <p> <i>HTTP Status
+     * Code:</i> 400 Bad Request</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
+     * BucketAlreadyExists</p> </li> <li> <p> <i>Description:</i> The requested bucket
+     * name is not available. The bucket namespace is shared by all users of the
+     * system. Please select a different name and try again.</p> </li> <li> <p> <i>HTTP
+     * Status Code:</i> 409 Conflict</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i>
+     * Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * BucketAlreadyOwnedByYou</p> </li> <li> <p> <i>Description:</i> The bucket you
      * tried to create already exists, and you own it. Amazon S3 returns this error in
      * all Amazon Web Services Regions except in the North Virginia Region. For legacy
@@ -2998,14 +3022,14 @@ namespace Model
      * Authentication</a> for details.</p> </li> <li> <p> <i>HTTP Status Code:</i> 403
      * Forbidden</p> </li> <li> <p> <i>SOAP Fault Code Prefix:</i> Client</p> </li>
      * </ul> </li> <li> <ul> <li> <p> <i>Code:</i> ServiceUnavailable</p> </li> <li>
-     * <p> <i>Description:</i> Reduce your request rate.</p> </li> <li> <p> <i>HTTP
-     * Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP Fault Code
-     * Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
-     * SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request rate.</p>
-     * </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li> <p> <i>SOAP
+     * <p> <i>Description:</i> Service is unable to handle request.</p> </li> <li> <p>
+     * <i>HTTP Status Code:</i> 503 Service Unavailable</p> </li> <li> <p> <i>SOAP
      * Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li> <p>
-     * <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You are
-     * being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
+     * <i>Code:</i> SlowDown</p> </li> <li> <p> <i>Description:</i> Reduce your request
+     * rate.</p> </li> <li> <p> <i>HTTP Status Code:</i> 503 Slow Down</p> </li> <li>
+     * <p> <i>SOAP Fault Code Prefix:</i> Server</p> </li> </ul> </li> <li> <ul> <li>
+     * <p> <i>Code:</i> TemporaryRedirect</p> </li> <li> <p> <i>Description:</i> You
+     * are being redirected to the bucket while DNS updates.</p> </li> <li> <p> <i>HTTP
      * Status Code:</i> 307 Moved Temporarily</p> </li> <li> <p> <i>SOAP Fault Code
      * Prefix:</i> Client</p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:</i>
      * TokenRefreshRequired</p> </li> <li> <p> <i>Description:</i> The provided token

@@ -36,6 +36,7 @@
 #include <aws/opensearch/model/DescribeDomainChangeProgressResult.h>
 #include <aws/opensearch/model/DescribeDomainConfigResult.h>
 #include <aws/opensearch/model/DescribeDomainHealthResult.h>
+#include <aws/opensearch/model/DescribeDomainNodesResult.h>
 #include <aws/opensearch/model/DescribeDomainsResult.h>
 #include <aws/opensearch/model/DescribeDryRunProgressResult.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsResult.h>
@@ -129,6 +130,7 @@ namespace Aws
       class DescribeDomainChangeProgressRequest;
       class DescribeDomainConfigRequest;
       class DescribeDomainHealthRequest;
+      class DescribeDomainNodesRequest;
       class DescribeDomainsRequest;
       class DescribeDryRunProgressRequest;
       class DescribeInboundConnectionsRequest;
@@ -185,6 +187,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeDomainChangeProgressResult, OpenSearchServiceError> DescribeDomainChangeProgressOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainConfigResult, OpenSearchServiceError> DescribeDomainConfigOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainHealthResult, OpenSearchServiceError> DescribeDomainHealthOutcome;
+      typedef Aws::Utils::Outcome<DescribeDomainNodesResult, OpenSearchServiceError> DescribeDomainNodesOutcome;
       typedef Aws::Utils::Outcome<DescribeDomainsResult, OpenSearchServiceError> DescribeDomainsOutcome;
       typedef Aws::Utils::Outcome<DescribeDryRunProgressResult, OpenSearchServiceError> DescribeDryRunProgressOutcome;
       typedef Aws::Utils::Outcome<DescribeInboundConnectionsResult, OpenSearchServiceError> DescribeInboundConnectionsOutcome;
@@ -241,6 +244,7 @@ namespace Aws
       typedef std::future<DescribeDomainChangeProgressOutcome> DescribeDomainChangeProgressOutcomeCallable;
       typedef std::future<DescribeDomainConfigOutcome> DescribeDomainConfigOutcomeCallable;
       typedef std::future<DescribeDomainHealthOutcome> DescribeDomainHealthOutcomeCallable;
+      typedef std::future<DescribeDomainNodesOutcome> DescribeDomainNodesOutcomeCallable;
       typedef std::future<DescribeDomainsOutcome> DescribeDomainsOutcomeCallable;
       typedef std::future<DescribeDryRunProgressOutcome> DescribeDryRunProgressOutcomeCallable;
       typedef std::future<DescribeInboundConnectionsOutcome> DescribeInboundConnectionsOutcomeCallable;
@@ -300,6 +304,7 @@ namespace Aws
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainChangeProgressRequest&, const Model::DescribeDomainChangeProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainChangeProgressResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainConfigRequest&, const Model::DescribeDomainConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainConfigResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainHealthRequest&, const Model::DescribeDomainHealthOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainHealthResponseReceivedHandler;
+    typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainNodesRequest&, const Model::DescribeDomainNodesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainNodesResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDomainsRequest&, const Model::DescribeDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDomainsResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeDryRunProgressRequest&, const Model::DescribeDryRunProgressOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeDryRunProgressResponseReceivedHandler;
     typedef std::function<void(const OpenSearchServiceClient*, const Model::DescribeInboundConnectionsRequest&, const Model::DescribeInboundConnectionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeInboundConnectionsResponseReceivedHandler;

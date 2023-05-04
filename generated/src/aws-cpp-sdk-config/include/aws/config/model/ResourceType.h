@@ -289,7 +289,30 @@ namespace Model
     AWS_NetworkManager_TransitGatewayRegistration,
     AWS_CustomerProfiles_Domain,
     AWS_AutoScaling_WarmPool,
-    AWS_Connect_PhoneNumber
+    AWS_Connect_PhoneNumber,
+    AWS_AppConfig_DeploymentStrategy,
+    AWS_AppFlow_Flow,
+    AWS_AuditManager_Assessment,
+    AWS_CloudWatch_MetricStream,
+    AWS_DeviceFarm_InstanceProfile,
+    AWS_DeviceFarm_Project,
+    AWS_EC2_EC2Fleet,
+    AWS_EC2_SubnetRouteTableAssociation,
+    AWS_ECR_PullThroughCacheRule,
+    AWS_GroundStation_Config,
+    AWS_ImageBuilder_ImagePipeline,
+    AWS_IoT_FleetMetric,
+    AWS_IoTWireless_ServiceProfile,
+    AWS_NetworkManager_Device,
+    AWS_NetworkManager_GlobalNetwork,
+    AWS_NetworkManager_Link,
+    AWS_NetworkManager_Site,
+    AWS_Panorama_Package,
+    AWS_Pinpoint_App,
+    AWS_Redshift_ScheduledAction,
+    AWS_Route53Resolver_FirewallRuleGroupAssociation,
+    AWS_SageMaker_AppImageConfig,
+    AWS_SageMaker_Image
   };
 
 namespace ResourceTypeMapper

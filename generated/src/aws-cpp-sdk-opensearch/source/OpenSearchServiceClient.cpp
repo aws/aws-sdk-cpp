@@ -40,6 +40,7 @@
 #include <aws/opensearch/model/DescribeDomainChangeProgressRequest.h>
 #include <aws/opensearch/model/DescribeDomainConfigRequest.h>
 #include <aws/opensearch/model/DescribeDomainHealthRequest.h>
+#include <aws/opensearch/model/DescribeDomainNodesRequest.h>
 #include <aws/opensearch/model/DescribeDomainsRequest.h>
 #include <aws/opensearch/model/DescribeDryRunProgressRequest.h>
 #include <aws/opensearch/model/DescribeInboundConnectionsRequest.h>
@@ -461,6 +462,22 @@ DescribeDomainHealthOutcome OpenSearchServiceClient::DescribeDomainHealth(const 
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/health");
   return DescribeDomainHealthOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeDomainNodesOutcome OpenSearchServiceClient::DescribeDomainNodes(const DescribeDomainNodesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeDomainNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.DomainNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDomainNodes", "Required field: DomainName, is not set");
+    return DescribeDomainNodesOutcome(Aws::Client::AWSError<OpenSearchServiceErrors>(OpenSearchServiceErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DomainName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeDomainNodes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/domain/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/nodes");
+  return DescribeDomainNodesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeDomainsOutcome OpenSearchServiceClient::DescribeDomains(const DescribeDomainsRequest& request) const

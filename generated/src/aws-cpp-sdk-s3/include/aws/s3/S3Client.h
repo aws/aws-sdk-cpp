@@ -170,11 +170,17 @@ namespace Aws
          * could take several minutes to complete. After Amazon S3 begins processing the
          * request, it sends an HTTP response header that specifies a 200 OK response.
          * While processing is in progress, Amazon S3 periodically sends white space
-         * characters to keep the connection from timing out. Because a request could fail
-         * after the initial 200 OK response has been sent, it is important that you check
-         * the response body to determine whether the request succeeded.</p> <p>Note that
-         * if <code>CompleteMultipartUpload</code> fails, applications should be prepared
-         * to retry the failed requests. For more information, see <a
+         * characters to keep the connection from timing out. A request could fail after
+         * the initial 200 OK response has been sent. This means that a <code>200 OK</code>
+         * response can contain either a success or an error. If you call the S3 API
+         * directly, make sure to design your application to parse the contents of the
+         * response and handle it appropriately. If you use Amazon Web Services SDKs, SDKs
+         * handle this condition. The SDKs detect the embedded error and apply error
+         * handling per your configuration settings (including automatically retrying the
+         * request as appropriate). If the condition persists, the SDKs throws an exception
+         * (or, for the SDKs that don't use exceptions, they return the error). </p>
+         * <p>Note that if <code>CompleteMultipartUpload</code> fails, applications should
+         * be prepared to retry the failed requests. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ErrorBestPractices.html">Amazon
          * S3 Error Best Practices</a>.</p>  <p>You cannot use
          * <code>Content-Type: application/x-www-form-urlencoded</code> with Complete
@@ -255,21 +261,26 @@ namespace Aws
          * the copy action starts, you receive a standard Amazon S3 error. If the error
          * occurs during the copy operation, the error response is embedded in the
          * <code>200 OK</code> response. This means that a <code>200 OK</code> response can
-         * contain either a success or an error. Design your application to parse the
-         * contents of the response and handle it appropriately.</p> <p>If the copy is
-         * successful, you receive a response with information about the copied object.</p>
-         *  <p>If the request is an HTTP 1.1 request, the response is chunk encoded.
-         * If it were not, it would not contain the content-length, and you would need to
-         * read the entire body.</p>  <p>The copy request charge is based on the
-         * storage class and Region that you specify for the destination object. For
-         * pricing information, see <a href="http://aws.amazon.com/s3/pricing/">Amazon S3
-         * pricing</a>.</p>  <p>Amazon S3 transfer acceleration does not support
-         * cross-Region copies. If you request a cross-Region copy using a transfer
-         * acceleration endpoint, you get a 400 <code>Bad Request</code> error. For more
-         * information, see <a
+         * contain either a success or an error. If you call the S3 API directly, make sure
+         * to design your application to parse the contents of the response and handle it
+         * appropriately. If you use Amazon Web Services SDKs, SDKs handle this condition.
+         * The SDKs detect the embedded error and apply error handling per your
+         * configuration settings (including automatically retrying the request as
+         * appropriate). If the condition persists, the SDKs throws an exception (or, for
+         * the SDKs that don't use exceptions, they return the error).</p> <p>If the copy
+         * is successful, you receive a response with information about the copied
+         * object.</p>  <p>If the request is an HTTP 1.1 request, the response is
+         * chunk encoded. If it were not, it would not contain the content-length, and you
+         * would need to read the entire body.</p>  <p>The copy request charge is
+         * based on the storage class and Region that you specify for the destination
+         * object. For pricing information, see <a
+         * href="http://aws.amazon.com/s3/pricing/">Amazon S3 pricing</a>.</p> 
+         * <p>Amazon S3 transfer acceleration does not support cross-Region copies. If you
+         * request a cross-Region copy using a transfer acceleration endpoint, you get a
+         * 400 <code>Bad Request</code> error. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
-         * Acceleration</a>.</p>  <p> <b>Metadata</b> </p> <p>When copying an
-         * object, you can preserve all metadata (default) or specify new metadata.
+         * Acceleration</a>.</p>  <dl> <dt>Metadata</dt> <dd> <p>When copying
+         * an object, you can preserve all metadata (default) or specify new metadata.
          * However, the ACL is not preserved and is set to private for the user making the
          * request. To override the default ACL setting, specify a new ACL when generating
          * a copy request. For more information, see <a
@@ -284,12 +295,14 @@ namespace Aws
          * Conditions in a Policy</a> in the <i>Amazon S3 User Guide</i>. For a complete
          * list of Amazon S3-specific condition keys, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
-         * Resources, and Condition Keys for Amazon S3</a>.</p> <p> <b>x-amz-copy-source-if
-         * Headers</b> </p> <p>To only copy an object under certain conditions, such as
-         * whether the <code>Etag</code> matches or whether the object was modified before
-         * or after a specified date, use the following request parameters:</p> <ul> <li>
-         * <p> <code>x-amz-copy-source-if-match</code> </p> </li> <li> <p>
-         * <code>x-amz-copy-source-if-none-match</code> </p> </li> <li> <p>
+         * Resources, and Condition Keys for Amazon S3</a>.</p>  <p>
+         * <code>x-amz-website-redirect-location</code> is unique to each object and must
+         * be specified in the request headers to copy the value.</p>  </dd>
+         * <dt>x-amz-copy-source-if Headers</dt> <dd> <p>To only copy an object under
+         * certain conditions, such as whether the <code>Etag</code> matches or whether the
+         * object was modified before or after a specified date, use the following request
+         * parameters:</p> <ul> <li> <p> <code>x-amz-copy-source-if-match</code> </p> </li>
+         * <li> <p> <code>x-amz-copy-source-if-none-match</code> </p> </li> <li> <p>
          * <code>x-amz-copy-source-if-unmodified-since</code> </p> </li> <li> <p>
          * <code>x-amz-copy-source-if-modified-since</code> </p> </li> </ul> <p> If both
          * the <code>x-amz-copy-source-if-match</code> and
@@ -307,19 +320,34 @@ namespace Aws
          * </li> <li> <p> <code>x-amz-copy-source-if-modified-since</code> condition
          * evaluates to true</p> </li> </ul>  <p>All headers with the
          * <code>x-amz-</code> prefix, including <code>x-amz-copy-source</code>, must be
-         * signed.</p>  <p> <b>Server-side encryption</b> </p> <p>When you perform a
-         * CopyObject operation, you can optionally use the appropriate encryption-related
-         * headers to encrypt the object using server-side encryption with Amazon Web
-         * Services managed encryption keys (SSE-S3 or SSE-KMS) or a customer-provided
-         * encryption key. With server-side encryption, Amazon S3 encrypts your data as it
-         * writes it to disks in its data centers and decrypts the data when you access it.
-         * For more information about server-side encryption, see <a
+         * signed.</p>  </dd> <dt>Server-side encryption</dt> <dd> <p>Amazon S3
+         * automatically encrypts all new objects that are copied to an S3 bucket. When
+         * copying an object, if you don't specify encryption information in your copy
+         * request, the encryption setting of the target object is set to the default
+         * encryption configuration of the destination bucket. By default, all buckets have
+         * a base level of encryption configuration that uses server-side encryption with
+         * Amazon S3 managed keys (SSE-S3). If the destination bucket has a default
+         * encryption configuration that uses server-side encryption with an Key Management
+         * Service (KMS) key (SSE-KMS), or a customer-provided encryption key (SSE-C),
+         * Amazon S3 uses the corresponding KMS key, or a customer-provided key to encrypt
+         * the target object copy.</p> <p>When you perform a CopyObject operation, if you
+         * want to use a different type of encryption setting for the target object, you
+         * can use other appropriate encryption-related headers to encrypt the target
+         * object with a KMS key, an Amazon S3 managed key, or a customer-provided key.
+         * With server-side encryption, Amazon S3 encrypts your data as it writes it to
+         * disks in its data centers and decrypts the data when you access it. If the
+         * encryption setting in your request is different from the default encryption
+         * configuration of the destination bucket, the encryption setting in your request
+         * takes precedence. If the source object for the copy is stored in Amazon S3 using
+         * SSE-C, you must provide the necessary encryption information in your request so
+         * that Amazon S3 can decrypt the object for copying. For more information about
+         * server-side encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Using
          * Server-Side Encryption</a>.</p> <p>If a target object uses SSE-KMS, you can
          * enable an S3 Bucket Key for the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
-         * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access Control
-         * List (ACL)-Specific Request Headers</b> </p> <p>When copying an object, you can
+         * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p> </dd> <dt>Access Control
+         * List (ACL)-Specific Request Headers</dt> <dd> <p>When copying an object, you can
          * optionally use headers to grant ACL-based permissions. By default, all objects
          * are private. Only the owner has full access control. When adding a new object,
          * you can grant permissions to individual Amazon Web Services accounts or to
@@ -339,37 +367,37 @@ namespace Aws
          * Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
          * Guide</i>.</p>  <p>If your bucket uses the bucket owner enforced setting
          * for Object Ownership, all objects written to the bucket by any account will be
-         * owned by the bucket owner.</p>  <p> <b>Checksums</b> </p> <p>When copying
-         * an object, if it has a checksum, that checksum will be copied to the new object
-         * by default. When you copy the object over, you may optionally specify a
+         * owned by the bucket owner.</p>  </dd> <dt>Checksums</dt> <dd> <p>When
+         * copying an object, if it has a checksum, that checksum will be copied to the new
+         * object by default. When you copy the object over, you may optionally specify a
          * different checksum algorithm to use with the
-         * <code>x-amz-checksum-algorithm</code> header.</p> <p> <b>Storage Class
-         * Options</b> </p> <p>You can use the <code>CopyObject</code> action to change the
-         * storage class of an object that is already stored in Amazon S3 using the
+         * <code>x-amz-checksum-algorithm</code> header.</p> </dd> <dt>Storage Class
+         * Options</dt> <dd> <p>You can use the <code>CopyObject</code> action to change
+         * the storage class of an object that is already stored in Amazon S3 using the
          * <code>StorageClass</code> parameter. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
-         * <p>By default, <code>x-amz-copy-source</code> identifies the current version of
-         * an object to copy. If the current version is a delete marker, Amazon S3 behaves
-         * as if the object was deleted. To copy a different version, use the
-         * <code>versionId</code> subresource.</p> <p>If you enable versioning on the
-         * target bucket, Amazon S3 generates a unique version ID for the object being
-         * copied. This version ID is different from the version ID of the source object.
-         * Amazon S3 returns the version ID of the copied object in the
-         * <code>x-amz-version-id</code> response header in the response.</p> <p>If you do
-         * not enable versioning or suspend it on the target bucket, the version ID that
-         * Amazon S3 generates is always null.</p> <p>If the source object's storage class
-         * is GLACIER, you must restore a copy of this object before you can use it as a
-         * source object for the copy operation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.</p>
-         * <p>The following operations are related to <code>CopyObject</code>:</p> <ul>
-         * <li> <p> <a
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If the source object's
+         * storage class is GLACIER, you must restore a copy of this object before you can
+         * use it as a source object for the copy operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
+         * Objects</a>.</p> </dd> <dt>Versioning</dt> <dd> <p>By default,
+         * <code>x-amz-copy-source</code> identifies the current version of an object to
+         * copy. If the current version is a delete marker, Amazon S3 behaves as if the
+         * object was deleted. To copy a different version, use the <code>versionId</code>
+         * subresource.</p> <p>If you enable versioning on the target bucket, Amazon S3
+         * generates a unique version ID for the object being copied. This version ID is
+         * different from the version ID of the source object. Amazon S3 returns the
+         * version ID of the copied object in the <code>x-amz-version-id</code> response
+         * header in the response.</p> <p>If you do not enable versioning or suspend it on
+         * the target bucket, the version ID that Amazon S3 generates is always null.</p>
+         * </dd> </dl> <p>The following operations are related to
+         * <code>CopyObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
-         * </p> </li> </ul> <p>For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/CopyingObjectsExamples.html">Copying
-         * Objects</a>.</p><p><h3>See Also:</h3>   <a
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyObject">AWS API
          * Reference</a></p>
          */
@@ -418,13 +446,13 @@ namespace Aws
          * bucket in a Region other than US East (N. Virginia), your application must be
          * able to handle 307 redirect. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/VirtualHosting.html">Virtual
-         * hosting of buckets</a>.</p>  <p> <b>Access control lists (ACLs)</b> </p>
-         * <p>When creating a bucket using this operation, you can optionally configure the
-         * bucket ACL to specify the accounts or groups that should be granted specific
-         * permissions on the bucket.</p>  <p>If your CreateBucket request sets
-         * bucket owner enforced for S3 Object Ownership and specifies a bucket ACL that
-         * provides access to an external Amazon Web Services account, your request fails
-         * with a <code>400</code> error and returns the
+         * hosting of buckets</a>.</p>  <dl> <dt>Access control lists (ACLs)</dt>
+         * <dd> <p>When creating a bucket using this operation, you can optionally
+         * configure the bucket ACL to specify the accounts or groups that should be
+         * granted specific permissions on the bucket.</p>  <p>If your
+         * CreateBucket request sets bucket owner enforced for S3 Object Ownership and
+         * specifies a bucket ACL that provides access to an external Amazon Web Services
+         * account, your request fails with a <code>400</code> error and returns the
          * <code>InvalidBucketAclWithObjectOwnership</code> error code. For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
@@ -461,7 +489,7 @@ namespace Aws
          * read object data and its metadata:</p> <p> <code>x-amz-grant-read:
          * id="11112222333", id="444455556666" </code> </p> </li> </ul>  <p>You can
          * use either a canned ACL or specify access permissions explicitly. You cannot do
-         * both.</p>  <p> <b>Permissions</b> </p> <p>In addition to
+         * both.</p>  </dd> <dt>Permissions</dt> <dd> <p>In addition to
          * <code>s3:CreateBucket</code>, the following permissions are required when your
          * CreateBucket includes specific headers:</p> <ul> <li> <p> <b>ACLs</b> - If your
          * <code>CreateBucket</code> request specifies ACL permissions and the ACL is
@@ -474,11 +502,11 @@ namespace Aws
          * <code>CreateBucket</code> request,
          * <code>s3:PutBucketObjectLockConfiguration</code> and
          * <code>s3:PutBucketVersioning</code> permissions are required.</p> </li> <li> <p>
-         * <b>S3 Object Ownership</b> - If your CreateBucket request includes the the
+         * <b>S3 Object Ownership</b> - If your CreateBucket request includes the
          * <code>x-amz-object-ownership</code> header,
          * <code>s3:PutBucketOwnershipControls</code> permission is required.</p> </li>
-         * </ul> <p>The following operations are related to <code>CreateBucket</code>:</p>
-         * <ul> <li> <p> <a
+         * </ul> </dd> </dl> <p>The following operations are related to
+         * <code>CreateBucket</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
@@ -522,9 +550,9 @@ namespace Aws
          * multipart upload becomes eligible for an abort action and Amazon S3 aborts the
          * multipart upload. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">Aborting
-         * Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a>.</p> <p>For
-         * information about the permissions required to use the multipart upload API, see
-         * <a
+         * Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>.</p>
+         * <p>For information about the permissions required to use the multipart upload
+         * API, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
          * Upload and Permissions</a>.</p> <p>For request signing, multipart upload is just
          * a series of regular requests. You initiate a multipart upload, send one or more
@@ -532,34 +560,52 @@ namespace Aws
          * sign each request individually. There is nothing special about signing multipart
          * upload requests. For more information about signing, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/sig-v4-authenticating-requests.html">Authenticating
-         * Requests (Amazon Web Services Signature Version 4)</a>.</p>  <p> After you
+         * Requests (Amazon Web Services Signature Version 4)</a>.</p>  <p>After you
          * initiate a multipart upload and upload one or more parts, to stop being charged
          * for storing the uploaded parts, you must either complete or abort the multipart
          * upload. Amazon S3 frees up the space used to store the parts and stop charging
          * you for storing them only after you either complete or abort a multipart upload.
-         * </p>  <p>You can optionally request server-side encryption. For
-         * server-side encryption, Amazon S3 encrypts your data as it writes it to disks in
-         * its data centers and decrypts it when you access it. You can provide your own
-         * encryption key, or use Amazon Web Services KMS keys or Amazon S3-managed
-         * encryption keys. If you choose to provide your own encryption key, the request
-         * headers you provide in <a
+         * </p>  <p>Server-side encryption is for data encryption at rest. Amazon S3
+         * encrypts your data as it writes it to disks in its data centers and decrypts it
+         * when you access it. Amazon S3 automatically encrypts all new objects that are
+         * uploaded to an S3 bucket. When doing a multipart upload, if you don't specify
+         * encryption information in your request, the encryption setting of the uploaded
+         * parts is set to the default encryption configuration of the destination bucket.
+         * By default, all buckets have a base level of encryption configuration that uses
+         * server-side encryption with Amazon S3 managed keys (SSE-S3). If the destination
+         * bucket has a default encryption configuration that uses server-side encryption
+         * with an Key Management Service (KMS) key (SSE-KMS), or a customer-provided
+         * encryption key (SSE-C), Amazon S3 uses the corresponding KMS key, or a
+         * customer-provided key to encrypt the uploaded parts. When you perform a
+         * CreateMultipartUpload operation, if you want to use a different type of
+         * encryption setting for the uploaded parts, you can request that Amazon S3
+         * encrypts the object with a KMS key, an Amazon S3 managed key, or a
+         * customer-provided key. If the encryption setting in your request is different
+         * from the default encryption configuration of the destination bucket, the
+         * encryption setting in your request takes precedence. If you choose to provide
+         * your own encryption key, the request headers you provide in <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>
          * and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPartCopy.html">UploadPartCopy</a>
          * requests must match the headers you used in the request to initiate the upload
-         * by using <code>CreateMultipartUpload</code>. </p> <p>To perform a multipart
-         * upload with encryption using an Amazon Web Services KMS key, the requester must
-         * have permission to the <code>kms:Decrypt</code> and
-         * <code>kms:GenerateDataKey*</code> actions on the key. These permissions are
-         * required because Amazon S3 must decrypt and read data from the encrypted file
-         * parts before it completes the multipart upload. For more information, see <a
+         * by using <code>CreateMultipartUpload</code>. You can request that Amazon S3 save
+         * the uploaded parts encrypted with server-side encryption with an Amazon S3
+         * managed key (SSE-S3), an Key Management Service (KMS) key (SSE-KMS), or a
+         * customer-provided encryption key (SSE-C). </p> <p>To perform a multipart upload
+         * with encryption by using an Amazon Web Services KMS key, the requester must have
+         * permission to the <code>kms:Decrypt</code> and <code>kms:GenerateDataKey*</code>
+         * actions on the key. These permissions are required because Amazon S3 must
+         * decrypt and read data from the encrypted file parts before it completes the
+         * multipart upload. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/mpuoverview.html#mpuAndPermissions">Multipart
-         * upload API and permissions</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If
-         * your Identity and Access Management (IAM) user or role is in the same Amazon Web
-         * Services account as the KMS key, then you must have these permissions on the key
-         * policy. If your IAM user or role belongs to a different account than the key,
-         * then you must have the permissions on both the key policy and your IAM user or
-         * role.</p> <p> For more information, see <a
+         * upload API and permissions</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
+         * data using server-side encryption with Amazon Web Services KMS</a> in the
+         * <i>Amazon S3 User Guide</i>.</p> <p>If your Identity and Access Management (IAM)
+         * user or role is in the same Amazon Web Services account as the KMS key, then you
+         * must have these permissions on the key policy. If your IAM user or role belongs
+         * to a different account than the key, then you must have the permissions on both
+         * the key policy and your IAM user or role.</p> <p> For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a>.</p> <dl> <dt>Access Permissions</dt> <dd>
          * <p>When copying an object, you can optionally specify the accounts or groups
@@ -576,44 +622,47 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a>.</p> </li> </ul> <p>You can use either a canned
          * ACL or specify access permissions explicitly. You cannot do both.</p> </dd>
-         * <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> <p>You can
-         * optionally tell Amazon S3 to encrypt data at rest using server-side encryption.
-         * Server-side encryption is for data encryption at rest. Amazon S3 encrypts your
-         * data as it writes it to disks in its data centers and decrypts it when you
-         * access it. The option you use depends on whether you want to use Amazon Web
-         * Services managed encryption keys or provide your own encryption key. </p> <ul>
-         * <li> <p>Use encryption keys managed by Amazon S3 or customer managed key stored
-         * in Amazon Web Services Key Management Service (Amazon Web Services KMS) – If you
-         * want Amazon Web Services to manage the keys used to encrypt data, specify the
-         * following headers in the request.</p> <ul> <li> <p>
-         * <code>x-amz-server-side-encryption</code> </p> </li> <li> <p>
-         * <code>x-amz-server-side-encryption-aws-kms-key-id</code> </p> </li> <li> <p>
-         * <code>x-amz-server-side-encryption-context</code> </p> </li> </ul>  <p>If
-         * you specify <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
+         * <dt>Server-Side- Encryption-Specific Request Headers</dt> <dd> <p>Amazon S3
+         * encrypts data by using server-side encryption with an Amazon S3 managed key
+         * (SSE-S3) by default. Server-side encryption is for data encryption at rest.
+         * Amazon S3 encrypts your data as it writes it to disks in its data centers and
+         * decrypts it when you access it. You can request that Amazon S3 encrypts data at
+         * rest by using server-side encryption with other key options. The option you use
+         * depends on whether you want to use KMS keys (SSE-KMS) or provide your own
+         * encryption keys (SSE-C).</p> <ul> <li> <p>Use KMS keys (SSE-KMS) that include
+         * the Amazon Web Services managed key (<code>aws/s3</code>) and KMS customer
+         * managed keys stored in Key Management Service (KMS) – If you want Amazon Web
+         * Services to manage the keys used to encrypt data, specify the following headers
+         * in the request.</p> <ul> <li> <p> <code>x-amz-server-side-encryption</code> </p>
+         * </li> <li> <p> <code>x-amz-server-side-encryption-aws-kms-key-id</code> </p>
+         * </li> <li> <p> <code>x-amz-server-side-encryption-context</code> </p> </li>
+         * </ul>  <p>If you specify
+         * <code>x-amz-server-side-encryption:aws:kms</code>, but don't provide
          * <code>x-amz-server-side-encryption-aws-kms-key-id</code>, Amazon S3 uses the
-         * Amazon Web Services managed key in Amazon Web Services KMS to protect the
-         * data.</p>   <p>All GET and PUT requests for an object
-         * protected by Amazon Web Services KMS fail if you don't make them with SSL or by
-         * using SigV4.</p>  <p>For more information about server-side
-         * encryption with KMS key (SSE-KMS), see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
+         * Amazon Web Services managed key (<code>aws/s3</code> key) in KMS to protect the
+         * data.</p>   <p>All <code>GET</code> and <code>PUT</code>
+         * requests for an object protected by KMS fail if you don't make them by using
+         * Secure Sockets Layer (SSL), Transport Layer Security (TLS), or Signature Version
+         * 4.</p>  <p>For more information about server-side encryption with
+         * KMS keys (SSE-KMS), see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/UsingKMSEncryption.html">Protecting
          * Data Using Server-Side Encryption with KMS keys</a>.</p> </li> <li> <p>Use
-         * customer-provided encryption keys – If you want to manage your own encryption
-         * keys, provide all the following headers in the request.</p> <ul> <li> <p>
-         * <code>x-amz-server-side-encryption-customer-algorithm</code> </p> </li> <li> <p>
-         * <code>x-amz-server-side-encryption-customer-key</code> </p> </li> <li> <p>
+         * customer-provided encryption keys (SSE-C) – If you want to manage your own
+         * encryption keys, provide all the following headers in the request.</p> <ul> <li>
+         * <p> <code>x-amz-server-side-encryption-customer-algorithm</code> </p> </li> <li>
+         * <p> <code>x-amz-server-side-encryption-customer-key</code> </p> </li> <li> <p>
          * <code>x-amz-server-side-encryption-customer-key-MD5</code> </p> </li> </ul>
-         * <p>For more information about server-side encryption with KMS keys (SSE-KMS),
-         * see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingKMSEncryption.html">Protecting
-         * Data Using Server-Side Encryption with KMS keys</a>.</p> </li> </ul> </dd>
-         * <dt>Access-Control-List (ACL)-Specific Request Headers</dt> <dd> <p>You also can
-         * use the following access control–related headers with this operation. By
-         * default, all objects are private. Only the owner has full access control. When
-         * adding a new object, you can grant permissions to individual Amazon Web Services
-         * accounts or to predefined groups defined by Amazon S3. These permissions are
-         * then added to the access control list (ACL) on the object. For more information,
-         * see <a
+         * <p>For more information about server-side encryption with customer-provided
+         * encryption keys (SSE-C), see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerSideEncryptionCustomerKeys.html">
+         * Protecting data using server-side encryption with customer-provided encryption
+         * keys (SSE-C)</a>.</p> </li> </ul> </dd> <dt>Access-Control-List (ACL)-Specific
+         * Request Headers</dt> <dd> <p>You also can use the following access
+         * control–related headers with this operation. By default, all objects are
+         * private. Only the owner has full access control. When adding a new object, you
+         * can grant permissions to individual Amazon Web Services accounts or to
+         * predefined groups defined by Amazon S3. These permissions are then added to the
+         * access control list (ACL) on the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using
          * ACLs</a>. With this operation, you can grant access permissions using one of the
          * following two methods:</p> <ul> <li> <p>Specify a canned ACL
@@ -690,7 +739,8 @@ namespace Aws
         /**
          * <p>Deletes the S3 bucket. All objects (including all object versions and delete
          * markers) in the bucket must be deleted before the bucket itself can be
-         * deleted.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * deleted.</p> <p>The following operations are related to
+         * <code>DeleteBucket</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
@@ -768,8 +818,9 @@ namespace Aws
          * default and can grant this permission to others. </p> <p>For information about
          * <code>cors</code>, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-         * Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p> <p
-         * class="title"> <b>Related Resources:</b> </p> <ul> <li> <p> <a
+         * Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following operations are related to <code>DeleteBucketCors</code>:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketCors.html">PutBucketCors</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTOPTIONSobject.html">RESTOPTIONSobject</a>
@@ -798,10 +849,11 @@ namespace Aws
         }
 
         /**
-         * <p>This implementation of the DELETE action removes default encryption from the
-         * bucket. For information about the Amazon S3 default encryption feature, see <a
+         * <p>This implementation of the DELETE action resets the default encryption for
+         * the bucket as server-side encryption with Amazon S3 managed keys (SSE-S3). For
+         * information about the bucket default encryption feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 Default Bucket Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To
+         * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To
          * use this operation, you must have permissions to perform the
          * <code>s3:PutEncryptionConfiguration</code> action. The bucket owner has this
          * permission by default. The bucket owner can grant this permission to others. For
@@ -810,7 +862,8 @@ namespace Aws
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to your Amazon S3 Resources</a> in the <i>Amazon S3 User
-         * Guide</i>.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Guide</i>.</p> <p>The following operations are related to
+         * <code>DeleteBucketEncryption</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketEncryption.html">PutBucketEncryption</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
@@ -1062,11 +1115,15 @@ namespace Aws
          * permissions, Amazon S3 returns a <code>403 Access Denied</code> error. If you
          * have the correct permissions, but you're not using an identity that belongs to
          * the bucket owner's account, Amazon S3 returns a <code>405 Method Not
-         * Allowed</code> error. </p>  <p>As a security precaution, the root
-         * user of the Amazon Web Services account that owns a bucket can always use this
-         * operation, even if the policy explicitly denies the root user the ability to
-         * perform this action.</p>  <p>For more information about bucket
-         * policies, see <a
+         * Allowed</code> error. </p>  <p>To ensure that bucket owners don't
+         * inadvertently lock themselves out of their own buckets, the root principal in a
+         * bucket owner's Amazon Web Services account can perform the
+         * <code>GetBucketPolicy</code>, <code>PutBucketPolicy</code>, and
+         * <code>DeleteBucketPolicy</code> API actions, even if their bucket policy
+         * explicitly denies the root principal's access. Bucket owner root principals can
+         * only be blocked from performing these API actions by VPC endpoint policies and
+         * Amazon Web Services Organizations policies.</p>  <p>For more
+         * information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and UserPolicies</a>. </p> <p>The following operations are
          * related to <code>DeleteBucketPolicy</code> </p> <ul> <li> <p> <a
@@ -1218,15 +1275,15 @@ namespace Aws
          * <p>Removes the null version (if there is one) of an object and inserts a delete
          * marker, which becomes the latest version of the object. If there isn't a null
          * version, Amazon S3 does not remove any objects but will still respond that the
-         * command was successful.</p> <p>To remove a specific version, you must be the
-         * bucket owner and you must use the version Id subresource. Using this subresource
-         * permanently deletes the version. If the object deleted is a delete marker,
-         * Amazon S3 sets the response header, <code>x-amz-delete-marker</code>, to true.
-         * </p> <p>If the object you want to delete is in a bucket where the bucket
-         * versioning configuration is MFA Delete enabled, you must include the
-         * <code>x-amz-mfa</code> request header in the DELETE <code>versionId</code>
-         * request. Requests that include <code>x-amz-mfa</code> must use HTTPS. </p> <p>
-         * For more information about MFA Delete, see <a
+         * command was successful.</p> <p>To remove a specific version, you must use the
+         * version Id subresource. Using this subresource permanently deletes the version.
+         * If the object deleted is a delete marker, Amazon S3 sets the response header,
+         * <code>x-amz-delete-marker</code>, to true. </p> <p>If the object you want to
+         * delete is in a bucket where the bucket versioning configuration is MFA Delete
+         * enabled, you must include the <code>x-amz-mfa</code> request header in the
+         * DELETE <code>versionId</code> request. Requests that include
+         * <code>x-amz-mfa</code> must use HTTPS. </p> <p> For more information about MFA
+         * Delete, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMFADelete.html">Using
          * MFA Delete</a>. To see sample requests that use versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTObjectDELETE.html#ExampleVersionObjectDelete">Sample
@@ -1272,8 +1329,7 @@ namespace Aws
          * a specific object version, add the <code>versionId</code> query parameter in the
          * request. You will need permission for the
          * <code>s3:DeleteObjectVersionTagging</code> action.</p> <p>The following
-         * operations are related to <code>DeleteBucketMetricsConfiguration</code>:</p>
-         * <ul> <li> <p> <a
+         * operations are related to <code>DeleteObjectTagging</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObjectTagging.html">PutObjectTagging</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
@@ -1424,8 +1480,9 @@ namespace Aws
          * Transfer Acceleration state if a state has never been set on the bucket. </p>
          * <p>For more information about transfer acceleration, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/transfer-acceleration.html">Transfer
-         * Acceleration</a> in the Amazon S3 User Guide.</p> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * Acceleration</a> in the Amazon S3 User Guide.</p> <p>The following operations
+         * are related to <code>GetBucketAccelerateConfiguration</code>:</p> <ul> <li> <p>
+         * <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketAccelerateConfiguration.html">PutBucketAccelerateConfiguration</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAccelerateConfiguration">AWS
@@ -1457,14 +1514,22 @@ namespace Aws
          * <code>GET</code> to return the ACL of the bucket, you must have
          * <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission
          * is granted to the anonymous user, you can return the ACL of the bucket without
-         * using an authorization header.</p>  <p>If your bucket uses the bucket
-         * owner enforced setting for S3 Object Ownership, requests to read ACLs are still
-         * supported and return the <code>bucket-owner-full-control</code> ACL with the
-         * owner being the account that created the bucket. For more information, see <a
+         * using an authorization header.</p> <p>To use this API operation against an
+         * access point, provide the alias of the access point in place of the bucket
+         * name.</p> <p>To use this API operation against an Object Lambda access point,
+         * provide the alias of the Object Lambda access point in place of the bucket name.
+         * If the Object Lambda access point alias in a request is not valid, the error
+         * code <code>InvalidAccessPointAliasError</code> is returned. For more information
+         * about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p>  <p>If your bucket uses the bucket owner enforced
+         * setting for S3 Object Ownership, requests to read ACLs are still supported and
+         * return the <code>bucket-owner-full-control</code> ACL with the owner being the
+         * account that created the bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
          * Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User
-         * Guide</i>.</p>  <p class="title"> <b>Related Resources</b> </p> <ul> <li>
-         * <p> <a
+         * Guide</i>.</p>  <p>The following operations are related to
+         * <code>GetBucketAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListObjects.html">ListObjects</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/GetBucketAcl">AWS API
@@ -1504,7 +1569,8 @@ namespace Aws
          * Guide</i>. </p> <p>For information about Amazon S3 analytics feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
          * S3 Analytics – Storage Class Analysis</a> in the <i>Amazon S3 User
-         * Guide</i>.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Guide</i>.</p> <p>The following operations are related to
+         * <code>GetBucketAnalyticsConfiguration</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBucketAnalyticsConfigurations.html">ListBucketAnalyticsConfigurations</a>
@@ -1538,8 +1604,15 @@ namespace Aws
          * <p>Returns the Cross-Origin Resource Sharing (CORS) configuration information
          * set for the bucket.</p> <p> To use this operation, you must have permission to
          * perform the <code>s3:GetBucketCORS</code> action. By default, the bucket owner
-         * has this permission and can grant it to others.</p> <p> For more information
-         * about CORS, see <a
+         * has this permission and can grant it to others.</p> <p>To use this API operation
+         * against an access point, provide the alias of the access point in place of the
+         * bucket name.</p> <p>To use this API operation against an Object Lambda access
+         * point, provide the alias of the Object Lambda access point in place of the
+         * bucket name. If the Object Lambda access point alias in a request is not valid,
+         * the error code <code>InvalidAccessPointAliasError</code> is returned. For more
+         * information about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p> <p> For more information about CORS, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html"> Enabling
          * Cross-Origin Resource Sharing</a>.</p> <p>The following operations are related
          * to <code>GetBucketCors</code>:</p> <ul> <li> <p> <a
@@ -1571,15 +1644,16 @@ namespace Aws
         }
 
         /**
-         * <p>Returns the default encryption configuration for an Amazon S3 bucket. If the
-         * bucket does not have a default encryption configuration, GetBucketEncryption
-         * returns <code>ServerSideEncryptionConfigurationNotFoundError</code>. </p> <p>For
-         * information about the Amazon S3 default encryption feature, see <a
+         * <p>Returns the default encryption configuration for an Amazon S3 bucket. By
+         * default, all buckets have a default encryption configuration that uses
+         * server-side encryption with Amazon S3 managed keys (SSE-S3). For information
+         * about the bucket default encryption feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 Default Bucket Encryption</a>.</p> <p> To use this operation, you must have
-         * permission to perform the <code>s3:GetEncryptionConfiguration</code> action. The
-         * bucket owner has this permission by default. The bucket owner can grant this
-         * permission to others. For more information about permissions, see <a
+         * S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p> <p>To
+         * use this operation, you must have permission to perform the
+         * <code>s3:GetEncryptionConfiguration</code> action. The bucket owner has this
+         * permission by default. The bucket owner can grant this permission to others. For
+         * more information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
@@ -1763,10 +1837,19 @@ namespace Aws
          * the <code>LocationConstraint</code> request parameter in a
          * <code>CreateBucket</code> request. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.</p>
-         * <p>To use this implementation of the operation, you must be the bucket
-         * owner.</p> <p>To use this API against an access point, provide the alias of the
-         * access point in place of the bucket name.</p> <p>The following operations are
-         * related to <code>GetBucketLocation</code>:</p> <ul> <li> <p> <a
+         * <p>To use this API operation against an access point, provide the alias of the
+         * access point in place of the bucket name.</p> <p>To use this API operation
+         * against an Object Lambda access point, provide the alias of the Object Lambda
+         * access point in place of the bucket name. If the Object Lambda access point
+         * alias in a request is not valid, the error code
+         * <code>InvalidAccessPointAliasError</code> is returned. For more information
+         * about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p>  <p>We recommend that you use <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_HeadBucket.html">HeadBucket</a>
+         * to return the Region that a bucket resides in. For backward compatibility,
+         * Amazon S3 continues to support GetBucketLocation.</p>  <p>The following
+         * operations are related to <code>GetBucketLocation</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
@@ -1796,9 +1879,8 @@ namespace Aws
 
         /**
          * <p>Returns the logging status of a bucket and the permissions users have to view
-         * and modify that status. To use GET, you must be the bucket owner.</p> <p>The
-         * following operations are related to <code>GetBucketLogging</code>:</p> <ul> <li>
-         * <p> <a
+         * and modify that status.</p> <p>The following operations are related to
+         * <code>GetBucketLogging</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLogging.html">PutBucketLogging</a>
@@ -1879,7 +1961,15 @@ namespace Aws
          * the bucket owner to read the notification configuration of a bucket. However,
          * the bucket owner can use a bucket policy to grant permission to other users to
          * read this configuration with the <code>s3:GetBucketNotification</code>
-         * permission.</p> <p>For more information about setting and reading the
+         * permission.</p> <p>To use this API operation against an access point, provide
+         * the alias of the access point in place of the bucket name.</p> <p>To use this
+         * API operation against an Object Lambda access point, provide the alias of the
+         * Object Lambda access point in place of the bucket name. If the Object Lambda
+         * access point alias in a request is not valid, the error code
+         * <code>InvalidAccessPointAliasError</code> is returned. For more information
+         * about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p> <p>For more information about setting and reading the
          * notification configuration on a bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/NotificationHowTo.html">Setting
          * Up Notification of Bucket Events</a>. For more information about bucket
@@ -1956,10 +2046,22 @@ namespace Aws
          * Amazon S3 returns a <code>403 Access Denied</code> error. If you have the
          * correct permissions, but you're not using an identity that belongs to the bucket
          * owner's account, Amazon S3 returns a <code>405 Method Not Allowed</code>
-         * error.</p>  <p>As a security precaution, the root user of the Amazon
-         * Web Services account that owns a bucket can always use this operation, even if
-         * the policy explicitly denies the root user the ability to perform this
-         * action.</p>  <p>For more information about bucket policies, see <a
+         * error.</p>  <p>To ensure that bucket owners don't inadvertently lock
+         * themselves out of their own buckets, the root principal in a bucket owner's
+         * Amazon Web Services account can perform the <code>GetBucketPolicy</code>,
+         * <code>PutBucketPolicy</code>, and <code>DeleteBucketPolicy</code> API actions,
+         * even if their bucket policy explicitly denies the root principal's access.
+         * Bucket owner root principals can only be blocked from performing these API
+         * actions by VPC endpoint policies and Amazon Web Services Organizations
+         * policies.</p>  <p>To use this API operation against an access point,
+         * provide the alias of the access point in place of the bucket name.</p> <p>To use
+         * this API operation against an Object Lambda access point, provide the alias of
+         * the Object Lambda access point in place of the bucket name. If the Object Lambda
+         * access point alias in a request is not valid, the error code
+         * <code>InvalidAccessPointAliasError</code> is returned. For more information
+         * about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p> <p>For more information about bucket policies, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
          * Bucket Policies and User Policies</a>.</p> <p>The following action is related to
          * <code>GetBucketPolicy</code>:</p> <ul> <li> <p> <a
@@ -2188,8 +2290,8 @@ namespace Aws
          * can read the bucket website configuration. However, bucket owners can allow
          * other users to read the website configuration by writing a bucket policy
          * granting them the <code>S3:GetBucketWebsite</code> permission.</p> <p>The
-         * following operations are related to <code>DeleteBucketWebsite</code>:</p> <ul>
-         * <li> <p> <a
+         * following operations are related to <code>GetBucketWebsite</code>:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketWebsite.html">DeleteBucketWebsite</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketWebsite.html">PutBucketWebsite</a>
@@ -2244,8 +2346,8 @@ namespace Aws
          * Intelligent-Tiering Deep Archive tiers, before you can retrieve the object you
          * must first restore a copy using <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_RestoreObject.html">RestoreObject</a>.
-         * Otherwise, this action returns an <code>InvalidObjectStateError</code> error.
-         * For information about restoring archived objects, see <a
+         * Otherwise, this action returns an <code>InvalidObjectState</code> error. For
+         * information about restoring archived objects, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a>.</p> <p>Encryption request headers, like
          * <code>x-amz-server-side-encryption</code>, should not be sent for GET requests
@@ -2265,8 +2367,8 @@ namespace Aws
          * <code>x-amz-tagging-count</code> header that provides the count of number of
          * tags associated with the object. You can use <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
-         * to retrieve the tag set associated with an object.</p> <p> <b>Permissions</b>
-         * </p> <p>You need the relevant read object (or version) permission for this
+         * to retrieve the tag set associated with an object.</p> <dl> <dt>Permissions</dt>
+         * <dd> <p>You need the relevant read object (or version) permission for this
          * operation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
          * Permissions in a Policy</a>. If the object you request does not exist, the error
@@ -2275,19 +2377,22 @@ namespace Aws
          * <code>s3:ListBucket</code> permission on the bucket, Amazon S3 will return an
          * HTTP status code 404 ("no such key") error.</p> </li> <li> <p>If you don’t have
          * the <code>s3:ListBucket</code> permission, Amazon S3 will return an HTTP status
-         * code 403 ("access denied") error.</p> </li> </ul> <p> <b>Versioning</b> </p>
+         * code 403 ("access denied") error.</p> </li> </ul> </dd> <dt>Versioning</dt> <dd>
          * <p>By default, the GET action returns the current version of an object. To
          * return a different version, use the <code>versionId</code> subresource.</p>
          *  <ul> <li> <p> If you supply a <code>versionId</code>, you need the
          * <code>s3:GetObjectVersion</code> permission to access a specific version of an
          * object. If you request a specific version, you do not need to have the
-         * <code>s3:GetObject</code> permission. </p> </li> <li> <p>If the current version
-         * of the object is a delete marker, Amazon S3 behaves as if the object was deleted
-         * and includes <code>x-amz-delete-marker: true</code> in the response.</p> </li>
-         * </ul>  <p>For more information about versioning, see <a
+         * <code>s3:GetObject</code> permission. If you request the current version without
+         * a specific version ID, only <code>s3:GetObject</code> permission is required.
+         * <code>s3:GetObjectVersion</code> permission won't be required.</p> </li> <li>
+         * <p>If the current version of the object is a delete marker, Amazon S3 behaves as
+         * if the object was deleted and includes <code>x-amz-delete-marker: true</code> in
+         * the response.</p> </li> </ul>  <p>For more information about versioning,
+         * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketVersioning.html">PutBucketVersioning</a>.
-         * </p> <p> <b>Overriding Response Header Values</b> </p> <p>There are times when
-         * you want to override certain response header values in a GET response. For
+         * </p> </dd> <dt>Overriding Response Header Values</dt> <dd> <p>There are times
+         * when you want to override certain response header values in a GET response. For
          * example, you might override the <code>Content-Disposition</code> response header
          * value in your GET request.</p> <p>You can override values for a set of response
          * headers using the following query parameters. These response header values are
@@ -2306,19 +2411,19 @@ namespace Aws
          * <code>response-expires</code> </p> </li> <li> <p>
          * <code>response-cache-control</code> </p> </li> <li> <p>
          * <code>response-content-disposition</code> </p> </li> <li> <p>
-         * <code>response-content-encoding</code> </p> </li> </ul> <p> <b>Additional
-         * Considerations about Request Headers</b> </p> <p>If both of the
-         * <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present
-         * in the request as follows: <code>If-Match</code> condition evaluates to
-         * <code>true</code>, and; <code>If-Unmodified-Since</code> condition evaluates to
-         * <code>false</code>; then, S3 returns 200 OK and the data requested. </p> <p>If
-         * both of the <code>If-None-Match</code> and <code>If-Modified-Since</code>
-         * headers are present in the request as follows:<code> If-None-Match</code>
-         * condition evaluates to <code>false</code>, and; <code>If-Modified-Since</code>
-         * condition evaluates to <code>true</code>; then, S3 returns 304 Not Modified
-         * response code.</p> <p>For more information about conditional requests, see <a
-         * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>The following
-         * operations are related to <code>GetObject</code>:</p> <ul> <li> <p> <a
+         * <code>response-content-encoding</code> </p> </li> </ul> </dd> <dt>Overriding
+         * Response Header Values</dt> <dd> <p>If both of the <code>If-Match</code> and
+         * <code>If-Unmodified-Since</code> headers are present in the request as follows:
+         * <code>If-Match</code> condition evaluates to <code>true</code>, and;
+         * <code>If-Unmodified-Since</code> condition evaluates to <code>false</code>;
+         * then, S3 returns 200 OK and the data requested. </p> <p>If both of the
+         * <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are
+         * present in the request as follows:<code> If-None-Match</code> condition
+         * evaluates to <code>false</code>, and; <code>If-Modified-Since</code> condition
+         * evaluates to <code>true</code>; then, S3 returns 304 Not Modified response
+         * code.</p> <p>For more information about conditional requests, see <a
+         * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> </dd> </dl> <p>The
+         * following operations are related to <code>GetObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_ListBuckets.html">ListBuckets</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAcl.html">GetObjectAcl</a>
@@ -2344,14 +2449,13 @@ namespace Aws
          * access to the object. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping
          * of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User
-         * Guide</i> </p> <p>This action is not supported by Amazon S3 on Outposts.</p> <p>
-         * <b>Versioning</b> </p> <p>By default, GET returns ACL information about the
-         * current version of an object. To return ACL information about a different
-         * version, use the versionId subresource.</p>  <p>If your bucket uses the
-         * bucket owner enforced setting for S3 Object Ownership, requests to read ACLs are
-         * still supported and return the <code>bucket-owner-full-control</code> ACL with
-         * the owner being the account that created the bucket. For more information, see
-         * <a
+         * Guide</i> </p> <p>This action is not supported by Amazon S3 on Outposts.</p>
+         * <p>By default, GET returns ACL information about the current version of an
+         * object. To return ACL information about a different version, use the versionId
+         * subresource.</p>  <p>If your bucket uses the bucket owner enforced setting
+         * for S3 Object Ownership, requests to read ACLs are still supported and return
+         * the <code>bucket-owner-full-control</code> ACL with the owner being the account
+         * that created the bucket. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
          * Controlling object ownership and disabling ACLs</a> in the <i>Amazon S3 User
          * Guide</i>.</p>  <p>The following operations are related to
@@ -2392,11 +2496,8 @@ namespace Aws
          * itself. This action is useful if you're interested only in an object's metadata.
          * To use <code>GetObjectAttributes</code>, you must have READ access to the
          * object.</p> <p> <code>GetObjectAttributes</code> combines the functionality of
-         * <code>GetObjectAcl</code>, <code>GetObjectLegalHold</code>,
-         * <code>GetObjectLockConfiguration</code>, <code>GetObjectRetention</code>,
-         * <code>GetObjectTagging</code>, <code>HeadObject</code>, and
-         * <code>ListParts</code>. All of the data returned with each of those individual
-         * calls can be returned with a single call to
+         * <code>HeadObject</code> and <code>ListParts</code>. All of the data returned
+         * with each of those individual calls can be returned with a single call to
          * <code>GetObjectAttributes</code>.</p> <p>If you encrypt an object by using
          * server-side encryption with customer-provided encryption keys (SSE-C) when you
          * store the object in Amazon S3, then when you retrieve the metadata from the
@@ -2411,25 +2512,24 @@ namespace Aws
          * <code>x-amz-server-side-encryption</code>, should not be sent for GET requests
          * if your object uses server-side encryption with Amazon Web Services KMS keys
          * stored in Amazon Web Services Key Management Service (SSE-KMS) or server-side
-         * encryption with Amazon S3 managed encryption keys (SSE-S3). If your object does
-         * use these types of keys, you'll get an HTTP <code>400 Bad Request</code>
-         * error.</p> </li> <li> <p> The last modified property in this case is the
-         * creation date of the object.</p> </li> </ul>  <p>Consider the following
-         * when using request headers:</p> <ul> <li> <p> If both of the
-         * <code>If-Match</code> and <code>If-Unmodified-Since</code> headers are present
-         * in the request as follows, then Amazon S3 returns the HTTP status code <code>200
-         * OK</code> and the data requested:</p> <ul> <li> <p> <code>If-Match</code>
-         * condition evaluates to <code>true</code>.</p> </li> <li> <p>
-         * <code>If-Unmodified-Since</code> condition evaluates to <code>false</code>.</p>
-         * </li> </ul> </li> <li> <p>If both of the <code>If-None-Match</code> and
-         * <code>If-Modified-Since</code> headers are present in the request as follows,
-         * then Amazon S3 returns the HTTP status code <code>304 Not Modified</code>:</p>
-         * <ul> <li> <p> <code>If-None-Match</code> condition evaluates to
-         * <code>false</code>.</p> </li> <li> <p> <code>If-Modified-Since</code> condition
-         * evaluates to <code>true</code>.</p> </li> </ul> </li> </ul> <p>For more
-         * information about conditional requests, see <a
-         * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>
-         * <b>Permissions</b> </p> <p>The permissions that you need to use this operation
+         * encryption with Amazon S3 managed keys (SSE-S3). If your object does use these
+         * types of keys, you'll get an HTTP <code>400 Bad Request</code> error.</p> </li>
+         * <li> <p> The last modified property in this case is the creation date of the
+         * object.</p> </li> </ul>  <p>Consider the following when using request
+         * headers:</p> <ul> <li> <p> If both of the <code>If-Match</code> and
+         * <code>If-Unmodified-Since</code> headers are present in the request as follows,
+         * then Amazon S3 returns the HTTP status code <code>200 OK</code> and the data
+         * requested:</p> <ul> <li> <p> <code>If-Match</code> condition evaluates to
+         * <code>true</code>.</p> </li> <li> <p> <code>If-Unmodified-Since</code> condition
+         * evaluates to <code>false</code>.</p> </li> </ul> </li> <li> <p>If both of the
+         * <code>If-None-Match</code> and <code>If-Modified-Since</code> headers are
+         * present in the request as follows, then Amazon S3 returns the HTTP status code
+         * <code>304 Not Modified</code>:</p> <ul> <li> <p> <code>If-None-Match</code>
+         * condition evaluates to <code>false</code>.</p> </li> <li> <p>
+         * <code>If-Modified-Since</code> condition evaluates to <code>true</code>.</p>
+         * </li> </ul> </li> </ul> <p>For more information about conditional requests, see
+         * <a href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>The permissions that you need to use this operation
          * depend on whether the bucket is versioned. If the bucket is versioned, you need
          * both the <code>s3:GetObjectVersion</code> and
          * <code>s3:GetObjectVersionAttributes</code> permissions for this operation. If
@@ -2443,7 +2543,7 @@ namespace Aws
          * an HTTP status code <code>404 Not Found</code> ("no such key") error.</p> </li>
          * <li> <p>If you don't have the <code>s3:ListBucket</code> permission, Amazon S3
          * returns an HTTP status code <code>403 Forbidden</code> ("access denied")
-         * error.</p> </li> </ul> <p>The following actions are related to
+         * error.</p> </li> </ul> </dd> </dl> <p>The following actions are related to
          * <code>GetObjectAttributes</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
@@ -2623,9 +2723,7 @@ namespace Aws
 
         /**
          * <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when
-         * you're distributing large files. For more information about BitTorrent, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3Torrent.html">Using
-         * BitTorrent with Amazon S3</a>.</p>  <p>You can get torrent only for
+         * you're distributing large files.</p>  <p>You can get torrent only for
          * objects that are less than 5 GB in size, and that are not encrypted using
          * server-side encryption with a customer-provided encryption key.</p> 
          * <p>To use GET, you must have READ access to the object.</p> <p>This action is
@@ -2709,25 +2807,31 @@ namespace Aws
          * to access it. The action returns a <code>200 OK</code> if the bucket exists and
          * you have permission to access it.</p> <p>If the bucket does not exist or you do
          * not have permission to access it, the <code>HEAD</code> request returns a
-         * generic <code>404 Not Found</code> or <code>403 Forbidden</code> code. A message
-         * body is not included, so you cannot determine the exception beyond these error
-         * codes.</p> <p>To use this operation, you must have permissions to perform the
-         * <code>s3:ListBucket</code> action. The bucket owner has this permission by
-         * default and can grant this permission to others. For more information about
-         * permissions, see <a
+         * generic <code>400 Bad Request</code>, <code>403 Forbidden</code> or <code>404
+         * Not Found</code> code. A message body is not included, so you cannot determine
+         * the exception beyond these error codes.</p> <p>To use this operation, you must
+         * have permissions to perform the <code>s3:ListBucket</code> action. The bucket
+         * owner has this permission by default and can grant this permission to others.
+         * For more information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
          * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>To use this API
-         * against an access point, you must provide the alias of the access point in place
-         * of the bucket name or specify the access point ARN. When using the access point
-         * ARN, you must direct requests to the access point hostname. The access point
-         * hostname takes the form
-         * AccessPointName-AccountId.s3-accesspoint.Region.amazonaws.com. When using the
-         * Amazon Web Services SDKs, you provide the ARN in place of the bucket name. For
-         * more information see, <a
+         * operation against an access point, you must provide the alias of the access
+         * point in place of the bucket name or specify the access point ARN. When using
+         * the access point ARN, you must direct requests to the access point hostname. The
+         * access point hostname takes the form
+         * <i>AccessPointName</i>-<i>AccountId</i>.s3-accesspoint.<i>Region</i>.amazonaws.com.
+         * When using the Amazon Web Services SDKs, you provide the ARN in place of the
+         * bucket name. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-         * access points</a>.</p><p><h3>See Also:</h3>   <a
+         * access points</a>.</p> <p>To use this API operation against an Object Lambda
+         * access point, provide the alias of the Object Lambda access point in place of
+         * the bucket name. If the Object Lambda access point alias in a request is not
+         * valid, the error code <code>InvalidAccessPointAliasError</code> is returned. For
+         * more information about <code>InvalidAccessPointAliasError</code>, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+         * of Error Codes</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/HeadBucket">AWS API
          * Reference</a></p>
          */
@@ -2758,13 +2862,13 @@ namespace Aws
          * <code>HEAD</code> request has the same options as a <code>GET</code> action on
          * an object. The response is identical to the <code>GET</code> response except
          * that there is no response body. Because of this, if the <code>HEAD</code>
-         * request generates an error, it returns a generic <code>404 Not Found</code> or
-         * <code>403 Forbidden</code> code. It is not possible to retrieve the exact
-         * exception beyond these error codes.</p> <p>If you encrypt an object by using
-         * server-side encryption with customer-provided encryption keys (SSE-C) when you
-         * store the object in Amazon S3, then when you retrieve the metadata from the
-         * object, you must use the following headers:</p> <ul> <li>
-         * <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
+         * request generates an error, it returns a generic <code>400 Bad Request</code>,
+         * <code>403 Forbidden</code> or <code>404 Not Found</code> code. It is not
+         * possible to retrieve the exact exception beyond these error codes.</p> <p>If you
+         * encrypt an object by using server-side encryption with customer-provided
+         * encryption keys (SSE-C) when you store the object in Amazon S3, then when you
+         * retrieve the metadata from the object, you must use the following headers:</p>
+         * <ul> <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
          * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p>For more
          * information about SSE-C, see <a
@@ -2792,18 +2896,18 @@ namespace Aws
          * <code>If-Modified-Since</code> condition evaluates to <code>true</code>;</p>
          * </li> </ul> <p>Then Amazon S3 returns the <code>304 Not Modified</code> response
          * code.</p> </li> </ul> <p>For more information about conditional requests, see <a
-         * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <p>
-         * <b>Permissions</b> </p> <p>You need the relevant read object (or version)
+         * href="https://tools.ietf.org/html/rfc7232">RFC 7232</a>.</p> <dl>
+         * <dt>Permissions</dt> <dd> <p>You need the relevant read object (or version)
          * permission for this operation. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-         * Permissions in a Policy</a>. If the object you request does not exist, the error
-         * Amazon S3 returns depends on whether you also have the s3:ListBucket
-         * permission.</p> <ul> <li> <p>If you have the <code>s3:ListBucket</code>
-         * permission on the bucket, Amazon S3 returns an HTTP status code 404 ("no such
-         * key") error.</p> </li> <li> <p>If you don’t have the <code>s3:ListBucket</code>
-         * permission, Amazon S3 returns an HTTP status code 403 ("access denied")
-         * error.</p> </li> </ul> <p>The following actions are related to
-         * <code>HeadObject</code>:</p> <ul> <li> <p> <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/list_amazons3.html">Actions,
+         * resources, and condition keys for Amazon S3</a>. If the object you request does
+         * not exist, the error Amazon S3 returns depends on whether you also have the
+         * s3:ListBucket permission.</p> <ul> <li> <p>If you have the
+         * <code>s3:ListBucket</code> permission on the bucket, Amazon S3 returns an HTTP
+         * status code 404 ("no such key") error.</p> </li> <li> <p>If you don’t have the
+         * <code>s3:ListBucket</code> permission, Amazon S3 returns an HTTP status code 403
+         * ("access denied") error.</p> </li> </ul> </dd> </dl> <p>The following actions
+         * are related to <code>HeadObject</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectAttributes.html">GetObjectAttributes</a>
@@ -3037,9 +3141,12 @@ namespace Aws
         /**
          * <p>Returns a list of all buckets owned by the authenticated sender of the
          * request. To use this operation, you must have the
-         * <code>s3:ListAllMyBuckets</code> permission.</p><p><h3>See Also:</h3>   <a
-         * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS API
-         * Reference</a></p>
+         * <code>s3:ListAllMyBuckets</code> permission. </p> <p>For information about
+         * Amazon S3 buckets, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/creating-buckets-s3.html">Creating,
+         * configuring, and working with Amazon S3 buckets</a>.</p><p><h3>See Also:</h3>  
+         * <a href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ListBuckets">AWS
+         * API Reference</a></p>
          */
         virtual Model::ListBucketsOutcome ListBuckets() const;
 
@@ -3386,9 +3493,9 @@ namespace Aws
          * fail and return the <code>AccessControlListNotSupported</code> error code.
          * Requests to read ACLs are still supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
-         * object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
-         * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
-         * the following methods:</p> <ul> <li> <p>Specify a canned ACL with the
+         * object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
+         * <dt>Permissions</dt> <dd> <p>You can set access permissions using one of the
+         * following methods:</p> <ul> <li> <p>Specify a canned ACL with the
          * <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
          * ACLs, known as <i>canned ACLs</i>. Each canned ACL has a predefined set of
          * grantees and permissions. Specify the canned ACL name as the value of
@@ -3426,10 +3533,10 @@ namespace Aws
          * email addresses.</p> <p> <code>x-amz-grant-write:
          * uri="http://acs.amazonaws.com/groups/s3/LogDelivery", id="111122223333",
          * id="555566667777" </code> </p> </li> </ul> <p>You can use either a canned ACL or
-         * specify access permissions explicitly. You cannot do both.</p> <p> <b>Grantee
-         * Values</b> </p> <p>You can specify the person (grantee) to whom you're assigning
-         * access rights (using request elements) in the following ways:</p> <ul> <li>
-         * <p>By the person's ID:</p> <p> <code>&lt;Grantee
+         * specify access permissions explicitly. You cannot do both.</p> </dd> <dt>Grantee
+         * Values</dt> <dd> <p>You can specify the person (grantee) to whom you're
+         * assigning access rights (using request elements) in the following ways:</p> <ul>
+         * <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          * xsi:type="CanonicalUser"&gt;&lt;ID&gt;&lt;&gt;ID&lt;&gt;&lt;/ID&gt;&lt;DisplayName&gt;&lt;&gt;GranteesEmail&lt;&gt;&lt;/DisplayName&gt;
          * &lt;/Grantee&gt;</code> </p> <p>DisplayName is optional and ignored in the
@@ -3438,7 +3545,7 @@ namespace Aws
          * xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</code>
          * </p> </li> <li> <p>By Email address:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         * xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;lt;/Grantee&gt;</code>
+         * xsi:type="AmazonCustomerByEmail"&gt;&lt;EmailAddress&gt;&lt;&gt;Grantees@email.com&lt;&gt;&lt;/EmailAddress&gt;&amp;&lt;/Grantee&gt;</code>
          * </p> <p>The grantee is resolved to the CanonicalUser and, in a response to a GET
          * Object acl request, appears as the CanonicalUser. </p>  <p>Using email
          * addresses to specify a grantee is only supported in the following Amazon Web
@@ -3450,7 +3557,8 @@ namespace Aws
          * supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the Amazon Web Services General Reference.</p> 
-         * </li> </ul> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * </li> </ul> </dd> </dl> <p>The following operations are related to
+         * <code>PutBucketAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
@@ -3506,19 +3614,20 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p class="title">
-         * <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>HTTP Error: HTTP 400 Bad
-         * Request</i> </p> </li> <li> <p> <i>Code: InvalidArgument</i> </p> </li> <li> <p>
-         * <i>Cause: Invalid argument.</i> </p> </li> </ul> </li> <li> <ul> <li> <p>
-         * <i>HTTP Error: HTTP 400 Bad Request</i> </p> </li> <li> <p> <i>Code:
-         * TooManyConfigurations</i> </p> </li> <li> <p> <i>Cause: You are attempting to
-         * create a new configuration but have already reached the 1,000-configuration
-         * limit.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>HTTP Error: HTTP 403
-         * Forbidden</i> </p> </li> <li> <p> <i>Code: AccessDenied</i> </p> </li> <li> <p>
-         * <i>Cause: You are not the owner of the specified bucket, or you do not have the
+         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>
+         * <code>PutBucketAnalyticsConfiguration</code> has the following special
+         * errors:</p> <ul> <li> <ul> <li> <p> <i>HTTP Error: HTTP 400 Bad Request</i> </p>
+         * </li> <li> <p> <i>Code: InvalidArgument</i> </p> </li> <li> <p> <i>Cause:
+         * Invalid argument.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>HTTP Error:
+         * HTTP 400 Bad Request</i> </p> </li> <li> <p> <i>Code: TooManyConfigurations</i>
+         * </p> </li> <li> <p> <i>Cause: You are attempting to create a new configuration
+         * but have already reached the 1,000-configuration limit.</i> </p> </li> </ul>
+         * </li> <li> <ul> <li> <p> <i>HTTP Error: HTTP 403 Forbidden</i> </p> </li> <li>
+         * <p> <i>Code: AccessDenied</i> </p> </li> <li> <p> <i>Cause: You are not the
+         * owner of the specified bucket, or you do not have the
          * s3:PutAnalyticsConfiguration bucket permission to set the configuration on the
-         * bucket.</i> </p> </li> </ul> </li> </ul> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * bucket.</i> </p> </li> </ul> </li> </ul> <p>The following operations are related
+         * to <code>PutBucketAnalyticsConfiguration</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketAnalyticsConfiguration.html">GetBucketAnalyticsConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketAnalyticsConfiguration.html">DeleteBucketAnalyticsConfiguration</a>
@@ -3576,8 +3685,9 @@ namespace Aws
          * request must match an <code>AllowedHeader</code> element. </p> </li> </ul> <p>
          * For more information about CORS, go to <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/cors.html">Enabling
-         * Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Cross-Origin Resource Sharing</a> in the <i>Amazon S3 User Guide</i>.</p> <p>The
+         * following operations are related to <code>PutBucketCors</code>:</p> <ul> <li>
+         * <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketCors.html">GetBucketCors</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketCors.html">DeleteBucketCors</a>
@@ -3609,16 +3719,15 @@ namespace Aws
 
         /**
          * <p>This action uses the <code>encryption</code> subresource to configure default
-         * encryption and Amazon S3 Bucket Key for an existing bucket.</p> <p>Default
-         * encryption for a bucket can use server-side encryption with Amazon S3-managed
-         * keys (SSE-S3) or customer managed keys (SSE-KMS). If you specify default
-         * encryption using SSE-KMS, you can also configure Amazon S3 Bucket Key. When the
-         * default encryption is SSE-KMS, if you upload an object to the bucket and do not
-         * specify the KMS key to use for encryption, Amazon S3 uses the default Amazon Web
-         * Services managed KMS key for your account. For information about default
-         * encryption, see <a
+         * encryption and Amazon S3 Bucket Keys for an existing bucket.</p> <p>By default,
+         * all buckets have a default encryption configuration that uses server-side
+         * encryption with Amazon S3 managed keys (SSE-S3). You can optionally configure
+         * default encryption for a bucket by using server-side encryption with an Amazon
+         * Web Services KMS key (SSE-KMS) or a customer-provided key (SSE-C). If you
+         * specify default encryption by using SSE-KMS, you can also configure Amazon S3
+         * Bucket Keys. For information about bucket default encryption, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon
-         * S3 default bucket encryption</a> in the <i>Amazon S3 User Guide</i>. For more
+         * S3 bucket default encryption</a> in the <i>Amazon S3 User Guide</i>. For more
          * information about S3 Bucket Keys, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
          * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>This
@@ -3633,8 +3742,9 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
          * Related to Bucket Subresource Operations</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User Guide.
-         * </p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User
+         * Guide</i>. </p> <p>The following operations are related to
+         * <code>PutBucketEncryption</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketEncryption.html">GetBucketEncryption</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketEncryption.html">DeleteBucketEncryption</a>
@@ -3690,18 +3800,16 @@ namespace Aws
          * </p> </li> </ul>  <p>You only need S3 Intelligent-Tiering enabled on a
          * bucket if you want to automatically move objects stored in the S3
          * Intelligent-Tiering storage class to the Archive Access or Deep Archive Access
-         * tier.</p>  <p class="title"> <b>Special Errors</b> </p> <ul> <li> <p
-         * class="title"> <b>HTTP 400 Bad Request Error</b> </p> <ul> <li> <p> <i>Code:</i>
-         * InvalidArgument</p> </li> <li> <p> <i>Cause:</i> Invalid Argument</p> </li>
-         * </ul> </li> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> </p> <ul>
-         * <li> <p> <i>Code:</i> TooManyConfigurations</p> </li> <li> <p> <i>Cause:</i> You
-         * are attempting to create a new configuration but have already reached the
-         * 1,000-configuration limit. </p> </li> </ul> </li> <li> <p class="title"> <b>HTTP
-         * 403 Forbidden Error</b> </p> <ul> <li> <p> <i>Code:</i> AccessDenied</p> </li>
-         * <li> <p> <i>Cause:</i> You are not the owner of the specified bucket, or you do
-         * not have the <code>s3:PutIntelligentTieringConfiguration</code> bucket
-         * permission to set the configuration on the bucket. </p> </li> </ul> </li>
-         * </ul><p><h3>See Also:</h3>   <a
+         * tier.</p>  <p> <code>PutBucketIntelligentTieringConfiguration</code> has
+         * the following special errors:</p> <dl> <dt>HTTP 400 Bad Request Error</dt> <dd>
+         * <p> <i>Code:</i> InvalidArgument</p> <p> <i>Cause:</i> Invalid Argument</p>
+         * </dd> <dt>HTTP 400 Bad Request Error</dt> <dd> <p> <i>Code:</i>
+         * TooManyConfigurations</p> <p> <i>Cause:</i> You are attempting to create a new
+         * configuration but have already reached the 1,000-configuration limit. </p> </dd>
+         * <dt>HTTP 403 Forbidden Error</dt> <dd> <p> <i>Cause:</i> You are not the owner
+         * of the specified bucket, or you do not have the
+         * <code>s3:PutIntelligentTieringConfiguration</code> bucket permission to set the
+         * configuration on the bucket. </p> </dd> </dl><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketIntelligentTieringConfiguration">AWS
          * API Reference</a></p>
          */
@@ -3746,26 +3854,38 @@ namespace Aws
          * policy, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">
          * Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.</p>
-         *  <p>To use this operation, you must have permissions to perform the
-         * <code>s3:PutInventoryConfiguration</code> action. The bucket owner has this
-         * permission by default and can grant this permission to others. For more
-         * information about permissions, see <a
+         *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must
+         * have permission to perform the <code>s3:PutInventoryConfiguration</code> action.
+         * The bucket owner has this permission by default and can grant this permission to
+         * others. </p> <p>The <code>s3:PutInventoryConfiguration</code> permission allows
+         * a user to create an <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html">S3
+         * Inventory</a> report that includes all object metadata fields available and to
+         * specify the destination bucket to store the inventory. A user with read access
+         * to objects in the destination bucket can also access all object metadata fields
+         * that are available in the inventory report. </p> <p>To restrict access to an
+         * inventory report, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-10">Restricting
+         * access to an Amazon S3 Inventory report</a> in the <i>Amazon S3 User Guide</i>.
+         * For more information about the metadata fields available in S3 Inventory, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html#storage-inventory-contents">Amazon
+         * S3 Inventory lists</a> in the <i>Amazon S3 User Guide</i>. For more information
+         * about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-         * Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a> in the Amazon S3 User
-         * Guide.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <p
-         * class="title"> <b>HTTP 400 Bad Request Error</b> </p> <ul> <li> <p> <i>Code:</i>
-         * InvalidArgument</p> </li> <li> <p> <i>Cause:</i> Invalid Argument</p> </li>
-         * </ul> </li> <li> <p class="title"> <b>HTTP 400 Bad Request Error</b> </p> <ul>
-         * <li> <p> <i>Code:</i> TooManyConfigurations</p> </li> <li> <p> <i>Cause:</i> You
-         * are attempting to create a new configuration but have already reached the
-         * 1,000-configuration limit. </p> </li> </ul> </li> <li> <p class="title"> <b>HTTP
-         * 403 Forbidden Error</b> </p> <ul> <li> <p> <i>Code:</i> AccessDenied</p> </li>
-         * <li> <p> <i>Cause:</i> You are not the owner of the specified bucket, or you do
-         * not have the <code>s3:PutInventoryConfiguration</code> bucket permission to set
-         * the configuration on the bucket. </p> </li> </ul> </li> </ul> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * related to bucket subresource operations</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Identity
+         * and access management in Amazon S3</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * </dd> </dl> <p> <code>PutBucketInventoryConfiguration</code> has the following
+         * special errors:</p> <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> <p>
+         * <i>Code:</i> InvalidArgument</p> <p> <i>Cause:</i> Invalid Argument</p> </dd>
+         * <dt>HTTP 400 Bad Request Error</dt> <dd> <p> <i>Code:</i>
+         * TooManyConfigurations</p> <p> <i>Cause:</i> You are attempting to create a new
+         * configuration but have already reached the 1,000-configuration limit. </p> </dd>
+         * <dt>HTTP 403 Forbidden Error</dt> <dd> <p> <i>Cause:</i> You are not the owner
+         * of the specified bucket, or you do not have the
+         * <code>s3:PutInventoryConfiguration</code> bucket permission to set the
+         * configuration on the bucket. </p> </dd> </dl> <p>The following operations are
+         * related to <code>PutBucketInventoryConfiguration</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>
@@ -3809,24 +3929,24 @@ namespace Aws
          * on an object key name prefix, which is supported for backward compatibility. For
          * the related API description, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycle.html">PutBucketLifecycle</a>.</p>
-         *  <p> <b>Rules</b> </p> <p>You specify the lifecycle configuration in your
-         * request body. The lifecycle configuration is specified as XML consisting of one
-         * or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000 rules.
-         * This limit is not adjustable. Each rule consists of the following:</p> <ul> <li>
-         * <p>Filter identifying a subset of objects to which the rule applies. The filter
-         * can be based on a key name prefix, object tags, or a combination of both.</p>
-         * </li> <li> <p>Status whether the rule is in effect.</p> </li> <li> <p>One or
-         * more lifecycle transition and expiration actions that you want Amazon S3 to
-         * perform on the objects identified by the filter. If the state of your bucket is
-         * versioning-enabled or versioning-suspended, you can have many versions of the
-         * same object (one current version and zero or more noncurrent versions). Amazon
-         * S3 provides predefined actions that you can specify for current and noncurrent
-         * object versions.</p> </li> </ul> <p>For more information, see <a
+         *  <dl> <dt>Rules</dt> <dd> <p>You specify the lifecycle configuration in
+         * your request body. The lifecycle configuration is specified as XML consisting of
+         * one or more rules. An Amazon S3 Lifecycle configuration can have up to 1,000
+         * rules. This limit is not adjustable. Each rule consists of the following:</p>
+         * <ul> <li> <p>Filter identifying a subset of objects to which the rule applies.
+         * The filter can be based on a key name prefix, object tags, or a combination of
+         * both.</p> </li> <li> <p>Status whether the rule is in effect.</p> </li> <li>
+         * <p>One or more lifecycle transition and expiration actions that you want Amazon
+         * S3 to perform on the objects identified by the filter. If the state of your
+         * bucket is versioning-enabled or versioning-suspended, you can have many versions
+         * of the same object (one current version and zero or more noncurrent versions).
+         * Amazon S3 provides predefined actions that you can specify for current and
+         * noncurrent object versions.</p> </li> </ul> <p>For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
          * Lifecycle Management</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/intro-lifecycle-rules.html">Lifecycle
-         * Configuration Elements</a>.</p> <p> <b>Permissions</b> </p> <p>By default, all
-         * Amazon S3 resources are private, including buckets, objects, and related
+         * Configuration Elements</a>.</p> </dd> <dt>Permissions</dt> <dd> <p>By default,
+         * all Amazon S3 resources are private, including buckets, objects, and related
          * subresources (for example, lifecycle configuration and website configuration).
          * Only the resource owner (that is, the Amazon Web Services account that created
          * it) can access the resource. The resource owner can optionally grant access
@@ -3840,8 +3960,9 @@ namespace Aws
          * <code>s3:PutLifecycleConfiguration</code> </p> </li> </ul> <p>For more
          * information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>The following are
-         * related to <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
+         * Access Permissions to Your Amazon S3 Resources</a>.</p> </dd> </dl> <p>The
+         * following operations are related to
+         * <code>PutBucketLifecycleConfiguration</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/lifecycle-configuration-examples.html">Examples
          * of Lifecycle Configuration</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
@@ -3885,7 +4006,7 @@ namespace Aws
          * policies. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/enable-server-access-logging.html#grant-log-delivery-permissions-general">Permissions
          * for server access log delivery</a> in the <i>Amazon S3 User Guide</i>.</p>
-         *  <p> <b>Grantee Values</b> </p> <p>You can specify the person
+         *  <dl> <dt>Grantee Values</dt> <dd> <p>You can specify the person
          * (grantee) to whom you're assigning access rights (using request elements) in the
          * following ways:</p> <ul> <li> <p>By the person's ID:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -3898,9 +4019,9 @@ namespace Aws
          * Object acl request, appears as the CanonicalUser.</p> </li> <li> <p>By URI:</p>
          * <p> <code>&lt;Grantee xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          * xsi:type="Group"&gt;&lt;URI&gt;&lt;&gt;http://acs.amazonaws.com/groups/global/AuthenticatedUsers&lt;&gt;&lt;/URI&gt;&lt;/Grantee&gt;</code>
-         * </p> </li> </ul> <p>To enable logging, you use LoggingEnabled and its children
-         * request elements. To disable logging, you use an empty BucketLoggingStatus
-         * request element:</p> <p> <code>&lt;BucketLoggingStatus
+         * </p> </li> </ul> </dd> </dl> <p>To enable logging, you use LoggingEnabled and
+         * its children request elements. To disable logging, you use an empty
+         * BucketLoggingStatus request element:</p> <p> <code>&lt;BucketLoggingStatus
          * xmlns="http://doc.s3.amazonaws.com/2006-03-01" /&gt;</code> </p> <p>For more
          * information about server access logging, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ServerLogs.html">Server
@@ -4028,13 +4149,12 @@ namespace Aws
          * configurations. When you send a PUT request with this configuration, Amazon S3
          * sends test messages to your SNS topic. If the message fails, the entire PUT
          * action will fail, and Amazon S3 will not add the configuration to your
-         * bucket.</p>  <p> <b>Responses</b> </p> <p>If the configuration in the
-         * request body includes only one <code>TopicConfiguration</code> specifying only
-         * the <code>s3:ReducedRedundancyLostObject</code> event type, the response will
-         * also include the <code>x-amz-sns-test-message-id</code> header containing the
-         * message ID of the test notification sent to the topic.</p> <p>The following
-         * action is related to <code>PutBucketNotificationConfiguration</code>:</p> <ul>
-         * <li> <p> <a
+         * bucket.</p>  <p>If the configuration in the request body includes only
+         * one <code>TopicConfiguration</code> specifying only the
+         * <code>s3:ReducedRedundancyLostObject</code> event type, the response will also
+         * include the <code>x-amz-sns-test-message-id</code> header containing the message
+         * ID of the test notification sent to the topic.</p> <p>The following action is
+         * related to <code>PutBucketNotificationConfiguration</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
          * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/PutBucketNotificationConfiguration">AWS
@@ -4105,10 +4225,14 @@ namespace Aws
          * <code>PutBucketPolicy</code> permissions, Amazon S3 returns a <code>403 Access
          * Denied</code> error. If you have the correct permissions, but you're not using
          * an identity that belongs to the bucket owner's account, Amazon S3 returns a
-         * <code>405 Method Not Allowed</code> error.</p>  <p> As a security
-         * precaution, the root user of the Amazon Web Services account that owns a bucket
-         * can always use this operation, even if the policy explicitly denies the root
-         * user the ability to perform this action. </p>  <p>For more
+         * <code>405 Method Not Allowed</code> error.</p>  <p>To ensure that
+         * bucket owners don't inadvertently lock themselves out of their own buckets, the
+         * root principal in a bucket owner's Amazon Web Services account can perform the
+         * <code>GetBucketPolicy</code>, <code>PutBucketPolicy</code>, and
+         * <code>DeleteBucketPolicy</code> API actions, even if their bucket policy
+         * explicitly denies the root principal's access. Bucket owner root principals can
+         * only be blocked from performing these API actions by VPC endpoint policies and
+         * Amazon Web Services Organizations policies.</p>  <p>For more
          * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html">Bucket
          * policy examples</a>.</p> <p>The following operations are related to
@@ -4165,7 +4289,7 @@ namespace Aws
          * Compatibility</a>.</p>  <p>For information about enabling versioning on a
          * bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/Versioning.html">Using
-         * Versioning</a>.</p> <p> <b>Handling Replication of Encrypted Objects</b> </p>
+         * Versioning</a>.</p> <dl> <dt>Handling Replication of Encrypted Objects</dt> <dd>
          * <p>By default, Amazon S3 doesn't replicate objects that are stored at rest using
          * server-side encryption with KMS keys. To replicate Amazon Web Services
          * KMS-encrypted objects, add the following: <code>SourceSelectionCriteria</code>,
@@ -4176,8 +4300,8 @@ namespace Aws
          * Objects Created with SSE Using KMS keys</a>.</p> <p>For information on
          * <code>PutBucketReplication</code> errors, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ReplicationErrorCodeList">List
-         * of replication-related error codes</a> </p> <p> <b>Permissions</b> </p> <p>To
-         * create a <code>PutBucketReplication</code> request, you must have
+         * of replication-related error codes</a> </p> </dd> <dt>Permissions</dt> <dd>
+         * <p>To create a <code>PutBucketReplication</code> request, you must have
          * <code>s3:PutReplicationConfiguration</code> permissions for the bucket. </p>
          * <p>By default, a resource owner, in this case the Amazon Web Services account
          * that created the bucket, can perform this operation. The resource owner can also
@@ -4189,7 +4313,7 @@ namespace Aws
          * Access Permissions to Your Amazon S3 Resources</a>.</p>  <p>To perform
          * this operation, the user or role performing the action must have the <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a>
-         * permission.</p>  <p>The following operations are related to
+         * permission.</p>  </dd> </dl> <p>The following operations are related to
          * <code>PutBucketReplication</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketReplication.html">GetBucketReplication</a>
          * </p> </li> <li> <p> <a
@@ -4335,15 +4459,15 @@ namespace Aws
          * <code>x-amz-mfa request</code> header and the <code>Status</code> and the
          * <code>MfaDelete</code> request elements in a request to set the versioning state
          * of the bucket.</p>  <p>If you have an object expiration lifecycle
-         * policy in your non-versioned bucket and you want to maintain the same permanent
-         * delete behavior when you enable versioning, you must add a noncurrent expiration
-         * policy. The noncurrent expiration lifecycle policy will manage the deletes of
-         * the noncurrent object versions in the version-enabled bucket. (A version-enabled
-         * bucket maintains one current and zero or more noncurrent object versions.) For
-         * more information, see <a
+         * configuration in your non-versioned bucket and you want to maintain the same
+         * permanent delete behavior when you enable versioning, you must add a noncurrent
+         * expiration policy. The noncurrent expiration lifecycle configuration will manage
+         * the deletes of the noncurrent object versions in the version-enabled bucket. (A
+         * version-enabled bucket maintains one current and zero or more noncurrent object
+         * versions.) For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html#lifecycle-and-other-bucket-config">Lifecycle
-         * and Versioning</a>.</p>  <p class="title"> <b>Related Resources</b>
-         * </p> <ul> <li> <p> <a
+         * and Versioning</a>.</p>  <p>The following operations are related to
+         * <code>PutBucketVersioning</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucket.html">DeleteBucket</a>
@@ -4436,44 +4560,46 @@ namespace Aws
 
         /**
          * <p>Adds an object to a bucket. You must have WRITE permissions on a bucket to
-         * add an object to it.</p> <p>Amazon S3 never adds partial objects; if you receive
-         * a success response, Amazon S3 added the entire object to the bucket.</p>
-         * <p>Amazon S3 is a distributed system. If it receives multiple write requests for
-         * the same object simultaneously, it overwrites all but the last object written.
-         * Amazon S3 does not provide object locking; if you need this, make sure to build
-         * it into your application layer or use versioning instead.</p> <p>To ensure that
-         * data is not corrupted traversing the network, use the <code>Content-MD5</code>
-         * header. When you use this header, Amazon S3 checks the object against the
-         * provided MD5 value and, if they do not match, returns an error. Additionally,
-         * you can calculate the MD5 while putting an object to Amazon S3 and compare the
-         * returned ETag to the calculated MD5 value.</p>  <ul> <li> <p>To
-         * successfully complete the <code>PutObject</code> request, you must have the
-         * <code>s3:PutObject</code> in your IAM permissions.</p> </li> <li> <p>To
-         * successfully change the objects acl of your <code>PutObject</code> request, you
-         * must have the <code>s3:PutObjectAcl</code> in your IAM permissions.</p> </li>
+         * add an object to it.</p>  <p>Amazon S3 never adds partial objects; if you
+         * receive a success response, Amazon S3 added the entire object to the bucket. You
+         * cannot use <code>PutObject</code> to only update a single piece of metadata for
+         * an existing object. You must put the entire object with updated metadata if you
+         * want to update some values.</p>  <p>Amazon S3 is a distributed system. If
+         * it receives multiple write requests for the same object simultaneously, it
+         * overwrites all but the last object written. To prevent objects from being
+         * deleted or overwritten, you can use <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lock.html">Amazon
+         * S3 Object Lock</a>.</p> <p>To ensure that data is not corrupted traversing the
+         * network, use the <code>Content-MD5</code> header. When you use this header,
+         * Amazon S3 checks the object against the provided MD5 value and, if they do not
+         * match, returns an error. Additionally, you can calculate the MD5 while putting
+         * an object to Amazon S3 and compare the returned ETag to the calculated MD5
+         * value.</p>  <ul> <li> <p>To successfully complete the
+         * <code>PutObject</code> request, you must have the <code>s3:PutObject</code> in
+         * your IAM permissions.</p> </li> <li> <p>To successfully change the objects acl
+         * of your <code>PutObject</code> request, you must have the
+         * <code>s3:PutObjectAcl</code> in your IAM permissions.</p> </li> <li> <p>To
+         * successfully set the tag-set with your <code>PutObject</code> request, you must
+         * have the <code>s3:PutObjectTagging</code> in your IAM permissions.</p> </li>
          * <li> <p> The <code>Content-MD5</code> header is required for any request to
          * upload an object with a retention period configured using Amazon S3 Object Lock.
          * For more information about Amazon S3 Object Lock, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock-overview.html">Amazon
          * S3 Object Lock Overview</a> in the <i>Amazon S3 User Guide</i>. </p> </li> </ul>
-         *  <p> <b>Server-side Encryption</b> </p> <p>You can optionally request
-         * server-side encryption. With server-side encryption, Amazon S3 encrypts your
-         * data as it writes it to disks in its data centers and decrypts the data when you
-         * access it. You have the option to provide your own encryption key or use Amazon
-         * Web Services managed encryption keys (SSE-S3 or SSE-KMS). For more information,
-         * see <a
+         *  <p>You have three mutually exclusive options to protect data using
+         * server-side encryption in Amazon S3, depending on how you choose to manage the
+         * encryption keys. Specifically, the encryption key options are Amazon S3 managed
+         * keys (SSE-S3), Amazon Web Services KMS keys (SSE-KMS), and customer-provided
+         * keys (SSE-C). Amazon S3 encrypts data with server-side encryption by using
+         * Amazon S3 managed keys (SSE-S3) by default. You can optionally tell Amazon S3 to
+         * encrypt data at by rest using server-side encryption with other key options. For
+         * more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
-         * Server-Side Encryption</a>.</p> <p>If you request server-side encryption using
-         * Amazon Web Services Key Management Service (SSE-KMS), you can enable an S3
-         * Bucket Key at the object-level. For more information, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-key.html">Amazon S3
-         * Bucket Keys</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Access Control
-         * List (ACL)-Specific Request Headers</b> </p> <p>You can use headers to grant
-         * ACL- based permissions. By default, all objects are private. Only the owner has
-         * full access control. When adding a new object, you can grant permissions to
-         * individual Amazon Web Services accounts or to predefined groups defined by
-         * Amazon S3. These permissions are then added to the ACL on the object. For more
-         * information, see <a
+         * Server-Side Encryption</a>.</p> <p>When adding a new object, you can use headers
+         * to grant ACL-based permissions to individual Amazon Web Services accounts or to
+         * predefined groups defined by Amazon S3. These permissions are then added to the
+         * ACL on the object. By default, all objects are private. Only the owner has full
+         * access control. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html">Access
          * Control List (ACL) Overview</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-using-rest-api.html">Managing
@@ -4486,29 +4612,29 @@ namespace Aws
          * ACL expressed in the XML format. PUT requests that contain other ACLs (for
          * example, custom grants to certain Amazon Web Services accounts) fail and return
          * a <code>400</code> error with the error code
-         * <code>AccessControlListNotSupported</code>.</p> <p>For more information, see <a
+         * <code>AccessControlListNotSupported</code>. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">
          * Controlling ownership of objects and disabling ACLs</a> in the <i>Amazon S3 User
          * Guide</i>.</p>  <p>If your bucket uses the bucket owner enforced setting
          * for Object Ownership, all objects written to the bucket by any account will be
-         * owned by the bucket owner.</p>  <p> <b>Storage Class Options</b> </p>
-         * <p>By default, Amazon S3 uses the STANDARD Storage Class to store newly created
-         * objects. The STANDARD storage class provides high durability and high
-         * availability. Depending on performance needs, you can specify a different
-         * Storage Class. Amazon S3 on Outposts only uses the OUTPOSTS Storage Class. For
-         * more information, see <a
+         * owned by the bucket owner.</p>  <p>By default, Amazon S3 uses the
+         * STANDARD Storage Class to store newly created objects. The STANDARD storage
+         * class provides high durability and high availability. Depending on performance
+         * needs, you can specify a different Storage Class. Amazon S3 on Outposts only
+         * uses the OUTPOSTS Storage Class. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-class-intro.html">Storage
-         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p> <b>Versioning</b> </p>
-         * <p>If you enable versioning for a bucket, Amazon S3 automatically generates a
-         * unique version ID for the object being stored. Amazon S3 returns this ID in the
-         * response. When you enable versioning for a bucket, if Amazon S3 receives
-         * multiple write requests for the same object simultaneously, it stores all of the
-         * objects.</p> <p>For more information about versioning, see <a
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If you enable versioning
+         * for a bucket, Amazon S3 automatically generates a unique version ID for the
+         * object being stored. Amazon S3 returns this ID in the response. When you enable
+         * versioning for a bucket, if Amazon S3 receives multiple write requests for the
+         * same object simultaneously, it stores all of the objects. For more information
+         * about versioning, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/AddingObjectstoVersioningEnabledBuckets.html">Adding
-         * Objects to Versioning Enabled Buckets</a>. For information about returning the
+         * Objects to Versioning-Enabled Buckets</a>. For information about returning the
          * versioning state of a bucket, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketVersioning.html">GetBucketVersioning</a>.
-         * </p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * </p> <p>For more information about related Amazon S3 APIs, see the
+         * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObject.html">DeleteObject</a>
@@ -4549,9 +4675,9 @@ namespace Aws
          * <code>AccessControlListNotSupported</code> error code. Requests to read ACLs are
          * still supported. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/about-object-ownership.html">Controlling
-         * object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>  <p>
-         * <b>Access Permissions</b> </p> <p>You can set access permissions using one of
-         * the following methods:</p> <ul> <li> <p>Specify a canned ACL with the
+         * object ownership</a> in the <i>Amazon S3 User Guide</i>.</p>  <dl>
+         * <dt>Permissions</dt> <dd> <p>You can set access permissions using one of the
+         * following methods:</p> <ul> <li> <p>Specify a canned ACL with the
          * <code>x-amz-acl</code> request header. Amazon S3 supports a set of predefined
          * ACLs, known as canned ACLs. Each canned ACL has a predefined set of grantees and
          * permissions. Specify the canned ACL name as the value of <code>x-amz-ac</code>l.
@@ -4588,8 +4714,8 @@ namespace Aws
          * identified by their email addresses.</p> <p> <code>x-amz-grant-read:
          * emailAddress="xyz@amazon.com", emailAddress="abc@amazon.com" </code> </p> </li>
          * </ul> <p>You can use either a canned ACL or specify access permissions
-         * explicitly. You cannot do both.</p> <p> <b>Grantee Values</b> </p> <p>You can
-         * specify the person (grantee) to whom you're assigning access rights (using
+         * explicitly. You cannot do both.</p> </dd> <dt>Grantee Values</dt> <dd> <p>You
+         * can specify the person (grantee) to whom you're assigning access rights (using
          * request elements) in the following ways:</p> <ul> <li> <p>By the person's
          * ID:</p> <p> <code>&lt;Grantee
          * xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
@@ -4612,11 +4738,11 @@ namespace Aws
          * supported Regions and endpoints, see <a
          * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#s3_region">Regions
          * and Endpoints</a> in the Amazon Web Services General Reference.</p> 
-         * </li> </ul> <p> <b>Versioning</b> </p> <p>The ACL of an object is set at the
+         * </li> </ul> </dd> <dt>Versioning</dt> <dd> <p>The ACL of an object is set at the
          * object version level. By default, PUT sets the ACL of the current version of an
          * object. To set the ACL of a different version, use the <code>versionId</code>
-         * subresource.</p> <p class="title"> <b>Related Resources</b> </p> <ul> <li> <p>
-         * <a
+         * subresource.</p> </dd> </dl> <p>The following operations are related to
+         * <code>PutObjectAcl</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CopyObject.html">CopyObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
@@ -4757,10 +4883,10 @@ namespace Aws
          * also need permission for the <code>s3:PutObjectVersionTagging</code> action.</p>
          * <p>For information about the Amazon S3 object tagging feature, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
-         * Tagging</a>.</p> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul>
-         * <li> <p> <i>Code: InvalidTagError </i> </p> </li> <li> <p> <i>Cause: The tag
-         * provided was not a valid tag. This error can occur if the tag did not pass input
-         * validation. For more information, see <a
+         * Tagging</a>.</p> <p> <code>PutObjectTagging</code> has the following special
+         * errors:</p> <ul> <li> <ul> <li> <p> <i>Code: InvalidTagError </i> </p> </li>
+         * <li> <p> <i>Cause: The tag provided was not a valid tag. This error can occur if
+         * the tag did not pass input validation. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html">Object
          * Tagging</a>.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
          * MalformedXMLError </i> </p> </li> <li> <p> <i>Cause: The XML provided does not
@@ -4769,8 +4895,8 @@ namespace Aws
          * conditional action is currently in progress against this resource. Please try
          * again.</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code: InternalError</i>
          * </p> </li> <li> <p> <i>Cause: The service was unable to apply the provided tag
-         * to the object.</i> </p> </li> </ul> </li> </ul> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * to the object.</i> </p> </li> </ul> </li> </ul> <p>The following operations are
+         * related to <code>PutObjectTagging</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObjectTagging.html">GetObjectTagging</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteObjectTagging.html">DeleteObjectTagging</a>
@@ -4813,8 +4939,8 @@ namespace Aws
          * bucket-level and account-level settings.</p>  <p>For more
          * information about when Amazon S3 considers a bucket or an object public, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html#access-control-block-public-access-policy-status">The
-         * Meaning of "Public"</a>.</p> <p class="title"> <b>Related Resources</b> </p>
-         * <ul> <li> <p> <a
+         * Meaning of "Public"</a>.</p> <p>The following operations are related to
+         * <code>PutPublicAccessBlock</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetPublicAccessBlock.html">GetPublicAccessBlock</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeletePublicAccessBlock.html">DeletePublicAccessBlock</a>
@@ -4851,32 +4977,7 @@ namespace Aws
          * is not supported by Amazon S3 on Outposts.</p> <p>This action performs the
          * following types of requests: </p> <ul> <li> <p> <code>select</code> - Perform a
          * select query on an archived object</p> </li> <li> <p> <code>restore an
-         * archive</code> - Restore an archived object</p> </li> </ul> <p>To use this
-         * operation, you must have permissions to perform the
-         * <code>s3:RestoreObject</code> action. The bucket owner has this permission by
-         * default and can grant this permission to others. For more information about
-         * permissions, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
-         * Related to Bucket Subresource Operations</a> and <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-         * Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User
-         * Guide</i>.</p> <p> <b>Querying Archives with Select Requests</b> </p> <p>You use
-         * a select type of request to perform SQL queries on archived objects. The
-         * archived objects that are being queried by the select request must be formatted
-         * as uncompressed comma-separated values (CSV) files. You can run queries and
-         * custom analytics on your archived data without having to restore your data to a
-         * hotter Amazon S3 tier. For an overview about select requests, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
-         * Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When making a
-         * select request, do the following:</p> <ul> <li> <p>Define an output location for
-         * the select query's output. This must be an Amazon S3 bucket in the same Amazon
-         * Web Services Region as the bucket that contains the archive object that is being
-         * queried. The Amazon Web Services account that initiates the job must have
-         * permissions to write to the S3 bucket. You can specify the storage class and
-         * encryption for the output objects stored in the bucket. For more information
-         * about output, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/querying-glacier-archives.html">Querying
-         * Archived Objects</a> in the <i>Amazon S3 User Guide</i>.</p> <p>For more
+         * archive</code> - Restore an archived object</p> </li> </ul> <p>For more
          * information about the <code>S3</code> structure in the request body, see the
          * following:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutObject.html">PutObject</a>
@@ -4885,24 +4986,20 @@ namespace Aws
          * Access with ACLs</a> in the <i>Amazon S3 User Guide</i> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i> </p>
-         * </li> </ul> </li> <li> <p>Define the SQL expression for the <code>SELECT</code>
-         * type of restoration for your query in the request body's
-         * <code>SelectParameters</code> structure. You can use expressions like the
-         * following examples.</p> <ul> <li> <p>The following expression returns all
-         * records from the specified object.</p> <p> <code>SELECT * FROM Object</code>
-         * </p> </li> <li> <p>Assuming that you are not using any headers for data stored
-         * in the object, you can specify columns with positional headers.</p> <p>
-         * <code>SELECT s._1, s._2 FROM Object s WHERE s._3 &gt; 100</code> </p> </li> <li>
-         * <p>If you have headers and you set the <code>fileHeaderInfo</code> in the
-         * <code>CSV</code> structure in the request body to <code>USE</code>, you can
-         * specify headers in the query. (If you set the <code>fileHeaderInfo</code> field
-         * to <code>IGNORE</code>, the first row is skipped for the query.) You cannot mix
-         * ordinal positions with header column names. </p> <p> <code>SELECT s.Id,
-         * s.FirstName, s.SSN FROM S3Object s</code> </p> </li> </ul> </li> </ul> <p>For
-         * more information about using SQL with S3 Glacier Select restore, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-         * Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3
-         * User Guide</i>. </p> <p>When making a select request, you can also do the
+         * </li> </ul> <p>Define the SQL expression for the <code>SELECT</code> type of
+         * restoration for your query in the request body's <code>SelectParameters</code>
+         * structure. You can use expressions like the following examples.</p> <ul> <li>
+         * <p>The following expression returns all records from the specified object.</p>
+         * <p> <code>SELECT * FROM Object</code> </p> </li> <li> <p>Assuming that you are
+         * not using any headers for data stored in the object, you can specify columns
+         * with positional headers.</p> <p> <code>SELECT s._1, s._2 FROM Object s WHERE
+         * s._3 &gt; 100</code> </p> </li> <li> <p>If you have headers and you set the
+         * <code>fileHeaderInfo</code> in the <code>CSV</code> structure in the request
+         * body to <code>USE</code>, you can specify headers in the query. (If you set the
+         * <code>fileHeaderInfo</code> field to <code>IGNORE</code>, the first row is
+         * skipped for the query.) You cannot mix ordinal positions with header column
+         * names. </p> <p> <code>SELECT s.Id, s.FirstName, s.SSN FROM S3Object s</code>
+         * </p> </li> </ul> <p>When making a select request, you can also do the
          * following:</p> <ul> <li> <p>To expedite your queries, specify the
          * <code>Expedited</code> tier. For more information about tiers, see "Restoring
          * Archives," later in this topic.</p> </li> <li> <p>Specify details about the data
@@ -4910,51 +5007,63 @@ namespace Aws
          * serialization of the CSV-encoded query results.</p> </li> </ul> <p>The following
          * are additional important facts about the select feature:</p> <ul> <li> <p>The
          * output results are new Amazon S3 objects. Unlike archive retrievals, they are
-         * stored until explicitly deleted-manually or through a lifecycle policy.</p>
-         * </li> <li> <p>You can issue more than one select request on the same Amazon S3
-         * object. Amazon S3 doesn't deduplicate requests, so avoid issuing duplicate
-         * requests.</p> </li> <li> <p> Amazon S3 accepts a select request even if the
-         * object has already been restored. A select request doesn’t return error response
-         * <code>409</code>.</p> </li> </ul> <p> <b>Restoring objects</b> </p> <p>Objects
-         * that you archive to the S3 Glacier or S3 Glacier Deep Archive storage class, and
-         * S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers are
-         * not accessible in real time. For objects in Archive Access or Deep Archive
-         * Access tiers you must first initiate a restore request, and then wait until the
-         * object is moved into the Frequent Access tier. For objects in S3 Glacier or S3
-         * Glacier Deep Archive storage classes you must first initiate a restore request,
-         * and then wait until a temporary copy of the object is available. To access an
-         * archived object, you must restore the object for the duration (number of days)
-         * that you specify.</p> <p>To restore a specific object version, you can provide a
-         * version ID. If you don't provide a version ID, Amazon S3 restores the current
-         * version.</p> <p>When restoring an archived object (or using a select request),
-         * you can specify one of the following data access tier options in the
-         * <code>Tier</code> element of the request body: </p> <ul> <li> <p>
+         * stored until explicitly deleted-manually or through a lifecycle
+         * configuration.</p> </li> <li> <p>You can issue more than one select request on
+         * the same Amazon S3 object. Amazon S3 doesn't duplicate requests, so avoid
+         * issuing duplicate requests.</p> </li> <li> <p> Amazon S3 accepts a select
+         * request even if the object has already been restored. A select request doesn’t
+         * return error response <code>409</code>.</p> </li> </ul> <dl>
+         * <dt>Permissions</dt> <dd> <p>To use this operation, you must have permissions to
+         * perform the <code>s3:RestoreObject</code> action. The bucket owner has this
+         * permission by default and can grant this permission to others. For more
+         * information about permissions, see <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
+         * Related to Bucket Subresource Operations</a> and <a
+         * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
+         * Access Permissions to Your Amazon S3 Resources</a> in the <i>Amazon S3 User
+         * Guide</i>.</p> </dd> <dt>Restoring objects</dt> <dd> <p>Objects that you archive
+         * to the S3 Glacier Flexible Retrieval or S3 Glacier Deep Archive storage class,
+         * and S3 Intelligent-Tiering Archive or S3 Intelligent-Tiering Deep Archive tiers,
+         * are not accessible in real time. For objects in the S3 Glacier Flexible
+         * Retrieval or S3 Glacier Deep Archive storage classes, you must first initiate a
+         * restore request, and then wait until a temporary copy of the object is
+         * available. If you want a permanent copy of the object, create a copy of it in
+         * the Amazon S3 Standard storage class in your S3 bucket. To access an archived
+         * object, you must restore the object for the duration (number of days) that you
+         * specify. For objects in the Archive Access or Deep Archive Access tiers of S3
+         * Intelligent-Tiering, you must first initiate a restore request, and then wait
+         * until the object is moved into the Frequent Access tier.</p> <p>To restore a
+         * specific object version, you can provide a version ID. If you don't provide a
+         * version ID, Amazon S3 restores the current version.</p> <p>When restoring an
+         * archived object, you can specify one of the following data access tier options
+         * in the <code>Tier</code> element of the request body: </p> <ul> <li> <p>
          * <code>Expedited</code> - Expedited retrievals allow you to quickly access your
-         * data stored in the S3 Glacier storage class or S3 Intelligent-Tiering Archive
-         * tier when occasional urgent requests for a subset of archives are required. For
-         * all but the largest archived objects (250 MB+), data accessed using Expedited
-         * retrievals is typically made available within 1–5 minutes. Provisioned capacity
-         * ensures that retrieval capacity for Expedited retrievals is available when you
-         * need it. Expedited retrievals and provisioned capacity are not available for
-         * objects stored in the S3 Glacier Deep Archive storage class or S3
-         * Intelligent-Tiering Deep Archive tier.</p> </li> <li> <p> <code>Standard</code>
-         * - Standard retrievals allow you to access any of your archived objects within
-         * several hours. This is the default option for retrieval requests that do not
-         * specify the retrieval option. Standard retrievals typically finish within 3–5
-         * hours for objects stored in the S3 Glacier storage class or S3
-         * Intelligent-Tiering Archive tier. They typically finish within 12 hours for
-         * objects stored in the S3 Glacier Deep Archive storage class or S3
-         * Intelligent-Tiering Deep Archive tier. Standard retrievals are free for objects
-         * stored in S3 Intelligent-Tiering.</p> </li> <li> <p> <code>Bulk</code> - Bulk
-         * retrievals are the lowest-cost retrieval option in S3 Glacier, enabling you to
-         * retrieve large amounts, even petabytes, of data inexpensively. Bulk retrievals
-         * typically finish within 5–12 hours for objects stored in the S3 Glacier storage
-         * class or S3 Intelligent-Tiering Archive tier. They typically finish within 48
-         * hours for objects stored in the S3 Glacier Deep Archive storage class or S3
-         * Intelligent-Tiering Deep Archive tier. Bulk retrievals are free for objects
-         * stored in S3 Intelligent-Tiering.</p> </li> </ul> <p>For more information about
-         * archive retrieval options and provisioned capacity for <code>Expedited</code>
-         * data access, see <a
+         * data stored in the S3 Glacier Flexible Retrieval storage class or S3
+         * Intelligent-Tiering Archive tier when occasional urgent requests for restoring
+         * archives are required. For all but the largest archived objects (250 MB+), data
+         * accessed using Expedited retrievals is typically made available within 1–5
+         * minutes. Provisioned capacity ensures that retrieval capacity for Expedited
+         * retrievals is available when you need it. Expedited retrievals and provisioned
+         * capacity are not available for objects stored in the S3 Glacier Deep Archive
+         * storage class or S3 Intelligent-Tiering Deep Archive tier.</p> </li> <li> <p>
+         * <code>Standard</code> - Standard retrievals allow you to access any of your
+         * archived objects within several hours. This is the default option for retrieval
+         * requests that do not specify the retrieval option. Standard retrievals typically
+         * finish within 3–5 hours for objects stored in the S3 Glacier Flexible Retrieval
+         * storage class or S3 Intelligent-Tiering Archive tier. They typically finish
+         * within 12 hours for objects stored in the S3 Glacier Deep Archive storage class
+         * or S3 Intelligent-Tiering Deep Archive tier. Standard retrievals are free for
+         * objects stored in S3 Intelligent-Tiering.</p> </li> <li> <p> <code>Bulk</code> -
+         * Bulk retrievals free for objects stored in the S3 Glacier Flexible Retrieval and
+         * S3 Intelligent-Tiering storage classes, enabling you to retrieve large amounts,
+         * even petabytes, of data at no cost. Bulk retrievals typically finish within 5–12
+         * hours for objects stored in the S3 Glacier Flexible Retrieval storage class or
+         * S3 Intelligent-Tiering Archive tier. Bulk retrievals are also the lowest-cost
+         * retrieval option when restoring objects from S3 Glacier Deep Archive. They
+         * typically finish within 48 hours for objects stored in the S3 Glacier Deep
+         * Archive storage class or S3 Intelligent-Tiering Deep Archive tier. </p> </li>
+         * </ul> <p>For more information about archive retrieval options and provisioned
+         * capacity for <code>Expedited</code> data access, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/restoring-objects.html">Restoring
          * Archived Objects</a> in the <i>Amazon S3 User Guide</i>. </p> <p>You can use
          * Amazon S3 restore speed upgrade to change the restore speed to a faster speed
@@ -4981,31 +5090,29 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lifecycle-mgmt.html">Object
-         * Lifecycle Management</a> in <i>Amazon S3 User Guide</i>.</p> <p>
-         * <b>Responses</b> </p> <p>A successful action returns either the <code>200
+         * Lifecycle Management</a> in <i>Amazon S3 User Guide</i>.</p> </dd>
+         * <dt>Responses</dt> <dd> <p>A successful action returns either the <code>200
          * OK</code> or <code>202 Accepted</code> status code. </p> <ul> <li> <p>If the
          * object is not previously restored, then Amazon S3 returns <code>202
          * Accepted</code> in the response. </p> </li> <li> <p>If the object is previously
          * restored, Amazon S3 returns <code>200 OK</code> in the response. </p> </li>
-         * </ul> <p class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p>
-         * <i>Code: RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object
-         * restore is already in progress. (This error does not apply to SELECT type
-         * requests.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p>
-         * </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li>
-         * <ul> <li> <p> <i>Code: GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li>
-         * <p> <i>Cause: expedited retrievals are currently not available. Try again later.
-         * (Returned if there is insufficient capacity to process the Expedited request.
-         * This error applies only to Expedited retrievals and not to S3 Standard or Bulk
+         * </ul> <ul> <li> <p>Special errors:</p> <ul> <li> <p> <i>Code:
+         * RestoreAlreadyInProgress</i> </p> </li> <li> <p> <i>Cause: Object restore is
+         * already in progress. (This error does not apply to SELECT type requests.)</i>
+         * </p> </li> <li> <p> <i>HTTP Status Code: 409 Conflict</i> </p> </li> <li> <p>
+         * <i>SOAP Fault Code Prefix: Client</i> </p> </li> </ul> </li> <li> <ul> <li> <p>
+         * <i>Code: GlacierExpeditedRetrievalNotAvailable</i> </p> </li> <li> <p> <i>Cause:
+         * expedited retrievals are currently not available. Try again later. (Returned if
+         * there is insufficient capacity to process the Expedited request. This error
+         * applies only to Expedited retrievals and not to S3 Standard or Bulk
          * retrievals.)</i> </p> </li> <li> <p> <i>HTTP Status Code: 503</i> </p> </li>
-         * <li> <p> <i>SOAP Fault Code Prefix: N/A</i> </p> </li> </ul> </li> </ul> <p
-         * class="title"> <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <li> <p> <i>SOAP Fault Code Prefix: N/A</i> </p> </li> </ul> </li> </ul> </dd>
+         * </dl> <p>The following operations are related to <code>RestoreObject</code>:</p>
+         * <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_PutBucketLifecycleConfiguration.html">PutBucketLifecycleConfiguration</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketNotificationConfiguration.html">GetBucketNotificationConfiguration</a>
-         * </p> </li> <li> <p> <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">SQL
-         * Reference for Amazon S3 Select and S3 Glacier Select </a> in the <i>Amazon S3
-         * User Guide</i> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RestoreObject">AWS
          * API Reference</a></p>
          */
@@ -5041,19 +5148,16 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/selecting-content-from-objects.html">Selecting
          * Content from Objects</a> and <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-glacier-select-sql-reference-select.html">SELECT
-         * Command</a> in the <i>Amazon S3 User Guide</i>.</p> <p>For more information
-         * about using SQL with Amazon S3 Select, see <a
-         * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/s3-glacier-select-sql-reference.html">
-         * SQL Reference for Amazon S3 Select and S3 Glacier Select</a> in the <i>Amazon S3
-         * User Guide</i>.</p> <p/> <p> <b>Permissions</b> </p> <p>You must have
-         * <code>s3:GetObject</code> permission for this operation. Amazon S3 Select does
-         * not support anonymous access. For more information about permissions, see <a
+         * Command</a> in the <i>Amazon S3 User Guide</i>.</p> <p/> <dl>
+         * <dt>Permissions</dt> <dd> <p>You must have <code>s3:GetObject</code> permission
+         * for this operation. Amazon S3 Select does not support anonymous access. For more
+         * information about permissions, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying
-         * Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.</p> <p/> <p>
-         * <i>Object Data Formats</i> </p> <p>You can use Amazon S3 Select to query objects
-         * that have the following format properties:</p> <ul> <li> <p> <i>CSV, JSON, and
-         * Parquet</i> - Objects must be in CSV, JSON, or Parquet format.</p> </li> <li>
-         * <p> <i>UTF-8</i> - UTF-8 is the only encoding type Amazon S3 Select
+         * Permissions in a Policy</a> in the <i>Amazon S3 User Guide</i>.</p> </dd>
+         * <dt>Object Data Formats</dt> <dd> <p>You can use Amazon S3 Select to query
+         * objects that have the following format properties:</p> <ul> <li> <p> <i>CSV,
+         * JSON, and Parquet</i> - Objects must be in CSV, JSON, or Parquet format.</p>
+         * </li> <li> <p> <i>UTF-8</i> - UTF-8 is the only encoding type Amazon S3 Select
          * supports.</p> </li> <li> <p> <i>GZIP or BZIP2</i> - CSV and JSON files can be
          * compressed using GZIP or BZIP2. GZIP and BZIP2 are the only compression formats
          * that Amazon S3 Select supports for CSV and JSON files. Amazon S3 Select supports
@@ -5068,18 +5172,17 @@ namespace Aws
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/ServerSideEncryptionCustomerKeys.html">Server-Side
          * Encryption (Using Customer-Provided Encryption Keys)</a> in the <i>Amazon S3
          * User Guide</i>.</p> <p>For objects that are encrypted with Amazon S3 managed
-         * encryption keys (SSE-S3) and Amazon Web Services KMS keys (SSE-KMS), server-side
-         * encryption is handled transparently, so you don't need to specify anything. For
-         * more information about server-side encryption, including SSE-S3 and SSE-KMS, see
-         * <a
+         * keys (SSE-S3) and Amazon Web Services KMS keys (SSE-KMS), server-side encryption
+         * is handled transparently, so you don't need to specify anything. For more
+         * information about server-side encryption, including SSE-S3 and SSE-KMS, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/serv-side-encryption.html">Protecting
          * Data Using Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
-         * </li> </ul> <p> <b>Working with the Response Body</b> </p> <p>Given the response
-         * size is unknown, Amazon S3 Select streams the response as a series of messages
-         * and includes a <code>Transfer-Encoding</code> header with <code>chunked</code>
-         * as its value in the response. For more information, see <a
+         * </li> </ul> </dd> <dt>Working with the Response Body</dt> <dd> <p>Given the
+         * response size is unknown, Amazon S3 Select streams the response as a series of
+         * messages and includes a <code>Transfer-Encoding</code> header with
+         * <code>chunked</code> as its value in the response. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/RESTSelectObjectAppendix.html">Appendix:
-         * SelectObjectContent Response</a>.</p> <p/> <p> <b>GetObject Support</b> </p>
+         * SelectObjectContent Response</a>.</p> </dd> <dt>GetObject Support</dt> <dd>
          * <p>The <code>SelectObjectContent</code> action does not support the following
          * <code>GetObject</code> functionality. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>.</p>
@@ -5092,12 +5195,12 @@ namespace Aws
          * DEEP_ARCHIVE, or <code>REDUCED_REDUNDANCY</code> storage classes. For more
          * information, about storage classes see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingMetadata.html#storage-class-intro">Storage
-         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> <p/> <p>
-         * <b>Special Errors</b> </p> <p>For a list of special errors for this operation,
+         * Classes</a> in the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd>
+         * <dt>Special Errors</dt> <dd> <p>For a list of special errors for this operation,
          * see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#SelectObjectContentErrorCodeList">List
-         * of SELECT Object Content Error Codes</a> </p> <p class="title"> <b>Related
-         * Resources</b> </p> <ul> <li> <p> <a
+         * of SELECT Object Content Error Codes</a> </p> </dd> </dl> <p>The following
+         * operations are related to <code>SelectObjectContent</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetObject.html">GetObject</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketLifecycleConfiguration.html">GetBucketLifecycleConfiguration</a>
@@ -5163,36 +5266,43 @@ namespace Aws
          * Upload Overview</a> in the <i>Amazon S3 User Guide </i>.</p> <p>For information
          * on the permissions required to use the multipart upload API, go to <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuAndPermissions.html">Multipart
-         * Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.</p> <p>You can
-         * optionally request server-side encryption where Amazon S3 encrypts your data as
-         * it writes it to disks in its data centers and decrypts it for you when you
-         * access it. You have the option of providing your own encryption key, or you can
-         * use the Amazon Web Services managed encryption keys. If you choose to provide
-         * your own encryption key, the request headers you provide in the request must
-         * match the headers you used in the request to initiate the upload by using <a
+         * Upload and Permissions</a> in the <i>Amazon S3 User Guide</i>.</p>
+         * <p>Server-side encryption is for data encryption at rest. Amazon S3 encrypts
+         * your data as it writes it to disks in its data centers and decrypts it when you
+         * access it. You have three mutually exclusive options to protect data using
+         * server-side encryption in Amazon S3, depending on how you choose to manage the
+         * encryption keys. Specifically, the encryption key options are Amazon S3 managed
+         * keys (SSE-S3), Amazon Web Services KMS keys (SSE-KMS), and Customer-Provided
+         * Keys (SSE-C). Amazon S3 encrypts data with server-side encryption using Amazon
+         * S3 managed keys (SSE-S3) by default. You can optionally tell Amazon S3 to
+         * encrypt data at rest using server-side encryption with other key options. The
+         * option you use depends on whether you want to use KMS keys (SSE-KMS) or provide
+         * your own encryption key (SSE-C). If you choose to provide your own encryption
+         * key, the request headers you provide in the request must match the headers you
+         * used in the request to initiate the upload by using <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.
          * For more information, go to <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UsingServerSideEncryption.html">Using
          * Server-Side Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>
          * <p>Server-side encryption is supported by the S3 Multipart Upload actions.
-         * Unless you are using a customer-provided encryption key, you don't need to
-         * specify the encryption parameters in each UploadPart request. Instead, you only
-         * need to specify the server-side encryption parameters in the initial Initiate
-         * Multipart request. For more information, see <a
+         * Unless you are using a customer-provided encryption key (SSE-C), you don't need
+         * to specify the encryption parameters in each UploadPart request. Instead, you
+         * only need to specify the server-side encryption parameters in the initial
+         * Initiate Multipart request. For more information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>.</p>
          * <p>If you requested server-side encryption using a customer-provided encryption
-         * key in your initiate multipart upload request, you must provide identical
-         * encryption information in each part upload using the following headers.</p> <ul>
-         * <li> <p>x-amz-server-side-encryption-customer-algorithm</p> </li> <li>
-         * <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
-         * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
-         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
-         * does not exist. The upload ID might be invalid, or the multipart upload might
-         * have been aborted or completed.</i> </p> </li> <li> <p> <i> HTTP Status Code:
-         * 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault Code Prefix: Client</i>
-         * </p> </li> </ul> </li> </ul> <p class="title"> <b>Related Resources</b> </p>
-         * <ul> <li> <p> <a
+         * key (SSE-C) in your initiate multipart upload request, you must provide
+         * identical encryption information in each part upload using the following
+         * headers.</p> <ul> <li> <p>x-amz-server-side-encryption-customer-algorithm</p>
+         * </li> <li> <p>x-amz-server-side-encryption-customer-key</p> </li> <li>
+         * <p>x-amz-server-side-encryption-customer-key-MD5</p> </li> </ul> <p>
+         * <code>UploadPart</code> has the following special errors:</p> <ul> <li> <ul>
+         * <li> <p> <i>Code: NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified
+         * multipart upload does not exist. The upload ID might be invalid, or the
+         * multipart upload might have been aborted or completed.</i> </p> </li> <li> <p>
+         * <i> HTTP Status Code: 404 Not Found </i> </p> </li> <li> <p> <i>SOAP Fault Code
+         * Prefix: Client</i> </p> </li> </ul> </li> </ul> <p>The following operations are
+         * related to <code>UploadPart</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CompleteMultipartUpload.html">CompleteMultipartUpload</a>
@@ -5276,8 +5386,8 @@ namespace Aws
          * condition evaluates to <code>false</code>, and;</p> <p>
          * <code>x-amz-copy-source-if-modified-since</code> condition evaluates to
          * <code>true</code>;</p> <p>Amazon S3 returns <code>412 Precondition Failed</code>
-         * response code. </p> </li> </ul> <p> <b>Versioning</b> </p> <p>If your bucket has
-         * versioning enabled, you could have multiple versions of the same object. By
+         * response code. </p> </li> </ul> <dl> <dt>Versioning</dt> <dd> <p>If your bucket
+         * has versioning enabled, you could have multiple versions of the same object. By
          * default, <code>x-amz-copy-source</code> identifies the current version of the
          * object to copy. If the current version is a delete marker and you don't specify
          * a versionId in the <code>x-amz-copy-source</code>, Amazon S3 returns a 404
@@ -5287,16 +5397,16 @@ namespace Aws
          * marker as a version for the <code>x-amz-copy-source</code>. </p> <p>You can
          * optionally specify a specific version of the source object to copy by adding the
          * <code>versionId</code> subresource as shown in the following example:</p> <p>
-         * <code>x-amz-copy-source: /bucket/object?versionId=version id</code> </p> <p
-         * class="title"> <b>Special Errors</b> </p> <ul> <li> <ul> <li> <p> <i>Code:
-         * NoSuchUpload</i> </p> </li> <li> <p> <i>Cause: The specified multipart upload
-         * does not exist. The upload ID might be invalid, or the multipart upload might
-         * have been aborted or completed.</i> </p> </li> <li> <p> <i>HTTP Status Code: 404
-         * Not Found</i> </p> </li> </ul> </li> <li> <ul> <li> <p> <i>Code:
-         * InvalidRequest</i> </p> </li> <li> <p> <i>Cause: The specified copy source is
-         * not supported as a byte-range copy source.</i> </p> </li> <li> <p> <i>HTTP
-         * Status Code: 400 Bad Request</i> </p> </li> </ul> </li> </ul> <p class="title">
-         * <b>Related Resources</b> </p> <ul> <li> <p> <a
+         * <code>x-amz-copy-source: /bucket/object?versionId=version id</code> </p> </dd>
+         * <dt>Special errors</dt> <dd> <ul> <li> <ul> <li> <p> <i>Code: NoSuchUpload</i>
+         * </p> </li> <li> <p> <i>Cause: The specified multipart upload does not exist. The
+         * upload ID might be invalid, or the multipart upload might have been aborted or
+         * completed.</i> </p> </li> <li> <p> <i>HTTP Status Code: 404 Not Found</i> </p>
+         * </li> </ul> </li> <li> <ul> <li> <p> <i>Code: InvalidRequest</i> </p> </li> <li>
+         * <p> <i>Cause: The specified copy source is not supported as a byte-range copy
+         * source.</i> </p> </li> <li> <p> <i>HTTP Status Code: 400 Bad Request</i> </p>
+         * </li> </ul> </li> </ul> </dd> </dl> <p>The following operations are related to
+         * <code>UploadPartCopy</code>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateMultipartUpload.html">CreateMultipartUpload</a>
          * </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>

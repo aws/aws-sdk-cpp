@@ -27,8 +27,9 @@ namespace OpenSearchServiceErrorMapper
 {
 
 static const int DISABLED_OPERATION_HASH = HashingUtils::HashString("DisabledOperationException");
-static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
+static const int DEPENDENCY_FAILURE_HASH = HashingUtils::HashString("DependencyFailureException");
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int BASE_HASH = HashingUtils::HashString("BaseException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
@@ -45,13 +46,17 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DISABLED_OPERATION), false);
   }
+  else if (hashCode == CONFLICT_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::CONFLICT), false);
+  }
   else if (hashCode == INTERNAL_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::INTERNAL), false);
   }
-  else if (hashCode == CONFLICT_HASH)
+  else if (hashCode == DEPENDENCY_FAILURE_HASH)
   {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::CONFLICT), false);
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OpenSearchServiceErrors::DEPENDENCY_FAILURE), false);
   }
   else if (hashCode == RESOURCE_ALREADY_EXISTS_HASH)
   {

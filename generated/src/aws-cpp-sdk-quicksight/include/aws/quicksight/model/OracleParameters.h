@@ -79,63 +79,63 @@ namespace Model
 
 
     /**
-     * <p>Port.</p>
+     * <p>The port.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port.</p>
      */
     inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
-     * <p>Port.</p>
+     * <p>The port.</p>
      */
     inline OracleParameters& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline void SetDatabase(Aws::String&& value) { m_databaseHasBeenSet = true; m_database = std::move(value); }
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline void SetDatabase(const char* value) { m_databaseHasBeenSet = true; m_database.assign(value); }
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline OracleParameters& WithDatabase(const Aws::String& value) { SetDatabase(value); return *this;}
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline OracleParameters& WithDatabase(Aws::String&& value) { SetDatabase(std::move(value)); return *this;}
 
     /**
-     * <p>Database.</p>
+     * <p>The database.</p>
      */
     inline OracleParameters& WithDatabase(const char* value) { SetDatabase(value); return *this;}
 

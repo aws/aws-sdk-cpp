@@ -22,10 +22,10 @@ namespace Aws
 
         static const int CREATING_HASH = HashingUtils::HashString("CREATING");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
-        static const int SCALING_HASH = HashingUtils::HashString("SCALING");
-        static const int READY_HASH = HashingUtils::HashString("READY");
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int ERROR__HASH = HashingUtils::HashString("ERROR");
+        static const int SCALING_HASH = HashingUtils::HashString("SCALING");
+        static const int READY_HASH = HashingUtils::HashString("READY");
 
 
         AttachmentStatus GetAttachmentStatusForName(const Aws::String& name)
@@ -39,14 +39,6 @@ namespace Aws
           {
             return AttachmentStatus::DELETING;
           }
-          else if (hashCode == SCALING_HASH)
-          {
-            return AttachmentStatus::SCALING;
-          }
-          else if (hashCode == READY_HASH)
-          {
-            return AttachmentStatus::READY;
-          }
           else if (hashCode == FAILED_HASH)
           {
             return AttachmentStatus::FAILED;
@@ -54,6 +46,14 @@ namespace Aws
           else if (hashCode == ERROR__HASH)
           {
             return AttachmentStatus::ERROR_;
+          }
+          else if (hashCode == SCALING_HASH)
+          {
+            return AttachmentStatus::SCALING;
+          }
+          else if (hashCode == READY_HASH)
+          {
+            return AttachmentStatus::READY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -73,14 +73,14 @@ namespace Aws
             return "CREATING";
           case AttachmentStatus::DELETING:
             return "DELETING";
-          case AttachmentStatus::SCALING:
-            return "SCALING";
-          case AttachmentStatus::READY:
-            return "READY";
           case AttachmentStatus::FAILED:
             return "FAILED";
           case AttachmentStatus::ERROR_:
             return "ERROR";
+          case AttachmentStatus::SCALING:
+            return "SCALING";
+          case AttachmentStatus::READY:
+            return "READY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

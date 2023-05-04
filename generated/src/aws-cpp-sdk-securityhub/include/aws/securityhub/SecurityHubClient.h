@@ -1159,6 +1159,33 @@ namespace SecurityHub
         }
 
         /**
+         * <p> Returns history for a Security Hub finding in the last 90 days. The history
+         * includes changes made to any fields in the Amazon Web Services Security Finding
+         * Format (ASFF). </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/securityhub-2018-10-26/GetFindingHistory">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFindingHistoryOutcome GetFindingHistory(const Model::GetFindingHistoryRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetFindingHistory that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetFindingHistoryRequestT = Model::GetFindingHistoryRequest>
+        Model::GetFindingHistoryOutcomeCallable GetFindingHistoryCallable(const GetFindingHistoryRequestT& request) const
+        {
+            return SubmitCallable(&SecurityHubClient::GetFindingHistory, request);
+        }
+
+        /**
+         * An Async wrapper for GetFindingHistory that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetFindingHistoryRequestT = Model::GetFindingHistoryRequest>
+        void GetFindingHistoryAsync(const GetFindingHistoryRequestT& request, const GetFindingHistoryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SecurityHubClient::GetFindingHistory, request, handler, context);
+        }
+
+        /**
          * <p>Returns a list of findings that match the specified criteria.</p> <p>If
          * finding aggregation is enabled, then when you call <code>GetFindings</code> from
          * the aggregation Region, the results include all of the matching findings from

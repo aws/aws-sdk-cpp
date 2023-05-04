@@ -612,6 +612,33 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Returns information about domain and nodes, including data nodes, master
+         * nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node
+         * configurations, and node states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainNodesOutcome DescribeDomainNodes(const Model::DescribeDomainNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDomainNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDomainNodesRequestT = Model::DescribeDomainNodesRequest>
+        Model::DescribeDomainNodesOutcomeCallable DescribeDomainNodesCallable(const DescribeDomainNodesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::DescribeDomainNodes, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDomainNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDomainNodesRequestT = Model::DescribeDomainNodesRequest>
+        void DescribeDomainNodesAsync(const DescribeDomainNodesRequestT& request, const DescribeDomainNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::DescribeDomainNodes, request, handler, context);
+        }
+
+        /**
          * <p>Returns domain configuration information about the specified Amazon
          * OpenSearch Service domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">AWS
@@ -1404,7 +1431,7 @@ namespace OpenSearchService
 
         /**
          * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * domain.sl</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">AWS
          * API Reference</a></p>
          */

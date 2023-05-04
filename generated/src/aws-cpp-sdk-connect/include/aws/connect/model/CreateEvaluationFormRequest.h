@@ -94,42 +94,42 @@ namespace Model
 
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline void SetTitle(Aws::String&& value) { m_titleHasBeenSet = true; m_title = std::move(value); }
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline void SetTitle(const char* value) { m_titleHasBeenSet = true; m_title.assign(value); }
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline CreateEvaluationFormRequest& WithTitle(const Aws::String& value) { SetTitle(value); return *this;}
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline CreateEvaluationFormRequest& WithTitle(Aws::String&& value) { SetTitle(std::move(value)); return *this;}
 
     /**
-     * <p>A unique title of the evaluation form.</p>
+     * <p>A title of the evaluation form.</p>
      */
     inline CreateEvaluationFormRequest& WithTitle(const char* value) { SetTitle(value); return *this;}
 

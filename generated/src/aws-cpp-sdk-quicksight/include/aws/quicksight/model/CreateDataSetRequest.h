@@ -20,6 +20,7 @@
 #include <aws/quicksight/model/ResourcePermission.h>
 #include <aws/quicksight/model/ColumnLevelPermissionRule.h>
 #include <aws/quicksight/model/Tag.h>
+#include <aws/quicksight/model/DatasetParameter.h>
 #include <utility>
 
 namespace Aws
@@ -702,6 +703,47 @@ namespace Model
     
     inline CreateDataSetRequest& WithDataSetUsageConfiguration(DataSetUsageConfiguration&& value) { SetDataSetUsageConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline const Aws::Vector<DatasetParameter>& GetDatasetParameters() const{ return m_datasetParameters; }
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline bool DatasetParametersHasBeenSet() const { return m_datasetParametersHasBeenSet; }
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline void SetDatasetParameters(const Aws::Vector<DatasetParameter>& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters = value; }
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline void SetDatasetParameters(Aws::Vector<DatasetParameter>&& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters = std::move(value); }
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline CreateDataSetRequest& WithDatasetParameters(const Aws::Vector<DatasetParameter>& value) { SetDatasetParameters(value); return *this;}
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline CreateDataSetRequest& WithDatasetParameters(Aws::Vector<DatasetParameter>&& value) { SetDatasetParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline CreateDataSetRequest& AddDatasetParameters(const DatasetParameter& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters.push_back(value); return *this; }
+
+    /**
+     * <p>The parameter declarations of the dataset.</p>
+     */
+    inline CreateDataSetRequest& AddDatasetParameters(DatasetParameter&& value) { m_datasetParametersHasBeenSet = true; m_datasetParameters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_awsAccountId;
@@ -745,6 +787,9 @@ namespace Model
 
     DataSetUsageConfiguration m_dataSetUsageConfiguration;
     bool m_dataSetUsageConfigurationHasBeenSet = false;
+
+    Aws::Vector<DatasetParameter> m_datasetParameters;
+    bool m_datasetParametersHasBeenSet = false;
   };
 
 } // namespace Model

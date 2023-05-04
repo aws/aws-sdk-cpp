@@ -984,8 +984,8 @@ namespace Rekognition
          * face detected, the operation returns face details. These details include a
          * bounding box of the face, a confidence value (that the bounding box contains a
          * face), and a fixed set of attributes such as facial landmarks (for example,
-         * coordinates of eye and mouth), presence of beard, sunglasses, and so on. </p>
-         * <p>The face-detection algorithm is most effective on frontal faces. For
+         * coordinates of eye and mouth), pose, presence of facial occlusion, and so
+         * on.</p> <p>The face-detection algorithm is most effective on frontal faces. For
          * non-frontal or obscured faces, the algorithm might not detect the faces or might
          * detect faces with lower confidence. </p> <p>You pass the input image either as
          * base64-encoded image bytes or as a reference to an image in an Amazon S3 bucket.
@@ -1848,11 +1848,12 @@ namespace Rekognition
          * the bounding box contains a face.</p> </li> <li> <p>A face ID,
          * <code>FaceId</code>, assigned by the service for each face that's detected and
          * stored.</p> </li> <li> <p>An image ID, <code>ImageId</code>, assigned by the
-         * service for the input image.</p> </li> </ul> <p>If you request all facial
-         * attributes (by using the <code>detectionAttributes</code> parameter), Amazon
-         * Rekognition returns detailed facial attributes, such as facial landmarks (for
-         * example, location of eye and mouth) and other facial attributes. If you provide
-         * the same image, specify the same collection, and use the same external ID in the
+         * service for the input image.</p> </li> </ul> <p>If you request <code>ALL</code>
+         * or specific facial attributes (e.g., <code>FACE_OCCLUDED</code>) by using the
+         * detectionAttributes parameter, Amazon Rekognition returns detailed facial
+         * attributes, such as facial landmarks (for example, location of eye and mouth),
+         * facial occlusion, and other facial attributes.</p> <p>If you provide the same
+         * image, specify the same collection, and use the same external ID in the
          * <code>IndexFaces</code> operation, Amazon Rekognition doesn't save duplicate
          * face metadata.</p> <p/> <p>The input image is passed either as base64-encoded
          * image bytes, or as a reference to an image in an Amazon S3 bucket. If you use

@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/rekognition/model/Pose.h>
 #include <aws/rekognition/model/ImageQuality.h>
+#include <aws/rekognition/model/FaceOccluded.h>
 #include <aws/rekognition/model/Emotion.h>
 #include <aws/rekognition/model/Landmark.h>
 #include <utility>
@@ -640,6 +641,67 @@ namespace Model
      */
     inline FaceDetail& WithConfidence(double value) { SetConfidence(value); return *this;}
 
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline const FaceOccluded& GetFaceOccluded() const{ return m_faceOccluded; }
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline bool FaceOccludedHasBeenSet() const { return m_faceOccludedHasBeenSet; }
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline void SetFaceOccluded(const FaceOccluded& value) { m_faceOccludedHasBeenSet = true; m_faceOccluded = value; }
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline void SetFaceOccluded(FaceOccluded&& value) { m_faceOccludedHasBeenSet = true; m_faceOccluded = std::move(value); }
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline FaceDetail& WithFaceOccluded(const FaceOccluded& value) { SetFaceOccluded(value); return *this;}
+
+    /**
+     * <p> <code>FaceOccluded</code> should return "true" with a high confidence score
+     * if a detected face’s eyes, nose, and mouth are partially captured or if they are
+     * covered by masks, dark sunglasses, cell phones, hands, or other objects.
+     * <code>FaceOccluded</code> should return "false" with a high confidence score if
+     * common occurrences that do not impact face verification are detected, such as
+     * eye glasses, lightly tinted sunglasses, strands of hair, and others. </p>
+     */
+    inline FaceDetail& WithFaceOccluded(FaceOccluded&& value) { SetFaceOccluded(std::move(value)); return *this;}
+
   private:
 
     BoundingBox m_boundingBox;
@@ -686,6 +748,9 @@ namespace Model
 
     double m_confidence;
     bool m_confidenceHasBeenSet = false;
+
+    FaceOccluded m_faceOccluded;
+    bool m_faceOccludedHasBeenSet = false;
   };
 
 } // namespace Model

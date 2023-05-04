@@ -161,6 +161,12 @@ namespace Aws
         static const int ml_r6gd_12xlarge_HASH = HashingUtils::HashString("ml.r6gd.12xlarge");
         static const int ml_r6gd_16xlarge_HASH = HashingUtils::HashString("ml.r6gd.16xlarge");
         static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
+        static const int ml_trn1_2xlarge_HASH = HashingUtils::HashString("ml.trn1.2xlarge");
+        static const int ml_trn1_32xlarge_HASH = HashingUtils::HashString("ml.trn1.32xlarge");
+        static const int ml_inf2_xlarge_HASH = HashingUtils::HashString("ml.inf2.xlarge");
+        static const int ml_inf2_8xlarge_HASH = HashingUtils::HashString("ml.inf2.8xlarge");
+        static const int ml_inf2_24xlarge_HASH = HashingUtils::HashString("ml.inf2.24xlarge");
+        static const int ml_inf2_48xlarge_HASH = HashingUtils::HashString("ml.inf2.48xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -878,6 +884,36 @@ namespace Aws
             enumValue = ProductionVariantInstanceType::ml_p4de_24xlarge;
             return true;
           }
+          else if (hashCode == ml_trn1_2xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_trn1_2xlarge;
+            return true;
+          }
+          else if (hashCode == ml_trn1_32xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_trn1_32xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_inf2_xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_8xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_inf2_8xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_24xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_inf2_24xlarge;
+            return true;
+          }
+          else if (hashCode == ml_inf2_48xlarge_HASH)
+          {
+            enumValue = ProductionVariantInstanceType::ml_inf2_48xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -1315,6 +1351,24 @@ namespace Aws
             return true;
           case ProductionVariantInstanceType::ml_p4de_24xlarge:
             value = "ml.p4de.24xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_trn1_2xlarge:
+            value = "ml.trn1.2xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_trn1_32xlarge:
+            value = "ml.trn1.32xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_inf2_xlarge:
+            value = "ml.inf2.xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_inf2_8xlarge:
+            value = "ml.inf2.8xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_inf2_24xlarge:
+            value = "ml.inf2.24xlarge";
+            return true;
+          case ProductionVariantInstanceType::ml_inf2_48xlarge:
+            value = "ml.inf2.48xlarge";
             return true;
           default:
             return false;

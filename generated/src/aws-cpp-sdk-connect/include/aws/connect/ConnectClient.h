@@ -522,9 +522,8 @@ namespace Connect
         /**
          * <p>Creates an evaluation form in the specified Amazon Connect instance. The form
          * can be used to define questions related to agent performance, and create
-         * sections to organize such questions. An evaluation form must have a unique title
-         * within an instance. Question and section identifiers cannot be duplicated within
-         * the same evaluation form.</p><p><h3>See Also:</h3>   <a
+         * sections to organize such questions. Question and section identifiers cannot be
+         * duplicated within the same evaluation form.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">AWS
          * API Reference</a></p>
          */
@@ -4526,10 +4525,10 @@ namespace Connect
 
         /**
          * <p>Updates details about a specific evaluation form version in the specified
-         * Amazon Connect instance. An evaluation form must have a unique title within an
-         * instance. Question and section identifiers cannot be duplicated within the same
-         * evaluation form.</p> <p>This operation does not support partial updates. Instead
-         * it does a full update of evaluation form content.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance. Question and section identifiers cannot be duplicated
+         * within the same evaluation form.</p> <p>This operation does not support partial
+         * updates. Instead it does a full update of evaluation form content.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">AWS
          * API Reference</a></p>
          */

@@ -5,7 +5,6 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -15,10 +14,11 @@ namespace Aws
 {
 namespace Utils
 {
-namespace Xml
+namespace Json
 {
-  class XmlNode;
-} // namespace Xml
+  class JsonValue;
+  class JsonView;
+} // namespace Json
 } // namespace Utils
 namespace SQS
 {
@@ -32,7 +32,7 @@ namespace Model
    * <p> <code>Name</code>, <code>type</code>, <code>value</code> and the message
    * body must not be empty or null. All parts of the message attribute, including
    * <code>Name</code>, <code>Type</code>, and <code>Value</code>, are part of the
-   * message size restriction (256 KB or 262,144 bytes).</p><p><h3>See Also:</h3>  
+   * message size restriction (256 KiB or 262,144 bytes).</p><p><h3>See Also:</h3>  
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/MessageAttributeValue">AWS
    * API Reference</a></p>
@@ -41,11 +41,9 @@ namespace Model
   {
   public:
     AWS_SQS_API MessageAttributeValue();
-    AWS_SQS_API MessageAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
-    AWS_SQS_API MessageAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
-
-    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
-    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+    AWS_SQS_API MessageAttributeValue(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SQS_API MessageAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**

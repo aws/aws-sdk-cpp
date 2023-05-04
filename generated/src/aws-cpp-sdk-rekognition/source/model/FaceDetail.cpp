@@ -34,7 +34,8 @@ FaceDetail::FaceDetail() :
     m_poseHasBeenSet(false),
     m_qualityHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_faceOccludedHasBeenSet(false)
 {
 }
 
@@ -54,7 +55,8 @@ FaceDetail::FaceDetail(JsonView jsonValue) :
     m_poseHasBeenSet(false),
     m_qualityHasBeenSet(false),
     m_confidence(0.0),
-    m_confidenceHasBeenSet(false)
+    m_confidenceHasBeenSet(false),
+    m_faceOccludedHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -172,6 +174,13 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
     m_confidenceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("FaceOccluded"))
+  {
+    m_faceOccluded = jsonValue.GetObject("FaceOccluded");
+
+    m_faceOccludedHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -276,6 +285,12 @@ JsonValue FaceDetail::Jsonize() const
   if(m_confidenceHasBeenSet)
   {
    payload.WithDouble("Confidence", m_confidence);
+
+  }
+
+  if(m_faceOccludedHasBeenSet)
+  {
+   payload.WithObject("FaceOccluded", m_faceOccluded.Jsonize());
 
   }
 

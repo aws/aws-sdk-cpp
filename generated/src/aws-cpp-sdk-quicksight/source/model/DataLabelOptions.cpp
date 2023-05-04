@@ -33,7 +33,9 @@ DataLabelOptions::DataLabelOptions() :
     m_labelFontConfigurationHasBeenSet(false),
     m_labelColorHasBeenSet(false),
     m_overlap(DataLabelOverlap::NOT_SET),
-    m_overlapHasBeenSet(false)
+    m_overlapHasBeenSet(false),
+    m_totalsVisibility(Visibility::NOT_SET),
+    m_totalsVisibilityHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ DataLabelOptions::DataLabelOptions(JsonView jsonValue) :
     m_labelFontConfigurationHasBeenSet(false),
     m_labelColorHasBeenSet(false),
     m_overlap(DataLabelOverlap::NOT_SET),
-    m_overlapHasBeenSet(false)
+    m_overlapHasBeenSet(false),
+    m_totalsVisibility(Visibility::NOT_SET),
+    m_totalsVisibilityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +129,13 @@ DataLabelOptions& DataLabelOptions::operator =(JsonView jsonValue)
     m_overlapHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalsVisibility"))
+  {
+    m_totalsVisibility = VisibilityMapper::GetVisibilityForName(jsonValue.GetString("TotalsVisibility"));
+
+    m_totalsVisibilityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +194,11 @@ JsonValue DataLabelOptions::Jsonize() const
   if(m_overlapHasBeenSet)
   {
    payload.WithString("Overlap", DataLabelOverlapMapper::GetNameForDataLabelOverlap(m_overlap));
+  }
+
+  if(m_totalsVisibilityHasBeenSet)
+  {
+   payload.WithString("TotalsVisibility", VisibilityMapper::GetNameForVisibility(m_totalsVisibility));
   }
 
   return payload;

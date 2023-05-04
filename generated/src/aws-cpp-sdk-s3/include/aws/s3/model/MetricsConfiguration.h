@@ -45,42 +45,58 @@ namespace Model
 
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline MetricsConfiguration& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline MetricsConfiguration& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID used to identify the metrics configuration.</p>
+     * <p>The ID used to identify the metrics configuration. The ID has a 64 character
+     * limit and can only contain letters, numbers, periods, dashes, and
+     * underscores.</p>
      */
     inline MetricsConfiguration& WithId(const char* value) { SetId(value); return *this;}
 

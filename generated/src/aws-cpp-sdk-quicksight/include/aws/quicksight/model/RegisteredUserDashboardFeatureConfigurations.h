@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/StatePersistenceConfigurations.h>
+#include <aws/quicksight/model/BookmarksConfigurations.h>
 #include <utility>
 
 namespace Aws
@@ -68,10 +69,50 @@ namespace Model
      */
     inline RegisteredUserDashboardFeatureConfigurations& WithStatePersistence(StatePersistenceConfigurations&& value) { SetStatePersistence(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline const BookmarksConfigurations& GetBookmarks() const{ return m_bookmarks; }
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline bool BookmarksHasBeenSet() const { return m_bookmarksHasBeenSet; }
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline void SetBookmarks(const BookmarksConfigurations& value) { m_bookmarksHasBeenSet = true; m_bookmarks = value; }
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline void SetBookmarks(BookmarksConfigurations&& value) { m_bookmarksHasBeenSet = true; m_bookmarks = std::move(value); }
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline RegisteredUserDashboardFeatureConfigurations& WithBookmarks(const BookmarksConfigurations& value) { SetBookmarks(value); return *this;}
+
+    /**
+     * <p>The bookmarks configuration for an embedded dashboard in Amazon
+     * QuickSight.</p>
+     */
+    inline RegisteredUserDashboardFeatureConfigurations& WithBookmarks(BookmarksConfigurations&& value) { SetBookmarks(std::move(value)); return *this;}
+
   private:
 
     StatePersistenceConfigurations m_statePersistence;
     bool m_statePersistenceHasBeenSet = false;
+
+    BookmarksConfigurations m_bookmarks;
+    bool m_bookmarksHasBeenSet = false;
   };
 
 } // namespace Model

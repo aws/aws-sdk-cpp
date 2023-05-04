@@ -218,6 +218,47 @@ namespace Model
      */
     inline ScatterPlotCategoricallyAggregatedFieldWells& AddSize(MeasureField&& value) { m_sizeHasBeenSet = true; m_size.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline const Aws::Vector<DimensionField>& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline void SetLabel(const Aws::Vector<DimensionField>& value) { m_labelHasBeenSet = true; m_label = value; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline void SetLabel(Aws::Vector<DimensionField>&& value) { m_labelHasBeenSet = true; m_label = std::move(value); }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotCategoricallyAggregatedFieldWells& WithLabel(const Aws::Vector<DimensionField>& value) { SetLabel(value); return *this;}
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotCategoricallyAggregatedFieldWells& WithLabel(Aws::Vector<DimensionField>&& value) { SetLabel(std::move(value)); return *this;}
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotCategoricallyAggregatedFieldWells& AddLabel(const DimensionField& value) { m_labelHasBeenSet = true; m_label.push_back(value); return *this; }
+
+    /**
+     * <p>The label field well of a scatter plot.</p>
+     */
+    inline ScatterPlotCategoricallyAggregatedFieldWells& AddLabel(DimensionField&& value) { m_labelHasBeenSet = true; m_label.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<MeasureField> m_xAxis;
@@ -231,6 +272,9 @@ namespace Model
 
     Aws::Vector<MeasureField> m_size;
     bool m_sizeHasBeenSet = false;
+
+    Aws::Vector<DimensionField> m_label;
+    bool m_labelHasBeenSet = false;
   };
 
 } // namespace Model

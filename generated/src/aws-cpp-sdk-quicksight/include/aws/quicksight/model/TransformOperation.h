@@ -12,6 +12,7 @@
 #include <aws/quicksight/model/CastColumnTypeOperation.h>
 #include <aws/quicksight/model/TagColumnOperation.h>
 #include <aws/quicksight/model/UntagColumnOperation.h>
+#include <aws/quicksight/model/OverrideDatasetParameterOperation.h>
 #include <utility>
 
 namespace Aws
@@ -261,6 +262,25 @@ namespace Model
     
     inline TransformOperation& WithUntagColumnOperation(UntagColumnOperation&& value) { SetUntagColumnOperation(std::move(value)); return *this;}
 
+
+    
+    inline const OverrideDatasetParameterOperation& GetOverrideDatasetParameterOperation() const{ return m_overrideDatasetParameterOperation; }
+
+    
+    inline bool OverrideDatasetParameterOperationHasBeenSet() const { return m_overrideDatasetParameterOperationHasBeenSet; }
+
+    
+    inline void SetOverrideDatasetParameterOperation(const OverrideDatasetParameterOperation& value) { m_overrideDatasetParameterOperationHasBeenSet = true; m_overrideDatasetParameterOperation = value; }
+
+    
+    inline void SetOverrideDatasetParameterOperation(OverrideDatasetParameterOperation&& value) { m_overrideDatasetParameterOperationHasBeenSet = true; m_overrideDatasetParameterOperation = std::move(value); }
+
+    
+    inline TransformOperation& WithOverrideDatasetParameterOperation(const OverrideDatasetParameterOperation& value) { SetOverrideDatasetParameterOperation(value); return *this;}
+
+    
+    inline TransformOperation& WithOverrideDatasetParameterOperation(OverrideDatasetParameterOperation&& value) { SetOverrideDatasetParameterOperation(std::move(value)); return *this;}
+
   private:
 
     ProjectOperation m_projectOperation;
@@ -283,6 +303,9 @@ namespace Model
 
     UntagColumnOperation m_untagColumnOperation;
     bool m_untagColumnOperationHasBeenSet = false;
+
+    OverrideDatasetParameterOperation m_overrideDatasetParameterOperation;
+    bool m_overrideDatasetParameterOperationHasBeenSet = false;
   };
 
 } // namespace Model

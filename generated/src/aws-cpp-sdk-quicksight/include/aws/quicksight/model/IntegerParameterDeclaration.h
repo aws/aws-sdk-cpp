@@ -9,6 +9,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/quicksight/model/IntegerDefaultValues.h>
 #include <aws/quicksight/model/IntegerValueWhenUnsetConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/model/MappedDataSetParameter.h>
 #include <utility>
 
 namespace Aws
@@ -186,6 +188,31 @@ namespace Model
      */
     inline IntegerParameterDeclaration& WithValueWhenUnset(IntegerValueWhenUnsetConfiguration&& value) { SetValueWhenUnset(std::move(value)); return *this;}
 
+
+    
+    inline const Aws::Vector<MappedDataSetParameter>& GetMappedDataSetParameters() const{ return m_mappedDataSetParameters; }
+
+    
+    inline bool MappedDataSetParametersHasBeenSet() const { return m_mappedDataSetParametersHasBeenSet; }
+
+    
+    inline void SetMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = value; }
+
+    
+    inline void SetMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters = std::move(value); }
+
+    
+    inline IntegerParameterDeclaration& WithMappedDataSetParameters(const Aws::Vector<MappedDataSetParameter>& value) { SetMappedDataSetParameters(value); return *this;}
+
+    
+    inline IntegerParameterDeclaration& WithMappedDataSetParameters(Aws::Vector<MappedDataSetParameter>&& value) { SetMappedDataSetParameters(std::move(value)); return *this;}
+
+    
+    inline IntegerParameterDeclaration& AddMappedDataSetParameters(const MappedDataSetParameter& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(value); return *this; }
+
+    
+    inline IntegerParameterDeclaration& AddMappedDataSetParameters(MappedDataSetParameter&& value) { m_mappedDataSetParametersHasBeenSet = true; m_mappedDataSetParameters.push_back(std::move(value)); return *this; }
+
   private:
 
     ParameterValueType m_parameterValueType;
@@ -199,6 +226,9 @@ namespace Model
 
     IntegerValueWhenUnsetConfiguration m_valueWhenUnset;
     bool m_valueWhenUnsetHasBeenSet = false;
+
+    Aws::Vector<MappedDataSetParameter> m_mappedDataSetParameters;
+    bool m_mappedDataSetParametersHasBeenSet = false;
   };
 
 } // namespace Model

@@ -25,8 +25,8 @@ namespace Model
    * that Amazon S3 will wait before permanently removing all parts of the upload.
    * For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/mpuoverview.html#mpu-abort-incomplete-mpu-lifecycle-config">
-   * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Policy</a> in the
-   * <i>Amazon S3 User Guide</i>.</p><p><h3>See Also:</h3>   <a
+   * Aborting Incomplete Multipart Uploads Using a Bucket Lifecycle Configuration</a>
+   * in the <i>Amazon S3 User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AbortIncompleteMultipartUpload">AWS
    * API Reference</a></p>
    */
