@@ -26,6 +26,7 @@ sed -i "s/PROJECT_NUMBER .*/PROJECT_NUMBER         = ${VERSION_NUM}/" "${SRC_DIR
 
 echo "Running doc generation"
 cd "${SRC_DIR}"
+curl https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/main/doxygen-awesome.css -o "${SRC_DIR}/tools/doxygen/doxygen-awesome.css"
 python3 "${SRC_DIR}/tools/doxygen/modules/scripts/run-doc-generation.py"
 echo "Staging static files"
 mkdir -p "${OUTPUT_DIR}/root/html"
