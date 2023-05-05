@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateSkillGroupRequest::CreateSkillGroupRequest() : 
     m_skillGroupNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

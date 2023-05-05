@@ -18,7 +18,7 @@ UpdateAssetPropertyRequest::UpdateAssetPropertyRequest() :
     m_propertyAliasHasBeenSet(false),
     m_propertyNotificationState(PropertyNotificationState::NOT_SET),
     m_propertyNotificationStateHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_propertyUnitHasBeenSet(false)
 {

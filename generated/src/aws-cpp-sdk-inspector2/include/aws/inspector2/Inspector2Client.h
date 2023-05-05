@@ -864,6 +864,32 @@ namespace Inspector2
         }
 
         /**
+         * <p>Lists Amazon Inspector coverage details for a specific
+         * vulnerability.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/SearchVulnerabilities">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::SearchVulnerabilitiesOutcome SearchVulnerabilities(const Model::SearchVulnerabilitiesRequest& request) const;
+
+        /**
+         * A Callable wrapper for SearchVulnerabilities that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename SearchVulnerabilitiesRequestT = Model::SearchVulnerabilitiesRequest>
+        Model::SearchVulnerabilitiesOutcomeCallable SearchVulnerabilitiesCallable(const SearchVulnerabilitiesRequestT& request) const
+        {
+            return SubmitCallable(&Inspector2Client::SearchVulnerabilities, request);
+        }
+
+        /**
+         * An Async wrapper for SearchVulnerabilities that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename SearchVulnerabilitiesRequestT = Model::SearchVulnerabilitiesRequest>
+        void SearchVulnerabilitiesAsync(const SearchVulnerabilitiesRequestT& request, const SearchVulnerabilitiesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&Inspector2Client::SearchVulnerabilities, request, handler, context);
+        }
+
+        /**
          * <p>Adds tags to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/inspector2-2020-06-08/TagResource">AWS
          * API Reference</a></p>

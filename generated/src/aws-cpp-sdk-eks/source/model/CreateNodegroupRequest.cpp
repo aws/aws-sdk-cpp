@@ -27,7 +27,7 @@ CreateNodegroupRequest::CreateNodegroupRequest() :
     m_labelsHasBeenSet(false),
     m_taintsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_launchTemplateHasBeenSet(false),
     m_updateConfigHasBeenSet(false),

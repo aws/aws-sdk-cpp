@@ -16,7 +16,7 @@ DisassociateAssetsRequest::DisassociateAssetsRequest() :
     m_assetIdHasBeenSet(false),
     m_hierarchyIdHasBeenSet(false),
     m_childAssetIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

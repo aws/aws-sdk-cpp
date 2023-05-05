@@ -19,7 +19,7 @@ PostCommentForPullRequestRequest::PostCommentForPullRequestRequest() :
     m_afterCommitIdHasBeenSet(false),
     m_locationHasBeenSet(false),
     m_contentHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

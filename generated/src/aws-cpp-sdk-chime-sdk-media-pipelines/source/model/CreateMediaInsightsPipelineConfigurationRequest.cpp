@@ -18,7 +18,7 @@ CreateMediaInsightsPipelineConfigurationRequest::CreateMediaInsightsPipelineConf
     m_realTimeAlertConfigurationHasBeenSet(false),
     m_elementsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

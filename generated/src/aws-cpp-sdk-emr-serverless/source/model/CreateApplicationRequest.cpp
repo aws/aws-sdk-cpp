@@ -16,7 +16,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_nameHasBeenSet(false),
     m_releaseLabelHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_initialCapacityHasBeenSet(false),
     m_maximumCapacityHasBeenSet(false),

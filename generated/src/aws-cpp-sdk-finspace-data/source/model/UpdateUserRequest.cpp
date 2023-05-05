@@ -21,7 +21,7 @@ UpdateUserRequest::UpdateUserRequest() :
     m_apiAccess(ApiAccess::NOT_SET),
     m_apiAccessHasBeenSet(false),
     m_apiAccessPrincipalArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

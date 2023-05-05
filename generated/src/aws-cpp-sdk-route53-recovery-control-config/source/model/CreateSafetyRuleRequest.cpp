@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateSafetyRuleRequest::CreateSafetyRuleRequest() : 
     m_assertionRuleHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_gatingRuleHasBeenSet(false),
     m_tagsHasBeenSet(false)

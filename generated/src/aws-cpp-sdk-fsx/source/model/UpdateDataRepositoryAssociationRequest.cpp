@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateDataRepositoryAssociationRequest::UpdateDataRepositoryAssociationRequest() : 
     m_associationIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_importedFileChunkSize(0),
     m_importedFileChunkSizeHasBeenSet(false),

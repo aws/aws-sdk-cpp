@@ -16,7 +16,7 @@ CreatePortalRequest::CreatePortalRequest() :
     m_additionalEncryptionContextHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customerManagedKeyHasBeenSet(false),
     m_displayNameHasBeenSet(false),

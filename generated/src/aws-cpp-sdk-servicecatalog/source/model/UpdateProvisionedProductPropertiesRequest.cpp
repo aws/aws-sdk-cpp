@@ -16,7 +16,7 @@ UpdateProvisionedProductPropertiesRequest::UpdateProvisionedProductPropertiesReq
     m_acceptLanguageHasBeenSet(false),
     m_provisionedProductIdHasBeenSet(false),
     m_provisionedProductPropertiesHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

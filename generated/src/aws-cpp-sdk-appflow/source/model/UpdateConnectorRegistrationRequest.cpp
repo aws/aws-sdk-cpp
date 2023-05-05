@@ -16,7 +16,7 @@ UpdateConnectorRegistrationRequest::UpdateConnectorRegistrationRequest() :
     m_connectorLabelHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_connectorProvisioningConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

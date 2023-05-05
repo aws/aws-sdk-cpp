@@ -16,7 +16,7 @@ UpdateClusterConfigRequest::UpdateClusterConfigRequest() :
     m_nameHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
     m_loggingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

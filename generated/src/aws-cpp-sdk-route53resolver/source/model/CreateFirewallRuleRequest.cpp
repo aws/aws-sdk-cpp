@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateFirewallRuleRequest::CreateFirewallRuleRequest() : 
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_firewallRuleGroupIdHasBeenSet(false),
     m_firewallDomainListIdHasBeenSet(false),

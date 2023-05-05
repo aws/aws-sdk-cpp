@@ -19,7 +19,7 @@ CopyProductRequest::CopyProductRequest() :
     m_targetProductNameHasBeenSet(false),
     m_sourceProvisioningArtifactIdentifiersHasBeenSet(false),
     m_copyOptionsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

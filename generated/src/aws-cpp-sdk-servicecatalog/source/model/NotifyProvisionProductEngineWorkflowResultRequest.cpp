@@ -20,7 +20,7 @@ NotifyProvisionProductEngineWorkflowResultRequest::NotifyProvisionProductEngineW
     m_failureReasonHasBeenSet(false),
     m_resourceIdentifierHasBeenSet(false),
     m_outputsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

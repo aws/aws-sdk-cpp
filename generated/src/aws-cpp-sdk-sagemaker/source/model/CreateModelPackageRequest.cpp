@@ -26,7 +26,7 @@ CreateModelPackageRequest::CreateModelPackageRequest() :
     m_modelApprovalStatusHasBeenSet(false),
     m_metadataPropertiesHasBeenSet(false),
     m_modelMetricsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customerMetadataPropertiesHasBeenSet(false),
     m_driftCheckBaselinesHasBeenSet(false),

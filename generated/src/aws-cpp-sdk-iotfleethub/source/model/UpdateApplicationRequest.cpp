@@ -16,7 +16,7 @@ UpdateApplicationRequest::UpdateApplicationRequest() :
     m_applicationIdHasBeenSet(false),
     m_applicationNameHasBeenSet(false),
     m_applicationDescriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -20,7 +20,7 @@ CreatePoolRequest::CreatePoolRequest() :
     m_deletionProtectionEnabled(false),
     m_deletionProtectionEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

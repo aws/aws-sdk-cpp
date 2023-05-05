@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateAssetRequest::CreateAssetRequest() : 
     m_assetNameHasBeenSet(false),
     m_assetModelIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_assetDescriptionHasBeenSet(false)

@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateVolumeRequest::UpdateVolumeRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_volumeIdHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),

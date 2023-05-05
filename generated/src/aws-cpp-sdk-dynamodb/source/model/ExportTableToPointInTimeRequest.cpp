@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 ExportTableToPointInTimeRequest::ExportTableToPointInTimeRequest() : 
     m_tableArnHasBeenSet(false),
     m_exportTimeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_s3BucketHasBeenSet(false),
     m_s3BucketOwnerHasBeenSet(false),

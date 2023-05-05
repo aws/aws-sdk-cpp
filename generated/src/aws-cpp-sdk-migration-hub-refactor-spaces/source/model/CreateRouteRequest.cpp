@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateRouteRequest::CreateRouteRequest() : 
     m_applicationIdentifierHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_defaultRouteHasBeenSet(false),
     m_environmentIdentifierHasBeenSet(false),

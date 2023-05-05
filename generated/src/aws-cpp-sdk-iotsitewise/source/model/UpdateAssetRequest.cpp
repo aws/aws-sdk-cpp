@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateAssetRequest::UpdateAssetRequest() : 
     m_assetIdHasBeenSet(false),
     m_assetNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_assetDescriptionHasBeenSet(false)
 {

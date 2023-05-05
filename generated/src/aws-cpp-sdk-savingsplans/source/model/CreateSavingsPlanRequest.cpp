@@ -17,7 +17,7 @@ CreateSavingsPlanRequest::CreateSavingsPlanRequest() :
     m_commitmentHasBeenSet(false),
     m_upfrontPaymentAmountHasBeenSet(false),
     m_purchaseTimeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

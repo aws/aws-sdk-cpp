@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateResiliencyPolicyRequest::CreateResiliencyPolicyRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_dataLocationConstraint(DataLocationConstraint::NOT_SET),
     m_dataLocationConstraintHasBeenSet(false),

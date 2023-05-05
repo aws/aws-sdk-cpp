@@ -17,7 +17,7 @@ CreateAssistantAssociationRequest::CreateAssistantAssociationRequest() :
     m_associationHasBeenSet(false),
     m_associationType(AssociationType::NOT_SET),
     m_associationTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

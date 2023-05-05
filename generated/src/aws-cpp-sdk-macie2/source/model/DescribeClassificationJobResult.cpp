@@ -18,7 +18,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DescribeClassificationJobResult::DescribeClassificationJobResult() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_initialRun(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobType(JobType::NOT_SET),
@@ -28,7 +28,7 @@ DescribeClassificationJobResult::DescribeClassificationJobResult() :
 }
 
 DescribeClassificationJobResult::DescribeClassificationJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_initialRun(false),
     m_jobStatus(JobStatus::NOT_SET),
     m_jobType(JobType::NOT_SET),

@@ -18,7 +18,7 @@ using namespace Aws::Http;
 using namespace Aws;
 
 PostAgentProfileRequest::PostAgentProfileRequest() : 
-    m_profileToken(Aws::Utils::UUID::RandomUUID()),
+    m_profileToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_profileTokenHasBeenSet(true),
     m_profilingGroupNameHasBeenSet(false)
 {

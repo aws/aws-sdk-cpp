@@ -21,7 +21,7 @@ CreateLabelRequest::CreateLabelRequest() :
     m_faultCodeHasBeenSet(false),
     m_notesHasBeenSet(false),
     m_equipmentHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -25,7 +25,7 @@ UpdateImagePipelineRequest::UpdateImagePipelineRequest() :
     m_scheduleHasBeenSet(false),
     m_status(PipelineStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_imageScanningConfigurationHasBeenSet(false)
 {

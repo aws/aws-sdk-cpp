@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 StartSingleWirelessDeviceImportTaskRequest::StartSingleWirelessDeviceImportTaskRequest() : 
     m_destinationNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_deviceNameHasBeenSet(false),
     m_tagsHasBeenSet(false),

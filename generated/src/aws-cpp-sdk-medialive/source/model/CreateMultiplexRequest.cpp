@@ -16,7 +16,7 @@ CreateMultiplexRequest::CreateMultiplexRequest() :
     m_availabilityZonesHasBeenSet(false),
     m_multiplexSettingsHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

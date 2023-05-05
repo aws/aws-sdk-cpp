@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 DeletePipelineRequest::DeletePipelineRequest() : 
     m_pipelineNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

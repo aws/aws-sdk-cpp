@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/ListQueuesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListQueuesRequest::ListQueuesRequest() : 
@@ -22,37 +20,29 @@ ListQueuesRequest::ListQueuesRequest() :
 
 Aws::String ListQueuesRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=ListQueues&";
   if(m_queueNamePrefixHasBeenSet)
   {
-   payload.WithString("QueueNamePrefix", m_queueNamePrefix);
-
+    ss << "QueueNamePrefix=" << StringUtils::URLEncode(m_queueNamePrefix.c_str()) << "&";
   }
 
   if(m_nextTokenHasBeenSet)
   {
-   payload.WithString("NextToken", m_nextToken);
-
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
   if(m_maxResultsHasBeenSet)
   {
-   payload.WithInteger("MaxResults", m_maxResults);
-
+    ss << "MaxResults=" << m_maxResults << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection ListQueuesRequest::GetRequestSpecificHeaders() const
+
+void  ListQueuesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ListQueues"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

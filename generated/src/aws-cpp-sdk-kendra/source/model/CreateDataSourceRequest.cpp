@@ -23,7 +23,7 @@ CreateDataSourceRequest::CreateDataSourceRequest() :
     m_scheduleHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_languageCodeHasBeenSet(false),
     m_customDocumentEnrichmentConfigurationHasBeenSet(false)

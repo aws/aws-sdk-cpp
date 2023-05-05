@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
@@ -14,11 +15,10 @@ namespace Aws
 {
 namespace Utils
 {
-namespace Json
+namespace Xml
 {
-  class JsonValue;
-  class JsonView;
-} // namespace Json
+  class XmlNode;
+} // namespace Xml
 } // namespace Utils
 namespace SQS
 {
@@ -38,9 +38,11 @@ namespace Model
   {
   public:
     AWS_SQS_API MessageSystemAttributeValue();
-    AWS_SQS_API MessageSystemAttributeValue(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SQS_API MessageSystemAttributeValue& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SQS_API MessageSystemAttributeValue(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API MessageSystemAttributeValue& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

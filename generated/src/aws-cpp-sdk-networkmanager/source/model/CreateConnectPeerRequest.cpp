@@ -19,7 +19,7 @@ CreateConnectPeerRequest::CreateConnectPeerRequest() :
     m_bgpOptionsHasBeenSet(false),
     m_insideCidrBlocksHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

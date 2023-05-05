@@ -17,7 +17,7 @@ CreateCoreNetworkRequest::CreateCoreNetworkRequest() :
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 TerminateProvisionedProductRequest::TerminateProvisionedProductRequest() : 
     m_provisionedProductNameHasBeenSet(false),
     m_provisionedProductIdHasBeenSet(false),
-    m_terminateToken(Aws::Utils::UUID::RandomUUID()),
+    m_terminateToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_terminateTokenHasBeenSet(true),
     m_ignoreErrors(false),
     m_ignoreErrorsHasBeenSet(false),

@@ -19,7 +19,7 @@ CreateContactRequest::CreateContactRequest() :
     m_phoneNumberHasBeenSet(false),
     m_phoneNumbersHasBeenSet(false),
     m_sipAddressesHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

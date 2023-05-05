@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteScheduleGroupRequest::DeleteScheduleGroupRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_nameHasBeenSet(false)
 {

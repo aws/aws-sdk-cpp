@@ -19,7 +19,7 @@ CreateThesaurusRequest::CreateThesaurusRequest() :
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_sourceS3PathHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -19,7 +19,7 @@ CreateMediaInsightsPipelineRequest::CreateMediaInsightsPipelineRequest() :
     m_kinesisVideoStreamRecordingSourceRuntimeConfigurationHasBeenSet(false),
     m_s3RecordingSinkRuntimeConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

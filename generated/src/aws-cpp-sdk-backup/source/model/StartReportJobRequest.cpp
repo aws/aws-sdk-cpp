@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 StartReportJobRequest::StartReportJobRequest() : 
     m_reportPlanNameHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateAppVersionAppComponentRequest::CreateAppVersionAppComponentRequest() : 
     m_additionalInfoHasBeenSet(false),
     m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_idHasBeenSet(false),
     m_nameHasBeenSet(false),

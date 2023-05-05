@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -12,11 +13,10 @@ namespace Aws
 {
 namespace Utils
 {
-namespace Json
+namespace Xml
 {
-  class JsonValue;
-  class JsonView;
-} // namespace Json
+  class XmlNode;
+} // namespace Xml
 } // namespace Utils
 namespace SQS
 {
@@ -25,7 +25,17 @@ namespace Model
 
   /**
    * <p>Encloses a receipt handle and an entry id for each message in <code>
-   * <a>ChangeMessageVisibilityBatch</a>.</code> </p><p><h3>See Also:</h3>   <a
+   * <a>ChangeMessageVisibilityBatch</a>.</code> </p>  <p>All of the
+   * following list parameters must be prefixed with
+   * <code>ChangeMessageVisibilityBatchRequestEntry.n</code>, where <code>n</code> is
+   * an integer value starting with <code>1</code>. For example, a parameter list for
+   * this action might look like this:</p>  <p>
+   * <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.Id=change_visibility_msg_2</code>
+   * </p> <p>
+   * <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.ReceiptHandle=your_receipt_handle</code>
+   * </p> <p>
+   * <code>&amp;ChangeMessageVisibilityBatchRequestEntry.1.VisibilityTimeout=45</code>
+   * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sqs-2012-11-05/ChangeMessageVisibilityBatchRequestEntry">AWS
    * API Reference</a></p>
    */
@@ -33,9 +43,11 @@ namespace Model
   {
   public:
     AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry();
-    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry& operator=(Aws::Utils::Json::JsonView jsonValue);
-    AWS_SQS_API Aws::Utils::Json::JsonValue Jsonize() const;
+    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry(const Aws::Utils::Xml::XmlNode& xmlNode);
+    AWS_SQS_API ChangeMessageVisibilityBatchRequestEntry& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+    AWS_SQS_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+    AWS_SQS_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
 
 
     /**

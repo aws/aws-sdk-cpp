@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/sqs/SQS_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sqs/model/ResponseMetadata.h>
 #include <aws/sqs/model/ChangeMessageVisibilityBatchResultEntry.h>
 #include <aws/sqs/model/BatchResultErrorEntry.h>
@@ -19,10 +18,10 @@ class AmazonWebServiceResult;
 
 namespace Utils
 {
-namespace Json
+namespace Xml
 {
-  class JsonValue;
-} // namespace Json
+  class XmlDocument;
+} // namespace Xml
 } // namespace Utils
 namespace SQS
 {
@@ -40,8 +39,8 @@ namespace Model
   {
   public:
     AWS_SQS_API ChangeMessageVisibilityBatchResult();
-    AWS_SQS_API ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-    AWS_SQS_API ChangeMessageVisibilityBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_SQS_API ChangeMessageVisibilityBatchResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+    AWS_SQS_API ChangeMessageVisibilityBatchResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
     /**
@@ -124,28 +123,6 @@ namespace Model
 
 
     
-    inline const Aws::String& GetRequestId() const{ return m_requestId; }
-
-    
-    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
-
-    
-    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
-
-    
-    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
-
-    
-    inline ChangeMessageVisibilityBatchResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
-
-    
-    inline ChangeMessageVisibilityBatchResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
-
-    
-    inline ChangeMessageVisibilityBatchResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
-
-
-    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
 
     
@@ -165,8 +142,6 @@ namespace Model
     Aws::Vector<ChangeMessageVisibilityBatchResultEntry> m_successful;
 
     Aws::Vector<BatchResultErrorEntry> m_failed;
-
-    Aws::String m_requestId;
 
     ResponseMetadata m_responseMetadata;
   };

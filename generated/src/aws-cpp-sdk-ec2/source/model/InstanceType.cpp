@@ -663,6 +663,11 @@ namespace Aws
         static const int m6idn_metal_HASH = HashingUtils::HashString("m6idn.metal");
         static const int r6in_metal_HASH = HashingUtils::HashString("r6in.metal");
         static const int r6idn_metal_HASH = HashingUtils::HashString("r6idn.metal");
+        static const int inf2_xlarge_HASH = HashingUtils::HashString("inf2.xlarge");
+        static const int inf2_8xlarge_HASH = HashingUtils::HashString("inf2.8xlarge");
+        static const int inf2_24xlarge_HASH = HashingUtils::HashString("inf2.24xlarge");
+        static const int inf2_48xlarge_HASH = HashingUtils::HashString("inf2.48xlarge");
+        static const int trn1n_32xlarge_HASH = HashingUtils::HashString("trn1n.32xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3906,6 +3911,31 @@ namespace Aws
             enumValue = InstanceType::r6idn_metal;
             return true;
           }
+          else if (hashCode == inf2_xlarge_HASH)
+          {
+            enumValue = InstanceType::inf2_xlarge;
+            return true;
+          }
+          else if (hashCode == inf2_8xlarge_HASH)
+          {
+            enumValue = InstanceType::inf2_8xlarge;
+            return true;
+          }
+          else if (hashCode == inf2_24xlarge_HASH)
+          {
+            enumValue = InstanceType::inf2_24xlarge;
+            return true;
+          }
+          else if (hashCode == inf2_48xlarge_HASH)
+          {
+            enumValue = InstanceType::inf2_48xlarge;
+            return true;
+          }
+          else if (hashCode == trn1n_32xlarge_HASH)
+          {
+            enumValue = InstanceType::trn1n_32xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -5881,6 +5911,21 @@ namespace Aws
             return true;
           case InstanceType::r6idn_metal:
             value = "r6idn.metal";
+            return true;
+          case InstanceType::inf2_xlarge:
+            value = "inf2.xlarge";
+            return true;
+          case InstanceType::inf2_8xlarge:
+            value = "inf2.8xlarge";
+            return true;
+          case InstanceType::inf2_24xlarge:
+            value = "inf2.24xlarge";
+            return true;
+          case InstanceType::inf2_48xlarge:
+            value = "inf2.48xlarge";
+            return true;
+          case InstanceType::trn1n_32xlarge:
+            value = "trn1n.32xlarge";
             return true;
           default:
             return false;

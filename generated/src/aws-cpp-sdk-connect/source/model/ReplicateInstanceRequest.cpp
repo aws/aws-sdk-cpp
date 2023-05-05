@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 ReplicateInstanceRequest::ReplicateInstanceRequest() : 
     m_instanceIdHasBeenSet(false),
     m_replicaRegionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_replicaAliasHasBeenSet(false)
 {

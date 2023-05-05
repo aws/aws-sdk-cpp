@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 RetryPipelineExecutionRequest::RetryPipelineExecutionRequest() : 
     m_pipelineExecutionArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_parallelismConfigurationHasBeenSet(false)
 {

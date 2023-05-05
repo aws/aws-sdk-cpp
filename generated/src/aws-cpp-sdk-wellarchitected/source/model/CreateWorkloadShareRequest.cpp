@@ -17,7 +17,7 @@ CreateWorkloadShareRequest::CreateWorkloadShareRequest() :
     m_sharedWithHasBeenSet(false),
     m_permissionType(PermissionType::NOT_SET),
     m_permissionTypeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

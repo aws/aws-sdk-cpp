@@ -51,6 +51,7 @@
 #include <aws/inspector2/model/ListMembersRequest.h>
 #include <aws/inspector2/model/ListTagsForResourceRequest.h>
 #include <aws/inspector2/model/ListUsageTotalsRequest.h>
+#include <aws/inspector2/model/SearchVulnerabilitiesRequest.h>
 #include <aws/inspector2/model/TagResourceRequest.h>
 #include <aws/inspector2/model/UntagResourceRequest.h>
 #include <aws/inspector2/model/UpdateConfigurationRequest.h>
@@ -460,6 +461,15 @@ ListUsageTotalsOutcome Inspector2Client::ListUsageTotals(const ListUsageTotalsRe
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListUsageTotals, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/usage/list");
   return ListUsageTotalsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+SearchVulnerabilitiesOutcome Inspector2Client::SearchVulnerabilities(const SearchVulnerabilitiesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, SearchVulnerabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, SearchVulnerabilities, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/vulnerabilities/search");
+  return SearchVulnerabilitiesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome Inspector2Client::TagResource(const TagResourceRequest& request) const

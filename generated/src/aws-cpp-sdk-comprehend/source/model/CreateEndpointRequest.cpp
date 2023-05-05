@@ -17,7 +17,7 @@ CreateEndpointRequest::CreateEndpointRequest() :
     m_modelArnHasBeenSet(false),
     m_desiredInferenceUnits(0),
     m_desiredInferenceUnitsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),

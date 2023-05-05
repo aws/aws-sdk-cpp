@@ -16,7 +16,7 @@ StartSigningJobRequest::StartSigningJobRequest() :
     m_sourceHasBeenSet(false),
     m_destinationHasBeenSet(false),
     m_profileNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_profileOwnerHasBeenSet(false)
 {

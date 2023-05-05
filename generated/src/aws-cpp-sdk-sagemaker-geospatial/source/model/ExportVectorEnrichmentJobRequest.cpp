@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 ExportVectorEnrichmentJobRequest::ExportVectorEnrichmentJobRequest() : 
     m_arnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_executionRoleArnHasBeenSet(false),
     m_outputConfigHasBeenSet(false)

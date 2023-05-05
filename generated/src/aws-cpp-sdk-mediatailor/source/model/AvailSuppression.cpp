@@ -19,6 +19,8 @@ namespace Model
 {
 
 AvailSuppression::AvailSuppression() : 
+    m_fillPolicy(FillPolicy::NOT_SET),
+    m_fillPolicyHasBeenSet(false),
     m_mode(Mode::NOT_SET),
     m_modeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -26,6 +28,8 @@ AvailSuppression::AvailSuppression() :
 }
 
 AvailSuppression::AvailSuppression(JsonView jsonValue) : 
+    m_fillPolicy(FillPolicy::NOT_SET),
+    m_fillPolicyHasBeenSet(false),
     m_mode(Mode::NOT_SET),
     m_modeHasBeenSet(false),
     m_valueHasBeenSet(false)
@@ -35,6 +39,13 @@ AvailSuppression::AvailSuppression(JsonView jsonValue) :
 
 AvailSuppression& AvailSuppression::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("FillPolicy"))
+  {
+    m_fillPolicy = FillPolicyMapper::GetFillPolicyForName(jsonValue.GetString("FillPolicy"));
+
+    m_fillPolicyHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Mode"))
   {
     m_mode = ModeMapper::GetModeForName(jsonValue.GetString("Mode"));
@@ -55,6 +66,11 @@ AvailSuppression& AvailSuppression::operator =(JsonView jsonValue)
 JsonValue AvailSuppression::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_fillPolicyHasBeenSet)
+  {
+   payload.WithString("FillPolicy", FillPolicyMapper::GetNameForFillPolicy(m_fillPolicy));
+  }
 
   if(m_modeHasBeenSet)
   {

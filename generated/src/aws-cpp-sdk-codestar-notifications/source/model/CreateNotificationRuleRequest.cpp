@@ -19,7 +19,7 @@ CreateNotificationRuleRequest::CreateNotificationRuleRequest() :
     m_targetsHasBeenSet(false),
     m_detailType(DetailType::NOT_SET),
     m_detailTypeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_status(NotificationRuleStatus::NOT_SET),

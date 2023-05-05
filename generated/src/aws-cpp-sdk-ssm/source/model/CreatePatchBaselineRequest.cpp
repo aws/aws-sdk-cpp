@@ -28,7 +28,7 @@ CreatePatchBaselineRequest::CreatePatchBaselineRequest() :
     m_rejectedPatchesActionHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_sourcesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

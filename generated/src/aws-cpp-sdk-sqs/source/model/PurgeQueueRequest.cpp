@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/PurgeQueueRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 PurgeQueueRequest::PurgeQueueRequest() : 
@@ -19,25 +17,19 @@ PurgeQueueRequest::PurgeQueueRequest() :
 
 Aws::String PurgeQueueRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=PurgeQueue&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection PurgeQueueRequest::GetRequestSpecificHeaders() const
+
+void  PurgeQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.PurgeQueue"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

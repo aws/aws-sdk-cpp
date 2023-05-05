@@ -18,7 +18,7 @@ StartSnapshotRequest::StartSnapshotRequest() :
     m_parentSnapshotIdHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_encrypted(false),
     m_encryptedHasBeenSet(false),

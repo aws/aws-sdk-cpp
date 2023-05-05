@@ -4,11 +4,13 @@
  */
 
 #include <aws/sqs/model/DeleteMessageBatchResultEntry.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -23,35 +25,44 @@ DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry() :
 {
 }
 
-DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(JsonView jsonValue) : 
+DeleteMessageBatchResultEntry::DeleteMessageBatchResultEntry(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator =(JsonView jsonValue)
+DeleteMessageBatchResultEntry& DeleteMessageBatchResultEntry::operator =(const XmlNode& xmlNode)
 {
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
+  XmlNode resultNode = xmlNode;
 
-    m_idHasBeenSet = true;
+  if(!resultNode.IsNull())
+  {
+    XmlNode idNode = resultNode.FirstChild("Id");
+    if(!idNode.IsNull())
+    {
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
+    }
   }
 
   return *this;
 }
 
-JsonValue DeleteMessageBatchResultEntry::Jsonize() const
+void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
-
   if(m_idHasBeenSet)
   {
-   payload.WithString("Id", m_id);
-
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 
-  return payload;
+}
+
+void DeleteMessageBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
 }
 
 } // namespace Model

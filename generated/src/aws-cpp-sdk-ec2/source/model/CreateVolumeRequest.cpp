@@ -30,7 +30,7 @@ CreateVolumeRequest::CreateVolumeRequest() :
     m_multiAttachEnabledHasBeenSet(false),
     m_throughput(0),
     m_throughputHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

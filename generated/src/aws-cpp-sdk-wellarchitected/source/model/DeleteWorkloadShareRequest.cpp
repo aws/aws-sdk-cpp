@@ -18,7 +18,7 @@ using namespace Aws::Http;
 DeleteWorkloadShareRequest::DeleteWorkloadShareRequest() : 
     m_shareIdHasBeenSet(false),
     m_workloadIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

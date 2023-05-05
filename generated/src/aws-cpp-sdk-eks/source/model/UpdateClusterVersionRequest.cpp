@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateClusterVersionRequest::UpdateClusterVersionRequest() : 
     m_nameHasBeenSet(false),
     m_versionHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

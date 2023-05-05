@@ -18,7 +18,7 @@ CreateScheduledQueryRequest::CreateScheduledQueryRequest() :
     m_scheduleConfigurationHasBeenSet(false),
     m_notificationConfigurationHasBeenSet(false),
     m_targetConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_scheduledQueryExecutionRoleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),

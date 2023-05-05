@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeFileSystemAliasesRequest::DescribeFileSystemAliasesRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_fileSystemIdHasBeenSet(false),
     m_maxResults(0),

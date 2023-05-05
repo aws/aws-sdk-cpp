@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/ReceiveMessageRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ReceiveMessageRequest::ReceiveMessageRequest() : 
@@ -28,71 +26,61 @@ ReceiveMessageRequest::ReceiveMessageRequest() :
 
 Aws::String ReceiveMessageRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=ReceiveMessage&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_attributeNamesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
-   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
-   {
-     attributeNamesJsonList[attributeNamesIndex].AsString(QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
-   }
-   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
-
+    unsigned attributeNamesCount = 1;
+    for(auto& item : m_attributeNames)
+    {
+      ss << "AttributeName." << attributeNamesCount << "="
+          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item).c_str()) << "&";
+      attributeNamesCount++;
+    }
   }
 
   if(m_messageAttributeNamesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> messageAttributeNamesJsonList(m_messageAttributeNames.size());
-   for(unsigned messageAttributeNamesIndex = 0; messageAttributeNamesIndex < messageAttributeNamesJsonList.GetLength(); ++messageAttributeNamesIndex)
-   {
-     messageAttributeNamesJsonList[messageAttributeNamesIndex].AsString(m_messageAttributeNames[messageAttributeNamesIndex]);
-   }
-   payload.WithArray("MessageAttributeNames", std::move(messageAttributeNamesJsonList));
-
+    unsigned messageAttributeNamesCount = 1;
+    for(auto& item : m_messageAttributeNames)
+    {
+      ss << "MessageAttributeName." << messageAttributeNamesCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      messageAttributeNamesCount++;
+    }
   }
 
   if(m_maxNumberOfMessagesHasBeenSet)
   {
-   payload.WithInteger("MaxNumberOfMessages", m_maxNumberOfMessages);
-
+    ss << "MaxNumberOfMessages=" << m_maxNumberOfMessages << "&";
   }
 
   if(m_visibilityTimeoutHasBeenSet)
   {
-   payload.WithInteger("VisibilityTimeout", m_visibilityTimeout);
-
+    ss << "VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 
   if(m_waitTimeSecondsHasBeenSet)
   {
-   payload.WithInteger("WaitTimeSeconds", m_waitTimeSeconds);
-
+    ss << "WaitTimeSeconds=" << m_waitTimeSeconds << "&";
   }
 
   if(m_receiveRequestAttemptIdHasBeenSet)
   {
-   payload.WithString("ReceiveRequestAttemptId", m_receiveRequestAttemptId);
-
+    ss << "ReceiveRequestAttemptId=" << StringUtils::URLEncode(m_receiveRequestAttemptId.c_str()) << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection ReceiveMessageRequest::GetRequestSpecificHeaders() const
+
+void  ReceiveMessageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ReceiveMessage"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

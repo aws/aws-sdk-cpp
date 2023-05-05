@@ -4,11 +4,13 @@
  */
 
 #include <aws/sqs/model/BatchResultErrorEntry.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -27,78 +29,93 @@ BatchResultErrorEntry::BatchResultErrorEntry() :
 {
 }
 
-BatchResultErrorEntry::BatchResultErrorEntry(JsonView jsonValue) : 
+BatchResultErrorEntry::BatchResultErrorEntry(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_senderFault(false),
     m_senderFaultHasBeenSet(false),
     m_codeHasBeenSet(false),
     m_messageHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-BatchResultErrorEntry& BatchResultErrorEntry::operator =(JsonView jsonValue)
+BatchResultErrorEntry& BatchResultErrorEntry::operator =(const XmlNode& xmlNode)
 {
-  if(jsonValue.ValueExists("Id"))
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
   {
-    m_id = jsonValue.GetString("Id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("SenderFault"))
-  {
-    m_senderFault = jsonValue.GetBool("SenderFault");
-
-    m_senderFaultHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Code"))
-  {
-    m_code = jsonValue.GetString("Code");
-
-    m_codeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("Message"))
-  {
-    m_message = jsonValue.GetString("Message");
-
-    m_messageHasBeenSet = true;
+    XmlNode idNode = resultNode.FirstChild("Id");
+    if(!idNode.IsNull())
+    {
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
+    }
+    XmlNode senderFaultNode = resultNode.FirstChild("SenderFault");
+    if(!senderFaultNode.IsNull())
+    {
+      m_senderFault = StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(senderFaultNode.GetText()).c_str()).c_str());
+      m_senderFaultHasBeenSet = true;
+    }
+    XmlNode codeNode = resultNode.FirstChild("Code");
+    if(!codeNode.IsNull())
+    {
+      m_code = Aws::Utils::Xml::DecodeEscapedXmlText(codeNode.GetText());
+      m_codeHasBeenSet = true;
+    }
+    XmlNode messageNode = resultNode.FirstChild("Message");
+    if(!messageNode.IsNull())
+    {
+      m_message = Aws::Utils::Xml::DecodeEscapedXmlText(messageNode.GetText());
+      m_messageHasBeenSet = true;
+    }
   }
 
   return *this;
 }
 
-JsonValue BatchResultErrorEntry::Jsonize() const
+void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
-
   if(m_idHasBeenSet)
   {
-   payload.WithString("Id", m_id);
-
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 
   if(m_senderFaultHasBeenSet)
   {
-   payload.WithBool("SenderFault", m_senderFault);
-
+      oStream << location << index << locationValue << ".SenderFault=" << std::boolalpha << m_senderFault << "&";
   }
 
   if(m_codeHasBeenSet)
   {
-   payload.WithString("Code", m_code);
-
+      oStream << location << index << locationValue << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
   }
 
   if(m_messageHasBeenSet)
   {
-   payload.WithString("Message", m_message);
-
+      oStream << location << index << locationValue << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
   }
 
-  return payload;
+}
+
+void BatchResultErrorEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_senderFaultHasBeenSet)
+  {
+      oStream << location << ".SenderFault=" << std::boolalpha << m_senderFault << "&";
+  }
+  if(m_codeHasBeenSet)
+  {
+      oStream << location << ".Code=" << StringUtils::URLEncode(m_code.c_str()) << "&";
+  }
+  if(m_messageHasBeenSet)
+  {
+      oStream << location << ".Message=" << StringUtils::URLEncode(m_message.c_str()) << "&";
+  }
 }
 
 } // namespace Model

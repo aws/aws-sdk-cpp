@@ -38,8 +38,10 @@ namespace Model
 
     AWS_SQS_API Aws::String SerializePayload() const override;
 
-    AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  protected:
+    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
+  public:
 
     /**
      * <p>The URL of the Amazon SQS queue to which a message is sent.</p> <p>Queue URLs
@@ -92,12 +94,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -105,12 +107,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -118,12 +120,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -131,12 +133,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -144,12 +146,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -157,12 +159,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -170,12 +172,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */
@@ -183,12 +185,12 @@ namespace Model
 
     /**
      * <p>The message to send. The minimum size is one character. The maximum size is
-     * 256 KiB.</p>  <p>A message can include only XML, JSON, and
-     * unformatted text. The following Unicode characters are allowed:</p> <p>
-     * <code>#x9</code> | <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to
-     * <code>#xD7FF</code> | <code>#xE000</code> to <code>#xFFFD</code> |
-     * <code>#x10000</code> to <code>#x10FFFF</code> </p> <p>Any characters not
-     * included in this list will be rejected. For more information, see the <a
+     * 256 KB.</p>  <p>A message can include only XML, JSON, and unformatted
+     * text. The following Unicode characters are allowed:</p> <p> <code>#x9</code> |
+     * <code>#xA</code> | <code>#xD</code> | <code>#x20</code> to <code>#xD7FF</code> |
+     * <code>#xE000</code> to <code>#xFFFD</code> | <code>#x10000</code> to
+     * <code>#x10FFFF</code> </p> <p>Any characters not included in this list will be
+     * rejected. For more information, see the <a
      * href="http://www.w3.org/TR/REC-xml/#charsets">W3C specification for
      * characters</a>.</p> 
      */

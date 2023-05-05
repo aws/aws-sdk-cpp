@@ -21,7 +21,7 @@ CreateFlywheelRequest::CreateFlywheelRequest() :
     m_modelTypeHasBeenSet(false),
     m_dataLakeS3UriHasBeenSet(false),
     m_dataSecurityConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

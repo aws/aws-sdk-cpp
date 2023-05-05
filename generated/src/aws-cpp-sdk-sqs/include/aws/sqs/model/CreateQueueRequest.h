@@ -36,8 +36,10 @@ namespace Model
 
     AWS_SQS_API Aws::String SerializePayload() const override;
 
-    AWS_SQS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+  protected:
+    AWS_SQS_API void DumpBodyToUrl(Aws::Http::URI& uri ) const override;
 
+  public:
 
     /**
      * <p>The name of the new queue. The following limits apply to this name:</p> <ul>
@@ -132,58 +134,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -204,10 +183,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -280,58 +259,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -352,10 +308,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -428,58 +384,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -500,10 +433,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -576,58 +509,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -648,10 +558,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -724,58 +634,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -796,10 +683,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -872,58 +759,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -944,10 +808,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1020,58 +884,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1092,10 +933,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1168,58 +1009,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1240,10 +1058,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1316,58 +1134,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1388,10 +1183,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1464,58 +1259,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1536,10 +1308,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1612,58 +1384,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1684,10 +1433,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1760,58 +1509,35 @@ namespace Model
      * (1 KiB) to 262,144 bytes (256 KiB). Default: 262,144 (256 KiB). </p> </li> <li>
      * <p> <code>MessageRetentionPeriod</code> – The length of time, in seconds, for
      * which Amazon SQS retains a message. Valid values: An integer from 60 seconds (1
-     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). When you
-     * change a queue's attributes, the change can take up to 60 seconds for most of
-     * the attributes to propagate throughout the Amazon SQS system. Changes made to
-     * the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and
-     * will impact existing messages in the queue potentially causing them to be
-     * expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below
-     * the age of existing messages.</p> </li> <li> <p> <code>Policy</code> – The
-     * queue's policy. A valid Amazon Web Services policy. For more information about
-     * policy structure, see <a
+     * minute) to 1,209,600 seconds (14 days). Default: 345,600 (4 days). </p> </li>
+     * <li> <p> <code>Policy</code> – The queue's policy. A valid Amazon Web Services
+     * policy. For more information about policy structure, see <a
      * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/PoliciesOverview.html">Overview
-     * of Amazon Web Services IAM Policies</a> in the <i>IAM User Guide</i>. </p> </li>
-     * <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of time, in
-     * seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits for a
-     * message to arrive. Valid values: An integer from 0 to 20 (seconds). Default: 0.
-     * </p> </li> <li> <p> <code>VisibilityTimeout</code> – The visibility timeout for
-     * the queue, in seconds. Valid values: An integer from 0 to 43,200 (12 hours).
-     * Default: 30. For more information about the visibility timeout, see <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
-     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
-     * following attributes apply only to <a
-     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">dead-letter
-     * queues:</a> </p> <ul> <li> <p> <code>RedrivePolicy</code> – The string that
+     * of Amazon Web Services IAM Policies</a> in the <i>Amazon IAM User Guide</i>.
+     * </p> </li> <li> <p> <code>ReceiveMessageWaitTimeSeconds</code> – The length of
+     * time, in seconds, for which a <code> <a>ReceiveMessage</a> </code> action waits
+     * for a message to arrive. Valid values: An integer from 0 to 20 (seconds).
+     * Default: 0. </p> </li> <li> <p> <code>RedrivePolicy</code> – The string that
      * includes the parameters for the dead-letter queue functionality of the source
-     * queue as a JSON object. The parameters are as follows:</p> <ul> <li> <p>
-     * <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN) of the
-     * dead-letter queue to which Amazon SQS moves messages after the value of
+     * queue as a JSON object. For more information about the redrive policy and
+     * dead-letter queues, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html">Using
+     * Amazon SQS Dead-Letter Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>
+     * <ul> <li> <p> <code>deadLetterTargetArn</code> – The Amazon Resource Name (ARN)
+     * of the dead-letter queue to which Amazon SQS moves messages after the value of
      * <code>maxReceiveCount</code> is exceeded.</p> </li> <li> <p>
      * <code>maxReceiveCount</code> – The number of times a message is delivered to the
-     * source queue before being moved to the dead-letter queue. Default: 10. When the
+     * source queue before being moved to the dead-letter queue. When the
      * <code>ReceiveCount</code> for a message exceeds the <code>maxReceiveCount</code>
      * for a queue, Amazon SQS moves the message to the dead-letter-queue.</p> </li>
-     * </ul> </li> <li> <p> <code>RedriveAllowPolicy</code> – The string that includes
-     * the parameters for the permissions for the dead-letter queue redrive permission
-     * and which source queues can specify dead-letter queues as a JSON object. The
-     * parameters are as follows:</p> <ul> <li> <p> <code>redrivePermission</code> –
-     * The permission type that defines which source queues can specify the current
-     * queue as the dead-letter queue. Valid values are:</p> <ul> <li> <p>
-     * <code>allowAll</code> – (Default) Any source queues in this Amazon Web Services
-     * account in the same Region can specify this queue as the dead-letter queue.</p>
-     * </li> <li> <p> <code>denyAll</code> – No source queues can specify this queue as
-     * the dead-letter queue.</p> </li> <li> <p> <code>byQueue</code> – Only queues
-     * specified by the <code>sourceQueueArns</code> parameter can specify this queue
-     * as the dead-letter queue.</p> </li> </ul> </li> <li> <p>
-     * <code>sourceQueueArns</code> – The Amazon Resource Names (ARN)s of the source
-     * queues that can specify this queue as the dead-letter queue and redrive
-     * messages. You can specify this parameter only when the
-     * <code>redrivePermission</code> parameter is set to <code>byQueue</code>. You can
-     * specify up to 10 source queue ARNs. To allow more than 10 source queues to
-     * specify dead-letter queues, set the <code>redrivePermission</code> parameter to
-     * <code>allowAll</code>.</p> </li> </ul> </li> </ul>  <p>The dead-letter
-     * queue of a FIFO queue must also be a FIFO queue. Similarly, the dead-letter
-     * queue of a standard queue must also be a standard queue.</p>  <p>The
+     * </ul>  <p>The dead-letter queue of a FIFO queue must also be a FIFO queue.
+     * Similarly, the dead-letter queue of a standard queue must also be a standard
+     * queue.</p>  </li> <li> <p> <code>VisibilityTimeout</code> – The
+     * visibility timeout for the queue, in seconds. Valid values: An integer from 0 to
+     * 43,200 (12 hours). Default: 30. For more information about the visibility
+     * timeout, see <a
+     * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility
+     * Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p> </li> </ul> <p>The
      * following attributes apply only to <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html">server-side-encryption</a>:</p>
      * <ul> <li> <p> <code>KmsMasterKeyId</code> – The ID of an Amazon Web Services
@@ -1832,10 +1558,10 @@ namespace Model
      * but results in more calls to KMS which might incur charges after Free Tier. For
      * more information, see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-server-side-encryption.html#sqs-how-does-the-data-key-reuse-period-work">How
-     * Does the Data Key Reuse Period Work?</a> </p> </li> <li> <p>
+     * Does the Data Key Reuse Period Work?</a>. </p> </li> <li> <p>
      * <code>SqsManagedSseEnabled</code> – Enables server-side queue encryption using
      * SQS owned encryption keys. Only one server-side encryption option is supported
-     * per queue (for example, <a
+     * per queue (e.g. <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sse-existing-queue.html">SSE-KMS</a>
      * or <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-configure-sqs-sse-queue.html">SSE-SQS</a>).</p>
@@ -1915,7 +1641,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -1938,7 +1664,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
@@ -1961,7 +1687,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -1984,7 +1710,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -2007,7 +1733,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
@@ -2030,7 +1756,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
@@ -2053,7 +1779,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
@@ -2076,7 +1802,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -2099,7 +1825,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -2122,7 +1848,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
@@ -2145,7 +1871,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
@@ -2168,7 +1894,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
@@ -2191,7 +1917,7 @@ namespace Model
      * <p>Cross-account permissions don't apply to this action. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-customer-managed-policy-examples.html#grant-cross-account-permissions-to-role-and-user-name">Grant
-     * cross-account permissions to a role and a username</a> in the <i>Amazon SQS
+     * cross-account permissions to a role and a user name</a> in the <i>Amazon SQS
      * Developer Guide</i>.</p> 
      */
     inline CreateQueueRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
