@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateAccessPreviewRequest::CreateAccessPreviewRequest() : 
     m_analyzerArnHasBeenSet(false),
     m_configurationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

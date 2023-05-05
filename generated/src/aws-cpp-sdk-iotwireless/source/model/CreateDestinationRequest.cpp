@@ -20,7 +20,7 @@ CreateDestinationRequest::CreateDestinationRequest() :
     m_descriptionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

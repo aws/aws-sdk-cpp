@@ -21,7 +21,7 @@ SendChannelMessageRequest::SendChannelMessageRequest() :
     m_persistence(ChannelMessagePersistenceType::NOT_SET),
     m_persistenceHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_chimeBearerHasBeenSet(false),
     m_pushNotificationHasBeenSet(false),

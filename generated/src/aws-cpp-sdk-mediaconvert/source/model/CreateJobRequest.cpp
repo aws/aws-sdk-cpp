@@ -16,7 +16,7 @@ CreateJobRequest::CreateJobRequest() :
     m_accelerationSettingsHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_hopDestinationsHasBeenSet(false),
     m_jobTemplateHasBeenSet(false),

@@ -4,11 +4,13 @@
  */
 
 #include <aws/sqs/model/ChangeMessageVisibilityBatchResultEntry.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -23,35 +25,44 @@ ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry
 {
 }
 
-ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(JsonView jsonValue) : 
+ChangeMessageVisibilityBatchResultEntry::ChangeMessageVisibilityBatchResultEntry(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry::operator =(JsonView jsonValue)
+ChangeMessageVisibilityBatchResultEntry& ChangeMessageVisibilityBatchResultEntry::operator =(const XmlNode& xmlNode)
 {
-  if(jsonValue.ValueExists("Id"))
-  {
-    m_id = jsonValue.GetString("Id");
+  XmlNode resultNode = xmlNode;
 
-    m_idHasBeenSet = true;
+  if(!resultNode.IsNull())
+  {
+    XmlNode idNode = resultNode.FirstChild("Id");
+    if(!idNode.IsNull())
+    {
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
+    }
   }
 
   return *this;
 }
 
-JsonValue ChangeMessageVisibilityBatchResultEntry::Jsonize() const
+void ChangeMessageVisibilityBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
-
   if(m_idHasBeenSet)
   {
-   payload.WithString("Id", m_id);
-
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 
-  return payload;
+}
+
+void ChangeMessageVisibilityBatchResultEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
 }
 
 } // namespace Model

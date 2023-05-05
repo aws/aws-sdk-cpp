@@ -17,7 +17,7 @@ SendAnnouncementRequest::SendAnnouncementRequest() :
     m_contentHasBeenSet(false),
     m_timeToLiveInSeconds(0),
     m_timeToLiveInSecondsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

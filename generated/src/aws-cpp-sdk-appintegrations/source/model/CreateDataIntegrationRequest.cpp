@@ -19,7 +19,7 @@ CreateDataIntegrationRequest::CreateDataIntegrationRequest() :
     m_sourceURIHasBeenSet(false),
     m_scheduleConfigHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_fileConfigurationHasBeenSet(false),
     m_objectConfigurationHasBeenSet(false)

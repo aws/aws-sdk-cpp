@@ -17,7 +17,7 @@ CreateNamedQueryRequest::CreateNamedQueryRequest() :
     m_descriptionHasBeenSet(false),
     m_databaseHasBeenSet(false),
     m_queryStringHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_workGroupHasBeenSet(false)
 {

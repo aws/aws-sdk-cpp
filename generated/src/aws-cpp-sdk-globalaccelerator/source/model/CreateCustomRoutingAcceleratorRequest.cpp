@@ -19,7 +19,7 @@ CreateCustomRoutingAcceleratorRequest::CreateCustomRoutingAcceleratorRequest() :
     m_ipAddressesHasBeenSet(false),
     m_enabled(false),
     m_enabledHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

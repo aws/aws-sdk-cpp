@@ -4,11 +4,13 @@
  */
 
 #include <aws/sqs/model/ChangeMessageVisibilityBatchRequestEntry.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -26,64 +28,77 @@ ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEnt
 {
 }
 
-ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(JsonView jsonValue) : 
+ChangeMessageVisibilityBatchRequestEntry::ChangeMessageVisibilityBatchRequestEntry(const XmlNode& xmlNode) : 
     m_idHasBeenSet(false),
     m_receiptHandleHasBeenSet(false),
     m_visibilityTimeout(0),
     m_visibilityTimeoutHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEntry::operator =(JsonView jsonValue)
+ChangeMessageVisibilityBatchRequestEntry& ChangeMessageVisibilityBatchRequestEntry::operator =(const XmlNode& xmlNode)
 {
-  if(jsonValue.ValueExists("Id"))
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
   {
-    m_id = jsonValue.GetString("Id");
-
-    m_idHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("ReceiptHandle"))
-  {
-    m_receiptHandle = jsonValue.GetString("ReceiptHandle");
-
-    m_receiptHandleHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("VisibilityTimeout"))
-  {
-    m_visibilityTimeout = jsonValue.GetInteger("VisibilityTimeout");
-
-    m_visibilityTimeoutHasBeenSet = true;
+    XmlNode idNode = resultNode.FirstChild("Id");
+    if(!idNode.IsNull())
+    {
+      m_id = Aws::Utils::Xml::DecodeEscapedXmlText(idNode.GetText());
+      m_idHasBeenSet = true;
+    }
+    XmlNode receiptHandleNode = resultNode.FirstChild("ReceiptHandle");
+    if(!receiptHandleNode.IsNull())
+    {
+      m_receiptHandle = Aws::Utils::Xml::DecodeEscapedXmlText(receiptHandleNode.GetText());
+      m_receiptHandleHasBeenSet = true;
+    }
+    XmlNode visibilityTimeoutNode = resultNode.FirstChild("VisibilityTimeout");
+    if(!visibilityTimeoutNode.IsNull())
+    {
+      m_visibilityTimeout = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(visibilityTimeoutNode.GetText()).c_str()).c_str());
+      m_visibilityTimeoutHasBeenSet = true;
+    }
   }
 
   return *this;
 }
 
-JsonValue ChangeMessageVisibilityBatchRequestEntry::Jsonize() const
+void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
-
   if(m_idHasBeenSet)
   {
-   payload.WithString("Id", m_id);
-
+      oStream << location << index << locationValue << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
   }
 
   if(m_receiptHandleHasBeenSet)
   {
-   payload.WithString("ReceiptHandle", m_receiptHandle);
-
+      oStream << location << index << locationValue << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
   }
 
   if(m_visibilityTimeoutHasBeenSet)
   {
-   payload.WithInteger("VisibilityTimeout", m_visibilityTimeout);
-
+      oStream << location << index << locationValue << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
   }
 
-  return payload;
+}
+
+void ChangeMessageVisibilityBatchRequestEntry::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_idHasBeenSet)
+  {
+      oStream << location << ".Id=" << StringUtils::URLEncode(m_id.c_str()) << "&";
+  }
+  if(m_receiptHandleHasBeenSet)
+  {
+      oStream << location << ".ReceiptHandle=" << StringUtils::URLEncode(m_receiptHandle.c_str()) << "&";
+  }
+  if(m_visibilityTimeoutHasBeenSet)
+  {
+      oStream << location << ".VisibilityTimeout=" << m_visibilityTimeout << "&";
+  }
 }
 
 } // namespace Model

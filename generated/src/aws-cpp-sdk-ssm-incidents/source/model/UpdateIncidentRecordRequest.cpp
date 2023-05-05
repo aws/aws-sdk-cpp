@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateIncidentRecordRequest::UpdateIncidentRecordRequest() : 
     m_arnHasBeenSet(false),
     m_chatChannelHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_impact(0),
     m_impactHasBeenSet(false),

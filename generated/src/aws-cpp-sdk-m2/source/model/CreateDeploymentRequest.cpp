@@ -16,7 +16,7 @@ CreateDeploymentRequest::CreateDeploymentRequest() :
     m_applicationIdHasBeenSet(false),
     m_applicationVersion(0),
     m_applicationVersionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_environmentIdHasBeenSet(false)
 {

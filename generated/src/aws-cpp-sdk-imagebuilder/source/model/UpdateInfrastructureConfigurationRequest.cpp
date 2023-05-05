@@ -24,7 +24,7 @@ UpdateInfrastructureConfigurationRequest::UpdateInfrastructureConfigurationReque
     m_terminateInstanceOnFailure(false),
     m_terminateInstanceOnFailureHasBeenSet(false),
     m_snsTopicArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_resourceTagsHasBeenSet(false),
     m_instanceMetadataOptionsHasBeenSet(false)

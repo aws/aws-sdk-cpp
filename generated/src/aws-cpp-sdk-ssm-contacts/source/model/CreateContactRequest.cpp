@@ -19,7 +19,7 @@ CreateContactRequest::CreateContactRequest() :
     m_typeHasBeenSet(false),
     m_planHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

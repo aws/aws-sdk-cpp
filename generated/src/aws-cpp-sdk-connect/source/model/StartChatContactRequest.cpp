@@ -18,7 +18,7 @@ StartChatContactRequest::StartChatContactRequest() :
     m_attributesHasBeenSet(false),
     m_participantDetailsHasBeenSet(false),
     m_initialMessageHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_chatDurationInMinutes(0),
     m_chatDurationInMinutesHasBeenSet(false),

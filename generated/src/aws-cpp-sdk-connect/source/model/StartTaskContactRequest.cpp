@@ -20,7 +20,7 @@ StartTaskContactRequest::StartTaskContactRequest() :
     m_nameHasBeenSet(false),
     m_referencesHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_scheduledTimeHasBeenSet(false),
     m_taskTemplateIdHasBeenSet(false),

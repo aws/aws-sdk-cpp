@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateClassificationJobRequest::CreateClassificationJobRequest() : 
     m_allowListIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customDataIdentifierIdsHasBeenSet(false),
     m_descriptionHasBeenSet(false),

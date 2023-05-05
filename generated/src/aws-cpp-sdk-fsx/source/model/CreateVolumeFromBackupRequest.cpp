@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateVolumeFromBackupRequest::CreateVolumeFromBackupRequest() : 
     m_backupIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_nameHasBeenSet(false),
     m_ontapConfigurationHasBeenSet(false),

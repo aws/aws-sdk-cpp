@@ -24,7 +24,7 @@ CreateChannelRequest::CreateChannelRequest() :
     m_logLevelHasBeenSet(false),
     m_maintenanceHasBeenSet(false),
     m_nameHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false),

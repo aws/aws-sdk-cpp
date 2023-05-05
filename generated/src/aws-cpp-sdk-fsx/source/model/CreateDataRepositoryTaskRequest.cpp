@@ -18,7 +18,7 @@ CreateDataRepositoryTaskRequest::CreateDataRepositoryTaskRequest() :
     m_pathsHasBeenSet(false),
     m_fileSystemIdHasBeenSet(false),
     m_reportHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_capacityToRelease(0),

@@ -16,7 +16,7 @@ StartDataIngestionJobRequest::StartDataIngestionJobRequest() :
     m_datasetNameHasBeenSet(false),
     m_ingestionInputConfigurationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -21,7 +21,7 @@ CreateChannelRequest::CreateChannelRequest() :
     m_privacy(ChannelPrivacy::NOT_SET),
     m_privacyHasBeenSet(false),
     m_metadataHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_chimeBearerHasBeenSet(false)

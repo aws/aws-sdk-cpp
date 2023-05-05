@@ -18,7 +18,7 @@ ImportAsProvisionedProductRequest::ImportAsProvisionedProductRequest() :
     m_provisioningArtifactIdHasBeenSet(false),
     m_provisionedProductNameHasBeenSet(false),
     m_physicalIdHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

@@ -48,6 +48,7 @@
 #include <aws/inspector2/model/ListMembersResult.h>
 #include <aws/inspector2/model/ListTagsForResourceResult.h>
 #include <aws/inspector2/model/ListUsageTotalsResult.h>
+#include <aws/inspector2/model/SearchVulnerabilitiesResult.h>
 #include <aws/inspector2/model/TagResourceResult.h>
 #include <aws/inspector2/model/UntagResourceResult.h>
 #include <aws/inspector2/model/UpdateConfigurationResult.h>
@@ -125,6 +126,7 @@ namespace Aws
       class ListMembersRequest;
       class ListTagsForResourceRequest;
       class ListUsageTotalsRequest;
+      class SearchVulnerabilitiesRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateConfigurationRequest;
@@ -165,6 +167,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListMembersResult, Inspector2Error> ListMembersOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, Inspector2Error> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListUsageTotalsResult, Inspector2Error> ListUsageTotalsOutcome;
+      typedef Aws::Utils::Outcome<SearchVulnerabilitiesResult, Inspector2Error> SearchVulnerabilitiesOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, Inspector2Error> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, Inspector2Error> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateConfigurationResult, Inspector2Error> UpdateConfigurationOutcome;
@@ -205,6 +208,7 @@ namespace Aws
       typedef std::future<ListMembersOutcome> ListMembersOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListUsageTotalsOutcome> ListUsageTotalsOutcomeCallable;
+      typedef std::future<SearchVulnerabilitiesOutcome> SearchVulnerabilitiesOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateConfigurationOutcome> UpdateConfigurationOutcomeCallable;
@@ -248,6 +252,7 @@ namespace Aws
     typedef std::function<void(const Inspector2Client*, const Model::ListMembersRequest&, const Model::ListMembersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMembersResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::ListUsageTotalsRequest&, const Model::ListUsageTotalsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListUsageTotalsResponseReceivedHandler;
+    typedef std::function<void(const Inspector2Client*, const Model::SearchVulnerabilitiesRequest&, const Model::SearchVulnerabilitiesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchVulnerabilitiesResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const Inspector2Client*, const Model::UpdateConfigurationRequest&, const Model::UpdateConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateConfigurationResponseReceivedHandler;

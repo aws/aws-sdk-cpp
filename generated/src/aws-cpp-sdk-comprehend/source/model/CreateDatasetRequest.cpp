@@ -19,7 +19,7 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetTypeHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

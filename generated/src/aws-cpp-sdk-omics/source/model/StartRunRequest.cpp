@@ -20,7 +20,7 @@ StartRunRequest::StartRunRequest() :
     m_parametersHasBeenSet(false),
     m_priority(0),
     m_priorityHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_runGroupIdHasBeenSet(false),

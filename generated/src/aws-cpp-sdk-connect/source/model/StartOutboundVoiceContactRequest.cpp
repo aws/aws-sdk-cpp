@@ -16,7 +16,7 @@ StartOutboundVoiceContactRequest::StartOutboundVoiceContactRequest() :
     m_destinationPhoneNumberHasBeenSet(false),
     m_contactFlowIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_sourcePhoneNumberHasBeenSet(false),
     m_queueIdHasBeenSet(false),

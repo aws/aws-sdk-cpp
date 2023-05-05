@@ -20,7 +20,7 @@ CreateRuleRequest::CreateRuleRequest() :
     m_actionsHasBeenSet(false),
     m_publishStatus(RulePublishStatus::NOT_SET),
     m_publishStatusHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 
 CreateSecretRequest::CreateSecretRequest() : 
     m_nameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_descriptionHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateJobTemplateRequest::CreateJobTemplateRequest() : 
     m_nameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_jobTemplateDataHasBeenSet(false),
     m_tagsHasBeenSet(false),

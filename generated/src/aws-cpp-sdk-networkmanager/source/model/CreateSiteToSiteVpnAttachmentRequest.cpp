@@ -16,7 +16,7 @@ CreateSiteToSiteVpnAttachmentRequest::CreateSiteToSiteVpnAttachmentRequest() :
     m_coreNetworkIdHasBeenSet(false),
     m_vpnConnectionArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

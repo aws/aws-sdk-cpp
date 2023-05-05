@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/DeleteMessageBatchRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteMessageBatchRequest::DeleteMessageBatchRequest() : 
@@ -20,36 +18,29 @@ DeleteMessageBatchRequest::DeleteMessageBatchRequest() :
 
 Aws::String DeleteMessageBatchRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=DeleteMessageBatch&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_entriesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> entriesJsonList(m_entries.size());
-   for(unsigned entriesIndex = 0; entriesIndex < entriesJsonList.GetLength(); ++entriesIndex)
-   {
-     entriesJsonList[entriesIndex].AsObject(m_entries[entriesIndex].Jsonize());
-   }
-   payload.WithArray("Entries", std::move(entriesJsonList));
-
+    unsigned entriesCount = 1;
+    for(auto& item : m_entries)
+    {
+      item.OutputToStream(ss, "DeleteMessageBatchRequestEntry.", entriesCount, "");
+      entriesCount++;
+    }
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection DeleteMessageBatchRequest::GetRequestSpecificHeaders() const
+
+void  DeleteMessageBatchRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.DeleteMessageBatch"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

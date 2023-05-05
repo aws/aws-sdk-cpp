@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/AddPermissionRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 AddPermissionRequest::AddPermissionRequest() : 
@@ -22,53 +20,46 @@ AddPermissionRequest::AddPermissionRequest() :
 
 Aws::String AddPermissionRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=AddPermission&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_labelHasBeenSet)
   {
-   payload.WithString("Label", m_label);
-
+    ss << "Label=" << StringUtils::URLEncode(m_label.c_str()) << "&";
   }
 
   if(m_aWSAccountIdsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> aWSAccountIdsJsonList(m_aWSAccountIds.size());
-   for(unsigned aWSAccountIdsIndex = 0; aWSAccountIdsIndex < aWSAccountIdsJsonList.GetLength(); ++aWSAccountIdsIndex)
-   {
-     aWSAccountIdsJsonList[aWSAccountIdsIndex].AsString(m_aWSAccountIds[aWSAccountIdsIndex]);
-   }
-   payload.WithArray("AWSAccountIds", std::move(aWSAccountIdsJsonList));
-
+    unsigned aWSAccountIdsCount = 1;
+    for(auto& item : m_aWSAccountIds)
+    {
+      ss << "AWSAccountId." << aWSAccountIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      aWSAccountIdsCount++;
+    }
   }
 
   if(m_actionsHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> actionsJsonList(m_actions.size());
-   for(unsigned actionsIndex = 0; actionsIndex < actionsJsonList.GetLength(); ++actionsIndex)
-   {
-     actionsJsonList[actionsIndex].AsString(m_actions[actionsIndex]);
-   }
-   payload.WithArray("Actions", std::move(actionsJsonList));
-
+    unsigned actionsCount = 1;
+    for(auto& item : m_actions)
+    {
+      ss << "ActionName." << actionsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      actionsCount++;
+    }
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection AddPermissionRequest::GetRequestSpecificHeaders() const
+
+void  AddPermissionRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.AddPermission"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

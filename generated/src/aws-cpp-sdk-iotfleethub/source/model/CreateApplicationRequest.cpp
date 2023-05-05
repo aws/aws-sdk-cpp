@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateApplicationRequest::CreateApplicationRequest() : 
     m_applicationNameHasBeenSet(false),
     m_applicationDescriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false)

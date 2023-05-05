@@ -4,12 +4,13 @@
  */
 
 #include <aws/sqs/model/ResponseMetadata.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -24,23 +25,44 @@ ResponseMetadata::ResponseMetadata() :
 {
 }
 
-ResponseMetadata::ResponseMetadata(JsonView jsonValue) : 
+ResponseMetadata::ResponseMetadata(const XmlNode& xmlNode) : 
     m_requestIdHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-ResponseMetadata& ResponseMetadata::operator =(JsonView jsonValue)
+ResponseMetadata& ResponseMetadata::operator =(const XmlNode& xmlNode)
 {
-  AWS_UNREFERENCED_PARAM(jsonValue);
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode requestIdNode = resultNode.FirstChild("RequestId");
+    if(!requestIdNode.IsNull())
+    {
+      m_requestId = Aws::Utils::Xml::DecodeEscapedXmlText(requestIdNode.GetText());
+      m_requestIdHasBeenSet = true;
+    }
+  }
+
   return *this;
 }
 
-JsonValue ResponseMetadata::Jsonize() const
+void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
+  if(m_requestIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+  }
 
-  return payload;
+}
+
+void ResponseMetadata::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_requestIdHasBeenSet)
+  {
+      oStream << location << ".RequestId=" << StringUtils::URLEncode(m_requestId.c_str()) << "&";
+  }
 }
 
 } // namespace Model

@@ -11,7 +11,7 @@ using namespace Aws::EC2::Model;
 using namespace Aws::Utils;
 
 PurchaseScheduledInstancesRequest::PurchaseScheduledInstancesRequest() : 
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),

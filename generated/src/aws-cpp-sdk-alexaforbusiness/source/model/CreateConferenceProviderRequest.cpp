@@ -19,7 +19,7 @@ CreateConferenceProviderRequest::CreateConferenceProviderRequest() :
     m_iPDialInHasBeenSet(false),
     m_pSTNDialInHasBeenSet(false),
     m_meetingSettingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

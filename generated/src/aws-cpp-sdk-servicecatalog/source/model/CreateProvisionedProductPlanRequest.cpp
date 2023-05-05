@@ -23,7 +23,7 @@ CreateProvisionedProductPlanRequest::CreateProvisionedProductPlanRequest() :
     m_provisionedProductNameHasBeenSet(false),
     m_provisioningArtifactIdHasBeenSet(false),
     m_provisioningParametersHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

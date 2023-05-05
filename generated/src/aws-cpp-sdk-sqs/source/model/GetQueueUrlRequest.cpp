@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/GetQueueUrlRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetQueueUrlRequest::GetQueueUrlRequest() : 
@@ -20,31 +18,24 @@ GetQueueUrlRequest::GetQueueUrlRequest() :
 
 Aws::String GetQueueUrlRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=GetQueueUrl&";
   if(m_queueNameHasBeenSet)
   {
-   payload.WithString("QueueName", m_queueName);
-
+    ss << "QueueName=" << StringUtils::URLEncode(m_queueName.c_str()) << "&";
   }
 
   if(m_queueOwnerAWSAccountIdHasBeenSet)
   {
-   payload.WithString("QueueOwnerAWSAccountId", m_queueOwnerAWSAccountId);
-
+    ss << "QueueOwnerAWSAccountId=" << StringUtils::URLEncode(m_queueOwnerAWSAccountId.c_str()) << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection GetQueueUrlRequest::GetRequestSpecificHeaders() const
+
+void  GetQueueUrlRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.GetQueueUrl"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

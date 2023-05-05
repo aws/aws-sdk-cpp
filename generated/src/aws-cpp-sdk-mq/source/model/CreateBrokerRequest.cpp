@@ -19,7 +19,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_autoMinorVersionUpgradeHasBeenSet(false),
     m_brokerNameHasBeenSet(false),
     m_configurationHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_deploymentMode(DeploymentMode::NOT_SET),
     m_deploymentModeHasBeenSet(false),

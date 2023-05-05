@@ -15,7 +15,7 @@ CreateVerifiedAccessGroupRequest::CreateVerifiedAccessGroupRequest() :
     m_descriptionHasBeenSet(false),
     m_policyDocumentHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)

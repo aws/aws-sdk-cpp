@@ -16,7 +16,7 @@ CreateCodeReviewRequest::CreateCodeReviewRequest() :
     m_nameHasBeenSet(false),
     m_repositoryAssociationArnHasBeenSet(false),
     m_typeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

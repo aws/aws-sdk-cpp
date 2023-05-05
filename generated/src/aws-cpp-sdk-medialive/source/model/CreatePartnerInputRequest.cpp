@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreatePartnerInputRequest::CreatePartnerInputRequest() : 
     m_inputIdHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

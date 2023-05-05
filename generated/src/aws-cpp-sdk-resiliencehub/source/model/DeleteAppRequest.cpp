@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 DeleteAppRequest::DeleteAppRequest() : 
     m_appArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_forceDelete(false),
     m_forceDeleteHasBeenSet(false)

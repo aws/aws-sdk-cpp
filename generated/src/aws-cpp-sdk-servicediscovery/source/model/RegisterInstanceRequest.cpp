@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 RegisterInstanceRequest::RegisterInstanceRequest() : 
     m_serviceIdHasBeenSet(false),
     m_instanceIdHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_attributesHasBeenSet(false)
 {

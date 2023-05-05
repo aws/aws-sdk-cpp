@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 StartPolicyGenerationRequest::StartPolicyGenerationRequest() : 
     m_policyGenerationDetailsHasBeenSet(false),
     m_cloudTrailDetailsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

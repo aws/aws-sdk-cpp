@@ -4,16 +4,16 @@
  */
 
 #include <aws/sqs/model/GetQueueAttributesResult.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/AmazonWebServiceResult.h>
 #include <aws/core/utils/StringUtils.h>
-#include <aws/core/utils/UnreferencedParam.h>
-#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/logging/LogMacros.h>
 
 #include <utility>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
 using namespace Aws::Utils;
 using namespace Aws;
 
@@ -21,38 +21,43 @@ GetQueueAttributesResult::GetQueueAttributesResult()
 {
 }
 
-GetQueueAttributesResult::GetQueueAttributesResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetQueueAttributesResult::GetQueueAttributesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
   *this = result;
 }
 
-GetQueueAttributesResult& GetQueueAttributesResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+GetQueueAttributesResult& GetQueueAttributesResult::operator =(const Aws::AmazonWebServiceResult<XmlDocument>& result)
 {
-  JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("Attributes"))
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "GetQueueAttributesResult"))
   {
-    Aws::Map<Aws::String, JsonView> attributesJsonMap = jsonValue.GetObject("Attributes").GetAllObjects();
-    for(auto& attributesItem : attributesJsonMap)
+    resultNode = rootNode.FirstChild("GetQueueAttributesResult");
+  }
+
+  if(!resultNode.IsNull())
+  {
+    XmlNode attributesNode = resultNode.FirstChild("Attribute");
+    if(!attributesNode.IsNull())
     {
-      m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(attributesItem.first)] = attributesItem.second.AsString();
+      XmlNode attributeEntry = attributesNode;
+      while(!attributeEntry.IsNull())
+      {
+        XmlNode keyNode = attributeEntry.FirstChild("Name");
+        XmlNode valueNode = attributeEntry.FirstChild("Value");
+        m_attributes[QueueAttributeNameMapper::GetQueueAttributeNameForName(StringUtils::Trim(keyNode.GetText().c_str()))] =
+            valueNode.GetText();
+        attributeEntry = attributeEntry.NextNode("Attribute");
+      }
+
     }
   }
 
-
-  const auto& headers = result.GetHeaderValueCollection();
-  const auto& requestIdIter = headers.find("x-amzn-requestid");
-  if(requestIdIter != headers.end())
-  {
-    m_requestId = requestIdIter->second;
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    AWS_LOGSTREAM_DEBUG("Aws::SQS::Model::GetQueueAttributesResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId() );
   }
-
-  const auto& responseMetadataIter = headers.find("x-amzn-requestid");
-  if(responseMetadataIter != headers.end())
-  {
-     // for backward compatibility for customers used to an old XML Client interface
-     m_responseMetadata.SetRequestId(responseMetadataIter->second);
-  }
-
-
   return *this;
 }

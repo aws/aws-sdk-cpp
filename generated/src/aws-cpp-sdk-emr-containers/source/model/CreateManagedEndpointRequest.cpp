@@ -19,7 +19,7 @@ CreateManagedEndpointRequest::CreateManagedEndpointRequest() :
     m_releaseLabelHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
     m_configurationOverridesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

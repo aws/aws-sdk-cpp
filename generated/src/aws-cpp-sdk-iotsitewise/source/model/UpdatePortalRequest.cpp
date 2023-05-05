@@ -19,7 +19,7 @@ UpdatePortalRequest::UpdatePortalRequest() :
     m_portalContactEmailHasBeenSet(false),
     m_portalLogoImageHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_notificationSenderEmailHasBeenSet(false),
     m_alarmsHasBeenSet(false)

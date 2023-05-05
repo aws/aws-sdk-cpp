@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/SendMessageRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SendMessageRequest::SendMessageRequest() : 
@@ -26,71 +24,63 @@ SendMessageRequest::SendMessageRequest() :
 
 Aws::String SendMessageRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=SendMessage&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_messageBodyHasBeenSet)
   {
-   payload.WithString("MessageBody", m_messageBody);
-
+    ss << "MessageBody=" << StringUtils::URLEncode(m_messageBody.c_str()) << "&";
   }
 
   if(m_delaySecondsHasBeenSet)
   {
-   payload.WithInteger("DelaySeconds", m_delaySeconds);
-
+    ss << "DelaySeconds=" << m_delaySeconds << "&";
   }
 
   if(m_messageAttributesHasBeenSet)
   {
-   JsonValue messageAttributesJsonMap;
-   for(auto& messageAttributesItem : m_messageAttributes)
-   {
-     messageAttributesJsonMap.WithObject(messageAttributesItem.first, messageAttributesItem.second.Jsonize());
-   }
-   payload.WithObject("MessageAttributes", std::move(messageAttributesJsonMap));
-
+    unsigned messageAttributesCount = 1;
+    for(auto& item : m_messageAttributes)
+    {
+      ss << "MessageAttribute." << messageAttributesCount << ".Name="
+          << StringUtils::URLEncode(item.first.c_str()) << "&";
+      item.second.OutputToStream(ss, "MessageAttribute.", messageAttributesCount, ".Value");
+      messageAttributesCount++;
+    }
   }
 
   if(m_messageSystemAttributesHasBeenSet)
   {
-   JsonValue messageSystemAttributesJsonMap;
-   for(auto& messageSystemAttributesItem : m_messageSystemAttributes)
-   {
-     messageSystemAttributesJsonMap.WithObject(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(messageSystemAttributesItem.first), messageSystemAttributesItem.second.Jsonize());
-   }
-   payload.WithObject("MessageSystemAttributes", std::move(messageSystemAttributesJsonMap));
-
+    unsigned messageSystemAttributesCount = 1;
+    for(auto& item : m_messageSystemAttributes)
+    {
+      ss << "MessageSystemAttribute." << messageSystemAttributesCount << ".Name="
+          << StringUtils::URLEncode(MessageSystemAttributeNameForSendsMapper::GetNameForMessageSystemAttributeNameForSends(item.first).c_str()) << "&";
+      item.second.OutputToStream(ss, "MessageSystemAttribute.", messageSystemAttributesCount, ".Value");
+      messageSystemAttributesCount++;
+    }
   }
 
   if(m_messageDeduplicationIdHasBeenSet)
   {
-   payload.WithString("MessageDeduplicationId", m_messageDeduplicationId);
-
+    ss << "MessageDeduplicationId=" << StringUtils::URLEncode(m_messageDeduplicationId.c_str()) << "&";
   }
 
   if(m_messageGroupIdHasBeenSet)
   {
-   payload.WithString("MessageGroupId", m_messageGroupId);
-
+    ss << "MessageGroupId=" << StringUtils::URLEncode(m_messageGroupId.c_str()) << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection SendMessageRequest::GetRequestSpecificHeaders() const
+
+void  SendMessageRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.SendMessage"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

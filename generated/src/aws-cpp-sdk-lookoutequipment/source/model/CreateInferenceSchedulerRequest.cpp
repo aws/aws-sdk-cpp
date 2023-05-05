@@ -23,7 +23,7 @@ CreateInferenceSchedulerRequest::CreateInferenceSchedulerRequest() :
     m_dataOutputConfigurationHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_serverSideKmsKeyIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

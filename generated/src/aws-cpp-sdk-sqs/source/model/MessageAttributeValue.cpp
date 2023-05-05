@@ -4,12 +4,14 @@
  */
 
 #include <aws/sqs/model/MessageAttributeValue.h>
-#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/HashingUtils.h>
 
 #include <utility>
 
-using namespace Aws::Utils::Json;
+using namespace Aws::Utils::Xml;
 using namespace Aws::Utils;
 
 namespace Aws
@@ -28,105 +30,135 @@ MessageAttributeValue::MessageAttributeValue() :
 {
 }
 
-MessageAttributeValue::MessageAttributeValue(JsonView jsonValue) : 
+MessageAttributeValue::MessageAttributeValue(const XmlNode& xmlNode) : 
     m_stringValueHasBeenSet(false),
     m_binaryValueHasBeenSet(false),
     m_stringListValuesHasBeenSet(false),
     m_binaryListValuesHasBeenSet(false),
     m_dataTypeHasBeenSet(false)
 {
-  *this = jsonValue;
+  *this = xmlNode;
 }
 
-MessageAttributeValue& MessageAttributeValue::operator =(JsonView jsonValue)
+MessageAttributeValue& MessageAttributeValue::operator =(const XmlNode& xmlNode)
 {
-  if(jsonValue.ValueExists("StringValue"))
-  {
-    m_stringValue = jsonValue.GetString("StringValue");
+  XmlNode resultNode = xmlNode;
 
-    m_stringValueHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("BinaryValue"))
+  if(!resultNode.IsNull())
   {
-    m_binaryValue = HashingUtils::Base64Decode(jsonValue.GetString("BinaryValue"));
-    m_binaryValueHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("StringListValues"))
-  {
-    Aws::Utils::Array<JsonView> stringListValuesJsonList = jsonValue.GetArray("StringListValues");
-    for(unsigned stringListValuesIndex = 0; stringListValuesIndex < stringListValuesJsonList.GetLength(); ++stringListValuesIndex)
+    XmlNode stringValueNode = resultNode.FirstChild("StringValue");
+    if(!stringValueNode.IsNull())
     {
-      m_stringListValues.push_back(stringListValuesJsonList[stringListValuesIndex].AsString());
+      m_stringValue = Aws::Utils::Xml::DecodeEscapedXmlText(stringValueNode.GetText());
+      m_stringValueHasBeenSet = true;
     }
-    m_stringListValuesHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("BinaryListValues"))
-  {
-    Aws::Utils::Array<JsonView> binaryListValuesJsonList = jsonValue.GetArray("BinaryListValues");
-    for(unsigned binaryListValuesIndex = 0; binaryListValuesIndex < binaryListValuesJsonList.GetLength(); ++binaryListValuesIndex)
+    XmlNode binaryValueNode = resultNode.FirstChild("BinaryValue");
+    if(!binaryValueNode.IsNull())
     {
-      m_binaryListValues.push_back(HashingUtils::Base64Decode(binaryListValuesJsonList[binaryListValuesIndex].AsString()));
+      m_binaryValue = HashingUtils::Base64Decode(Aws::Utils::Xml::DecodeEscapedXmlText(binaryValueNode.GetText()));
+      m_binaryValueHasBeenSet = true;
     }
-    m_binaryListValuesHasBeenSet = true;
-  }
+    XmlNode stringListValuesNode = resultNode.FirstChild("StringListValue");
+    if(!stringListValuesNode.IsNull())
+    {
+      XmlNode stringListValueMember = stringListValuesNode;
+      while(!stringListValueMember.IsNull())
+      {
+        m_stringListValues.push_back(stringListValueMember.GetText());
+        stringListValueMember = stringListValueMember.NextNode("StringListValue");
+      }
 
-  if(jsonValue.ValueExists("DataType"))
-  {
-    m_dataType = jsonValue.GetString("DataType");
+      m_stringListValuesHasBeenSet = true;
+    }
+    XmlNode binaryListValuesNode = resultNode.FirstChild("BinaryListValue");
+    if(!binaryListValuesNode.IsNull())
+    {
+      XmlNode binaryListValueMember = binaryListValuesNode;
+      while(!binaryListValueMember.IsNull())
+      {
+        binaryListValueMember = binaryListValueMember.NextNode("BinaryListValue");
+      }
 
-    m_dataTypeHasBeenSet = true;
+      m_binaryListValuesHasBeenSet = true;
+    }
+    XmlNode dataTypeNode = resultNode.FirstChild("DataType");
+    if(!dataTypeNode.IsNull())
+    {
+      m_dataType = Aws::Utils::Xml::DecodeEscapedXmlText(dataTypeNode.GetText());
+      m_dataTypeHasBeenSet = true;
+    }
   }
 
   return *this;
 }
 
-JsonValue MessageAttributeValue::Jsonize() const
+void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
 {
-  JsonValue payload;
-
   if(m_stringValueHasBeenSet)
   {
-   payload.WithString("StringValue", m_stringValue);
-
+      oStream << location << index << locationValue << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
   }
 
   if(m_binaryValueHasBeenSet)
   {
-   payload.WithString("BinaryValue", HashingUtils::Base64Encode(m_binaryValue));
+      oStream << location << index << locationValue << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
   }
 
   if(m_stringListValuesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> stringListValuesJsonList(m_stringListValues.size());
-   for(unsigned stringListValuesIndex = 0; stringListValuesIndex < stringListValuesJsonList.GetLength(); ++stringListValuesIndex)
-   {
-     stringListValuesJsonList[stringListValuesIndex].AsString(m_stringListValues[stringListValuesIndex]);
-   }
-   payload.WithArray("StringListValues", std::move(stringListValuesJsonList));
-
+      unsigned stringListValuesIdx = 1;
+      for(auto& item : m_stringListValues)
+      {
+        oStream << location << index << locationValue << ".StringListValue." << stringListValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
   }
 
   if(m_binaryListValuesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> binaryListValuesJsonList(m_binaryListValues.size());
-   for(unsigned binaryListValuesIndex = 0; binaryListValuesIndex < binaryListValuesJsonList.GetLength(); ++binaryListValuesIndex)
-   {
-     binaryListValuesJsonList[binaryListValuesIndex].AsString(HashingUtils::Base64Encode(m_binaryListValues[binaryListValuesIndex]));
-   }
-   payload.WithArray("BinaryListValues", std::move(binaryListValuesJsonList));
-
+      unsigned binaryListValuesIdx = 1;
+      for(auto& item : m_binaryListValues)
+      {
+        oStream << location << index << locationValue << ".BinaryListValue." << binaryListValuesIdx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+      }
   }
 
   if(m_dataTypeHasBeenSet)
   {
-   payload.WithString("DataType", m_dataType);
-
+      oStream << location << index << locationValue << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
   }
 
-  return payload;
+}
+
+void MessageAttributeValue::OutputToStream(Aws::OStream& oStream, const char* location) const
+{
+  if(m_stringValueHasBeenSet)
+  {
+      oStream << location << ".StringValue=" << StringUtils::URLEncode(m_stringValue.c_str()) << "&";
+  }
+  if(m_binaryValueHasBeenSet)
+  {
+      oStream << location << ".BinaryValue=" << StringUtils::URLEncode(HashingUtils::Base64Encode(m_binaryValue).c_str()) << "&";
+  }
+  if(m_stringListValuesHasBeenSet)
+  {
+      unsigned stringListValuesIdx = 1;
+      for(auto& item : m_stringListValues)
+      {
+        oStream << location << ".StringListValue." << stringListValuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_binaryListValuesHasBeenSet)
+  {
+      unsigned binaryListValuesIdx = 1;
+      for(auto& item : m_binaryListValues)
+      {
+        oStream << location << ".BinaryListValue." << binaryListValuesIdx++ << "=" << StringUtils::URLEncode(HashingUtils::Base64Encode(item).c_str()) << "&";
+      }
+  }
+  if(m_dataTypeHasBeenSet)
+  {
+      oStream << location << ".DataType=" << StringUtils::URLEncode(m_dataType.c_str()) << "&";
+  }
 }
 
 } // namespace Model

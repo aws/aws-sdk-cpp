@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 
 CreateTrustStoreRequest::CreateTrustStoreRequest() : 
     m_certificateListHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

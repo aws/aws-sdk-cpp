@@ -17,7 +17,7 @@ MonitorContactRequest::MonitorContactRequest() :
     m_contactIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
     m_allowedMonitorCapabilitiesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

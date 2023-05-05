@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/ListQueueTagsRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ListQueueTagsRequest::ListQueueTagsRequest() : 
@@ -19,25 +17,19 @@ ListQueueTagsRequest::ListQueueTagsRequest() :
 
 Aws::String ListQueueTagsRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=ListQueueTags&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection ListQueueTagsRequest::GetRequestSpecificHeaders() const
+
+void  ListQueueTagsRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.ListQueueTags"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

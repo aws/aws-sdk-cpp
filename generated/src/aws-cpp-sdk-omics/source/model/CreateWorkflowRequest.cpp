@@ -22,7 +22,7 @@ CreateWorkflowRequest::CreateWorkflowRequest() :
     m_mainHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_parameterTemplateHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),

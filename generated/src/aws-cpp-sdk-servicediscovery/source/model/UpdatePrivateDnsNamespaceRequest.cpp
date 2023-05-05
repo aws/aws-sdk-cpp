@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdatePrivateDnsNamespaceRequest::UpdatePrivateDnsNamespaceRequest() : 
     m_idHasBeenSet(false),
-    m_updaterRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_updaterRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_updaterRequestIdHasBeenSet(true),
     m_namespaceHasBeenSet(false)
 {

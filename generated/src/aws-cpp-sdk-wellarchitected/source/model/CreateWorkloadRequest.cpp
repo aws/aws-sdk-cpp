@@ -27,7 +27,7 @@ CreateWorkloadRequest::CreateWorkloadRequest() :
     m_industryHasBeenSet(false),
     m_lensesHasBeenSet(false),
     m_notesHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_discoveryConfigHasBeenSet(false),

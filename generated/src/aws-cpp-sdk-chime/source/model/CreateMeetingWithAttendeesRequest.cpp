@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateMeetingWithAttendeesRequest::CreateMeetingWithAttendeesRequest() : 
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_externalMeetingIdHasBeenSet(false),
     m_meetingHostIdHasBeenSet(false),

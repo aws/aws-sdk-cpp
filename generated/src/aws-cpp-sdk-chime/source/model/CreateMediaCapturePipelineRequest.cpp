@@ -19,7 +19,7 @@ CreateMediaCapturePipelineRequest::CreateMediaCapturePipelineRequest() :
     m_sinkType(MediaPipelineSinkType::NOT_SET),
     m_sinkTypeHasBeenSet(false),
     m_sinkArnHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_chimeSdkMeetingConfigurationHasBeenSet(false)
 {

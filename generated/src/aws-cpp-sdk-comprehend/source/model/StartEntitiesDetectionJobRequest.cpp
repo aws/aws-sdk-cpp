@@ -20,7 +20,7 @@ StartEntitiesDetectionJobRequest::StartEntitiesDetectionJobRequest() :
     m_entityRecognizerArnHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),
     m_languageCodeHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_volumeKmsKeyIdHasBeenSet(false),
     m_vpcConfigHasBeenSet(false),

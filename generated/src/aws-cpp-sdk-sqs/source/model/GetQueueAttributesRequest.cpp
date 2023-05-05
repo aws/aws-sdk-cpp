@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/GetQueueAttributesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetQueueAttributesRequest::GetQueueAttributesRequest() : 
@@ -20,36 +18,30 @@ GetQueueAttributesRequest::GetQueueAttributesRequest() :
 
 Aws::String GetQueueAttributesRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=GetQueueAttributes&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_attributeNamesHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> attributeNamesJsonList(m_attributeNames.size());
-   for(unsigned attributeNamesIndex = 0; attributeNamesIndex < attributeNamesJsonList.GetLength(); ++attributeNamesIndex)
-   {
-     attributeNamesJsonList[attributeNamesIndex].AsString(QueueAttributeNameMapper::GetNameForQueueAttributeName(m_attributeNames[attributeNamesIndex]));
-   }
-   payload.WithArray("AttributeNames", std::move(attributeNamesJsonList));
-
+    unsigned attributeNamesCount = 1;
+    for(auto& item : m_attributeNames)
+    {
+      ss << "AttributeName." << attributeNamesCount << "="
+          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item).c_str()) << "&";
+      attributeNamesCount++;
+    }
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection GetQueueAttributesRequest::GetRequestSpecificHeaders() const
+
+void  GetQueueAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.GetQueueAttributes"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

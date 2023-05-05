@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateResponsePlanRequest::CreateResponsePlanRequest() : 
     m_actionsHasBeenSet(false),
     m_chatChannelHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_displayNameHasBeenSet(false),
     m_engagementsHasBeenSet(false),

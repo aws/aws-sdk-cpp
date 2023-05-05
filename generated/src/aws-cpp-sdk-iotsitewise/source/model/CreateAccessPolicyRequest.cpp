@@ -17,7 +17,7 @@ CreateAccessPolicyRequest::CreateAccessPolicyRequest() :
     m_accessPolicyResourceHasBeenSet(false),
     m_accessPolicyPermission(Permission::NOT_SET),
     m_accessPolicyPermissionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

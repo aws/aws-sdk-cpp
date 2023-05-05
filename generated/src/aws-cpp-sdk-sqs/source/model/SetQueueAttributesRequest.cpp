@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/SetQueueAttributesRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 SetQueueAttributesRequest::SetQueueAttributesRequest() : 
@@ -20,36 +18,32 @@ SetQueueAttributesRequest::SetQueueAttributesRequest() :
 
 Aws::String SetQueueAttributesRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=SetQueueAttributes&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_attributesHasBeenSet)
   {
-   JsonValue attributesJsonMap;
-   for(auto& attributesItem : m_attributes)
-   {
-     attributesJsonMap.WithString(QueueAttributeNameMapper::GetNameForQueueAttributeName(attributesItem.first), attributesItem.second);
-   }
-   payload.WithObject("Attributes", std::move(attributesJsonMap));
-
+    unsigned attributesCount = 1;
+    for(auto& item : m_attributes)
+    {
+      ss << "Attribute." << attributesCount << ".Name="
+          << StringUtils::URLEncode(QueueAttributeNameMapper::GetNameForQueueAttributeName(item.first).c_str()) << "&";
+      ss << "Attribute." << attributesCount << ".Value="
+          << StringUtils::URLEncode(item.second.c_str()) << "&";
+      attributesCount++;
+    }
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection SetQueueAttributesRequest::GetRequestSpecificHeaders() const
+
+void  SetQueueAttributesRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.SetQueueAttributes"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

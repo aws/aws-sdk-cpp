@@ -20,7 +20,7 @@ CreateIPSetRequest::CreateIPSetRequest() :
     m_locationHasBeenSet(false),
     m_activate(false),
     m_activateHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

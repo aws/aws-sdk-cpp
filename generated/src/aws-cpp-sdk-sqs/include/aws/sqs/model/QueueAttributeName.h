@@ -37,7 +37,11 @@ namespace Model
     DeduplicationScope,
     FifoThroughputLimit,
     RedriveAllowPolicy,
-    SqsManagedSseEnabled
+    SqsManagedSseEnabled,
+    SentTimestamp,
+    ApproximateFirstReceiveTimestamp,
+    ApproximateReceiveCount,
+    SenderId
   };
 
 namespace QueueAttributeNameMapper

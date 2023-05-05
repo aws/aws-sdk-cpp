@@ -18,7 +18,7 @@ RegisterConnectorRequest::RegisterConnectorRequest() :
     m_connectorProvisioningType(ConnectorProvisioningType::NOT_SET),
     m_connectorProvisioningTypeHasBeenSet(false),
     m_connectorProvisioningConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

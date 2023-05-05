@@ -19,7 +19,7 @@ DeleteTimeSeriesRequest::DeleteTimeSeriesRequest() :
     m_aliasHasBeenSet(false),
     m_assetIdHasBeenSet(false),
     m_propertyIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

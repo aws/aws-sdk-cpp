@@ -21,7 +21,7 @@ CreateImageRequest::CreateImageRequest() :
     m_enhancedImageMetadataEnabled(false),
     m_enhancedImageMetadataEnabledHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_imageScanningConfigurationHasBeenSet(false)
 {

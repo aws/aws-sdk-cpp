@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 DisassociateIdentityProviderConfigRequest::DisassociateIdentityProviderConfigRequest() : 
     m_clusterNameHasBeenSet(false),
     m_identityProviderConfigHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

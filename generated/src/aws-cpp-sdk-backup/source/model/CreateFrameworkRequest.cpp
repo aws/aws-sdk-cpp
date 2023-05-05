@@ -16,7 +16,7 @@ CreateFrameworkRequest::CreateFrameworkRequest() :
     m_frameworkNameHasBeenSet(false),
     m_frameworkDescriptionHasBeenSet(false),
     m_frameworkControlsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true),
     m_frameworkTagsHasBeenSet(false)
 {

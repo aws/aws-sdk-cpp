@@ -12,7 +12,7 @@ using namespace Aws::Utils;
 
 CreateCapacityReservationFleetRequest::CreateCapacityReservationFleetRequest() : 
     m_allocationStrategyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_instanceTypeSpecificationsHasBeenSet(false),
     m_tenancy(FleetCapacityReservationTenancy::NOT_SET),

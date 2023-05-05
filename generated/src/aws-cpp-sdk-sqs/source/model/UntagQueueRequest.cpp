@@ -4,12 +4,10 @@
  */
 
 #include <aws/sqs/model/UntagQueueRequest.h>
-#include <aws/core/utils/json/JsonSerializer.h>
-
-#include <utility>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::SQS::Model;
-using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UntagQueueRequest::UntagQueueRequest() : 
@@ -20,36 +18,30 @@ UntagQueueRequest::UntagQueueRequest() :
 
 Aws::String UntagQueueRequest::SerializePayload() const
 {
-  JsonValue payload;
-
+  Aws::StringStream ss;
+  ss << "Action=UntagQueue&";
   if(m_queueUrlHasBeenSet)
   {
-   payload.WithString("QueueUrl", m_queueUrl);
-
+    ss << "QueueUrl=" << StringUtils::URLEncode(m_queueUrl.c_str()) << "&";
   }
 
   if(m_tagKeysHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> tagKeysJsonList(m_tagKeys.size());
-   for(unsigned tagKeysIndex = 0; tagKeysIndex < tagKeysJsonList.GetLength(); ++tagKeysIndex)
-   {
-     tagKeysJsonList[tagKeysIndex].AsString(m_tagKeys[tagKeysIndex]);
-   }
-   payload.WithArray("TagKeys", std::move(tagKeysJsonList));
-
+    unsigned tagKeysCount = 1;
+    for(auto& item : m_tagKeys)
+    {
+      ss << "TagKey." << tagKeysCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      tagKeysCount++;
+    }
   }
 
-  return payload.View().WriteReadable();
+  ss << "Version=2012-11-05";
+  return ss.str();
 }
 
-Aws::Http::HeaderValueCollection UntagQueueRequest::GetRequestSpecificHeaders() const
+
+void  UntagQueueRequest::DumpBodyToUrl(Aws::Http::URI& uri ) const
 {
-  Aws::Http::HeaderValueCollection headers;
-  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSQS.UntagQueue"));
-  return headers;
-
+  uri.SetQueryString(SerializePayload());
 }
-
-
-
-

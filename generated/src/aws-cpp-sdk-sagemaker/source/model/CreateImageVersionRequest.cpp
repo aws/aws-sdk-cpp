@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateImageVersionRequest::CreateImageVersionRequest() : 
     m_baseImageHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_imageNameHasBeenSet(false),
     m_aliasesHasBeenSet(false),

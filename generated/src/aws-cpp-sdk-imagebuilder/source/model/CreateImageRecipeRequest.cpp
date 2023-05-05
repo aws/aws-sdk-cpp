@@ -22,7 +22,7 @@ CreateImageRecipeRequest::CreateImageRecipeRequest() :
     m_tagsHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
     m_additionalInstanceConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

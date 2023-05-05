@@ -16,7 +16,7 @@ StartChangeSetRequest::StartChangeSetRequest() :
     m_catalogHasBeenSet(false),
     m_changeSetHasBeenSet(false),
     m_changeSetNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_changeSetTagsHasBeenSet(false)
 {

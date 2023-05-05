@@ -31,7 +31,7 @@ CreateIpamPoolRequest::CreateIpamPoolRequest() :
     m_allocationDefaultNetmaskLengthHasBeenSet(false),
     m_allocationResourceTagsHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_awsService(IpamPoolAwsService::NOT_SET),
     m_awsServiceHasBeenSet(false),
