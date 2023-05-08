@@ -482,26 +482,38 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return for each paginated request.</p>
-     * <p>Default: 100</p>
+     * <p>The maximum number of results to return for each paginated request. A result
+     * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
+     * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
+     * points in the result set is equal to the value of <code>maxResults</code>. The
+     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return for each paginated request.</p>
-     * <p>Default: 100</p>
+     * <p>The maximum number of results to return for each paginated request. A result
+     * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
+     * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
+     * points in the result set is equal to the value of <code>maxResults</code>. The
+     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>The maximum number of results to return for each paginated request.</p>
-     * <p>Default: 100</p>
+     * <p>The maximum number of results to return for each paginated request. A result
+     * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
+     * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
+     * points in the result set is equal to the value of <code>maxResults</code>. The
+     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return for each paginated request.</p>
-     * <p>Default: 100</p>
+     * <p>The maximum number of results to return for each paginated request. A result
+     * set is returned in the two cases, whichever occurs first.</p> <ul> <li> <p>The
+     * size of the result set is equal to 1 MB.</p> </li> <li> <p>The number of data
+     * points in the result set is equal to the value of <code>maxResults</code>. The
+     * maximum value of <code>maxResults</code> is 250.</p> </li> </ul>
      */
     inline GetAssetPropertyAggregatesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 

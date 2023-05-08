@@ -112,7 +112,7 @@ namespace Model
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
      * SiteWise is processing your request to import your data from Amazon S3.</p>
      * </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your
-     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> ��
+     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> –
      * IoT SiteWise couldn't process your request to import data from Amazon S3. You
      * can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> –
@@ -129,7 +129,7 @@ namespace Model
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
      * SiteWise is processing your request to import your data from Amazon S3.</p>
      * </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your
-     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> ��
+     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> –
      * IoT SiteWise couldn't process your request to import data from Amazon S3. You
      * can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> –
@@ -146,7 +146,7 @@ namespace Model
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
      * SiteWise is processing your request to import your data from Amazon S3.</p>
      * </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your
-     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> ��
+     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> –
      * IoT SiteWise couldn't process your request to import data from Amazon S3. You
      * can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> –
@@ -163,7 +163,7 @@ namespace Model
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
      * SiteWise is processing your request to import your data from Amazon S3.</p>
      * </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your
-     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> ��
+     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> –
      * IoT SiteWise couldn't process your request to import data from Amazon S3. You
      * can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> –
@@ -180,7 +180,7 @@ namespace Model
      * import job has been canceled.</p> </li> <li> <p> <code>RUNNING</code> – IoT
      * SiteWise is processing your request to import your data from Amazon S3.</p>
      * </li> <li> <p> <code>COMPLETED</code> – IoT SiteWise successfully completed your
-     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> ��
+     * request to import data from Amazon S3.</p> </li> <li> <p> <code>FAILED</code> –
      * IoT SiteWise couldn't process your request to import data from Amazon S3. You
      * can use logs saved in the specified error report location in Amazon S3 to
      * troubleshoot issues.</p> </li> <li> <p> <code>COMPLETED_WITH_FAILURES</code> –
