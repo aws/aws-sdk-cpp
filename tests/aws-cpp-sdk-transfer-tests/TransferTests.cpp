@@ -831,32 +831,8 @@ protected:
 
 std::map<TestType, std::shared_ptr<MockS3Client>> TransferTests::m_s3Clients({});
 
-TEST_P(TransferTests, TransferManager_ThreadExecutorJoinsAsyncOperations)
-{
-    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
-    Aws::String testFileName = MakeFilePath(RandomFileName.c_str());
-
-    ScopedTestFile testFile(testFileName, MB5, testString);
-    TransferManagerConfiguration transferManagerConfig(m_executor.get());
-    transferManagerConfig.s3Client = m_s3Clients[GetParam()];
-    Aws::Utils::Threading::Semaphore ev(0, 1);
-    transferManagerConfig.downloadProgressCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&){ ev.Release(); };
-    // When httpRequest returns with error, downloadProgressCallback will not be called.
-    transferManagerConfig.errorCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&){ ev.Release(); };
-    std::shared_ptr<TransferHandle> uploadHandle, downloadHandle;
-    {
-        auto transferManager = TransferManager::Create(transferManagerConfig);
-        uploadHandle = transferManager->UploadFile(testFileName, GetTestBucketName(), RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());
-        uploadHandle->WaitUntilFinished();
-        ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
-        downloadHandle = transferManager->DownloadFile(GetTestBucketName(), RandomFileName, MakeDownloadFileName(RandomFileName));
-    }
-    ev.WaitOne(); // ensures that the download has started; otherwise, downloadHandle's status will be NOT_STARTED
-    m_executor = nullptr; // this should join all worker threads.
-    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
-    ASSERT_EQ(TransferStatus::COMPLETED, downloadHandle->GetStatus());
-}
-
+// NOTE: this has to be the first test in the suite in order to reproduce the
+// CurlCode 56 problem in HTTP mode reliably
 TEST_P(TransferTests, TransferManager_EmptyFileTest)
 {
     const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
@@ -907,6 +883,32 @@ TEST_P(TransferTests, TransferManager_EmptyFileTest)
                                       RandomFileName,
                                       "text/plain",
                                       Aws::Map<Aws::String, Aws::String>());
+}
+
+TEST_P(TransferTests, TransferManager_ThreadExecutorJoinsAsyncOperations)
+{
+    const Aws::String RandomFileName = Aws::Utils::UUID::RandomUUID();
+    Aws::String testFileName = MakeFilePath(RandomFileName.c_str());
+
+    ScopedTestFile testFile(testFileName, MB5, testString);
+    TransferManagerConfiguration transferManagerConfig(m_executor.get());
+    transferManagerConfig.s3Client = m_s3Clients[GetParam()];
+    Aws::Utils::Threading::Semaphore ev(0, 1);
+    transferManagerConfig.downloadProgressCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&){ ev.Release(); };
+    // When httpRequest returns with error, downloadProgressCallback will not be called.
+    transferManagerConfig.errorCallback = [&ev](const TransferManager*, const std::shared_ptr<const TransferHandle>&, const Aws::Client::AWSError<Aws::S3::S3Errors>&){ ev.Release(); };
+    std::shared_ptr<TransferHandle> uploadHandle, downloadHandle;
+    {
+        auto transferManager = TransferManager::Create(transferManagerConfig);
+        uploadHandle = transferManager->UploadFile(testFileName, GetTestBucketName(), RandomFileName, "text/plain", Aws::Map<Aws::String, Aws::String>());
+        uploadHandle->WaitUntilFinished();
+        ASSERT_TRUE(WaitForObjectToPropagate(GetTestBucketName(), RandomFileName.c_str()));
+        downloadHandle = transferManager->DownloadFile(GetTestBucketName(), RandomFileName, MakeDownloadFileName(RandomFileName));
+    }
+    ev.WaitOne(); // ensures that the download has started; otherwise, downloadHandle's status will be NOT_STARTED
+    m_executor = nullptr; // this should join all worker threads.
+    ASSERT_EQ(TransferStatus::COMPLETED, uploadHandle->GetStatus());
+    ASSERT_EQ(TransferStatus::COMPLETED, downloadHandle->GetStatus());
 }
 
 TEST_P(TransferTests, TransferManager_SmallTest)
