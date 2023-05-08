@@ -758,10 +758,13 @@ namespace Aws
             auto request = m_transferConfig.getObjectTemplate;
             request.SetCustomizedAccessLogTag(m_transferConfig.customizedAccessLogTag);
             request.SetContinueRequestHandler([handle](const Aws::Http::HttpRequest*) { return handle->ShouldContinue(); });
-            request.SetRange(
-                FormatRangeSpecifier(
-                    handle->GetBytesOffset(),
-                    handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
+            if (handle->GetBytesTotalSize() != 0)
+            {
+                request.SetRange(
+                    FormatRangeSpecifier(
+                        handle->GetBytesOffset(),
+                        handle->GetBytesOffset() + handle->GetBytesTotalSize() - 1));
+            }
             request.WithBucket(handle->GetBucketName())
                    .WithKey(handle->GetKey());
 
