@@ -19,7 +19,9 @@ namespace Model
     Standard,
     G_1X,
     G_2X,
-    G_025X
+    G_025X,
+    G_4X,
+    G_8X
   };
 
 namespace WorkerTypeMapper
