@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/crypto/Sha256.h>
@@ -29,7 +29,11 @@ static void CalculateHash(Crypto::Hash& hash, const char* buffer)
     }
 }
 
-TEST(HashUpdateTest, TestSHA256Update)
+class HashUpdateTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(HashUpdateTest, TestSHA256Update)
 {
     Crypto::Sha256 hash;
     const char* buffer = "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu";
@@ -43,7 +47,7 @@ TEST(HashUpdateTest, TestSHA256Update)
     ASSERT_STREQ("cf5b16a778af8380036ce59e7b0492370b249b11e8f07a51afac45037afee9d1", hexHash.c_str());
 }
 
-TEST(HashUpdateTest, TestSHA1Update)
+TEST_F(HashUpdateTest, TestSHA1Update)
 {
     Crypto::Sha1 hash;
     const char* buffer = "abcdefghbcdefghicdefghijdefghijkefghijklfghijklmghijklmnhijklmnoijklmnopjklmnopqklmnopqrlmnopqrsmnopqrstnopqrstu";
@@ -57,7 +61,7 @@ TEST(HashUpdateTest, TestSHA1Update)
     ASSERT_STREQ("a49b2446a02c645bf419f995b67091253a04a259", hexHash.c_str());
 }
 
-TEST(HashUpdateTest, TestMD5Update)
+TEST_F(HashUpdateTest, TestMD5Update)
 {
     Crypto::MD5 hash;
     const char* buffer = "12345678901234567890123456789012345678901234567890123456789012345678901234567890";
@@ -71,7 +75,7 @@ TEST(HashUpdateTest, TestMD5Update)
     ASSERT_STREQ("V+30oivjyVWsSdouIQe2eg==", base64Hash.c_str());
 }
 
-TEST(HashUpdateTest, TestCRC32Update)
+TEST_F(HashUpdateTest, TestCRC32Update)
 {
     Crypto::CRC32 hash;
 
@@ -93,7 +97,7 @@ TEST(HashUpdateTest, TestCRC32Update)
     ASSERT_STREQ("72103906", hexHash.c_str());
 }
 
-TEST(HashUpdateTest, TestCRC32CUpdate)
+TEST_F(HashUpdateTest, TestCRC32CUpdate)
 {
     Crypto::CRC32C hash;
 

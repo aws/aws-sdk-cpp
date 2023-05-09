@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/Semaphore.h>
 #include <atomic>
@@ -11,7 +11,11 @@
 
 using namespace Aws::Utils::Threading;
 
-TEST(DefaultExecutor, ThreadsJoinOnDestructionTest)
+class DefaultExecutorTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(DefaultExecutorTest, ThreadsJoinOnDestructionTest)
 {
     std::atomic<int> i(1);
     {
@@ -27,7 +31,7 @@ TEST(DefaultExecutor, ThreadsJoinOnDestructionTest)
     ASSERT_EQ(30, i.load());
 }
 
-TEST(DefaultExecutor, ThreadsDetachIfNotShuttingDown)
+TEST_F(DefaultExecutorTest, ThreadsDetachIfNotShuttingDown)
 {
     using namespace std::chrono;
     std::atomic<int> i(1);

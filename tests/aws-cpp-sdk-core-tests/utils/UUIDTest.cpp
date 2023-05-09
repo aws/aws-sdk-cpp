@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/UUID.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
@@ -11,7 +11,11 @@
 
 using namespace Aws::Utils;
 
-TEST(UUIDTest, TestPlatformGeneratesUUID)
+class UUIDTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(UUIDTest, TestPlatformGeneratesUUID)
 {
     Aws::Set<Aws::String> generatedUUids;
 
@@ -33,7 +37,7 @@ TEST(UUIDTest, TestPlatformGeneratesUUID)
     }    
 }
 
-TEST(UUIDTest, TestUUIDToStringConversion)
+TEST_F(UUIDTest, TestUUIDToStringConversion)
 {
     ByteBuffer rawUuuid = HashingUtils::HexDecode("f81d4fae7dec11d0a76500a0c91e6bf6");
     const char* expectedStr = "F81D4FAE-7DEC-11D0-A765-00A0C91E6BF6";
@@ -43,7 +47,7 @@ TEST(UUIDTest, TestUUIDToStringConversion)
     ASSERT_STREQ(expectedStr, convertedStr.c_str());
 }
 
-TEST(UUIDTest, TestUUIDFromStringConversion)
+TEST_F(UUIDTest, TestUUIDFromStringConversion)
 {
     Aws::String originalStr = "F81D4FAE-7DEC-11D0-A765-00A0C91E6BF6";
 
@@ -52,7 +56,7 @@ TEST(UUIDTest, TestUUIDFromStringConversion)
     ASSERT_STREQ(originalStr.c_str(), convertedStr.c_str());
 }
 
-TEST(UUIDTest, TestPseudoRandomUUID)
+TEST_F(UUIDTest, TestPseudoRandomUUID)
 {
     Aws::UnorderedSet<Aws::String> generatedUUids;
 
@@ -75,7 +79,7 @@ TEST(UUIDTest, TestPseudoRandomUUID)
     ASSERT_EQ(10000u, generatedUUids.size());
 }
 
-TEST(UUIDTest, TestPseudoRandomParallelUUID)
+TEST_F(UUIDTest, TestPseudoRandomParallelUUID)
 {
     Aws::UnorderedSet<Aws::String> generatedAllUUids;
 

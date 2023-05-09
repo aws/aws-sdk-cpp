@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/internal/AWSHttpResourceClient.h>
@@ -31,7 +31,7 @@ namespace Aws
 
 namespace
 {
-    class AWSHttpResourceClientTest : public ::testing::Test
+    class AWSHttpResourceClientTest : public Aws::Testing::AwsCppSdkGTestSuite
     {
     public:
         AWSHttpResourceClientTest()

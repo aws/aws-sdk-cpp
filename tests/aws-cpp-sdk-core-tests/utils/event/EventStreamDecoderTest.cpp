@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/event-stream/event_stream.h>
 #include <aws/core/utils/event/EventStreamDecoder.h>
 #include <aws/testing/mocks/event/MockEventStreamHandler.h>
@@ -34,7 +34,11 @@ namespace
         aws_event_stream_headers_list_cleanup(&eventStreamHeaders);
     }
 
-    TEST(EventStreamDecoderTest, EventStreamHeaderValueTest)
+    class EventStreamDecoderTest : public Aws::Testing::AwsCppSdkGTestSuite
+    {
+    };
+
+    TEST_F(EventStreamDecoderTest, EventStreamHeaderValueTest)
     {
         aws_array_list headers;
         aws_event_stream_header_value_pair eventHeader;
@@ -124,7 +128,7 @@ namespace
         aws_event_stream_headers_list_cleanup(&headers);
     }
 
-    TEST(EventStreamDecoderTest, RecordsEventMessageTest)
+    TEST_F(EventStreamDecoderTest, RecordsEventMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -158,7 +162,7 @@ namespace
         aws_event_stream_message_clean_up(&recordsMessage);
     }
 
-    TEST(EventStreamDecoderTest, ContEventMessageTest)
+    TEST_F(EventStreamDecoderTest, ContEventMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -190,7 +194,7 @@ namespace
         aws_event_stream_message_clean_up(&contMessage);
     }
 
-    TEST(EventStreamDecoderTest, ProgressEventMessageTest)
+    TEST_F(EventStreamDecoderTest, ProgressEventMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -230,7 +234,7 @@ namespace
         aws_event_stream_message_clean_up(&progressMessage);
     }
 
-    TEST(EventStreamDecoderTest, StatsEventMessageTest)
+    TEST_F(EventStreamDecoderTest, StatsEventMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -270,7 +274,7 @@ namespace
         aws_event_stream_message_clean_up(&statsMessage);
     }
 
-    TEST(EventStreamDecoderTest, EndEventMessageTest)
+    TEST_F(EventStreamDecoderTest, EndEventMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -302,7 +306,7 @@ namespace
         aws_event_stream_message_clean_up(&endMessage);
     }
 
-    TEST(EventStreamDecoderTest, RequestLevelErrorMessageTest)
+    TEST_F(EventStreamDecoderTest, RequestLevelErrorMessageTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -335,7 +339,7 @@ namespace
         aws_event_stream_message_clean_up(&requestLevelErrorMessage);
     }
 
-    TEST(EventStreamDecoderTest, RequestLevelExceptionTest)
+    TEST_F(EventStreamDecoderTest, RequestLevelExceptionTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -369,7 +373,7 @@ namespace
         aws_event_stream_message_clean_up(&requestLevelExceptionMessage);
     }
 
-    TEST(EventStreamDecoderTest, IncompleteAndMultipleMessagesTest)
+    TEST_F(EventStreamDecoderTest, IncompleteAndMultipleMessagesTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);
@@ -493,7 +497,7 @@ namespace
         aws_event_stream_message_clean_up(&endMessage);
     }
 
-    TEST(EventStreamDecoderTest, BadInternalPayloadTest)
+    TEST_F(EventStreamDecoderTest, BadInternalPayloadTest)
     {
         MockEventStreamHandler handler;
         MockEventStreamDecoder decoder(&handler);

@@ -3,13 +3,13 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/platform/Environment.h>
 #include <aws/testing/platform/PlatformTesting.h>
 
 #include <aws/core/config/defaults/ClientConfigurationDefaults.h>
 
-class ClientConfigurationDefaultsTest : public ::testing::Test
+class ClientConfigurationDefaultsTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 
 public:

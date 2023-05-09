@@ -4,7 +4,7 @@
  */
 
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -30,7 +30,11 @@ public:
     }
 };
 
-TEST(RetryStrategyTest, TestDefaultRetryQuotaContainer)
+class RetryStrategyTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(RetryStrategyTest, TestDefaultRetryQuotaContainer)
 {
     AWSError<CoreErrors> requestTimeoutError(CoreErrors::REQUEST_TIMEOUT, true);
     AWSError<CoreErrors> retryableError(CoreErrors::NETWORK_CONNECTION, true);
@@ -58,7 +62,7 @@ TEST(RetryStrategyTest, TestDefaultRetryQuotaContainer)
     ASSERT_FALSE(retryQuotaContainer.AcquireRetryQuota(3));
 }
 
-TEST(RetryStrategyTest, TestStandardRetryStrategy)
+TEST_F(RetryStrategyTest, TestStandardRetryStrategy)
 {
     AWSError<CoreErrors> requestTimeoutError(CoreErrors::REQUEST_TIMEOUT, true);
     AWSError<CoreErrors> retryableError(CoreErrors::NETWORK_CONNECTION, true);

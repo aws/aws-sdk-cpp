@@ -3,8 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/core/client/AWSError.h>
 #include <aws/core/client/CoreErrors.h>
@@ -291,7 +291,11 @@ typedef Outcome<JsonServiceOperationResult, JsonServiceError> JsonServiceOperati
 typedef Outcome<NoResult, XmlServiceError> XmlServiceNoResultOperationOutcome;
 typedef Outcome<NoResult, JsonServiceError> JsonServiceNoResultOperationOutcome;
 
-TEST(HttpResponseOutcomeTest, TestMoveFromHttpResponse)
+class OutcomeTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(OutcomeTest, HttpResponseOutcomeTestMoveFromHttpResponse)
 {
     HttpResponseOutcome httpResponseOutcome(CreateHttpResponse());
     AWS_ASSERT_SUCCESS(httpResponseOutcome);
@@ -302,7 +306,7 @@ TEST(HttpResponseOutcomeTest, TestMoveFromHttpResponse)
     ASSERT_STREQ(HEADER_VALUE_2, httpResponseOutcome.GetResult()->GetHeader(HEADER_KEY_2).c_str());
 }
 
-TEST(HttpResponseOutcomeTest, TestMoveFromAWSError)
+TEST_F(OutcomeTest, HttpResponseOutcomeTestMoveFromAWSError)
 {
     HttpResponseOutcome httpResponseOutcome(CreateAwsError());
     ASSERT_FALSE(httpResponseOutcome.IsSuccess());
@@ -311,7 +315,7 @@ TEST(HttpResponseOutcomeTest, TestMoveFromAWSError)
     ASSERT_STREQ(ERROR_MESSAGE, httpResponseOutcome.GetError().GetMessage().c_str());
 }
 
-TEST(StreamOutcomeTest, TestMoveFromAmazonWebServiceResult)
+TEST_F(OutcomeTest, StreamOutcomeTestMoveFromAmazonWebServiceResult)
 {
     auto httpResponse = CreateHttpResponse(RESPONSE_PAYLOAD);
     StreamOutcome streamOutcome(AmazonWebServiceResult<Stream::ResponseStream>(httpResponse->SwapResponseStreamOwnership(),
@@ -328,7 +332,7 @@ TEST(StreamOutcomeTest, TestMoveFromAmazonWebServiceResult)
     ASSERT_STREQ(RESPONSE_PAYLOAD, ss.str().c_str());
 }
 
-TEST(StreamOutcomeTest, TestMoveFromHttpResponseOutcome)
+TEST_F(OutcomeTest, StreamOutcomeTestMoveFromHttpResponseOutcome)
 {
     HttpResponseOutcome httpResponseOutcome(CreateAwsError());
     // Only AWSError will be moved to streamOutcome, because there is no conversion from std::shared_ptr<HttpResponse> to AmazonWebServiceResult<ResponseStream>
@@ -339,7 +343,7 @@ TEST(StreamOutcomeTest, TestMoveFromHttpResponseOutcome)
     ASSERT_STREQ(ERROR_MESSAGE, streamOutcome.GetError().GetMessage().c_str());
 }
 
-TEST(XmlOutcomeTest, TestMoveFromAmazonWebServiceResult)
+TEST_F(OutcomeTest, XmlOutcomeTestMoveFromAmazonWebServiceResult)
 {
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
     XmlOutcome xmlOutcome(CreateAmazonWebServiceResult<Xml::XmlDocument>(xmlDocument, HttpResponseCode::OK));
@@ -351,7 +355,7 @@ TEST(XmlOutcomeTest, TestMoveFromAmazonWebServiceResult)
     ASSERT_STREQ(HEADER_VALUE_2, headers[HEADER_KEY_2].c_str());
 }
 
-TEST(XmlOutcomeTest, TestMoveFromHttpResponseOutcome)
+TEST_F(OutcomeTest, XmlOutcomeTestMoveFromHttpResponseOutcome)
 {
     HttpResponseOutcome httpResponseOutcome(CreateAwsError());
     // Only AWSError will be moved to streamOutcome, because there is no conversion from std::shared_ptr<HttpResponse> to AmazonWebServiceResult<XmlDocument>
@@ -362,7 +366,7 @@ TEST(XmlOutcomeTest, TestMoveFromHttpResponseOutcome)
     ASSERT_STREQ(ERROR_MESSAGE, xmlOutcome.GetError().GetMessage().c_str());
 }
 
-TEST(JsonOutcomeTest, TestMoveFromAmazonWebServiceResult)
+TEST_F(OutcomeTest, JsonOutcomeTestMoveFromAmazonWebServiceResult)
 {
     Json::JsonValue jsonValue(JSON_RESULT_PAYLOAD);
     JsonOutcome jsonOutcome(CreateAmazonWebServiceResult<Json::JsonValue>(jsonValue, HttpResponseCode::OK));
@@ -374,7 +378,7 @@ TEST(JsonOutcomeTest, TestMoveFromAmazonWebServiceResult)
     ASSERT_STREQ(HEADER_VALUE_2, headers[HEADER_KEY_2].c_str());
 }
 
-TEST(JsonOutcomeTest, TestMoveFromHttpResponseOutcome)
+TEST_F(OutcomeTest, JsonOutcomeTestMoveFromHttpResponseOutcome)
 {
     HttpResponseOutcome httpResponseOutcome(CreateAwsError());
     // Only AWSError will be moved to streamOutcome, because there is no conversion from std::shared_ptr<HttpResponse> to AmazonWebServiceResult<JsonValue>
@@ -386,7 +390,7 @@ TEST(JsonOutcomeTest, TestMoveFromHttpResponseOutcome)
 }
 
 // AmazonWebServiceResult<XmlDocument> is converted to XmlServiceOperationResult and AWSError<CoreErrors> is converted to XmlServiceError.
-TEST(XmlServiceOperationOutcomeTest, TestMoveFromXmlOutcome)
+TEST_F(OutcomeTest, XmlServiceOperationOutcomeTestMoveFromXmlOutcome)
 {
     // Success case
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
@@ -407,7 +411,7 @@ TEST(XmlServiceOperationOutcomeTest, TestMoveFromXmlOutcome)
 }
 
 // AmazonWebServiceResult<JsonValue> is converted to JsonServiceOperationResult and AWSError<CoreErrors> is converted to JsonServiceError.
-TEST(JsonServiceOperationOutcomeTest, TestMoveFromJsonOutcome)
+TEST_F(OutcomeTest, JsonServiceOperationOutcomeTestMoveFromJsonOutcome)
 {
     // Success case
     Json::JsonValue jsonValue(JSON_RESULT_PAYLOAD);
@@ -427,7 +431,7 @@ TEST(JsonServiceOperationOutcomeTest, TestMoveFromJsonOutcome)
 }
 
 // AmazonWebServiceResult<XmlDocument> is converted to NoResult and AWSError<CoreErrors> is converted to XmlServiceError.
-TEST(XmlServiceNoResultOperationOutcomeTest, TestMoveFromXmlOutcome)
+TEST_F(OutcomeTest, XmlServiceNoResultOperationOutcomeTestMoveFromXmlOutcome)
 {
     // Success case
     Xml::XmlDocument xmlDocument = Xml::XmlDocument::CreateFromXmlString(XML_RESULT_PAYLOAD);
@@ -447,7 +451,7 @@ TEST(XmlServiceNoResultOperationOutcomeTest, TestMoveFromXmlOutcome)
 }
 
 // AmazonWebServiceResult<JsonValue> is converted to NoResult and AWSError<CoreErrors> is converted to JsonServiceError.
-TEST(JsonServiceNoResultOperationOutcomeTest, TestMoveFromJsonOutcome)
+TEST_F(OutcomeTest, JsonServiceNoResultOperationOutcomeTestMoveFromJsonOutcome)
 {
     // Success case
     Json::JsonValue jsonValue;

@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/ARN.h>
 
 using namespace Aws::Utils;
 
-TEST(ARNTest, TestHappyPath)
+class ARNTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(ARNTest, TestHappyPath)
 {
     ARN arn("arn:aws:s3:us-east-1:123456789012:bucket");
     ASSERT_TRUE(arn);
@@ -45,7 +49,7 @@ TEST(ARNTest, TestHappyPath)
     ASSERT_EQ("whatever:is:put?/here, will be considered:as+_0@@ resource", arn3.GetResource());
 }
 
-TEST(ARNTest, TestInvalidARN)
+TEST_F(ARNTest, TestInvalidARN)
 {
     // No "arn" prefix
     ASSERT_FALSE(ARN("aws:s3:us-east-1:123456789012:bucket"));

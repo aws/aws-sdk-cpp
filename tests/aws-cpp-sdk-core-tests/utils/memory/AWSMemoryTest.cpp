@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/memory/AWSMemory.h>
 
 const char ALLOCATION_TAG[] = "AWSMemoryTestTag";
@@ -12,14 +12,18 @@ struct A { virtual ~A() = default; };
 struct B { virtual ~B() = default; };
 struct C : A, B { };
 
+class AWSMemoryTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
 #if !defined(_MSC_VER) || defined(_CPPRTTI)
-TEST(AWSMemory, DeleteViaFirstInterface)
+TEST_F(AWSMemoryTest, DeleteViaFirstInterface)
 {
     A* a = Aws::New<C>(ALLOCATION_TAG);
     Aws::Delete(a);
 }
 
-TEST(AWSMemory, DeleteViaSecondInterface)
+TEST_F(AWSMemoryTest, DeleteViaSecondInterface)
 {
     C* c = Aws::New<C>(ALLOCATION_TAG);
     B* b = c;
@@ -95,7 +99,7 @@ struct StaticUniquePtrDtorOrderTestWrapper
 
 static bool staticTestIsRun = false;
 
-TEST(AWSMemory, StaticUniquePtrDtorOrder)
+TEST_F(AWSMemoryTest, StaticUniquePtrDtorOrder)
 {
     if(staticTestIsRun) {
         GTEST_SKIP() << "Skipping the repeat of StaticUniquePtrDtorOrder test as it cannot be repeated.";

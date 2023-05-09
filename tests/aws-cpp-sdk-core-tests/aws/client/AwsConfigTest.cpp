@@ -2,7 +2,7 @@
 * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 * SPDX-License-Identifier: Apache-2.0.
 */
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/HashingUtils.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
@@ -16,7 +16,7 @@
 #include <aws/core/utils/logging/LogMacros.h>
 
 
-class AWSConfigTestSuite : public ::testing::Test
+class AWSConfigTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 protected:
   void SetUp()

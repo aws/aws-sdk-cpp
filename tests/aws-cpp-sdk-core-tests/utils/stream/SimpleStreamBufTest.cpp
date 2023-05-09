@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/stream/SimpleStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -18,9 +18,13 @@ const char replacementBuf[] = "Boom, I ruined your st";
 const char concatStr[] = "This Boom, I ruined your st";
 
 
+class SimpleStreamBufTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
 //Write to an empty buffer via a stream interface, and make sure the buffer
 //contains the data.
-TEST(SimpleStreamBufTest, TestStreamWriteToPrefilledBuffer)
+TEST_F(SimpleStreamBufTest, TestStreamWriteToPrefilledBuffer)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -30,7 +34,7 @@ TEST(SimpleStreamBufTest, TestStreamWriteToPrefilledBuffer)
 }
 
 //test read seeking from the beginning
-TEST(SimpleStreamBufTest, TestStreamReadSeekBeg)
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekBeg)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -44,7 +48,7 @@ TEST(SimpleStreamBufTest, TestStreamReadSeekBeg)
 }
 
 //test read seeking from current pos.
-TEST(SimpleStreamBufTest, TestStreamReadSeekCur)
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekCur)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -58,7 +62,7 @@ TEST(SimpleStreamBufTest, TestStreamReadSeekCur)
 }
 
 //test read seeking from the end.
-TEST(SimpleStreamBufTest, TestStreamReadSeekEnd)
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekEnd)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -73,7 +77,7 @@ TEST(SimpleStreamBufTest, TestStreamReadSeekEnd)
 }
 
 //test write seeking from the beginning.
-TEST(SimpleStreamBufTest, TestStreamWriteSeekBeg)
+TEST_F(SimpleStreamBufTest, TestStreamWriteSeekBeg)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -86,7 +90,7 @@ TEST(SimpleStreamBufTest, TestStreamWriteSeekBeg)
 }
 
 //test write seeking from the end.
-TEST(SimpleStreamBufTest, TestStreamWriteSeekEnd)
+TEST_F(SimpleStreamBufTest, TestStreamWriteSeekEnd)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -99,7 +103,7 @@ TEST(SimpleStreamBufTest, TestStreamWriteSeekEnd)
     ASSERT_STREQ(concatStr, streamBuf.str().c_str());
 }
 
-TEST(SimpleStreamBufTest, TestZeroLengthSeekFromEnd)
+TEST_F(SimpleStreamBufTest, TestZeroLengthSeekFromEnd)
 {
     SimpleStreamBuf streamBuf;
     Aws::IOStream ioStream(&streamBuf);
@@ -116,7 +120,7 @@ TEST(SimpleStreamBufTest, TestZeroLengthSeekFromEnd)
     ASSERT_TRUE(ioStream.eof());
 }
 
-TEST(SimpleStreamBufTest, SetStr)
+TEST_F(SimpleStreamBufTest, SetStr)
 {
     SimpleStreamBuf streamBuf;
     streamBuf.str(bufferStr);
@@ -124,7 +128,7 @@ TEST(SimpleStreamBufTest, SetStr)
     ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
 }
 
-TEST(SimpleStreamBufTest, StringConstructor)
+TEST_F(SimpleStreamBufTest, StringConstructor)
 {
     SimpleStreamBuf streamBuf(bufferStr);
     ASSERT_STREQ(bufferStr, streamBuf.str().c_str());

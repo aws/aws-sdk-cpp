@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/event-stream/event_stream.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -33,15 +33,17 @@ namespace
                                     "<RequestId>RequestId</RequestId>"
                                     "</Error>";
 
-    class EventStreamTest : public ::testing::Test
+    class EventStreamTest : public Aws::Testing::AwsCppSdkGTestSuite
     {
     public:
         static aws_event_stream_message eventStreamMessage;
         static aws_array_list eventStreamHeaders;
 
     protected:
-        static void SetUpTestCase()
+        static void SetUpTestSuite()
         {
+            Aws::Testing::AwsCppSdkGTestSuite::SetUpTestSuite();
+
             // Assemble Records Message
             // Headers
             ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_headers_list_init(&eventStreamHeaders, Aws::get_aws_allocator()));
@@ -61,10 +63,12 @@ namespace
             ASSERT_EQ(AWS_OP_SUCCESS, aws_event_stream_message_init(&eventStreamMessage, Aws::get_aws_allocator(), &eventStreamHeaders, &payloadBuf));
         }
 
-        static void TearDownTestCase()
+        static void TearDownTestSuite()
         {
             aws_event_stream_message_clean_up(&eventStreamMessage);
             aws_event_stream_headers_list_cleanup(&eventStreamHeaders);
+
+            Aws::Testing::AwsCppSdkGTestSuite::TearDownTestSuite();
         }
     };
 
