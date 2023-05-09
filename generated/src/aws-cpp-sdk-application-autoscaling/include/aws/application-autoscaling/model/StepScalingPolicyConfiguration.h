@@ -228,7 +228,8 @@ namespace Model
      * groups and a default value of 300 for the following scalable targets:</p> <ul>
      * <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
      * <p>ECS services</p> </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune
-     * clusters</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
+     * clusters</p> </li> <li> <p>SageMaker Serverless endpoint provisioned
+     * concurrency</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
      * Fleets</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all other
      * scalable targets, the default value is 0:</p> <ul> <li> <p>Amazon Comprehend
      * document classification and entity recognizer endpoints</p> </li> <li>
@@ -262,7 +263,8 @@ namespace Model
      * groups and a default value of 300 for the following scalable targets:</p> <ul>
      * <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
      * <p>ECS services</p> </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune
-     * clusters</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
+     * clusters</p> </li> <li> <p>SageMaker Serverless endpoint provisioned
+     * concurrency</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
      * Fleets</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all other
      * scalable targets, the default value is 0:</p> <ul> <li> <p>Amazon Comprehend
      * document classification and entity recognizer endpoints</p> </li> <li>
@@ -296,7 +298,8 @@ namespace Model
      * groups and a default value of 300 for the following scalable targets:</p> <ul>
      * <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
      * <p>ECS services</p> </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune
-     * clusters</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
+     * clusters</p> </li> <li> <p>SageMaker Serverless endpoint provisioned
+     * concurrency</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
      * Fleets</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all other
      * scalable targets, the default value is 0:</p> <ul> <li> <p>Amazon Comprehend
      * document classification and entity recognizer endpoints</p> </li> <li>
@@ -330,7 +333,8 @@ namespace Model
      * groups and a default value of 300 for the following scalable targets:</p> <ul>
      * <li> <p>AppStream 2.0 fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li>
      * <p>ECS services</p> </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune
-     * clusters</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
+     * clusters</p> </li> <li> <p>SageMaker Serverless endpoint provisioned
+     * concurrency</p> </li> <li> <p>SageMaker endpoint variants</p> </li> <li> <p>Spot
      * Fleets</p> </li> <li> <p>Custom resources</p> </li> </ul> <p>For all other
      * scalable targets, the default value is 0:</p> <ul> <li> <p>Amazon Comprehend
      * document classification and entity recognizer endpoints</p> </li> <li>

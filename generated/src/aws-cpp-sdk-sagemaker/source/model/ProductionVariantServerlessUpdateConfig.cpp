@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/sagemaker/model/ProductionVariantServerlessConfig.h>
+#include <aws/sagemaker/model/ProductionVariantServerlessUpdateConfig.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -18,9 +18,7 @@ namespace SageMaker
 namespace Model
 {
 
-ProductionVariantServerlessConfig::ProductionVariantServerlessConfig() : 
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
+ProductionVariantServerlessUpdateConfig::ProductionVariantServerlessUpdateConfig() : 
     m_maxConcurrency(0),
     m_maxConcurrencyHasBeenSet(false),
     m_provisionedConcurrency(0),
@@ -28,9 +26,7 @@ ProductionVariantServerlessConfig::ProductionVariantServerlessConfig() :
 {
 }
 
-ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView jsonValue) : 
-    m_memorySizeInMB(0),
-    m_memorySizeInMBHasBeenSet(false),
+ProductionVariantServerlessUpdateConfig::ProductionVariantServerlessUpdateConfig(JsonView jsonValue) : 
     m_maxConcurrency(0),
     m_maxConcurrencyHasBeenSet(false),
     m_provisionedConcurrency(0),
@@ -39,15 +35,8 @@ ProductionVariantServerlessConfig::ProductionVariantServerlessConfig(JsonView js
   *this = jsonValue;
 }
 
-ProductionVariantServerlessConfig& ProductionVariantServerlessConfig::operator =(JsonView jsonValue)
+ProductionVariantServerlessUpdateConfig& ProductionVariantServerlessUpdateConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("MemorySizeInMB"))
-  {
-    m_memorySizeInMB = jsonValue.GetInteger("MemorySizeInMB");
-
-    m_memorySizeInMBHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("MaxConcurrency"))
   {
     m_maxConcurrency = jsonValue.GetInteger("MaxConcurrency");
@@ -65,15 +54,9 @@ ProductionVariantServerlessConfig& ProductionVariantServerlessConfig::operator =
   return *this;
 }
 
-JsonValue ProductionVariantServerlessConfig::Jsonize() const
+JsonValue ProductionVariantServerlessUpdateConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_memorySizeInMBHasBeenSet)
-  {
-   payload.WithInteger("MemorySizeInMB", m_memorySizeInMB);
-
-  }
 
   if(m_maxConcurrencyHasBeenSet)
   {

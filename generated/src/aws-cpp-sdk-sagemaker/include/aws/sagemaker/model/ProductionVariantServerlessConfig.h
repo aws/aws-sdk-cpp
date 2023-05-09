@@ -85,6 +85,31 @@ namespace Model
      */
     inline ProductionVariantServerlessConfig& WithMaxConcurrency(int value) { SetMaxConcurrency(value); return *this;}
 
+
+    /**
+     * <p>The amount of provisioned concurrency to allocate for the serverless
+     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     */
+    inline int GetProvisionedConcurrency() const{ return m_provisionedConcurrency; }
+
+    /**
+     * <p>The amount of provisioned concurrency to allocate for the serverless
+     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     */
+    inline bool ProvisionedConcurrencyHasBeenSet() const { return m_provisionedConcurrencyHasBeenSet; }
+
+    /**
+     * <p>The amount of provisioned concurrency to allocate for the serverless
+     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     */
+    inline void SetProvisionedConcurrency(int value) { m_provisionedConcurrencyHasBeenSet = true; m_provisionedConcurrency = value; }
+
+    /**
+     * <p>The amount of provisioned concurrency to allocate for the serverless
+     * endpoint. Should be less than or equal to <code>MaxConcurrency</code>.</p>
+     */
+    inline ProductionVariantServerlessConfig& WithProvisionedConcurrency(int value) { SetProvisionedConcurrency(value); return *this;}
+
   private:
 
     int m_memorySizeInMB;
@@ -92,6 +117,9 @@ namespace Model
 
     int m_maxConcurrency;
     bool m_maxConcurrencyHasBeenSet = false;
+
+    int m_provisionedConcurrency;
+    bool m_provisionedConcurrencyHasBeenSet = false;
   };
 
 } // namespace Model

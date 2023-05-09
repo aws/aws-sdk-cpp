@@ -130,7 +130,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
 
@@ -185,7 +187,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
@@ -240,7 +244,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
@@ -295,7 +301,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
 
@@ -350,7 +358,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
 
@@ -405,7 +415,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingActivitiesRequest& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
 
@@ -460,7 +472,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingActivitiesRequest& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
 
@@ -515,7 +529,9 @@ namespace Model
      * group name. Example: <code>replication-group/mycluster</code>.</p> </li> <li>
      * <p>Neptune cluster - The resource type is <code>cluster</code> and the unique
      * identifier is the cluster name. Example: <code>cluster:mycluster</code>.</p>
-     * </li> </ul>
+     * </li> <li> <p>SageMaker Serverless endpoint - The resource type is
+     * <code>variant</code> and the unique identifier is the resource ID. Example:
+     * <code>endpoint/my-end-point/variant/KMeansClustering</code>.</p> </li> </ul>
      */
     inline DescribeScalingActivitiesRequest& WithResourceId(const char* value) { SetResourceId(value); return *this;}
 
@@ -564,7 +580,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline const ScalableDimension& GetScalableDimension() const{ return m_scalableDimension; }
 
@@ -612,7 +630,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline bool ScalableDimensionHasBeenSet() const { return m_scalableDimensionHasBeenSet; }
 
@@ -660,7 +680,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline void SetScalableDimension(const ScalableDimension& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = value; }
 
@@ -708,7 +730,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline void SetScalableDimension(ScalableDimension&& value) { m_scalableDimensionHasBeenSet = true; m_scalableDimension = std::move(value); }
 
@@ -756,7 +780,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline DescribeScalingActivitiesRequest& WithScalableDimension(const ScalableDimension& value) { SetScalableDimension(value); return *this;}
 
@@ -804,7 +830,9 @@ namespace Model
      * <code>elasticache:replication-group:Replicas</code> - The number of replicas per
      * node group for an Amazon ElastiCache replication group.</p> </li> <li> <p>
      * <code>neptune:cluster:ReadReplicaCount</code> - The count of read replicas in an
-     * Amazon Neptune DB cluster.</p> </li> </ul>
+     * Amazon Neptune DB cluster.</p> </li> <li> <p>
+     * <code>sagemaker:variant:DesiredProvisionedConcurrency</code> - The provisioned
+     * concurrency for a SageMaker Serverless endpoint.</p> </li> </ul>
      */
     inline DescribeScalingActivitiesRequest& WithScalableDimension(ScalableDimension&& value) { SetScalableDimension(std::move(value)); return *this;}
 

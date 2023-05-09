@@ -180,6 +180,7 @@ namespace Model
      * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
      * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
      * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
      * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
@@ -204,6 +205,7 @@ namespace Model
      * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
      * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
      * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
      * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
@@ -228,6 +230,7 @@ namespace Model
      * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
      * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
      * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
      * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
@@ -252,6 +255,7 @@ namespace Model
      * 300 for the following scalable targets:</p> <ul> <li> <p>AppStream 2.0
      * fleets</p> </li> <li> <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p>
      * </li> <li> <p>EMR clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li>
+     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
      * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
      * <p>Custom resources</p> </li> </ul> <p>For all other scalable targets, the
      * default value is 0:</p> <ul> <li> <p>Amazon Comprehend document classification
@@ -276,13 +280,13 @@ namespace Model
      * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
-     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
-     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
-     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
-     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
-     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
-     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * Serverless endpoint provisioned concurrency</p> </li> <li> <p>SageMaker endpoint
+     * variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom resources</p>
+     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
+     * <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>DynamoDB tables and global secondary indexes</p>
+     * </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda provisioned
+     * concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
 
@@ -299,13 +303,13 @@ namespace Model
      * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
-     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
-     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
-     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
-     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
-     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
-     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * Serverless endpoint provisioned concurrency</p> </li> <li> <p>SageMaker endpoint
+     * variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom resources</p>
+     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
+     * <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>DynamoDB tables and global secondary indexes</p>
+     * </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda provisioned
+     * concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
 
@@ -322,13 +326,13 @@ namespace Model
      * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
-     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
-     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
-     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
-     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
-     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
-     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * Serverless endpoint provisioned concurrency</p> </li> <li> <p>SageMaker endpoint
+     * variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom resources</p>
+     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
+     * <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>DynamoDB tables and global secondary indexes</p>
+     * </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda provisioned
+     * concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
 
@@ -345,13 +349,13 @@ namespace Model
      * following scalable targets:</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p>Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p> Neptune clusters</p> </li> <li> <p>SageMaker
-     * endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom
-     * resources</p> </li> </ul> <p>For all other scalable targets, the default value
-     * is 0:</p> <ul> <li> <p>Amazon Comprehend document classification and entity
-     * recognizer endpoints</p> </li> <li> <p>DynamoDB tables and global secondary
-     * indexes</p> </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda
-     * provisioned concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li>
-     * </ul>
+     * Serverless endpoint provisioned concurrency</p> </li> <li> <p>SageMaker endpoint
+     * variants</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>Custom resources</p>
+     * </li> </ul> <p>For all other scalable targets, the default value is 0:</p> <ul>
+     * <li> <p>Amazon Comprehend document classification and entity recognizer
+     * endpoints</p> </li> <li> <p>DynamoDB tables and global secondary indexes</p>
+     * </li> <li> <p>Amazon Keyspaces tables</p> </li> <li> <p>Lambda provisioned
+     * concurrency</p> </li> <li> <p>Amazon MSK broker storage</p> </li> </ul>
      */
     inline TargetTrackingScalingPolicyConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
 

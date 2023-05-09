@@ -35,7 +35,8 @@ namespace Model
     kafka_broker_storage_VolumeSize,
     elasticache_replication_group_NodeGroups,
     elasticache_replication_group_Replicas,
-    neptune_cluster_ReadReplicaCount
+    neptune_cluster_ReadReplicaCount,
+    sagemaker_variant_DesiredProvisionedConcurrency
   };
 
 namespace ScalableDimensionMapper

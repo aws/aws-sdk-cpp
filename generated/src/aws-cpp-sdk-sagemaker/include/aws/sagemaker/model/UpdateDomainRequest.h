@@ -183,7 +183,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline const AppSecurityGroupManagement& GetAppSecurityGroupManagement() const{ return m_appSecurityGroupManagement; }
 
@@ -192,7 +193,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline bool AppSecurityGroupManagementHasBeenSet() const { return m_appSecurityGroupManagementHasBeenSet; }
 
@@ -201,7 +203,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline void SetAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = value; }
 
@@ -210,7 +213,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline void SetAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { m_appSecurityGroupManagementHasBeenSet = true; m_appSecurityGroupManagement = std::move(value); }
 
@@ -219,7 +223,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline UpdateDomainRequest& WithAppSecurityGroupManagement(const AppSecurityGroupManagement& value) { SetAppSecurityGroupManagement(value); return *this;}
 
@@ -228,7 +233,8 @@ namespace Model
      * inter-app communication in <code>VPCOnly</code> mode. Required when
      * <code>CreateDomain.AppNetworkAccessType</code> is <code>VPCOnly</code> and
      * <code>DomainSettings.RStudioServerProDomainSettings.DomainExecutionRoleArn</code>
-     * is provided.</p>
+     * is provided. If setting up the domain for use with RStudio, this value must be
+     * set to <code>Service</code>.</p>
      */
     inline UpdateDomainRequest& WithAppSecurityGroupManagement(AppSecurityGroupManagement&& value) { SetAppSecurityGroupManagement(std::move(value)); return *this;}
 
