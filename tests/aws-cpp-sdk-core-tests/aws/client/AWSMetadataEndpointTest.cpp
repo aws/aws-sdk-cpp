@@ -2,7 +2,7 @@
 * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 * SPDX-License-Identifier: Apache-2.0.
  */
-#include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/Outcome.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 #include <aws/testing/platform/PlatformTesting.h>
@@ -14,7 +14,7 @@
 #include <thread>
 #include <aws/core/utils/logging/LogMacros.h>
 
-class AWSMetadataEndpointTestSuite : public ::testing::Test
+class AWSMetadataEndpointTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
   void SetUp()

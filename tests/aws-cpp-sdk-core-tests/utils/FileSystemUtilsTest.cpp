@@ -6,7 +6,7 @@
 #include <aws/core/platform/FileSystem.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSSet.h>
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <fstream>
 #if defined(HAS_PATHCONF)
 #include <unistd.h>
@@ -17,7 +17,11 @@ using namespace Aws;
 using namespace Aws::Utils;
 
 
-TEST(FileTest, HomeDirectory)
+class FileTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(FileTest, HomeDirectory)
 {
     auto homeDirectory = Aws::FileSystem::GetHomeDirectory();
 
@@ -25,14 +29,14 @@ TEST(FileTest, HomeDirectory)
     ASSERT_EQ(Aws::FileSystem::PATH_DELIM, homeDirectory.back());
 }
 
-TEST(FileTest, TestInvalidDirectoryPath)
+TEST_F(FileTest, TestInvalidDirectoryPath)
 {
     auto badDir = Aws::FileSystem::OpenDirectory("boogieMan");
     bool dirGood = *badDir;
     ASSERT_FALSE(dirGood);    
 }
 
-TEST(FileTest, TempFile)
+TEST_F(FileTest, TempFile)
 {
     Aws::String filePath; 
 
@@ -58,7 +62,7 @@ TEST(FileTest, TempFile)
     ASSERT_FALSE(testIn.good());
 }
 
-class DirectoryTreeTest : public ::testing::Test
+class DirectoryTreeTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     Aws::String dir1, dir2, file1, file2;

@@ -5,7 +5,7 @@
 
 
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/logging/DefaultLogSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>
@@ -158,32 +158,36 @@ void DoLogTest(LogLevel logLevel, const char *testTag)
     VerifyAllLogsAtOrBelow(logLevel, testTag, loggedStatements);
 }
 
-TEST(LoggingTest, testFatalLogLevel)
+class LoggingTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(LoggingTest, testFatalLogLevel)
 {
     DoLogTest(LogLevel::Fatal, "LoggingTest_testFatalLogLevel");
 }
 
-TEST(LoggingTest, testErrorLogLevel)
+TEST_F(LoggingTest, testErrorLogLevel)
 {
     DoLogTest(LogLevel::Error, "LoggingTest_testErrorLogLevel");
 }
 
-TEST(LoggingTest, testWarnLogLevel)
+TEST_F(LoggingTest, testWarnLogLevel)
 {
     DoLogTest(LogLevel::Warn, "LoggingTest_testWarnLogLevel");
 }
 
-TEST(LoggingTest, testInfoLogLevel)
+TEST_F(LoggingTest, testInfoLogLevel)
 {
     DoLogTest(LogLevel::Info, "LoggingTest_testInfoLogLevel");
 }
 
-TEST(LoggingTest, testDebugLogLevel)
+TEST_F(LoggingTest, testDebugLogLevel)
 {
     DoLogTest(LogLevel::Debug, "LoggingTest_testDebugLogLevel");
 }
 
-TEST(LoggingTest, testTraceLogLevel)
+TEST_F(LoggingTest, testTraceLogLevel)
 {
     DoLogTest(LogLevel::Trace, "LoggingTest_testTraceLogLevel");
 }
@@ -253,27 +257,31 @@ void DoCRTLogTest(LogLevel logLevel)
     VerifyAllCRTLogsAtOrBelow(logLevel, loggedStatements, crtLoggedStatements);
 }
 
-TEST(CRTLoggingTest, testFatalLogLevel)
+class CRTLoggingTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(CRTLoggingTest, testFatalLogLevel)
 {
     DoCRTLogTest(LogLevel::Fatal);
 }
 
-TEST(CRTLoggingTest, testWarnLogLevel)
+TEST_F(CRTLoggingTest, testWarnLogLevel)
 {
     DoCRTLogTest(LogLevel::Warn);
 }
 
-TEST(CRTLoggingTest, testInfoLogLevel)
+TEST_F(CRTLoggingTest, testInfoLogLevel)
 {
     DoCRTLogTest(LogLevel::Info);
 }
 
-TEST(CRTLoggingTest, testDebugLogLevel)
+TEST_F(CRTLoggingTest, testDebugLogLevel)
 {
     DoCRTLogTest(LogLevel::Debug);
 }
 
-TEST(CRTLoggingTest, testTraceLogLevel)
+TEST_F(CRTLoggingTest, testTraceLogLevel)
 {
     DoCRTLogTest(LogLevel::Trace);
 }

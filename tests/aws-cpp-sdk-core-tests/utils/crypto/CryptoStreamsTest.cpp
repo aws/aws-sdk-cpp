@@ -5,7 +5,7 @@
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/crypto/CryptoStream.h>
 #include <aws/core/utils/memory/stl/AWSQueue.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -232,7 +232,11 @@ static void TestCiphersNeverUsedSinkExplicitFinalize(const CipherCreateImplement
     }
 }
 
-TEST(CryptoStreamsTest, TestCiphersNeverUsedSrc)
+class CryptoStreamsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(CryptoStreamsTest, TestCiphersNeverUsedSrc)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
 
@@ -248,7 +252,7 @@ TEST(CryptoStreamsTest, TestCiphersNeverUsedSrc)
     TestCiphersNeverUsedSrc(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
 }
 
-TEST(CryptoStreamsTest, TestCiphersNeverUsedSinkDestructorFinalizes)
+TEST_F(CryptoStreamsTest, TestCiphersNeverUsedSinkDestructorFinalizes)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
 
@@ -264,7 +268,7 @@ TEST(CryptoStreamsTest, TestCiphersNeverUsedSinkDestructorFinalizes)
     TestCiphersNeverUsedSinkDestructorFinalizes(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
 }
 
-TEST(CryptoStreamsTest, TestUninitializedCiphersSinkExplicitFinalize)
+TEST_F(CryptoStreamsTest, TestUninitializedCiphersSinkExplicitFinalize)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
 
@@ -280,7 +284,7 @@ TEST(CryptoStreamsTest, TestUninitializedCiphersSinkExplicitFinalize)
     TestCiphersNeverUsedSinkExplicitFinalize(CipherCreateImplementationFunction(CreateAES_KeyWrapImplementation), kek_raw, CipherMode::Decrypt);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamEvenBoundaries)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamEvenBoundaries)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -299,7 +303,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamEvenBoundaries)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecyptSrcStreamEvenBoundaries)
+TEST_F(CryptoStreamsTest, TestDecyptSrcStreamEvenBoundaries)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -318,7 +322,7 @@ TEST(CryptoStreamsTest, TestDecyptSrcStreamEvenBoundaries)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamLargeBuffer)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamLargeBuffer)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -337,7 +341,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamLargeBuffer)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecyptSrcStreamLargeBuffer)
+TEST_F(CryptoStreamsTest, TestDecyptSrcStreamLargeBuffer)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -356,7 +360,7 @@ TEST(CryptoStreamsTest, TestDecyptSrcStreamLargeBuffer)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesDestructorFinalizes)
+TEST_F(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesDestructorFinalizes)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -375,7 +379,7 @@ TEST(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesDestructorFinalizes)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesExplicitFinalize)
+TEST_F(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesExplicitFinalize)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -393,7 +397,7 @@ TEST(CryptoStreamsTest, TestEncryptSinkStreamEvenBoundariesExplicitFinalize)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecyptSinkStreamEvenBoundariesDestructorFinalizes)
+TEST_F(CryptoStreamsTest, TestDecyptSinkStreamEvenBoundariesDestructorFinalizes)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -412,7 +416,7 @@ TEST(CryptoStreamsTest, TestDecyptSinkStreamEvenBoundariesDestructorFinalizes)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecryptSinkStreamEvenBoundariesExplicitFinalize)
+TEST_F(CryptoStreamsTest, TestDecryptSinkStreamEvenBoundariesExplicitFinalize)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -430,7 +434,7 @@ TEST(CryptoStreamsTest, TestDecryptSinkStreamEvenBoundariesExplicitFinalize)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferDestructorFinalizes)
+TEST_F(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferDestructorFinalizes)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -449,7 +453,7 @@ TEST(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferDestructorFinalizes)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferExplicitFinalize)
+TEST_F(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferExplicitFinalize)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -467,7 +471,7 @@ TEST(CryptoStreamsTest, TestEncryptSinkStreamLargeBufferExplicitFinalize)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecyptSinkStreamLargeBufferDestructorFinalizes)
+TEST_F(CryptoStreamsTest, TestDecyptSinkStreamLargeBufferDestructorFinalizes)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -486,7 +490,7 @@ TEST(CryptoStreamsTest, TestDecyptSinkStreamLargeBufferDestructorFinalizes)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecyptSinkStreamWithBlockOffset)
+TEST_F(CryptoStreamsTest, TestDecyptSinkStreamWithBlockOffset)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -505,7 +509,7 @@ TEST(CryptoStreamsTest, TestDecyptSinkStreamWithBlockOffset)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestDecryptSinkStreamLargeBufferExplicitFinalize)
+TEST_F(CryptoStreamsTest, TestDecryptSinkStreamLargeBufferExplicitFinalize)
 {
     std::ostringstream os;
     MockSymmetricCipher cipher;
@@ -523,7 +527,7 @@ TEST(CryptoStreamsTest, TestDecryptSinkStreamLargeBufferExplicitFinalize)
     ASSERT_EQ(1u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekBeginning)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamSeekBeginning)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -552,7 +556,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekBeginning)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekBack)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamSeekBack)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -581,7 +585,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekBack)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekNop)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamSeekNop)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -613,7 +617,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekNop)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekForward)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamSeekForward)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -645,7 +649,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekForward)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
+TEST_F(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
 {
     std::istringstream is(ORIGINAL_SRC);
     MockSymmetricCipher cipher;
@@ -671,7 +675,7 @@ TEST(CryptoStreamsTest, TestEncryptSrcStreamSeekEnd)
     ASSERT_EQ(0u, cipher.m_finalizeDecryptionCalledCount);
 }
 
-TEST(CryptoStreamsTest, TestLiveSymmetricCipher)
+TEST_F(CryptoStreamsTest, TestLiveSymmetricCipher)
 {
     Aws::String iv_raw = "92f258071d79af3e63672285";
     Aws::String key_raw = "595f259c55abe00ae07535ca5d9b09d6efb9f7e9abb64605c337acbd6b14fc7e";

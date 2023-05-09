@@ -3,10 +3,14 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/memory/stl/SimpleStringStream.h>
 
-TEST(SimpleStringStreamTest, DefaultConstructor)
+class SimpleStringStreamTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(SimpleStringStreamTest, DefaultConstructor)
 {
     Aws::SimpleStringStream ss;
 
@@ -15,14 +19,14 @@ TEST(SimpleStringStreamTest, DefaultConstructor)
 
 static const char* SIMPLE_STRING = "A Simple String";
 
-TEST(SimpleStringStreamTest, StringConstructor)
+TEST_F(SimpleStringStreamTest, StringConstructor)
 {
     Aws::SimpleStringStream ss(SIMPLE_STRING);
 
     ASSERT_STREQ(ss.str().c_str(), SIMPLE_STRING);
 }
 
-TEST(SimpleStringStreamTest, BasicOutput)
+TEST_F(SimpleStringStreamTest, BasicOutput)
 {
     Aws::SimpleStringStream ss;
 
@@ -31,7 +35,7 @@ TEST(SimpleStringStreamTest, BasicOutput)
     ASSERT_STREQ(ss.str().c_str(), SIMPLE_STRING);
 }
 
-TEST(SimpleStringStreamTest, MultipleOutput)
+TEST_F(SimpleStringStreamTest, MultipleOutput)
 {
     Aws::SimpleStringStream ss;
 
@@ -43,7 +47,7 @@ TEST(SimpleStringStreamTest, MultipleOutput)
     ASSERT_STREQ(ss.str().c_str(), "A string \"Howdy\", a number 75, and a boolean true walk into a bar");
 }
 
-TEST(SimpleStringStreamTest, MultipleInput)
+TEST_F(SimpleStringStreamTest, MultipleInput)
 {
     Aws::SimpleStringStream ss("523 47.0 true");
 

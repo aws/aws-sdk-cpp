@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/ratelimiter/DefaultRateLimiter.h>
 
@@ -11,7 +11,7 @@ using namespace Aws::Utils::RateLimits;
 
 using TestDefaultRateLimiter = DefaultRateLimiter<>;
 
-class DefaultRateLimitTest : public ::testing::Test {
+class DefaultRateLimitTest : public Aws::Testing::AwsCppSdkGTestSuite {
 
     public:
 

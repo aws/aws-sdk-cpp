@@ -2,7 +2,7 @@
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/config/AWSProfileConfigLoader.h>
 #include <aws/core/utils/FileSystemUtils.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -63,7 +63,11 @@ Aws::Map<Aws::String, Aws::Config::Profile> DumpAndReloadProfiles(const Aws::Map
     return loader.GetProfiles();
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
+class AWSConfigFileProfileConfigLoaderTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
@@ -110,7 +114,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileLoad)
     Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -152,7 +156,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigFileLoad)
     Aws::FileSystem::RemoveFileIfExists(configFile.GetFileName().c_str());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -163,7 +167,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileEmpty)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileNotExists)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileNotExists)
 {
     auto configFileName = "";
     Aws::OFStream configFile(configFileName);
@@ -175,7 +179,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileNotExists)
     ASSERT_EQ(0u, loader.GetProfiles().size());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCorrupted)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -215,7 +219,7 @@ sso_start_url = https://d-abc123.awsapps.com/start)";
     return stream.good();
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
@@ -258,7 +262,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestConfigWithSSOParsing)
     ASSERT_EQ("https://d-abc123.awsapps.com/start", ssoProfile.GetSsoSession().GetSsoStartUrl());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
 
@@ -314,7 +318,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestProfileDumping)
     ASSERT_EQ("https://d-abc123.awsapps.com/start", ssoProfile.GetSsoSession().GetSsoStartUrl());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestEmptyProfileFile)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestEmptyProfileFile)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -333,7 +337,7 @@ TEST(AWSConfigFileProfileConfigLoaderTest, TestEmptyProfileFile)
     ASSERT_EQ(0u, loader1.GetProfiles().size());
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCredentialsProcess)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileCredentialsProcess)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -383,7 +387,7 @@ R"(
     }
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileProfileName)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsFileProfileName)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());
@@ -430,7 +434,7 @@ aws_secret_access_key = correct_secret)";
     }
 }
 
-TEST(AWSConfigFileProfileConfigLoaderTest, TestCredentialsBlankSpace)
+TEST_F(AWSConfigFileProfileConfigLoaderTest, TestCredentialsBlankSpace)
 {
     TempFile configFile(std::ios_base::out | std::ios_base::trunc);
     ASSERT_TRUE(configFile.good());

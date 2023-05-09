@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #if ENABLE_CURL_CLIENT
 #include <signal.h>
 #endif
 
-TEST(SignalHandlerTest, RaisingSIGPIPEShouldNotTerminateProcess)
+class SignalHandlerTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(SignalHandlerTest, RaisingSIGPIPEShouldNotTerminateProcess)
 {
 #if ENABLE_CURL_CLIENT && !defined (_WIN32)
     ASSERT_EQ(0, raise(SIGPIPE));

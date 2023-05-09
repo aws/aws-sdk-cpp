@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/HttpRequest.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/http/HttpClientFactory.h>
@@ -63,20 +63,24 @@ static ClientConfiguration makeClientConfigurationWithProxy()
     return configuration;
 }
 
-TEST(HttpClientTest, TestRandomURLWithNoProxy)
+class HttpClientTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(HttpClientTest, TestRandomURLWithNoProxy)
 {
     auto httpClient = CreateHttpClient(Aws::Client::ClientConfiguration());
     makeRandomHttpRequest(httpClient, false);
 }
 
-TEST(HttpClientTest, TestRandomURLWithProxy)
+TEST_F(HttpClientTest, TestRandomURLWithProxy)
 {
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     auto httpClient = CreateHttpClient(configuration);
     makeRandomHttpRequest(httpClient, true); // we expect it to try to use proxy that is invalid
 }
 
-TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
+TEST_F(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
 {
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);
@@ -86,7 +90,7 @@ TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredAsNonProxyHost)
     makeRandomHttpRequest(httpClient, false);
 }
 
-TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredParentDomainAsNonProxyHost)
+TEST_F(HttpClientTest, TestRandomURLWithProxyAndDeclaredParentDomainAsNonProxyHost)
 {
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(2);
@@ -96,7 +100,7 @@ TEST(HttpClientTest, TestRandomURLWithProxyAndDeclaredParentDomainAsNonProxyHost
     makeRandomHttpRequest(httpClient, false);
 }
 
-TEST(HttpClientTest, TestRandomURLWithProxyAndOtherDeclaredAsNonProxyHost)
+TEST_F(HttpClientTest, TestRandomURLWithProxyAndOtherDeclaredAsNonProxyHost)
 {
     ClientConfiguration configuration = makeClientConfigurationWithProxy();
     configuration.nonProxyHosts = Aws::Utils::Array<Aws::String>(1);
@@ -107,7 +111,7 @@ TEST(HttpClientTest, TestRandomURLWithProxyAndOtherDeclaredAsNonProxyHost)
 
 // TODO: Pending Fix on Windows.
 #if ENABLE_CURL_CLIENT
-TEST(HttpClientTest, TestRandomURLMultiThreaded)
+TEST_F(HttpClientTest, TestRandomURLMultiThreaded)
 {
     const int threadCount = 50;
     const int timeoutSecs = 5;
@@ -277,7 +281,7 @@ class MockCustomHttpClientFactory : public Aws::Http::HttpClientFactory
     }
 };
 
-TEST(HttpClientTest, TestHttpClientOverride)
+TEST_F(HttpClientTest, TestHttpClientOverride)
 {
     auto request = CreateHttpRequest(Aws::String("http://127.0.0.1:8778"),
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -315,7 +319,7 @@ TEST(HttpClientTest, TestHttpClientOverride)
 #include <stdlib.h>
 #include <thread>
 
-TEST(CURLHttpClientTest, TestConnectionTimeout)
+TEST_F(CURLHttpClientTest, TestConnectionTimeout)
 {
     auto request = CreateHttpRequest(Aws::String("https://8.8.8.8:53"),//unless 8.8.8.8 is localhost, it's unlikely to succeed.
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -330,7 +334,7 @@ TEST(CURLHttpClientTest, TestConnectionTimeout)
     ASSERT_TRUE(response->GetClientErrorMessage().find("curlCode: 28") == 0);
 }
 
-TEST(CURLHttpClientTest, TestHttpRequestTimeout)
+TEST_F(CURLHttpClientTest, TestHttpRequestTimeout)
 {
     auto request = CreateHttpRequest(Aws::String("http://127.0.0.1:8778"),
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -346,7 +350,7 @@ TEST(CURLHttpClientTest, TestHttpRequestTimeout)
     EXPECT_TRUE(response->GetClientErrorMessage().find("curlCode: 28") == 0);
 }
 
-TEST(CURLHttpClientTest, TestHttpRequestTimeoutBeforeFinishing)
+TEST_F(CURLHttpClientTest, TestHttpRequestTimeoutBeforeFinishing)
 {
     auto request = CreateHttpRequest(Aws::String("http://127.0.0.1:8778"),
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
@@ -363,7 +367,7 @@ TEST(CURLHttpClientTest, TestHttpRequestTimeoutBeforeFinishing)
     EXPECT_TRUE(response->GetClientErrorMessage().find("curlCode: 28") == 0);
 }
 
-TEST(CURLHttpClientTest, TestHttpRequestWorksFine)
+TEST_F(CURLHttpClientTest, TestHttpRequestWorksFine)
 {
     auto request = CreateHttpRequest(Aws::String("http://127.0.0.1:8778"),
                                      HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);

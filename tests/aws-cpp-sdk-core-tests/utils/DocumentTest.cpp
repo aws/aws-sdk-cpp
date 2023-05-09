@@ -3,15 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
-#include <aws/testing/AwsTestHelpers.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/Document.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 using namespace Aws::Utils;
 
-TEST(DocumentTest, TestParseString)
+class DocumentTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(DocumentTest, TestParseString)
 {
     const Aws::String docString = R"("testString")";
     Document doc(docString);
@@ -28,7 +31,7 @@ TEST(DocumentTest, TestParseString)
     }
 }
 
-TEST(DocumentTest, TestParseStringValue)
+TEST_F(DocumentTest, TestParseStringValue)
 {
     const Aws::String docString = R"({"testStringKey":"testStringValue"})";
     Document doc(docString);
@@ -45,7 +48,7 @@ TEST(DocumentTest, TestParseStringValue)
     }
 }
 
-TEST(DocumentTest, TestParseBool)
+TEST_F(DocumentTest, TestParseBool)
 {
     const Aws::String docString = R"(false)";
     Document doc(docString);
@@ -62,7 +65,7 @@ TEST(DocumentTest, TestParseBool)
     }
 }
 
-TEST(DocumentTest, TestParseBoolValue)
+TEST_F(DocumentTest, TestParseBoolValue)
 {
     const Aws::String docString = R"({"testBoolKey":false})";
     Document doc(docString);
@@ -79,7 +82,7 @@ TEST(DocumentTest, TestParseBoolValue)
     }
 }
 
-TEST(DocumentTest, TestParseInteger)
+TEST_F(DocumentTest, TestParseInteger)
 {
     Aws::String docString = R"(10)";
     Document doc(docString);
@@ -112,7 +115,7 @@ TEST(DocumentTest, TestParseInteger)
     }
 }
 
-TEST(DocumentTest, TestParseIntegerValue)
+TEST_F(DocumentTest, TestParseIntegerValue)
 {
     const Aws::String docString = R"({"testIntKey":10})";
     Document doc(docString);
@@ -129,7 +132,7 @@ TEST(DocumentTest, TestParseIntegerValue)
     }
 }
 
-TEST(DocumentTest, TestParseInt64)
+TEST_F(DocumentTest, TestParseInt64)
 {
     const Aws::String docString = R"(8765432109876543210)";
     Document doc(docString);
@@ -147,7 +150,7 @@ TEST(DocumentTest, TestParseInt64)
     }
 }
 
-TEST(DocumentTest, TestParseInt64Value)
+TEST_F(DocumentTest, TestParseInt64Value)
 {
     const Aws::String docString = R"({"testInt64Key":8765432109876543210})";
     Document doc(docString);
@@ -164,7 +167,7 @@ TEST(DocumentTest, TestParseInt64Value)
     }
 }
 
-TEST(DocumentTest, TestParseDouble)
+TEST_F(DocumentTest, TestParseDouble)
 {
     const Aws::String docString = R"(6.626e-34)";
     Document doc(docString);
@@ -182,7 +185,7 @@ TEST(DocumentTest, TestParseDouble)
     }
 }
 
-TEST(DocumentTest, TestParseDoubleValue)
+TEST_F(DocumentTest, TestParseDoubleValue)
 {
     const Aws::String docString = R"({"testDoubleKey":-6.626e-34})";
     Document doc(docString);
@@ -199,7 +202,7 @@ TEST(DocumentTest, TestParseDoubleValue)
     }
 }
 
-TEST(DocumentTest, TestParseArray)
+TEST_F(DocumentTest, TestParseArray)
 {
     const Aws::String docString = R"(["stringArrayEntry1", "stringArrayEntry2"])";
     Document doc(docString);
@@ -217,7 +220,7 @@ TEST(DocumentTest, TestParseArray)
     }
 }
 
-TEST(DocumentTest, TestParseArrayValue)
+TEST_F(DocumentTest, TestParseArrayValue)
 {
     const Aws::String docString = R"({"array": ["stringArrayEntry1", "stringArrayEntry2"]})";
     Document doc(docString);
@@ -235,7 +238,7 @@ TEST(DocumentTest, TestParseArrayValue)
     }
 }
 
-TEST(DocumentTest, TestParseObjectValue)
+TEST_F(DocumentTest, TestParseObjectValue)
 {
     const Aws::String docString = R"({"object": {"testObjectStringKey":"testObjectStringValue"}})";
     Document doc(docString);
@@ -264,7 +267,7 @@ const std::string docString = R"({
     "object": {"testObjectStringKey":"testObjectStringValue"}
 })";
 
-TEST(DocumentTest, TestParseJsonString)
+TEST_F(DocumentTest, TestParseJsonString)
 {
     Document doc(Aws::String(docString.c_str()));
     if (doc.WasParseSuccessful())
@@ -287,7 +290,7 @@ TEST(DocumentTest, TestParseJsonString)
     }
 }
 
-TEST(DocumentTest, TestParseJsonStream)
+TEST_F(DocumentTest, TestParseJsonStream)
 {
     Aws::StringStream inputAsStream(Aws::String(docString.c_str()));
     Document doc(inputAsStream);
@@ -312,14 +315,14 @@ TEST(DocumentTest, TestParseJsonStream)
     }
 }
 
-TEST(DocumentTest, TestParseStringFailed)
+TEST_F(DocumentTest, TestParseStringFailed)
 {
     Document doc(Aws::String("blah blah blah"));
     ASSERT_FALSE(doc.WasParseSuccessful());
     ASSERT_FALSE(doc.GetErrorMessage().empty());
 }
 
-TEST(DocumentTest, TestParseStreamFailed)
+TEST_F(DocumentTest, TestParseStreamFailed)
 {
     Aws::StringStream ss;
     ss << "{\"bla\" : blah blah";
@@ -328,7 +331,7 @@ TEST(DocumentTest, TestParseStreamFailed)
     ASSERT_STREQ("Failed to parse JSON. Invalid input at: blah blah", doc.GetErrorMessage().c_str());
 }
 
-TEST(DocumentTest, TestCreateStringValue)
+TEST_F(DocumentTest, TestCreateStringValue)
 {
     Document doc;
     doc.WithString("testStringKey", "testStringValue");
@@ -340,7 +343,7 @@ TEST(DocumentTest, TestCreateStringValue)
     ASSERT_STREQ("anotherTestString", doc.View().AsString().c_str());
 }
 
-TEST(DocumentTest, TestCreateBoolValue)
+TEST_F(DocumentTest, TestCreateBoolValue)
 {
     Document doc;
     doc.WithBool("testBoolKey", false);
@@ -352,7 +355,7 @@ TEST(DocumentTest, TestCreateBoolValue)
     ASSERT_TRUE(doc.View().AsBool());
 }
 
-TEST(DocumentTest, TestCreateIntegerValue)
+TEST_F(DocumentTest, TestCreateIntegerValue)
 {
     Document doc;
     doc.WithInteger("testIntKey", 10);
@@ -365,7 +368,7 @@ TEST(DocumentTest, TestCreateIntegerValue)
     ASSERT_EQ(15, doc.View().AsInteger());
 }
 
-TEST(DocumentTest, TestCreateInt64Value)
+TEST_F(DocumentTest, TestCreateInt64Value)
 {
     Document doc;
     doc.WithInt64("testInt64Key", INT64_MIN);
@@ -396,7 +399,7 @@ TEST(DocumentTest, TestCreateInt64Value)
     ASSERT_FALSE(doc.View().IsFloatingPointType());
 }
 
-TEST(DocumentTest, TestCreateDoubleValue)
+TEST_F(DocumentTest, TestCreateDoubleValue)
 {
     Document doc;
     doc.WithDouble("testDoubleKey", 6.626e-34);
@@ -409,7 +412,7 @@ TEST(DocumentTest, TestCreateDoubleValue)
     ASSERT_EQ(2.71828182845, doc.View().AsDouble());
 }
 
-TEST(DocumentTest, TestCreateArrayValue)
+TEST_F(DocumentTest, TestCreateArrayValue)
 {
     Document doc;
     Array<Document> arrayDoc(2);
@@ -436,7 +439,7 @@ TEST(DocumentTest, TestCreateArrayValue)
     ASSERT_EQ("testArrayValue4", viewArray[1].AsString());
 }
 
-TEST(DocumentTest, TestCreateObjectValue)
+TEST_F(DocumentTest, TestCreateObjectValue)
 {
     Document doc;
     Array<Document> arrayDoc(2);
@@ -477,7 +480,7 @@ TEST(DocumentTest, TestCreateObjectValue)
     ASSERT_EQ("testArrayValue2", objectView.AsObject().GetArray("testArrayKey")[1].AsString());
 }
 
-TEST(DocumentTest, TestDocCompactSerializeObject)
+TEST_F(DocumentTest, TestDocCompactSerializeObject)
 {
     Document doc(Aws::String(docString.c_str()));
     Aws::String outputString = doc.View().WriteCompact();
@@ -501,7 +504,7 @@ TEST(DocumentTest, TestDocCompactSerializeObject)
     }
 }
 
-TEST(DocumentTest, TestJsonStyledSerializeObject)
+TEST_F(DocumentTest, TestJsonStyledSerializeObject)
 {
     Document doc(Aws::String(docString.c_str()));
     Aws::String outputString = doc.View().WriteReadable();
@@ -525,7 +528,7 @@ TEST(DocumentTest, TestJsonStyledSerializeObject)
     }
 }
 
-TEST(DocumentTest, TestNullSanity)
+TEST_F(DocumentTest, TestNullSanity)
 {
     Document doc;
     DocumentView view = doc.View();
@@ -536,7 +539,7 @@ TEST(DocumentTest, TestNullSanity)
     ASSERT_FALSE(view.ValueExists("null"));
 }
 
-TEST(DocumentTest, TestKeyValueExists)
+TEST_F(DocumentTest, TestKeyValueExists)
 {
     auto input = R"({"AWS" : {
         "key" : "value",
@@ -554,7 +557,7 @@ TEST(DocumentTest, TestKeyValueExists)
     ASSERT_FALSE(view.KeyExists("notExistsKey"));
 }
 
-TEST(DocumentTest, TestCopy)
+TEST_F(DocumentTest, TestCopy)
 {
     Document doc;
     ASSERT_TRUE(doc.WasParseSuccessful());
@@ -569,7 +572,7 @@ TEST(DocumentTest, TestCopy)
     ASSERT_FALSE(copiedDoc.WasParseSuccessful());
 }
 
-TEST(DocumentTest, TestMove)
+TEST_F(DocumentTest, TestMove)
 {
     Document doc;
     ASSERT_TRUE(doc.WasParseSuccessful());
@@ -584,7 +587,7 @@ TEST(DocumentTest, TestMove)
     ASSERT_FALSE(movedDoc.WasParseSuccessful());
 }
 
-TEST(DocumentTest, TestBuilderPatternReplacesKeys)
+TEST_F(DocumentTest, TestBuilderPatternReplacesKeys)
 {
     auto input = R"({"AWS" : {
         "stringKey" : "StringValue",
@@ -601,7 +604,7 @@ TEST(DocumentTest, TestBuilderPatternReplacesKeys)
     ASSERT_STREQ(expected, output.c_str());
 }
 
-TEST(DocumentTest, TestGetAllObjects)
+TEST_F(DocumentTest, TestGetAllObjects)
 {
     auto input = R"({"AWS" : {
         "stringKey" : "StringValue",
@@ -617,7 +620,7 @@ TEST(DocumentTest, TestGetAllObjects)
     ASSERT_EQ(42, all["intKey"].AsInteger());
 }
 
-TEST(DocumentTest, TestEquality)
+TEST_F(DocumentTest, TestEquality)
 {
     auto input = R"({"AWS" : {
         "stringKey" : "StringValue",
@@ -652,7 +655,7 @@ using namespace Aws::DocumentTest::Model;
 
 static const char ALLOCATION_TAG[] = "DocumentTest";
 
-TEST(DocumentTest, TestRequestResponseBody)
+TEST_F(DocumentTest, TestRequestResponseBody)
 {
     std::shared_ptr<MockHttpClient> mockHttpClient = Aws::MakeShared<MockHttpClient>(ALLOCATION_TAG);
     std::shared_ptr<MockHttpClientFactory> mockHttpClientFactory = Aws::MakeShared<MockHttpClientFactory>(ALLOCATION_TAG);
