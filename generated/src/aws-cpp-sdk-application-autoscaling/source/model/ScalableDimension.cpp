@@ -40,6 +40,7 @@ namespace Aws
         static const int elasticache_replication_group_NodeGroups_HASH = HashingUtils::HashString("elasticache:replication-group:NodeGroups");
         static const int elasticache_replication_group_Replicas_HASH = HashingUtils::HashString("elasticache:replication-group:Replicas");
         static const int neptune_cluster_ReadReplicaCount_HASH = HashingUtils::HashString("neptune:cluster:ReadReplicaCount");
+        static const int sagemaker_variant_DesiredProvisionedConcurrency_HASH = HashingUtils::HashString("sagemaker:variant:DesiredProvisionedConcurrency");
 
 
         ScalableDimension GetScalableDimensionForName(const Aws::String& name)
@@ -125,6 +126,10 @@ namespace Aws
           {
             return ScalableDimension::neptune_cluster_ReadReplicaCount;
           }
+          else if (hashCode == sagemaker_variant_DesiredProvisionedConcurrency_HASH)
+          {
+            return ScalableDimension::sagemaker_variant_DesiredProvisionedConcurrency;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -179,6 +184,8 @@ namespace Aws
             return "elasticache:replication-group:Replicas";
           case ScalableDimension::neptune_cluster_ReadReplicaCount:
             return "neptune:cluster:ReadReplicaCount";
+          case ScalableDimension::sagemaker_variant_DesiredProvisionedConcurrency:
+            return "sagemaker:variant:DesiredProvisionedConcurrency";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

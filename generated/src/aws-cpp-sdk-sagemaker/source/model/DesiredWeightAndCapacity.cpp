@@ -23,7 +23,8 @@ DesiredWeightAndCapacity::DesiredWeightAndCapacity() :
     m_desiredWeight(0.0),
     m_desiredWeightHasBeenSet(false),
     m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false)
+    m_desiredInstanceCountHasBeenSet(false),
+    m_serverlessUpdateConfigHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DesiredWeightAndCapacity::DesiredWeightAndCapacity(JsonView jsonValue) :
     m_desiredWeight(0.0),
     m_desiredWeightHasBeenSet(false),
     m_desiredInstanceCount(0),
-    m_desiredInstanceCountHasBeenSet(false)
+    m_desiredInstanceCountHasBeenSet(false),
+    m_serverlessUpdateConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -60,6 +62,13 @@ DesiredWeightAndCapacity& DesiredWeightAndCapacity::operator =(JsonView jsonValu
     m_desiredInstanceCountHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ServerlessUpdateConfig"))
+  {
+    m_serverlessUpdateConfig = jsonValue.GetObject("ServerlessUpdateConfig");
+
+    m_serverlessUpdateConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -82,6 +91,12 @@ JsonValue DesiredWeightAndCapacity::Jsonize() const
   if(m_desiredInstanceCountHasBeenSet)
   {
    payload.WithInteger("DesiredInstanceCount", m_desiredInstanceCount);
+
+  }
+
+  if(m_serverlessUpdateConfigHasBeenSet)
+  {
+   payload.WithObject("ServerlessUpdateConfig", m_serverlessUpdateConfig.Jsonize());
 
   }
 

@@ -68,6 +68,8 @@
 #include <aws/glue/model/S3DeltaSource.h>
 #include <aws/glue/model/S3DeltaCatalogTarget.h>
 #include <aws/glue/model/S3DeltaDirectTarget.h>
+#include <aws/glue/model/AmazonRedshiftSource.h>
+#include <aws/glue/model/AmazonRedshiftTarget.h>
 #include <utility>
 
 namespace Aws
@@ -2251,6 +2253,68 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithS3DeltaDirectTarget(S3DeltaDirectTarget&& value) { SetS3DeltaDirectTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline const AmazonRedshiftSource& GetAmazonRedshiftSource() const{ return m_amazonRedshiftSource; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline bool AmazonRedshiftSourceHasBeenSet() const { return m_amazonRedshiftSourceHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftSource(const AmazonRedshiftSource& value) { m_amazonRedshiftSourceHasBeenSet = true; m_amazonRedshiftSource = value; }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftSource(AmazonRedshiftSource&& value) { m_amazonRedshiftSourceHasBeenSet = true; m_amazonRedshiftSource = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftSource(const AmazonRedshiftSource& value) { SetAmazonRedshiftSource(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a data source in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftSource(AmazonRedshiftSource&& value) { SetAmazonRedshiftSource(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline const AmazonRedshiftTarget& GetAmazonRedshiftTarget() const{ return m_amazonRedshiftTarget; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline bool AmazonRedshiftTargetHasBeenSet() const { return m_amazonRedshiftTargetHasBeenSet; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftTarget(const AmazonRedshiftTarget& value) { m_amazonRedshiftTargetHasBeenSet = true; m_amazonRedshiftTarget = value; }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline void SetAmazonRedshiftTarget(AmazonRedshiftTarget&& value) { m_amazonRedshiftTargetHasBeenSet = true; m_amazonRedshiftTarget = std::move(value); }
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftTarget(const AmazonRedshiftTarget& value) { SetAmazonRedshiftTarget(value); return *this;}
+
+    /**
+     * <p>Specifies a target that writes to a data target in Amazon Redshift.</p>
+     */
+    inline CodeGenConfigurationNode& WithAmazonRedshiftTarget(AmazonRedshiftTarget&& value) { SetAmazonRedshiftTarget(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2441,6 +2505,12 @@ namespace Model
 
     S3DeltaDirectTarget m_s3DeltaDirectTarget;
     bool m_s3DeltaDirectTargetHasBeenSet = false;
+
+    AmazonRedshiftSource m_amazonRedshiftSource;
+    bool m_amazonRedshiftSourceHasBeenSet = false;
+
+    AmazonRedshiftTarget m_amazonRedshiftTarget;
+    bool m_amazonRedshiftTargetHasBeenSet = false;
   };
 
 } // namespace Model

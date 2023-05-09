@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/glue/model/TransformConfigParameter.h>
+#include <aws/glue/model/GlueSchema.h>
 #include <utility>
 
 namespace Aws
@@ -339,6 +340,47 @@ namespace Model
      */
     inline DynamicTransform& WithVersion(const char* value) { SetVersion(value); return *this;}
 
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline const Aws::Vector<GlueSchema>& GetOutputSchemas() const{ return m_outputSchemas; }
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline bool OutputSchemasHasBeenSet() const { return m_outputSchemasHasBeenSet; }
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline void SetOutputSchemas(const Aws::Vector<GlueSchema>& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = value; }
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline void SetOutputSchemas(Aws::Vector<GlueSchema>&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas = std::move(value); }
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline DynamicTransform& WithOutputSchemas(const Aws::Vector<GlueSchema>& value) { SetOutputSchemas(value); return *this;}
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline DynamicTransform& WithOutputSchemas(Aws::Vector<GlueSchema>&& value) { SetOutputSchemas(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline DynamicTransform& AddOutputSchemas(const GlueSchema& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the data schema for the dynamic transform.</p>
+     */
+    inline DynamicTransform& AddOutputSchemas(GlueSchema&& value) { m_outputSchemasHasBeenSet = true; m_outputSchemas.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -361,6 +403,9 @@ namespace Model
 
     Aws::String m_version;
     bool m_versionHasBeenSet = false;
+
+    Aws::Vector<GlueSchema> m_outputSchemas;
+    bool m_outputSchemasHasBeenSet = false;
   };
 
 } // namespace Model

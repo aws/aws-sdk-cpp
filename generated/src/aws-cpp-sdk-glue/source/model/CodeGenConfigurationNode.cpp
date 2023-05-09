@@ -81,7 +81,9 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_catalogDeltaSourceHasBeenSet(false),
     m_s3DeltaSourceHasBeenSet(false),
     m_s3DeltaCatalogTargetHasBeenSet(false),
-    m_s3DeltaDirectTargetHasBeenSet(false)
+    m_s3DeltaDirectTargetHasBeenSet(false),
+    m_amazonRedshiftSourceHasBeenSet(false),
+    m_amazonRedshiftTargetHasBeenSet(false)
 {
 }
 
@@ -148,7 +150,9 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_catalogDeltaSourceHasBeenSet(false),
     m_s3DeltaSourceHasBeenSet(false),
     m_s3DeltaCatalogTargetHasBeenSet(false),
-    m_s3DeltaDirectTargetHasBeenSet(false)
+    m_s3DeltaDirectTargetHasBeenSet(false),
+    m_amazonRedshiftSourceHasBeenSet(false),
+    m_amazonRedshiftTargetHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -596,6 +600,20 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_s3DeltaDirectTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AmazonRedshiftSource"))
+  {
+    m_amazonRedshiftSource = jsonValue.GetObject("AmazonRedshiftSource");
+
+    m_amazonRedshiftSourceHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AmazonRedshiftTarget"))
+  {
+    m_amazonRedshiftTarget = jsonValue.GetObject("AmazonRedshiftTarget");
+
+    m_amazonRedshiftTargetHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -978,6 +996,18 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_s3DeltaDirectTargetHasBeenSet)
   {
    payload.WithObject("S3DeltaDirectTarget", m_s3DeltaDirectTarget.Jsonize());
+
+  }
+
+  if(m_amazonRedshiftSourceHasBeenSet)
+  {
+   payload.WithObject("AmazonRedshiftSource", m_amazonRedshiftSource.Jsonize());
+
+  }
+
+  if(m_amazonRedshiftTargetHasBeenSet)
+  {
+   payload.WithObject("AmazonRedshiftTarget", m_amazonRedshiftTarget.Jsonize());
 
   }
 
