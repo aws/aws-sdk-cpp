@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/stream/PreallocatedStreamBuf.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
@@ -16,9 +16,13 @@ static char replacementBuf[] = "Boom, I ruined your st";
 static char concatStr[] = "This Boom, I ruined your st";
 static char shortenedBuffer[] = "This is an internal buf";
 
+class PreallocatedStreamBufTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
 //Fill in a buffer and make sure we read the same exact thing back
 //for the stream
-TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
+TEST_F(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
@@ -30,7 +34,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadFromPrefilledBuffer)
 }
 
 //test read seeking from the beginning
-TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
+TEST_F(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
@@ -43,7 +47,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekBeg)
 }
 
 //test read seeking from current pos.
-TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
+TEST_F(PreallocatedStreamBufTest, TestStreamReadSeekCur)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
@@ -56,7 +60,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekCur)
 }
 
 //test read seeking from the end.
-TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
+TEST_F(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);
@@ -70,7 +74,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadSeekEnd)
 }
 
 //test write seeking from the beginning.
-TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
+TEST_F(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
@@ -83,7 +87,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekBeg)
 }
 
 //test write seeking from the current position.
-TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
+TEST_F(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
@@ -96,7 +100,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekCur)
 }
 
 //test write seeking from the end.
-TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
+TEST_F(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 {
     char bufferStrLocal[] = "This is an internal buffer.";
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStrLocal), sizeof(bufferStrLocal));
@@ -111,7 +115,7 @@ TEST(PreallocatedStreamBufTest, TestStreamWriteSeekEnd)
 
 //make sure if the max stream size has been set to something smaller than the 
 //buffer size, that max stream size is honored instead of the buffer length for reads
-TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
+TEST_F(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr) - 5);
     Aws::IOStream ioStream(&streamBuf);
@@ -125,7 +129,7 @@ TEST(PreallocatedStreamBufTest, TestStreamReadHonorsSizeLimitShorterThanBuffer)
     ASSERT_STREQ(shortenedBuffer, reinterpret_cast<const char*>(readBuf.GetUnderlyingData()));
 }
 
-TEST(PreallocatedStreamBufTest, TestZeroLengthSeekFromEnd)
+TEST_F(PreallocatedStreamBufTest, TestZeroLengthSeekFromEnd)
 {
     PreallocatedStreamBuf streamBuf(reinterpret_cast<unsigned char*>(bufferStr), sizeof(bufferStr));
     Aws::IOStream ioStream(&streamBuf);

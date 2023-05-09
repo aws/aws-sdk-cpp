@@ -3,14 +3,18 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/threading/Executor.h>
 #include <aws/core/utils/threading/ReaderWriterLock.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 using namespace Aws::Utils::Threading;
 
-TEST(ReaderWriterLock, MultipleReadersMultipleWriters)
+class ReaderWriterLockTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(ReaderWriterLockTest, MultipleReadersMultipleWriters)
 {
     Aws::String resource = "It's still Day One";
     std::atomic<size_t> resourceLength { resource.length() };
@@ -53,7 +57,7 @@ TEST(ReaderWriterLock, MultipleReadersMultipleWriters)
     }
 }
 
-TEST(ReaderWriterLock, NoReadersMultipleWriters)
+TEST_F(ReaderWriterLockTest, NoReadersMultipleWriters)
 {
     Aws::String resource = "It's still Day One";
     const auto originalLength = resource.length();

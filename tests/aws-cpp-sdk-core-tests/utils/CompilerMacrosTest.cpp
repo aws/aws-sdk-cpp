@@ -4,7 +4,7 @@
  */
 
 #include <aws/core/Core_EXPORTS.h>
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 AWS_DEPRECATED("Test a deprecated function")
 static bool foo()
@@ -12,7 +12,11 @@ static bool foo()
     return true;
 }
 
-TEST(CompilerMacrosTest, TestCompilerMacro)
+class CompilerMacrosTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(CompilerMacrosTest, TestCompilerMacro)
 {
     AWS_SUPPRESS_DEPRECATION(
         bool ret = foo();

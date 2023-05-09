@@ -4,7 +4,7 @@
  */
 
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -13,7 +13,11 @@
 using namespace Aws::Utils;
 
 
-TEST(StringUtilsTest, TestSplitHappyPath)
+class StringUtilsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(StringUtilsTest, TestSplitHappyPath)
 {
     Aws::String toSplit = "test1,test2,test3,test4";
 
@@ -68,7 +72,7 @@ TEST(StringUtilsTest, TestSplitHappyPath)
     EXPECT_STREQ("test4",                   splits100[3].c_str());
 }
 
-TEST(StringUtilsTest, TestSplitHappyPathWithAdjacentDelimiters)
+TEST_F(StringUtilsTest, TestSplitHappyPathWithAdjacentDelimiters)
 {
     Aws::String toSplit = "test1,test2,,test3,,,test4,";
 
@@ -198,7 +202,7 @@ TEST(StringUtilsTest, TestSplitHappyPathWithAdjacentDelimiters)
     EXPECT_STREQ("",                            splits100[7].c_str());
 }
 
-TEST(StringUtilsTest, TestSplitHappyPathWithNewLine)
+TEST_F(StringUtilsTest, TestSplitHappyPathWithNewLine)
 {
     Aws::StringStream ss;
     ss << "test1" << "," << "test2" << std::endl << "test3" << "," << "test4";
@@ -258,7 +262,7 @@ TEST(StringUtilsTest, TestSplitHappyPathWithNewLine)
     EXPECT_STREQ("test4", splits100[2].c_str());
 }
 
-TEST(StringUtilsTest, TestSplitOnLineHappyPath)
+TEST_F(StringUtilsTest, TestSplitOnLineHappyPath)
 {
     Aws::StringStream ss;
     ss << "test1" << std::endl << "test2" << std::endl << "test3" << std::endl << "test4";
@@ -273,7 +277,7 @@ TEST(StringUtilsTest, TestSplitOnLineHappyPath)
     EXPECT_STREQ("test4", splits[3].c_str());
 }
 
-TEST(StringUtilsTest, TestSplitWithDelimiterOnTheFrontAndBack)
+TEST_F(StringUtilsTest, TestSplitWithDelimiterOnTheFrontAndBack)
 {
     Aws::String toSplit = ",,test1,,test2,,test3,,test4,,";
 
@@ -414,7 +418,7 @@ TEST(StringUtilsTest, TestSplitWithDelimiterOnTheFrontAndBack)
     EXPECT_STREQ("",                              splits12[10].c_str());
 }
 
-TEST(StringUtilsTest, TestSplitWithEmptyString)
+TEST_F(StringUtilsTest, TestSplitWithEmptyString)
 {
     Aws::String toSplit = "";
 
@@ -423,7 +427,7 @@ TEST(StringUtilsTest, TestSplitWithEmptyString)
     ASSERT_EQ(0uL, splits.size());
 }
 
-TEST(StringUtilsTest, TestSplitDelimiterNotFound)
+TEST_F(StringUtilsTest, TestSplitDelimiterNotFound)
 {
     Aws::String toSplit = "BlahBlahBlah";
 
@@ -432,7 +436,7 @@ TEST(StringUtilsTest, TestSplitDelimiterNotFound)
     ASSERT_EQ(1uL, splits.size());
 }
 
-TEST(StringUtilsTest, TestToLower)
+TEST_F(StringUtilsTest, TestToLower)
 {
     Aws::String toMakeLower = "Make Me Lower Case";
     Aws::String lowered = StringUtils::ToLower(toMakeLower.c_str());
@@ -440,7 +444,7 @@ TEST(StringUtilsTest, TestToLower)
     EXPECT_STREQ("make me lower case", lowered.c_str());
 }
 
-TEST(StringUtilsTest, TestToUpper)
+TEST_F(StringUtilsTest, TestToUpper)
 {
     Aws::String toMakeUpper = "Make Me Upper Case";
     Aws::String uppered = StringUtils::ToUpper(toMakeUpper.c_str());
@@ -448,7 +452,7 @@ TEST(StringUtilsTest, TestToUpper)
     EXPECT_STREQ("MAKE ME UPPER CASE", uppered.c_str());
 }
 
-TEST(StringUtilsTest, TestCaselessComparison)
+TEST_F(StringUtilsTest, TestCaselessComparison)
 {
     static const char* upperCase = "WE ARE the Same";
     static const char* lowerCase = "we are the same";
@@ -458,7 +462,7 @@ TEST(StringUtilsTest, TestCaselessComparison)
     EXPECT_FALSE(StringUtils::CaselessCompare(lowerCase, bad));
 }
 
-TEST(StringUtilsTest, TestTrim)
+TEST_F(StringUtilsTest, TestTrim)
 {
     Aws::String toTrim = " \n\t Trim me\n\t ";
 
@@ -467,7 +471,7 @@ TEST(StringUtilsTest, TestTrim)
     EXPECT_STREQ("Trim me", StringUtils::Trim(toTrim.c_str()).c_str());
 }
 
-TEST(StringUtilsTest, TestURLEncodeAndDecode)
+TEST_F(StringUtilsTest, TestURLEncodeAndDecode)
 {
     Aws::String toEncode = "/Test Path/value=reserved%!";
 
@@ -491,7 +495,7 @@ TEST(StringUtilsTest, TestURLEncodeAndDecode)
     ASSERT_STREQ("IShouldNotChange", shouldBeTheSameAsEncoded.c_str());
 }
 
-TEST(StringUtilsTest, TestURLDecodeEdgeCases)
+TEST_F(StringUtilsTest, TestURLDecodeEdgeCases)
 {
     ASSERT_STREQ("me@ama%zon.com", StringUtils::URLDecode( "me%40ama%zon.com").c_str());
     ASSERT_STREQ("me@am%azon.com", StringUtils::URLDecode( "me%40am%azon.com").c_str());
@@ -502,7 +506,7 @@ TEST(StringUtilsTest, TestURLDecodeEdgeCases)
     ASSERT_STREQ("%DO", StringUtils::URLDecode("%DO").c_str());
 }
 
-TEST(StringUtilsTest, TestURLWithEncodedSpace)
+TEST_F(StringUtilsTest, TestURLWithEncodedSpace)
 {
     //Some services(e.g. S3) use + for spaces in URL encoding.
     const Aws::String encoded = "Test+Path%20Space";
@@ -510,7 +514,7 @@ TEST(StringUtilsTest, TestURLWithEncodedSpace)
     ASSERT_STREQ("Test Path Space", decoded.c_str());
 }
 
-TEST(StringUtilsTest, TestInt64Conversion)
+TEST_F(StringUtilsTest, TestInt64Conversion)
 {
     long long bigIntValue = LLONG_MAX - 1;
     std::stringstream ss;
@@ -520,7 +524,7 @@ TEST(StringUtilsTest, TestInt64Conversion)
     ASSERT_EQ(bigIntValue, StringUtils::ConvertToInt64(ss.str().c_str()));
 }
 
-TEST(StringUtilsTest, TestInt32Conversion)
+TEST_F(StringUtilsTest, TestInt32Conversion)
 {
     long long intValue = INT_MAX - 1;
     std::stringstream ss;
@@ -531,7 +535,7 @@ TEST(StringUtilsTest, TestInt32Conversion)
     ASSERT_EQ(intValue, StringUtils::ConvertToInt32(ss.str().c_str()));
 }
 
-TEST(StringUtilsTest, TestBoolConversion)
+TEST_F(StringUtilsTest, TestBoolConversion)
 {
     ASSERT_FALSE(StringUtils::ConvertToBool(NULL));
     ASSERT_FALSE(StringUtils::ConvertToBool(""));
@@ -543,7 +547,7 @@ TEST(StringUtilsTest, TestBoolConversion)
     ASSERT_TRUE(StringUtils::ConvertToBool("true"));
 }
 
-TEST(StringUtilsTest, TestDoubleConversion)
+TEST_F(StringUtilsTest, TestDoubleConversion)
 {
     double doubleValue = DBL_MAX - 0.0001;
     ASSERT_DOUBLE_EQ(0.0, StringUtils::ConvertToDouble(NULL));
@@ -554,7 +558,7 @@ TEST(StringUtilsTest, TestDoubleConversion)
     ASSERT_DOUBLE_EQ(doubleValue, StringUtils::ConvertToDouble(ss.str().c_str()));
 }
 
-TEST(StringUtilsTest, TestDoubleURLEncoding)
+TEST_F(StringUtilsTest, TestDoubleURLEncoding)
 {
     double doubleValue = 56789432.08;
     ASSERT_TRUE( "5.67894e%2B07" == StringUtils::URLEncode(doubleValue) || "5.67894e%2B007" == StringUtils::URLEncode(doubleValue));
@@ -569,19 +573,19 @@ TEST(StringUtilsTest, TestDoubleURLEncoding)
     ASSERT_EQ("0.0005678", StringUtils::URLEncode(doubleValue));
 }
 
-TEST(StringUtilsTest, TestUnicodeURLEncoding)
+TEST_F(StringUtilsTest, TestUnicodeURLEncoding)
 {
     // 中国 in UTF-8 hex notation
     ASSERT_STREQ("sample%E4%B8%AD%E5%9B%BD", StringUtils::URLEncode("sample\xE4\xB8\xAD\xE5\x9B\xBD").c_str());
 }
 
-TEST(StringUtilsTest, TestUnicodeURLDecoding)
+TEST_F(StringUtilsTest, TestUnicodeURLDecoding)
 {
     // 中国 in UTF-8 hex notation
     ASSERT_STREQ("sample\xE4\xB8\xAD\xE5\x9B\xBD", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD").c_str());
 }
 
-TEST(StringUtilsTest, TestToHexString)
+TEST_F(StringUtilsTest, TestToHexString)
 {
     ASSERT_STREQ("0", StringUtils::ToHexString(static_cast<uint8_t>(0)).c_str());
     ASSERT_STREQ("38", StringUtils::ToHexString(static_cast<uint8_t>(56)).c_str());
@@ -592,7 +596,7 @@ TEST(StringUtilsTest, TestToHexString)
 
 #ifdef _WIN32
 
-TEST(StringUtilsTest, TestWCharToString)
+TEST_F(StringUtilsTest, TestWCharToString)
 {
     static const wchar_t wcharString[] = L"simple \x6837\x54C1"; // 样品 in UTF-16 hex notation
     static const char expected[] = "simple \xE6\xA0\xB7\xE5\x93\x81"; // 样品 in UTF-8 hex notation
@@ -602,7 +606,7 @@ TEST(StringUtilsTest, TestWCharToString)
     ASSERT_STREQ(expected, outString.c_str());
 }
 
-TEST(StringUtilsTest, TestCharToWString)
+TEST_F(StringUtilsTest, TestCharToWString)
 {
     static const char charString[] = "simple \xE6\xA0\xB7\xE5\x93\x81"; // 样品 in UTF-8 hex notation
     static const wchar_t expected[] = L"simple \x6837\x54C1"; // 样品 in UTF-16 hex notation

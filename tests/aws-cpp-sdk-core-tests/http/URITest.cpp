@@ -3,11 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/http/URI.h>
 
 using namespace Aws::Http;
-TEST(URITest, DefaultConstructor)
+
+class URITest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(URITest, DefaultConstructor)
 {
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
@@ -15,7 +20,7 @@ TEST(URITest, DefaultConstructor)
 
 }
 
-TEST(URITest, TestSchemeChanges)
+TEST_F(URITest, TestSchemeChanges)
 {
     URI uri;
     EXPECT_EQ(Scheme::HTTP, uri.GetScheme());
@@ -38,7 +43,7 @@ TEST(URITest, TestSchemeChanges)
 
 }
 
-TEST(URITest, TestSetPath)
+TEST_F(URITest, TestSetPath)
 {
     URI uri;
     Aws::String path = "/path/to/resource";
@@ -62,7 +67,7 @@ TEST(URITest, TestSetPath)
     EXPECT_EQ(path, uri.GetPath());
 }
 
-TEST(URITest, TestAddPathSegments)
+TEST_F(URITest, TestAddPathSegments)
 {
     URI uri;
 
@@ -138,7 +143,7 @@ TEST(URITest, TestAddPathSegments)
     EXPECT_STREQ("/path/string/value/path%2Fto%2Fresource", uri.GetURLEncodedPath().c_str());
 }
 
-TEST(URITest, TestAddQueryStringParameters)
+TEST_F(URITest, TestAddQueryStringParameters)
 {
     URI uri;
     Aws::String path = "/path/to/resource";
@@ -188,7 +193,7 @@ TEST(URITest, TestAddQueryStringParameters)
         uri.GetURIString().c_str());
 }
 
-TEST(URITest, TestCanonicalizeQueryStringParameters)
+TEST_F(URITest, TestCanonicalizeQueryStringParameters)
 {
     URI uri;
     Aws::String path = "/path/to/resource";
@@ -211,7 +216,7 @@ TEST(URITest, TestCanonicalizeQueryStringParameters)
     EXPECT_EQ("?nonStandard", nonStandardUri.GetQueryString());
 }
 
-TEST(URITest, TestPort)
+TEST_F(URITest, TestPort)
 {
     URI uri;
     Aws::String path = "/path/to/resource";
@@ -222,7 +227,7 @@ TEST(URITest, TestPort)
     EXPECT_STREQ("http://www.test.com:8080/path/to/resource", uri.GetURIString().c_str());
 }
 
-TEST(URITest, TestParse)
+TEST_F(URITest, TestParse)
 {
 
     const char* strUri = "https://www.test.com:8443/path/to/resource?test1=value1&test%20space=value%20space&test2=value2&test2=value3";
@@ -253,7 +258,7 @@ TEST(URITest, TestParse)
     EXPECT_EQ("http://sqs.us-east-1.amazonaws.com/686094048/testQueueName/", uriThatBrokeTheOtherDay.GetURIString());
 }
 
-TEST(URITest, TestParseWithColon)
+TEST_F(URITest, TestParseWithColon)
 {
     const char* strUri = "https://test.com/path/1234:_Some_Path";
     URI uri(strUri);
@@ -283,7 +288,7 @@ TEST(URITest, TestParseWithColon)
     EXPECT_STREQ(strComplexUri, complexUri.GetURIString().c_str());
 }
 
-TEST(URITest, TestParseWithColonCompliant)
+TEST_F(URITest, TestParseWithColonCompliant)
 {
     Aws::Http::SetCompliantRfc3986Encoding(true);
     const char* strComplexUri = "http://s3.us-east-1.amazonaws.com/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:1234/awsnativesdkputobjectstestbucket20150702T200059Z/TestObject:Key";
@@ -297,7 +302,7 @@ TEST(URITest, TestParseWithColonCompliant)
     Aws::Http::SetCompliantRfc3986Encoding(false);
 }
 
-TEST(URITest, TestGetURLEncodedPath)
+TEST_F(URITest, TestGetURLEncodedPath)
 {
     Aws::String path = "";
     EXPECT_STREQ("", URI::URLEncodePath(path).c_str());
@@ -318,7 +323,7 @@ TEST(URITest, TestGetURLEncodedPath)
     EXPECT_STREQ("path/%E1%88%B4", URI::URLEncodePath(path).c_str());
 }
 
-TEST(URITest, TestGetRFC3986URLEncodedPath)
+TEST_F(URITest, TestGetRFC3986URLEncodedPath)
 {
     URI uri = "https://test.com/path/1234/";
     EXPECT_STREQ("/path/1234/", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
@@ -342,7 +347,7 @@ TEST(URITest, TestGetRFC3986URLEncodedPath)
     EXPECT_STREQ("/segment%2Bother/b%3Bjsession=1", URI::URLEncodePathRFC3986(uri.GetPath()).c_str());
 }
 
-TEST(URITest, TestGetRFC3986URLEncodedPathCompliant)
+TEST_F(URITest, TestGetRFC3986URLEncodedPathCompliant)
 {
     Aws::Http::SetCompliantRfc3986Encoding(true);
 

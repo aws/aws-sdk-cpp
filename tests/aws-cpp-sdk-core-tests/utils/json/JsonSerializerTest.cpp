@@ -1,9 +1,9 @@
-/**
+/**: public Aws::Testing::AwsCppSdkGTestSuite
  * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
@@ -12,7 +12,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 
-TEST(JsonSerializerTest, TestParseSimpleJsonString)
+class JsonSerializerTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(JsonSerializerTest, TestParseSimpleJsonString)
 {
     const Aws::String simpleValue = R"({"testStringKey":"testStringValue"})";
     JsonValue value(simpleValue);
@@ -29,7 +33,7 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString)
 }
 
 
-TEST(JsonSerializerTest, TestParseSimpleJsonString2)
+TEST_F(JsonSerializerTest, TestParseSimpleJsonString2)
 {
     const Aws::String simpleValue2 = R"({"testIntKey":10})";
     JsonValue value(simpleValue2);
@@ -47,7 +51,7 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString2)
 
 
 
-TEST(JsonSerializerTest, TestParseSimpleJsonString3)
+TEST_F(JsonSerializerTest, TestParseSimpleJsonString3)
 {
     const Aws::String simpleValue3 = R"({"testInt64Key":8765432109876543210})";
     JsonValue value(simpleValue3);
@@ -64,7 +68,7 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString3)
 }
 
 
-TEST(JsonSerializerTest, TestParseSimpleJsonString4)
+TEST_F(JsonSerializerTest, TestParseSimpleJsonString4)
 {
     const Aws::String simpleValue4 = R"({"testBoolKey":false})";
     JsonValue value(simpleValue4);
@@ -81,7 +85,7 @@ TEST(JsonSerializerTest, TestParseSimpleJsonString4)
 }
 
 
-TEST(JsonSerializerTest, TestParseJsonArrayString)
+TEST_F(JsonSerializerTest, TestParseJsonArrayString)
 {
     const Aws::String jsonArrayValue = R"({"array": ["stringArrayEntry1", "stringArrayEntry2"]})";
     JsonValue value(jsonArrayValue);
@@ -107,7 +111,7 @@ const std::string jsonValue = R"({
     "object": {"testObjectStringKey":"testObjectStringValue"}
 })";
 
-TEST(JsonSerializerTest, TestParseJsonString)
+TEST_F(JsonSerializerTest, TestParseJsonString)
 {
     JsonValue value(Aws::String(jsonValue.c_str()));
     if (value.WasParseSuccessful())
@@ -129,7 +133,7 @@ TEST(JsonSerializerTest, TestParseJsonString)
     }
 }
 
-TEST(JsonSerializerTest, TestParseJsonStream)
+TEST_F(JsonSerializerTest, TestParseJsonStream)
 {
     Aws::StringStream inputAsStream(Aws::String(jsonValue.c_str()));
     JsonValue value(inputAsStream);
@@ -152,14 +156,14 @@ TEST(JsonSerializerTest, TestParseJsonStream)
     }
 }
 
-TEST(JsonSerializerTest, TestParseJsonStringFailed)
+TEST_F(JsonSerializerTest, TestParseJsonStringFailed)
 {
     JsonValue value(Aws::String("blah blah blah"));
     ASSERT_FALSE(value.WasParseSuccessful());
     ASSERT_FALSE(value.GetErrorMessage().empty());
 }
 
-TEST(JsonSerializerTest, TestParseJsonStreamFailed)
+TEST_F(JsonSerializerTest, TestParseJsonStreamFailed)
 {
     Aws::StringStream ss;
     ss << "{\"bla\" : blah blah";
@@ -168,7 +172,7 @@ TEST(JsonSerializerTest, TestParseJsonStreamFailed)
     ASSERT_STREQ("Failed to parse JSON. Invalid input at: blah blah", value.GetErrorMessage().c_str());
 }
 
-TEST(JsonSerializerTest, TestJsonStringValue)
+TEST_F(JsonSerializerTest, TestJsonStringValue)
 {
     JsonValue value;
     value.WithString("testKey", "testValue");
@@ -178,7 +182,7 @@ TEST(JsonSerializerTest, TestJsonStringValue)
     ASSERT_STREQ("anotherTestValue", value.View().AsString().c_str());
 }
 
-TEST(JsonSerializerTest, TestJsonIntegerValue)
+TEST_F(JsonSerializerTest, TestJsonIntegerValue)
 {
     JsonValue value;
     value.WithInteger("testKey", 10);
@@ -188,7 +192,7 @@ TEST(JsonSerializerTest, TestJsonIntegerValue)
     ASSERT_EQ(15, value.View().AsInteger());
 }
 
-TEST(JsonSerializerTest, TestJsonInt64Value)
+TEST_F(JsonSerializerTest, TestJsonInt64Value)
 {
     JsonValue value;
     value.WithInt64("testKey", INT64_MIN);
@@ -218,7 +222,7 @@ TEST(JsonSerializerTest, TestJsonInt64Value)
     ASSERT_FALSE(value.View().IsFloatingPointType());
 }
 
-TEST(JsonSerializerTest, TestJsonBoolValue)
+TEST_F(JsonSerializerTest, TestJsonBoolValue)
 {
     JsonValue value;
     value.WithBool("testKey", false);
@@ -228,7 +232,7 @@ TEST(JsonSerializerTest, TestJsonBoolValue)
     ASSERT_TRUE(value.View().AsBool());
 }
 
-TEST(JsonSerializerTest, TestJsonArrayValue)
+TEST_F(JsonSerializerTest, TestJsonArrayValue)
 {
     JsonValue value;
     Array<JsonValue> arrayValue(2);
@@ -255,7 +259,7 @@ TEST(JsonSerializerTest, TestJsonArrayValue)
     ASSERT_EQ("testValue4", returnedValues[1].AsString());
 }
 
-TEST(JsonSerializerTest, TestJsonObjectValue)
+TEST_F(JsonSerializerTest, TestJsonObjectValue)
 {
     JsonValue value;
     Array<JsonValue> arrayValue(2);
@@ -291,7 +295,7 @@ TEST(JsonSerializerTest, TestJsonObjectValue)
     ASSERT_FALSE(objectView.AsObject().GetBool("testBoolKey"));
 }
 
-TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
+TEST_F(JsonSerializerTest, TestJsonCompactSerializeObject)
 {
     JsonValue value(Aws::String(jsonValue.c_str()));
     Aws::String outputString = value.View().WriteCompact();
@@ -313,7 +317,7 @@ TEST(JsonSerializerTest, TestJsonCompactSerializeObject)
     }
 }
 
-TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
+TEST_F(JsonSerializerTest, TestJsonStyledSerializeObject)
 {
     JsonValue value(Aws::String(jsonValue.c_str()));
 
@@ -338,7 +342,7 @@ TEST(JsonSerializerTest, TestJsonStyledSerializeObject)
     }
 }
 
-TEST(JsonSerializerTest, TestNullSanity)
+TEST_F(JsonSerializerTest, TestNullSanity)
 {
     JsonValue value;
     JsonView view = value.View();
@@ -349,7 +353,7 @@ TEST(JsonSerializerTest, TestNullSanity)
     ASSERT_FALSE(view.ValueExists("null"));
 }
 
-TEST(JsonSerializerTest, TestKeyValueExists)
+TEST_F(JsonSerializerTest, TestKeyValueExists)
 {
     auto input = R"({"AWS" : {
     "Key1" : "value1",
@@ -367,7 +371,7 @@ TEST(JsonSerializerTest, TestKeyValueExists)
     ASSERT_FALSE(json.KeyExists("Key3"));
 }
 
-TEST(JsonSerializerTest, TestCopy)
+TEST_F(JsonSerializerTest, TestCopy)
 {
     JsonValue value;
     ASSERT_TRUE(value.WasParseSuccessful());
@@ -382,7 +386,7 @@ TEST(JsonSerializerTest, TestCopy)
     ASSERT_FALSE(copiedValue.WasParseSuccessful());
 }
 
-TEST(JsonSerializerTest, TestMove)
+TEST_F(JsonSerializerTest, TestMove)
 {
     JsonValue value;
     ASSERT_TRUE(value.WasParseSuccessful());
@@ -397,7 +401,7 @@ TEST(JsonSerializerTest, TestMove)
     ASSERT_FALSE(movedValue.WasParseSuccessful());
 }
 
-TEST(JsonSerializer, TestBuilderPatternReplacesKeys)
+TEST_F(JsonSerializerTest, TestBuilderPatternReplacesKeys)
 {
     auto input = R"({"AWS" : {
     "Key1" : "value1",
@@ -414,7 +418,7 @@ TEST(JsonSerializer, TestBuilderPatternReplacesKeys)
     ASSERT_STREQ(expected, output.c_str());
 }
 
-TEST(JsonSerializer, TestGetAllObjects)
+TEST_F(JsonSerializerTest, TestGetAllObjects)
 {
     auto input = R"({"AWS" : {
     "Key1" : "value1",
@@ -430,7 +434,7 @@ TEST(JsonSerializer, TestGetAllObjects)
     ASSERT_EQ(42, all["Key2"].AsInteger());
 }
 
-TEST(JsonSerializer, TestEquality)
+TEST_F(JsonSerializerTest, TestEquality)
 {
     auto input = R"({"AWS" : {
     "Key1" : "value1",

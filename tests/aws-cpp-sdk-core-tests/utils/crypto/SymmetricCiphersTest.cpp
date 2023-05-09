@@ -5,7 +5,7 @@
 
 #ifndef NO_SYMMETRIC_ENCRYPTION
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/crypto/Factories.h>
 #include <aws/core/utils/crypto/Cipher.h>
 #include <aws/core/utils/HashingUtils.h>
@@ -37,7 +37,11 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
 static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String& key_raw, const Aws::String& data_raw,
                                    const Aws::String& expected_raw, const Aws::String& tag_raw, const Aws::String& aad_raw);
 
-TEST(AES_CBC_TEST, LessThanOneBlockTest)
+class AES_CBC_TEST : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AES_CBC_TEST, LessThanOneBlockTest)
 {
     Aws::String iv_raw = "11958dc6ab81e1c7f01631e9944e620f";
     Aws::String key_raw = "9adc8fbd506e032af7fa20cf5343719de6d1288c158c63d6878aaf64ce26ca85";
@@ -74,7 +78,7 @@ TEST(AES_CBC_TEST, LessThanOneBlockTest)
     ASSERT_EQ(data, plainText);
 }
 
-TEST(AES_CBC_TEST, NIST_CBCGFSbox256_case_1)
+TEST_F(AES_CBC_TEST, NIST_CBCGFSbox256_case_1)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -84,7 +88,7 @@ TEST(AES_CBC_TEST, NIST_CBCGFSbox256_case_1)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, NIST_CBCVarKey256_case_254)
+TEST_F(AES_CBC_TEST, NIST_CBCVarKey256_case_254)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "fffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffe";
@@ -94,7 +98,7 @@ TEST(AES_CBC_TEST, NIST_CBCVarKey256_case_254)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, NIST_CBCVarTxt256_case_110)
+TEST_F(AES_CBC_TEST, NIST_CBCVarTxt256_case_110)
 {
     Aws::String iv_raw =  "00000000000000000000000000000000";
     Aws::String key_raw = "0000000000000000000000000000000000000000000000000000000000000000";
@@ -104,7 +108,7 @@ TEST(AES_CBC_TEST, NIST_CBCVarTxt256_case_110)
     TestCBCSingleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, NIST_CBCMMT256_case_4)
+TEST_F(AES_CBC_TEST, NIST_CBCMMT256_case_4)
 {
     Aws::String iv_raw =  "11958dc6ab81e1c7f01631e9944e620f";
     Aws::String key_raw = "9adc8fbd506e032af7fa20cf5343719de6d1288c158c63d6878aaf64ce26ca85";
@@ -114,7 +118,7 @@ TEST(AES_CBC_TEST, NIST_CBCMMT256_case_4)
     TestCBCMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, NIST_CBCMMT256_case_9)
+TEST_F(AES_CBC_TEST, NIST_CBCMMT256_case_9)
 {
     Aws::String iv_raw =  "e49651988ebbb72eb8bb80bb9abbca34";
     Aws::String key_raw = "87725bd43a45608814180773f0e7ab95a3c859d83a2130e884190e44d14c6996";
@@ -124,7 +128,7 @@ TEST(AES_CBC_TEST, NIST_CBCMMT256_case_9)
     TestCBCMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CBC_TEST, Test_Generated_IV)
+TEST_F(AES_CBC_TEST, Test_Generated_IV)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
     ASSERT_EQ(32u, key.GetLength());
@@ -154,7 +158,11 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
 
-TEST(AES_CTR_TEST, RFC3686_Case_7)
+class AES_CTR_TEST : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AES_CTR_TEST, RFC3686_Case_7)
 {
     //Keep in mind that the IV here is [ NONCE ] [ IV ] [ Counter Init ]
     Aws::String iv_raw =  "00000060DB5672C97AA8F0B200000001";
@@ -166,7 +174,7 @@ TEST(AES_CTR_TEST, RFC3686_Case_7)
     TestCTRSingleBlockBuffers(iv_raw, key_raw, HashingUtils::HexEncode(data_buffer), expected_raw);
 }
 
-TEST(AES_CTR_TEST, RFC3686_Case_8)
+TEST_F(AES_CTR_TEST, RFC3686_Case_8)
 {
     //Keep in mind that the IV here is [ NONCE ] [ IV ] [ Counter Init ]
     Aws::String iv_raw =  "00FAAC24C1585EF15A43D87500000001";
@@ -178,7 +186,7 @@ TEST(AES_CTR_TEST, RFC3686_Case_8)
     TestCTRMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_CTR_TEST, RFC3686_Case_9)
+TEST_F(AES_CTR_TEST, RFC3686_Case_9)
 {
     //Keep in mind that the IV here is [ NONCE ] [ IV ] [ Counter Init ]
     Aws::String iv_raw =  "001CC5B751A51D70A1C1114800000001";
@@ -190,7 +198,11 @@ TEST(AES_CTR_TEST, RFC3686_Case_9)
     TestCTRMultipleBlockBuffers(iv_raw, key_raw, data_raw, expected_raw);
 }
 
-TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
+class AES_GCM_TEST : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
 {
     Aws::String iv_raw =  "0d18e06c7c725ac9e362e1ce";
     Aws::String key_raw = "31bdadd96698c204aa9ce1448ea94ae1fb4a9a0b3c9d773b51bb1822666b8f22";
@@ -201,7 +213,7 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_128_Test_0)
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, "");
 }
 
-TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
+TEST_F(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
     ASSERT_EQ(32u, key.GetLength());
@@ -235,7 +247,7 @@ TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
     ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
 
-TEST(AES_GCM_TEST, TestBadTagCausesFailure)
+TEST_F(AES_GCM_TEST, TestBadTagCausesFailure)
 {
     Aws::String iv_raw = "4742357c335913153ff0eb0f";
     Aws::String key_raw = "e5a0eb92cc2b064e1bc80891faf1fab5e9a17a9c3a984e25416720e30e6c2b21";
@@ -268,7 +280,7 @@ TEST(AES_GCM_TEST, TestBadTagCausesFailure)
 #endif
 }
 
-TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
+TEST_F(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
 {
     Aws::String iv_raw =  "4742357c335913153ff0eb0f";
     Aws::String key_raw = "e5a0eb92cc2b064e1bc80891faf1fab5e9a17a9c3a984e25416720e30e6c2b21";
@@ -279,7 +291,7 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_104_Test_3)
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, "");
 }
 
-TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_256_Test_6)
+TEST_F(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_256_Test_6)
 {
     Aws::String iv_raw =  "a291484c3de8bec6b47f525f";
     Aws::String key_raw = "37f39137416bafde6f75022a7a527cc593b6000a83ff51ec04871a0ff5360e4e";
@@ -291,7 +303,7 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_256_Test_6)
     TestGCMMultipleBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, "");
 }
 
-TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_408_Test_8)
+TEST_F(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_408_Test_8)
 {
     Aws::String iv_raw =  "92f258071d79af3e63672285";
     Aws::String key_raw = "595f259c55abe00ae07535ca5d9b09d6efb9f7e9abb64605c337acbd6b14fc7e";
@@ -303,7 +315,7 @@ TEST(AES_GCM_TEST, NIST_gcmEncryptExtIV256_PTLen_408_Test_8)
     TestGCMMultipleBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, "");
 }
 
-TEST(AES_GCM_TEST, AES_GCM_256_KAT_1)
+TEST_F(AES_GCM_TEST, AES_GCM_256_KAT_1)
 {
     Aws::String iv_raw = "FB7B4A824E82DAA6C8BC1251";
     Aws::String key_raw = "20142E898CD2FD980FBF34DE6BC85C14DA7D57BD28F4AA5CF1728AB64E843142";
@@ -314,7 +326,7 @@ TEST(AES_GCM_TEST, AES_GCM_256_KAT_1)
     TestGCMBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, aad_raw);
 }
 
-TEST(AES_GCM_TEST, AES_GCM_256_KAT_2)
+TEST_F(AES_GCM_TEST, AES_GCM_256_KAT_2)
 {
     Aws::String iv_raw = "6B5CD3705A733C1AD943D58A";
     Aws::String key_raw = "D211F278A44EAB666B1021F4B4F60BA6B74464FA9CB7B134934D7891E1479169";
@@ -326,7 +338,7 @@ TEST(AES_GCM_TEST, AES_GCM_256_KAT_2)
     TestGCMMultipleBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, aad_raw);
 }
 
-TEST(AES_GCM_TEST, AES_GCM_256_KAT_3)
+TEST_F(AES_GCM_TEST, AES_GCM_256_KAT_3)
 {
     Aws::String iv_raw = "5F08EFBFB7BF5BA365D9EB1D";
     Aws::String key_raw = "CFE8BFE61B89AF53D2BECE744D27B78C9E4D74D028CE88ED10A422285B1201C9";
@@ -338,7 +350,7 @@ TEST(AES_GCM_TEST, AES_GCM_256_KAT_3)
     TestGCMMultipleBuffers(iv_raw, key_raw, data_raw, expected_raw, tag_raw, aad_raw);
 }
 
-TEST(AES_GCM_TEST, Test_Generated_IV)
+TEST_F(AES_GCM_TEST, Test_Generated_IV)
 {
     CryptoBuffer key = SymmetricCipher::GenerateKey();
     ASSERT_EQ(32u, key.GetLength());
@@ -367,7 +379,11 @@ TEST(AES_GCM_TEST, Test_Generated_IV)
     ASSERT_STREQ(data_raw.c_str(), (const char*)plainText.GetUnderlyingData());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
+class AES_KeyWrap_Test : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
 {
     Aws::String expected_cipher_text = "28C9F404C4B810F4CBCCB35CFB87F8263F5786E2D80ED326CBC7F0E71A99F43BFB988B9B7A02DD21";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
@@ -400,7 +416,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
     ASSERT_STREQ(cek.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeDecryptedResult).c_str()).c_str());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
 {
     Aws::String expected_cipher_text = "28C9F404C4B810F4CBCCB35CFB87F8263F5786E2D80ED326CBC7F0E71A99F43BFB988B9B7A02DD21";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
@@ -433,7 +449,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
     ASSERT_EQ(0u, decryptFinalizeResult.GetLength());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
 {
     Aws::String expected_cipher_text = "28C9F404C4B810F4CBCCB35CFB87F8263F5786E2D80ED326CBC7F0E71A99F43BFB988B9B7A02DD21";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
@@ -466,7 +482,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
     ASSERT_EQ(0u, decryptFinalizeResult.GetLength());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
 {
     Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
@@ -499,7 +515,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
     ASSERT_STREQ(cek.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeDecryptedResult).c_str()).c_str());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
 {
     Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
@@ -531,7 +547,7 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
     ASSERT_EQ(0u, decryptFinalizeResult.GetLength());
 }
 
-TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
+TEST_F(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
 {
     Aws::String expected_cipher_text = "64E8C3F9CE0F5BA263E9777905818A2A93C8191E7D6E8AE7";
     Aws::String kek = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";

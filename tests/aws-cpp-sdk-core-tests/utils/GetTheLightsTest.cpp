@@ -3,12 +3,16 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/GetTheLights.h>
 
 using namespace Aws::Utils;
 
-TEST(GetTheLightsTest, Test_Lights_TurnOff)
+class GetTheLightsTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(GetTheLightsTest, Test_Lights_TurnOff)
 {    
     GetTheLights getTheLights;
 

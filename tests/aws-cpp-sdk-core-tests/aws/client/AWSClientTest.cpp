@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/core/http/standard/StandardHttpRequest.h>
 #include <aws/core/http/standard/StandardHttpResponse.h>
@@ -66,7 +66,7 @@ protected:
     }
 };
 
-class AWSClientTestSuite : public ::testing::Test
+class AWSClientTestSuite : public Aws::Testing::AwsCppSdkGTestSuite
 {
 protected:
     std::shared_ptr<MockHttpClient> mockHttpClient;
@@ -513,7 +513,7 @@ TEST_F(AWSClientTestSuite, TestErrorInBodyOfResponse)
     ASSERT_EQ(outcome.GetError().GetExceptionName(), "TestErrorInBodyOfResponse");
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersOnly)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -566,7 +566,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersOnly)
     ASSERT_EQ(ComputeUserAgentString(), finalHeaders[Http::USER_AGENT_HEADER]);
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithHeadersAndBody)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -610,7 +610,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithHeadersAndBody)
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
 }
 
-TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
+TEST_F(AWSClientTestSuite, TestBuildHttpRequestWithAdditionalHeadersAndBody)
 {
     HeaderValueCollection headerValues;
     headerValues["test1"] = "testValue1";
@@ -661,7 +661,7 @@ TEST(AWSClientTest, TestBuildHttpRequestWithAdditionalHeadersAndBody)
     ASSERT_EQ(contentLengthExpected.str(), finalHeaders[Http::CONTENT_LENGTH_HEADER]);
 }
 
-TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
+TEST_F(AWSClientTestSuite, TestHostHeaderWithNonStandardHttpPort)
 {
     Standard::StandardHttpRequest r1("http://example.amazonaws.com:8080", HttpMethod::HTTP_GET);
     auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
@@ -672,7 +672,7 @@ TEST(AWSClientTest, TestHostHeaderWithNonStandardHttpPort)
     ASSERT_STREQ("example.amazonaws.com:8888", host.c_str());
 }
 
-TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
+TEST_F(AWSClientTestSuite, TestHostHeaderWithStandardHttpPort)
 {
     Standard::StandardHttpRequest r1("http://example.amazonaws.com:80", HttpMethod::HTTP_GET);
     auto host = r1.GetHeaderValue(Aws::Http::HOST_HEADER);
@@ -693,7 +693,7 @@ TEST(AWSClientTest, TestHostHeaderWithStandardHttpPort)
     ASSERT_STREQ("example.amazonaws.com:80", host.c_str());
 }
 
-TEST(AWSClientTest, TestOverflowContainer)
+TEST_F(AWSClientTestSuite, TestOverflowContainer)
 {
     auto container = Aws::GetEnumOverflowContainer();
     const auto hashcode = 42;
@@ -704,7 +704,7 @@ TEST(AWSClientTest, TestOverflowContainer)
 
 
 
-class AWSRegionTest : public ::testing::Test
+class AWSRegionTest : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()

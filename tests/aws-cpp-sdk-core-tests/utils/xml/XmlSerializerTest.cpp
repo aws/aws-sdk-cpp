@@ -3,13 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/xml/XmlSerializer.h>
 
 using namespace Aws::Utils::Xml;
 
-TEST(XmlSerializerTest, TestXmlDeserialize)
+class XmlSerializerTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(XmlSerializerTest, TestXmlDeserialize)
 {
     const char* testXml = "<?xml version=\"1.0\" ?>\n"
         "<!-- Our to do list data -->\n"
@@ -42,7 +46,7 @@ TEST(XmlSerializerTest, TestXmlDeserialize)
     }
 }
 
-TEST(XmlSerializerTest, TestXmlDeserializeFailed)
+TEST_F(XmlSerializerTest, TestXmlDeserializeFailed)
 {
     const char* testXml = "blah blah blah";
 
@@ -51,7 +55,7 @@ TEST(XmlSerializerTest, TestXmlDeserializeFailed)
     ASSERT_FALSE(doc.GetErrorMessage().empty());
 }
 
-TEST(XmlSerializerTest, TestXmlSerialize)
+TEST_F(XmlSerializerTest, TestXmlSerialize)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
     XmlNode rootElement = doc.GetRootElement();
@@ -73,7 +77,7 @@ TEST(XmlSerializerTest, TestXmlSerialize)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
-TEST(XmlSerializerTest, TestXmlSerializeNewlines)
+TEST_F(XmlSerializerTest, TestXmlSerializeNewlines)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("Newlines");
     XmlNode rootElement = doc.GetRootElement();
@@ -98,7 +102,7 @@ TEST(XmlSerializerTest, TestXmlSerializeNewlines)
     ASSERT_TRUE(doc.GetErrorMessage().empty());
 }
 
-TEST(XmlSerializerTest, TestXmlHasChildren)
+TEST_F(XmlSerializerTest, TestXmlHasChildren)
 {
     XmlDocument doc = XmlDocument::CreateWithRootNode("ToDo");
     XmlNode rootElement = doc.GetRootElement();
@@ -108,7 +112,7 @@ TEST(XmlSerializerTest, TestXmlHasChildren)
     ASSERT_FALSE(item1.HasChildren());
 }
 
-TEST(XmlSerializerTest, TestXmlCopyAndMove)
+TEST_F(XmlSerializerTest, TestXmlCopyAndMove)
 {
     const char* testXml = "<?xml version=\"1.0\" ?>\n"
         "<!-- Our to do list data -->\n"

@@ -3,13 +3,17 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/EnumParseOverflowContainer.h>
 #include <aws/core/utils/HashingUtils.h>
 
 using namespace Aws::Utils;
 
-TEST(EnumOverflowTest, TestHashRetrieval)
+class EnumOverflowTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(EnumOverflowTest, TestHashRetrieval)
 {
    EnumParseOverflowContainer container;
    container.StoreOverflow(15, "fifteen");
@@ -26,7 +30,7 @@ enum class TestEnum
     VALUE3
 };
 
-TEST(EnumOverflowTest, TestUseWithEnum)
+TEST_F(EnumOverflowTest, TestUseWithEnum)
 {
     EnumParseOverflowContainer container;
     int hashCode = HashingUtils::HashString("VALUE4");

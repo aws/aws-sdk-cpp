@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/core/utils/stream/ResponseStream.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
@@ -17,7 +17,11 @@ static_assert(!std::is_assignable<ResponseStream, const ResponseStream&>::value,
 static_assert(std::is_assignable<ResponseStream, ResponseStream&&>::value, "This is a move only type.");
 static_assert(std::is_default_constructible<ResponseStream>::value, "Must support default construction.");
 
-TEST(ResponseStreamTest, TestResponseStreamBasic)
+class ResponseStreamTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+TEST_F(ResponseStreamTest, TestResponseStreamBasic)
 {
     ResponseStream defaultResponseStream;
 
@@ -32,7 +36,7 @@ TEST(ResponseStreamTest, TestResponseStreamBasic)
     EXPECT_EQ(&moveCtorResponseStream.GetUnderlyingStream(), pStream);
 }
 
-TEST(ResponseStreamTest, TestUnderlyingStreamGoneBeforeWrapper)
+TEST_F(ResponseStreamTest, TestUnderlyingStreamGoneBeforeWrapper)
 {
     Aws::IOStream* pStream = Aws::Utils::Stream::DefaultResponseStreamFactoryMethod();
     ResponseStream responseStream(pStream);
@@ -40,7 +44,7 @@ TEST(ResponseStreamTest, TestUnderlyingStreamGoneBeforeWrapper)
     // must not crash in ~ResponseStream
 }
 
-TEST(ResponseStreamTest, TestUnderlyingStreamOutlivesWrapper)
+TEST_F(ResponseStreamTest, TestUnderlyingStreamOutlivesWrapper)
 {
     Aws::IOStream* pStream = Aws::Utils::Stream::DefaultResponseStreamFactoryMethod();
     {
