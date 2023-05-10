@@ -37,7 +37,7 @@ def main():
         # "aws-cpp-sdk-transcribestreaming-integration-tests", # Temporarily disabled while investigated
         "aws-cpp-sdk-dynamodb-integration-tests",
         "aws-cpp-sdk-sqs-integration-tests",
-        #"aws-cpp-sdk-s3-integration-tests",
+        "aws-cpp-sdk-s3-integration-tests",
         #"aws-cpp-sdk-s3-crt-integration-tests",
         #"aws-cpp-sdk-s3control-integration-tests",
         # "aws-cpp-sdk-lambda-integration-tests",
@@ -48,8 +48,9 @@ def main():
         "aws-cpp-sdk-logs-integration-tests",
         "aws-cpp-sdk-monitoring-integration-tests",
         "aws-cpp-sdk-elasticfilesystem-integration-tests",
-        #"aws-cpp-sdk-rds-integration-tests",
-        "aws-cpp-sdk-ec2-integration-tests"]
+        "aws-cpp-sdk-rds-integration-tests",
+        "aws-cpp-sdk-ec2-integration-tests",
+        "aws-cpp-sdk-timestream-query-integration-tests"]
 
     random.shuffle(test_list)
 
