@@ -78,73 +78,73 @@ namespace Model
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the activity type within the domain.</p> <p>The specified string
-     * must not start or end with whitespace. It must not contain a <code>:</code>
-     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
-     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not <i>be</i> the literal string <code>arn</code>.</p>
+     * must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -152,88 +152,80 @@ namespace Model
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(Aws::String&& value) { m_versionHasBeenSet = true; m_version = std::move(value); }
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetVersion(const char* value) { m_versionHasBeenSet = true; m_version.assign(value); }
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const Aws::String& value) { SetVersion(value); return *this;}
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(Aws::String&& value) { SetVersion(std::move(value)); return *this;}
 
     /**
      * <p>The version of the activity type.</p>  <p>The activity type consists of
      * the name and version, the combination of which must be unique within the
-     * domain.</p>  <p>The specified string must not start or end with
-     * whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
-     * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * domain.</p>  <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterActivityTypeRequest& WithVersion(const char* value) { SetVersion(value); return *this;}
 

@@ -141,57 +141,57 @@ namespace Model
 
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline const Aws::Vector<ErrorDetail>& GetErrorDetails() const{ return m_errorDetails; }
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline bool ErrorDetailsHasBeenSet() const { return m_errorDetailsHasBeenSet; }
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline void SetErrorDetails(const Aws::Vector<ErrorDetail>& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = value; }
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline void SetErrorDetails(Aws::Vector<ErrorDetail>&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails = std::move(value); }
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline ClusterStatus& WithErrorDetails(const Aws::Vector<ErrorDetail>& value) { SetErrorDetails(value); return *this;}
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline ClusterStatus& WithErrorDetails(Aws::Vector<ErrorDetail>&& value) { SetErrorDetails(std::move(value)); return *this;}
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline ClusterStatus& AddErrorDetails(const ErrorDetail& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(value); return *this; }
 
     /**
-     * <p>A list of tuples that provide information about the errors that caused a
-     * cluster termination. This structure may have up to 10 different
+     * <p>A list of tuples that provides information about the errors that caused a
+     * cluster to terminate. This structure can contain up to 10 different
      * <code>ErrorDetail</code> tuples.</p>
      */
     inline ClusterStatus& AddErrorDetails(ErrorDetail&& value) { m_errorDetailsHasBeenSet = true; m_errorDetails.push_back(std::move(value)); return *this; }

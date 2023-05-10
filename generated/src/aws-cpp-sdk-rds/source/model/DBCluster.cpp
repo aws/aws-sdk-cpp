@@ -114,7 +114,8 @@ DBCluster::DBCluster() :
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false)
+    m_masterUserSecretHasBeenSet(false),
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false)
 {
 }
 
@@ -212,7 +213,8 @@ DBCluster::DBCluster(const XmlNode& xmlNode) :
     m_serverlessV2ScalingConfigurationHasBeenSet(false),
     m_networkTypeHasBeenSet(false),
     m_dBSystemIdHasBeenSet(false),
-    m_masterUserSecretHasBeenSet(false)
+    m_masterUserSecretHasBeenSet(false),
+    m_iOOptimizedNextAllowedModificationTimeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -709,6 +711,12 @@ DBCluster& DBCluster::operator =(const XmlNode& xmlNode)
       m_masterUserSecret = masterUserSecretNode;
       m_masterUserSecretHasBeenSet = true;
     }
+    XmlNode iOOptimizedNextAllowedModificationTimeNode = resultNode.FirstChild("IOOptimizedNextAllowedModificationTime");
+    if(!iOOptimizedNextAllowedModificationTimeNode.IsNull())
+    {
+      m_iOOptimizedNextAllowedModificationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(iOOptimizedNextAllowedModificationTimeNode.GetText()).c_str()).c_str(), Aws::Utils::DateFormat::ISO_8601);
+      m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -1131,6 +1139,11 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMemberSs.str().c_str());
   }
 
+  if(m_iOOptimizedNextAllowedModificationTimeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
 }
 
 void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -1478,6 +1491,10 @@ void DBCluster::OutputToStream(Aws::OStream& oStream, const char* location) cons
       Aws::String masterUserSecretLocationAndMember(location);
       masterUserSecretLocationAndMember += ".MasterUserSecret";
       m_masterUserSecret.OutputToStream(oStream, masterUserSecretLocationAndMember.c_str());
+  }
+  if(m_iOOptimizedNextAllowedModificationTimeHasBeenSet)
+  {
+      oStream << location << ".IOOptimizedNextAllowedModificationTime=" << StringUtils::URLEncode(m_iOOptimizedNextAllowedModificationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
   }
 }
 

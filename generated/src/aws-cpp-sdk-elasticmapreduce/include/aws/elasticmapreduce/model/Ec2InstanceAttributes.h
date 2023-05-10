@@ -25,7 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about the EC2 instances in a cluster grouped by
+   * <p>Provides information about the Amazon EC2 instances in a cluster grouped by
    * category. For example, key name, subnet ID, IAM instance profile, and so
    * on.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Ec2InstanceAttributes">AWS
@@ -148,9 +148,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -163,9 +163,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -178,9 +178,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -193,9 +193,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -208,9 +208,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -223,9 +223,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -238,9 +238,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -253,9 +253,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -268,9 +268,9 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies the
-     * unique identifier of one or more Amazon EC2 subnets in which to launch EC2
-     * cluster instances. Subnets must exist within the same VPC. Amazon EMR chooses
-     * the EC2 subnet with the best fit from among the list of
+     * unique identifier of one or more Amazon EC2 subnets in which to launch Amazon
+     * EC2 cluster instances. Subnets must exist within the same VPC. Amazon EMR
+     * chooses the Amazon EC2 subnet with the best fit from among the list of
      * <code>RequestedEc2SubnetIds</code>, and then launches all cluster instances
      * within that Subnet. If this value is not specified, and the account and Region
      * support EC2-Classic networks, the cluster launches instances in the EC2-Classic
@@ -325,8 +325,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -338,8 +338,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -351,8 +351,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -364,8 +364,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -377,8 +377,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -390,8 +390,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -403,8 +403,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -416,8 +416,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -429,8 +429,8 @@ namespace Model
 
     /**
      * <p>Applies to clusters configured with the instance fleets option. Specifies one
-     * or more Availability Zones in which to launch EC2 cluster instances when the
-     * EC2-Classic network configuration is supported. Amazon EMR chooses the
+     * or more Availability Zones in which to launch Amazon EC2 cluster instances when
+     * the EC2-Classic network configuration is supported. Amazon EMR chooses the
      * Availability Zone with the best fit from among the list of
      * <code>RequestedEc2AvailabilityZones</code>, and then launches all cluster
      * instances within that Availability Zone. If you do not specify this value,
@@ -442,49 +442,49 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline const Aws::String& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(const Aws::String& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(Aws::String&& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = std::move(value); }
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline void SetIamInstanceProfile(const char* value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile.assign(value); }
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const Aws::String& value) { SetIamInstanceProfile(value); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(Aws::String&& value) { SetIamInstanceProfile(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the cluster was launched. The EC2
+     * <p>The IAM role that was specified when the cluster was launched. The Amazon EC2
      * instances of the cluster assume this role.</p>
      */
     inline Ec2InstanceAttributes& WithIamInstanceProfile(const char* value) { SetIamInstanceProfile(value); return *this;}

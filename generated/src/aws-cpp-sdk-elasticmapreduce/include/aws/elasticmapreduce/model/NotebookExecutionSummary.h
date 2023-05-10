@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticmapreduce/model/NotebookExecutionStatus.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/elasticmapreduce/model/NotebookS3LocationForOutput.h>
 #include <utility>
 
 namespace Aws
@@ -359,6 +360,78 @@ namespace Model
      */
     inline NotebookExecutionSummary& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline const NotebookS3LocationForOutput& GetNotebookS3Location() const{ return m_notebookS3Location; }
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline bool NotebookS3LocationHasBeenSet() const { return m_notebookS3LocationHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline void SetNotebookS3Location(const NotebookS3LocationForOutput& value) { m_notebookS3LocationHasBeenSet = true; m_notebookS3Location = value; }
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline void SetNotebookS3Location(NotebookS3LocationForOutput&& value) { m_notebookS3LocationHasBeenSet = true; m_notebookS3Location = std::move(value); }
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline NotebookExecutionSummary& WithNotebookS3Location(const NotebookS3LocationForOutput& value) { SetNotebookS3Location(value); return *this;}
+
+    /**
+     * <p>The Amazon S3 location that stores the notebook execution input.</p>
+     */
+    inline NotebookExecutionSummary& WithNotebookS3Location(NotebookS3LocationForOutput&& value) { SetNotebookS3Location(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline const Aws::String& GetExecutionEngineId() const{ return m_executionEngineId; }
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline bool ExecutionEngineIdHasBeenSet() const { return m_executionEngineIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline void SetExecutionEngineId(const Aws::String& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = value; }
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline void SetExecutionEngineId(Aws::String&& value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId = std::move(value); }
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline void SetExecutionEngineId(const char* value) { m_executionEngineIdHasBeenSet = true; m_executionEngineId.assign(value); }
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline NotebookExecutionSummary& WithExecutionEngineId(const Aws::String& value) { SetExecutionEngineId(value); return *this;}
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline NotebookExecutionSummary& WithExecutionEngineId(Aws::String&& value) { SetExecutionEngineId(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique ID of the execution engine for the notebook execution.</p>
+     */
+    inline NotebookExecutionSummary& WithExecutionEngineId(const char* value) { SetExecutionEngineId(value); return *this;}
+
   private:
 
     Aws::String m_notebookExecutionId;
@@ -378,6 +451,12 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet = false;
+
+    NotebookS3LocationForOutput m_notebookS3Location;
+    bool m_notebookS3LocationHasBeenSet = false;
+
+    Aws::String m_executionEngineId;
+    bool m_executionEngineIdHasBeenSet = false;
   };
 
 } // namespace Model

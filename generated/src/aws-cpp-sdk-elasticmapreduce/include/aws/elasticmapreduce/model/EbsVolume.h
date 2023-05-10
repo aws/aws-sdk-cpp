@@ -24,8 +24,8 @@ namespace Model
 {
 
   /**
-   * <p>EBS block device that's attached to an EC2 instance.</p><p><h3>See Also:</h3>
-   * <a
+   * <p>EBS block device that's attached to an Amazon EC2 instance.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/EbsVolume">AWS
    * API Reference</a></p>
    */

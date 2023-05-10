@@ -102,7 +102,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
 
@@ -112,7 +112,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
@@ -122,7 +122,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
@@ -132,7 +132,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
 
@@ -142,7 +142,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline PlacementType& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
 
@@ -152,7 +152,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline PlacementType& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
 
@@ -162,7 +162,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline PlacementType& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 
@@ -172,7 +172,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline PlacementType& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
 
@@ -182,7 +182,7 @@ namespace Model
      * <code>AvailabilityZones</code> is used for instance fleets, while
      * <code>AvailabilityZone</code> (singular) is used for uniform instance
      * groups.</p>  <p>The instance fleet configuration is available only in
-     * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p> 
+     * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p> 
      */
     inline PlacementType& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
 

@@ -2440,41 +2440,49 @@ namespace Model
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines:</p>
-     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
-     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
-     * </li> </ul>
+     * accounts to database accounts is enabled, and otherwise false.</p> <p>For a list
+     * of engine versions that support IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+     * database authentication</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+     * database authentication in Aurora</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines:</p>
-     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
-     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
-     * </li> </ul>
+     * accounts to database accounts is enabled, and otherwise false.</p> <p>For a list
+     * of engine versions that support IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+     * database authentication</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+     * database authentication in Aurora</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines:</p>
-     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
-     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
-     * </li> </ul>
+     * accounts to database accounts is enabled, and otherwise false.</p> <p>For a list
+     * of engine versions that support IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+     * database authentication</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+     * database authentication in Aurora</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
      * <p>True if mapping of Amazon Web Services Identity and Access Management (IAM)
-     * accounts to database accounts is enabled, and otherwise false.</p> <p>IAM
-     * database authentication can be enabled for the following database engines:</p>
-     * <ul> <li> <p>For MySQL 5.7, minor version 5.7.16 or higher.</p> </li> <li>
-     * <p>For Amazon Aurora, all versions of Aurora MySQL and Aurora PostgreSQL.</p>
-     * </li> </ul>
+     * accounts to database accounts is enabled, and otherwise false.</p> <p>For a list
+     * of engine versions that support IAM database authentication, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RDS_Fea_Regions_DB-eng.Feature.IamDatabaseAuthentication.html">IAM
+     * database authentication</a> in the <i>Amazon RDS User Guide</i> and <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Concepts.Aurora_Fea_Regions_DB-eng.Feature.IAMdbauth.html">IAM
+     * database authentication in Aurora</a> in the <i>Amazon Aurora User
+     * Guide</i>.</p>
      */
     inline DBInstance& WithIAMDatabaseAuthenticationEnabled(bool value) { SetIAMDatabaseAuthenticationEnabled(value); return *this;}
 

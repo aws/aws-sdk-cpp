@@ -304,7 +304,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
@@ -314,7 +314,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
@@ -324,7 +324,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
@@ -334,7 +334,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline void SetExecutionRoleArn(Aws::String&& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = std::move(value); }
@@ -344,7 +344,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline void SetExecutionRoleArn(const char* value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn.assign(value); }
@@ -354,7 +354,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline Step& WithExecutionRoleArn(const Aws::String& value) { SetExecutionRoleArn(value); return *this;}
@@ -364,7 +364,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline Step& WithExecutionRoleArn(Aws::String&& value) { SetExecutionRoleArn(std::move(value)); return *this;}
@@ -374,7 +374,7 @@ namespace Model
      * The runtime role can be a cross-account IAM role. The runtime role ARN is a
      * combination of account ID, role name, and role type using the following format:
      * <code>arn:partition:service:region:account:resource</code>. </p> <p>For example,
-     * <code>arn:aws:iam::1234567890:role/ReadOnly</code> is a correctly formatted
+     * <code>arn:aws:IAM::1234567890:role/ReadOnly</code> is a correctly formatted
      * runtime role ARN.</p>
      */
     inline Step& WithExecutionRoleArn(const char* value) { SetExecutionRoleArn(value); return *this;}

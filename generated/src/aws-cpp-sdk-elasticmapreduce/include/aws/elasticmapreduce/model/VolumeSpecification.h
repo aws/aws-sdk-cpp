@@ -25,8 +25,8 @@ namespace Model
 
   /**
    * <p>EBS volume specifications such as volume type, IOPS, size (GiB) and
-   * throughput (MiB/s) that are requested for the EBS volume attached to an EC2
-   * instance in the cluster.</p><p><h3>See Also:</h3>   <a
+   * throughput (MiB/s) that are requested for the EBS volume attached to an Amazon
+   * EC2 instance in the cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/VolumeSpecification">AWS
    * API Reference</a></p>
    */

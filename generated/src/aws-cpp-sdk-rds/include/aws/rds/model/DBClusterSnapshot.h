@@ -956,6 +956,55 @@ namespace Model
      */
     inline DBClusterSnapshot& WithDBSystemId(const char* value) { SetDBSystemId(value); return *this;}
 
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline DBClusterSnapshot& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline DBClusterSnapshot& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>The storage type associated with the DB cluster snapshot.</p> <p>This setting
+     * is only for Aurora DB clusters.</p>
+     */
+    inline DBClusterSnapshot& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -1026,6 +1075,9 @@ namespace Model
 
     Aws::String m_dBSystemId;
     bool m_dBSystemIdHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model
