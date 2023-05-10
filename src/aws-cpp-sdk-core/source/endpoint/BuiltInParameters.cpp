@@ -42,11 +42,11 @@ namespace Endpoint
             static const char* FIPS_SUFFIX = "-fips";
             if (config.region.rfind(FIPS_PREFIX, 0) == 0) {
                 // Backward compatibility layer for code hacking previous SDK version
-                Aws::String regionOverride = config.region.substr(sizeof(FIPS_PREFIX) - 1);
+                Aws::String regionOverride = config.region.substr(strlen(FIPS_PREFIX));
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else if (StringEndsWith(config.region, FIPS_SUFFIX)) {
-                Aws::String regionOverride = config.region.substr(0, config.region.size() - sizeof(FIPS_SUFFIX) - 1);
+                Aws::String regionOverride = config.region.substr(0, config.region.size() - strlen(FIPS_SUFFIX));
                 forceFIPS = true;
                 SetStringParameter(AWS_REGION, regionOverride);
             } else {
