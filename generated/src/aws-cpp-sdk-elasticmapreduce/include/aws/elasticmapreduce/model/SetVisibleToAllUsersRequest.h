@@ -86,37 +86,37 @@ namespace Model
 
     /**
      * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
-     * Web Services account can perform EMR actions on the cluster that the IAM
+     * Web Services account can perform Amazon EMR actions on the cluster that the IAM
      * policies attached to the principal allow. A value of <code>false</code>
      * indicates that only the IAM principal that created the cluster and the Amazon
-     * Web Services root user can perform EMR actions on the cluster.</p>
+     * Web Services root user can perform Amazon EMR actions on the cluster.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
 
     /**
      * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
-     * Web Services account can perform EMR actions on the cluster that the IAM
+     * Web Services account can perform Amazon EMR actions on the cluster that the IAM
      * policies attached to the principal allow. A value of <code>false</code>
      * indicates that only the IAM principal that created the cluster and the Amazon
-     * Web Services root user can perform EMR actions on the cluster.</p>
+     * Web Services root user can perform Amazon EMR actions on the cluster.</p>
      */
     inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
      * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
-     * Web Services account can perform EMR actions on the cluster that the IAM
+     * Web Services account can perform Amazon EMR actions on the cluster that the IAM
      * policies attached to the principal allow. A value of <code>false</code>
      * indicates that only the IAM principal that created the cluster and the Amazon
-     * Web Services root user can perform EMR actions on the cluster.</p>
+     * Web Services root user can perform Amazon EMR actions on the cluster.</p>
      */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
      * <p>A value of <code>true</code> indicates that an IAM principal in the Amazon
-     * Web Services account can perform EMR actions on the cluster that the IAM
+     * Web Services account can perform Amazon EMR actions on the cluster that the IAM
      * policies attached to the principal allow. A value of <code>false</code>
      * indicates that only the IAM principal that created the cluster and the Amazon
-     * Web Services root user can perform EMR actions on the cluster.</p>
+     * Web Services root user can perform Amazon EMR actions on the cluster.</p>
      */
     inline SetVisibleToAllUsersRequest& WithVisibleToAllUsers(bool value) { SetVisibleToAllUsers(value); return *this;}
 

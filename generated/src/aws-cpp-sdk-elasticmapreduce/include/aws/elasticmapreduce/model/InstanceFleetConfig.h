@@ -30,7 +30,7 @@ namespace Model
 
   /**
    * <p>The configuration that defines an instance fleet.</p>  <p>The instance
-   * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
+   * fleet configuration is available only in Amazon EMR releases 4.8.0 and later,
    * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleetConfig">AWS
    * API Reference</a></p>
@@ -289,49 +289,49 @@ namespace Model
 
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline const Aws::Vector<InstanceTypeConfig>& GetInstanceTypeConfigs() const{ return m_instanceTypeConfigs; }
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline bool InstanceTypeConfigsHasBeenSet() const { return m_instanceTypeConfigsHasBeenSet; }
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline void SetInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = value; }
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline void SetInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs = std::move(value); }
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline InstanceFleetConfig& WithInstanceTypeConfigs(const Aws::Vector<InstanceTypeConfig>& value) { SetInstanceTypeConfigs(value); return *this;}
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline InstanceFleetConfig& WithInstanceTypeConfigs(Aws::Vector<InstanceTypeConfig>&& value) { SetInstanceTypeConfigs(std::move(value)); return *this;}
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline InstanceFleetConfig& AddInstanceTypeConfigs(const InstanceTypeConfig& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(value); return *this; }
 
     /**
-     * <p>The instance type configurations that define the EC2 instances in the
+     * <p>The instance type configurations that define the Amazon EC2 instances in the
      * instance fleet.</p>
      */
     inline InstanceFleetConfig& AddInstanceTypeConfigs(InstanceTypeConfig&& value) { m_instanceTypeConfigsHasBeenSet = true; m_instanceTypeConfigs.push_back(std::move(value)); return *this; }

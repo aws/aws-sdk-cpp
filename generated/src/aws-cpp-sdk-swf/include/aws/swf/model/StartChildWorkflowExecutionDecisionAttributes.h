@@ -96,81 +96,73 @@ namespace Model
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
     /**
      * <p> The <code>workflowId</code> of the workflow execution.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
@@ -379,7 +371,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
@@ -392,7 +384,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
@@ -405,7 +397,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
@@ -418,7 +410,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
@@ -431,7 +423,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
@@ -444,7 +436,7 @@ namespace Model
      * must not start or end with whitespace. It must not contain a <code>:</code>
      * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
      * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
-     * must not contain the literal string <code>arn</code>.</p>
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartChildWorkflowExecutionDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 

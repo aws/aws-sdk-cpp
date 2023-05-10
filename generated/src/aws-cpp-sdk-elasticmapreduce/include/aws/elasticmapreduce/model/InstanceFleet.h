@@ -30,12 +30,12 @@ namespace Model
 {
 
   /**
-   * <p>Describes an instance fleet, which is a group of EC2 instances that host a
-   * particular node type (master, core, or task) in an Amazon EMR cluster. Instance
-   * fleets can consist of a mix of instance types and On-Demand and Spot Instances,
-   * which are provisioned to meet a defined target capacity. </p>  <p>The
-   * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
-   * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
+   * <p>Describes an instance fleet, which is a group of Amazon EC2 instances that
+   * host a particular node type (master, core, or task) in an Amazon EMR cluster.
+   * Instance fleets can consist of a mix of instance types and On-Demand and Spot
+   * Instances, which are provisioned to meet a defined target capacity. </p> 
+   * <p>The instance fleet configuration is available only in Amazon EMR releases
+   * 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceFleet">AWS
    * API Reference</a></p>
    */

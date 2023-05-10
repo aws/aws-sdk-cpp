@@ -20,7 +20,12 @@ StartNotebookExecutionRequest::StartNotebookExecutionRequest() :
     m_executionEngineHasBeenSet(false),
     m_serviceRoleHasBeenSet(false),
     m_notebookInstanceSecurityGroupIdHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_notebookS3LocationHasBeenSet(false),
+    m_outputNotebookS3LocationHasBeenSet(false),
+    m_outputNotebookFormat(OutputNotebookFormat::NOT_SET),
+    m_outputNotebookFormatHasBeenSet(false),
+    m_environmentVariablesHasBeenSet(false)
 {
 }
 
@@ -78,6 +83,34 @@ Aws::String StartNotebookExecutionRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_notebookS3LocationHasBeenSet)
+  {
+   payload.WithObject("NotebookS3Location", m_notebookS3Location.Jsonize());
+
+  }
+
+  if(m_outputNotebookS3LocationHasBeenSet)
+  {
+   payload.WithObject("OutputNotebookS3Location", m_outputNotebookS3Location.Jsonize());
+
+  }
+
+  if(m_outputNotebookFormatHasBeenSet)
+  {
+   payload.WithString("OutputNotebookFormat", OutputNotebookFormatMapper::GetNameForOutputNotebookFormat(m_outputNotebookFormat));
+  }
+
+  if(m_environmentVariablesHasBeenSet)
+  {
+   JsonValue environmentVariablesJsonMap;
+   for(auto& environmentVariablesItem : m_environmentVariables)
+   {
+     environmentVariablesJsonMap.WithString(environmentVariablesItem.first, environmentVariablesItem.second);
+   }
+   payload.WithObject("EnvironmentVariables", std::move(environmentVariablesJsonMap));
 
   }
 

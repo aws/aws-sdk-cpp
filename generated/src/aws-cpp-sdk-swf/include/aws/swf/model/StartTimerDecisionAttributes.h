@@ -52,74 +52,74 @@ namespace Model
 
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline const Aws::String& GetTimerId() const{ return m_timerId; }
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTimerId(Aws::String&& value) { m_timerIdHasBeenSet = true; m_timerId = std::move(value); }
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTimerId(const char* value) { m_timerIdHasBeenSet = true; m_timerId.assign(value); }
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline StartTimerDecisionAttributes& WithTimerId(const Aws::String& value) { SetTimerId(value); return *this;}
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline StartTimerDecisionAttributes& WithTimerId(Aws::String&& value) { SetTimerId(std::move(value)); return *this;}
 
     /**
-     * <p> The unique ID of the timer.</p> <p>The specified string must not start or
-     * end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * <p> The unique ID of the timer.</p> <p>The specified string must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline StartTimerDecisionAttributes& WithTimerId(const char* value) { SetTimerId(value); return *this;}
 

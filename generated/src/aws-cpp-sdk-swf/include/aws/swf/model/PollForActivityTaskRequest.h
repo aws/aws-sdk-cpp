@@ -81,7 +81,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
@@ -91,7 +91,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
@@ -101,7 +101,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
@@ -111,7 +111,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
@@ -121,7 +121,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline PollForActivityTaskRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
@@ -131,7 +131,7 @@ namespace Model
      * string must not start or end with whitespace. It must not contain a
      * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
      * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
      * <code>arn</code>.</p>
      */
     inline PollForActivityTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}

@@ -18,7 +18,8 @@ ListNotebookExecutionsRequest::ListNotebookExecutionsRequest() :
     m_statusHasBeenSet(false),
     m_fromHasBeenSet(false),
     m_toHasBeenSet(false),
-    m_markerHasBeenSet(false)
+    m_markerHasBeenSet(false),
+    m_executionEngineIdHasBeenSet(false)
 {
 }
 
@@ -50,6 +51,12 @@ Aws::String ListNotebookExecutionsRequest::SerializePayload() const
   if(m_markerHasBeenSet)
   {
    payload.WithString("Marker", m_marker);
+
+  }
+
+  if(m_executionEngineIdHasBeenSet)
+  {
+   payload.WithString("ExecutionEngineId", m_executionEngineId);
 
   }
 

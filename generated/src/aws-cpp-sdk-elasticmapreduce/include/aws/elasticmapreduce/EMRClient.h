@@ -82,7 +82,7 @@ namespace EMR
 
         /**
          * <p>Adds an instance fleet to a running cluster.</p>  <p>The instance fleet
-         * configuration is available only in Amazon EMR versions 4.8.0 and later,
+         * configuration is available only in Amazon EMR releases 4.8.0 and later,
          * excluding 5.0.x.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AddInstanceFleet">AWS
          * API Reference</a></p>
@@ -209,7 +209,7 @@ namespace EMR
          * Amazon EMR versions 4.8.0 and later, excluding version 5.0.0. A maximum of 256
          * steps are allowed in each CancelSteps request. CancelSteps is idempotent but
          * asynchronous; it does not guarantee that a step will be canceled, even if the
-         * request is successfully submitted. When you use Amazon EMR versions 5.28.0 and
+         * request is successfully submitted. When you use Amazon EMR releases 5.28.0 and
          * later, you can cancel steps that are in a <code>PENDING</code> or
          * <code>RUNNING</code> state. In earlier versions of Amazon EMR, you can only
          * cancel steps that are in a <code>PENDING</code> state. </p><p><h3>See Also:</h3>
@@ -449,10 +449,10 @@ namespace EMR
         }
 
         /**
-         * <p>Provides EMR release label details, such as releases available the region
-         * where the API request is run, and the available applications for a specific EMR
-         * release label. Can also list EMR release versions that support a specified
-         * version of Spark.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides Amazon EMR release label details, such as the releases available the
+         * Region where the API request is run, and the available applications for a
+         * specific Amazon EMR release label. Can also list Amazon EMR releases that
+         * support a specified version of Spark.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/DescribeReleaseLabel">AWS
          * API Reference</a></p>
          */
@@ -747,7 +747,7 @@ namespace EMR
         /**
          * <p>Lists all available details about the instance fleets in a cluster.</p>
          *  <p>The instance fleet configuration is available only in Amazon EMR
-         * versions 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
+         * releases 4.8.0 and later, excluding 5.0.x versions.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstanceFleets">AWS
          * API Reference</a></p>
@@ -799,10 +799,11 @@ namespace EMR
         }
 
         /**
-         * <p>Provides information for all active EC2 instances and EC2 instances
-         * terminated in the last 30 days, up to a maximum of 2,000. EC2 instances in any
-         * of the following states are considered active: AWAITING_FULFILLMENT,
-         * PROVISIONING, BOOTSTRAPPING, RUNNING.</p><p><h3>See Also:</h3>   <a
+         * <p>Provides information for all active Amazon EC2 instances and Amazon EC2
+         * instances terminated in the last 30 days, up to a maximum of 2,000. Amazon EC2
+         * instances in any of the following states are considered active:
+         * AWAITING_FULFILLMENT, PROVISIONING, BOOTSTRAPPING, RUNNING.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListInstances">AWS
          * API Reference</a></p>
          */
@@ -830,7 +831,7 @@ namespace EMR
          * <p>Provides summaries of all notebook executions. You can filter the list based
          * on multiple criteria such as status, time range, and editor id. Returns a
          * maximum of 50 notebook executions and a marker to track the paging of a longer
-         * notebook execution list across multiple <code>ListNotebookExecution</code>
+         * notebook execution list across multiple <code>ListNotebookExecutions</code>
          * calls.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListNotebookExecutions">AWS
          * API Reference</a></p>
@@ -856,8 +857,8 @@ namespace EMR
         }
 
         /**
-         * <p>Retrieves release labels of EMR services in the region where the API is
-         * called.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves release labels of Amazon EMR services in the Region where the API
+         * is called.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ListReleaseLabels">AWS
          * API Reference</a></p>
          */
@@ -1023,7 +1024,7 @@ namespace EMR
          * <p>Modifies the target On-Demand and target Spot capacities for the instance
          * fleet with the specified InstanceFleetID within the cluster specified using
          * ClusterID. The call either succeeds or fails atomically.</p>  <p>The
-         * instance fleet configuration is available only in Amazon EMR versions 4.8.0 and
+         * instance fleet configuration is available only in Amazon EMR releases 4.8.0 and
          * later, excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/ModifyInstanceFleet">AWS
          * API Reference</a></p>
@@ -1079,8 +1080,9 @@ namespace EMR
         /**
          * <p>Creates or updates an automatic scaling policy for a core instance group or
          * task instance group in an Amazon EMR cluster. The automatic scaling policy
-         * defines how an instance group dynamically adds and terminates EC2 instances in
-         * response to the value of a CloudWatch metric.</p><p><h3>See Also:</h3>   <a
+         * defines how an instance group dynamically adds and terminates Amazon EC2
+         * instances in response to the value of a CloudWatch metric.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutAutoScalingPolicy">AWS
          * API Reference</a></p>
          */
@@ -1105,7 +1107,7 @@ namespace EMR
         }
 
         /**
-         *  <p>Auto-termination is supported in Amazon EMR versions 5.30.0 and 6.1.0
+         *  <p>Auto-termination is supported in Amazon EMR releases 5.30.0 and 6.1.0
          * and later. For more information, see <a
          * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-auto-termination-policy.html">Using
          * an auto-termination policy</a>.</p>  <p>Creates or updates an
@@ -1168,10 +1170,10 @@ namespace EMR
 
         /**
          * <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The
-         * managed scaling policy defines the limits for resources, such as EC2 instances
-         * that can be added or terminated from a cluster. The policy only applies to the
-         * core and task nodes. The master node cannot be scaled after initial
-         * configuration. </p><p><h3>See Also:</h3>   <a
+         * managed scaling policy defines the limits for resources, such as Amazon EC2
+         * instances that can be added or terminated from a cluster. The policy only
+         * applies to the core and task nodes. The master node cannot be scaled after
+         * initial configuration. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/PutManagedScalingPolicy">AWS
          * API Reference</a></p>
          */
@@ -1197,7 +1199,7 @@ namespace EMR
 
         /**
          * <p>Removes an automatic scaling policy from a specified instance group within an
-         * EMR cluster.</p><p><h3>See Also:</h3>   <a
+         * Amazon EMR cluster.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveAutoScalingPolicy">AWS
          * API Reference</a></p>
          */
@@ -1248,7 +1250,7 @@ namespace EMR
         }
 
         /**
-         * <p> Removes a managed scaling policy from a specified EMR cluster.
+         * <p> Removes a managed scaling policy from a specified Amazon EMR cluster.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RemoveManagedScalingPolicy">AWS
          * API Reference</a></p>
@@ -1322,7 +1324,7 @@ namespace EMR
          * submitting queries directly to the software running on the master node, such as
          * Hive and Hadoop.</p> <p>For long-running clusters, we recommend that you
          * periodically store your results.</p>  <p>The instance fleets configuration
-         * is available only in Amazon EMR versions 4.8.0 and later, excluding 5.0.x
+         * is available only in Amazon EMR releases 4.8.0 and later, excluding 5.0.x
          * versions. The RunJobFlow request can contain InstanceFleets parameters or
          * InstanceGroups parameters, but not both.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/RunJobFlow">AWS
@@ -1349,16 +1351,16 @@ namespace EMR
         }
 
         /**
-         * <p>SetTerminationProtection locks a cluster (job flow) so the EC2 instances in
-         * the cluster cannot be terminated by user intervention, an API call, or in the
-         * event of a job-flow error. The cluster still terminates upon successful
-         * completion of the job flow. Calling <code>SetTerminationProtection</code> on a
-         * cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code>
-         * API on all EC2 instances in a cluster.</p> <p>
-         * <code>SetTerminationProtection</code> is used to prevent accidental termination
-         * of a cluster and to ensure that in the event of an error, the instances persist
-         * so that you can recover any data stored in their ephemeral instance storage.</p>
-         * <p> To terminate a cluster that has been locked by setting
+         * <p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2
+         * instances in the cluster cannot be terminated by user intervention, an API call,
+         * or in the event of a job-flow error. The cluster still terminates upon
+         * successful completion of the job flow. Calling
+         * <code>SetTerminationProtection</code> on a cluster is similar to calling the
+         * Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances in
+         * a cluster.</p> <p> <code>SetTerminationProtection</code> is used to prevent
+         * accidental termination of a cluster and to ensure that in the event of an error,
+         * the instances persist so that you can recover any data stored in their ephemeral
+         * instance storage.</p> <p> To terminate a cluster that has been locked by setting
          * <code>SetTerminationProtection</code> to <code>true</code>, you must first
          * unlock the job flow by a subsequent call to
          * <code>SetTerminationProtection</code> in which you set the value to
@@ -1393,20 +1395,20 @@ namespace EMR
          *  <p>The SetVisibleToAllUsers parameter is no longer supported. Your
          * cluster may be visible to all users in your account. To restrict cluster access
          * using an IAM policy, see <a
-         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-iam.html">Identity
-         * and Access Management for EMR</a>. </p>  <p>Sets the
-         * <a>Cluster$VisibleToAllUsers</a> value for an EMR cluster. When
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-access-IAM.html">Identity
+         * and Access Management for Amazon EMR</a>. </p>  <p>Sets the
+         * <a>Cluster$VisibleToAllUsers</a> value for an Amazon EMR cluster. When
          * <code>true</code>, IAM principals in the Amazon Web Services account can perform
-         * EMR cluster actions that their IAM policies allow. When <code>false</code>, only
-         * the IAM principal that created the cluster and the Amazon Web Services account
-         * root user can perform EMR actions on the cluster, regardless of IAM permissions
-         * policies attached to other IAM principals.</p> <p>This action works on running
-         * clusters. When you create a cluster, use the
-         * <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For more information,
-         * see <a
-         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_iam_emr-with-iam.html#security_set_visible_to_all_users">Understanding
-         * the EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMRManagement
-         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * Amazon EMR cluster actions that their IAM policies allow. When
+         * <code>false</code>, only the IAM principal that created the cluster and the
+         * Amazon Web Services account root user can perform Amazon EMR actions on the
+         * cluster, regardless of IAM permissions policies attached to other IAM
+         * principals.</p> <p>This action works on running clusters. When you create a
+         * cluster, use the <a>RunJobFlowInput$VisibleToAllUsers</a> parameter.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/security_IAM_emr-with-IAM.html#security_set_visible_to_all_users">Understanding
+         * the Amazon EMR Cluster VisibleToAllUsers Setting</a> in the <i>Amazon EMR
+         * Management Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SetVisibleToAllUsers">AWS
          * API Reference</a></p>
          */
@@ -1482,9 +1484,9 @@ namespace EMR
 
         /**
          * <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow
-         * is shut down, any step not yet completed is canceled and the EC2 instances on
-         * which the cluster is running are stopped. Any log files not already saved are
-         * uploaded to Amazon S3 if a LogUri was specified when the cluster was
+         * is shut down, any step not yet completed is canceled and the Amazon EC2
+         * instances on which the cluster is running are stopped. Any log files not already
+         * saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was
          * created.</p> <p>The maximum number of clusters allowed is 10. The call to
          * <code>TerminateJobFlows</code> is asynchronous. Depending on the configuration
          * of the cluster, it may take up to 1-5 minutes for the cluster to completely

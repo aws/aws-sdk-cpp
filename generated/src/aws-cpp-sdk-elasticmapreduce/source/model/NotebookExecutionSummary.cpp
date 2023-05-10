@@ -25,7 +25,9 @@ NotebookExecutionSummary::NotebookExecutionSummary() :
     m_status(NotebookExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_notebookS3LocationHasBeenSet(false),
+    m_executionEngineIdHasBeenSet(false)
 {
 }
 
@@ -36,7 +38,9 @@ NotebookExecutionSummary::NotebookExecutionSummary(JsonView jsonValue) :
     m_status(NotebookExecutionStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_startTimeHasBeenSet(false),
-    m_endTimeHasBeenSet(false)
+    m_endTimeHasBeenSet(false),
+    m_notebookS3LocationHasBeenSet(false),
+    m_executionEngineIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -85,6 +89,20 @@ NotebookExecutionSummary& NotebookExecutionSummary::operator =(JsonView jsonValu
     m_endTimeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("NotebookS3Location"))
+  {
+    m_notebookS3Location = jsonValue.GetObject("NotebookS3Location");
+
+    m_notebookS3LocationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ExecutionEngineId"))
+  {
+    m_executionEngineId = jsonValue.GetString("ExecutionEngineId");
+
+    m_executionEngineIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -123,6 +141,18 @@ JsonValue NotebookExecutionSummary::Jsonize() const
   if(m_endTimeHasBeenSet)
   {
    payload.WithDouble("EndTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if(m_notebookS3LocationHasBeenSet)
+  {
+   payload.WithObject("NotebookS3Location", m_notebookS3Location.Jsonize());
+
+  }
+
+  if(m_executionEngineIdHasBeenSet)
+  {
+   payload.WithString("ExecutionEngineId", m_executionEngineId);
+
   }
 
   return payload;

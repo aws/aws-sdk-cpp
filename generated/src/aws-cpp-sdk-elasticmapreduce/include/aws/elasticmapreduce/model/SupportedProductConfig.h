@@ -26,8 +26,9 @@ namespace Model
 
   /**
    * <p>The list of supported product configurations that allow user-supplied
-   * arguments. EMR accepts these arguments and forwards them to the corresponding
-   * installation script as bootstrap action arguments.</p><p><h3>See Also:</h3>   <a
+   * arguments. Amazon EMR accepts these arguments and forwards them to the
+   * corresponding installation script as bootstrap action arguments.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/SupportedProductConfig">AWS
    * API Reference</a></p>
    */

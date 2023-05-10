@@ -91,81 +91,73 @@ namespace Model
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetActivityId() const{ return m_activityId; }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool ActivityIdHasBeenSet() const { return m_activityIdHasBeenSet; }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetActivityId(const Aws::String& value) { m_activityIdHasBeenSet = true; m_activityId = value; }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetActivityId(Aws::String&& value) { m_activityIdHasBeenSet = true; m_activityId = std::move(value); }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetActivityId(const char* value) { m_activityIdHasBeenSet = true; m_activityId.assign(value); }
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithActivityId(const Aws::String& value) { SetActivityId(value); return *this;}
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithActivityId(Aws::String&& value) { SetActivityId(std::move(value)); return *this;}
 
     /**
      * <p> The <code>activityId</code> of the activity task.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithActivityId(const char* value) { SetActivityId(value); return *this;}
 
@@ -356,10 +348,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
@@ -370,10 +362,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
@@ -384,10 +376,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
@@ -398,10 +390,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
@@ -412,10 +404,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
@@ -426,10 +418,10 @@ namespace Model
      * specified either as a default for the activity type or through this field. If
      * neither this field is set nor a default task list was specified at registration
      * time then a fault is returned.</p>  <p>The specified string must not
-     * start or end with whitespace. It must not contain a <code>:</code> (colon),
-     * <code>/</code> (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * contain the literal string <code>arn</code>.</p>
+     * contain a <code>:</code> (colon), <code>/</code> (slash), <code>|</code>
+     * (vertical bar), or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must <i>not</i> be the literal string
+     * <code>arn</code>.</p>
      */
     inline ScheduleActivityTaskDecisionAttributes& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 

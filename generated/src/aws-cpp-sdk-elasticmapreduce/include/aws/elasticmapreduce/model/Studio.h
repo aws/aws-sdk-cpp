@@ -207,37 +207,37 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline const AuthMode& GetAuthMode() const{ return m_authMode; }
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline bool AuthModeHasBeenSet() const { return m_authModeHasBeenSet; }
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline void SetAuthMode(const AuthMode& value) { m_authModeHasBeenSet = true; m_authMode = value; }
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline void SetAuthMode(AuthMode&& value) { m_authModeHasBeenSet = true; m_authMode = std::move(value); }
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline Studio& WithAuthMode(const AuthMode& value) { SetAuthMode(value); return *this;}
 
     /**
-     * <p>Specifies whether the Amazon EMR Studio authenticates users using IAM or IAM
+     * <p>Specifies whether the Amazon EMR Studio authenticates users with IAM or IAM
      * Identity Center.</p>
      */
     inline Studio& WithAuthMode(AuthMode&& value) { SetAuthMode(std::move(value)); return *this;}

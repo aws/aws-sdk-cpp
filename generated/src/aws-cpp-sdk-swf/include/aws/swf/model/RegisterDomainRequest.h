@@ -41,8 +41,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -51,8 +51,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -61,8 +61,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -71,8 +71,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -81,8 +81,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -91,8 +91,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -101,8 +101,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -111,8 +111,8 @@ namespace Model
      * the domain is registered in.</p> <p>The specified string must not start or end
      * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
      * (slash), <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline RegisterDomainRequest& WithName(const char* value) { SetName(value); return *this;}
 

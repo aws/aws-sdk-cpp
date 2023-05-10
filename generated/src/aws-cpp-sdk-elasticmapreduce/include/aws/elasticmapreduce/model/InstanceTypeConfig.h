@@ -28,14 +28,14 @@ namespace Model
 
   /**
    * <p>An instance type configuration for each instance type in an instance fleet,
-   * which determines the EC2 instances Amazon EMR attempts to provision to fulfill
-   * On-Demand and Spot target capacities. When you use an allocation strategy, you
-   * can include a maximum of 30 instance type configurations for a fleet. For more
-   * information about how to use an allocation strategy, see <a
+   * which determines the Amazon EC2 instances Amazon EMR attempts to provision to
+   * fulfill On-Demand and Spot target capacities. When you use an allocation
+   * strategy, you can include a maximum of 30 instance type configurations for a
+   * fleet. For more information about how to use an allocation strategy, see <a
    * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-instance-fleet.html">Configure
    * Instance Fleets</a>. Without an allocation strategy, you may specify a maximum
    * of five instance type configurations for a fleet.</p>  <p>The instance
-   * fleet configuration is available only in Amazon EMR versions 4.8.0 and later,
+   * fleet configuration is available only in Amazon EMR releases 4.8.0 and later,
    * excluding 5.0.x versions.</p> <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeConfig">AWS
    * API Reference</a></p>
@@ -50,42 +50,42 @@ namespace Model
 
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline InstanceTypeConfig& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline InstanceTypeConfig& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>An EC2 instance type, such as <code>m3.xlarge</code>. </p>
+     * <p>An Amazon EC2 instance type, such as <code>m3.xlarge</code>. </p>
      */
     inline InstanceTypeConfig& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -124,7 +124,7 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -132,7 +132,7 @@ namespace Model
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -140,7 +140,7 @@ namespace Model
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -148,7 +148,7 @@ namespace Model
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -156,7 +156,7 @@ namespace Model
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -164,7 +164,7 @@ namespace Model
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -172,7 +172,7 @@ namespace Model
     inline InstanceTypeConfig& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -180,7 +180,7 @@ namespace Model
     inline InstanceTypeConfig& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD. If neither <code>BidPrice</code>
      * nor <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%. </p>
@@ -189,36 +189,36 @@ namespace Model
 
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%). If neither <code>BidPrice</code> nor
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
     inline double GetBidPriceAsPercentageOfOnDemandPrice() const{ return m_bidPriceAsPercentageOfOnDemandPrice; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%). If neither <code>BidPrice</code> nor
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
     inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%). If neither <code>BidPrice</code> nor
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%). If neither <code>BidPrice</code> nor
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%). If neither <code>BidPrice</code> nor
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> is provided,
      * <code>BidPriceAsPercentageOfOnDemandPrice</code> defaults to 100%.</p>
      */

@@ -168,49 +168,49 @@ namespace Model
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline const Aws::String& GetLogEncryptionKmsKeyId() const{ return m_logEncryptionKmsKeyId; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline bool LogEncryptionKmsKeyIdHasBeenSet() const { return m_logEncryptionKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const Aws::String& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = value; }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(Aws::String&& value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId = std::move(value); }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline void SetLogEncryptionKmsKeyId(const char* value) { m_logEncryptionKmsKeyIdHasBeenSet = true; m_logEncryptionKmsKeyId.assign(value); }
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(const Aws::String& value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(Aws::String&& value) { SetLogEncryptionKmsKeyId(std::move(value)); return *this;}
 
     /**
      * <p>The KMS key used for encrypting log files. This attribute is only available
-     * with EMR version 5.30.0 and later, excluding EMR 6.0.0.</p>
+     * with Amazon EMR 5.30.0 and later, excluding 6.0.0.</p>
      */
     inline JobFlowDetail& WithLogEncryptionKmsKeyId(const char* value) { SetLogEncryptionKmsKeyId(value); return *this;}
 
@@ -483,13 +483,13 @@ namespace Model
     /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
-     * principals in the Amazon Web Services account can perform EMR cluster actions
-     * that their IAM policies allow. When <code>false</code>, only the IAM principal
-     * that created the cluster and the Amazon Web Services account root user can
-     * perform EMR actions, regardless of IAM permissions policies attached to other
-     * IAM principals.</p> <p>The default value is <code>true</code> if a value is not
-     * provided when creating a cluster using the EMR API <a>RunJobFlow</a> command,
-     * the CLI <a
+     * principals in the Amazon Web Services account can perform Amazon EMR cluster
+     * actions that their IAM policies allow. When <code>false</code>, only the IAM
+     * principal that created the cluster and the Amazon Web Services account root user
+     * can perform Amazon EMR actions, regardless of IAM permissions policies attached
+     * to other IAM principals.</p> <p>The default value is <code>true</code> if a
+     * value is not provided when creating a cluster using the Amazon EMR API
+     * <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command, or the Amazon Web Services Management Console.</p>
      */
@@ -498,13 +498,13 @@ namespace Model
     /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
-     * principals in the Amazon Web Services account can perform EMR cluster actions
-     * that their IAM policies allow. When <code>false</code>, only the IAM principal
-     * that created the cluster and the Amazon Web Services account root user can
-     * perform EMR actions, regardless of IAM permissions policies attached to other
-     * IAM principals.</p> <p>The default value is <code>true</code> if a value is not
-     * provided when creating a cluster using the EMR API <a>RunJobFlow</a> command,
-     * the CLI <a
+     * principals in the Amazon Web Services account can perform Amazon EMR cluster
+     * actions that their IAM policies allow. When <code>false</code>, only the IAM
+     * principal that created the cluster and the Amazon Web Services account root user
+     * can perform Amazon EMR actions, regardless of IAM permissions policies attached
+     * to other IAM principals.</p> <p>The default value is <code>true</code> if a
+     * value is not provided when creating a cluster using the Amazon EMR API
+     * <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command, or the Amazon Web Services Management Console.</p>
      */
@@ -513,13 +513,13 @@ namespace Model
     /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
-     * principals in the Amazon Web Services account can perform EMR cluster actions
-     * that their IAM policies allow. When <code>false</code>, only the IAM principal
-     * that created the cluster and the Amazon Web Services account root user can
-     * perform EMR actions, regardless of IAM permissions policies attached to other
-     * IAM principals.</p> <p>The default value is <code>true</code> if a value is not
-     * provided when creating a cluster using the EMR API <a>RunJobFlow</a> command,
-     * the CLI <a
+     * principals in the Amazon Web Services account can perform Amazon EMR cluster
+     * actions that their IAM policies allow. When <code>false</code>, only the IAM
+     * principal that created the cluster and the Amazon Web Services account root user
+     * can perform Amazon EMR actions, regardless of IAM permissions policies attached
+     * to other IAM principals.</p> <p>The default value is <code>true</code> if a
+     * value is not provided when creating a cluster using the Amazon EMR API
+     * <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command, or the Amazon Web Services Management Console.</p>
      */
@@ -528,13 +528,13 @@ namespace Model
     /**
      * <p>Indicates whether the cluster is visible to IAM principals in the Amazon Web
      * Services account associated with the cluster. When <code>true</code>, IAM
-     * principals in the Amazon Web Services account can perform EMR cluster actions
-     * that their IAM policies allow. When <code>false</code>, only the IAM principal
-     * that created the cluster and the Amazon Web Services account root user can
-     * perform EMR actions, regardless of IAM permissions policies attached to other
-     * IAM principals.</p> <p>The default value is <code>true</code> if a value is not
-     * provided when creating a cluster using the EMR API <a>RunJobFlow</a> command,
-     * the CLI <a
+     * principals in the Amazon Web Services account can perform Amazon EMR cluster
+     * actions that their IAM policies allow. When <code>false</code>, only the IAM
+     * principal that created the cluster and the Amazon Web Services account root user
+     * can perform Amazon EMR actions, regardless of IAM permissions policies attached
+     * to other IAM principals.</p> <p>The default value is <code>true</code> if a
+     * value is not provided when creating a cluster using the Amazon EMR API
+     * <a>RunJobFlow</a> command, the CLI <a
      * href="https://docs.aws.amazon.com/cli/latest/reference/emr/create-cluster.html">create-cluster</a>
      * command, or the Amazon Web Services Management Console.</p>
      */
@@ -542,50 +542,50 @@ namespace Model
 
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline const Aws::String& GetJobFlowRole() const{ return m_jobFlowRole; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline bool JobFlowRoleHasBeenSet() const { return m_jobFlowRoleHasBeenSet; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline void SetJobFlowRole(const Aws::String& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = value; }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline void SetJobFlowRole(Aws::String&& value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole = std::move(value); }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline void SetJobFlowRole(const char* value) { m_jobFlowRoleHasBeenSet = true; m_jobFlowRole.assign(value); }
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline JobFlowDetail& WithJobFlowRole(const Aws::String& value) { SetJobFlowRole(value); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline JobFlowDetail& WithJobFlowRole(Aws::String&& value) { SetJobFlowRole(std::move(value)); return *this;}
 
     /**
-     * <p>The IAM role that was specified when the job flow was launched. The EC2
-     * instances of the job flow assume this role.</p>
+     * <p>The IAM role that was specified when the job flow was launched. The Amazon
+     * EC2 instances of the job flow assume this role.</p>
      */
     inline JobFlowDetail& WithJobFlowRole(const char* value) { SetJobFlowRole(value); return *this;}
 
@@ -643,7 +643,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
 
@@ -651,7 +651,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline bool AutoScalingRoleHasBeenSet() const { return m_autoScalingRoleHasBeenSet; }
 
@@ -659,7 +659,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline void SetAutoScalingRole(const Aws::String& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = value; }
 
@@ -667,7 +667,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline void SetAutoScalingRole(Aws::String&& value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole = std::move(value); }
 
@@ -675,7 +675,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline void SetAutoScalingRole(const char* value) { m_autoScalingRoleHasBeenSet = true; m_autoScalingRole.assign(value); }
 
@@ -683,7 +683,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline JobFlowDetail& WithAutoScalingRole(const Aws::String& value) { SetAutoScalingRole(value); return *this;}
 
@@ -691,7 +691,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline JobFlowDetail& WithAutoScalingRole(Aws::String&& value) { SetAutoScalingRole(std::move(value)); return *this;}
 
@@ -699,7 +699,7 @@ namespace Model
      * <p>An IAM role for automatic scaling policies. The default role is
      * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides a way for the
      * automatic scaling feature to get the required permissions it needs to launch and
-     * terminate EC2 instances in an instance group.</p>
+     * terminate Amazon EC2 instances in an instance group.</p>
      */
     inline JobFlowDetail& WithAutoScalingRole(const char* value) { SetAutoScalingRole(value); return *this;}
 
@@ -716,8 +716,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline const ScaleDownBehavior& GetScaleDownBehavior() const{ return m_scaleDownBehavior; }
 
@@ -733,8 +733,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
 
@@ -750,8 +750,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
@@ -767,8 +767,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline void SetScaleDownBehavior(ScaleDownBehavior&& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = std::move(value); }
 
@@ -784,8 +784,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(const ScaleDownBehavior& value) { SetScaleDownBehavior(value); return *this;}
 
@@ -801,8 +801,8 @@ namespace Model
      * instances, regardless of the instance-hour boundary. With either behavior,
      * Amazon EMR removes the least active nodes first and blocks instance termination
      * if it could lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code>
-     * available only in Amazon EMR version 4.1.0 and later, and is the default for
-     * versions of Amazon EMR earlier than 5.1.0.</p>
+     * available only in Amazon EMR releases 4.1.0 and later, and is the default for
+     * releases of Amazon EMR earlier than 5.1.0.</p>
      */
     inline JobFlowDetail& WithScaleDownBehavior(ScaleDownBehavior&& value) { SetScaleDownBehavior(std::move(value)); return *this;}
 
