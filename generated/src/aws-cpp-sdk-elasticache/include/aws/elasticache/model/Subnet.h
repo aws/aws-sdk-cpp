@@ -152,7 +152,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const Aws::Vector<NetworkType>& GetSupportedNetworkTypes() const{ return m_supportedNetworkTypes; }
 
@@ -160,7 +160,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline bool SupportedNetworkTypesHasBeenSet() const { return m_supportedNetworkTypesHasBeenSet; }
 
@@ -168,7 +168,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline void SetSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = value; }
 
@@ -176,7 +176,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline void SetSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes = std::move(value); }
 
@@ -184,7 +184,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline Subnet& WithSupportedNetworkTypes(const Aws::Vector<NetworkType>& value) { SetSupportedNetworkTypes(value); return *this;}
 
@@ -192,7 +192,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline Subnet& WithSupportedNetworkTypes(Aws::Vector<NetworkType>&& value) { SetSupportedNetworkTypes(std::move(value)); return *this;}
 
@@ -200,7 +200,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline Subnet& AddSupportedNetworkTypes(const NetworkType& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(value); return *this; }
 
@@ -208,7 +208,7 @@ namespace Model
      * <p>Either <code>ipv4</code> | <code>ipv6</code> | <code>dual_stack</code>. IPv6
      * is supported for workloads using Redis engine version 6.2 onward or Memcached
      * engine version 1.6.6 on all instances built on the <a
-     * href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline Subnet& AddSupportedNetworkTypes(NetworkType&& value) { m_supportedNetworkTypesHasBeenSet = true; m_supportedNetworkTypes.push_back(std::move(value)); return *this; }
 

@@ -18,20 +18,22 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRunResult::GetRunResult() : 
-    m_logLevel(RunLogLevel::NOT_SET),
-    m_priority(0),
     m_status(RunStatus::NOT_SET),
+    m_workflowType(WorkflowType::NOT_SET),
+    m_priority(0),
     m_storageCapacity(0),
-    m_workflowType(WorkflowType::NOT_SET)
+    m_logLevel(RunLogLevel::NOT_SET),
+    m_accelerators(Accelerators::NOT_SET)
 {
 }
 
 GetRunResult::GetRunResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_logLevel(RunLogLevel::NOT_SET),
-    m_priority(0),
     m_status(RunStatus::NOT_SET),
+    m_workflowType(WorkflowType::NOT_SET),
+    m_priority(0),
     m_storageCapacity(0),
-    m_workflowType(WorkflowType::NOT_SET)
+    m_logLevel(RunLogLevel::NOT_SET),
+    m_accelerators(Accelerators::NOT_SET)
 {
   *this = result;
 }
@@ -45,9 +47,57 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_creationTime = jsonValue.GetString("creationTime");
+    m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = RunStatusMapper::GetRunStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("workflowId"))
+  {
+    m_workflowId = jsonValue.GetString("workflowId");
+
+  }
+
+  if(jsonValue.ValueExists("workflowType"))
+  {
+    m_workflowType = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("workflowType"));
+
+  }
+
+  if(jsonValue.ValueExists("runId"))
+  {
+    m_runId = jsonValue.GetString("runId");
+
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("runGroupId"))
+  {
+    m_runGroupId = jsonValue.GetString("runGroupId");
+
+  }
+
+  if(jsonValue.ValueExists("priority"))
+  {
+    m_priority = jsonValue.GetInteger("priority");
 
   }
 
@@ -63,21 +113,15 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("parameters"))
   {
-    m_id = jsonValue.GetString("id");
+    m_parameters = jsonValue.GetObject("parameters");
 
   }
 
-  if(jsonValue.ValueExists("logLevel"))
+  if(jsonValue.ValueExists("storageCapacity"))
   {
-    m_logLevel = RunLogLevelMapper::GetRunLogLevelForName(jsonValue.GetString("logLevel"));
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
+    m_storageCapacity = jsonValue.GetInteger("storageCapacity");
 
   }
 
@@ -87,15 +131,9 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
-  if(jsonValue.ValueExists("parameters"))
+  if(jsonValue.ValueExists("logLevel"))
   {
-    m_parameters = jsonValue.GetObject("parameters");
-
-  }
-
-  if(jsonValue.ValueExists("priority"))
-  {
-    m_priority = jsonValue.GetInteger("priority");
+    m_logLevel = RunLogLevelMapper::GetRunLogLevelForName(jsonValue.GetString("logLevel"));
 
   }
 
@@ -108,21 +146,15 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     }
   }
 
-  if(jsonValue.ValueExists("roleArn"))
+  if(jsonValue.ValueExists("startedBy"))
   {
-    m_roleArn = jsonValue.GetString("roleArn");
+    m_startedBy = jsonValue.GetString("startedBy");
 
   }
 
-  if(jsonValue.ValueExists("runGroupId"))
+  if(jsonValue.ValueExists("creationTime"))
   {
-    m_runGroupId = jsonValue.GetString("runGroupId");
-
-  }
-
-  if(jsonValue.ValueExists("runId"))
-  {
-    m_runId = jsonValue.GetString("runId");
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 
@@ -132,33 +164,15 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
 
   }
 
-  if(jsonValue.ValueExists("startedBy"))
-  {
-    m_startedBy = jsonValue.GetString("startedBy");
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = RunStatusMapper::GetRunStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("statusMessage"))
-  {
-    m_statusMessage = jsonValue.GetString("statusMessage");
-
-  }
-
   if(jsonValue.ValueExists("stopTime"))
   {
     m_stopTime = jsonValue.GetString("stopTime");
 
   }
 
-  if(jsonValue.ValueExists("storageCapacity"))
+  if(jsonValue.ValueExists("statusMessage"))
   {
-    m_storageCapacity = jsonValue.GetInteger("storageCapacity");
+    m_statusMessage = jsonValue.GetString("statusMessage");
 
   }
 
@@ -171,15 +185,9 @@ GetRunResult& GetRunResult::operator =(const Aws::AmazonWebServiceResult<JsonVal
     }
   }
 
-  if(jsonValue.ValueExists("workflowId"))
+  if(jsonValue.ValueExists("accelerators"))
   {
-    m_workflowId = jsonValue.GetString("workflowId");
-
-  }
-
-  if(jsonValue.ValueExists("workflowType"))
-  {
-    m_workflowType = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("workflowType"));
+    m_accelerators = AcceleratorsMapper::GetAcceleratorsForName(jsonValue.GetString("accelerators"));
 
   }
 

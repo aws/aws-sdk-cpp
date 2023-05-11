@@ -38,44 +38,45 @@ namespace Model
 
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total read count.</p>
      */
-    inline const Aws::String& GetAlignment() const{ return m_alignment; }
+    inline long long GetTotalReadCount() const{ return m_totalReadCount; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total read count.</p>
      */
-    inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
+    inline bool TotalReadCountHasBeenSet() const { return m_totalReadCountHasBeenSet; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total read count.</p>
      */
-    inline void SetAlignment(const Aws::String& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
+    inline void SetTotalReadCount(long long value) { m_totalReadCountHasBeenSet = true; m_totalReadCount = value; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total read count.</p>
      */
-    inline void SetAlignment(Aws::String&& value) { m_alignmentHasBeenSet = true; m_alignment = std::move(value); }
+    inline SequenceInformation& WithTotalReadCount(long long value) { SetTotalReadCount(value); return *this;}
+
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total base count.</p>
      */
-    inline void SetAlignment(const char* value) { m_alignmentHasBeenSet = true; m_alignment.assign(value); }
+    inline long long GetTotalBaseCount() const{ return m_totalBaseCount; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total base count.</p>
      */
-    inline SequenceInformation& WithAlignment(const Aws::String& value) { SetAlignment(value); return *this;}
+    inline bool TotalBaseCountHasBeenSet() const { return m_totalBaseCountHasBeenSet; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total base count.</p>
      */
-    inline SequenceInformation& WithAlignment(Aws::String&& value) { SetAlignment(std::move(value)); return *this;}
+    inline void SetTotalBaseCount(long long value) { m_totalBaseCountHasBeenSet = true; m_totalBaseCount = value; }
 
     /**
-     * <p>The sequence's alignment setting.</p>
+     * <p>The sequence's total base count.</p>
      */
-    inline SequenceInformation& WithAlignment(const char* value) { SetAlignment(value); return *this;}
+    inline SequenceInformation& WithTotalBaseCount(long long value) { SetTotalBaseCount(value); return *this;}
 
 
     /**
@@ -120,59 +121,58 @@ namespace Model
 
 
     /**
-     * <p>The sequence's total base count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline long long GetTotalBaseCount() const{ return m_totalBaseCount; }
+    inline const Aws::String& GetAlignment() const{ return m_alignment; }
 
     /**
-     * <p>The sequence's total base count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline bool TotalBaseCountHasBeenSet() const { return m_totalBaseCountHasBeenSet; }
+    inline bool AlignmentHasBeenSet() const { return m_alignmentHasBeenSet; }
 
     /**
-     * <p>The sequence's total base count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline void SetTotalBaseCount(long long value) { m_totalBaseCountHasBeenSet = true; m_totalBaseCount = value; }
+    inline void SetAlignment(const Aws::String& value) { m_alignmentHasBeenSet = true; m_alignment = value; }
 
     /**
-     * <p>The sequence's total base count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline SequenceInformation& WithTotalBaseCount(long long value) { SetTotalBaseCount(value); return *this;}
-
-
-    /**
-     * <p>The sequence's total read count.</p>
-     */
-    inline long long GetTotalReadCount() const{ return m_totalReadCount; }
+    inline void SetAlignment(Aws::String&& value) { m_alignmentHasBeenSet = true; m_alignment = std::move(value); }
 
     /**
-     * <p>The sequence's total read count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline bool TotalReadCountHasBeenSet() const { return m_totalReadCountHasBeenSet; }
+    inline void SetAlignment(const char* value) { m_alignmentHasBeenSet = true; m_alignment.assign(value); }
 
     /**
-     * <p>The sequence's total read count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline void SetTotalReadCount(long long value) { m_totalReadCountHasBeenSet = true; m_totalReadCount = value; }
+    inline SequenceInformation& WithAlignment(const Aws::String& value) { SetAlignment(value); return *this;}
 
     /**
-     * <p>The sequence's total read count.</p>
+     * <p>The sequence's alignment setting.</p>
      */
-    inline SequenceInformation& WithTotalReadCount(long long value) { SetTotalReadCount(value); return *this;}
+    inline SequenceInformation& WithAlignment(Aws::String&& value) { SetAlignment(std::move(value)); return *this;}
+
+    /**
+     * <p>The sequence's alignment setting.</p>
+     */
+    inline SequenceInformation& WithAlignment(const char* value) { SetAlignment(value); return *this;}
 
   private:
 
-    Aws::String m_alignment;
-    bool m_alignmentHasBeenSet = false;
-
-    Aws::String m_generatedFrom;
-    bool m_generatedFromHasBeenSet = false;
+    long long m_totalReadCount;
+    bool m_totalReadCountHasBeenSet = false;
 
     long long m_totalBaseCount;
     bool m_totalBaseCountHasBeenSet = false;
 
-    long long m_totalReadCount;
-    bool m_totalReadCountHasBeenSet = false;
+    Aws::String m_generatedFrom;
+    bool m_generatedFromHasBeenSet = false;
+
+    Aws::String m_alignment;
+    bool m_alignmentHasBeenSet = false;
   };
 
 } // namespace Model

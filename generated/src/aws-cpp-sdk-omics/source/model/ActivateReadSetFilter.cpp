@@ -19,24 +19,31 @@ namespace Model
 {
 
 ActivateReadSetFilter::ActivateReadSetFilter() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
     m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_createdAfterHasBeenSet(false),
+    m_createdBeforeHasBeenSet(false)
 {
 }
 
 ActivateReadSetFilter::ActivateReadSetFilter(JsonView jsonValue) : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
     m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_createdAfterHasBeenSet(false),
+    m_createdBeforeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ActivateReadSetFilter& ActivateReadSetFilter::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ReadSetActivationJobStatusMapper::GetReadSetActivationJobStatusForName(jsonValue.GetString("status"));
+
+    m_statusHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
@@ -51,19 +58,17 @@ ActivateReadSetFilter& ActivateReadSetFilter::operator =(JsonView jsonValue)
     m_createdBeforeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = ReadSetActivationJobStatusMapper::GetReadSetActivationJobStatusForName(jsonValue.GetString("status"));
-
-    m_statusHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ActivateReadSetFilter::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", ReadSetActivationJobStatusMapper::GetNameForReadSetActivationJobStatus(m_status));
+  }
 
   if(m_createdAfterHasBeenSet)
   {
@@ -73,11 +78,6 @@ JsonValue ActivateReadSetFilter::Jsonize() const
   if(m_createdBeforeHasBeenSet)
   {
    payload.WithString("createdBefore", m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", ReadSetActivationJobStatusMapper::GetNameForReadSetActivationJobStatus(m_status));
   }
 
   return payload;

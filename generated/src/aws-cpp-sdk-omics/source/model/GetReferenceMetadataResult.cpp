@@ -31,45 +31,15 @@ GetReferenceMetadataResult::GetReferenceMetadataResult(const Aws::AmazonWebServi
 GetReferenceMetadataResult& GetReferenceMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
-  if(jsonValue.ValueExists("files"))
-  {
-    m_files = jsonValue.GetObject("files");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
   }
 
-  if(jsonValue.ValueExists("md5"))
+  if(jsonValue.ValueExists("arn"))
   {
-    m_md5 = jsonValue.GetString("md5");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
+    m_arn = jsonValue.GetString("arn");
 
   }
 
@@ -79,15 +49,45 @@ GetReferenceMetadataResult& GetReferenceMetadataResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("md5"))
+  {
+    m_md5 = jsonValue.GetString("md5");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReferenceStatusMapper::GetReferenceStatusForName(jsonValue.GetString("status"));
 
   }
 
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
+
+  }
+
+  if(jsonValue.ValueExists("files"))
+  {
+    m_files = jsonValue.GetObject("files");
 
   }
 

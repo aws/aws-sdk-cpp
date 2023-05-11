@@ -19,9 +19,16 @@ namespace ivsrealtime
    * <p> <b>Introduction</b> </p> <p>The Amazon Interactive Video Service (IVS) stage
    * API is REST compatible, using a standard HTTP API and an AWS EventBridge event
    * stream for responses. JSON is used for both requests and responses, including
-   * errors. </p> <p>Terminology: The IVS stage API sometimes is referred to as the
-   * IVS RealTime API.</p> <p> <b>Resources</b> </p> <p>The following resources
-   * contain information about your IVS live stream (see <a
+   * errors. </p> <p>Terminology:</p> <ul> <li> <p>The IVS stage API sometimes is
+   * referred to as the IVS <i>RealTime</i> API.</p> </li> <li> <p>A <i>participant
+   * token</i> is an authorization token used to publish/subscribe to a stage.</p>
+   * </li> <li> <p>A <i>participant object</i> represents participants (people) in
+   * the stage and contains information about them. When a token is created, it
+   * includes a participant ID; when a participant uses that token to join a stage,
+   * the participant is associated with that participant ID There is a 1:1 mapping
+   * between participant tokens and participants.</p> </li> </ul> <p>
+   * <b>Resources</b> </p> <p>The following resources contain information about your
+   * IVS live stream (see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/getting-started.html">Getting
    * Started with Amazon IVS</a>):</p> <ul> <li> <p> <b>Stage</b> — A stage is a
    * virtual space where multiple participants can exchange audio and video in real
@@ -48,15 +55,21 @@ namespace ivsrealtime
    * specified stage (disconnecting all participants).</p> </li> <li> <p>
    * <a>DisconnectParticipant</a> — Disconnects a specified participant and revokes
    * the participant permanently from a specified stage.</p> </li> <li> <p>
-   * <a>GetStage</a> — Gets information for the specified stage.</p> </li> <li> <p>
-   * <a>ListStages</a> — Gets summary information about all stages in your account,
-   * in the AWS region where the API request is processed.</p> </li> <li> <p>
-   * <a>UpdateStage</a> — Updates a stage’s configuration.</p> </li> </ul> <p>
-   * <b>Tags Endpoints</b> </p> <ul> <li> <p> <a>ListTagsForResource</a> — Gets
-   * information about AWS tags for the specified ARN.</p> </li> <li> <p>
-   * <a>TagResource</a> — Adds or updates tags for the AWS resource with the
-   * specified ARN.</p> </li> <li> <p> <a>UntagResource</a> — Removes tags from the
-   * resource with the specified ARN.</p> </li> </ul>
+   * <a>GetParticipant</a> — Gets information about the specified participant
+   * token.</p> </li> <li> <p> <a>GetStage</a> — Gets information for the specified
+   * stage.</p> </li> <li> <p> <a>GetStageSession</a> — Gets information for the
+   * specified stage session.</p> </li> <li> <p> <a>ListParticipantEvents</a> — Lists
+   * events for a specified participant that occurred during a specified stage
+   * session.</p> </li> <li> <p> <a>ListParticipants</a> — Lists all participants in
+   * a specified stage session.</p> </li> <li> <p> <a>ListStages</a> — Gets summary
+   * information about all stages in your account, in the AWS region where the API
+   * request is processed.</p> </li> <li> <p> <a>ListStageSessions</a> — Gets all
+   * sessions for a specified stage.</p> </li> <li> <p> <a>UpdateStage</a> — Updates
+   * a stage’s configuration.</p> </li> </ul> <p> <b>Tags Endpoints</b> </p> <ul>
+   * <li> <p> <a>ListTagsForResource</a> — Gets information about AWS tags for the
+   * specified ARN.</p> </li> <li> <p> <a>TagResource</a> — Adds or updates tags for
+   * the AWS resource with the specified ARN.</p> </li> <li> <p> <a>UntagResource</a>
+   * — Removes tags from the resource with the specified ARN.</p> </li> </ul>
    */
   class AWS_IVSREALTIME_API IvsrealtimeClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<IvsrealtimeClient>
   {
@@ -223,6 +236,32 @@ namespace ivsrealtime
         }
 
         /**
+         * <p>Gets information about the specified participant token.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetParticipant">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetParticipantOutcome GetParticipant(const Model::GetParticipantRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetParticipant that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetParticipantRequestT = Model::GetParticipantRequest>
+        Model::GetParticipantOutcomeCallable GetParticipantCallable(const GetParticipantRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::GetParticipant, request);
+        }
+
+        /**
+         * An Async wrapper for GetParticipant that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetParticipantRequestT = Model::GetParticipantRequest>
+        void GetParticipantAsync(const GetParticipantRequestT& request, const GetParticipantResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::GetParticipant, request, handler, context);
+        }
+
+        /**
          * <p>Gets information for the specified stage.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStage">AWS
          * API Reference</a></p>
@@ -245,6 +284,109 @@ namespace ivsrealtime
         void GetStageAsync(const GetStageRequestT& request, const GetStageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&IvsrealtimeClient::GetStage, request, handler, context);
+        }
+
+        /**
+         * <p>Gets information for the specified stage session.</p><p><h3>See Also:</h3>  
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/GetStageSession">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetStageSessionOutcome GetStageSession(const Model::GetStageSessionRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetStageSession that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetStageSessionRequestT = Model::GetStageSessionRequest>
+        Model::GetStageSessionOutcomeCallable GetStageSessionCallable(const GetStageSessionRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::GetStageSession, request);
+        }
+
+        /**
+         * An Async wrapper for GetStageSession that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetStageSessionRequestT = Model::GetStageSessionRequest>
+        void GetStageSessionAsync(const GetStageSessionRequestT& request, const GetStageSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::GetStageSession, request, handler, context);
+        }
+
+        /**
+         * <p>Lists events for a specified participant that occurred during a specified
+         * stage session.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipantEvents">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListParticipantEventsOutcome ListParticipantEvents(const Model::ListParticipantEventsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListParticipantEvents that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListParticipantEventsRequestT = Model::ListParticipantEventsRequest>
+        Model::ListParticipantEventsOutcomeCallable ListParticipantEventsCallable(const ListParticipantEventsRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::ListParticipantEvents, request);
+        }
+
+        /**
+         * An Async wrapper for ListParticipantEvents that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListParticipantEventsRequestT = Model::ListParticipantEventsRequest>
+        void ListParticipantEventsAsync(const ListParticipantEventsRequestT& request, const ListParticipantEventsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::ListParticipantEvents, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all participants in a specified stage session.</p><p><h3>See Also:</h3>
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListParticipants">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListParticipantsOutcome ListParticipants(const Model::ListParticipantsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListParticipants that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListParticipantsRequestT = Model::ListParticipantsRequest>
+        Model::ListParticipantsOutcomeCallable ListParticipantsCallable(const ListParticipantsRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::ListParticipants, request);
+        }
+
+        /**
+         * An Async wrapper for ListParticipants that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListParticipantsRequestT = Model::ListParticipantsRequest>
+        void ListParticipantsAsync(const ListParticipantsRequestT& request, const ListParticipantsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::ListParticipants, request, handler, context);
+        }
+
+        /**
+         * <p>Gets all sessions for a specified stage.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-realtime-2020-07-14/ListStageSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListStageSessionsOutcome ListStageSessions(const Model::ListStageSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListStageSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListStageSessionsRequestT = Model::ListStageSessionsRequest>
+        Model::ListStageSessionsOutcomeCallable ListStageSessionsCallable(const ListStageSessionsRequestT& request) const
+        {
+            return SubmitCallable(&IvsrealtimeClient::ListStageSessions, request);
+        }
+
+        /**
+         * An Async wrapper for ListStageSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListStageSessionsRequestT = Model::ListStageSessionsRequest>
+        void ListStageSessionsAsync(const ListStageSessionsRequestT& request, const ListStageSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&IvsrealtimeClient::ListStageSessions, request, handler, context);
         }
 
         /**

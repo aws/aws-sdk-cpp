@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ReferenceStoreFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ReferenceStoreFilter.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline const ReferenceStoreFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(const ReferenceStoreFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(ReferenceStoreFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReferenceStoresRequest& WithFilter(const ReferenceStoreFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReferenceStoresRequest& WithFilter(ReferenceStoreFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -139,16 +108,47 @@ namespace Model
      */
     inline ListReferenceStoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-  private:
 
-    ReferenceStoreFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline const ReferenceStoreFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(const ReferenceStoreFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(ReferenceStoreFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReferenceStoresRequest& WithFilter(const ReferenceStoreFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReferenceStoresRequest& WithFilter(ReferenceStoreFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    ReferenceStoreFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

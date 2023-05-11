@@ -19,35 +19,35 @@ namespace Model
 {
 
 ImportReadSetSourceItem::ImportReadSetSourceItem() : 
-    m_descriptionHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
+    m_sourceFilesHasBeenSet(false),
     m_sourceFileType(FileType::NOT_SET),
     m_sourceFileTypeHasBeenSet(false),
-    m_sourceFilesHasBeenSet(false),
     m_status(ReadSetImportJobItemStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_subjectIdHasBeenSet(false),
+    m_sampleIdHasBeenSet(false),
+    m_generatedFromHasBeenSet(false),
+    m_referenceArnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
 
 ImportReadSetSourceItem::ImportReadSetSourceItem(JsonView jsonValue) : 
-    m_descriptionHasBeenSet(false),
-    m_generatedFromHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_referenceArnHasBeenSet(false),
-    m_sampleIdHasBeenSet(false),
+    m_sourceFilesHasBeenSet(false),
     m_sourceFileType(FileType::NOT_SET),
     m_sourceFileTypeHasBeenSet(false),
-    m_sourceFilesHasBeenSet(false),
     m_status(ReadSetImportJobItemStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_statusMessageHasBeenSet(false),
     m_subjectIdHasBeenSet(false),
+    m_sampleIdHasBeenSet(false),
+    m_generatedFromHasBeenSet(false),
+    m_referenceArnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -55,39 +55,11 @@ ImportReadSetSourceItem::ImportReadSetSourceItem(JsonView jsonValue) :
 
 ImportReadSetSourceItem& ImportReadSetSourceItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("description"))
+  if(jsonValue.ValueExists("sourceFiles"))
   {
-    m_description = jsonValue.GetString("description");
+    m_sourceFiles = jsonValue.GetObject("sourceFiles");
 
-    m_descriptionHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("generatedFrom"))
-  {
-    m_generatedFrom = jsonValue.GetString("generatedFrom");
-
-    m_generatedFromHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("referenceArn"))
-  {
-    m_referenceArn = jsonValue.GetString("referenceArn");
-
-    m_referenceArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sampleId"))
-  {
-    m_sampleId = jsonValue.GetString("sampleId");
-
-    m_sampleIdHasBeenSet = true;
+    m_sourceFilesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceFileType"))
@@ -95,13 +67,6 @@ ImportReadSetSourceItem& ImportReadSetSourceItem::operator =(JsonView jsonValue)
     m_sourceFileType = FileTypeMapper::GetFileTypeForName(jsonValue.GetString("sourceFileType"));
 
     m_sourceFileTypeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("sourceFiles"))
-  {
-    m_sourceFiles = jsonValue.GetObject("sourceFiles");
-
-    m_sourceFilesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -125,6 +90,41 @@ ImportReadSetSourceItem& ImportReadSetSourceItem::operator =(JsonView jsonValue)
     m_subjectIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("sampleId"))
+  {
+    m_sampleId = jsonValue.GetString("sampleId");
+
+    m_sampleIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("generatedFrom"))
+  {
+    m_generatedFrom = jsonValue.GetString("generatedFrom");
+
+    m_generatedFromHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("referenceArn"))
+  {
+    m_referenceArn = jsonValue.GetString("referenceArn");
+
+    m_referenceArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+    m_descriptionHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("tags"))
   {
     Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
@@ -142,45 +142,15 @@ JsonValue ImportReadSetSourceItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_descriptionHasBeenSet)
+  if(m_sourceFilesHasBeenSet)
   {
-   payload.WithString("description", m_description);
-
-  }
-
-  if(m_generatedFromHasBeenSet)
-  {
-   payload.WithString("generatedFrom", m_generatedFrom);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
-  }
-
-  if(m_referenceArnHasBeenSet)
-  {
-   payload.WithString("referenceArn", m_referenceArn);
-
-  }
-
-  if(m_sampleIdHasBeenSet)
-  {
-   payload.WithString("sampleId", m_sampleId);
+   payload.WithObject("sourceFiles", m_sourceFiles.Jsonize());
 
   }
 
   if(m_sourceFileTypeHasBeenSet)
   {
    payload.WithString("sourceFileType", FileTypeMapper::GetNameForFileType(m_sourceFileType));
-  }
-
-  if(m_sourceFilesHasBeenSet)
-  {
-   payload.WithObject("sourceFiles", m_sourceFiles.Jsonize());
-
   }
 
   if(m_statusHasBeenSet)
@@ -197,6 +167,36 @@ JsonValue ImportReadSetSourceItem::Jsonize() const
   if(m_subjectIdHasBeenSet)
   {
    payload.WithString("subjectId", m_subjectId);
+
+  }
+
+  if(m_sampleIdHasBeenSet)
+  {
+   payload.WithString("sampleId", m_sampleId);
+
+  }
+
+  if(m_generatedFromHasBeenSet)
+  {
+   payload.WithString("generatedFrom", m_generatedFrom);
+
+  }
+
+  if(m_referenceArnHasBeenSet)
+  {
+   payload.WithString("referenceArn", m_referenceArn);
+
+  }
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_descriptionHasBeenSet)
+  {
+   payload.WithString("description", m_description);
 
   }
 

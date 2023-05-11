@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ReadSetImportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ImportReadSetSourceItem.h>
 #include <utility>
 
@@ -34,58 +34,6 @@ namespace Model
     AWS_OMICS_API GetReadSetImportJobResult();
     AWS_OMICS_API GetReadSetImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetReadSetImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetImportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetImportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -125,42 +73,6 @@ namespace Model
 
 
     /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline GetReadSetImportJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline GetReadSetImportJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's service role ARN.</p>
-     */
-    inline GetReadSetImportJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
      * <p>The job's sequence store ID.</p>
      */
     inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
@@ -197,39 +109,39 @@ namespace Model
 
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline const Aws::Vector<ImportReadSetSourceItem>& GetSources() const{ return m_sources; }
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline void SetSources(const Aws::Vector<ImportReadSetSourceItem>& value) { m_sources = value; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline void SetSources(Aws::Vector<ImportReadSetSourceItem>&& value) { m_sources = std::move(value); }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline GetReadSetImportJobResult& WithSources(const Aws::Vector<ImportReadSetSourceItem>& value) { SetSources(value); return *this;}
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline GetReadSetImportJobResult& WithSources(Aws::Vector<ImportReadSetSourceItem>&& value) { SetSources(std::move(value)); return *this;}
+    inline GetReadSetImportJobResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline GetReadSetImportJobResult& AddSources(const ImportReadSetSourceItem& value) { m_sources.push_back(value); return *this; }
+    inline GetReadSetImportJobResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
 
     /**
-     * <p>The job's source files.</p>
+     * <p>The job's service role ARN.</p>
      */
-    inline GetReadSetImportJobResult& AddSources(ImportReadSetSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
+    inline GetReadSetImportJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
@@ -294,6 +206,94 @@ namespace Model
     inline GetReadSetImportJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetImportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetImportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline const Aws::Vector<ImportReadSetSourceItem>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline void SetSources(const Aws::Vector<ImportReadSetSourceItem>& value) { m_sources = value; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline void SetSources(Aws::Vector<ImportReadSetSourceItem>&& value) { m_sources = std::move(value); }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetImportJobResult& WithSources(const Aws::Vector<ImportReadSetSourceItem>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetImportJobResult& WithSources(Aws::Vector<ImportReadSetSourceItem>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetImportJobResult& AddSources(const ImportReadSetSourceItem& value) { m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetImportJobResult& AddSources(ImportReadSetSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -317,21 +317,21 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_completionTime;
-
-    Aws::Utils::DateTime m_creationTime;
-
     Aws::String m_id;
-
-    Aws::String m_roleArn;
 
     Aws::String m_sequenceStoreId;
 
-    Aws::Vector<ImportReadSetSourceItem> m_sources;
+    Aws::String m_roleArn;
 
     ReadSetImportJobStatus m_status;
 
     Aws::String m_statusMessage;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_completionTime;
+
+    Aws::Vector<ImportReadSetSourceItem> m_sources;
 
     Aws::String m_requestId;
   };

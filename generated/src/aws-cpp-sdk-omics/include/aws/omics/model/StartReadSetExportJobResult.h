@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReadSetExportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -32,68 +32,6 @@ namespace Model
     AWS_OMICS_API StartReadSetExportJobResult();
     AWS_OMICS_API StartReadSetExportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API StartReadSetExportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline StartReadSetExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline StartReadSetExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline const Aws::String& GetDestination() const{ return m_destination; }
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline void SetDestination(const Aws::String& value) { m_destination = value; }
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline void SetDestination(Aws::String&& value) { m_destination = std::move(value); }
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline void SetDestination(const char* value) { m_destination.assign(value); }
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline StartReadSetExportJobResult& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline StartReadSetExportJobResult& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's output location.</p>
-     */
-    inline StartReadSetExportJobResult& WithDestination(const char* value) { SetDestination(value); return *this;}
 
 
     /**
@@ -169,6 +107,42 @@ namespace Model
 
 
     /**
+     * <p>The job's output location.</p>
+     */
+    inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline void SetDestination(const Aws::String& value) { m_destination = value; }
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline void SetDestination(Aws::String&& value) { m_destination = std::move(value); }
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline void SetDestination(const char* value) { m_destination.assign(value); }
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline StartReadSetExportJobResult& WithDestination(const Aws::String& value) { SetDestination(value); return *this;}
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline StartReadSetExportJobResult& WithDestination(Aws::String&& value) { SetDestination(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's output location.</p>
+     */
+    inline StartReadSetExportJobResult& WithDestination(const char* value) { SetDestination(value); return *this;}
+
+
+    /**
      * <p>The job's status.</p>
      */
     inline const ReadSetExportJobStatus& GetStatus() const{ return m_status; }
@@ -194,6 +168,32 @@ namespace Model
     inline StartReadSetExportJobResult& WithStatus(ReadSetExportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline StartReadSetExportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline StartReadSetExportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -217,15 +217,15 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_destination;
-
     Aws::String m_id;
 
     Aws::String m_sequenceStoreId;
 
+    Aws::String m_destination;
+
     ReadSetExportJobStatus m_status;
+
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_requestId;
   };

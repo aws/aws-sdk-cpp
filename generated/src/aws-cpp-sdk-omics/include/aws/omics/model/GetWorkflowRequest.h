@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/WorkflowExport.h>
 #include <utility>
 
@@ -39,47 +39,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline const Aws::Vector<WorkflowExport>& GetExport() const{ return m_export; }
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline void SetExport(const Aws::Vector<WorkflowExport>& value) { m_exportHasBeenSet = true; m_export = value; }
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline void SetExport(Aws::Vector<WorkflowExport>&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline GetWorkflowRequest& WithExport(const Aws::Vector<WorkflowExport>& value) { SetExport(value); return *this;}
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline GetWorkflowRequest& WithExport(Aws::Vector<WorkflowExport>&& value) { SetExport(std::move(value)); return *this;}
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline GetWorkflowRequest& AddExport(const WorkflowExport& value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
-
-    /**
-     * <p>The export format for the workflow.</p>
-     */
-    inline GetWorkflowRequest& AddExport(WorkflowExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -153,16 +112,57 @@ namespace Model
      */
     inline GetWorkflowRequest& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
 
-  private:
 
-    Aws::Vector<WorkflowExport> m_export;
-    bool m_exportHasBeenSet = false;
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline const Aws::Vector<WorkflowExport>& GetExport() const{ return m_export; }
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline void SetExport(const Aws::Vector<WorkflowExport>& value) { m_exportHasBeenSet = true; m_export = value; }
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline void SetExport(Aws::Vector<WorkflowExport>&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline GetWorkflowRequest& WithExport(const Aws::Vector<WorkflowExport>& value) { SetExport(value); return *this;}
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline GetWorkflowRequest& WithExport(Aws::Vector<WorkflowExport>&& value) { SetExport(std::move(value)); return *this;}
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline GetWorkflowRequest& AddExport(const WorkflowExport& value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
+
+    /**
+     * <p>The export format for the workflow.</p>
+     */
+    inline GetWorkflowRequest& AddExport(WorkflowExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
     WorkflowType m_type;
     bool m_typeHasBeenSet = false;
+
+    Aws::Vector<WorkflowExport> m_export;
+    bool m_exportHasBeenSet = false;
   };
 
 } // namespace Model

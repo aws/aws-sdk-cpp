@@ -16,12 +16,12 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListWorkflowsRequest::ListWorkflowsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
+    m_type(WorkflowType::NOT_SET),
+    m_typeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_startingTokenHasBeenSet(false),
-    m_type(WorkflowType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false)
 {
 }
 
@@ -33,10 +33,10 @@ Aws::String ListWorkflowsRequest::SerializePayload() const
 void ListWorkflowsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
+    if(m_typeHasBeenSet)
     {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss << WorkflowTypeMapper::GetNameForWorkflowType(m_type);
+      uri.AddQueryStringParameter("type", ss.str());
       ss.str("");
     }
 
@@ -54,10 +54,10 @@ void ListWorkflowsRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
-    if(m_typeHasBeenSet)
+    if(m_maxResultsHasBeenSet)
     {
-      ss << WorkflowTypeMapper::GetNameForWorkflowType(m_type);
-      uri.AddQueryStringParameter("type", ss.str());
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
       ss.str("");
     }
 

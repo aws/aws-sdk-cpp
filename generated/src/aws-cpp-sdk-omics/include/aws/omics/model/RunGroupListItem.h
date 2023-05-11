@@ -80,37 +80,6 @@ namespace Model
 
 
     /**
-     * <p>When the group was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the group was created.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the group was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the group was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the group was created.</p>
-     */
-    inline RunGroupListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the group was created.</p>
-     */
-    inline RunGroupListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
      * <p>The group's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -149,69 +118,6 @@ namespace Model
      * <p>The group's ID.</p>
      */
     inline RunGroupListItem& WithId(const char* value) { SetId(value); return *this;}
-
-
-    /**
-     * <p>The group's maximum CPU count setting.</p>
-     */
-    inline int GetMaxCpus() const{ return m_maxCpus; }
-
-    /**
-     * <p>The group's maximum CPU count setting.</p>
-     */
-    inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
-
-    /**
-     * <p>The group's maximum CPU count setting.</p>
-     */
-    inline void SetMaxCpus(int value) { m_maxCpusHasBeenSet = true; m_maxCpus = value; }
-
-    /**
-     * <p>The group's maximum CPU count setting.</p>
-     */
-    inline RunGroupListItem& WithMaxCpus(int value) { SetMaxCpus(value); return *this;}
-
-
-    /**
-     * <p>The group's maximum duration setting in minutes.</p>
-     */
-    inline int GetMaxDuration() const{ return m_maxDuration; }
-
-    /**
-     * <p>The group's maximum duration setting in minutes.</p>
-     */
-    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
-
-    /**
-     * <p>The group's maximum duration setting in minutes.</p>
-     */
-    inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
-
-    /**
-     * <p>The group's maximum duration setting in minutes.</p>
-     */
-    inline RunGroupListItem& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
-
-
-    /**
-     * <p>The group's maximum concurrent run setting.</p>
-     */
-    inline int GetMaxRuns() const{ return m_maxRuns; }
-
-    /**
-     * <p>The group's maximum concurrent run setting.</p>
-     */
-    inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
-
-    /**
-     * <p>The group's maximum concurrent run setting.</p>
-     */
-    inline void SetMaxRuns(int value) { m_maxRunsHasBeenSet = true; m_maxRuns = value; }
-
-    /**
-     * <p>The group's maximum concurrent run setting.</p>
-     */
-    inline RunGroupListItem& WithMaxRuns(int value) { SetMaxRuns(value); return *this;}
 
 
     /**
@@ -254,28 +160,146 @@ namespace Model
      */
     inline RunGroupListItem& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The group's maximum CPU count setting.</p>
+     */
+    inline int GetMaxCpus() const{ return m_maxCpus; }
+
+    /**
+     * <p>The group's maximum CPU count setting.</p>
+     */
+    inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
+
+    /**
+     * <p>The group's maximum CPU count setting.</p>
+     */
+    inline void SetMaxCpus(int value) { m_maxCpusHasBeenSet = true; m_maxCpus = value; }
+
+    /**
+     * <p>The group's maximum CPU count setting.</p>
+     */
+    inline RunGroupListItem& WithMaxCpus(int value) { SetMaxCpus(value); return *this;}
+
+
+    /**
+     * <p>The group's maximum concurrent run setting.</p>
+     */
+    inline int GetMaxRuns() const{ return m_maxRuns; }
+
+    /**
+     * <p>The group's maximum concurrent run setting.</p>
+     */
+    inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
+
+    /**
+     * <p>The group's maximum concurrent run setting.</p>
+     */
+    inline void SetMaxRuns(int value) { m_maxRunsHasBeenSet = true; m_maxRuns = value; }
+
+    /**
+     * <p>The group's maximum concurrent run setting.</p>
+     */
+    inline RunGroupListItem& WithMaxRuns(int value) { SetMaxRuns(value); return *this;}
+
+
+    /**
+     * <p>The group's maximum duration setting in minutes.</p>
+     */
+    inline int GetMaxDuration() const{ return m_maxDuration; }
+
+    /**
+     * <p>The group's maximum duration setting in minutes.</p>
+     */
+    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
+
+    /**
+     * <p>The group's maximum duration setting in minutes.</p>
+     */
+    inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
+
+    /**
+     * <p>The group's maximum duration setting in minutes.</p>
+     */
+    inline RunGroupListItem& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
+
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline RunGroupListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the group was created.</p>
+     */
+    inline RunGroupListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline int GetMaxGpus() const{ return m_maxGpus; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline bool MaxGpusHasBeenSet() const { return m_maxGpusHasBeenSet; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline void SetMaxGpus(int value) { m_maxGpusHasBeenSet = true; m_maxGpus = value; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline RunGroupListItem& WithMaxGpus(int value) { SetMaxGpus(value); return *this;}
+
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
 
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     int m_maxCpus;
     bool m_maxCpusHasBeenSet = false;
 
-    int m_maxDuration;
-    bool m_maxDurationHasBeenSet = false;
-
     int m_maxRuns;
     bool m_maxRunsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    int m_maxDuration;
+    bool m_maxDurationHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    int m_maxGpus;
+    bool m_maxGpusHasBeenSet = false;
   };
 
 } // namespace Model

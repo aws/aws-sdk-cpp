@@ -35,27 +35,9 @@ GetAnnotationStoreResult::GetAnnotationStoreResult(const Aws::AmazonWebServiceRe
 GetAnnotationStoreResult& GetAnnotationStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
 
   }
 
@@ -65,21 +47,9 @@ GetAnnotationStoreResult& GetAnnotationStoreResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("sseConfig"))
-  {
-    m_sseConfig = jsonValue.GetObject("sseConfig");
-
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
-
-  }
-
-  if(jsonValue.ValueExists("statusMessage"))
-  {
-    m_statusMessage = jsonValue.GetString("statusMessage");
 
   }
 
@@ -89,21 +59,33 @@ GetAnnotationStoreResult& GetAnnotationStoreResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("storeFormat"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_storeFormat = StoreFormatMapper::GetStoreFormatForName(jsonValue.GetString("storeFormat"));
+    m_name = jsonValue.GetString("name");
 
   }
 
-  if(jsonValue.ValueExists("storeOptions"))
+  if(jsonValue.ValueExists("description"))
   {
-    m_storeOptions = jsonValue.GetObject("storeOptions");
+    m_description = jsonValue.GetString("description");
 
   }
 
-  if(jsonValue.ValueExists("storeSizeBytes"))
+  if(jsonValue.ValueExists("sseConfig"))
   {
-    m_storeSizeBytes = jsonValue.GetInt64("storeSizeBytes");
+    m_sseConfig = jsonValue.GetObject("sseConfig");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
@@ -116,9 +98,27 @@ GetAnnotationStoreResult& GetAnnotationStoreResult::operator =(const Aws::Amazon
     }
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("storeOptions"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_storeOptions = jsonValue.GetObject("storeOptions");
+
+  }
+
+  if(jsonValue.ValueExists("storeFormat"))
+  {
+    m_storeFormat = StoreFormatMapper::GetStoreFormatForName(jsonValue.GetString("storeFormat"));
+
+  }
+
+  if(jsonValue.ValueExists("statusMessage"))
+  {
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+  }
+
+  if(jsonValue.ValueExists("storeSizeBytes"))
+  {
+    m_storeSizeBytes = jsonValue.GetInt64("storeSizeBytes");
 
   }
 

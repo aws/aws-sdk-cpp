@@ -19,36 +19,36 @@ namespace Model
 {
 
 VcfOptions::VcfOptions() : 
-    m_ignoreFilterField(false),
-    m_ignoreFilterFieldHasBeenSet(false),
     m_ignoreQualField(false),
-    m_ignoreQualFieldHasBeenSet(false)
+    m_ignoreQualFieldHasBeenSet(false),
+    m_ignoreFilterField(false),
+    m_ignoreFilterFieldHasBeenSet(false)
 {
 }
 
 VcfOptions::VcfOptions(JsonView jsonValue) : 
-    m_ignoreFilterField(false),
-    m_ignoreFilterFieldHasBeenSet(false),
     m_ignoreQualField(false),
-    m_ignoreQualFieldHasBeenSet(false)
+    m_ignoreQualFieldHasBeenSet(false),
+    m_ignoreFilterField(false),
+    m_ignoreFilterFieldHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 VcfOptions& VcfOptions::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("ignoreFilterField"))
-  {
-    m_ignoreFilterField = jsonValue.GetBool("ignoreFilterField");
-
-    m_ignoreFilterFieldHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("ignoreQualField"))
   {
     m_ignoreQualField = jsonValue.GetBool("ignoreQualField");
 
     m_ignoreQualFieldHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ignoreFilterField"))
+  {
+    m_ignoreFilterField = jsonValue.GetBool("ignoreFilterField");
+
+    m_ignoreFilterFieldHasBeenSet = true;
   }
 
   return *this;
@@ -58,15 +58,15 @@ JsonValue VcfOptions::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_ignoreFilterFieldHasBeenSet)
-  {
-   payload.WithBool("ignoreFilterField", m_ignoreFilterField);
-
-  }
-
   if(m_ignoreQualFieldHasBeenSet)
   {
    payload.WithBool("ignoreQualField", m_ignoreQualField);
+
+  }
+
+  if(m_ignoreFilterFieldHasBeenSet)
+  {
+   payload.WithBool("ignoreFilterField", m_ignoreFilterField);
 
   }
 

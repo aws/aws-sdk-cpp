@@ -89,8 +89,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
 
@@ -98,8 +98,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
@@ -107,8 +107,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
@@ -116,8 +116,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline void SetStartTime(Aws::Utils::DateTime&& value) { m_startTimeHasBeenSet = true; m_startTime = std::move(value); }
 
@@ -125,8 +125,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline GetMetricDataV2Request& WithStartTime(const Aws::Utils::DateTime& value) { SetStartTime(value); return *this;}
 
@@ -134,8 +134,8 @@ namespace Model
      * <p>The timestamp, in UNIX Epoch time format, at which to start the reporting
      * interval for the retrieval of historical metrics data. The time must be before
      * the end time timestamp. The time range between the start and end time must be
-     * less than 24 hours. The start time cannot be earlier than 14 days before the
-     * time of the request. Historical metrics are available for 14 days.</p>
+     * less than 24 hours. The start time cannot be earlier than 35 days before the
+     * time of the request. Historical metrics are available for 35 days.</p>
      */
     inline GetMetricDataV2Request& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
 

@@ -18,16 +18,18 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRunTaskResult::GetRunTaskResult() : 
+    m_status(TaskStatus::NOT_SET),
     m_cpus(0),
     m_memory(0),
-    m_status(TaskStatus::NOT_SET)
+    m_gpus(0)
 {
 }
 
 GetRunTaskResult::GetRunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_status(TaskStatus::NOT_SET),
     m_cpus(0),
     m_memory(0),
-    m_status(TaskStatus::NOT_SET)
+    m_gpus(0)
 {
   *this = result;
 }
@@ -35,39 +37,9 @@ GetRunTaskResult::GetRunTaskResult(const Aws::AmazonWebServiceResult<JsonValue>&
 GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("cpus"))
+  if(jsonValue.ValueExists("taskId"))
   {
-    m_cpus = jsonValue.GetInteger("cpus");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("logStream"))
-  {
-    m_logStream = jsonValue.GetString("logStream");
-
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
+    m_taskId = jsonValue.GetString("taskId");
 
   }
 
@@ -77,9 +49,33 @@ GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("statusMessage"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_statusMessage = jsonValue.GetString("statusMessage");
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("cpus"))
+  {
+    m_cpus = jsonValue.GetInteger("cpus");
+
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetInteger("memory");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
 
   }
 
@@ -89,9 +85,21 @@ GetRunTaskResult& GetRunTaskResult::operator =(const Aws::AmazonWebServiceResult
 
   }
 
-  if(jsonValue.ValueExists("taskId"))
+  if(jsonValue.ValueExists("statusMessage"))
   {
-    m_taskId = jsonValue.GetString("taskId");
+    m_statusMessage = jsonValue.GetString("statusMessage");
+
+  }
+
+  if(jsonValue.ValueExists("logStream"))
+  {
+    m_logStream = jsonValue.GetString("logStream");
+
+  }
+
+  if(jsonValue.ValueExists("gpus"))
+  {
+    m_gpus = jsonValue.GetInteger("gpus");
 
   }
 

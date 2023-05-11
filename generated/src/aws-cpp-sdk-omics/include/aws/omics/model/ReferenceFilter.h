@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,88 @@ namespace Model
     AWS_OMICS_API ReferenceFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ReferenceFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline ReferenceFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline ReferenceFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>A name to filter on.</p>
+     */
+    inline ReferenceFilter& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline const Aws::String& GetMd5() const{ return m_md5; }
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline bool Md5HasBeenSet() const { return m_md5HasBeenSet; }
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline void SetMd5(const Aws::String& value) { m_md5HasBeenSet = true; m_md5 = value; }
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline void SetMd5(Aws::String&& value) { m_md5HasBeenSet = true; m_md5 = std::move(value); }
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline void SetMd5(const char* value) { m_md5HasBeenSet = true; m_md5.assign(value); }
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline ReferenceFilter& WithMd5(const Aws::String& value) { SetMd5(value); return *this;}
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline ReferenceFilter& WithMd5(Aws::String&& value) { SetMd5(std::move(value)); return *this;}
+
+    /**
+     * <p>An MD5 checksum to filter on.</p>
+     */
+    inline ReferenceFilter& WithMd5(const char* value) { SetMd5(value); return *this;}
 
 
     /**
@@ -99,101 +181,19 @@ namespace Model
      */
     inline ReferenceFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
 
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline const Aws::String& GetMd5() const{ return m_md5; }
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline bool Md5HasBeenSet() const { return m_md5HasBeenSet; }
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline void SetMd5(const Aws::String& value) { m_md5HasBeenSet = true; m_md5 = value; }
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline void SetMd5(Aws::String&& value) { m_md5HasBeenSet = true; m_md5 = std::move(value); }
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline void SetMd5(const char* value) { m_md5HasBeenSet = true; m_md5.assign(value); }
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline ReferenceFilter& WithMd5(const Aws::String& value) { SetMd5(value); return *this;}
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline ReferenceFilter& WithMd5(Aws::String&& value) { SetMd5(std::move(value)); return *this;}
-
-    /**
-     * <p>An MD5 checksum to filter on.</p>
-     */
-    inline ReferenceFilter& WithMd5(const char* value) { SetMd5(value); return *this;}
-
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline ReferenceFilter& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline ReferenceFilter& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name to filter on.</p>
-     */
-    inline ReferenceFilter& WithName(const char* value) { SetName(value); return *this;}
-
   private:
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_md5;
+    bool m_md5HasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet = false;
-
-    Aws::String m_md5;
-    bool m_md5HasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
   };
 
 } // namespace Model

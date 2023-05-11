@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/TaskStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -35,97 +35,65 @@ namespace Model
 
 
     /**
-     * <p>The task's CPU usage.</p>
+     * <p>The task's ID.</p>
      */
-    inline int GetCpus() const{ return m_cpus; }
+    inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>The task's CPU usage.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCpus(int value) { m_cpus = value; }
+    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
 
     /**
-     * <p>The task's CPU usage.</p>
+     * <p>The task's ID.</p>
      */
-    inline GetRunTaskResult& WithCpus(int value) { SetCpus(value); return *this;}
-
-
-    /**
-     * <p>When the task was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+    inline GetRunTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline GetRunTaskResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline GetRunTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline GetRunTaskResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline GetRunTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
 
     /**
-     * <p>The task's log stream.</p>
+     * <p>The task's status.</p>
      */
-    inline const Aws::String& GetLogStream() const{ return m_logStream; }
+    inline const TaskStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The task's log stream.</p>
+     * <p>The task's status.</p>
      */
-    inline void SetLogStream(const Aws::String& value) { m_logStream = value; }
+    inline void SetStatus(const TaskStatus& value) { m_status = value; }
 
     /**
-     * <p>The task's log stream.</p>
+     * <p>The task's status.</p>
      */
-    inline void SetLogStream(Aws::String&& value) { m_logStream = std::move(value); }
+    inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The task's log stream.</p>
+     * <p>The task's status.</p>
      */
-    inline void SetLogStream(const char* value) { m_logStream.assign(value); }
+    inline GetRunTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The task's log stream.</p>
+     * <p>The task's status.</p>
      */
-    inline GetRunTaskResult& WithLogStream(const Aws::String& value) { SetLogStream(value); return *this;}
-
-    /**
-     * <p>The task's log stream.</p>
-     */
-    inline GetRunTaskResult& WithLogStream(Aws::String&& value) { SetLogStream(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's log stream.</p>
-     */
-    inline GetRunTaskResult& WithLogStream(const char* value) { SetLogStream(value); return *this;}
-
-
-    /**
-     * <p>The task's memory use in gigabytes.</p>
-     */
-    inline int GetMemory() const{ return m_memory; }
-
-    /**
-     * <p>The task's memory use in gigabytes.</p>
-     */
-    inline void SetMemory(int value) { m_memory = value; }
-
-    /**
-     * <p>The task's memory use in gigabytes.</p>
-     */
-    inline GetRunTaskResult& WithMemory(int value) { SetMemory(value); return *this;}
+    inline GetRunTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -165,6 +133,64 @@ namespace Model
 
 
     /**
+     * <p>The task's CPU usage.</p>
+     */
+    inline int GetCpus() const{ return m_cpus; }
+
+    /**
+     * <p>The task's CPU usage.</p>
+     */
+    inline void SetCpus(int value) { m_cpus = value; }
+
+    /**
+     * <p>The task's CPU usage.</p>
+     */
+    inline GetRunTaskResult& WithCpus(int value) { SetCpus(value); return *this;}
+
+
+    /**
+     * <p>The task's memory use in gigabytes.</p>
+     */
+    inline int GetMemory() const{ return m_memory; }
+
+    /**
+     * <p>The task's memory use in gigabytes.</p>
+     */
+    inline void SetMemory(int value) { m_memory = value; }
+
+    /**
+     * <p>The task's memory use in gigabytes.</p>
+     */
+    inline GetRunTaskResult& WithMemory(int value) { SetMemory(value); return *this;}
+
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline GetRunTaskResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline GetRunTaskResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>The task's start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -191,29 +217,29 @@ namespace Model
 
 
     /**
-     * <p>The task's status.</p>
+     * <p>The task's stop time.</p>
      */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
+    inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
 
     /**
-     * <p>The task's status.</p>
+     * <p>The task's stop time.</p>
      */
-    inline void SetStatus(const TaskStatus& value) { m_status = value; }
+    inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTime = value; }
 
     /**
-     * <p>The task's status.</p>
+     * <p>The task's stop time.</p>
      */
-    inline void SetStatus(TaskStatus&& value) { m_status = std::move(value); }
+    inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTime = std::move(value); }
 
     /**
-     * <p>The task's status.</p>
+     * <p>The task's stop time.</p>
      */
-    inline GetRunTaskResult& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
+    inline GetRunTaskResult& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
 
     /**
-     * <p>The task's status.</p>
+     * <p>The task's stop time.</p>
      */
-    inline GetRunTaskResult& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline GetRunTaskResult& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
 
 
     /**
@@ -253,65 +279,55 @@ namespace Model
 
 
     /**
-     * <p>The task's stop time.</p>
+     * <p>The task's log stream.</p>
      */
-    inline const Aws::Utils::DateTime& GetStopTime() const{ return m_stopTime; }
+    inline const Aws::String& GetLogStream() const{ return m_logStream; }
 
     /**
-     * <p>The task's stop time.</p>
+     * <p>The task's log stream.</p>
      */
-    inline void SetStopTime(const Aws::Utils::DateTime& value) { m_stopTime = value; }
+    inline void SetLogStream(const Aws::String& value) { m_logStream = value; }
 
     /**
-     * <p>The task's stop time.</p>
+     * <p>The task's log stream.</p>
      */
-    inline void SetStopTime(Aws::Utils::DateTime&& value) { m_stopTime = std::move(value); }
+    inline void SetLogStream(Aws::String&& value) { m_logStream = std::move(value); }
 
     /**
-     * <p>The task's stop time.</p>
+     * <p>The task's log stream.</p>
      */
-    inline GetRunTaskResult& WithStopTime(const Aws::Utils::DateTime& value) { SetStopTime(value); return *this;}
+    inline void SetLogStream(const char* value) { m_logStream.assign(value); }
 
     /**
-     * <p>The task's stop time.</p>
+     * <p>The task's log stream.</p>
      */
-    inline GetRunTaskResult& WithStopTime(Aws::Utils::DateTime&& value) { SetStopTime(std::move(value)); return *this;}
+    inline GetRunTaskResult& WithLogStream(const Aws::String& value) { SetLogStream(value); return *this;}
+
+    /**
+     * <p>The task's log stream.</p>
+     */
+    inline GetRunTaskResult& WithLogStream(Aws::String&& value) { SetLogStream(std::move(value)); return *this;}
+
+    /**
+     * <p>The task's log stream.</p>
+     */
+    inline GetRunTaskResult& WithLogStream(const char* value) { SetLogStream(value); return *this;}
 
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline int GetGpus() const{ return m_gpus; }
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
      */
-    inline void SetTaskId(const Aws::String& value) { m_taskId = value; }
+    inline void SetGpus(int value) { m_gpus = value; }
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified in the task. </p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskId = std::move(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline void SetTaskId(const char* value) { m_taskId.assign(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline GetRunTaskResult& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline GetRunTaskResult& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline GetRunTaskResult& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline GetRunTaskResult& WithGpus(int value) { SetGpus(value); return *this;}
 
 
     
@@ -337,25 +353,27 @@ namespace Model
 
   private:
 
-    int m_cpus;
-
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_logStream;
-
-    int m_memory;
-
-    Aws::String m_name;
-
-    Aws::Utils::DateTime m_startTime;
+    Aws::String m_taskId;
 
     TaskStatus m_status;
 
-    Aws::String m_statusMessage;
+    Aws::String m_name;
+
+    int m_cpus;
+
+    int m_memory;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_startTime;
 
     Aws::Utils::DateTime m_stopTime;
 
-    Aws::String m_taskId;
+    Aws::String m_statusMessage;
+
+    Aws::String m_logStream;
+
+    int m_gpus;
 
     Aws::String m_requestId;
   };

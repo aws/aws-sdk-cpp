@@ -29,27 +29,15 @@ GetSequenceStoreResult::GetSequenceStoreResult(const Aws::AmazonWebServiceResult
 GetSequenceStoreResult& GetSequenceStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("arn"))
-  {
-    m_arn = jsonValue.GetString("arn");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
 
   }
 
@@ -59,9 +47,27 @@ GetSequenceStoreResult& GetSequenceStoreResult::operator =(const Aws::AmazonWebS
 
   }
 
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
   if(jsonValue.ValueExists("sseConfig"))
   {
     m_sseConfig = jsonValue.GetObject("sseConfig");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("fallbackLocation"))
+  {
+    m_fallbackLocation = jsonValue.GetString("fallbackLocation");
 
   }
 

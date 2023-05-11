@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 CreateAnnotationStoreResult::CreateAnnotationStoreResult() : 
-    m_status(StoreStatus::NOT_SET),
-    m_storeFormat(StoreFormat::NOT_SET)
+    m_storeFormat(StoreFormat::NOT_SET),
+    m_status(StoreStatus::NOT_SET)
 {
 }
 
 CreateAnnotationStoreResult::CreateAnnotationStoreResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_status(StoreStatus::NOT_SET),
-    m_storeFormat(StoreFormat::NOT_SET)
+    m_storeFormat(StoreFormat::NOT_SET),
+    m_status(StoreStatus::NOT_SET)
 {
   *this = result;
 }
@@ -33,33 +33,15 @@ CreateAnnotationStoreResult::CreateAnnotationStoreResult(const Aws::AmazonWebSer
 CreateAnnotationStoreResult& CreateAnnotationStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
 
   }
 
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-  }
-
   if(jsonValue.ValueExists("reference"))
   {
     m_reference = jsonValue.GetObject("reference");
-
-  }
-
-  if(jsonValue.ValueExists("status"))
-  {
-    m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
 
   }
 
@@ -72,6 +54,24 @@ CreateAnnotationStoreResult& CreateAnnotationStoreResult::operator =(const Aws::
   if(jsonValue.ValueExists("storeOptions"))
   {
     m_storeOptions = jsonValue.GetObject("storeOptions");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 

@@ -16,11 +16,13 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListRunsRequest::ListRunsRequest() : 
-    m_maxResults(0),
-    m_maxResultsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_runGroupIdHasBeenSet(false),
-    m_startingTokenHasBeenSet(false)
+    m_startingTokenHasBeenSet(false),
+    m_maxResults(0),
+    m_maxResultsHasBeenSet(false),
+    m_status(RunStatus::NOT_SET),
+    m_statusHasBeenSet(false)
 {
 }
 
@@ -32,13 +34,6 @@ Aws::String ListRunsRequest::SerializePayload() const
 void ListRunsRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_maxResultsHasBeenSet)
-    {
-      ss << m_maxResults;
-      uri.AddQueryStringParameter("maxResults", ss.str());
-      ss.str("");
-    }
-
     if(m_nameHasBeenSet)
     {
       ss << m_name;
@@ -57,6 +52,20 @@ void ListRunsRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_startingToken;
       uri.AddQueryStringParameter("startingToken", ss.str());
+      ss.str("");
+    }
+
+    if(m_maxResultsHasBeenSet)
+    {
+      ss << m_maxResults;
+      uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_statusHasBeenSet)
+    {
+      ss << RunStatusMapper::GetNameForRunStatus(m_status);
+      uri.AddQueryStringParameter("status", ss.str());
       ss.str("");
     }
 

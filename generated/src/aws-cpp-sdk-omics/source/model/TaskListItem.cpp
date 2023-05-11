@@ -19,71 +19,47 @@ namespace Model
 {
 
 TaskListItem::TaskListItem() : 
-    m_cpus(0),
-    m_cpusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
     m_status(TaskStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_cpus(0),
+    m_cpusHasBeenSet(false),
+    m_memory(0),
+    m_memoryHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_stopTimeHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_gpus(0),
+    m_gpusHasBeenSet(false)
 {
 }
 
 TaskListItem::TaskListItem(JsonView jsonValue) : 
-    m_cpus(0),
-    m_cpusHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_memory(0),
-    m_memoryHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_startTimeHasBeenSet(false),
+    m_taskIdHasBeenSet(false),
     m_status(TaskStatus::NOT_SET),
     m_statusHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_cpus(0),
+    m_cpusHasBeenSet(false),
+    m_memory(0),
+    m_memoryHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
     m_stopTimeHasBeenSet(false),
-    m_taskIdHasBeenSet(false)
+    m_gpus(0),
+    m_gpusHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 TaskListItem& TaskListItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("cpus"))
+  if(jsonValue.ValueExists("taskId"))
   {
-    m_cpus = jsonValue.GetInteger("cpus");
+    m_taskId = jsonValue.GetString("taskId");
 
-    m_cpusHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("memory"))
-  {
-    m_memory = jsonValue.GetInteger("memory");
-
-    m_memoryHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("startTime"))
-  {
-    m_startTime = jsonValue.GetString("startTime");
-
-    m_startTimeHasBeenSet = true;
+    m_taskIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -93,6 +69,41 @@ TaskListItem& TaskListItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("cpus"))
+  {
+    m_cpus = jsonValue.GetInteger("cpus");
+
+    m_cpusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("memory"))
+  {
+    m_memory = jsonValue.GetInteger("memory");
+
+    m_memoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTime"))
+  {
+    m_startTime = jsonValue.GetString("startTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("stopTime"))
   {
     m_stopTime = jsonValue.GetString("stopTime");
@@ -100,11 +111,11 @@ TaskListItem& TaskListItem::operator =(JsonView jsonValue)
     m_stopTimeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("taskId"))
+  if(jsonValue.ValueExists("gpus"))
   {
-    m_taskId = jsonValue.GetString("taskId");
+    m_gpus = jsonValue.GetInteger("gpus");
 
-    m_taskIdHasBeenSet = true;
+    m_gpusHasBeenSet = true;
   }
 
   return *this;
@@ -114,21 +125,15 @@ JsonValue TaskListItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_cpusHasBeenSet)
+  if(m_taskIdHasBeenSet)
   {
-   payload.WithInteger("cpus", m_cpus);
+   payload.WithString("taskId", m_taskId);
 
   }
 
-  if(m_creationTimeHasBeenSet)
+  if(m_statusHasBeenSet)
   {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_memoryHasBeenSet)
-  {
-   payload.WithInteger("memory", m_memory);
-
+   payload.WithString("status", TaskStatusMapper::GetNameForTaskStatus(m_status));
   }
 
   if(m_nameHasBeenSet)
@@ -137,14 +142,26 @@ JsonValue TaskListItem::Jsonize() const
 
   }
 
+  if(m_cpusHasBeenSet)
+  {
+   payload.WithInteger("cpus", m_cpus);
+
+  }
+
+  if(m_memoryHasBeenSet)
+  {
+   payload.WithInteger("memory", m_memory);
+
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_startTimeHasBeenSet)
   {
    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_statusHasBeenSet)
-  {
-   payload.WithString("status", TaskStatusMapper::GetNameForTaskStatus(m_status));
   }
 
   if(m_stopTimeHasBeenSet)
@@ -152,9 +169,9 @@ JsonValue TaskListItem::Jsonize() const
    payload.WithString("stopTime", m_stopTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
-  if(m_taskIdHasBeenSet)
+  if(m_gpusHasBeenSet)
   {
-   payload.WithString("taskId", m_taskId);
+   payload.WithInteger("gpus", m_gpus);
 
   }
 

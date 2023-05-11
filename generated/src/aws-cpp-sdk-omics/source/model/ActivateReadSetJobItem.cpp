@@ -19,42 +19,28 @@ namespace Model
 {
 
 ActivateReadSetJobItem::ActivateReadSetJobItem() : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_sequenceStoreIdHasBeenSet(false),
     m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
 }
 
 ActivateReadSetJobItem::ActivateReadSetJobItem(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_sequenceStoreIdHasBeenSet(false),
     m_status(ReadSetActivationJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ActivateReadSetJobItem& ActivateReadSetJobItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-
-    m_completionTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -76,22 +62,26 @@ ActivateReadSetJobItem& ActivateReadSetJobItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+    m_completionTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ActivateReadSetJobItem::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_completionTimeHasBeenSet)
-  {
-   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if(m_idHasBeenSet)
   {
@@ -108,6 +98,16 @@ JsonValue ActivateReadSetJobItem::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ReadSetActivationJobStatusMapper::GetNameForReadSetActivationJobStatus(m_status));
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_completionTimeHasBeenSet)
+  {
+   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

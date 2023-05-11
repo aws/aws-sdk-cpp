@@ -39,27 +39,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of run groups to return in one page of results.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of run groups to return in one page of results.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of run groups to return in one page of results.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of run groups to return in one page of results.</p>
-     */
-    inline ListRunGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
-
-
-    /**
      * <p>The run groups' name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -148,16 +127,37 @@ namespace Model
      */
     inline ListRunGroupsRequest& WithStartingToken(const char* value) { SetStartingToken(value); return *this;}
 
-  private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    /**
+     * <p>The maximum number of run groups to return in one page of results.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of run groups to return in one page of results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of run groups to return in one page of results.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of run groups to return in one page of results.</p>
+     */
+    inline ListRunGroupsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
     Aws::String m_startingToken;
     bool m_startingTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model

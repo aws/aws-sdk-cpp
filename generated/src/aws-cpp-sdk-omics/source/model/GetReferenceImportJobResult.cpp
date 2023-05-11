@@ -31,18 +31,6 @@ GetReferenceImportJobResult::GetReferenceImportJobResult(const Aws::AmazonWebSer
 GetReferenceImportJobResult& GetReferenceImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -61,15 +49,6 @@ GetReferenceImportJobResult& GetReferenceImportJobResult::operator =(const Aws::
 
   }
 
-  if(jsonValue.ValueExists("sources"))
-  {
-    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
-      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReferenceImportJobStatusMapper::GetReferenceImportJobStatusForName(jsonValue.GetString("status"));
@@ -80,6 +59,27 @@ GetReferenceImportJobResult& GetReferenceImportJobResult::operator =(const Aws::
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
 
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
   }
 
 

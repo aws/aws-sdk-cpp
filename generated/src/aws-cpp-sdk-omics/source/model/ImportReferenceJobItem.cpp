@@ -19,44 +19,30 @@ namespace Model
 {
 
 ImportReferenceJobItem::ImportReferenceJobItem() : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_referenceStoreIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_status(ReferenceImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
 }
 
 ImportReferenceJobItem::ImportReferenceJobItem(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
     m_idHasBeenSet(false),
     m_referenceStoreIdHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_status(ReferenceImportJobStatus::NOT_SET),
-    m_statusHasBeenSet(false)
+    m_statusHasBeenSet(false),
+    m_creationTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ImportReferenceJobItem& ImportReferenceJobItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-
-    m_completionTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -85,22 +71,26 @@ ImportReferenceJobItem& ImportReferenceJobItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+    m_completionTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ImportReferenceJobItem::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_completionTimeHasBeenSet)
-  {
-   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if(m_idHasBeenSet)
   {
@@ -123,6 +113,16 @@ JsonValue ImportReferenceJobItem::Jsonize() const
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", ReferenceImportJobStatusMapper::GetNameForReferenceImportJobStatus(m_status));
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_completionTimeHasBeenSet)
+  {
+   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

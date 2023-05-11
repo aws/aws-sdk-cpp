@@ -38,37 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The files' index.</p>
-     */
-    inline const FileInformation& GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline void SetIndex(const FileInformation& value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline void SetIndex(FileInformation&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline ReferenceFiles& WithIndex(const FileInformation& value) { SetIndex(value); return *this;}
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline ReferenceFiles& WithIndex(FileInformation&& value) { SetIndex(std::move(value)); return *this;}
-
-
-    /**
      * <p>The source file's location in Amazon S3.</p>
      */
     inline const FileInformation& GetSource() const{ return m_source; }
@@ -98,13 +67,44 @@ namespace Model
      */
     inline ReferenceFiles& WithSource(FileInformation&& value) { SetSource(std::move(value)); return *this;}
 
-  private:
 
-    FileInformation m_index;
-    bool m_indexHasBeenSet = false;
+    /**
+     * <p>The files' index.</p>
+     */
+    inline const FileInformation& GetIndex() const{ return m_index; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline void SetIndex(const FileInformation& value) { m_indexHasBeenSet = true; m_index = value; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline void SetIndex(FileInformation&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline ReferenceFiles& WithIndex(const FileInformation& value) { SetIndex(value); return *this;}
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline ReferenceFiles& WithIndex(FileInformation&& value) { SetIndex(std::move(value)); return *this;}
+
+  private:
 
     FileInformation m_source;
     bool m_sourceHasBeenSet = false;
+
+    FileInformation m_index;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

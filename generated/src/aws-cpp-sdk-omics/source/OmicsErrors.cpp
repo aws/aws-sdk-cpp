@@ -19,6 +19,7 @@ namespace OmicsErrorMapper
 {
 
 static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int NOT_SUPPORTED_OPERATION_HASH = HashingUtils::HashString("NotSupportedOperationException");
 static const int SERVICE_QUOTA_EXCEEDED_HASH = HashingUtils::HashString("ServiceQuotaExceededException");
 static const int INTERNAL_SERVER_HASH = HashingUtils::HashString("InternalServerException");
 static const int RANGE_NOT_SATISFIABLE_HASH = HashingUtils::HashString("RangeNotSatisfiableException");
@@ -31,6 +32,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == CONFLICT_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::CONFLICT), false);
+  }
+  else if (hashCode == NOT_SUPPORTED_OPERATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(OmicsErrors::NOT_SUPPORTED_OPERATION), false);
   }
   else if (hashCode == SERVICE_QUOTA_EXCEEDED_HASH)
   {

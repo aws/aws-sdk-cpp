@@ -35,52 +35,44 @@ namespace Model
 
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline CreateReferenceStoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline CreateReferenceStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline CreateReferenceStoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline CreateReferenceStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>To ensure that requests don't run multiple times, specify a unique token for
-     * each request.</p>
+     * <p>A name for the store.</p>
      */
-    inline CreateReferenceStoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline CreateReferenceStoreRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -122,47 +114,6 @@ namespace Model
      * <p>A description for the store.</p>
      */
     inline CreateReferenceStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline CreateReferenceStoreRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline CreateReferenceStoreRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>A name for the store.</p>
-     */
-    inline CreateReferenceStoreRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -261,22 +212,71 @@ namespace Model
      */
     inline CreateReferenceStoreRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline CreateReferenceStoreRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline CreateReferenceStoreRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+
+    /**
+     * <p>To ensure that requests don't run multiple times, specify a unique token for
+     * each request.</p>
+     */
+    inline CreateReferenceStoreRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
   private:
-
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     SseConfig m_sseConfig;
     bool m_sseConfigHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
   };
 
 } // namespace Model

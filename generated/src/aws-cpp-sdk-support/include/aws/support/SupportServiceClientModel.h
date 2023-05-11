@@ -24,8 +24,10 @@
 #include <aws/support/model/DescribeAttachmentResult.h>
 #include <aws/support/model/DescribeCasesResult.h>
 #include <aws/support/model/DescribeCommunicationsResult.h>
+#include <aws/support/model/DescribeCreateCaseOptionsResult.h>
 #include <aws/support/model/DescribeServicesResult.h>
 #include <aws/support/model/DescribeSeverityLevelsResult.h>
+#include <aws/support/model/DescribeSupportedLanguagesResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckRefreshStatusesResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckResultResult.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckSummariesResult.h>
@@ -78,8 +80,10 @@ namespace Aws
       class DescribeAttachmentRequest;
       class DescribeCasesRequest;
       class DescribeCommunicationsRequest;
+      class DescribeCreateCaseOptionsRequest;
       class DescribeServicesRequest;
       class DescribeSeverityLevelsRequest;
+      class DescribeSupportedLanguagesRequest;
       class DescribeTrustedAdvisorCheckRefreshStatusesRequest;
       class DescribeTrustedAdvisorCheckResultRequest;
       class DescribeTrustedAdvisorCheckSummariesRequest;
@@ -95,8 +99,10 @@ namespace Aws
       typedef Aws::Utils::Outcome<DescribeAttachmentResult, SupportError> DescribeAttachmentOutcome;
       typedef Aws::Utils::Outcome<DescribeCasesResult, SupportError> DescribeCasesOutcome;
       typedef Aws::Utils::Outcome<DescribeCommunicationsResult, SupportError> DescribeCommunicationsOutcome;
+      typedef Aws::Utils::Outcome<DescribeCreateCaseOptionsResult, SupportError> DescribeCreateCaseOptionsOutcome;
       typedef Aws::Utils::Outcome<DescribeServicesResult, SupportError> DescribeServicesOutcome;
       typedef Aws::Utils::Outcome<DescribeSeverityLevelsResult, SupportError> DescribeSeverityLevelsOutcome;
+      typedef Aws::Utils::Outcome<DescribeSupportedLanguagesResult, SupportError> DescribeSupportedLanguagesOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckRefreshStatusesResult, SupportError> DescribeTrustedAdvisorCheckRefreshStatusesOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckResultResult, SupportError> DescribeTrustedAdvisorCheckResultOutcome;
       typedef Aws::Utils::Outcome<DescribeTrustedAdvisorCheckSummariesResult, SupportError> DescribeTrustedAdvisorCheckSummariesOutcome;
@@ -112,8 +118,10 @@ namespace Aws
       typedef std::future<DescribeAttachmentOutcome> DescribeAttachmentOutcomeCallable;
       typedef std::future<DescribeCasesOutcome> DescribeCasesOutcomeCallable;
       typedef std::future<DescribeCommunicationsOutcome> DescribeCommunicationsOutcomeCallable;
+      typedef std::future<DescribeCreateCaseOptionsOutcome> DescribeCreateCaseOptionsOutcomeCallable;
       typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
       typedef std::future<DescribeSeverityLevelsOutcome> DescribeSeverityLevelsOutcomeCallable;
+      typedef std::future<DescribeSupportedLanguagesOutcome> DescribeSupportedLanguagesOutcomeCallable;
       typedef std::future<DescribeTrustedAdvisorCheckRefreshStatusesOutcome> DescribeTrustedAdvisorCheckRefreshStatusesOutcomeCallable;
       typedef std::future<DescribeTrustedAdvisorCheckResultOutcome> DescribeTrustedAdvisorCheckResultOutcomeCallable;
       typedef std::future<DescribeTrustedAdvisorCheckSummariesOutcome> DescribeTrustedAdvisorCheckSummariesOutcomeCallable;
@@ -132,8 +140,10 @@ namespace Aws
     typedef std::function<void(const SupportClient*, const Model::DescribeAttachmentRequest&, const Model::DescribeAttachmentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeAttachmentResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeCasesRequest&, const Model::DescribeCasesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCasesResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeCommunicationsRequest&, const Model::DescribeCommunicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCommunicationsResponseReceivedHandler;
+    typedef std::function<void(const SupportClient*, const Model::DescribeCreateCaseOptionsRequest&, const Model::DescribeCreateCaseOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeCreateCaseOptionsResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeSeverityLevelsRequest&, const Model::DescribeSeverityLevelsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSeverityLevelsResponseReceivedHandler;
+    typedef std::function<void(const SupportClient*, const Model::DescribeSupportedLanguagesRequest&, const Model::DescribeSupportedLanguagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeSupportedLanguagesResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckRefreshStatusesRequest&, const Model::DescribeTrustedAdvisorCheckRefreshStatusesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckRefreshStatusesResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckResultRequest&, const Model::DescribeTrustedAdvisorCheckResultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckResultResponseReceivedHandler;
     typedef std::function<void(const SupportClient*, const Model::DescribeTrustedAdvisorCheckSummariesRequest&, const Model::DescribeTrustedAdvisorCheckSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTrustedAdvisorCheckSummariesResponseReceivedHandler;

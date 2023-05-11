@@ -18,7 +18,7 @@ namespace Omics
   /**
    * <p>This is the <i>Amazon Omics API Reference</i>. For an introduction to the
    * service, see <a href="https://docs.aws.amazon.com/omics/latest/dev/">What is
-   * Amazon Omics?</a> in the <i>Amazon Omics Developer Guide</i>.</p>
+   * Amazon Omics?</a> in the <i>Amazon Omics User Guide</i>.</p>
    */
   class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient, public Aws::Client::ClientWithAsyncTemplateMethods<OmicsClient>
   {
@@ -77,6 +77,31 @@ namespace Omics
 
         /* End of legacy constructors due deprecation */
         virtual ~OmicsClient();
+
+        /**
+         * <p> Stops a multipart upload. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/AbortMultipartReadSetUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AbortMultipartReadSetUploadOutcome AbortMultipartReadSetUpload(const Model::AbortMultipartReadSetUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for AbortMultipartReadSetUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AbortMultipartReadSetUploadRequestT = Model::AbortMultipartReadSetUploadRequest>
+        Model::AbortMultipartReadSetUploadOutcomeCallable AbortMultipartReadSetUploadCallable(const AbortMultipartReadSetUploadRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::AbortMultipartReadSetUpload, request);
+        }
+
+        /**
+         * An Async wrapper for AbortMultipartReadSetUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AbortMultipartReadSetUploadRequestT = Model::AbortMultipartReadSetUploadRequest>
+        void AbortMultipartReadSetUploadAsync(const AbortMultipartReadSetUploadRequestT& request, const AbortMultipartReadSetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::AbortMultipartReadSetUpload, request, handler, context);
+        }
 
         /**
          * <p>Deletes one or more read sets.</p><p><h3>See Also:</h3>   <a
@@ -179,6 +204,32 @@ namespace Omics
         }
 
         /**
+         * <p> Concludes a multipart upload once you have uploaded all the components.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CompleteMultipartReadSetUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CompleteMultipartReadSetUploadOutcome CompleteMultipartReadSetUpload(const Model::CompleteMultipartReadSetUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for CompleteMultipartReadSetUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CompleteMultipartReadSetUploadRequestT = Model::CompleteMultipartReadSetUploadRequest>
+        Model::CompleteMultipartReadSetUploadOutcomeCallable CompleteMultipartReadSetUploadCallable(const CompleteMultipartReadSetUploadRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CompleteMultipartReadSetUpload, request);
+        }
+
+        /**
+         * An Async wrapper for CompleteMultipartReadSetUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CompleteMultipartReadSetUploadRequestT = Model::CompleteMultipartReadSetUploadRequest>
+        void CompleteMultipartReadSetUploadAsync(const CompleteMultipartReadSetUploadRequestT& request, const CompleteMultipartReadSetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CompleteMultipartReadSetUpload, request, handler, context);
+        }
+
+        /**
          * <p>Creates an annotation store.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateAnnotationStore">AWS
          * API Reference</a></p>
@@ -201,6 +252,31 @@ namespace Omics
         void CreateAnnotationStoreAsync(const CreateAnnotationStoreRequestT& request, const CreateAnnotationStoreResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::CreateAnnotationStore, request, handler, context);
+        }
+
+        /**
+         * <p> Begins a multipart read set upload. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/CreateMultipartReadSetUpload">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateMultipartReadSetUploadOutcome CreateMultipartReadSetUpload(const Model::CreateMultipartReadSetUploadRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateMultipartReadSetUpload that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateMultipartReadSetUploadRequestT = Model::CreateMultipartReadSetUploadRequest>
+        Model::CreateMultipartReadSetUploadOutcomeCallable CreateMultipartReadSetUploadCallable(const CreateMultipartReadSetUploadRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::CreateMultipartReadSetUpload, request);
+        }
+
+        /**
+         * An Async wrapper for CreateMultipartReadSetUpload that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateMultipartReadSetUploadRequestT = Model::CreateMultipartReadSetUploadRequest>
+        void CreateMultipartReadSetUploadAsync(const CreateMultipartReadSetUploadRequestT& request, const CreateMultipartReadSetUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::CreateMultipartReadSetUpload, request, handler, context);
         }
 
         /**
@@ -1032,6 +1108,32 @@ namespace Omics
         }
 
         /**
+         * <p> Lists all multipart read set uploads and their statuses. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListMultipartReadSetUploads">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListMultipartReadSetUploadsOutcome ListMultipartReadSetUploads(const Model::ListMultipartReadSetUploadsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListMultipartReadSetUploads that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListMultipartReadSetUploadsRequestT = Model::ListMultipartReadSetUploadsRequest>
+        Model::ListMultipartReadSetUploadsOutcomeCallable ListMultipartReadSetUploadsCallable(const ListMultipartReadSetUploadsRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::ListMultipartReadSetUploads, request);
+        }
+
+        /**
+         * An Async wrapper for ListMultipartReadSetUploads that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListMultipartReadSetUploadsRequestT = Model::ListMultipartReadSetUploadsRequest>
+        void ListMultipartReadSetUploadsAsync(const ListMultipartReadSetUploadsRequestT& request, const ListMultipartReadSetUploadsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::ListMultipartReadSetUploads, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a list of read set activation jobs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetActivationJobs">AWS
          * API Reference</a></p>
@@ -1104,6 +1206,32 @@ namespace Omics
         void ListReadSetImportJobsAsync(const ListReadSetImportJobsRequestT& request, const ListReadSetImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::ListReadSetImportJobs, request, handler, context);
+        }
+
+        /**
+         * <p> This operation will list all parts in a requested multipart upload for a
+         * sequence store. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/ListReadSetUploadParts">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListReadSetUploadPartsOutcome ListReadSetUploadParts(const Model::ListReadSetUploadPartsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListReadSetUploadParts that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListReadSetUploadPartsRequestT = Model::ListReadSetUploadPartsRequest>
+        Model::ListReadSetUploadPartsOutcomeCallable ListReadSetUploadPartsCallable(const ListReadSetUploadPartsRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::ListReadSetUploadParts, request);
+        }
+
+        /**
+         * An Async wrapper for ListReadSetUploadParts that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListReadSetUploadPartsRequestT = Model::ListReadSetUploadPartsRequest>
+        void ListReadSetUploadPartsAsync(const ListReadSetUploadPartsRequestT& request, const ListReadSetUploadPartsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::ListReadSetUploadParts, request, handler, context);
         }
 
         /**
@@ -1730,6 +1858,33 @@ namespace Omics
         void UpdateWorkflowAsync(const UpdateWorkflowRequestT& request, const UpdateWorkflowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&OmicsClient::UpdateWorkflow, request, handler, context);
+        }
+
+        /**
+         * <p> This operation uploads a specific part of a read set. If you upload a new
+         * part using a previously used part number, the previously uploaded part will be
+         * overwritten. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/UploadReadSetPart">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UploadReadSetPartOutcome UploadReadSetPart(const Model::UploadReadSetPartRequest& request) const;
+
+        /**
+         * A Callable wrapper for UploadReadSetPart that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UploadReadSetPartRequestT = Model::UploadReadSetPartRequest>
+        Model::UploadReadSetPartOutcomeCallable UploadReadSetPartCallable(const UploadReadSetPartRequestT& request) const
+        {
+            return SubmitCallable(&OmicsClient::UploadReadSetPart, request);
+        }
+
+        /**
+         * An Async wrapper for UploadReadSetPart that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UploadReadSetPartRequestT = Model::UploadReadSetPartRequest>
+        void UploadReadSetPartAsync(const UploadReadSetPartRequestT& request, const UploadReadSetPartResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OmicsClient::UploadReadSetPart, request, handler, context);
         }
 
 

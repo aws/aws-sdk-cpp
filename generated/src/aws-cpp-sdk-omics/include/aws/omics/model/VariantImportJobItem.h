@@ -5,9 +5,10 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/JobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -37,109 +38,6 @@ namespace Model
     AWS_OMICS_API VariantImportJobItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API VariantImportJobItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline VariantImportJobItem& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline VariantImportJobItem& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline VariantImportJobItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline VariantImportJobItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline VariantImportJobItem& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline VariantImportJobItem& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline VariantImportJobItem& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
 
     /**
@@ -184,6 +82,47 @@ namespace Model
 
 
     /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline void SetDestinationName(Aws::String&& value) { m_destinationNameHasBeenSet = true; m_destinationName = std::move(value); }
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline void SetDestinationName(const char* value) { m_destinationNameHasBeenSet = true; m_destinationName.assign(value); }
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline VariantImportJobItem& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline VariantImportJobItem& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's destination variant store.</p>
+     */
+    inline VariantImportJobItem& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
+
+
+    /**
      * <p>The job's service role ARN.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -225,27 +164,6 @@ namespace Model
 
 
     /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline bool GetRunLeftNormalization() const{ return m_runLeftNormalization; }
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline bool RunLeftNormalizationHasBeenSet() const { return m_runLeftNormalizationHasBeenSet; }
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline void SetRunLeftNormalization(bool value) { m_runLeftNormalizationHasBeenSet = true; m_runLeftNormalization = value; }
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline VariantImportJobItem& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
-
-
-    /**
      * <p>The job's status.</p>
      */
     inline const JobStatus& GetStatus() const{ return m_status; }
@@ -274,6 +192,37 @@ namespace Model
      * <p>The job's status.</p>
      */
     inline VariantImportJobItem& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline VariantImportJobItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline VariantImportJobItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -306,31 +255,152 @@ namespace Model
      */
     inline VariantImportJobItem& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTimeHasBeenSet = true; m_completionTime = std::move(value); }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline VariantImportJobItem& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline VariantImportJobItem& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline bool GetRunLeftNormalization() const{ return m_runLeftNormalization; }
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline bool RunLeftNormalizationHasBeenSet() const { return m_runLeftNormalizationHasBeenSet; }
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline void SetRunLeftNormalization(bool value) { m_runLeftNormalizationHasBeenSet = true; m_runLeftNormalization = value; }
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline VariantImportJobItem& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
+
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotationFields() const{ return m_annotationFields; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline bool AnnotationFieldsHasBeenSet() const { return m_annotationFieldsHasBeenSet; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = value; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = std::move(value); }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& WithAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { SetAnnotationFields(value); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& WithAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { SetAnnotationFields(std::move(value)); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(const Aws::String& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(Aws::String&& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(const Aws::String& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(Aws::String&& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(const char* key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(Aws::String&& key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline VariantImportJobItem& AddAnnotationFields(const char* key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
+
   private:
-
-    Aws::Utils::DateTime m_completionTime;
-    bool m_completionTimeHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_destinationName;
-    bool m_destinationNameHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_destinationName;
+    bool m_destinationNameHasBeenSet = false;
+
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
-
-    bool m_runLeftNormalization;
-    bool m_runLeftNormalizationHasBeenSet = false;
 
     JobStatus m_status;
     bool m_statusHasBeenSet = false;
 
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_completionTime;
+    bool m_completionTimeHasBeenSet = false;
+
+    bool m_runLeftNormalization;
+    bool m_runLeftNormalizationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_annotationFields;
+    bool m_annotationFieldsHasBeenSet = false;
   };
 
 } // namespace Model

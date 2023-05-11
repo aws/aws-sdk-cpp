@@ -81,24 +81,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of run tasks to return in one page of results.</p>
+     * <p>Filter the list by status.</p>
      */
-    inline int GetMaxResults() const{ return m_maxResults; }
+    inline const TaskStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The maximum number of run tasks to return in one page of results.</p>
+     * <p>Filter the list by status.</p>
      */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The maximum number of run tasks to return in one page of results.</p>
+     * <p>Filter the list by status.</p>
      */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The maximum number of run tasks to return in one page of results.</p>
+     * <p>Filter the list by status.</p>
      */
-    inline ListRunTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>Filter the list by status.</p>
+     */
+    inline ListRunTasksRequest& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>Filter the list by status.</p>
+     */
+    inline ListRunTasksRequest& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -151,48 +161,38 @@ namespace Model
 
 
     /**
-     * <p>Filter the list by status.</p>
+     * <p>The maximum number of run tasks to return in one page of results.</p>
      */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
+    inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>Filter the list by status.</p>
+     * <p>The maximum number of run tasks to return in one page of results.</p>
      */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
-     * <p>Filter the list by status.</p>
+     * <p>The maximum number of run tasks to return in one page of results.</p>
      */
-    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>Filter the list by status.</p>
+     * <p>The maximum number of run tasks to return in one page of results.</p>
      */
-    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>Filter the list by status.</p>
-     */
-    inline ListRunTasksRequest& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>Filter the list by status.</p>
-     */
-    inline ListRunTasksRequest& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline ListRunTasksRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    TaskStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::String m_startingToken;
     bool m_startingTokenHasBeenSet = false;
 
-    TaskStatus m_status;
-    bool m_statusHasBeenSet = false;
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
   };
 
 } // namespace Model
