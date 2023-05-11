@@ -33,50 +33,50 @@ namespace Model
 
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline const Aws::String& GetParticipantId() const{ return m_participantId; }
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline bool ParticipantIdHasBeenSet() const { return m_participantIdHasBeenSet; }
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline void SetParticipantId(const Aws::String& value) { m_participantIdHasBeenSet = true; m_participantId = value; }
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline void SetParticipantId(Aws::String&& value) { m_participantIdHasBeenSet = true; m_participantId = std::move(value); }
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline void SetParticipantId(const char* value) { m_participantIdHasBeenSet = true; m_participantId.assign(value); }
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline DisconnectParticipantRequest& WithParticipantId(const Aws::String& value) { SetParticipantId(value); return *this;}
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline DisconnectParticipantRequest& WithParticipantId(Aws::String&& value) { SetParticipantId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifier of the participant to be disconnected. This is returned by
-     * <a>CreateParticipantToken</a>.</p>
+     * <p>Identifier of the participant to be disconnected. This is assigned by IVS and
+     * returned by <a>CreateParticipantToken</a>.</p>
      */
     inline DisconnectParticipantRequest& WithParticipantId(const char* value) { SetParticipantId(value); return *this;}
 

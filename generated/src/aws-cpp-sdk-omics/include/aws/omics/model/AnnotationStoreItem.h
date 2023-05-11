@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReferenceItem.h>
-#include <aws/omics/model/SseConfig.h>
 #include <aws/omics/model/StoreStatus.h>
 #include <aws/omics/model/StoreFormat.h>
+#include <aws/omics/model/SseConfig.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,78 +40,6 @@ namespace Model
     AWS_OMICS_API AnnotationStoreItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API AnnotationStoreItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline AnnotationStoreItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>The store's creation time.</p>
-     */
-    inline AnnotationStoreItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline AnnotationStoreItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline AnnotationStoreItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline AnnotationStoreItem& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -156,47 +84,6 @@ namespace Model
 
 
     /**
-     * <p>The store's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline AnnotationStoreItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline AnnotationStoreItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline AnnotationStoreItem& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The store's genome reference.</p>
      */
     inline const ReferenceItem& GetReference() const{ return m_reference; }
@@ -228,37 +115,6 @@ namespace Model
 
 
     /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline AnnotationStoreItem& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>The store's server-side encryption (SSE) settings.</p>
-     */
-    inline AnnotationStoreItem& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
-
-
-    /**
      * <p>The store's status.</p>
      */
     inline const StoreStatus& GetStatus() const{ return m_status; }
@@ -287,47 +143,6 @@ namespace Model
      * <p>The store's status.</p>
      */
     inline AnnotationStoreItem& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline AnnotationStoreItem& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline AnnotationStoreItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's status message.</p>
-     */
-    inline AnnotationStoreItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
     /**
@@ -372,6 +187,47 @@ namespace Model
 
 
     /**
+     * <p>The store's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline AnnotationStoreItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline AnnotationStoreItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline AnnotationStoreItem& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
      * <p>The store's file format.</p>
      */
     inline const StoreFormat& GetStoreFormat() const{ return m_storeFormat; }
@@ -403,24 +259,106 @@ namespace Model
 
 
     /**
-     * <p>The store's size in bytes.</p>
+     * <p>The store's description.</p>
      */
-    inline long long GetStoreSizeBytes() const{ return m_storeSizeBytes; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The store's size in bytes.</p>
+     * <p>The store's description.</p>
      */
-    inline bool StoreSizeBytesHasBeenSet() const { return m_storeSizeBytesHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The store's size in bytes.</p>
+     * <p>The store's description.</p>
      */
-    inline void SetStoreSizeBytes(long long value) { m_storeSizeBytesHasBeenSet = true; m_storeSizeBytes = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The store's size in bytes.</p>
+     * <p>The store's description.</p>
      */
-    inline AnnotationStoreItem& WithStoreSizeBytes(long long value) { SetStoreSizeBytes(value); return *this;}
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline AnnotationStoreItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline AnnotationStoreItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline AnnotationStoreItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline AnnotationStoreItem& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
+
+    /**
+     * <p>The store's server-side encryption (SSE) settings.</p>
+     */
+    inline AnnotationStoreItem& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline AnnotationStoreItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>The store's creation time.</p>
+     */
+    inline AnnotationStoreItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -453,43 +391,105 @@ namespace Model
      */
     inline AnnotationStoreItem& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline void SetStatusMessage(const Aws::String& value) { m_statusMessageHasBeenSet = true; m_statusMessage = value; }
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline void SetStatusMessage(Aws::String&& value) { m_statusMessageHasBeenSet = true; m_statusMessage = std::move(value); }
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline void SetStatusMessage(const char* value) { m_statusMessageHasBeenSet = true; m_statusMessage.assign(value); }
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline AnnotationStoreItem& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline AnnotationStoreItem& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's status message.</p>
+     */
+    inline AnnotationStoreItem& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
+
+
+    /**
+     * <p>The store's size in bytes.</p>
+     */
+    inline long long GetStoreSizeBytes() const{ return m_storeSizeBytes; }
+
+    /**
+     * <p>The store's size in bytes.</p>
+     */
+    inline bool StoreSizeBytesHasBeenSet() const { return m_storeSizeBytesHasBeenSet; }
+
+    /**
+     * <p>The store's size in bytes.</p>
+     */
+    inline void SetStoreSizeBytes(long long value) { m_storeSizeBytesHasBeenSet = true; m_storeSizeBytes = value; }
+
+    /**
+     * <p>The store's size in bytes.</p>
+     */
+    inline AnnotationStoreItem& WithStoreSizeBytes(long long value) { SetStoreSizeBytes(value); return *this;}
+
   private:
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     ReferenceItem m_reference;
     bool m_referenceHasBeenSet = false;
-
-    SseConfig m_sseConfig;
-    bool m_sseConfigHasBeenSet = false;
 
     StoreStatus m_status;
     bool m_statusHasBeenSet = false;
 
-    Aws::String m_statusMessage;
-    bool m_statusMessageHasBeenSet = false;
-
     Aws::String m_storeArn;
     bool m_storeArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     StoreFormat m_storeFormat;
     bool m_storeFormatHasBeenSet = false;
 
-    long long m_storeSizeBytes;
-    bool m_storeSizeBytesHasBeenSet = false;
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    SseConfig m_sseConfig;
+    bool m_sseConfigHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;
+
+    Aws::String m_statusMessage;
+    bool m_statusMessageHasBeenSet = false;
+
+    long long m_storeSizeBytes;
+    bool m_storeSizeBytesHasBeenSet = false;
   };
 
 } // namespace Model

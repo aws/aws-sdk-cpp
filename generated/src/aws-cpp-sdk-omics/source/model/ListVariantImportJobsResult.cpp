@@ -29,12 +29,6 @@ ListVariantImportJobsResult::ListVariantImportJobsResult(const Aws::AmazonWebSer
 ListVariantImportJobsResult& ListVariantImportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("variantImportJobs"))
   {
     Aws::Utils::Array<JsonView> variantImportJobsJsonList = jsonValue.GetArray("variantImportJobs");
@@ -42,6 +36,12 @@ ListVariantImportJobsResult& ListVariantImportJobsResult::operator =(const Aws::
     {
       m_variantImportJobs.push_back(variantImportJobsJsonList[variantImportJobsIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

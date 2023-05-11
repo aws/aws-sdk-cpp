@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ReferenceFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ReferenceFilter.h>
 #include <utility>
 
 namespace Aws
@@ -40,34 +40,44 @@ namespace Model
 
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline const ReferenceFilter& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline void SetFilter(const ReferenceFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline void SetFilter(ReferenceFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline ListReferencesRequest& WithFilter(const ReferenceFilter& value) { SetFilter(value); return *this;}
+    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The references' reference store ID.</p>
      */
-    inline ListReferencesRequest& WithFilter(ReferenceFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline ListReferencesRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
+
+    /**
+     * <p>The references' reference store ID.</p>
+     */
+    inline ListReferencesRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>The references' reference store ID.</p>
+     */
+    inline ListReferencesRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
 
 
     /**
@@ -141,49 +151,39 @@ namespace Model
 
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
+    inline const ReferenceFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
+    inline void SetFilter(const ReferenceFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
+    inline void SetFilter(ReferenceFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
+    inline ListReferencesRequest& WithFilter(const ReferenceFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The references' reference store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline ListReferencesRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
-
-    /**
-     * <p>The references' reference store ID.</p>
-     */
-    inline ListReferencesRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The references' reference store ID.</p>
-     */
-    inline ListReferencesRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
+    inline ListReferencesRequest& WithFilter(ReferenceFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
 
-    ReferenceFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    Aws::String m_referenceStoreId;
+    bool m_referenceStoreIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -191,8 +191,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_referenceStoreId;
-    bool m_referenceStoreIdHasBeenSet = false;
+    ReferenceFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

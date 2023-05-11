@@ -27,8 +27,10 @@
 #include <aws/support/model/DescribeAttachmentRequest.h>
 #include <aws/support/model/DescribeCasesRequest.h>
 #include <aws/support/model/DescribeCommunicationsRequest.h>
+#include <aws/support/model/DescribeCreateCaseOptionsRequest.h>
 #include <aws/support/model/DescribeServicesRequest.h>
 #include <aws/support/model/DescribeSeverityLevelsRequest.h>
+#include <aws/support/model/DescribeSupportedLanguagesRequest.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckRefreshStatusesRequest.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckResultRequest.h>
 #include <aws/support/model/DescribeTrustedAdvisorCheckSummariesRequest.h>
@@ -211,6 +213,14 @@ DescribeCommunicationsOutcome SupportClient::DescribeCommunications(const Descri
   return DescribeCommunicationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+DescribeCreateCaseOptionsOutcome SupportClient::DescribeCreateCaseOptions(const DescribeCreateCaseOptionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeCreateCaseOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeCreateCaseOptions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeCreateCaseOptionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 DescribeServicesOutcome SupportClient::DescribeServices(const DescribeServicesRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeServices, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -225,6 +235,14 @@ DescribeSeverityLevelsOutcome SupportClient::DescribeSeverityLevels(const Descri
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSeverityLevels, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return DescribeSeverityLevelsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribeSupportedLanguagesOutcome SupportClient::DescribeSupportedLanguages(const DescribeSupportedLanguagesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribeSupportedLanguages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribeSupportedLanguages, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return DescribeSupportedLanguagesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeTrustedAdvisorCheckRefreshStatusesOutcome SupportClient::DescribeTrustedAdvisorCheckRefreshStatuses(const DescribeTrustedAdvisorCheckRefreshStatusesRequest& request) const

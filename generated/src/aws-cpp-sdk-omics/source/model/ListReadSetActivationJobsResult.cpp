@@ -29,6 +29,12 @@ ListReadSetActivationJobsResult::ListReadSetActivationJobsResult(const Aws::Amaz
 ListReadSetActivationJobsResult& ListReadSetActivationJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("activationJobs"))
   {
     Aws::Utils::Array<JsonView> activationJobsJsonList = jsonValue.GetArray("activationJobs");
@@ -36,12 +42,6 @@ ListReadSetActivationJobsResult& ListReadSetActivationJobsResult::operator =(con
     {
       m_activationJobs.push_back(activationJobsJsonList[activationJobsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

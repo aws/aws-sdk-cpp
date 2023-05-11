@@ -38,44 +38,44 @@ namespace Model
 
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline const Aws::String& GetComment() const{ return m_comment; }
+    inline const Aws::String& GetSep() const{ return m_sep; }
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+    inline bool SepHasBeenSet() const { return m_sepHasBeenSet; }
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
+    inline void SetSep(const Aws::String& value) { m_sepHasBeenSet = true; m_sep = value; }
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
+    inline void SetSep(Aws::String&& value) { m_sepHasBeenSet = true; m_sep = std::move(value); }
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
+    inline void SetSep(const char* value) { m_sepHasBeenSet = true; m_sep.assign(value); }
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline ReadOptions& WithComment(const Aws::String& value) { SetComment(value); return *this;}
+    inline ReadOptions& WithSep(const Aws::String& value) { SetSep(value); return *this;}
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline ReadOptions& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
+    inline ReadOptions& WithSep(Aws::String&& value) { SetSep(std::move(value)); return *this;}
 
     /**
-     * <p>The file's comment character.</p>
+     * <p>The file's field separator.</p>
      */
-    inline ReadOptions& WithComment(const char* value) { SetComment(value); return *this;}
+    inline ReadOptions& WithSep(const char* value) { SetSep(value); return *this;}
 
 
     /**
@@ -117,130 +117,6 @@ namespace Model
      * <p>The file's encoding.</p>
      */
     inline ReadOptions& WithEncoding(const char* value) { SetEncoding(value); return *this;}
-
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline const Aws::String& GetEscape() const{ return m_escape; }
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline bool EscapeHasBeenSet() const { return m_escapeHasBeenSet; }
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline void SetEscape(const Aws::String& value) { m_escapeHasBeenSet = true; m_escape = value; }
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline void SetEscape(Aws::String&& value) { m_escapeHasBeenSet = true; m_escape = std::move(value); }
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline void SetEscape(const char* value) { m_escapeHasBeenSet = true; m_escape.assign(value); }
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline ReadOptions& WithEscape(const Aws::String& value) { SetEscape(value); return *this;}
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline ReadOptions& WithEscape(Aws::String&& value) { SetEscape(std::move(value)); return *this;}
-
-    /**
-     * <p>A character for escaping quotes in the file.</p>
-     */
-    inline ReadOptions& WithEscape(const char* value) { SetEscape(value); return *this;}
-
-
-    /**
-     * <p>Whether quotes need to be escaped in the file.</p>
-     */
-    inline bool GetEscapeQuotes() const{ return m_escapeQuotes; }
-
-    /**
-     * <p>Whether quotes need to be escaped in the file.</p>
-     */
-    inline bool EscapeQuotesHasBeenSet() const { return m_escapeQuotesHasBeenSet; }
-
-    /**
-     * <p>Whether quotes need to be escaped in the file.</p>
-     */
-    inline void SetEscapeQuotes(bool value) { m_escapeQuotesHasBeenSet = true; m_escapeQuotes = value; }
-
-    /**
-     * <p>Whether quotes need to be escaped in the file.</p>
-     */
-    inline ReadOptions& WithEscapeQuotes(bool value) { SetEscapeQuotes(value); return *this;}
-
-
-    /**
-     * <p>Whether the file has a header row.</p>
-     */
-    inline bool GetHeader() const{ return m_header; }
-
-    /**
-     * <p>Whether the file has a header row.</p>
-     */
-    inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
-
-    /**
-     * <p>Whether the file has a header row.</p>
-     */
-    inline void SetHeader(bool value) { m_headerHasBeenSet = true; m_header = value; }
-
-    /**
-     * <p>Whether the file has a header row.</p>
-     */
-    inline ReadOptions& WithHeader(bool value) { SetHeader(value); return *this;}
-
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline const Aws::String& GetLineSep() const{ return m_lineSep; }
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline bool LineSepHasBeenSet() const { return m_lineSepHasBeenSet; }
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline void SetLineSep(const Aws::String& value) { m_lineSepHasBeenSet = true; m_lineSep = value; }
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline void SetLineSep(Aws::String&& value) { m_lineSepHasBeenSet = true; m_lineSep = std::move(value); }
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline void SetLineSep(const char* value) { m_lineSepHasBeenSet = true; m_lineSep.assign(value); }
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline ReadOptions& WithLineSep(const Aws::String& value) { SetLineSep(value); return *this;}
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline ReadOptions& WithLineSep(Aws::String&& value) { SetLineSep(std::move(value)); return *this;}
-
-    /**
-     * <p>A line separator for the file.</p>
-     */
-    inline ReadOptions& WithLineSep(const char* value) { SetLineSep(value); return *this;}
 
 
     /**
@@ -306,64 +182,176 @@ namespace Model
 
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline const Aws::String& GetSep() const{ return m_sep; }
+    inline const Aws::String& GetEscape() const{ return m_escape; }
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline bool SepHasBeenSet() const { return m_sepHasBeenSet; }
+    inline bool EscapeHasBeenSet() const { return m_escapeHasBeenSet; }
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline void SetSep(const Aws::String& value) { m_sepHasBeenSet = true; m_sep = value; }
+    inline void SetEscape(const Aws::String& value) { m_escapeHasBeenSet = true; m_escape = value; }
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline void SetSep(Aws::String&& value) { m_sepHasBeenSet = true; m_sep = std::move(value); }
+    inline void SetEscape(Aws::String&& value) { m_escapeHasBeenSet = true; m_escape = std::move(value); }
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline void SetSep(const char* value) { m_sepHasBeenSet = true; m_sep.assign(value); }
+    inline void SetEscape(const char* value) { m_escapeHasBeenSet = true; m_escape.assign(value); }
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline ReadOptions& WithSep(const Aws::String& value) { SetSep(value); return *this;}
+    inline ReadOptions& WithEscape(const Aws::String& value) { SetEscape(value); return *this;}
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline ReadOptions& WithSep(Aws::String&& value) { SetSep(std::move(value)); return *this;}
+    inline ReadOptions& WithEscape(Aws::String&& value) { SetEscape(std::move(value)); return *this;}
 
     /**
-     * <p>The file's field separator.</p>
+     * <p>A character for escaping quotes in the file.</p>
      */
-    inline ReadOptions& WithSep(const char* value) { SetSep(value); return *this;}
+    inline ReadOptions& WithEscape(const char* value) { SetEscape(value); return *this;}
+
+
+    /**
+     * <p>Whether quotes need to be escaped in the file.</p>
+     */
+    inline bool GetEscapeQuotes() const{ return m_escapeQuotes; }
+
+    /**
+     * <p>Whether quotes need to be escaped in the file.</p>
+     */
+    inline bool EscapeQuotesHasBeenSet() const { return m_escapeQuotesHasBeenSet; }
+
+    /**
+     * <p>Whether quotes need to be escaped in the file.</p>
+     */
+    inline void SetEscapeQuotes(bool value) { m_escapeQuotesHasBeenSet = true; m_escapeQuotes = value; }
+
+    /**
+     * <p>Whether quotes need to be escaped in the file.</p>
+     */
+    inline ReadOptions& WithEscapeQuotes(bool value) { SetEscapeQuotes(value); return *this;}
+
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline ReadOptions& WithComment(const Aws::String& value) { SetComment(value); return *this;}
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline ReadOptions& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
+
+    /**
+     * <p>The file's comment character.</p>
+     */
+    inline ReadOptions& WithComment(const char* value) { SetComment(value); return *this;}
+
+
+    /**
+     * <p>Whether the file has a header row.</p>
+     */
+    inline bool GetHeader() const{ return m_header; }
+
+    /**
+     * <p>Whether the file has a header row.</p>
+     */
+    inline bool HeaderHasBeenSet() const { return m_headerHasBeenSet; }
+
+    /**
+     * <p>Whether the file has a header row.</p>
+     */
+    inline void SetHeader(bool value) { m_headerHasBeenSet = true; m_header = value; }
+
+    /**
+     * <p>Whether the file has a header row.</p>
+     */
+    inline ReadOptions& WithHeader(bool value) { SetHeader(value); return *this;}
+
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline const Aws::String& GetLineSep() const{ return m_lineSep; }
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline bool LineSepHasBeenSet() const { return m_lineSepHasBeenSet; }
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline void SetLineSep(const Aws::String& value) { m_lineSepHasBeenSet = true; m_lineSep = value; }
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline void SetLineSep(Aws::String&& value) { m_lineSepHasBeenSet = true; m_lineSep = std::move(value); }
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline void SetLineSep(const char* value) { m_lineSepHasBeenSet = true; m_lineSep.assign(value); }
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline ReadOptions& WithLineSep(const Aws::String& value) { SetLineSep(value); return *this;}
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline ReadOptions& WithLineSep(Aws::String&& value) { SetLineSep(std::move(value)); return *this;}
+
+    /**
+     * <p>A line separator for the file.</p>
+     */
+    inline ReadOptions& WithLineSep(const char* value) { SetLineSep(value); return *this;}
 
   private:
 
-    Aws::String m_comment;
-    bool m_commentHasBeenSet = false;
+    Aws::String m_sep;
+    bool m_sepHasBeenSet = false;
 
     Aws::String m_encoding;
     bool m_encodingHasBeenSet = false;
-
-    Aws::String m_escape;
-    bool m_escapeHasBeenSet = false;
-
-    bool m_escapeQuotes;
-    bool m_escapeQuotesHasBeenSet = false;
-
-    bool m_header;
-    bool m_headerHasBeenSet = false;
-
-    Aws::String m_lineSep;
-    bool m_lineSepHasBeenSet = false;
 
     Aws::String m_quote;
     bool m_quoteHasBeenSet = false;
@@ -371,8 +359,20 @@ namespace Model
     bool m_quoteAll;
     bool m_quoteAllHasBeenSet = false;
 
-    Aws::String m_sep;
-    bool m_sepHasBeenSet = false;
+    Aws::String m_escape;
+    bool m_escapeHasBeenSet = false;
+
+    bool m_escapeQuotes;
+    bool m_escapeQuotesHasBeenSet = false;
+
+    Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
+
+    bool m_header;
+    bool m_headerHasBeenSet = false;
+
+    Aws::String m_lineSep;
+    bool m_lineSepHasBeenSet = false;
   };
 
 } // namespace Model

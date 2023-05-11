@@ -36,24 +36,24 @@ namespace Model
 
 
     /**
-     * <p>The file's content length.</p>
+     * <p>The file's total parts.</p>
      */
-    inline long long GetContentLength() const{ return m_contentLength; }
+    inline int GetTotalParts() const{ return m_totalParts; }
 
     /**
-     * <p>The file's content length.</p>
+     * <p>The file's total parts.</p>
      */
-    inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
+    inline bool TotalPartsHasBeenSet() const { return m_totalPartsHasBeenSet; }
 
     /**
-     * <p>The file's content length.</p>
+     * <p>The file's total parts.</p>
      */
-    inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
+    inline void SetTotalParts(int value) { m_totalPartsHasBeenSet = true; m_totalParts = value; }
 
     /**
-     * <p>The file's content length.</p>
+     * <p>The file's total parts.</p>
      */
-    inline FileInformation& WithContentLength(long long value) { SetContentLength(value); return *this;}
+    inline FileInformation& WithTotalParts(int value) { SetTotalParts(value); return *this;}
 
 
     /**
@@ -78,35 +78,35 @@ namespace Model
 
 
     /**
-     * <p>The file's total parts.</p>
+     * <p>The file's content length.</p>
      */
-    inline int GetTotalParts() const{ return m_totalParts; }
+    inline long long GetContentLength() const{ return m_contentLength; }
 
     /**
-     * <p>The file's total parts.</p>
+     * <p>The file's content length.</p>
      */
-    inline bool TotalPartsHasBeenSet() const { return m_totalPartsHasBeenSet; }
+    inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
 
     /**
-     * <p>The file's total parts.</p>
+     * <p>The file's content length.</p>
      */
-    inline void SetTotalParts(int value) { m_totalPartsHasBeenSet = true; m_totalParts = value; }
+    inline void SetContentLength(long long value) { m_contentLengthHasBeenSet = true; m_contentLength = value; }
 
     /**
-     * <p>The file's total parts.</p>
+     * <p>The file's content length.</p>
      */
-    inline FileInformation& WithTotalParts(int value) { SetTotalParts(value); return *this;}
+    inline FileInformation& WithContentLength(long long value) { SetContentLength(value); return *this;}
 
   private:
 
-    long long m_contentLength;
-    bool m_contentLengthHasBeenSet = false;
+    int m_totalParts;
+    bool m_totalPartsHasBeenSet = false;
 
     long long m_partSize;
     bool m_partSizeHasBeenSet = false;
 
-    int m_totalParts;
-    bool m_totalPartsHasBeenSet = false;
+    long long m_contentLength;
+    bool m_contentLengthHasBeenSet = false;
   };
 
 } // namespace Model

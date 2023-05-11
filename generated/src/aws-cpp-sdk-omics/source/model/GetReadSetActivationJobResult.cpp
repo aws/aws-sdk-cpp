@@ -31,18 +31,6 @@ GetReadSetActivationJobResult::GetReadSetActivationJobResult(const Aws::AmazonWe
 GetReadSetActivationJobResult& GetReadSetActivationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("completionTime"))
-  {
-    m_completionTime = jsonValue.GetString("completionTime");
-
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -55,15 +43,6 @@ GetReadSetActivationJobResult& GetReadSetActivationJobResult::operator =(const A
 
   }
 
-  if(jsonValue.ValueExists("sources"))
-  {
-    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
-    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
-    {
-      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
-    }
-  }
-
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetActivationJobStatusMapper::GetReadSetActivationJobStatusForName(jsonValue.GetString("status"));
@@ -74,6 +53,27 @@ GetReadSetActivationJobResult& GetReadSetActivationJobResult::operator =(const A
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
 
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+  }
+
+  if(jsonValue.ValueExists("sources"))
+  {
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
   }
 
 

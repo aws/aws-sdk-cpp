@@ -18,18 +18,20 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetWorkflowResult::GetWorkflowResult() : 
-    m_engine(WorkflowEngine::NOT_SET),
     m_status(WorkflowStatus::NOT_SET),
+    m_type(WorkflowType::NOT_SET),
+    m_engine(WorkflowEngine::NOT_SET),
     m_storageCapacity(0),
-    m_type(WorkflowType::NOT_SET)
+    m_accelerators(Accelerators::NOT_SET)
 {
 }
 
 GetWorkflowResult::GetWorkflowResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_engine(WorkflowEngine::NOT_SET),
     m_status(WorkflowStatus::NOT_SET),
+    m_type(WorkflowType::NOT_SET),
+    m_engine(WorkflowEngine::NOT_SET),
     m_storageCapacity(0),
-    m_type(WorkflowType::NOT_SET)
+    m_accelerators(Accelerators::NOT_SET)
 {
   *this = result;
 }
@@ -43,15 +45,27 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_creationTime = jsonValue.GetString("creationTime");
+    m_id = jsonValue.GetString("id");
 
   }
 
-  if(jsonValue.ValueExists("definition"))
+  if(jsonValue.ValueExists("status"))
   {
-    m_definition = jsonValue.GetString("definition");
+    m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("type"));
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
 
   }
 
@@ -61,21 +75,15 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("digest"))
-  {
-    m_digest = jsonValue.GetString("digest");
-
-  }
-
   if(jsonValue.ValueExists("engine"))
   {
     m_engine = WorkflowEngineMapper::GetWorkflowEngineForName(jsonValue.GetString("engine"));
 
   }
 
-  if(jsonValue.ValueExists("id"))
+  if(jsonValue.ValueExists("definition"))
   {
-    m_id = jsonValue.GetString("id");
+    m_definition = jsonValue.GetString("definition");
 
   }
 
@@ -85,9 +93,9 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("digest"))
   {
-    m_name = jsonValue.GetString("name");
+    m_digest = jsonValue.GetString("digest");
 
   }
 
@@ -100,21 +108,21 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("storageCapacity"))
   {
-    m_status = WorkflowStatusMapper::GetWorkflowStatusForName(jsonValue.GetString("status"));
+    m_storageCapacity = jsonValue.GetInteger("storageCapacity");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 
   if(jsonValue.ValueExists("statusMessage"))
   {
     m_statusMessage = jsonValue.GetString("statusMessage");
-
-  }
-
-  if(jsonValue.ValueExists("storageCapacity"))
-  {
-    m_storageCapacity = jsonValue.GetInteger("storageCapacity");
 
   }
 
@@ -127,9 +135,18 @@ GetWorkflowResult& GetWorkflowResult::operator =(const Aws::AmazonWebServiceResu
     }
   }
 
-  if(jsonValue.ValueExists("type"))
+  if(jsonValue.ValueExists("metadata"))
   {
-    m_type = WorkflowTypeMapper::GetWorkflowTypeForName(jsonValue.GetString("type"));
+    Aws::Map<Aws::String, JsonView> metadataJsonMap = jsonValue.GetObject("metadata").GetAllObjects();
+    for(auto& metadataItem : metadataJsonMap)
+    {
+      m_metadata[metadataItem.first] = metadataItem.second.AsString();
+    }
+  }
+
+  if(jsonValue.ValueExists("accelerators"))
+  {
+    m_accelerators = AcceleratorsMapper::GetAcceleratorsForName(jsonValue.GetString("accelerators"));
 
   }
 

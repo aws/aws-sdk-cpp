@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ImportReferenceFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ImportReferenceFilter.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline const ImportReferenceFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(const ImportReferenceFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(ImportReferenceFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReferenceImportJobsRequest& WithFilter(const ImportReferenceFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReferenceImportJobsRequest& WithFilter(ImportReferenceFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -180,10 +149,38 @@ namespace Model
      */
     inline ListReferenceImportJobsRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
 
-  private:
 
-    ImportReferenceFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline const ImportReferenceFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(const ImportReferenceFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(ImportReferenceFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReferenceImportJobsRequest& WithFilter(const ImportReferenceFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReferenceImportJobsRequest& WithFilter(ImportReferenceFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -193,6 +190,9 @@ namespace Model
 
     Aws::String m_referenceStoreId;
     bool m_referenceStoreIdHasBeenSet = false;
+
+    ImportReferenceFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

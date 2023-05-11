@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ActivateReadSetJobItem.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_OMICS_API ListReadSetActivationJobsResult();
     AWS_OMICS_API ListReadSetActivationJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListReadSetActivationJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline const Aws::Vector<ActivateReadSetJobItem>& GetActivationJobs() const{ return m_activationJobs; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { m_activationJobs = value; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { m_activationJobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetActivationJobsResult& WithActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { SetActivationJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetActivationJobsResult& WithActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { SetActivationJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetActivationJobsResult& AddActivationJobs(const ActivateReadSetJobItem& value) { m_activationJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetActivationJobsResult& AddActivationJobs(ActivateReadSetJobItem&& value) { m_activationJobs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListReadSetActivationJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline const Aws::Vector<ActivateReadSetJobItem>& GetActivationJobs() const{ return m_activationJobs; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { m_activationJobs = value; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { m_activationJobs = std::move(value); }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetActivationJobsResult& WithActivationJobs(const Aws::Vector<ActivateReadSetJobItem>& value) { SetActivationJobs(value); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetActivationJobsResult& WithActivationJobs(Aws::Vector<ActivateReadSetJobItem>&& value) { SetActivationJobs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetActivationJobsResult& AddActivationJobs(const ActivateReadSetJobItem& value) { m_activationJobs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetActivationJobsResult& AddActivationJobs(ActivateReadSetJobItem&& value) { m_activationJobs.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<ActivateReadSetJobItem> m_activationJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ActivateReadSetJobItem> m_activationJobs;
 
     Aws::String m_requestId;
   };

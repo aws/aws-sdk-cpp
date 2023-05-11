@@ -18,10 +18,13 @@
 /* End of generic header includes */
 
 /* Service model headers required in OmicsClient header */
+#include <aws/omics/model/AbortMultipartReadSetUploadResult.h>
 #include <aws/omics/model/BatchDeleteReadSetResult.h>
 #include <aws/omics/model/CancelAnnotationImportJobResult.h>
 #include <aws/omics/model/CancelVariantImportJobResult.h>
+#include <aws/omics/model/CompleteMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CreateAnnotationStoreResult.h>
+#include <aws/omics/model/CreateMultipartReadSetUploadResult.h>
 #include <aws/omics/model/CreateReferenceStoreResult.h>
 #include <aws/omics/model/CreateRunGroupResult.h>
 #include <aws/omics/model/CreateSequenceStoreResult.h>
@@ -52,9 +55,11 @@
 #include <aws/omics/model/GetWorkflowResult.h>
 #include <aws/omics/model/ListAnnotationImportJobsResult.h>
 #include <aws/omics/model/ListAnnotationStoresResult.h>
+#include <aws/omics/model/ListMultipartReadSetUploadsResult.h>
 #include <aws/omics/model/ListReadSetActivationJobsResult.h>
 #include <aws/omics/model/ListReadSetExportJobsResult.h>
 #include <aws/omics/model/ListReadSetImportJobsResult.h>
+#include <aws/omics/model/ListReadSetUploadPartsResult.h>
 #include <aws/omics/model/ListReadSetsResult.h>
 #include <aws/omics/model/ListReferenceImportJobsResult.h>
 #include <aws/omics/model/ListReferenceStoresResult.h>
@@ -78,6 +83,7 @@
 #include <aws/omics/model/UntagResourceResult.h>
 #include <aws/omics/model/UpdateAnnotationStoreResult.h>
 #include <aws/omics/model/UpdateVariantStoreResult.h>
+#include <aws/omics/model/UploadReadSetPartResult.h>
 #include <aws/core/NoResult.h>
 /* End of service model headers required in OmicsClient header */
 
@@ -119,11 +125,14 @@ namespace Aws
     namespace Model
     {
       /* Service model forward declarations required in OmicsClient header */
+      class AbortMultipartReadSetUploadRequest;
       class BatchDeleteReadSetRequest;
       class CancelAnnotationImportJobRequest;
       class CancelRunRequest;
       class CancelVariantImportJobRequest;
+      class CompleteMultipartReadSetUploadRequest;
       class CreateAnnotationStoreRequest;
+      class CreateMultipartReadSetUploadRequest;
       class CreateReferenceStoreRequest;
       class CreateRunGroupRequest;
       class CreateSequenceStoreRequest;
@@ -157,9 +166,11 @@ namespace Aws
       class GetWorkflowRequest;
       class ListAnnotationImportJobsRequest;
       class ListAnnotationStoresRequest;
+      class ListMultipartReadSetUploadsRequest;
       class ListReadSetActivationJobsRequest;
       class ListReadSetExportJobsRequest;
       class ListReadSetImportJobsRequest;
+      class ListReadSetUploadPartsRequest;
       class ListReadSetsRequest;
       class ListReferenceImportJobsRequest;
       class ListReferenceStoresRequest;
@@ -185,14 +196,18 @@ namespace Aws
       class UpdateRunGroupRequest;
       class UpdateVariantStoreRequest;
       class UpdateWorkflowRequest;
+      class UploadReadSetPartRequest;
       /* End of service model forward declarations required in OmicsClient header */
 
       /* Service model Outcome class definitions */
+      typedef Aws::Utils::Outcome<AbortMultipartReadSetUploadResult, OmicsError> AbortMultipartReadSetUploadOutcome;
       typedef Aws::Utils::Outcome<BatchDeleteReadSetResult, OmicsError> BatchDeleteReadSetOutcome;
       typedef Aws::Utils::Outcome<CancelAnnotationImportJobResult, OmicsError> CancelAnnotationImportJobOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> CancelRunOutcome;
       typedef Aws::Utils::Outcome<CancelVariantImportJobResult, OmicsError> CancelVariantImportJobOutcome;
+      typedef Aws::Utils::Outcome<CompleteMultipartReadSetUploadResult, OmicsError> CompleteMultipartReadSetUploadOutcome;
       typedef Aws::Utils::Outcome<CreateAnnotationStoreResult, OmicsError> CreateAnnotationStoreOutcome;
+      typedef Aws::Utils::Outcome<CreateMultipartReadSetUploadResult, OmicsError> CreateMultipartReadSetUploadOutcome;
       typedef Aws::Utils::Outcome<CreateReferenceStoreResult, OmicsError> CreateReferenceStoreOutcome;
       typedef Aws::Utils::Outcome<CreateRunGroupResult, OmicsError> CreateRunGroupOutcome;
       typedef Aws::Utils::Outcome<CreateSequenceStoreResult, OmicsError> CreateSequenceStoreOutcome;
@@ -226,9 +241,11 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWorkflowResult, OmicsError> GetWorkflowOutcome;
       typedef Aws::Utils::Outcome<ListAnnotationImportJobsResult, OmicsError> ListAnnotationImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListAnnotationStoresResult, OmicsError> ListAnnotationStoresOutcome;
+      typedef Aws::Utils::Outcome<ListMultipartReadSetUploadsResult, OmicsError> ListMultipartReadSetUploadsOutcome;
       typedef Aws::Utils::Outcome<ListReadSetActivationJobsResult, OmicsError> ListReadSetActivationJobsOutcome;
       typedef Aws::Utils::Outcome<ListReadSetExportJobsResult, OmicsError> ListReadSetExportJobsOutcome;
       typedef Aws::Utils::Outcome<ListReadSetImportJobsResult, OmicsError> ListReadSetImportJobsOutcome;
+      typedef Aws::Utils::Outcome<ListReadSetUploadPartsResult, OmicsError> ListReadSetUploadPartsOutcome;
       typedef Aws::Utils::Outcome<ListReadSetsResult, OmicsError> ListReadSetsOutcome;
       typedef Aws::Utils::Outcome<ListReferenceImportJobsResult, OmicsError> ListReferenceImportJobsOutcome;
       typedef Aws::Utils::Outcome<ListReferenceStoresResult, OmicsError> ListReferenceStoresOutcome;
@@ -254,14 +271,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> UpdateRunGroupOutcome;
       typedef Aws::Utils::Outcome<UpdateVariantStoreResult, OmicsError> UpdateVariantStoreOutcome;
       typedef Aws::Utils::Outcome<Aws::NoResult, OmicsError> UpdateWorkflowOutcome;
+      typedef Aws::Utils::Outcome<UploadReadSetPartResult, OmicsError> UploadReadSetPartOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
+      typedef std::future<AbortMultipartReadSetUploadOutcome> AbortMultipartReadSetUploadOutcomeCallable;
       typedef std::future<BatchDeleteReadSetOutcome> BatchDeleteReadSetOutcomeCallable;
       typedef std::future<CancelAnnotationImportJobOutcome> CancelAnnotationImportJobOutcomeCallable;
       typedef std::future<CancelRunOutcome> CancelRunOutcomeCallable;
       typedef std::future<CancelVariantImportJobOutcome> CancelVariantImportJobOutcomeCallable;
+      typedef std::future<CompleteMultipartReadSetUploadOutcome> CompleteMultipartReadSetUploadOutcomeCallable;
       typedef std::future<CreateAnnotationStoreOutcome> CreateAnnotationStoreOutcomeCallable;
+      typedef std::future<CreateMultipartReadSetUploadOutcome> CreateMultipartReadSetUploadOutcomeCallable;
       typedef std::future<CreateReferenceStoreOutcome> CreateReferenceStoreOutcomeCallable;
       typedef std::future<CreateRunGroupOutcome> CreateRunGroupOutcomeCallable;
       typedef std::future<CreateSequenceStoreOutcome> CreateSequenceStoreOutcomeCallable;
@@ -295,9 +316,11 @@ namespace Aws
       typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
       typedef std::future<ListAnnotationImportJobsOutcome> ListAnnotationImportJobsOutcomeCallable;
       typedef std::future<ListAnnotationStoresOutcome> ListAnnotationStoresOutcomeCallable;
+      typedef std::future<ListMultipartReadSetUploadsOutcome> ListMultipartReadSetUploadsOutcomeCallable;
       typedef std::future<ListReadSetActivationJobsOutcome> ListReadSetActivationJobsOutcomeCallable;
       typedef std::future<ListReadSetExportJobsOutcome> ListReadSetExportJobsOutcomeCallable;
       typedef std::future<ListReadSetImportJobsOutcome> ListReadSetImportJobsOutcomeCallable;
+      typedef std::future<ListReadSetUploadPartsOutcome> ListReadSetUploadPartsOutcomeCallable;
       typedef std::future<ListReadSetsOutcome> ListReadSetsOutcomeCallable;
       typedef std::future<ListReferenceImportJobsOutcome> ListReferenceImportJobsOutcomeCallable;
       typedef std::future<ListReferenceStoresOutcome> ListReferenceStoresOutcomeCallable;
@@ -323,17 +346,21 @@ namespace Aws
       typedef std::future<UpdateRunGroupOutcome> UpdateRunGroupOutcomeCallable;
       typedef std::future<UpdateVariantStoreOutcome> UpdateVariantStoreOutcomeCallable;
       typedef std::future<UpdateWorkflowOutcome> UpdateWorkflowOutcomeCallable;
+      typedef std::future<UploadReadSetPartOutcome> UploadReadSetPartOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
     class OmicsClient;
 
     /* Service model async handlers definitions */
+    typedef std::function<void(const OmicsClient*, const Model::AbortMultipartReadSetUploadRequest&, const Model::AbortMultipartReadSetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AbortMultipartReadSetUploadResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::BatchDeleteReadSetRequest&, const Model::BatchDeleteReadSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteReadSetResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CancelAnnotationImportJobRequest&, const Model::CancelAnnotationImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelAnnotationImportJobResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CancelRunRequest&, const Model::CancelRunOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRunResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CancelVariantImportJobRequest&, const Model::CancelVariantImportJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelVariantImportJobResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::CompleteMultipartReadSetUploadRequest&, const Model::CompleteMultipartReadSetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CompleteMultipartReadSetUploadResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CreateAnnotationStoreRequest&, const Model::CreateAnnotationStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAnnotationStoreResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::CreateMultipartReadSetUploadRequest&, const Model::CreateMultipartReadSetUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateMultipartReadSetUploadResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CreateReferenceStoreRequest&, const Model::CreateReferenceStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateReferenceStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CreateRunGroupRequest&, const Model::CreateRunGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateRunGroupResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::CreateSequenceStoreRequest&, const Model::CreateSequenceStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSequenceStoreResponseReceivedHandler;
@@ -367,9 +394,11 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListAnnotationImportJobsRequest&, const Model::ListAnnotationImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnnotationImportJobsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListAnnotationStoresRequest&, const Model::ListAnnotationStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAnnotationStoresResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::ListMultipartReadSetUploadsRequest&, const Model::ListMultipartReadSetUploadsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListMultipartReadSetUploadsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReadSetActivationJobsRequest&, const Model::ListReadSetActivationJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReadSetActivationJobsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReadSetExportJobsRequest&, const Model::ListReadSetExportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReadSetExportJobsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReadSetImportJobsRequest&, const Model::ListReadSetImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReadSetImportJobsResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::ListReadSetUploadPartsRequest&, const Model::ListReadSetUploadPartsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReadSetUploadPartsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReadSetsRequest&, const Model::ListReadSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReadSetsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReferenceImportJobsRequest&, const Model::ListReferenceImportJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReferenceImportJobsResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::ListReferenceStoresRequest&, const Model::ListReferenceStoresOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListReferenceStoresResponseReceivedHandler;
@@ -395,6 +424,7 @@ namespace Aws
     typedef std::function<void(const OmicsClient*, const Model::UpdateRunGroupRequest&, const Model::UpdateRunGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateRunGroupResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateVariantStoreRequest&, const Model::UpdateVariantStoreOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateVariantStoreResponseReceivedHandler;
     typedef std::function<void(const OmicsClient*, const Model::UpdateWorkflowRequest&, const Model::UpdateWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateWorkflowResponseReceivedHandler;
+    typedef std::function<void(const OmicsClient*, const Model::UploadReadSetPartRequest&, const Model::UploadReadSetPartOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UploadReadSetPartResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace Omics
 } // namespace Aws

@@ -7,6 +7,7 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/RunStatus.h>
 #include <utility>
 
 namespace Aws
@@ -36,27 +37,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>The maximum number of runs to return in one page of results.</p>
-     */
-    inline int GetMaxResults() const{ return m_maxResults; }
-
-    /**
-     * <p>The maximum number of runs to return in one page of results.</p>
-     */
-    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of runs to return in one page of results.</p>
-     */
-    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
-
-    /**
-     * <p>The maximum number of runs to return in one page of results.</p>
-     */
-    inline ListRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
@@ -189,10 +169,59 @@ namespace Model
      */
     inline ListRunsRequest& WithStartingToken(const char* value) { SetStartingToken(value); return *this;}
 
-  private:
 
-    int m_maxResults;
-    bool m_maxResultsHasBeenSet = false;
+    /**
+     * <p>The maximum number of runs to return in one page of results.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of runs to return in one page of results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of runs to return in one page of results.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of runs to return in one page of results.</p>
+     */
+    inline ListRunsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline const RunStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline void SetStatus(const RunStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline void SetStatus(RunStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline ListRunsRequest& WithStatus(const RunStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p> The status of a run. </p>
+     */
+    inline ListRunsRequest& WithStatus(RunStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+  private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
@@ -202,6 +231,12 @@ namespace Model
 
     Aws::String m_startingToken;
     bool m_startingTokenHasBeenSet = false;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet = false;
+
+    RunStatus m_status;
+    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

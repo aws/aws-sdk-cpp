@@ -40,88 +40,6 @@ namespace Model
 
 
     /**
-     * <p>The source's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline ImportReferenceSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline ImportReferenceSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline ImportReferenceSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
-
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline ImportReferenceSourceItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline ImportReferenceSourceItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The source's name.</p>
-     */
-    inline ImportReferenceSourceItem& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The source file's location in Amazon S3.</p>
      */
     inline const Aws::String& GetSourceFile() const{ return m_sourceFile; }
@@ -235,6 +153,88 @@ namespace Model
 
 
     /**
+     * <p>The source's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline ImportReferenceSourceItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline ImportReferenceSourceItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline ImportReferenceSourceItem& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline ImportReferenceSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline ImportReferenceSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline ImportReferenceSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The source's tags.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -301,12 +301,6 @@ namespace Model
 
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
     Aws::String m_sourceFile;
     bool m_sourceFileHasBeenSet = false;
 
@@ -315,6 +309,12 @@ namespace Model
 
     Aws::String m_statusMessage;
     bool m_statusMessageHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

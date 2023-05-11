@@ -136,49 +136,49 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline void SetService(Aws::String&& value) { m_serviceHasBeenSet = true; m_service = std::move(value); }
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline void SetService(const char* value) { m_serviceHasBeenSet = true; m_service.assign(value); }
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline Event& WithService(const Aws::String& value) { SetService(value); return *this;}
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline Event& WithService(Aws::String&& value) { SetService(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Web Services service that is affected by the event. For example,
+     * <p>The Amazon Web Service that is affected by the event. For example,
      * <code>EC2</code>, <code>RDS</code>.</p>
      */
     inline Event& WithService(const char* value) { SetService(value); return *this;}
@@ -505,8 +505,8 @@ namespace Model
 
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
@@ -521,8 +521,8 @@ namespace Model
     inline const EventScopeCode& GetEventScopeCode() const{ return m_eventScopeCode; }
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
@@ -537,8 +537,8 @@ namespace Model
     inline bool EventScopeCodeHasBeenSet() const { return m_eventScopeCodeHasBeenSet; }
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
@@ -553,8 +553,8 @@ namespace Model
     inline void SetEventScopeCode(const EventScopeCode& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = value; }
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
@@ -569,8 +569,8 @@ namespace Model
     inline void SetEventScopeCode(EventScopeCode&& value) { m_eventScopeCodeHasBeenSet = true; m_eventScopeCode = std::move(value); }
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the
@@ -585,8 +585,8 @@ namespace Model
     inline Event& WithEventScopeCode(const EventScopeCode& value) { SetEventScopeCode(value); return *this;}
 
     /**
-     * <p>This parameter specifies if the Health event is a public Amazon Web Services
-     * service event or an account-specific event.</p> <ul> <li> <p>If the
+     * <p>This parameter specifies if the Health event is a public Amazon Web Service
+     * event or an account-specific event.</p> <ul> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>PUBLIC</code>, then the
      * <code>affectedAccounts</code> value is always empty.</p> </li> <li> <p>If the
      * <code>eventScopeCode</code> value is <code>ACCOUNT_SPECIFIC</code>, then the

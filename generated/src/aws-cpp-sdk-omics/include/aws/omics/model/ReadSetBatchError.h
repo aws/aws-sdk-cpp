@@ -38,47 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The error's code.</p>
-     */
-    inline const Aws::String& GetCode() const{ return m_code; }
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline ReadSetBatchError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline ReadSetBatchError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
-
-    /**
-     * <p>The error's code.</p>
-     */
-    inline ReadSetBatchError& WithCode(const char* value) { SetCode(value); return *this;}
-
-
-    /**
      * <p>The error's ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
@@ -117,6 +76,47 @@ namespace Model
      * <p>The error's ID.</p>
      */
     inline ReadSetBatchError& WithId(const char* value) { SetId(value); return *this;}
+
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline ReadSetBatchError& WithCode(const Aws::String& value) { SetCode(value); return *this;}
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline ReadSetBatchError& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
+
+    /**
+     * <p>The error's code.</p>
+     */
+    inline ReadSetBatchError& WithCode(const char* value) { SetCode(value); return *this;}
 
 
     /**
@@ -161,11 +161,11 @@ namespace Model
 
   private:
 
-    Aws::String m_code;
-    bool m_codeHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::String m_code;
+    bool m_codeHasBeenSet = false;
 
     Aws::String m_message;
     bool m_messageHasBeenSet = false;

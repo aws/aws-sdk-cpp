@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ReferenceStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -37,119 +37,6 @@ namespace Model
     AWS_OMICS_API ReferenceListItem(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ReferenceListItem& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline ReferenceListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline ReferenceListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The reference's ARN.</p>
-     */
-    inline ReferenceListItem& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline ReferenceListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the reference was created.</p>
-     */
-    inline ReferenceListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline ReferenceListItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline ReferenceListItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The reference's description.</p>
-     */
-    inline ReferenceListItem& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -194,85 +81,44 @@ namespace Model
 
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline const Aws::String& GetMd5() const{ return m_md5; }
+    inline const Aws::String& GetArn() const{ return m_arn; }
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline bool Md5HasBeenSet() const { return m_md5HasBeenSet; }
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline void SetMd5(const Aws::String& value) { m_md5HasBeenSet = true; m_md5 = value; }
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline void SetMd5(Aws::String&& value) { m_md5HasBeenSet = true; m_md5 = std::move(value); }
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline void SetMd5(const char* value) { m_md5HasBeenSet = true; m_md5.assign(value); }
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline ReferenceListItem& WithMd5(const Aws::String& value) { SetMd5(value); return *this;}
+    inline ReferenceListItem& WithArn(const Aws::String& value) { SetArn(value); return *this;}
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline ReferenceListItem& WithMd5(Aws::String&& value) { SetMd5(std::move(value)); return *this;}
+    inline ReferenceListItem& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
 
     /**
-     * <p>The reference's MD5 checksum.</p>
+     * <p>The reference's ARN.</p>
      */
-    inline ReferenceListItem& WithMd5(const char* value) { SetMd5(value); return *this;}
-
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline ReferenceListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline ReferenceListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The reference's name.</p>
-     */
-    inline ReferenceListItem& WithName(const char* value) { SetName(value); return *this;}
+    inline ReferenceListItem& WithArn(const char* value) { SetArn(value); return *this;}
 
 
     /**
@@ -317,6 +163,47 @@ namespace Model
 
 
     /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline const Aws::String& GetMd5() const{ return m_md5; }
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline bool Md5HasBeenSet() const { return m_md5HasBeenSet; }
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline void SetMd5(const Aws::String& value) { m_md5HasBeenSet = true; m_md5 = value; }
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline void SetMd5(Aws::String&& value) { m_md5HasBeenSet = true; m_md5 = std::move(value); }
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline void SetMd5(const char* value) { m_md5HasBeenSet = true; m_md5.assign(value); }
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline ReferenceListItem& WithMd5(const Aws::String& value) { SetMd5(value); return *this;}
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline ReferenceListItem& WithMd5(Aws::String&& value) { SetMd5(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference's MD5 checksum.</p>
+     */
+    inline ReferenceListItem& WithMd5(const char* value) { SetMd5(value); return *this;}
+
+
+    /**
      * <p>The reference's status.</p>
      */
     inline const ReferenceStatus& GetStatus() const{ return m_status; }
@@ -345,6 +232,119 @@ namespace Model
      * <p>The reference's status.</p>
      */
     inline ReferenceListItem& WithStatus(ReferenceStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline ReferenceListItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline ReferenceListItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference's name.</p>
+     */
+    inline ReferenceListItem& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline ReferenceListItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline ReferenceListItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference's description.</p>
+     */
+    inline ReferenceListItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline ReferenceListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the reference was created.</p>
+     */
+    inline ReferenceListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -379,29 +379,29 @@ namespace Model
 
   private:
 
-    Aws::String m_arn;
-    bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    Aws::String m_md5;
-    bool m_md5HasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    Aws::String m_arn;
+    bool m_arnHasBeenSet = false;
 
     Aws::String m_referenceStoreId;
     bool m_referenceStoreIdHasBeenSet = false;
 
+    Aws::String m_md5;
+    bool m_md5HasBeenSet = false;
+
     ReferenceStatus m_status;
     bool m_statusHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
 
     Aws::Utils::DateTime m_updateTime;
     bool m_updateTimeHasBeenSet = false;

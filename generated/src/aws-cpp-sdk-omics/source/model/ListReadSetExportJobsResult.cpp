@@ -29,6 +29,12 @@ ListReadSetExportJobsResult::ListReadSetExportJobsResult(const Aws::AmazonWebSer
 ListReadSetExportJobsResult& ListReadSetExportJobsResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
+  }
+
   if(jsonValue.ValueExists("exportJobs"))
   {
     Aws::Utils::Array<JsonView> exportJobsJsonList = jsonValue.GetArray("exportJobs");
@@ -36,12 +42,6 @@ ListReadSetExportJobsResult& ListReadSetExportJobsResult::operator =(const Aws::
     {
       m_exportJobs.push_back(exportJobsJsonList[exportJobsIndex].AsObject());
     }
-  }
-
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
   }
 
 

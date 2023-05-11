@@ -18,14 +18,14 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetReadSetMetadataResult::GetReadSetMetadataResult() : 
-    m_fileType(FileType::NOT_SET),
-    m_status(ReadSetStatus::NOT_SET)
+    m_status(ReadSetStatus::NOT_SET),
+    m_fileType(FileType::NOT_SET)
 {
 }
 
 GetReadSetMetadataResult::GetReadSetMetadataResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
-    m_fileType(FileType::NOT_SET),
-    m_status(ReadSetStatus::NOT_SET)
+    m_status(ReadSetStatus::NOT_SET),
+    m_fileType(FileType::NOT_SET)
 {
   *this = result;
 }
@@ -33,15 +33,45 @@ GetReadSetMetadataResult::GetReadSetMetadataResult(const Aws::AmazonWebServiceRe
 GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("id"))
+  {
+    m_id = jsonValue.GetString("id");
+
+  }
+
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
+  if(jsonValue.ValueExists("sequenceStoreId"))
   {
-    m_creationTime = jsonValue.GetString("creationTime");
+    m_sequenceStoreId = jsonValue.GetString("sequenceStoreId");
+
+  }
+
+  if(jsonValue.ValueExists("subjectId"))
+  {
+    m_subjectId = jsonValue.GetString("subjectId");
+
+  }
+
+  if(jsonValue.ValueExists("sampleId"))
+  {
+    m_sampleId = jsonValue.GetString("sampleId");
+
+  }
+
+  if(jsonValue.ValueExists("status"))
+  {
+    m_status = ReadSetStatusMapper::GetReadSetStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
 
   }
 
@@ -57,33 +87,9 @@ GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("files"))
+  if(jsonValue.ValueExists("creationTime"))
   {
-    m_files = jsonValue.GetObject("files");
-
-  }
-
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-  }
-
-  if(jsonValue.ValueExists("referenceArn"))
-  {
-    m_referenceArn = jsonValue.GetString("referenceArn");
-
-  }
-
-  if(jsonValue.ValueExists("sampleId"))
-  {
-    m_sampleId = jsonValue.GetString("sampleId");
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 
@@ -93,21 +99,21 @@ GetReadSetMetadataResult& GetReadSetMetadataResult::operator =(const Aws::Amazon
 
   }
 
-  if(jsonValue.ValueExists("sequenceStoreId"))
+  if(jsonValue.ValueExists("referenceArn"))
   {
-    m_sequenceStoreId = jsonValue.GetString("sequenceStoreId");
+    m_referenceArn = jsonValue.GetString("referenceArn");
 
   }
 
-  if(jsonValue.ValueExists("status"))
+  if(jsonValue.ValueExists("files"))
   {
-    m_status = ReadSetStatusMapper::GetReadSetStatusForName(jsonValue.GetString("status"));
+    m_files = jsonValue.GetObject("files");
 
   }
 
-  if(jsonValue.ValueExists("subjectId"))
+  if(jsonValue.ValueExists("statusMessage"))
   {
-    m_subjectId = jsonValue.GetString("subjectId");
+    m_statusMessage = jsonValue.GetString("statusMessage");
 
   }
 

@@ -31,12 +31,6 @@ StartReadSetActivationJobResult::StartReadSetActivationJobResult(const Aws::Amaz
 StartReadSetActivationJobResult& StartReadSetActivationJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -52,6 +46,12 @@ StartReadSetActivationJobResult& StartReadSetActivationJobResult::operator =(con
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReadSetActivationJobStatusMapper::GetReadSetActivationJobStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 

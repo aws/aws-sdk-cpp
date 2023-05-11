@@ -35,6 +35,47 @@ namespace Model
 
 
     /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline StartReadSetActivationJobRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline StartReadSetActivationJobRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline StartReadSetActivationJobRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+
+
+    /**
      * <p>To ensure that jobs don't run multiple times, specify a unique token for each
      * job.</p>
      */
@@ -84,47 +125,6 @@ namespace Model
 
 
     /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline StartReadSetActivationJobRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline StartReadSetActivationJobRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline StartReadSetActivationJobRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
-
-
-    /**
      * <p>The job's source files.</p>
      */
     inline const Aws::Vector<StartReadSetActivationJobSourceItem>& GetSources() const{ return m_sources; }
@@ -166,11 +166,11 @@ namespace Model
 
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
-
     Aws::String m_sequenceStoreId;
     bool m_sequenceStoreIdHasBeenSet = false;
+
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<StartReadSetActivationJobSourceItem> m_sources;
     bool m_sourcesHasBeenSet = false;

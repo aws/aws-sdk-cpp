@@ -6,11 +6,12 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
-#include <aws/omics/model/WorkflowEngine.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/WorkflowStatus.h>
 #include <aws/omics/model/WorkflowType.h>
+#include <aws/omics/model/WorkflowEngine.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/omics/model/Accelerators.h>
 #include <aws/omics/model/WorkflowParameter.h>
 #include <utility>
 
@@ -75,65 +76,127 @@ namespace Model
 
 
     /**
-     * <p>When the workflow was created.</p>
+     * <p>The workflow's ID.</p>
      */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline const Aws::String& GetId() const{ return m_id; }
 
     /**
-     * <p>When the workflow was created.</p>
+     * <p>The workflow's ID.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+    inline void SetId(const Aws::String& value) { m_id = value; }
 
     /**
-     * <p>When the workflow was created.</p>
+     * <p>The workflow's ID.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
 
     /**
-     * <p>When the workflow was created.</p>
+     * <p>The workflow's ID.</p>
      */
-    inline GetWorkflowResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+    inline void SetId(const char* value) { m_id.assign(value); }
 
     /**
-     * <p>When the workflow was created.</p>
+     * <p>The workflow's ID.</p>
      */
-    inline GetWorkflowResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline GetWorkflowResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+
+    /**
+     * <p>The workflow's ID.</p>
+     */
+    inline GetWorkflowResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+
+    /**
+     * <p>The workflow's ID.</p>
+     */
+    inline GetWorkflowResult& WithId(const char* value) { SetId(value); return *this;}
 
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's status.</p>
      */
-    inline const Aws::String& GetDefinition() const{ return m_definition; }
+    inline const WorkflowStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's status.</p>
      */
-    inline void SetDefinition(const Aws::String& value) { m_definition = value; }
+    inline void SetStatus(const WorkflowStatus& value) { m_status = value; }
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's status.</p>
      */
-    inline void SetDefinition(Aws::String&& value) { m_definition = std::move(value); }
+    inline void SetStatus(WorkflowStatus&& value) { m_status = std::move(value); }
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's status.</p>
      */
-    inline void SetDefinition(const char* value) { m_definition.assign(value); }
+    inline GetWorkflowResult& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's status.</p>
      */
-    inline GetWorkflowResult& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
+    inline GetWorkflowResult& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's type.</p>
      */
-    inline GetWorkflowResult& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
+    inline const WorkflowType& GetType() const{ return m_type; }
 
     /**
-     * <p>The workflow's definition.</p>
+     * <p>The workflow's type.</p>
      */
-    inline GetWorkflowResult& WithDefinition(const char* value) { SetDefinition(value); return *this;}
+    inline void SetType(const WorkflowType& value) { m_type = value; }
+
+    /**
+     * <p>The workflow's type.</p>
+     */
+    inline void SetType(WorkflowType&& value) { m_type = std::move(value); }
+
+    /**
+     * <p>The workflow's type.</p>
+     */
+    inline GetWorkflowResult& WithType(const WorkflowType& value) { SetType(value); return *this;}
+
+    /**
+     * <p>The workflow's type.</p>
+     */
+    inline GetWorkflowResult& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_name = value; }
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline void SetName(const char* value) { m_name.assign(value); }
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline GetWorkflowResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline GetWorkflowResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The workflow's name.</p>
+     */
+    inline GetWorkflowResult& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -173,42 +236,6 @@ namespace Model
 
 
     /**
-     * <p>The workflow's digest.</p>
-     */
-    inline const Aws::String& GetDigest() const{ return m_digest; }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(const Aws::String& value) { m_digest = value; }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(Aws::String&& value) { m_digest = std::move(value); }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline void SetDigest(const char* value) { m_digest.assign(value); }
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline GetWorkflowResult& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline GetWorkflowResult& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
-
-    /**
-     * <p>The workflow's digest.</p>
-     */
-    inline GetWorkflowResult& WithDigest(const char* value) { SetDigest(value); return *this;}
-
-
-    /**
      * <p>The workflow's engine.</p>
      */
     inline const WorkflowEngine& GetEngine() const{ return m_engine; }
@@ -235,39 +262,39 @@ namespace Model
 
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline const Aws::String& GetId() const{ return m_id; }
+    inline const Aws::String& GetDefinition() const{ return m_definition; }
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline void SetId(const Aws::String& value) { m_id = value; }
+    inline void SetDefinition(const Aws::String& value) { m_definition = value; }
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline void SetId(Aws::String&& value) { m_id = std::move(value); }
+    inline void SetDefinition(Aws::String&& value) { m_definition = std::move(value); }
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline void SetId(const char* value) { m_id.assign(value); }
+    inline void SetDefinition(const char* value) { m_definition.assign(value); }
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline GetWorkflowResult& WithId(const Aws::String& value) { SetId(value); return *this;}
+    inline GetWorkflowResult& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline GetWorkflowResult& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
+    inline GetWorkflowResult& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The workflow's ID.</p>
+     * <p>The workflow's definition.</p>
      */
-    inline GetWorkflowResult& WithId(const char* value) { SetId(value); return *this;}
+    inline GetWorkflowResult& WithDefinition(const char* value) { SetDefinition(value); return *this;}
 
 
     /**
@@ -307,39 +334,39 @@ namespace Model
 
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetDigest() const{ return m_digest; }
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline void SetName(const Aws::String& value) { m_name = value; }
+    inline void SetDigest(const Aws::String& value) { m_digest = value; }
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+    inline void SetDigest(Aws::String&& value) { m_digest = std::move(value); }
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline void SetName(const char* value) { m_name.assign(value); }
+    inline void SetDigest(const char* value) { m_digest.assign(value); }
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline GetWorkflowResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline GetWorkflowResult& WithDigest(const Aws::String& value) { SetDigest(value); return *this;}
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline GetWorkflowResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline GetWorkflowResult& WithDigest(Aws::String&& value) { SetDigest(std::move(value)); return *this;}
 
     /**
-     * <p>The workflow's name.</p>
+     * <p>The workflow's digest.</p>
      */
-    inline GetWorkflowResult& WithName(const char* value) { SetName(value); return *this;}
+    inline GetWorkflowResult& WithDigest(const char* value) { SetDigest(value); return *this;}
 
 
     /**
@@ -399,29 +426,45 @@ namespace Model
 
 
     /**
-     * <p>The workflow's status.</p>
+     * <p>The workflow's storage capacity in gigabytes.</p>
      */
-    inline const WorkflowStatus& GetStatus() const{ return m_status; }
+    inline int GetStorageCapacity() const{ return m_storageCapacity; }
 
     /**
-     * <p>The workflow's status.</p>
+     * <p>The workflow's storage capacity in gigabytes.</p>
      */
-    inline void SetStatus(const WorkflowStatus& value) { m_status = value; }
+    inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
 
     /**
-     * <p>The workflow's status.</p>
+     * <p>The workflow's storage capacity in gigabytes.</p>
      */
-    inline void SetStatus(WorkflowStatus&& value) { m_status = std::move(value); }
+    inline GetWorkflowResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
+
 
     /**
-     * <p>The workflow's status.</p>
+     * <p>When the workflow was created.</p>
      */
-    inline GetWorkflowResult& WithStatus(const WorkflowStatus& value) { SetStatus(value); return *this;}
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
 
     /**
-     * <p>The workflow's status.</p>
+     * <p>When the workflow was created.</p>
      */
-    inline GetWorkflowResult& WithStatus(WorkflowStatus&& value) { SetStatus(std::move(value)); return *this;}
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline GetWorkflowResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the workflow was created.</p>
+     */
+    inline GetWorkflowResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -458,22 +501,6 @@ namespace Model
      * <p>The workflow's status message.</p>
      */
     inline GetWorkflowResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
-
-
-    /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
-     */
-    inline int GetStorageCapacity() const{ return m_storageCapacity; }
-
-    /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
-     */
-    inline void SetStorageCapacity(int value) { m_storageCapacity = value; }
-
-    /**
-     * <p>The workflow's storage capacity in gigabytes.</p>
-     */
-    inline GetWorkflowResult& WithStorageCapacity(int value) { SetStorageCapacity(value); return *this;}
 
 
     /**
@@ -538,29 +565,90 @@ namespace Model
 
 
     /**
-     * <p>The workflow's type.</p>
+     * <p> Gets metadata for workflow. </p>
      */
-    inline const WorkflowType& GetType() const{ return m_type; }
+    inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
 
     /**
-     * <p>The workflow's type.</p>
+     * <p> Gets metadata for workflow. </p>
      */
-    inline void SetType(const WorkflowType& value) { m_type = value; }
+    inline void SetMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_metadata = value; }
 
     /**
-     * <p>The workflow's type.</p>
+     * <p> Gets metadata for workflow. </p>
      */
-    inline void SetType(WorkflowType&& value) { m_type = std::move(value); }
+    inline void SetMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_metadata = std::move(value); }
 
     /**
-     * <p>The workflow's type.</p>
+     * <p> Gets metadata for workflow. </p>
      */
-    inline GetWorkflowResult& WithType(const WorkflowType& value) { SetType(value); return *this;}
+    inline GetWorkflowResult& WithMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetMetadata(value); return *this;}
 
     /**
-     * <p>The workflow's type.</p>
+     * <p> Gets metadata for workflow. </p>
      */
-    inline GetWorkflowResult& WithType(WorkflowType&& value) { SetType(std::move(value)); return *this;}
+    inline GetWorkflowResult& WithMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(const Aws::String& key, const Aws::String& value) { m_metadata.emplace(key, value); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(Aws::String&& key, const Aws::String& value) { m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(const Aws::String& key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(Aws::String&& key, Aws::String&& value) { m_metadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(const char* key, Aws::String&& value) { m_metadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(Aws::String&& key, const char* value) { m_metadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> Gets metadata for workflow. </p>
+     */
+    inline GetWorkflowResult& AddMetadata(const char* key, const char* value) { m_metadata.emplace(key, value); return *this; }
+
+
+    /**
+     * <p> The computational accelerator specified to run the workflow. </p>
+     */
+    inline const Accelerators& GetAccelerators() const{ return m_accelerators; }
+
+    /**
+     * <p> The computational accelerator specified to run the workflow. </p>
+     */
+    inline void SetAccelerators(const Accelerators& value) { m_accelerators = value; }
+
+    /**
+     * <p> The computational accelerator specified to run the workflow. </p>
+     */
+    inline void SetAccelerators(Accelerators&& value) { m_accelerators = std::move(value); }
+
+    /**
+     * <p> The computational accelerator specified to run the workflow. </p>
+     */
+    inline GetWorkflowResult& WithAccelerators(const Accelerators& value) { SetAccelerators(value); return *this;}
+
+    /**
+     * <p> The computational accelerator specified to run the workflow. </p>
+     */
+    inline GetWorkflowResult& WithAccelerators(Accelerators&& value) { SetAccelerators(std::move(value)); return *this;}
 
 
     
@@ -588,33 +676,37 @@ namespace Model
 
     Aws::String m_arn;
 
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_definition;
-
-    Aws::String m_description;
-
-    Aws::String m_digest;
-
-    WorkflowEngine m_engine;
-
     Aws::String m_id;
-
-    Aws::String m_main;
-
-    Aws::String m_name;
-
-    Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
 
     WorkflowStatus m_status;
 
-    Aws::String m_statusMessage;
+    WorkflowType m_type;
+
+    Aws::String m_name;
+
+    Aws::String m_description;
+
+    WorkflowEngine m_engine;
+
+    Aws::String m_definition;
+
+    Aws::String m_main;
+
+    Aws::String m_digest;
+
+    Aws::Map<Aws::String, WorkflowParameter> m_parameterTemplate;
 
     int m_storageCapacity;
 
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::String m_statusMessage;
+
     Aws::Map<Aws::String, Aws::String> m_tags;
 
-    WorkflowType m_type;
+    Aws::Map<Aws::String, Aws::String> m_metadata;
+
+    Accelerators m_accelerators;
 
     Aws::String m_requestId;
   };

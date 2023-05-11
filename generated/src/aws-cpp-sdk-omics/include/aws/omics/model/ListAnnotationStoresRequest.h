@@ -6,9 +6,9 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ListAnnotationStoresFilter.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ListAnnotationStoresFilter.h>
 #include <utility>
 
 namespace Aws
@@ -38,37 +38,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline const ListAnnotationStoresFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(const ListAnnotationStoresFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(ListAnnotationStoresFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListAnnotationStoresRequest& WithFilter(const ListAnnotationStoresFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListAnnotationStoresRequest& WithFilter(ListAnnotationStoresFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -186,10 +155,38 @@ namespace Model
      */
     inline ListAnnotationStoresRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
-  private:
 
-    ListAnnotationStoresFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline const ListAnnotationStoresFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(const ListAnnotationStoresFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(ListAnnotationStoresFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListAnnotationStoresRequest& WithFilter(const ListAnnotationStoresFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListAnnotationStoresRequest& WithFilter(ListAnnotationStoresFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+  private:
 
     Aws::Vector<Aws::String> m_ids;
     bool m_idsHasBeenSet = false;
@@ -199,6 +196,9 @@ namespace Model
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    ListAnnotationStoresFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

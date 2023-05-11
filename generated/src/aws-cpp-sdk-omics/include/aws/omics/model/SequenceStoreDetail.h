@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/SseConfig.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -78,78 +78,6 @@ namespace Model
      * <p>The store's ARN.</p>
      */
     inline SequenceStoreDetail& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline SequenceStoreDetail& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline SequenceStoreDetail& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline SequenceStoreDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline SequenceStoreDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline SequenceStoreDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -235,6 +163,47 @@ namespace Model
 
 
     /**
+     * <p>The store's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline SequenceStoreDetail& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline SequenceStoreDetail& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline SequenceStoreDetail& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The store's server-side encryption (SSE) settings.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
@@ -264,16 +233,90 @@ namespace Model
      */
     inline SequenceStoreDetail& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline SequenceStoreDetail& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline SequenceStoreDetail& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline bool FallbackLocationHasBeenSet() const { return m_fallbackLocationHasBeenSet; }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = value; }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation = std::move(value); }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(const char* value) { m_fallbackLocationHasBeenSet = true; m_fallbackLocation.assign(value); }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline SequenceStoreDetail& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline SequenceStoreDetail& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline SequenceStoreDetail& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+
   private:
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
@@ -281,8 +324,17 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
 
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
+
     SseConfig m_sseConfig;
     bool m_sseConfigHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::String m_fallbackLocation;
+    bool m_fallbackLocationHasBeenSet = false;
   };
 
 } // namespace Model

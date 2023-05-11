@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ActivateReadSetFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ActivateReadSetFilter.h>
 #include <utility>
 
 namespace Aws
@@ -40,34 +40,44 @@ namespace Model
 
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline const ActivateReadSetFilter& GetFilter() const{ return m_filter; }
+    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline void SetFilter(const ActivateReadSetFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline void SetFilter(ActivateReadSetFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline ListReadSetActivationJobsRequest& WithFilter(const ActivateReadSetFilter& value) { SetFilter(value); return *this;}
+    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
 
     /**
-     * <p>A filter to apply to the list.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline ListReadSetActivationJobsRequest& WithFilter(ActivateReadSetFilter&& value) { SetFilter(std::move(value)); return *this;}
+    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>The read set's sequence store ID.</p>
+     */
+    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
 
 
     /**
@@ -145,49 +155,39 @@ namespace Model
 
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
+    inline const ActivateReadSetFilter& GetFilter() const{ return m_filter; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
+    inline void SetFilter(const ActivateReadSetFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
+    inline void SetFilter(ActivateReadSetFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
+    inline ListReadSetActivationJobsRequest& WithFilter(const ActivateReadSetFilter& value) { SetFilter(value); return *this;}
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>A filter to apply to the list.</p>
      */
-    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
-
-    /**
-     * <p>The read set's sequence store ID.</p>
-     */
-    inline ListReadSetActivationJobsRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    inline ListReadSetActivationJobsRequest& WithFilter(ActivateReadSetFilter&& value) { SetFilter(std::move(value)); return *this;}
 
   private:
 
-    ActivateReadSetFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    Aws::String m_sequenceStoreId;
+    bool m_sequenceStoreIdHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -195,8 +195,8 @@ namespace Model
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
 
-    Aws::String m_sequenceStoreId;
-    bool m_sequenceStoreIdHasBeenSet = false;
+    ActivateReadSetFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

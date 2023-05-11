@@ -5,10 +5,10 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ReadSetActivationJobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ActivateReadSetSourceItem.h>
 #include <utility>
 
@@ -34,58 +34,6 @@ namespace Model
     AWS_OMICS_API GetReadSetActivationJobResult();
     AWS_OMICS_API GetReadSetActivationJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetReadSetActivationJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetActivationJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetReadSetActivationJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetActivationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetReadSetActivationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -161,42 +109,6 @@ namespace Model
 
 
     /**
-     * <p>The job's source files.</p>
-     */
-    inline const Aws::Vector<ActivateReadSetSourceItem>& GetSources() const{ return m_sources; }
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline void SetSources(const Aws::Vector<ActivateReadSetSourceItem>& value) { m_sources = value; }
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline void SetSources(Aws::Vector<ActivateReadSetSourceItem>&& value) { m_sources = std::move(value); }
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline GetReadSetActivationJobResult& WithSources(const Aws::Vector<ActivateReadSetSourceItem>& value) { SetSources(value); return *this;}
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline GetReadSetActivationJobResult& WithSources(Aws::Vector<ActivateReadSetSourceItem>&& value) { SetSources(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline GetReadSetActivationJobResult& AddSources(const ActivateReadSetSourceItem& value) { m_sources.push_back(value); return *this; }
-
-    /**
-     * <p>The job's source files.</p>
-     */
-    inline GetReadSetActivationJobResult& AddSources(ActivateReadSetSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The job's status.</p>
      */
     inline const ReadSetActivationJobStatus& GetStatus() const{ return m_status; }
@@ -258,6 +170,94 @@ namespace Model
     inline GetReadSetActivationJobResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 
 
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetActivationJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetReadSetActivationJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetActivationJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetReadSetActivationJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline const Aws::Vector<ActivateReadSetSourceItem>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline void SetSources(const Aws::Vector<ActivateReadSetSourceItem>& value) { m_sources = value; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline void SetSources(Aws::Vector<ActivateReadSetSourceItem>&& value) { m_sources = std::move(value); }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetActivationJobResult& WithSources(const Aws::Vector<ActivateReadSetSourceItem>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetActivationJobResult& WithSources(Aws::Vector<ActivateReadSetSourceItem>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetActivationJobResult& AddSources(const ActivateReadSetSourceItem& value) { m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>The job's source files.</p>
+     */
+    inline GetReadSetActivationJobResult& AddSources(ActivateReadSetSourceItem&& value) { m_sources.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -281,19 +281,19 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_completionTime;
-
-    Aws::Utils::DateTime m_creationTime;
-
     Aws::String m_id;
 
     Aws::String m_sequenceStoreId;
 
-    Aws::Vector<ActivateReadSetSourceItem> m_sources;
-
     ReadSetActivationJobStatus m_status;
 
     Aws::String m_statusMessage;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::Utils::DateTime m_completionTime;
+
+    Aws::Vector<ActivateReadSetSourceItem> m_sources;
 
     Aws::String m_requestId;
   };

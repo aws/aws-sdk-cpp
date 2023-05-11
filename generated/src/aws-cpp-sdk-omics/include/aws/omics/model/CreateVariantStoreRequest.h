@@ -6,10 +6,10 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReferenceItem.h>
-#include <aws/omics/model/SseConfig.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/omics/model/SseConfig.h>
 #include <utility>
 
 namespace Aws
@@ -36,44 +36,34 @@ namespace Model
 
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const ReferenceItem& GetReference() const{ return m_reference; }
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetReference(const ReferenceItem& value) { m_referenceHasBeenSet = true; m_reference = value; }
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetReference(ReferenceItem&& value) { m_referenceHasBeenSet = true; m_reference = std::move(value); }
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline CreateVariantStoreRequest& WithReference(const ReferenceItem& value) { SetReference(value); return *this;}
 
     /**
-     * <p>A description for the store.</p>
+     * <p>The genome reference for the store's variants.</p>
      */
-    inline CreateVariantStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
-    inline CreateVariantStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>A description for the store.</p>
-     */
-    inline CreateVariantStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline CreateVariantStoreRequest& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
 
 
     /**
@@ -118,65 +108,44 @@ namespace Model
 
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline const ReferenceItem& GetReference() const{ return m_reference; }
+    inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline bool ReferenceHasBeenSet() const { return m_referenceHasBeenSet; }
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline void SetReference(const ReferenceItem& value) { m_referenceHasBeenSet = true; m_reference = value; }
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline void SetReference(ReferenceItem&& value) { m_referenceHasBeenSet = true; m_reference = std::move(value); }
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline CreateVariantStoreRequest& WithReference(const ReferenceItem& value) { SetReference(value); return *this;}
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The genome reference for the store's variants.</p>
+     * <p>A description for the store.</p>
      */
-    inline CreateVariantStoreRequest& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
-
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
-    inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
+    inline CreateVariantStoreRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
+     * <p>A description for the store.</p>
      */
-    inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
+    inline CreateVariantStoreRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
+     * <p>A description for the store.</p>
      */
-    inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
-    inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
-    inline CreateVariantStoreRequest& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
-
-    /**
-     * <p>Server-side encryption (SSE) settings for the store.</p>
-     */
-    inline CreateVariantStoreRequest& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+    inline CreateVariantStoreRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -244,22 +213,53 @@ namespace Model
      */
     inline CreateVariantStoreRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline bool SseConfigHasBeenSet() const { return m_sseConfigHasBeenSet; }
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline void SetSseConfig(const SseConfig& value) { m_sseConfigHasBeenSet = true; m_sseConfig = value; }
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline void SetSseConfig(SseConfig&& value) { m_sseConfigHasBeenSet = true; m_sseConfig = std::move(value); }
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline CreateVariantStoreRequest& WithSseConfig(const SseConfig& value) { SetSseConfig(value); return *this;}
+
+    /**
+     * <p>Server-side encryption (SSE) settings for the store.</p>
+     */
+    inline CreateVariantStoreRequest& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
+
   private:
-
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
 
     ReferenceItem m_reference;
     bool m_referenceHasBeenSet = false;
 
-    SseConfig m_sseConfig;
-    bool m_sseConfigHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    SseConfig m_sseConfig;
+    bool m_sseConfigHasBeenSet = false;
   };
 
 } // namespace Model

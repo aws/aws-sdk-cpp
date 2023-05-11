@@ -359,6 +359,42 @@ namespace Support
         }
 
         /**
+         * <p>Returns a list of CreateCaseOption types along with the corresponding
+         * supported hours and language availability. You can specify the
+         * <code>language</code> <code>categoryCode</code>, <code>issueType</code> and
+         * <code>serviceCode</code> used to retrieve the CreateCaseOptions.</p>  <ul>
+         * <li> <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan
+         * to use the Amazon Web Services Support API. </p> </li> <li> <p>If you call the
+         * Amazon Web Services Support API from an account that doesn't have a Business,
+         * Enterprise On-Ramp, or Enterprise Support plan, the
+         * <code>SubscriptionRequiredException</code> error message appears. For
+         * information about changing your support plan, see <a
+         * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeCreateCaseOptions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeCreateCaseOptionsOutcome DescribeCreateCaseOptions(const Model::DescribeCreateCaseOptionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeCreateCaseOptions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeCreateCaseOptionsRequestT = Model::DescribeCreateCaseOptionsRequest>
+        Model::DescribeCreateCaseOptionsOutcomeCallable DescribeCreateCaseOptionsCallable(const DescribeCreateCaseOptionsRequestT& request) const
+        {
+            return SubmitCallable(&SupportClient::DescribeCreateCaseOptions, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeCreateCaseOptions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeCreateCaseOptionsRequestT = Model::DescribeCreateCaseOptionsRequest>
+        void DescribeCreateCaseOptionsAsync(const DescribeCreateCaseOptionsRequestT& request, const DescribeCreateCaseOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupportClient::DescribeCreateCaseOptions, request, handler, context);
+        }
+
+        /**
          * <p>Returns the current list of Amazon Web Services services and a list of
          * service categories for each service. You then use service names and categories
          * in your <a>CreateCase</a> requests. Each Amazon Web Services service has its own
@@ -434,6 +470,42 @@ namespace Support
         void DescribeSeverityLevelsAsync(const DescribeSeverityLevelsRequestT& request, const DescribeSeverityLevelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&SupportClient::DescribeSeverityLevels, request, handler, context);
+        }
+
+        /**
+         * <p>Returns a list of supported languages for a specified
+         * <code>categoryCode</code>, <code>issueType</code> and <code>serviceCode</code>.
+         * The returned supported languages will include a ISO 639-1 code for the
+         * <code>language</code>, and the language display name.</p>  <ul> <li>
+         * <p>You must have a Business, Enterprise On-Ramp, or Enterprise Support plan to
+         * use the Amazon Web Services Support API. </p> </li> <li> <p>If you call the
+         * Amazon Web Services Support API from an account that doesn't have a Business,
+         * Enterprise On-Ramp, or Enterprise Support plan, the
+         * <code>SubscriptionRequiredException</code> error message appears. For
+         * information about changing your support plan, see <a
+         * href="http://aws.amazon.com/premiumsupport/">Amazon Web Services
+         * Support</a>.</p> </li> </ul> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/support-2013-04-15/DescribeSupportedLanguages">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeSupportedLanguagesOutcome DescribeSupportedLanguages(const Model::DescribeSupportedLanguagesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeSupportedLanguages that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeSupportedLanguagesRequestT = Model::DescribeSupportedLanguagesRequest>
+        Model::DescribeSupportedLanguagesOutcomeCallable DescribeSupportedLanguagesCallable(const DescribeSupportedLanguagesRequestT& request) const
+        {
+            return SubmitCallable(&SupportClient::DescribeSupportedLanguages, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeSupportedLanguages that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeSupportedLanguagesRequestT = Model::DescribeSupportedLanguagesRequest>
+        void DescribeSupportedLanguagesAsync(const DescribeSupportedLanguagesRequestT& request, const DescribeSupportedLanguagesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SupportClient::DescribeSupportedLanguages, request, handler, context);
         }
 
         /**

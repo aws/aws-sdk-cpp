@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ImportReadSetFilter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ImportReadSetFilter.h>
 #include <utility>
 
 namespace Aws
@@ -37,37 +37,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline const ImportReadSetFilter& GetFilter() const{ return m_filter; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(const ImportReadSetFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline void SetFilter(ImportReadSetFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReadSetImportJobsRequest& WithFilter(const ImportReadSetFilter& value) { SetFilter(value); return *this;}
-
-    /**
-     * <p>A filter to apply to the list.</p>
-     */
-    inline ListReadSetImportJobsRequest& WithFilter(ImportReadSetFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
     /**
@@ -180,10 +149,38 @@ namespace Model
      */
     inline ListReadSetImportJobsRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
 
-  private:
 
-    ImportReadSetFilter m_filter;
-    bool m_filterHasBeenSet = false;
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline const ImportReadSetFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(const ImportReadSetFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline void SetFilter(ImportReadSetFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReadSetImportJobsRequest& WithFilter(const ImportReadSetFilter& value) { SetFilter(value); return *this;}
+
+    /**
+     * <p>A filter to apply to the list.</p>
+     */
+    inline ListReadSetImportJobsRequest& WithFilter(ImportReadSetFilter&& value) { SetFilter(std::move(value)); return *this;}
+
+  private:
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
@@ -193,6 +190,9 @@ namespace Model
 
     Aws::String m_sequenceStoreId;
     bool m_sequenceStoreIdHasBeenSet = false;
+
+    ImportReadSetFilter m_filter;
+    bool m_filterHasBeenSet = false;
   };
 
 } // namespace Model

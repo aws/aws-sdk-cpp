@@ -16,11 +16,11 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListReadSetsRequest::ListReadSetsRequest() : 
-    m_filterHasBeenSet(false),
+    m_sequenceStoreIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
-    m_sequenceStoreIdHasBeenSet(false)
+    m_filterHasBeenSet(false)
 {
 }
 

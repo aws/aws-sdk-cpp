@@ -13,11 +13,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateReferenceStoreRequest::CreateReferenceStoreRequest() : 
-    m_clientTokenHasBeenSet(false),
-    m_descriptionHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_descriptionHasBeenSet(false),
     m_sseConfigHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_clientTokenHasBeenSet(false)
 {
 }
 
@@ -25,21 +25,15 @@ Aws::String CreateReferenceStoreRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_clientTokenHasBeenSet)
+  if(m_nameHasBeenSet)
   {
-   payload.WithString("clientToken", m_clientToken);
+   payload.WithString("name", m_name);
 
   }
 
   if(m_descriptionHasBeenSet)
   {
    payload.WithString("description", m_description);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
 
   }
 
@@ -57,6 +51,12 @@ Aws::String CreateReferenceStoreRequest::SerializePayload() const
      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_clientTokenHasBeenSet)
+  {
+   payload.WithString("clientToken", m_clientToken);
 
   }
 

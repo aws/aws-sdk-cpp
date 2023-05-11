@@ -31,12 +31,6 @@ StartReferenceImportJobResult::StartReferenceImportJobResult(const Aws::AmazonWe
 StartReferenceImportJobResult& StartReferenceImportJobResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
@@ -58,6 +52,12 @@ StartReferenceImportJobResult& StartReferenceImportJobResult::operator =(const A
   if(jsonValue.ValueExists("status"))
   {
     m_status = ReferenceImportJobStatusMapper::GetReferenceImportJobStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 

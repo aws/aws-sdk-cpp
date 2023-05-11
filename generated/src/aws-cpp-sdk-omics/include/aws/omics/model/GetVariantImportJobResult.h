@@ -5,10 +5,11 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/JobStatus.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/VariantImportItemDetail.h>
 #include <utility>
 
@@ -34,94 +35,6 @@ namespace Model
     AWS_OMICS_API GetVariantImportJobResult();
     AWS_OMICS_API GetVariantImportJobResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API GetVariantImportJobResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetVariantImportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
-
-    /**
-     * <p>When the job completed.</p>
-     */
-    inline GetVariantImportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetVariantImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the job was created.</p>
-     */
-    inline GetVariantImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(const Aws::String& value) { m_destinationName = value; }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(Aws::String&& value) { m_destinationName = std::move(value); }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline void SetDestinationName(const char* value) { m_destinationName.assign(value); }
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline GetVariantImportJobResult& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline GetVariantImportJobResult& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
-
-    /**
-     * <p>The job's destination variant store.</p>
-     */
-    inline GetVariantImportJobResult& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
 
     /**
@@ -161,39 +74,39 @@ namespace Model
 
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline const Aws::Vector<VariantImportItemDetail>& GetItems() const{ return m_items; }
+    inline const Aws::String& GetDestinationName() const{ return m_destinationName; }
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline void SetItems(const Aws::Vector<VariantImportItemDetail>& value) { m_items = value; }
+    inline void SetDestinationName(const Aws::String& value) { m_destinationName = value; }
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline void SetItems(Aws::Vector<VariantImportItemDetail>&& value) { m_items = std::move(value); }
+    inline void SetDestinationName(Aws::String&& value) { m_destinationName = std::move(value); }
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline GetVariantImportJobResult& WithItems(const Aws::Vector<VariantImportItemDetail>& value) { SetItems(value); return *this;}
+    inline void SetDestinationName(const char* value) { m_destinationName.assign(value); }
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline GetVariantImportJobResult& WithItems(Aws::Vector<VariantImportItemDetail>&& value) { SetItems(std::move(value)); return *this;}
+    inline GetVariantImportJobResult& WithDestinationName(const Aws::String& value) { SetDestinationName(value); return *this;}
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline GetVariantImportJobResult& AddItems(const VariantImportItemDetail& value) { m_items.push_back(value); return *this; }
+    inline GetVariantImportJobResult& WithDestinationName(Aws::String&& value) { SetDestinationName(std::move(value)); return *this;}
 
     /**
-     * <p>The job's items.</p>
+     * <p>The job's destination variant store.</p>
      */
-    inline GetVariantImportJobResult& AddItems(VariantImportItemDetail&& value) { m_items.push_back(std::move(value)); return *this; }
+    inline GetVariantImportJobResult& WithDestinationName(const char* value) { SetDestinationName(value); return *this;}
 
 
     /**
@@ -230,22 +143,6 @@ namespace Model
      * <p>The job's service role ARN.</p>
      */
     inline GetVariantImportJobResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
-
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline bool GetRunLeftNormalization() const{ return m_runLeftNormalization; }
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline void SetRunLeftNormalization(bool value) { m_runLeftNormalization = value; }
-
-    /**
-     * <p>The job's left normalization setting.</p>
-     */
-    inline GetVariantImportJobResult& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
 
 
     /**
@@ -311,6 +208,32 @@ namespace Model
 
 
     /**
+     * <p>When the job was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetVariantImportJobResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the job was created.</p>
+     */
+    inline GetVariantImportJobResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>When the job was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
@@ -336,6 +259,145 @@ namespace Model
     inline GetVariantImportJobResult& WithUpdateTime(Aws::Utils::DateTime&& value) { SetUpdateTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCompletionTime() const{ return m_completionTime; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTime = value; }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline void SetCompletionTime(Aws::Utils::DateTime&& value) { m_completionTime = std::move(value); }
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetVariantImportJobResult& WithCompletionTime(const Aws::Utils::DateTime& value) { SetCompletionTime(value); return *this;}
+
+    /**
+     * <p>When the job completed.</p>
+     */
+    inline GetVariantImportJobResult& WithCompletionTime(Aws::Utils::DateTime&& value) { SetCompletionTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline const Aws::Vector<VariantImportItemDetail>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline void SetItems(const Aws::Vector<VariantImportItemDetail>& value) { m_items = value; }
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline void SetItems(Aws::Vector<VariantImportItemDetail>&& value) { m_items = std::move(value); }
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline GetVariantImportJobResult& WithItems(const Aws::Vector<VariantImportItemDetail>& value) { SetItems(value); return *this;}
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline GetVariantImportJobResult& WithItems(Aws::Vector<VariantImportItemDetail>&& value) { SetItems(std::move(value)); return *this;}
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline GetVariantImportJobResult& AddItems(const VariantImportItemDetail& value) { m_items.push_back(value); return *this; }
+
+    /**
+     * <p>The job's items.</p>
+     */
+    inline GetVariantImportJobResult& AddItems(VariantImportItemDetail&& value) { m_items.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline bool GetRunLeftNormalization() const{ return m_runLeftNormalization; }
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline void SetRunLeftNormalization(bool value) { m_runLeftNormalization = value; }
+
+    /**
+     * <p>The job's left normalization setting.</p>
+     */
+    inline GetVariantImportJobResult& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
+
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotationFields() const{ return m_annotationFields; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { m_annotationFields = value; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { m_annotationFields = std::move(value); }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& WithAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { SetAnnotationFields(value); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& WithAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { SetAnnotationFields(std::move(value)); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(const Aws::String& key, const Aws::String& value) { m_annotationFields.emplace(key, value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(Aws::String&& key, const Aws::String& value) { m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(const Aws::String& key, Aws::String&& value) { m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(Aws::String&& key, Aws::String&& value) { m_annotationFields.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(const char* key, Aws::String&& value) { m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(Aws::String&& key, const char* value) { m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline GetVariantImportJobResult& AddAnnotationFields(const char* key, const char* value) { m_annotationFields.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -359,25 +421,27 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_completionTime;
-
-    Aws::Utils::DateTime m_creationTime;
+    Aws::String m_id;
 
     Aws::String m_destinationName;
 
-    Aws::String m_id;
-
-    Aws::Vector<VariantImportItemDetail> m_items;
-
     Aws::String m_roleArn;
-
-    bool m_runLeftNormalization;
 
     JobStatus m_status;
 
     Aws::String m_statusMessage;
 
+    Aws::Utils::DateTime m_creationTime;
+
     Aws::Utils::DateTime m_updateTime;
+
+    Aws::Utils::DateTime m_completionTime;
+
+    Aws::Vector<VariantImportItemDetail> m_items;
+
+    bool m_runLeftNormalization;
+
+    Aws::Map<Aws::String, Aws::String> m_annotationFields;
 
     Aws::String m_requestId;
   };

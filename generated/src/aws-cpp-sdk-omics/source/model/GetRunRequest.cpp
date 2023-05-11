@@ -16,8 +16,8 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetRunRequest::GetRunRequest() : 
-    m_exportHasBeenSet(false),
-    m_idHasBeenSet(false)
+    m_idHasBeenSet(false),
+    m_exportHasBeenSet(false)
 {
 }
 

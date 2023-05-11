@@ -31,21 +31,9 @@ CreateVariantStoreResult::CreateVariantStoreResult(const Aws::AmazonWebServiceRe
 CreateVariantStoreResult& CreateVariantStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
 
   }
 
@@ -58,6 +46,18 @@ CreateVariantStoreResult& CreateVariantStoreResult::operator =(const Aws::Amazon
   if(jsonValue.ValueExists("status"))
   {
     m_status = StoreStatusMapper::GetStoreStatusForName(jsonValue.GetString("status"));
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 

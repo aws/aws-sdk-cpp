@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/ReadSetImportJobStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -36,6 +36,37 @@ namespace Model
     AWS_OMICS_API ImportReadSetFilter(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API ImportReadSetFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_OMICS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline const ReadSetImportJobStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline void SetStatus(const ReadSetImportJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline void SetStatus(ReadSetImportJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline ImportReadSetFilter& WithStatus(const ReadSetImportJobStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>A status to filter on.</p>
+     */
+    inline ImportReadSetFilter& WithStatus(ReadSetImportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -99,47 +130,16 @@ namespace Model
      */
     inline ImportReadSetFilter& WithCreatedBefore(Aws::Utils::DateTime&& value) { SetCreatedBefore(std::move(value)); return *this;}
 
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline const ReadSetImportJobStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline void SetStatus(const ReadSetImportJobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline void SetStatus(ReadSetImportJobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline ImportReadSetFilter& WithStatus(const ReadSetImportJobStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>A status to filter on.</p>
-     */
-    inline ImportReadSetFilter& WithStatus(ReadSetImportJobStatus&& value) { SetStatus(std::move(value)); return *this;}
-
   private:
+
+    ReadSetImportJobStatus m_status;
+    bool m_statusHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdAfter;
     bool m_createdAfterHasBeenSet = false;
 
     Aws::Utils::DateTime m_createdBefore;
     bool m_createdBeforeHasBeenSet = false;
-
-    ReadSetImportJobStatus m_status;
-    bool m_statusHasBeenSet = false;
   };
 
 } // namespace Model

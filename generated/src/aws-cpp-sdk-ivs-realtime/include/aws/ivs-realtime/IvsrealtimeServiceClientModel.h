@@ -22,7 +22,12 @@
 #include <aws/ivs-realtime/model/CreateStageResult.h>
 #include <aws/ivs-realtime/model/DeleteStageResult.h>
 #include <aws/ivs-realtime/model/DisconnectParticipantResult.h>
+#include <aws/ivs-realtime/model/GetParticipantResult.h>
 #include <aws/ivs-realtime/model/GetStageResult.h>
+#include <aws/ivs-realtime/model/GetStageSessionResult.h>
+#include <aws/ivs-realtime/model/ListParticipantEventsResult.h>
+#include <aws/ivs-realtime/model/ListParticipantsResult.h>
+#include <aws/ivs-realtime/model/ListStageSessionsResult.h>
 #include <aws/ivs-realtime/model/ListStagesResult.h>
 #include <aws/ivs-realtime/model/ListTagsForResourceResult.h>
 #include <aws/ivs-realtime/model/TagResourceResult.h>
@@ -72,7 +77,12 @@ namespace Aws
       class CreateStageRequest;
       class DeleteStageRequest;
       class DisconnectParticipantRequest;
+      class GetParticipantRequest;
       class GetStageRequest;
+      class GetStageSessionRequest;
+      class ListParticipantEventsRequest;
+      class ListParticipantsRequest;
+      class ListStageSessionsRequest;
       class ListStagesRequest;
       class ListTagsForResourceRequest;
       class TagResourceRequest;
@@ -85,7 +95,12 @@ namespace Aws
       typedef Aws::Utils::Outcome<CreateStageResult, IvsrealtimeError> CreateStageOutcome;
       typedef Aws::Utils::Outcome<DeleteStageResult, IvsrealtimeError> DeleteStageOutcome;
       typedef Aws::Utils::Outcome<DisconnectParticipantResult, IvsrealtimeError> DisconnectParticipantOutcome;
+      typedef Aws::Utils::Outcome<GetParticipantResult, IvsrealtimeError> GetParticipantOutcome;
       typedef Aws::Utils::Outcome<GetStageResult, IvsrealtimeError> GetStageOutcome;
+      typedef Aws::Utils::Outcome<GetStageSessionResult, IvsrealtimeError> GetStageSessionOutcome;
+      typedef Aws::Utils::Outcome<ListParticipantEventsResult, IvsrealtimeError> ListParticipantEventsOutcome;
+      typedef Aws::Utils::Outcome<ListParticipantsResult, IvsrealtimeError> ListParticipantsOutcome;
+      typedef Aws::Utils::Outcome<ListStageSessionsResult, IvsrealtimeError> ListStageSessionsOutcome;
       typedef Aws::Utils::Outcome<ListStagesResult, IvsrealtimeError> ListStagesOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, IvsrealtimeError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, IvsrealtimeError> TagResourceOutcome;
@@ -98,7 +113,12 @@ namespace Aws
       typedef std::future<CreateStageOutcome> CreateStageOutcomeCallable;
       typedef std::future<DeleteStageOutcome> DeleteStageOutcomeCallable;
       typedef std::future<DisconnectParticipantOutcome> DisconnectParticipantOutcomeCallable;
+      typedef std::future<GetParticipantOutcome> GetParticipantOutcomeCallable;
       typedef std::future<GetStageOutcome> GetStageOutcomeCallable;
+      typedef std::future<GetStageSessionOutcome> GetStageSessionOutcomeCallable;
+      typedef std::future<ListParticipantEventsOutcome> ListParticipantEventsOutcomeCallable;
+      typedef std::future<ListParticipantsOutcome> ListParticipantsOutcomeCallable;
+      typedef std::future<ListStageSessionsOutcome> ListStageSessionsOutcomeCallable;
       typedef std::future<ListStagesOutcome> ListStagesOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
@@ -114,7 +134,12 @@ namespace Aws
     typedef std::function<void(const IvsrealtimeClient*, const Model::CreateStageRequest&, const Model::CreateStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateStageResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::DeleteStageRequest&, const Model::DeleteStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteStageResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::DisconnectParticipantRequest&, const Model::DisconnectParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisconnectParticipantResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::GetParticipantRequest&, const Model::GetParticipantOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParticipantResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::GetStageRequest&, const Model::GetStageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStageResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::GetStageSessionRequest&, const Model::GetStageSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetStageSessionResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::ListParticipantEventsRequest&, const Model::ListParticipantEventsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParticipantEventsResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::ListParticipantsRequest&, const Model::ListParticipantsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListParticipantsResponseReceivedHandler;
+    typedef std::function<void(const IvsrealtimeClient*, const Model::ListStageSessionsRequest&, const Model::ListStageSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStageSessionsResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListStagesRequest&, const Model::ListStagesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListStagesResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const IvsrealtimeClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;

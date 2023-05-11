@@ -190,25 +190,29 @@ namespace Model
 
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
+     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
+     * parameter, this operation returns a maximum of 30 items by default.</p> 
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
+     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
+     * parameter, this operation returns a maximum of 30 items by default.</p> 
      */
     inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
+     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
+     * parameter, this operation returns a maximum of 30 items by default.</p> 
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of items to return in one batch, between 10 and 100,
-     * inclusive.</p>
+     * inclusive.</p>  <p>If you don't specify the <code>maxResults</code>
+     * parameter, this operation returns a maximum of 30 items by default.</p> 
      */
     inline DescribeEventTypesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
