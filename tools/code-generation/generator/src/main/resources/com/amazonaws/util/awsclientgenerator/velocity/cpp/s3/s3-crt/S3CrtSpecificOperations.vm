@@ -19,7 +19,6 @@ static int S3CrtRequestHeadersCallback(struct aws_s3_meta_request *meta_request,
 
 static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request, const struct aws_byte_cursor *body, uint64_t range_start, void *user_data)
 {
-  AWS_UNREFERENCED_PARAM(meta_request);
   AWS_UNREFERENCED_PARAM(range_start);
 
   auto *userData = static_cast<S3CrtClient::CrtRequestCallbackUserData*>(user_data);
@@ -30,6 +29,9 @@ static int S3CrtRequestGetBodyCallback(struct aws_s3_meta_request *meta_request,
   {
     bodyStream.flush();
   }
+
+  // Replenish flow-control window (no-op if enable_read_backpressure is not set):
+  aws_s3_meta_request_increment_read_window(meta_request, body->len);
 
   // data sent handler and continuation handler will be supported later when aws_c_s3 support it.
   auto& receivedHandler = userData->request->GetDataReceivedEventHandler();

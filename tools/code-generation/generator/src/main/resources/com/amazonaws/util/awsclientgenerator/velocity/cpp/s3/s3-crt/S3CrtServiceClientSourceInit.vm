@@ -244,6 +244,10 @@ void ${className}::init(const ${clientConfigurationNamespace}::ClientConfigurati
   s3CrtConfig.region = Aws::Crt::ByteCursorFromCString(config.region.c_str());
   s3CrtConfig.connect_timeout_ms = config.connectTimeoutMs;
 
+  // Download flow-control configuration:
+  s3CrtConfig.enable_read_backpressure = (config.downloadMemoryUsageWindow > 0);
+  s3CrtConfig.initial_read_window = config.downloadMemoryUsageWindow;
+
   aws_s3_tcp_keep_alive_options tcp_keep_alive_options;
   if (config.enableTcpKeepAlive) {
     uint16_t configKeepAliveS = static_cast<uint16_t>(std::min(static_cast<unsigned long>(std::numeric_limits<uint16_t>::max()), config.tcpKeepAliveIntervalMs / 1000ul));
