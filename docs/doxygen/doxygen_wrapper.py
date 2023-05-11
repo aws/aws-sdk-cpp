@@ -7,7 +7,7 @@ import os
 import re
 import shutil
 import subprocess
-
+from pathlib import Path
 
 DOXYGEN_EXE = shutil.which("doxygen")
 CMAKE_EXE = shutil.which("cmake3")
@@ -99,7 +99,7 @@ class DoxygenWrapper(object):
             else:
                 dependency_map[dependency_tuple[0]] = [dependency_tuple[1].strip()]
 
-        # subprocess.run(["rm -rf tmp_deps_map_build"], shell=True, cwd=self.sdk_root)
+        shutil.rmtree(self.sdk_root + "/tmp_deps_map_build", ignore_errors=True)
         return dependency_map
 
     def _create_layout_file(self, dependency_map):
@@ -116,11 +116,11 @@ class DoxygenWrapper(object):
 
     def _get_src_path(self, component_name):
         if "root" == component_name:
-            return f"docs/"
+            return f"\"docs\""
         if component_name == "aws-cpp-sdk-core" or component_name in self.components_in_src:
-            return f"src/{component_name}"
+            return f"\"src/{component_name}\""
         else:
-            return f"generated/src/{component_name}"
+            return f"\"generated/src/{component_name}/\""
 
     def _get_doc_path(self, component_name):
         if False: # TODO: docs dir structuring
@@ -138,28 +138,54 @@ class DoxygenWrapper(object):
                         dependency_map.get(component_name, [])))
         return separator.join(deps)
 
+    def _cleanup_temp_files(self):
+        # cmake cache used to build dependency tree
+        shutil.rmtree(self.sdk_root + "/tmp_deps_map_build", ignore_errors=True)
+        os.remove(f"{self.output_dir}/DoxygenLayout.xml")
+
+        def _cleanup_dir_by_extension(child_dir: Path, extension: str):
+            files = child_dir.glob(f"**/*.{extension}")
+            for file in files:
+                file.unlink(missing_ok=True)
+
+        cleanup_futures = set()
+        p = Path(self.output_dir)
+        for child in p.iterdir():
+            # tags are no longer needed
+            self.thread_pool.submit(_cleanup_dir_by_extension,
+                                    child_dir=child,
+                                    extension="tag")
+            # .map and .md5 are used by doxygen for _incremental_ docs build with SVG graphs
+            self.thread_pool.submit(_cleanup_dir_by_extension,
+                                    child_dir=child,
+                                    extension="map")
+            self.thread_pool.submit(_cleanup_dir_by_extension,
+                                    child_dir=child,
+                                    extension="md5")
+
+        # Wait for all generation to complete
+        for future in cleanup_futures:
+            future.result()
+
     def generate_component_xml(self, client_name, client_dir, output_dir, tagfiles):
         os.makedirs(output_dir, exist_ok=True)
-        export_macro = ""
-        if client_name.startswith("aws-cpp-sdk-"):
-            export_macro = f"AWS_{client_name[12:].upper().replace('-', '')}_API="
 
-        doxy_input = [client_dir]
-        doxy_input += [f"{self.sdk_root}/{md_item}" for md_item in
+        doxy_input = [f"{client_dir}"]
+        doxy_input += [f"\"{md_item}\"" for md_item in
                            ["README.md", "CHANGELOG.md", "CODE_OF_CONDUCT.md", "CONTRIBUTING.md", "docs"]
                        ]
-        separator = " \\\n                         "
+        separator = " "
         doxy_input = separator.join(doxy_input)
 
         env = {"PROJECT_NUMBER": self.sdk_version,
                "CLIENT_NAME": client_name,
-               "INPUT": doxy_input,
+               "DOXYGEN_INPUT": doxy_input,
                "OUTPUT_DIRECTORY": output_dir,
                "TAGFILES": tagfiles,
                "DOXYGEN_CONFIG_DIR": f"{self.sdk_root}/docs/doxygen/config/",
                "DOXYGEN_STATIC_DIR": f"{self.sdk_root}/docs/doxygen/static/",
                "DOXYGEN_LAYOUT": f"{self.output_dir}/DoxygenLayout.xml",
-               "PREDEFINED": export_macro}
+               "PREDEFINED": ""}
 
         return self._call_doxygen(self.configuration_file, env, cwd=self.sdk_root)
 
@@ -198,6 +224,8 @@ class DoxygenWrapper(object):
         # Wait for all generation to complete
         for client, future in client_futures.items():
             future.result()
+
+        self._cleanup_temp_files()
 
         return dependency_map
 

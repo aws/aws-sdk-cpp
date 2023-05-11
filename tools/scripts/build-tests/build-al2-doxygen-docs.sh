@@ -23,7 +23,7 @@ echo "AWS_SDK_VERSION: ${VERSION_NUM}"
 
 echo "Running doc generation"
 cd "${SRC_DIR}"
-curl https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/main/doxygen-awesome.css -o "${SRC_DIR}/docs/doxygen/static/doxygen-awesome.css"
+# curl https://raw.githubusercontent.com/jothepro/doxygen-awesome-css/main/doxygen-awesome.css -o "${SRC_DIR}/docs/doxygen/static/doxygen-awesome.css"
 python3 "${SRC_DIR}/docs/doxygen/run_docs_generation.py" --sdk_root "${SRC_DIR}" --sdk_version "${VERSION_NUM}" --output_dir "${OUTPUT_DIR}/${VERSION_NUM}"
 
 echo "Creating Cross Links"
