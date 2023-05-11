@@ -401,11 +401,7 @@ namespace Aws
         /**
          * An Async wrapper for CopyObject that queues the request into a thread executor and triggers associated callback when operation has finished.
          */
-        template<typename CopyObjectRequestT = Model::CopyObjectRequest>
-        void CopyObjectAsync(const CopyObjectRequestT& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
-        {
-            return SubmitAsync(&S3CrtClient::CopyObject, request, handler, context);
-        }
+        virtual void CopyObjectAsync(const Model::CopyObjectRequest& request, const CopyObjectResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3
@@ -5579,6 +5575,7 @@ namespace Aws
           const S3CrtClient *s3CrtClient;
           GetObjectResponseReceivedHandler getResponseHandler;
           PutObjectResponseReceivedHandler putResponseHandler;
+          CopyObjectResponseReceivedHandler copyResponseHandler;
           std::shared_ptr<const Aws::Client::AsyncCallerContext> asyncCallerContext;
           const Aws::AmazonWebServiceRequest *originalRequest;
           std::shared_ptr<Aws::Http::HttpRequest> request;
