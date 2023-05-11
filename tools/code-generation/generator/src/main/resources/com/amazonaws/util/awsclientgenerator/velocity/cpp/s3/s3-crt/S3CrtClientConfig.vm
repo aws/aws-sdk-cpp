@@ -41,6 +41,12 @@ namespace ${rootNamespace}
             /* Throughput target in Gbps that we are trying to reach. Normally it's the NIC's throughput */
             double throughputTargetGbps = 2.0;
 
+            /** Control the maximum memory used by downloads.
+             *  When set to a value > 0, the SDK uses flow control to bring the memory usage very close
+             *  to the specified window. Without this cap, memory usage grows proportional to file size.
+             */
+            size_t downloadMemoryUsageWindow = 0;
+
             /* Callback and associated user data for when the client has completed its shutdown process. */
             std::function<void(void*)> clientShutdownCallback;
             void *shutdownCallbackUserData = nullptr;
