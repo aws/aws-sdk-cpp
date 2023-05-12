@@ -312,7 +312,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline const Aws::String& GetSessionPolicyArn() const{ return m_sessionPolicyArn; }
 
@@ -321,7 +321,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline bool SessionPolicyArnHasBeenSet() const { return m_sessionPolicyArnHasBeenSet; }
 
@@ -330,7 +330,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline void SetSessionPolicyArn(const Aws::String& value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn = value; }
 
@@ -339,7 +339,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline void SetSessionPolicyArn(Aws::String&& value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn = std::move(value); }
 
@@ -348,7 +348,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline void SetSessionPolicyArn(const char* value) { m_sessionPolicyArnHasBeenSet = true; m_sessionPolicyArn.assign(value); }
 
@@ -357,7 +357,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline CreateStudioSessionMappingRequest& WithSessionPolicyArn(const Aws::String& value) { SetSessionPolicyArn(value); return *this;}
 
@@ -366,7 +366,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline CreateStudioSessionMappingRequest& WithSessionPolicyArn(Aws::String&& value) { SetSessionPolicyArn(std::move(value)); return *this;}
 
@@ -375,7 +375,7 @@ namespace Model
      * the user or group. You should specify the ARN for the session policy that you
      * want to apply, not the ARN of your user role. For more information, see <a
      * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-user-role.html">Create
-     * an EMR Studio User Role with Session Policies</a>.</p>
+     * an Amazon EMR Studio User Role with Session Policies</a>.</p>
      */
     inline CreateStudioSessionMappingRequest& WithSessionPolicyArn(const char* value) { SetSessionPolicyArn(value); return *this;}
 

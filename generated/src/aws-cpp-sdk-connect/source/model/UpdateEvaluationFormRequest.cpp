@@ -23,7 +23,7 @@ UpdateEvaluationFormRequest::UpdateEvaluationFormRequest() :
     m_descriptionHasBeenSet(false),
     m_itemsHasBeenSet(false),
     m_scoringStrategyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

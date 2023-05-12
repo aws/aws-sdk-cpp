@@ -19,7 +19,7 @@ RegisterAppInstanceUserEndpointRequest::RegisterAppInstanceUserEndpointRequest()
     m_typeHasBeenSet(false),
     m_resourceArnHasBeenSet(false),
     m_endpointAttributesHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_allowMessages(AllowMessages::NOT_SET),
     m_allowMessagesHasBeenSet(false)

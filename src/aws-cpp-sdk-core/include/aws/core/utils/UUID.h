@@ -45,6 +45,11 @@ namespace Aws
              */
             static UUID RandomUUID();
 
+            /**
+             * Generates a pseudo-random UUID.
+             */
+            static UUID PseudoRandomUUID();
+
         private:
             unsigned char m_uuid[UUID_BINARY_SIZE];
         };

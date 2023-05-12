@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/wellarchitected/WellArchitected_EXPORTS.h>
 #include <aws/wellarchitected/model/TrustedAdvisorIntegrationStatus.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/wellarchitected/model/DefinitionType.h>
 #include <utility>
 
 namespace Aws
@@ -74,10 +76,70 @@ namespace Model
      */
     inline WorkloadDiscoveryConfig& WithTrustedAdvisorIntegrationStatus(TrustedAdvisorIntegrationStatus&& value) { SetTrustedAdvisorIntegrationStatus(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline const Aws::Vector<DefinitionType>& GetWorkloadResourceDefinition() const{ return m_workloadResourceDefinition; }
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline bool WorkloadResourceDefinitionHasBeenSet() const { return m_workloadResourceDefinitionHasBeenSet; }
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline void SetWorkloadResourceDefinition(const Aws::Vector<DefinitionType>& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition = value; }
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline void SetWorkloadResourceDefinition(Aws::Vector<DefinitionType>&& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition = std::move(value); }
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline WorkloadDiscoveryConfig& WithWorkloadResourceDefinition(const Aws::Vector<DefinitionType>& value) { SetWorkloadResourceDefinition(value); return *this;}
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline WorkloadDiscoveryConfig& WithWorkloadResourceDefinition(Aws::Vector<DefinitionType>&& value) { SetWorkloadResourceDefinition(std::move(value)); return *this;}
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline WorkloadDiscoveryConfig& AddWorkloadResourceDefinition(const DefinitionType& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition.push_back(value); return *this; }
+
+    /**
+     * <p>The mode to use for identifying resources associated with the workload.</p>
+     * <p>You can specify <code>WORKLOAD_METADATA</code>, <code>APP_REGISTRY</code>, or
+     * both.</p>
+     */
+    inline WorkloadDiscoveryConfig& AddWorkloadResourceDefinition(DefinitionType&& value) { m_workloadResourceDefinitionHasBeenSet = true; m_workloadResourceDefinition.push_back(std::move(value)); return *this; }
+
   private:
 
     TrustedAdvisorIntegrationStatus m_trustedAdvisorIntegrationStatus;
     bool m_trustedAdvisorIntegrationStatusHasBeenSet = false;
+
+    Aws::Vector<DefinitionType> m_workloadResourceDefinition;
+    bool m_workloadResourceDefinitionHasBeenSet = false;
   };
 
 } // namespace Model

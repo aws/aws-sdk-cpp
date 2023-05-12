@@ -16,7 +16,7 @@ AssociateIpamResourceDiscoveryRequest::AssociateIpamResourceDiscoveryRequest() :
     m_ipamIdHasBeenSet(false),
     m_ipamResourceDiscoveryIdHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

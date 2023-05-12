@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteNamedQueryRequest::DeleteNamedQueryRequest() : 
-    m_namedQueryId(Aws::Utils::UUID::RandomUUID()),
+    m_namedQueryId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_namedQueryIdHasBeenSet(true)
 {
 }

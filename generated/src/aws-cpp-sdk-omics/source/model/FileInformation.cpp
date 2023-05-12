@@ -19,33 +19,33 @@ namespace Model
 {
 
 FileInformation::FileInformation() : 
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
+    m_totalParts(0),
+    m_totalPartsHasBeenSet(false),
     m_partSize(0),
     m_partSizeHasBeenSet(false),
-    m_totalParts(0),
-    m_totalPartsHasBeenSet(false)
+    m_contentLength(0),
+    m_contentLengthHasBeenSet(false)
 {
 }
 
 FileInformation::FileInformation(JsonView jsonValue) : 
-    m_contentLength(0),
-    m_contentLengthHasBeenSet(false),
+    m_totalParts(0),
+    m_totalPartsHasBeenSet(false),
     m_partSize(0),
     m_partSizeHasBeenSet(false),
-    m_totalParts(0),
-    m_totalPartsHasBeenSet(false)
+    m_contentLength(0),
+    m_contentLengthHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 FileInformation& FileInformation::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("contentLength"))
+  if(jsonValue.ValueExists("totalParts"))
   {
-    m_contentLength = jsonValue.GetInt64("contentLength");
+    m_totalParts = jsonValue.GetInteger("totalParts");
 
-    m_contentLengthHasBeenSet = true;
+    m_totalPartsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("partSize"))
@@ -55,11 +55,11 @@ FileInformation& FileInformation::operator =(JsonView jsonValue)
     m_partSizeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("totalParts"))
+  if(jsonValue.ValueExists("contentLength"))
   {
-    m_totalParts = jsonValue.GetInteger("totalParts");
+    m_contentLength = jsonValue.GetInt64("contentLength");
 
-    m_totalPartsHasBeenSet = true;
+    m_contentLengthHasBeenSet = true;
   }
 
   return *this;
@@ -69,9 +69,9 @@ JsonValue FileInformation::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_contentLengthHasBeenSet)
+  if(m_totalPartsHasBeenSet)
   {
-   payload.WithInt64("contentLength", m_contentLength);
+   payload.WithInteger("totalParts", m_totalParts);
 
   }
 
@@ -81,9 +81,9 @@ JsonValue FileInformation::Jsonize() const
 
   }
 
-  if(m_totalPartsHasBeenSet)
+  if(m_contentLengthHasBeenSet)
   {
-   payload.WithInteger("totalParts", m_totalParts);
+   payload.WithInt64("contentLength", m_contentLength);
 
   }
 

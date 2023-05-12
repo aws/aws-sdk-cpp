@@ -16,7 +16,7 @@ StartAuditMitigationActionsTaskRequest::StartAuditMitigationActionsTaskRequest()
     m_taskIdHasBeenSet(false),
     m_targetHasBeenSet(false),
     m_auditCheckToActionsMappingHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

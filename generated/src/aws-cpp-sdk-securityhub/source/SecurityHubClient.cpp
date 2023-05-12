@@ -56,6 +56,7 @@
 #include <aws/securityhub/model/GetAdministratorAccountRequest.h>
 #include <aws/securityhub/model/GetEnabledStandardsRequest.h>
 #include <aws/securityhub/model/GetFindingAggregatorRequest.h>
+#include <aws/securityhub/model/GetFindingHistoryRequest.h>
 #include <aws/securityhub/model/GetFindingsRequest.h>
 #include <aws/securityhub/model/GetInsightResultsRequest.h>
 #include <aws/securityhub/model/GetInsightsRequest.h>
@@ -556,6 +557,15 @@ GetFindingAggregatorOutcome SecurityHubClient::GetFindingAggregator(const GetFin
   endpointResolutionOutcome.GetResult().AddPathSegments("/findingAggregator/get/");
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetFindingAggregatorArn());
   return GetFindingAggregatorOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetFindingHistoryOutcome SecurityHubClient::GetFindingHistory(const GetFindingHistoryRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFindingHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetFindingHistory, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/findingHistory/get");
+  return GetFindingHistoryOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetFindingsOutcome SecurityHubClient::GetFindings(const GetFindingsRequest& request) const

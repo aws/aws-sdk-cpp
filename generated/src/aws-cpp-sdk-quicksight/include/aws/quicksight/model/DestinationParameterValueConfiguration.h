@@ -8,6 +8,7 @@
 #include <aws/quicksight/model/CustomValuesConfiguration.h>
 #include <aws/quicksight/model/SelectAllValueOptions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/model/ColumnIdentifier.h>
 #include <utility>
 
 namespace Aws
@@ -190,6 +191,25 @@ namespace Model
      */
     inline DestinationParameterValueConfiguration& WithSourceField(const char* value) { SetSourceField(value); return *this;}
 
+
+    
+    inline const ColumnIdentifier& GetSourceColumn() const{ return m_sourceColumn; }
+
+    
+    inline bool SourceColumnHasBeenSet() const { return m_sourceColumnHasBeenSet; }
+
+    
+    inline void SetSourceColumn(const ColumnIdentifier& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = value; }
+
+    
+    inline void SetSourceColumn(ColumnIdentifier&& value) { m_sourceColumnHasBeenSet = true; m_sourceColumn = std::move(value); }
+
+    
+    inline DestinationParameterValueConfiguration& WithSourceColumn(const ColumnIdentifier& value) { SetSourceColumn(value); return *this;}
+
+    
+    inline DestinationParameterValueConfiguration& WithSourceColumn(ColumnIdentifier&& value) { SetSourceColumn(std::move(value)); return *this;}
+
   private:
 
     CustomValuesConfiguration m_customValuesConfiguration;
@@ -203,6 +223,9 @@ namespace Model
 
     Aws::String m_sourceField;
     bool m_sourceFieldHasBeenSet = false;
+
+    ColumnIdentifier m_sourceColumn;
+    bool m_sourceColumnHasBeenSet = false;
   };
 
 } // namespace Model

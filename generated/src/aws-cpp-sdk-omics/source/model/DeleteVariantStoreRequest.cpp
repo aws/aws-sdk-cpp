@@ -16,9 +16,9 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 DeleteVariantStoreRequest::DeleteVariantStoreRequest() : 
+    m_nameHasBeenSet(false),
     m_force(false),
-    m_forceHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_forceHasBeenSet(false)
 {
 }
 

@@ -62,7 +62,9 @@ ReplicationGroup::ReplicationGroup() :
     m_ipDiscovery(IpDiscovery::NOT_SET),
     m_ipDiscoveryHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false)
 {
 }
 
@@ -108,7 +110,9 @@ ReplicationGroup::ReplicationGroup(const XmlNode& xmlNode) :
     m_ipDiscovery(IpDiscovery::NOT_SET),
     m_ipDiscoveryHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -329,6 +333,12 @@ ReplicationGroup& ReplicationGroup::operator =(const XmlNode& xmlNode)
       m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
       m_transitEncryptionModeHasBeenSet = true;
     }
+    XmlNode clusterModeNode = resultNode.FirstChild("ClusterMode");
+    if(!clusterModeNode.IsNull())
+    {
+      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()).c_str());
+      m_clusterModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -516,6 +526,11 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
       oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 
+  if(m_clusterModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+  }
+
 }
 
 void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -669,6 +684,10 @@ void ReplicationGroup::OutputToStream(Aws::OStream& oStream, const char* locatio
   if(m_transitEncryptionModeHasBeenSet)
   {
       oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+  if(m_clusterModeHasBeenSet)
+  {
+      oStream << location << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
   }
 }
 

@@ -11,6 +11,7 @@
 #include <aws/elasticache/model/AuthTokenUpdateStrategyType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
+#include <aws/elasticache/model/ClusterMode.h>
 #include <aws/elasticache/model/LogDeliveryConfigurationRequest.h>
 #include <utility>
 
@@ -1385,7 +1386,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
@@ -1394,7 +1395,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
@@ -1403,7 +1404,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
@@ -1412,7 +1413,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
@@ -1421,7 +1422,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ModifyReplicationGroupRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
@@ -1430,7 +1431,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ModifyReplicationGroupRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
@@ -1475,8 +1476,8 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline const TransitEncryptionMode& GetTransitEncryptionMode() const{ return m_transitEncryptionMode; }
 
@@ -1490,8 +1491,8 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline bool TransitEncryptionModeHasBeenSet() const { return m_transitEncryptionModeHasBeenSet; }
 
@@ -1505,8 +1506,8 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline void SetTransitEncryptionMode(const TransitEncryptionMode& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = value; }
 
@@ -1520,8 +1521,8 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline void SetTransitEncryptionMode(TransitEncryptionMode&& value) { m_transitEncryptionModeHasBeenSet = true; m_transitEncryptionMode = std::move(value); }
 
@@ -1535,8 +1536,8 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline ModifyReplicationGroupRequest& WithTransitEncryptionMode(const TransitEncryptionMode& value) { SetTransitEncryptionMode(value); return *this;}
 
@@ -1550,10 +1551,65 @@ namespace Model
      * can set the value to <code>required</code> to allow encrypted connections
      * only.</p> <p>Setting <code>TransitEncryptionMode</code> to <code>required</code>
      * is a two-step process that requires you to first set the
-     * <code>TransitEncryptionMode</code> to <code>preferred</code> first, after that
-     * you can set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
+     * <code>TransitEncryptionMode</code> to <code>preferred</code>, after that you can
+     * set <code>TransitEncryptionMode</code> to <code>required</code>. </p>
      */
     inline ModifyReplicationGroupRequest& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(const ClusterMode& value) { m_clusterModeHasBeenSet = true; m_clusterMode = value; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(ClusterMode&& value) { m_clusterModeHasBeenSet = true; m_clusterMode = std::move(value); }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithClusterMode(const ClusterMode& value) { SetClusterMode(value); return *this;}
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ModifyReplicationGroupRequest& WithClusterMode(ClusterMode&& value) { SetClusterMode(std::move(value)); return *this;}
 
   private:
 
@@ -1637,6 +1693,9 @@ namespace Model
 
     TransitEncryptionMode m_transitEncryptionMode;
     bool m_transitEncryptionModeHasBeenSet = false;
+
+    ClusterMode m_clusterMode;
+    bool m_clusterModeHasBeenSet = false;
   };
 
 } // namespace Model

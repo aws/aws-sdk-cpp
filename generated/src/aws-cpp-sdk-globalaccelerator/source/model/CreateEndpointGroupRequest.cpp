@@ -27,7 +27,7 @@ CreateEndpointGroupRequest::CreateEndpointGroupRequest() :
     m_healthCheckIntervalSecondsHasBeenSet(false),
     m_thresholdCount(0),
     m_thresholdCountHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true),
     m_portOverridesHasBeenSet(false)
 {

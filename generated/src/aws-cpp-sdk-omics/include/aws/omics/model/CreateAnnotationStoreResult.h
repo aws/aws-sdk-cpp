@@ -5,12 +5,12 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/ReferenceItem.h>
-#include <aws/omics/model/StoreStatus.h>
 #include <aws/omics/model/StoreFormat.h>
 #include <aws/omics/model/StoreOptions.h>
+#include <aws/omics/model/StoreStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -35,32 +35,6 @@ namespace Model
     AWS_OMICS_API CreateAnnotationStoreResult();
     AWS_OMICS_API CreateAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API CreateAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline CreateAnnotationStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline CreateAnnotationStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
 
 
     /**
@@ -100,42 +74,6 @@ namespace Model
 
 
     /**
-     * <p>The store's name.</p>
-     */
-    inline const Aws::String& GetName() const{ return m_name; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const Aws::String& value) { m_name = value; }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline void SetName(const char* value) { m_name.assign(value); }
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline CreateAnnotationStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline CreateAnnotationStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's name.</p>
-     */
-    inline CreateAnnotationStoreResult& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
      * <p>The store's genome reference. Required for all stores except TSV format with
      * generic annotations.</p>
      */
@@ -164,32 +102,6 @@ namespace Model
      * generic annotations.</p>
      */
     inline CreateAnnotationStoreResult& WithReference(ReferenceItem&& value) { SetReference(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's status.</p>
-     */
-    inline const StoreStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The store's status.</p>
-     */
-    inline void SetStatus(const StoreStatus& value) { m_status = value; }
-
-    /**
-     * <p>The store's status.</p>
-     */
-    inline void SetStatus(StoreStatus&& value) { m_status = std::move(value); }
-
-    /**
-     * <p>The store's status.</p>
-     */
-    inline CreateAnnotationStoreResult& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The store's status.</p>
-     */
-    inline CreateAnnotationStoreResult& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -244,6 +156,94 @@ namespace Model
     inline CreateAnnotationStoreResult& WithStoreOptions(StoreOptions&& value) { SetStoreOptions(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The store's status.</p>
+     */
+    inline const StoreStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The store's status.</p>
+     */
+    inline void SetStatus(const StoreStatus& value) { m_status = value; }
+
+    /**
+     * <p>The store's status.</p>
+     */
+    inline void SetStatus(StoreStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The store's status.</p>
+     */
+    inline CreateAnnotationStoreResult& WithStatus(const StoreStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The store's status.</p>
+     */
+    inline CreateAnnotationStoreResult& WithStatus(StoreStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_name = value; }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_name = std::move(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline void SetName(const char* value) { m_name.assign(value); }
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline CreateAnnotationStoreResult& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline CreateAnnotationStoreResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's name.</p>
+     */
+    inline CreateAnnotationStoreResult& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline CreateAnnotationStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline CreateAnnotationStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -267,19 +267,19 @@ namespace Model
 
   private:
 
-    Aws::Utils::DateTime m_creationTime;
-
     Aws::String m_id;
 
-    Aws::String m_name;
-
     ReferenceItem m_reference;
-
-    StoreStatus m_status;
 
     StoreFormat m_storeFormat;
 
     StoreOptions m_storeOptions;
+
+    StoreStatus m_status;
+
+    Aws::String m_name;
+
+    Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_requestId;
   };

@@ -18,7 +18,7 @@ CreateDimensionRequest::CreateDimensionRequest() :
     m_typeHasBeenSet(false),
     m_stringValuesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

@@ -17,7 +17,7 @@ using namespace Aws::Http;
 
 DeleteWorkloadRequest::DeleteWorkloadRequest() : 
     m_workloadIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateBrowserSettingsRequest::UpdateBrowserSettingsRequest() : 
     m_browserPolicyHasBeenSet(false),
     m_browserSettingsArnHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

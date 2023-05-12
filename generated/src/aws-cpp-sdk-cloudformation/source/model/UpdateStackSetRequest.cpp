@@ -27,7 +27,7 @@ UpdateStackSetRequest::UpdateStackSetRequest() :
     m_permissionModel(PermissionModels::NOT_SET),
     m_permissionModelHasBeenSet(false),
     m_autoDeploymentHasBeenSet(false),
-    m_operationId(Aws::Utils::UUID::RandomUUID()),
+    m_operationId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_operationIdHasBeenSet(true),
     m_accountsHasBeenSet(false),
     m_regionsHasBeenSet(false),

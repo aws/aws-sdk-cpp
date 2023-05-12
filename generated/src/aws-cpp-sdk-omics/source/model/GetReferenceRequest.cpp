@@ -16,13 +16,13 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 GetReferenceRequest::GetReferenceRequest() : 
-    m_file(ReferenceFile::NOT_SET),
-    m_fileHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_referenceStoreIdHasBeenSet(false),
+    m_rangeHasBeenSet(false),
     m_partNumber(0),
     m_partNumberHasBeenSet(false),
-    m_rangeHasBeenSet(false),
-    m_referenceStoreIdHasBeenSet(false)
+    m_file(ReferenceFile::NOT_SET),
+    m_fileHasBeenSet(false)
 {
 }
 
@@ -49,17 +49,17 @@ Aws::Http::HeaderValueCollection GetReferenceRequest::GetRequestSpecificHeaders(
 void GetReferenceRequest::AddQueryStringParameters(URI& uri) const
 {
     Aws::StringStream ss;
-    if(m_fileHasBeenSet)
-    {
-      ss << ReferenceFileMapper::GetNameForReferenceFile(m_file);
-      uri.AddQueryStringParameter("file", ss.str());
-      ss.str("");
-    }
-
     if(m_partNumberHasBeenSet)
     {
       ss << m_partNumber;
       uri.AddQueryStringParameter("partNumber", ss.str());
+      ss.str("");
+    }
+
+    if(m_fileHasBeenSet)
+    {
+      ss << ReferenceFileMapper::GetNameForReferenceFile(m_file);
+      uri.AddQueryStringParameter("file", ss.str());
       ss.str("");
     }
 

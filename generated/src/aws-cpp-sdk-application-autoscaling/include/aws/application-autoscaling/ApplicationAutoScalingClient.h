@@ -26,6 +26,7 @@ namespace ApplicationAutoScaling
    * <p>Amazon Keyspaces (for Apache Cassandra) tables</p> </li> <li> <p>Lambda
    * function provisioned concurrency</p> </li> <li> <p>Amazon Managed Streaming for
    * Apache Kafka broker storage</p> </li> <li> <p>Amazon Neptune clusters</p> </li>
+   * <li> <p>Amazon SageMaker Serverless endpoint provisioned concurrency</p> </li>
    * <li> <p>Amazon SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets (Amazon
    * EC2)</p> </li> <li> <p>Custom resources provided by your own applications or
    * services</p> </li> </ul> <p>To learn more about Application Auto Scaling, see
@@ -54,6 +55,9 @@ namespace ApplicationAutoScaling
       typedef Aws::Client::AWSJsonClient BASECLASS;
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
+
+      typedef ApplicationAutoScalingClientConfiguration ClientConfigurationType;
+      typedef ApplicationAutoScalingEndpointProvider EndpointProviderType;
 
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config

@@ -18,7 +18,7 @@ NotifyTerminateProvisionedProductEngineWorkflowResultRequest::NotifyTerminatePro
     m_status(EngineWorkflowStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

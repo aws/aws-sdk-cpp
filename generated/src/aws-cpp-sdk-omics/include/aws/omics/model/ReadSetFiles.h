@@ -38,37 +38,6 @@ namespace Model
 
 
     /**
-     * <p>The files' index.</p>
-     */
-    inline const FileInformation& GetIndex() const{ return m_index; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline void SetIndex(const FileInformation& value) { m_indexHasBeenSet = true; m_index = value; }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline void SetIndex(FileInformation&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline ReadSetFiles& WithIndex(const FileInformation& value) { SetIndex(value); return *this;}
-
-    /**
-     * <p>The files' index.</p>
-     */
-    inline ReadSetFiles& WithIndex(FileInformation&& value) { SetIndex(std::move(value)); return *this;}
-
-
-    /**
      * <p>The location of the first file in Amazon S3.</p>
      */
     inline const FileInformation& GetSource1() const{ return m_source1; }
@@ -129,16 +98,47 @@ namespace Model
      */
     inline ReadSetFiles& WithSource2(FileInformation&& value) { SetSource2(std::move(value)); return *this;}
 
-  private:
 
-    FileInformation m_index;
-    bool m_indexHasBeenSet = false;
+    /**
+     * <p>The files' index.</p>
+     */
+    inline const FileInformation& GetIndex() const{ return m_index; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline void SetIndex(const FileInformation& value) { m_indexHasBeenSet = true; m_index = value; }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline void SetIndex(FileInformation&& value) { m_indexHasBeenSet = true; m_index = std::move(value); }
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline ReadSetFiles& WithIndex(const FileInformation& value) { SetIndex(value); return *this;}
+
+    /**
+     * <p>The files' index.</p>
+     */
+    inline ReadSetFiles& WithIndex(FileInformation&& value) { SetIndex(std::move(value)); return *this;}
+
+  private:
 
     FileInformation m_source1;
     bool m_source1HasBeenSet = false;
 
     FileInformation m_source2;
     bool m_source2HasBeenSet = false;
+
+    FileInformation m_index;
+    bool m_indexHasBeenSet = false;
   };
 
 } // namespace Model

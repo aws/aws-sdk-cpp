@@ -183,7 +183,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -210,7 +210,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -237,7 +237,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -264,7 +264,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -291,7 +291,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -318,7 +318,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -345,7 +345,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -372,7 +372,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -399,7 +399,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -427,7 +427,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -454,7 +454,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -481,7 +481,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -508,7 +508,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -535,7 +535,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -562,7 +562,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -589,7 +589,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -616,7 +616,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -643,7 +643,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -672,7 +672,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -700,7 +700,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -728,7 +728,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -756,7 +756,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -784,7 +784,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -812,7 +812,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -840,7 +840,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -868,7 +868,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>
@@ -896,7 +896,7 @@ namespace Model
      * <code>arn:aws:swf:<i>region</i>:<i>account-id</i>:action/actions/AWS_EC2.InstanceId.Recover/1.0</code>
      * </p> </li> </ul> <p> <b>Autoscaling action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:autoscaling:<i>region</i>:<i>account-id</i>:scalingPolicy:<i>policy-id</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
-     * </code> </p> </li> </ul> <p> <b>SSN notification action:</b> </p> <ul> <li> <p>
+     * </code> </p> </li> </ul> <p> <b>SNS notification action:</b> </p> <ul> <li> <p>
      * <code>arn:aws:sns:<i>region</i>:<i>account-id</i>:<i>sns-topic-name</i>:autoScalingGroupName/<i>group-friendly-name</i>:policyName/<i>policy-friendly-name</i>
      * </code> </p> </li> </ul> <p> <b>SSM integration actions:</b> </p> <ul> <li> <p>
      * <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i>

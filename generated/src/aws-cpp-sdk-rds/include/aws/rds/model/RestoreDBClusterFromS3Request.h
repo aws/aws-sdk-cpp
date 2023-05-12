@@ -2167,6 +2167,63 @@ namespace Model
      */
     inline RestoreDBClusterFromS3Request& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterFromS3Request& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterFromS3Request& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
+     * values: <code>aurora</code>, <code>aurora-iopt1</code> </p> <p>Default:
+     * <code>aurora</code> </p> <p>Valid for: Aurora DB clusters only</p>
+     */
+    inline RestoreDBClusterFromS3Request& WithStorageType(const char* value) { SetStorageType(value); return *this;}
+
   private:
 
     Aws::Vector<Aws::String> m_availabilityZones;
@@ -2273,6 +2330,9 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_storageType;
+    bool m_storageTypeHasBeenSet = false;
   };
 
 } // namespace Model

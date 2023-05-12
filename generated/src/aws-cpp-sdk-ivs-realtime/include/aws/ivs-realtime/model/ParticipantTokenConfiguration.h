@@ -202,90 +202,98 @@ namespace Model
 
     /**
      * <p>Duration (in minutes), after which the corresponding participant token
-     * expires. Default: 60 (1 hour).</p>
+     * expires. Default: 720 (12 hours).</p>
      */
     inline int GetDuration() const{ return m_duration; }
 
     /**
      * <p>Duration (in minutes), after which the corresponding participant token
-     * expires. Default: 60 (1 hour).</p>
+     * expires. Default: 720 (12 hours).</p>
      */
     inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
      * <p>Duration (in minutes), after which the corresponding participant token
-     * expires. Default: 60 (1 hour).</p>
+     * expires. Default: 720 (12 hours).</p>
      */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
      * <p>Duration (in minutes), after which the corresponding participant token
-     * expires. Default: 60 (1 hour).</p>
+     * expires. Default: 720 (12 hours).</p>
      */
     inline ParticipantTokenConfiguration& WithDuration(int value) { SetDuration(value); return *this;}
 
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline void SetUserId(Aws::String&& value) { m_userIdHasBeenSet = true; m_userId = std::move(value); }
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline void SetUserId(const char* value) { m_userIdHasBeenSet = true; m_userId.assign(value); }
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline ParticipantTokenConfiguration& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline ParticipantTokenConfiguration& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>Name that can be specified to help identify the corresponding participant
-     * token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage
-     * participants and should not be used for personally identifying, confidential, or
-     * sensitive information.</i> </p>
+     * <p>Customer-assigned name to help identify the token; this can be used to link a
+     * participant to a user in the customer’s own systems. This can be any UTF-8
+     * encoded text. <i>This field is exposed to all stage participants and should not
+     * be used for personally identifying, confidential, or sensitive information.</i>
+     * </p>
      */
     inline ParticipantTokenConfiguration& WithUserId(const char* value) { SetUserId(value); return *this;}
 

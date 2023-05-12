@@ -28,8 +28,8 @@ namespace Model
 {
 
   /**
-   * <p>Represents an EC2 instance provisioned as part of cluster.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents an Amazon EC2 instance provisioned as part of
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Instance">AWS
    * API Reference</a></p>
    */
@@ -361,49 +361,49 @@ namespace Model
 
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline bool InstanceFleetIdHasBeenSet() const { return m_instanceFleetIdHasBeenSet; }
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline void SetInstanceFleetId(const Aws::String& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = value; }
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline void SetInstanceFleetId(Aws::String&& value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId = std::move(value); }
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline void SetInstanceFleetId(const char* value) { m_instanceFleetIdHasBeenSet = true; m_instanceFleetId.assign(value); }
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline Instance& WithInstanceFleetId(const Aws::String& value) { SetInstanceFleetId(value); return *this;}
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline Instance& WithInstanceFleetId(Aws::String&& value) { SetInstanceFleetId(std::move(value)); return *this;}
 
     /**
-     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * <p>The unique identifier of the instance fleet to which an Amazon EC2 instance
      * belongs.</p>
      */
     inline Instance& WithInstanceFleetId(const char* value) { SetInstanceFleetId(value); return *this;}
@@ -447,42 +447,42 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline Instance& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline Instance& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline Instance& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 

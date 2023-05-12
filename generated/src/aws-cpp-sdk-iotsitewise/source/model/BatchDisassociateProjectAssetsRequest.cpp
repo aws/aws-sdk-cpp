@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 BatchDisassociateProjectAssetsRequest::BatchDisassociateProjectAssetsRequest() : 
     m_projectIdHasBeenSet(false),
     m_assetIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

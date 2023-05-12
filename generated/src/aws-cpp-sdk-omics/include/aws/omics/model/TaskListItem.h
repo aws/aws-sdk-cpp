@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/TaskStatus.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -40,76 +40,75 @@ namespace Model
 
 
     /**
-     * <p>The task's CPU count.</p>
+     * <p>The task's ID.</p>
      */
-    inline int GetCpus() const{ return m_cpus; }
+    inline const Aws::String& GetTaskId() const{ return m_taskId; }
 
     /**
-     * <p>The task's CPU count.</p>
+     * <p>The task's ID.</p>
      */
-    inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
 
     /**
-     * <p>The task's CPU count.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCpus(int value) { m_cpusHasBeenSet = true; m_cpus = value; }
+    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
-     * <p>The task's CPU count.</p>
+     * <p>The task's ID.</p>
      */
-    inline TaskListItem& WithCpus(int value) { SetCpus(value); return *this;}
-
-
-    /**
-     * <p>When the task was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+    inline TaskListItem& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+    inline TaskListItem& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
 
     /**
-     * <p>When the task was created.</p>
+     * <p>The task's ID.</p>
      */
-    inline TaskListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the task was created.</p>
-     */
-    inline TaskListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+    inline TaskListItem& WithTaskId(const char* value) { SetTaskId(value); return *this;}
 
 
     /**
-     * <p>The task's memory use in gigabyes.</p>
+     * <p>The task's status.</p>
      */
-    inline int GetMemory() const{ return m_memory; }
+    inline const TaskStatus& GetStatus() const{ return m_status; }
 
     /**
-     * <p>The task's memory use in gigabyes.</p>
+     * <p>The task's status.</p>
      */
-    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
-     * <p>The task's memory use in gigabyes.</p>
+     * <p>The task's status.</p>
      */
-    inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
+    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
-     * <p>The task's memory use in gigabyes.</p>
+     * <p>The task's status.</p>
      */
-    inline TaskListItem& WithMemory(int value) { SetMemory(value); return *this;}
+    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
+
+    /**
+     * <p>The task's status.</p>
+     */
+    inline TaskListItem& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The task's status.</p>
+     */
+    inline TaskListItem& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -154,6 +153,79 @@ namespace Model
 
 
     /**
+     * <p>The task's CPU count.</p>
+     */
+    inline int GetCpus() const{ return m_cpus; }
+
+    /**
+     * <p>The task's CPU count.</p>
+     */
+    inline bool CpusHasBeenSet() const { return m_cpusHasBeenSet; }
+
+    /**
+     * <p>The task's CPU count.</p>
+     */
+    inline void SetCpus(int value) { m_cpusHasBeenSet = true; m_cpus = value; }
+
+    /**
+     * <p>The task's CPU count.</p>
+     */
+    inline TaskListItem& WithCpus(int value) { SetCpus(value); return *this;}
+
+
+    /**
+     * <p>The task's memory use in gigabyes.</p>
+     */
+    inline int GetMemory() const{ return m_memory; }
+
+    /**
+     * <p>The task's memory use in gigabyes.</p>
+     */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+
+    /**
+     * <p>The task's memory use in gigabyes.</p>
+     */
+    inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
+
+    /**
+     * <p>The task's memory use in gigabyes.</p>
+     */
+    inline TaskListItem& WithMemory(int value) { SetMemory(value); return *this;}
+
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTimeHasBeenSet = true; m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline TaskListItem& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the task was created.</p>
+     */
+    inline TaskListItem& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
      * <p>When the task started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
@@ -182,37 +254,6 @@ namespace Model
      * <p>When the task started.</p>
      */
     inline TaskListItem& WithStartTime(Aws::Utils::DateTime&& value) { SetStartTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline const TaskStatus& GetStatus() const{ return m_status; }
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline void SetStatus(const TaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline void SetStatus(TaskStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline TaskListItem& WithStatus(const TaskStatus& value) { SetStatus(value); return *this;}
-
-    /**
-     * <p>The task's status.</p>
-     */
-    inline TaskListItem& WithStatus(TaskStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
@@ -247,70 +288,53 @@ namespace Model
 
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
      */
-    inline const Aws::String& GetTaskId() const{ return m_taskId; }
+    inline int GetGpus() const{ return m_gpus; }
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
      */
-    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+    inline bool GpusHasBeenSet() const { return m_gpusHasBeenSet; }
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
      */
-    inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
+    inline void SetGpus(int value) { m_gpusHasBeenSet = true; m_gpus = value; }
 
     /**
-     * <p>The task's ID.</p>
+     * <p> The number of Graphics Processing Units (GPU) specified for the task. </p>
      */
-    inline void SetTaskId(Aws::String&& value) { m_taskIdHasBeenSet = true; m_taskId = std::move(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline void SetTaskId(const char* value) { m_taskIdHasBeenSet = true; m_taskId.assign(value); }
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline TaskListItem& WithTaskId(const Aws::String& value) { SetTaskId(value); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline TaskListItem& WithTaskId(Aws::String&& value) { SetTaskId(std::move(value)); return *this;}
-
-    /**
-     * <p>The task's ID.</p>
-     */
-    inline TaskListItem& WithTaskId(const char* value) { SetTaskId(value); return *this;}
+    inline TaskListItem& WithGpus(int value) { SetGpus(value); return *this;}
 
   private:
 
-    int m_cpus;
-    bool m_cpusHasBeenSet = false;
-
-    Aws::Utils::DateTime m_creationTime;
-    bool m_creationTimeHasBeenSet = false;
-
-    int m_memory;
-    bool m_memoryHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::Utils::DateTime m_startTime;
-    bool m_startTimeHasBeenSet = false;
+    Aws::String m_taskId;
+    bool m_taskIdHasBeenSet = false;
 
     TaskStatus m_status;
     bool m_statusHasBeenSet = false;
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    int m_cpus;
+    bool m_cpusHasBeenSet = false;
+
+    int m_memory;
+    bool m_memoryHasBeenSet = false;
+
+    Aws::Utils::DateTime m_creationTime;
+    bool m_creationTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_startTime;
+    bool m_startTimeHasBeenSet = false;
+
     Aws::Utils::DateTime m_stopTime;
     bool m_stopTimeHasBeenSet = false;
 
-    Aws::String m_taskId;
-    bool m_taskIdHasBeenSet = false;
+    int m_gpus;
+    bool m_gpusHasBeenSet = false;
   };
 
 } // namespace Model

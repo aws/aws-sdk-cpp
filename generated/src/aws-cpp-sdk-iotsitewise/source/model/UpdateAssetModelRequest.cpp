@@ -19,7 +19,7 @@ UpdateAssetModelRequest::UpdateAssetModelRequest() :
     m_assetModelPropertiesHasBeenSet(false),
     m_assetModelHierarchiesHasBeenSet(false),
     m_assetModelCompositeModelsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

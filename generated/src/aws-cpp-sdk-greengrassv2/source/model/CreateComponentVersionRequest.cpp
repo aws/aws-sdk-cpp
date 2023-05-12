@@ -17,7 +17,7 @@ CreateComponentVersionRequest::CreateComponentVersionRequest() :
     m_inlineRecipeHasBeenSet(false),
     m_lambdaFunctionHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

@@ -86,6 +86,9 @@ namespace KMS
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef KMSClientConfiguration ClientConfigurationType;
+      typedef KMSEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -698,14 +701,20 @@ namespace KMS
          * particular trusted accounts. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/iam-policies.html#iam-policies-best-practices">Best
          * practices for IAM policies</a> in the <i>Key Management Service Developer
-         * Guide</i>.</p> <p>Applications in Amazon Web Services Nitro Enclaves can call
-         * this operation by using the <a
-         * href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services Nitro
-         * Enclaves Development Kit</a>. For information about the supporting parameters,
-         * see <a
+         * Guide</i>.</p> <p> <code>Decrypt</code> also supports <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+         * Web Services Nitro Enclaves</a>, which provide an isolated compute environment
+         * in Amazon EC2. To call <code>Decrypt</code> for a Nitro enclave, use the <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+         * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the
+         * <code>Recipient</code> parameter to provide the attestation document for the
+         * enclave. Instead of the plaintext data, the response includes the plaintext data
+         * encrypted with the public key from the attestation document
+         * (<code>CiphertextForRecipient</code>).For information about the interaction
+         * between KMS and Amazon Web Services Nitro Enclaves, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-         * Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service
-         * Developer Guide</i>.</p> <p>The KMS key that you use for this operation must be
+         * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+         * Developer Guide</i>..</p> <p>The KMS key that you use for this operation must be
          * in a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -1394,14 +1403,24 @@ namespace KMS
          * the request to decrypt fails with an <code>InvalidCiphertextException</code>.
          * For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-         * Context</a> in the <i>Key Management Service Developer Guide</i>.</p>
-         * <p>Applications in Amazon Web Services Nitro Enclaves can call this operation by
-         * using the <a href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web
-         * Services Nitro Enclaves Development Kit</a>. For information about the
-         * supporting parameters, see <a
+         * Context</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>
+         * <code>GenerateDataKey</code> also supports <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+         * Web Services Nitro Enclaves</a>, which provide an isolated compute environment
+         * in Amazon EC2. To call <code>GenerateDataKey</code> for an Amazon Web Services
+         * Nitro enclave, use the <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+         * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the
+         * <code>Recipient</code> parameter to provide the attestation document for the
+         * enclave. <code>GenerateDataKey</code> returns a copy of the data key encrypted
+         * under the specified KMS key, as usual. But instead of a plaintext copy of the
+         * data key, the response includes a copy of the data key encrypted under the
+         * public key from the attestation document (<code>CiphertextForRecipient</code>).
+         * For information about the interaction between KMS and Amazon Web Services Nitro
+         * Enclaves, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-         * Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service
-         * Developer Guide</i>.</p> <p>The KMS key that you use for this operation must be
+         * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+         * Developer Guide</i>..</p> <p>The KMS key that you use for this operation must be
          * in a compatible key state. For details, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
          * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
@@ -1491,12 +1510,30 @@ namespace KMS
          * DER-encoded X.509 SubjectPublicKeyInfo, as specified in <a
          * href="https://tools.ietf.org/html/rfc5280">RFC 5280</a>. The private key is a
          * DER-encoded PKCS8 PrivateKeyInfo, as specified in <a
-         * href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>.</p> <p>You can use an
-         * optional encryption context to add additional security to the encryption
-         * operation. If you specify an <code>EncryptionContext</code>, you must specify
-         * the same encryption context (a case-sensitive exact match) when decrypting the
-         * encrypted data key. Otherwise, the request to decrypt fails with an
-         * <code>InvalidCiphertextException</code>. For more information, see <a
+         * href="https://tools.ietf.org/html/rfc5958">RFC 5958</a>.</p> <p>
+         * <code>GenerateDataKeyPair</code> also supports <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+         * Web Services Nitro Enclaves</a>, which provide an isolated compute environment
+         * in Amazon EC2. To call <code>GenerateDataKeyPair</code> for an Amazon Web
+         * Services Nitro enclave, use the <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+         * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the
+         * <code>Recipient</code> parameter to provide the attestation document for the
+         * enclave. <code>GenerateDataKeyPair</code> returns the public data key and a copy
+         * of the private data key encrypted under the specified KMS key, as usual. But
+         * instead of a plaintext copy of the private data key
+         * (<code>PrivateKeyPlaintext</code>), the response includes a copy of the private
+         * data key encrypted under the public key from the attestation document
+         * (<code>CiphertextForRecipient</code>). For information about the interaction
+         * between KMS and Amazon Web Services Nitro Enclaves, see <a
+         * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+         * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+         * Developer Guide</i>..</p> <p>You can use an optional encryption context to add
+         * additional security to the encryption operation. If you specify an
+         * <code>EncryptionContext</code>, you must specify the same encryption context (a
+         * case-sensitive exact match) when decrypting the encrypted data key. Otherwise,
+         * the request to decrypt fails with an <code>InvalidCiphertextException</code>.
+         * For more information, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
          * Context</a> in the <i>Key Management Service Developer Guide</i>.</p> <p>The KMS
          * key that you use for this operation must be in a compatible key state. For
@@ -1633,7 +1670,7 @@ namespace KMS
          * parameters (but not both). For 128-bit and 256-bit data keys, use the
          * <code>KeySpec</code> parameter.</p> <p>To generate an SM4 data key (China
          * Regions only), specify a <code>KeySpec</code> value of <code>AES_128</code> or
-         * <code>NumberOfBytes</code> value of <code>128</code>. The symmetric encryption
+         * <code>NumberOfBytes</code> value of <code>16</code>. The symmetric encryption
          * key used in China Regions to encrypt your data key is an SM4 encryption key.</p>
          * <p>If the operation succeeds, you will find the encrypted copy of the data key
          * in the <code>CiphertextBlob</code> field.</p> <p>You can use an optional
@@ -1739,13 +1776,21 @@ namespace KMS
          * random byte string. There is no default value for string length.</p> <p>By
          * default, the random byte string is generated in KMS. To generate the byte string
          * in the CloudHSM cluster associated with an CloudHSM key store, use the
-         * <code>CustomKeyStoreId</code> parameter.</p> <p>Applications in Amazon Web
-         * Services Nitro Enclaves can call this operation by using the <a
-         * href="https://github.com/aws/aws-nitro-enclaves-sdk-c">Amazon Web Services Nitro
-         * Enclaves Development Kit</a>. For information about the supporting parameters,
-         * see <a
+         * <code>CustomKeyStoreId</code> parameter.</p> <p> <code>GenerateRandom</code>
+         * also supports <a
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/nitro-enclave.html">Amazon
+         * Web Services Nitro Enclaves</a>, which provide an isolated compute environment
+         * in Amazon EC2. To call <code>GenerateRandom</code> for a Nitro enclave, use the
+         * <a
+         * href="https://docs.aws.amazon.com/enclaves/latest/user/developing-applications.html#sdk">Amazon
+         * Web Services Nitro Enclaves SDK</a> or any Amazon Web Services SDK. Use the
+         * <code>Recipient</code> parameter to provide the attestation document for the
+         * enclave. Instead of plaintext bytes, the response includes the plaintext bytes
+         * encrypted under the public key from the attestation document
+         * (<code>CiphertextForRecipient</code>).For information about the interaction
+         * between KMS and Amazon Web Services Nitro Enclaves, see <a
          * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
-         * Amazon Web Services Nitro Enclaves use KMS</a> in the <i>Key Management Service
+         * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
          * Developer Guide</i>.</p> <p>For more information about entropy and random number
          * generation, see <a
          * href="https://docs.aws.amazon.com/kms/latest/cryptographic-details/">Key

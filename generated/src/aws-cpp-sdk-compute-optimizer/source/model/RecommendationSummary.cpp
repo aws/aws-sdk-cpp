@@ -24,7 +24,8 @@ RecommendationSummary::RecommendationSummary() :
     m_recommendationResourceTypeHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
-    m_currentPerformanceRiskRatingsHasBeenSet(false)
+    m_currentPerformanceRiskRatingsHasBeenSet(false),
+    m_inferredWorkloadSavingsHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ RecommendationSummary::RecommendationSummary(JsonView jsonValue) :
     m_recommendationResourceTypeHasBeenSet(false),
     m_accountIdHasBeenSet(false),
     m_savingsOpportunityHasBeenSet(false),
-    m_currentPerformanceRiskRatingsHasBeenSet(false)
+    m_currentPerformanceRiskRatingsHasBeenSet(false),
+    m_inferredWorkloadSavingsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -79,6 +81,16 @@ RecommendationSummary& RecommendationSummary::operator =(JsonView jsonValue)
     m_currentPerformanceRiskRatingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inferredWorkloadSavings"))
+  {
+    Aws::Utils::Array<JsonView> inferredWorkloadSavingsJsonList = jsonValue.GetArray("inferredWorkloadSavings");
+    for(unsigned inferredWorkloadSavingsIndex = 0; inferredWorkloadSavingsIndex < inferredWorkloadSavingsJsonList.GetLength(); ++inferredWorkloadSavingsIndex)
+    {
+      m_inferredWorkloadSavings.push_back(inferredWorkloadSavingsJsonList[inferredWorkloadSavingsIndex].AsObject());
+    }
+    m_inferredWorkloadSavingsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -117,6 +129,17 @@ JsonValue RecommendationSummary::Jsonize() const
   if(m_currentPerformanceRiskRatingsHasBeenSet)
   {
    payload.WithObject("currentPerformanceRiskRatings", m_currentPerformanceRiskRatings.Jsonize());
+
+  }
+
+  if(m_inferredWorkloadSavingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> inferredWorkloadSavingsJsonList(m_inferredWorkloadSavings.size());
+   for(unsigned inferredWorkloadSavingsIndex = 0; inferredWorkloadSavingsIndex < inferredWorkloadSavingsJsonList.GetLength(); ++inferredWorkloadSavingsIndex)
+   {
+     inferredWorkloadSavingsJsonList[inferredWorkloadSavingsIndex].AsObject(m_inferredWorkloadSavings[inferredWorkloadSavingsIndex].Jsonize());
+   }
+   payload.WithArray("inferredWorkloadSavings", std::move(inferredWorkloadSavingsJsonList));
 
   }
 

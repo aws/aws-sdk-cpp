@@ -2279,17 +2279,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
@@ -2297,17 +2293,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
@@ -2315,17 +2307,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
@@ -2333,17 +2321,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
@@ -2351,17 +2335,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
@@ -2369,17 +2349,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
@@ -2387,17 +2363,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
@@ -2405,17 +2377,13 @@ namespace Model
     /**
      * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
      * <code>serverless</code>.</p> <p>The <code>serverless</code> engine mode only
-     * applies for Aurora Serverless v1 DB clusters.</p> <p>Limitations and
-     * requirements apply to some DB engine modes. For more information, see the
-     * following sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
+     * applies for Aurora Serverless v1 DB clusters.</p> <p>For information about
+     * limitations and requirements for Serverless DB clusters, see the following
+     * sections in the <i>Amazon Aurora User Guide</i>:</p> <ul> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless.html#aurora-serverless.limitations">Limitations
      * of Aurora Serverless v1</a> </p> </li> <li> <p> <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-serverless-v2.requirements.html">Requirements
-     * for Aurora Serverless v2</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-mysql-parallel-query.html#aurora-mysql-parallel-query-limitations">Limitations
-     * of parallel query</a> </p> </li> <li> <p> <a
-     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/aurora-global-database.html#aurora-global-database.limitations">Limitations
-     * of Aurora global databases</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
+     * for Aurora Serverless v2</a> </p> </li> </ul> <p>Valid for: Aurora DB clusters
      * only</p>
      */
     inline CreateDBClusterRequest& WithEngineMode(const char* value) { SetEngineMode(value); return *this;}
@@ -2957,73 +2925,89 @@ namespace Model
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>This
-     * setting is required to create a Multi-AZ DB cluster.</p> <p>Valid values:
-     * <code>io1</code> </p> <p>When specified, a value for the <code>Iops</code>
-     * parameter is required.</p> <p>Default: <code>io1</code> </p> <p>Valid for:
-     * Multi-AZ DB clusters only</p>
+     * setting is required to create a Multi-AZ DB cluster.</p> <p>When specified for a
+     * Multi-AZ DB cluster, a value for the <code>Iops</code> parameter is
+     * required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

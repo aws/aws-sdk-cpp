@@ -23,7 +23,8 @@ IntegerParameterDeclaration::IntegerParameterDeclaration() :
     m_parameterValueTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_defaultValuesHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false)
+    m_valueWhenUnsetHasBeenSet(false),
+    m_mappedDataSetParametersHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ IntegerParameterDeclaration::IntegerParameterDeclaration(JsonView jsonValue) :
     m_parameterValueTypeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_defaultValuesHasBeenSet(false),
-    m_valueWhenUnsetHasBeenSet(false)
+    m_valueWhenUnsetHasBeenSet(false),
+    m_mappedDataSetParametersHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,16 @@ IntegerParameterDeclaration& IntegerParameterDeclaration::operator =(JsonView js
     m_valueWhenUnsetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MappedDataSetParameters"))
+  {
+    Aws::Utils::Array<JsonView> mappedDataSetParametersJsonList = jsonValue.GetArray("MappedDataSetParameters");
+    for(unsigned mappedDataSetParametersIndex = 0; mappedDataSetParametersIndex < mappedDataSetParametersJsonList.GetLength(); ++mappedDataSetParametersIndex)
+    {
+      m_mappedDataSetParameters.push_back(mappedDataSetParametersJsonList[mappedDataSetParametersIndex].AsObject());
+    }
+    m_mappedDataSetParametersHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +106,17 @@ JsonValue IntegerParameterDeclaration::Jsonize() const
   if(m_valueWhenUnsetHasBeenSet)
   {
    payload.WithObject("ValueWhenUnset", m_valueWhenUnset.Jsonize());
+
+  }
+
+  if(m_mappedDataSetParametersHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> mappedDataSetParametersJsonList(m_mappedDataSetParameters.size());
+   for(unsigned mappedDataSetParametersIndex = 0; mappedDataSetParametersIndex < mappedDataSetParametersJsonList.GetLength(); ++mappedDataSetParametersIndex)
+   {
+     mappedDataSetParametersJsonList[mappedDataSetParametersIndex].AsObject(m_mappedDataSetParameters[mappedDataSetParametersIndex].Jsonize());
+   }
+   payload.WithArray("MappedDataSetParameters", std::move(mappedDataSetParametersJsonList));
 
   }
 

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/model/VariantStoreItem.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_OMICS_API ListVariantStoresResult();
     AWS_OMICS_API ListVariantStoresResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListVariantStoresResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline ListVariantStoresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline ListVariantStoresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
-
-    /**
-     * <p>A pagination token that's included if more results are available.</p>
-     */
-    inline ListVariantStoresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListVariantStoresResult& AddVariantStores(VariantStoreItem&& value) { m_variantStores.push_back(std::move(value)); return *this; }
 
 
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline ListVariantStoresResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline ListVariantStoresResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>A pagination token that's included if more results are available.</p>
+     */
+    inline ListVariantStoresResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::String m_nextToken;
-
     Aws::Vector<VariantStoreItem> m_variantStores;
+
+    Aws::String m_nextToken;
 
     Aws::String m_requestId;
   };

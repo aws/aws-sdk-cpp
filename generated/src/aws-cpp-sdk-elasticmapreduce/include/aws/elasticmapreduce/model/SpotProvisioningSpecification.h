@@ -28,8 +28,8 @@ namespace Model
    * <p>The launch specification for Spot Instances in the instance fleet, which
    * determines the defined duration, provisioning timeout behavior, and allocation
    * strategy.</p>  <p>The instance fleet configuration is available only in
-   * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions. Spot Instance
-   * allocation strategy is available in Amazon EMR version 5.12.1 and later.</p>
+   * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions. Spot Instance
+   * allocation strategy is available in Amazon EMR releases 5.12.1 and later.</p>
    *   <p>Spot Instances with a defined duration (also known as Spot
    * blocks) are no longer available to new customers from July 1, 2021. For
    * customers who have previously used the feature, we will continue to support Spot

@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateResolverQueryLogConfigRequest::CreateResolverQueryLogConfigRequest() : 
     m_nameHasBeenSet(false),
     m_destinationArnHasBeenSet(false),
-    m_creatorRequestId(Aws::Utils::UUID::RandomUUID()),
+    m_creatorRequestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_creatorRequestIdHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

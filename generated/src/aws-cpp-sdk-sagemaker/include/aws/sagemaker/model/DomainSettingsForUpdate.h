@@ -43,37 +43,43 @@ namespace Model
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline const RStudioServerProDomainSettingsForUpdate& GetRStudioServerProDomainSettingsForUpdate() const{ return m_rStudioServerProDomainSettingsForUpdate; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline bool RStudioServerProDomainSettingsForUpdateHasBeenSet() const { return m_rStudioServerProDomainSettingsForUpdateHasBeenSet; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline void SetRStudioServerProDomainSettingsForUpdate(const RStudioServerProDomainSettingsForUpdate& value) { m_rStudioServerProDomainSettingsForUpdateHasBeenSet = true; m_rStudioServerProDomainSettingsForUpdate = value; }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline void SetRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { m_rStudioServerProDomainSettingsForUpdateHasBeenSet = true; m_rStudioServerProDomainSettingsForUpdate = std::move(value); }
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(const RStudioServerProDomainSettingsForUpdate& value) { SetRStudioServerProDomainSettingsForUpdate(value); return *this;}
 
     /**
      * <p>A collection of <code>RStudioServerPro</code> Domain-level app settings to
-     * update.</p>
+     * update. A single <code>RStudioServerPro</code> application is created for a
+     * domain.</p>
      */
     inline DomainSettingsForUpdate& WithRStudioServerProDomainSettingsForUpdate(RStudioServerProDomainSettingsForUpdate&& value) { SetRStudioServerProDomainSettingsForUpdate(std::move(value)); return *this;}
 

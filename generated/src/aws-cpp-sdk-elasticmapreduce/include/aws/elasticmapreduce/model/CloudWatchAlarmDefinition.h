@@ -209,30 +209,30 @@ namespace Model
 
 
     /**
-     * <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch
-     * metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch
-     * metric is specified, specify <code>300</code>.</p>
+     * <p>The period, in seconds, over which the statistic is applied. CloudWatch
+     * metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you
+     * specify a CloudWatch metric, specify <code>300</code>.</p>
      */
     inline int GetPeriod() const{ return m_period; }
 
     /**
-     * <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch
-     * metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch
-     * metric is specified, specify <code>300</code>.</p>
+     * <p>The period, in seconds, over which the statistic is applied. CloudWatch
+     * metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you
+     * specify a CloudWatch metric, specify <code>300</code>.</p>
      */
     inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
-     * <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch
-     * metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch
-     * metric is specified, specify <code>300</code>.</p>
+     * <p>The period, in seconds, over which the statistic is applied. CloudWatch
+     * metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you
+     * specify a CloudWatch metric, specify <code>300</code>.</p>
      */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
-     * <p>The period, in seconds, over which the statistic is applied. EMR CloudWatch
-     * metrics are emitted every five minutes (300 seconds), so if an EMR CloudWatch
-     * metric is specified, specify <code>300</code>.</p>
+     * <p>The period, in seconds, over which the statistic is applied. CloudWatch
+     * metrics for Amazon EMR are emitted every five minutes (300 seconds), so if you
+     * specify a CloudWatch metric, specify <code>300</code>.</p>
      */
     inline CloudWatchAlarmDefinition& WithPeriod(int value) { SetPeriod(value); return *this;}
 

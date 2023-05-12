@@ -20,7 +20,9 @@ namespace Model
     ACTIVATING,
     ACTIVE,
     DELETING,
-    DELETED
+    DELETED,
+    PROCESSING_UPLOAD,
+    UPLOAD_FAILED
   };
 
 namespace ReadSetStatusMapper

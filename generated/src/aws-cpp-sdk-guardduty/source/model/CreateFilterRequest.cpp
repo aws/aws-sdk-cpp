@@ -21,7 +21,7 @@ CreateFilterRequest::CreateFilterRequest() :
     m_rank(0),
     m_rankHasBeenSet(false),
     m_findingCriteriaHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

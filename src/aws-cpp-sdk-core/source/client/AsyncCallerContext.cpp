@@ -10,7 +10,7 @@ namespace Aws
 {
     namespace Client
     {
-        AsyncCallerContext::AsyncCallerContext() : m_uuid(Aws::Utils::UUID::RandomUUID())
+        AsyncCallerContext::AsyncCallerContext() : m_uuid(Aws::Utils::UUID::PseudoRandomUUID())
         {}
     }
 }

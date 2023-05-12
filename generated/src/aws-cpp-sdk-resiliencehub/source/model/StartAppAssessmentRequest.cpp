@@ -16,7 +16,7 @@ StartAppAssessmentRequest::StartAppAssessmentRequest() :
     m_appArnHasBeenSet(false),
     m_appVersionHasBeenSet(false),
     m_assessmentNameHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

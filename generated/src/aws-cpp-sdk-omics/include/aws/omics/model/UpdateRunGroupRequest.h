@@ -74,69 +74,6 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of CPUs to use.</p>
-     */
-    inline int GetMaxCpus() const{ return m_maxCpus; }
-
-    /**
-     * <p>The maximum number of CPUs to use.</p>
-     */
-    inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
-
-    /**
-     * <p>The maximum number of CPUs to use.</p>
-     */
-    inline void SetMaxCpus(int value) { m_maxCpusHasBeenSet = true; m_maxCpus = value; }
-
-    /**
-     * <p>The maximum number of CPUs to use.</p>
-     */
-    inline UpdateRunGroupRequest& WithMaxCpus(int value) { SetMaxCpus(value); return *this;}
-
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
-    inline int GetMaxDuration() const{ return m_maxDuration; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
-    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
-    inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
-
-    /**
-     * <p>A maximum run time for the group in minutes.</p>
-     */
-    inline UpdateRunGroupRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
-
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
-    inline int GetMaxRuns() const{ return m_maxRuns; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
-    inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
-    inline void SetMaxRuns(int value) { m_maxRunsHasBeenSet = true; m_maxRuns = value; }
-
-    /**
-     * <p>The maximum number of concurrent runs for the group.</p>
-     */
-    inline UpdateRunGroupRequest& WithMaxRuns(int value) { SetMaxRuns(value); return *this;}
-
-
-    /**
      * <p>A name for the group.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -176,22 +113,109 @@ namespace Model
      */
     inline UpdateRunGroupRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The maximum number of CPUs to use.</p>
+     */
+    inline int GetMaxCpus() const{ return m_maxCpus; }
+
+    /**
+     * <p>The maximum number of CPUs to use.</p>
+     */
+    inline bool MaxCpusHasBeenSet() const { return m_maxCpusHasBeenSet; }
+
+    /**
+     * <p>The maximum number of CPUs to use.</p>
+     */
+    inline void SetMaxCpus(int value) { m_maxCpusHasBeenSet = true; m_maxCpus = value; }
+
+    /**
+     * <p>The maximum number of CPUs to use.</p>
+     */
+    inline UpdateRunGroupRequest& WithMaxCpus(int value) { SetMaxCpus(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of concurrent runs for the group.</p>
+     */
+    inline int GetMaxRuns() const{ return m_maxRuns; }
+
+    /**
+     * <p>The maximum number of concurrent runs for the group.</p>
+     */
+    inline bool MaxRunsHasBeenSet() const { return m_maxRunsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of concurrent runs for the group.</p>
+     */
+    inline void SetMaxRuns(int value) { m_maxRunsHasBeenSet = true; m_maxRuns = value; }
+
+    /**
+     * <p>The maximum number of concurrent runs for the group.</p>
+     */
+    inline UpdateRunGroupRequest& WithMaxRuns(int value) { SetMaxRuns(value); return *this;}
+
+
+    /**
+     * <p>A maximum run time for the group in minutes.</p>
+     */
+    inline int GetMaxDuration() const{ return m_maxDuration; }
+
+    /**
+     * <p>A maximum run time for the group in minutes.</p>
+     */
+    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
+
+    /**
+     * <p>A maximum run time for the group in minutes.</p>
+     */
+    inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
+
+    /**
+     * <p>A maximum run time for the group in minutes.</p>
+     */
+    inline UpdateRunGroupRequest& WithMaxDuration(int value) { SetMaxDuration(value); return *this;}
+
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline int GetMaxGpus() const{ return m_maxGpus; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline bool MaxGpusHasBeenSet() const { return m_maxGpusHasBeenSet; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline void SetMaxGpus(int value) { m_maxGpusHasBeenSet = true; m_maxGpus = value; }
+
+    /**
+     * <p> The maximum GPUs that can be used by a run group. </p>
+     */
+    inline UpdateRunGroupRequest& WithMaxGpus(int value) { SetMaxGpus(value); return *this;}
+
   private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
     int m_maxCpus;
     bool m_maxCpusHasBeenSet = false;
-
-    int m_maxDuration;
-    bool m_maxDurationHasBeenSet = false;
 
     int m_maxRuns;
     bool m_maxRunsHasBeenSet = false;
 
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
+    int m_maxDuration;
+    bool m_maxDurationHasBeenSet = false;
+
+    int m_maxGpus;
+    bool m_maxGpusHasBeenSet = false;
   };
 
 } // namespace Model

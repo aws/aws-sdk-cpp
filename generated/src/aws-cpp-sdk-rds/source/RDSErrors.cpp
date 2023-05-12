@@ -40,6 +40,7 @@ static const int INVALID_EXPORT_TASK_STATE_FAULT_HASH = HashingUtils::HashString
 static const int INSUFFICIENT_STORAGE_CLUSTER_CAPACITY_FAULT_HASH = HashingUtils::HashString("InsufficientStorageClusterCapacity");
 static const int D_B_SUBNET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBSubnetGroupNotFoundFault");
 static const int D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT_HASH = HashingUtils::HashString("DBSecurityGroupNotSupported");
+static const int STORAGE_TYPE_NOT_AVAILABLE_FAULT_HASH = HashingUtils::HashString("StorageTypeNotAvailableFault");
 static const int D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH = HashingUtils::HashString("DBSnapshotAlreadyExists");
 static const int D_B_PROXY_TARGET_GROUP_NOT_FOUND_FAULT_HASH = HashingUtils::HashString("DBProxyTargetGroupNotFoundFault");
 static const int SNAPSHOT_QUOTA_EXCEEDED_FAULT_HASH = HashingUtils::HashString("SnapshotQuotaExceeded");
@@ -261,6 +262,11 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
   else if (hashCode == D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::D_B_SECURITY_GROUP_NOT_SUPPORTED_FAULT), false);
+    return true;
+  }
+  else if (hashCode == STORAGE_TYPE_NOT_AVAILABLE_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::STORAGE_TYPE_NOT_AVAILABLE_FAULT), false);
     return true;
   }
   else if (hashCode == D_B_SNAPSHOT_ALREADY_EXISTS_FAULT_HASH)
@@ -758,17 +764,17 @@ static bool GetErrorForNameHelper0(int hashCode, AWSError<CoreErrors>& error)
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::POINT_IN_TIME_RESTORE_NOT_ENABLED_FAULT), false);
     return true;
   }
-  else if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
-  {
-    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::SOURCE_NOT_FOUND_FAULT), false);
-    return true;
-  }
   return false;
 }
 
 static bool GetErrorForNameHelper1(int hashCode, AWSError<CoreErrors>& error)
 {
-  if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
+  if (hashCode == SOURCE_NOT_FOUND_FAULT_HASH)
+  {
+    error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::SOURCE_NOT_FOUND_FAULT), false);
+    return true;
+  }
+  else if (hashCode == INVALID_GLOBAL_CLUSTER_STATE_FAULT_HASH)
   {
     error = AWSError<CoreErrors>(static_cast<CoreErrors>(RDSErrors::INVALID_GLOBAL_CLUSTER_STATE_FAULT), false);
     return true;

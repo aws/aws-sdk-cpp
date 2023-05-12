@@ -43,6 +43,7 @@ namespace Aws
         static const int RecommendationOptionsContainerRecommendations_HASH = HashingUtils::HashString("RecommendationOptionsContainerRecommendations");
         static const int RecommendationOptionsProjectedUtilizationMetricsCpuMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsCpuMaximum");
         static const int RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum_HASH = HashingUtils::HashString("RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum");
+        static const int Tags_HASH = HashingUtils::HashString("Tags");
 
 
         ExportableECSServiceField GetExportableECSServiceFieldForName(const Aws::String& name)
@@ -140,6 +141,10 @@ namespace Aws
           {
             return ExportableECSServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum;
           }
+          else if (hashCode == Tags_HASH)
+          {
+            return ExportableECSServiceField::Tags;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -200,6 +205,8 @@ namespace Aws
             return "RecommendationOptionsProjectedUtilizationMetricsCpuMaximum";
           case ExportableECSServiceField::RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum:
             return "RecommendationOptionsProjectedUtilizationMetricsMemoryMaximum";
+          case ExportableECSServiceField::Tags:
+            return "Tags";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

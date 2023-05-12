@@ -51,6 +51,9 @@ namespace Appflow
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef AppflowClientConfiguration ClientConfigurationType;
+      typedef AppflowEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -98,6 +101,48 @@ namespace Appflow
 
         /* End of legacy constructors due deprecation */
         virtual ~AppflowClient();
+
+        /**
+         * <p>Cancels active runs for a flow.</p> <p>You can cancel all of the active runs
+         * for a flow, or you can cancel specific runs by providing their IDs.</p> <p>You
+         * can cancel a flow run only when the run is in progress. You can't cancel a run
+         * that has already completed or failed. You also can't cancel a run that's
+         * scheduled to occur but hasn't started yet. To prevent a scheduled run, you can
+         * deactivate the flow with the <code>StopFlow</code> action.</p> <p>You cannot
+         * resume a run after you cancel it.</p> <p>When you send your request, the status
+         * for each run becomes <code>CancelStarted</code>. When the cancellation
+         * completes, the status becomes <code>Canceled</code>.</p>  <p>When you
+         * cancel a run, you still incur charges for any data that the run already
+         * processed before the cancellation. If the run had already written some data to
+         * the flow destination, then that data remains in the destination. If you
+         * configured the flow to use a batch API (such as the Salesforce Bulk API 2.0),
+         * then the run will finish reading or writing its entire batch of data after the
+         * cancellation. For these operations, the data processing charges for Amazon
+         * AppFlow apply. For the pricing information, see <a
+         * href="http://aws.amazon.com/appflow/pricing/">Amazon AppFlow pricing</a>.</p>
+         * <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appflow-2020-08-23/CancelFlowExecutions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CancelFlowExecutionsOutcome CancelFlowExecutions(const Model::CancelFlowExecutionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CancelFlowExecutions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CancelFlowExecutionsRequestT = Model::CancelFlowExecutionsRequest>
+        Model::CancelFlowExecutionsOutcomeCallable CancelFlowExecutionsCallable(const CancelFlowExecutionsRequestT& request) const
+        {
+            return SubmitCallable(&AppflowClient::CancelFlowExecutions, request);
+        }
+
+        /**
+         * An Async wrapper for CancelFlowExecutions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CancelFlowExecutionsRequestT = Model::CancelFlowExecutionsRequest>
+        void CancelFlowExecutionsAsync(const CancelFlowExecutionsRequestT& request, const CancelFlowExecutionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppflowClient::CancelFlowExecutions, request, handler, context);
+        }
 
         /**
          * <p> Creates a new connector profile associated with your Amazon Web Services

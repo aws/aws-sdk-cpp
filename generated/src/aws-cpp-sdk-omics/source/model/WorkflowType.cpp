@@ -21,6 +21,7 @@ namespace Aws
       {
 
         static const int PRIVATE__HASH = HashingUtils::HashString("PRIVATE");
+        static const int READY2RUN_HASH = HashingUtils::HashString("READY2RUN");
 
 
         WorkflowType GetWorkflowTypeForName(const Aws::String& name)
@@ -29,6 +30,10 @@ namespace Aws
           if (hashCode == PRIVATE__HASH)
           {
             return WorkflowType::PRIVATE_;
+          }
+          else if (hashCode == READY2RUN_HASH)
+          {
+            return WorkflowType::READY2RUN;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -46,6 +51,8 @@ namespace Aws
           {
           case WorkflowType::PRIVATE_:
             return "PRIVATE";
+          case WorkflowType::READY2RUN:
+            return "READY2RUN";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

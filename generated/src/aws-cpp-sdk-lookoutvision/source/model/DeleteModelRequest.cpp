@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 DeleteModelRequest::DeleteModelRequest() : 
     m_projectNameHasBeenSet(false),
     m_modelVersionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

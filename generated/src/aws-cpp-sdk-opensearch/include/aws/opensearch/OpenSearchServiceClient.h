@@ -37,6 +37,9 @@ namespace OpenSearchService
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef OpenSearchServiceClientConfiguration ClientConfigurationType;
+      typedef OpenSearchServiceEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -582,6 +585,60 @@ namespace OpenSearchService
         }
 
         /**
+         * <p>Returns information about domain and node health, the standby Availability
+         * Zone, number of nodes per Availability Zone, and shard count per
+         * node.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainHealth">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainHealthOutcome DescribeDomainHealth(const Model::DescribeDomainHealthRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDomainHealth that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDomainHealthRequestT = Model::DescribeDomainHealthRequest>
+        Model::DescribeDomainHealthOutcomeCallable DescribeDomainHealthCallable(const DescribeDomainHealthRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::DescribeDomainHealth, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDomainHealth that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDomainHealthRequestT = Model::DescribeDomainHealthRequest>
+        void DescribeDomainHealthAsync(const DescribeDomainHealthRequestT& request, const DescribeDomainHealthResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::DescribeDomainHealth, request, handler, context);
+        }
+
+        /**
+         * <p>Returns information about domain and nodes, including data nodes, master
+         * nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node
+         * configurations, and node states.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomainNodes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeDomainNodesOutcome DescribeDomainNodes(const Model::DescribeDomainNodesRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeDomainNodes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeDomainNodesRequestT = Model::DescribeDomainNodesRequest>
+        Model::DescribeDomainNodesOutcomeCallable DescribeDomainNodesCallable(const DescribeDomainNodesRequestT& request) const
+        {
+            return SubmitCallable(&OpenSearchServiceClient::DescribeDomainNodes, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeDomainNodes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeDomainNodesRequestT = Model::DescribeDomainNodesRequest>
+        void DescribeDomainNodesAsync(const DescribeDomainNodesRequestT& request, const DescribeDomainNodesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&OpenSearchServiceClient::DescribeDomainNodes, request, handler, context);
+        }
+
+        /**
          * <p>Returns domain configuration information about the specified Amazon
          * OpenSearch Service domains.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/DescribeDomains">AWS
@@ -887,7 +944,8 @@ namespace OpenSearchService
 
         /**
          * <p>Returns a list of Amazon OpenSearch Service package versions, along with
-         * their creation time and commit message. For more information, see <a
+         * their creation time, commit message, and plugin properties (if the package is a
+         * zip plugin package). For more information, see <a
          * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom
          * packages for Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/GetPackageVersionHistory">AWS
@@ -1373,7 +1431,7 @@ namespace OpenSearchService
 
         /**
          * <p>Modifies the cluster configuration of the specified Amazon OpenSearch Service
-         * domain.</p><p><h3>See Also:</h3>   <a
+         * domain.sl</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/UpdateDomainConfig">AWS
          * API Reference</a></p>
          */

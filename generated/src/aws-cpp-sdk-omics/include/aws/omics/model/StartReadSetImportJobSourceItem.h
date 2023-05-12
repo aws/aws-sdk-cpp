@@ -5,9 +5,9 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/omics/model/FileType.h>
 #include <aws/omics/model/SourceFiles.h>
+#include <aws/omics/model/FileType.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
@@ -41,167 +41,106 @@ namespace Model
 
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline const Aws::String& GetDescription() const{ return m_description; }
+    inline const SourceFiles& GetSourceFiles() const{ return m_sourceFiles; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+    inline bool SourceFilesHasBeenSet() const { return m_sourceFilesHasBeenSet; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+    inline void SetSourceFiles(const SourceFiles& value) { m_sourceFilesHasBeenSet = true; m_sourceFiles = value; }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+    inline void SetSourceFiles(SourceFiles&& value) { m_sourceFilesHasBeenSet = true; m_sourceFiles = std::move(value); }
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+    inline StartReadSetImportJobSourceItem& WithSourceFiles(const SourceFiles& value) { SetSourceFiles(value); return *this;}
 
     /**
-     * <p>The source's description.</p>
+     * <p>The source files' location in Amazon S3.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The source's description.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithSourceFiles(SourceFiles&& value) { SetSourceFiles(std::move(value)); return *this;}
 
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline const Aws::String& GetGeneratedFrom() const{ return m_generatedFrom; }
+    inline const FileType& GetSourceFileType() const{ return m_sourceFileType; }
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline bool GeneratedFromHasBeenSet() const { return m_generatedFromHasBeenSet; }
+    inline bool SourceFileTypeHasBeenSet() const { return m_sourceFileTypeHasBeenSet; }
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline void SetGeneratedFrom(const Aws::String& value) { m_generatedFromHasBeenSet = true; m_generatedFrom = value; }
+    inline void SetSourceFileType(const FileType& value) { m_sourceFileTypeHasBeenSet = true; m_sourceFileType = value; }
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline void SetGeneratedFrom(Aws::String&& value) { m_generatedFromHasBeenSet = true; m_generatedFrom = std::move(value); }
+    inline void SetSourceFileType(FileType&& value) { m_sourceFileTypeHasBeenSet = true; m_sourceFileType = std::move(value); }
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline void SetGeneratedFrom(const char* value) { m_generatedFromHasBeenSet = true; m_generatedFrom.assign(value); }
+    inline StartReadSetImportJobSourceItem& WithSourceFileType(const FileType& value) { SetSourceFileType(value); return *this;}
 
     /**
-     * <p>Where the source originated.</p>
+     * <p>The source's file type.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(const Aws::String& value) { SetGeneratedFrom(value); return *this;}
-
-    /**
-     * <p>Where the source originated.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(Aws::String&& value) { SetGeneratedFrom(std::move(value)); return *this;}
-
-    /**
-     * <p>Where the source originated.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(const char* value) { SetGeneratedFrom(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithSourceFileType(FileType&& value) { SetSourceFileType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline const Aws::String& GetName() const{ return m_name; }
+    inline const Aws::String& GetSubjectId() const{ return m_subjectId; }
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+    inline bool SubjectIdHasBeenSet() const { return m_subjectIdHasBeenSet; }
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+    inline void SetSubjectId(const Aws::String& value) { m_subjectIdHasBeenSet = true; m_subjectId = value; }
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+    inline void SetSubjectId(Aws::String&& value) { m_subjectIdHasBeenSet = true; m_subjectId = std::move(value); }
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+    inline void SetSubjectId(const char* value) { m_subjectIdHasBeenSet = true; m_subjectId.assign(value); }
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithSubjectId(const Aws::String& value) { SetSubjectId(value); return *this;}
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+    inline StartReadSetImportJobSourceItem& WithSubjectId(Aws::String&& value) { SetSubjectId(std::move(value)); return *this;}
 
     /**
-     * <p>The source's name.</p>
+     * <p>The source's subject ID.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithName(const char* value) { SetName(value); return *this;}
-
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The source's reference ARN.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithSubjectId(const char* value) { SetSubjectId(value); return *this;}
 
 
     /**
@@ -246,106 +185,167 @@ namespace Model
 
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline const FileType& GetSourceFileType() const{ return m_sourceFileType; }
+    inline const Aws::String& GetGeneratedFrom() const{ return m_generatedFrom; }
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline bool SourceFileTypeHasBeenSet() const { return m_sourceFileTypeHasBeenSet; }
+    inline bool GeneratedFromHasBeenSet() const { return m_generatedFromHasBeenSet; }
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline void SetSourceFileType(const FileType& value) { m_sourceFileTypeHasBeenSet = true; m_sourceFileType = value; }
+    inline void SetGeneratedFrom(const Aws::String& value) { m_generatedFromHasBeenSet = true; m_generatedFrom = value; }
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline void SetSourceFileType(FileType&& value) { m_sourceFileTypeHasBeenSet = true; m_sourceFileType = std::move(value); }
+    inline void SetGeneratedFrom(Aws::String&& value) { m_generatedFromHasBeenSet = true; m_generatedFrom = std::move(value); }
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithSourceFileType(const FileType& value) { SetSourceFileType(value); return *this;}
+    inline void SetGeneratedFrom(const char* value) { m_generatedFromHasBeenSet = true; m_generatedFrom.assign(value); }
 
     /**
-     * <p>The source's file type.</p>
+     * <p>Where the source originated.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithSourceFileType(FileType&& value) { SetSourceFileType(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The source files' location in Amazon S3.</p>
-     */
-    inline const SourceFiles& GetSourceFiles() const{ return m_sourceFiles; }
+    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(const Aws::String& value) { SetGeneratedFrom(value); return *this;}
 
     /**
-     * <p>The source files' location in Amazon S3.</p>
+     * <p>Where the source originated.</p>
      */
-    inline bool SourceFilesHasBeenSet() const { return m_sourceFilesHasBeenSet; }
+    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(Aws::String&& value) { SetGeneratedFrom(std::move(value)); return *this;}
 
     /**
-     * <p>The source files' location in Amazon S3.</p>
+     * <p>Where the source originated.</p>
      */
-    inline void SetSourceFiles(const SourceFiles& value) { m_sourceFilesHasBeenSet = true; m_sourceFiles = value; }
-
-    /**
-     * <p>The source files' location in Amazon S3.</p>
-     */
-    inline void SetSourceFiles(SourceFiles&& value) { m_sourceFilesHasBeenSet = true; m_sourceFiles = std::move(value); }
-
-    /**
-     * <p>The source files' location in Amazon S3.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithSourceFiles(const SourceFiles& value) { SetSourceFiles(value); return *this;}
-
-    /**
-     * <p>The source files' location in Amazon S3.</p>
-     */
-    inline StartReadSetImportJobSourceItem& WithSourceFiles(SourceFiles&& value) { SetSourceFiles(std::move(value)); return *this;}
+    inline StartReadSetImportJobSourceItem& WithGeneratedFrom(const char* value) { SetGeneratedFrom(value); return *this;}
 
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline const Aws::String& GetSubjectId() const{ return m_subjectId; }
+    inline const Aws::String& GetReferenceArn() const{ return m_referenceArn; }
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline bool SubjectIdHasBeenSet() const { return m_subjectIdHasBeenSet; }
+    inline bool ReferenceArnHasBeenSet() const { return m_referenceArnHasBeenSet; }
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline void SetSubjectId(const Aws::String& value) { m_subjectIdHasBeenSet = true; m_subjectId = value; }
+    inline void SetReferenceArn(const Aws::String& value) { m_referenceArnHasBeenSet = true; m_referenceArn = value; }
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline void SetSubjectId(Aws::String&& value) { m_subjectIdHasBeenSet = true; m_subjectId = std::move(value); }
+    inline void SetReferenceArn(Aws::String&& value) { m_referenceArnHasBeenSet = true; m_referenceArn = std::move(value); }
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline void SetSubjectId(const char* value) { m_subjectIdHasBeenSet = true; m_subjectId.assign(value); }
+    inline void SetReferenceArn(const char* value) { m_referenceArnHasBeenSet = true; m_referenceArn.assign(value); }
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithSubjectId(const Aws::String& value) { SetSubjectId(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithReferenceArn(const Aws::String& value) { SetReferenceArn(value); return *this;}
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithSubjectId(Aws::String&& value) { SetSubjectId(std::move(value)); return *this;}
+    inline StartReadSetImportJobSourceItem& WithReferenceArn(Aws::String&& value) { SetReferenceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The source's subject ID.</p>
+     * <p>The source's reference ARN.</p>
      */
-    inline StartReadSetImportJobSourceItem& WithSubjectId(const char* value) { SetSubjectId(value); return *this;}
+    inline StartReadSetImportJobSourceItem& WithReferenceArn(const char* value) { SetReferenceArn(value); return *this;}
+
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithName(const Aws::String& value) { SetName(value); return *this;}
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
+
+    /**
+     * <p>The source's name.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithName(const char* value) { SetName(value); return *this;}
+
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The source's description.</p>
+     */
+    inline StartReadSetImportJobSourceItem& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -415,29 +415,29 @@ namespace Model
 
   private:
 
-    Aws::String m_description;
-    bool m_descriptionHasBeenSet = false;
-
-    Aws::String m_generatedFrom;
-    bool m_generatedFromHasBeenSet = false;
-
-    Aws::String m_name;
-    bool m_nameHasBeenSet = false;
-
-    Aws::String m_referenceArn;
-    bool m_referenceArnHasBeenSet = false;
-
-    Aws::String m_sampleId;
-    bool m_sampleIdHasBeenSet = false;
+    SourceFiles m_sourceFiles;
+    bool m_sourceFilesHasBeenSet = false;
 
     FileType m_sourceFileType;
     bool m_sourceFileTypeHasBeenSet = false;
 
-    SourceFiles m_sourceFiles;
-    bool m_sourceFilesHasBeenSet = false;
-
     Aws::String m_subjectId;
     bool m_subjectIdHasBeenSet = false;
+
+    Aws::String m_sampleId;
+    bool m_sampleIdHasBeenSet = false;
+
+    Aws::String m_generatedFrom;
+    bool m_generatedFromHasBeenSet = false;
+
+    Aws::String m_referenceArn;
+    bool m_referenceArnHasBeenSet = false;
+
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
+
+    Aws::String m_description;
+    bool m_descriptionHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

@@ -32,6 +32,9 @@ namespace DLM
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef DLMClientConfiguration ClientConfigurationType;
+      typedef DLMEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.

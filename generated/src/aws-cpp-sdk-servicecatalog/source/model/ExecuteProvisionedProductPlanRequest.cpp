@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 ExecuteProvisionedProductPlanRequest::ExecuteProvisionedProductPlanRequest() : 
     m_acceptLanguageHasBeenSet(false),
     m_planIdHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

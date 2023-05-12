@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 
 DeleteMultiRegionAccessPointRequest::DeleteMultiRegionAccessPointRequest() : 
     m_accountIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_detailsHasBeenSet(false)
 {

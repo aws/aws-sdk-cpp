@@ -14,10 +14,11 @@ using namespace Aws::Utils;
 
 StartVariantImportJobRequest::StartVariantImportJobRequest() : 
     m_destinationNameHasBeenSet(false),
-    m_itemsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
+    m_itemsHasBeenSet(false),
     m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false)
+    m_runLeftNormalizationHasBeenSet(false),
+    m_annotationFieldsHasBeenSet(false)
 {
 }
 
@@ -28,6 +29,12 @@ Aws::String StartVariantImportJobRequest::SerializePayload() const
   if(m_destinationNameHasBeenSet)
   {
    payload.WithString("destinationName", m_destinationName);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -42,15 +49,20 @@ Aws::String StartVariantImportJobRequest::SerializePayload() const
 
   }
 
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
-  }
-
   if(m_runLeftNormalizationHasBeenSet)
   {
    payload.WithBool("runLeftNormalization", m_runLeftNormalization);
+
+  }
+
+  if(m_annotationFieldsHasBeenSet)
+  {
+   JsonValue annotationFieldsJsonMap;
+   for(auto& annotationFieldsItem : m_annotationFields)
+   {
+     annotationFieldsJsonMap.WithString(annotationFieldsItem.first, annotationFieldsItem.second);
+   }
+   payload.WithObject("annotationFields", std::move(annotationFieldsJsonMap));
 
   }
 

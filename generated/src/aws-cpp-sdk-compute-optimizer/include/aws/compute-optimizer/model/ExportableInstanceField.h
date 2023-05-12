@@ -69,7 +69,8 @@ namespace Model
     InferredWorkloadTypes,
     RecommendationOptionsMigrationEffort,
     EffectiveRecommendationPreferencesExternalMetricsSource,
-    InstanceState
+    InstanceState,
+    Tags
   };
 
 namespace ExportableInstanceFieldMapper

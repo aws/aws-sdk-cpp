@@ -21,7 +21,7 @@ StartTextTranslationJobRequest::StartTextTranslationJobRequest() :
     m_targetLanguageCodesHasBeenSet(false),
     m_terminologyNamesHasBeenSet(false),
     m_parallelDataNamesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_settingsHasBeenSet(false)
 {

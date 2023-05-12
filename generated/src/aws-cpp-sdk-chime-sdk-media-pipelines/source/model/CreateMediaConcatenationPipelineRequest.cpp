@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateMediaConcatenationPipelineRequest::CreateMediaConcatenationPipelineRequest() : 
     m_sourcesHasBeenSet(false),
     m_sinksHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

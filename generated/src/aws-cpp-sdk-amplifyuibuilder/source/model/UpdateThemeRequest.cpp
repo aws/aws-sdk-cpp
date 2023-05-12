@@ -19,7 +19,7 @@ UpdateThemeRequest::UpdateThemeRequest() :
     m_appIdHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
     m_idHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_updatedThemeHasBeenSet(false)
 {

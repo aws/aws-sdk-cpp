@@ -17,7 +17,7 @@ StartPHIDetectionJobRequest::StartPHIDetectionJobRequest() :
     m_outputDataConfigHasBeenSet(false),
     m_dataAccessRoleArnHasBeenSet(false),
     m_jobNameHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_kMSKeyHasBeenSet(false),
     m_languageCode(LanguageCode::NOT_SET),

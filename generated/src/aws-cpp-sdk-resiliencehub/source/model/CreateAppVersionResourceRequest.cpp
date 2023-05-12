@@ -18,7 +18,7 @@ CreateAppVersionResourceRequest::CreateAppVersionResourceRequest() :
     m_appComponentsHasBeenSet(false),
     m_awsAccountIdHasBeenSet(false),
     m_awsRegionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_logicalResourceIdHasBeenSet(false),
     m_physicalResourceIdHasBeenSet(false),

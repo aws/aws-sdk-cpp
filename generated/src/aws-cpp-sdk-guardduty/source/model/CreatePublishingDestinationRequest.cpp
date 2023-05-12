@@ -17,7 +17,7 @@ CreatePublishingDestinationRequest::CreatePublishingDestinationRequest() :
     m_destinationType(DestinationType::NOT_SET),
     m_destinationTypeHasBeenSet(false),
     m_destinationPropertiesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

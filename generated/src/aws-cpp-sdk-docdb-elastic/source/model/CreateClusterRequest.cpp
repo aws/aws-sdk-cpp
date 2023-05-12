@@ -17,7 +17,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_adminUserPasswordHasBeenSet(false),
     m_authType(Auth::NOT_SET),
     m_authTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_clusterNameHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),

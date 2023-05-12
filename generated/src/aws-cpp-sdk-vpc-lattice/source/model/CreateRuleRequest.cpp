@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 CreateRuleRequest::CreateRuleRequest() : 
     m_actionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_listenerIdentifierHasBeenSet(false),
     m_matchHasBeenSet(false),

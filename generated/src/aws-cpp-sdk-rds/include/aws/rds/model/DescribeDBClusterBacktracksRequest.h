@@ -126,8 +126,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline const Aws::String& GetBacktrackIdentifier() const{ return m_backtrackIdentifier; }
@@ -136,8 +136,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline bool BacktrackIdentifierHasBeenSet() const { return m_backtrackIdentifierHasBeenSet; }
@@ -146,8 +146,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline void SetBacktrackIdentifier(const Aws::String& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = value; }
@@ -156,8 +156,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline void SetBacktrackIdentifier(Aws::String&& value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier = std::move(value); }
@@ -166,8 +166,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline void SetBacktrackIdentifier(const char* value) { m_backtrackIdentifierHasBeenSet = true; m_backtrackIdentifier.assign(value); }
@@ -176,8 +176,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithBacktrackIdentifier(const Aws::String& value) { SetBacktrackIdentifier(value); return *this;}
@@ -186,8 +186,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithBacktrackIdentifier(Aws::String&& value) { SetBacktrackIdentifier(std::move(value)); return *this;}
@@ -196,8 +196,8 @@ namespace Model
      * <p>If specified, this value is the backtrack identifier of the backtrack to be
      * described.</p> <p>Constraints:</p> <ul> <li> <p>Must contain a valid universally
      * unique identifier (UUID). For more information about UUIDs, see <a
-     * href="http://www.ietf.org/rfc/rfc4122.txt">A Universally Unique Identifier
-     * (UUID) URN Namespace</a>.</p> </li> </ul> <p>Example:
+     * href="https://en.wikipedia.org/wiki/Universally_unique_identifier">Universally
+     * unique identifier</a>.</p> </li> </ul> <p>Example:
      * <code>123e4567-e89b-12d3-a456-426655440000</code> </p>
      */
     inline DescribeDBClusterBacktracksRequest& WithBacktrackIdentifier(const char* value) { SetBacktrackIdentifier(value); return *this;}

@@ -20,7 +20,9 @@ PollForDecisionTaskRequest::PollForDecisionTaskRequest() :
     m_maximumPageSize(0),
     m_maximumPageSizeHasBeenSet(false),
     m_reverseOrder(false),
-    m_reverseOrderHasBeenSet(false)
+    m_reverseOrderHasBeenSet(false),
+    m_startAtPreviousStartedEvent(false),
+    m_startAtPreviousStartedEventHasBeenSet(false)
 {
 }
 
@@ -61,6 +63,12 @@ Aws::String PollForDecisionTaskRequest::SerializePayload() const
   if(m_reverseOrderHasBeenSet)
   {
    payload.WithBool("reverseOrder", m_reverseOrder);
+
+  }
+
+  if(m_startAtPreviousStartedEventHasBeenSet)
+  {
+   payload.WithBool("startAtPreviousStartedEvent", m_startAtPreviousStartedEvent);
 
   }
 

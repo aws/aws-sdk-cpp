@@ -17,7 +17,7 @@ CreateAttributeGroupRequest::CreateAttributeGroupRequest() :
     m_descriptionHasBeenSet(false),
     m_attributesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

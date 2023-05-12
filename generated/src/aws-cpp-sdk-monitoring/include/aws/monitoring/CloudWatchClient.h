@@ -38,6 +38,9 @@ namespace CloudWatch
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef CloudWatchClientConfiguration ClientConfigurationType;
+      typedef CloudWatchEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -1149,14 +1152,16 @@ namespace CloudWatch
          * <code>AWSServiceRoleForCloudWatchAlarms_ActionSSM</code>. For more information,
          * see <a
          * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_terms-and-concepts.html#iam-term-service-linked-role">Amazon
-         * Web Services service-linked role</a>.</p> <p> <b>Cross-account alarms</b> </p>
-         * <p>You can set an alarm on metrics in the current account, or in another
-         * account. To create a cross-account alarm that watches a metric in a different
-         * account, you must have completed the following pre-requisites:</p> <ul> <li>
-         * <p>The account where the metrics are located (the <i>sharing account</i>) must
-         * already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If
-         * it does not already have this role, you must create it using the instructions in
-         * <b>Set up a sharing account</b> in <a
+         * Web Services service-linked role</a>.</p> <p>Each <code>PutMetricAlarm</code>
+         * action has a maximum uncompressed payload of 120 KB.</p> <p> <b>Cross-account
+         * alarms</b> </p> <p>You can set an alarm on metrics in the current account, or in
+         * another account. To create a cross-account alarm that watches a metric in a
+         * different account, you must have completed the following pre-requisites:</p>
+         * <ul> <li> <p>The account where the metrics are located (the <i>sharing
+         * account</i>) must already have a sharing role named
+         * <b>CloudWatch-CrossAccountSharingRole</b>. If it does not already have this
+         * role, you must create it using the instructions in <b>Set up a sharing
+         * account</b> in <a
          * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region">
          * Cross-account cross-Region CloudWatch console</a>. The policy for that role must
          * grant access to the ID of the account where you are creating the alarm. </p>

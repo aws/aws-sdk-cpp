@@ -119,7 +119,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline const StreamExceptionPolicy& GetStreamExceptionPolicy() const{ return m_streamExceptionPolicy; }
 
@@ -136,7 +141,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline bool StreamExceptionPolicyHasBeenSet() const { return m_streamExceptionPolicyHasBeenSet; }
 
@@ -153,7 +163,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline void SetStreamExceptionPolicy(const StreamExceptionPolicy& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = value; }
 
@@ -170,7 +185,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline void SetStreamExceptionPolicy(StreamExceptionPolicy&& value) { m_streamExceptionPolicyHasBeenSet = true; m_streamExceptionPolicy = std::move(value); }
 
@@ -187,7 +207,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline StatefulEngineOptions& WithStreamExceptionPolicy(const StreamExceptionPolicy& value) { SetStreamExceptionPolicy(value); return *this;}
 
@@ -204,7 +229,12 @@ namespace Model
      * because the service won't have the context from session initialization defining
      * the application layer protocol as HTTP. However, this behavior is rule
      * dependent—a TCP-layer rule using a <code>flow:stateless</code> rule would still
-     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> </ul>
+     * match, as would the <code>aws:drop_strict</code> default action.</p> </li> <li>
+     * <p> <code>REJECT</code> - Network Firewall fails closed and drops all subsequent
+     * traffic going to the firewall. Network Firewall also sends a TCP reject packet
+     * back to your client so that the client can immediately establish a new session.
+     * Network Firewall will have context about the new session and will apply rules to
+     * the subsequent traffic.</p> </li> </ul>
      */
     inline StatefulEngineOptions& WithStreamExceptionPolicy(StreamExceptionPolicy&& value) { SetStreamExceptionPolicy(std::move(value)); return *this;}
 

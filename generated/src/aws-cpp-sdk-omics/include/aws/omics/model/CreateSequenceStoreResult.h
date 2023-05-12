@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/core/utils/DateTime.h>
 #include <aws/omics/model/SseConfig.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -32,104 +32,6 @@ namespace Model
     AWS_OMICS_API CreateSequenceStoreResult();
     AWS_OMICS_API CreateSequenceStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API CreateSequenceStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline const Aws::String& GetArn() const{ return m_arn; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline void SetArn(const Aws::String& value) { m_arn = value; }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline void SetArn(const char* value) { m_arn.assign(value); }
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline CreateSequenceStoreResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline CreateSequenceStoreResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's ARN.</p>
-     */
-    inline CreateSequenceStoreResult& WithArn(const char* value) { SetArn(value); return *this;}
-
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline CreateSequenceStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
-
-    /**
-     * <p>When the store was created.</p>
-     */
-    inline CreateSequenceStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline const Aws::String& GetDescription() const{ return m_description; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const Aws::String& value) { m_description = value; }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline void SetDescription(const char* value) { m_description.assign(value); }
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline CreateSequenceStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline CreateSequenceStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
-
-    /**
-     * <p>The store's description.</p>
-     */
-    inline CreateSequenceStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
 
 
     /**
@@ -169,6 +71,42 @@ namespace Model
 
 
     /**
+     * <p>The store's ARN.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arn = value; }
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arn = std::move(value); }
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline void SetArn(const char* value) { m_arn.assign(value); }
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline CreateSequenceStoreResult& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline CreateSequenceStoreResult& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's ARN.</p>
+     */
+    inline CreateSequenceStoreResult& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The store's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
@@ -205,6 +143,42 @@ namespace Model
 
 
     /**
+     * <p>The store's description.</p>
+     */
+    inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const Aws::String& value) { m_description = value; }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(Aws::String&& value) { m_description = std::move(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline void SetDescription(const char* value) { m_description.assign(value); }
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline CreateSequenceStoreResult& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline CreateSequenceStoreResult& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
+
+    /**
+     * <p>The store's description.</p>
+     */
+    inline CreateSequenceStoreResult& WithDescription(const char* value) { SetDescription(value); return *this;}
+
+
+    /**
      * <p>The store's SSE settings.</p>
      */
     inline const SseConfig& GetSseConfig() const{ return m_sseConfig; }
@@ -230,6 +204,75 @@ namespace Model
     inline CreateSequenceStoreResult& WithSseConfig(SseConfig&& value) { SetSseConfig(std::move(value)); return *this;}
 
 
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTime = value; }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline void SetCreationTime(Aws::Utils::DateTime&& value) { m_creationTime = std::move(value); }
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline CreateSequenceStoreResult& WithCreationTime(const Aws::Utils::DateTime& value) { SetCreationTime(value); return *this;}
+
+    /**
+     * <p>When the store was created.</p>
+     */
+    inline CreateSequenceStoreResult& WithCreationTime(Aws::Utils::DateTime&& value) { SetCreationTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline const Aws::String& GetFallbackLocation() const{ return m_fallbackLocation; }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(const Aws::String& value) { m_fallbackLocation = value; }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(Aws::String&& value) { m_fallbackLocation = std::move(value); }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline void SetFallbackLocation(const char* value) { m_fallbackLocation.assign(value); }
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline CreateSequenceStoreResult& WithFallbackLocation(const Aws::String& value) { SetFallbackLocation(value); return *this;}
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline CreateSequenceStoreResult& WithFallbackLocation(Aws::String&& value) { SetFallbackLocation(std::move(value)); return *this;}
+
+    /**
+     * <p> An S3 location that is used to store files that have failed a direct upload.
+     * </p>
+     */
+    inline CreateSequenceStoreResult& WithFallbackLocation(const char* value) { SetFallbackLocation(value); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -253,17 +296,19 @@ namespace Model
 
   private:
 
-    Aws::String m_arn;
-
-    Aws::Utils::DateTime m_creationTime;
-
-    Aws::String m_description;
-
     Aws::String m_id;
+
+    Aws::String m_arn;
 
     Aws::String m_name;
 
+    Aws::String m_description;
+
     SseConfig m_sseConfig;
+
+    Aws::Utils::DateTime m_creationTime;
+
+    Aws::String m_fallbackLocation;
 
     Aws::String m_requestId;
   };

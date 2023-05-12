@@ -121,32 +121,32 @@ namespace Model
 
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline const ColumnDataType& GetType() const{ return m_type; }
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline void SetType(const ColumnDataType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline void SetType(ColumnDataType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline OutputColumn& WithType(const ColumnDataType& value) { SetType(value); return *this;}
 
     /**
-     * <p>Type.</p>
+     * <p>The type.</p>
      */
     inline OutputColumn& WithType(ColumnDataType&& value) { SetType(std::move(value)); return *this;}
 

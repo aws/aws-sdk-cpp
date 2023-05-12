@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateCustomRoutingListenerRequest::CreateCustomRoutingListenerRequest() : 
     m_acceleratorArnHasBeenSet(false),
     m_portRangesHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

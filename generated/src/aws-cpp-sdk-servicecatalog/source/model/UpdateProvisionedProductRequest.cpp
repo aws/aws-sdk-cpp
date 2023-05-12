@@ -25,7 +25,7 @@ UpdateProvisionedProductRequest::UpdateProvisionedProductRequest() :
     m_provisioningParametersHasBeenSet(false),
     m_provisioningPreferencesHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_updateToken(Aws::Utils::UUID::RandomUUID()),
+    m_updateToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_updateTokenHasBeenSet(true)
 {
 }

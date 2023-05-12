@@ -17,7 +17,7 @@ using namespace Aws::Http;
 
 DeleteApplicationRequest::DeleteApplicationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

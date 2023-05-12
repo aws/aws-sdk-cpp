@@ -8,8 +8,9 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/resiliencehub/model/LogicalResourceId.h>
-#include <aws/resiliencehub/model/PhysicalResourceId.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resiliencehub/model/PhysicalResourceId.h>
+#include <aws/resiliencehub/model/ResourceSourceType.h>
 #include <aws/resiliencehub/model/AppComponent.h>
 #include <utility>
 
@@ -295,6 +296,47 @@ namespace Model
 
 
     /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline const Aws::String& GetParentResourceName() const{ return m_parentResourceName; }
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline bool ParentResourceNameHasBeenSet() const { return m_parentResourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline void SetParentResourceName(const Aws::String& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = value; }
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline void SetParentResourceName(Aws::String&& value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName = std::move(value); }
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline void SetParentResourceName(const char* value) { m_parentResourceNameHasBeenSet = true; m_parentResourceName.assign(value); }
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline PhysicalResource& WithParentResourceName(const Aws::String& value) { SetParentResourceName(value); return *this;}
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline PhysicalResource& WithParentResourceName(Aws::String&& value) { SetParentResourceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the parent resource.</p>
+     */
+    inline PhysicalResource& WithParentResourceName(const char* value) { SetParentResourceName(value); return *this;}
+
+
+    /**
      * <p>The physical identifier of the resource.</p>
      */
     inline const PhysicalResourceId& GetPhysicalResourceId() const{ return m_physicalResourceId; }
@@ -406,6 +448,37 @@ namespace Model
      */
     inline PhysicalResource& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline const ResourceSourceType& GetSourceType() const{ return m_sourceType; }
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline void SetSourceType(const ResourceSourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline void SetSourceType(ResourceSourceType&& value) { m_sourceTypeHasBeenSet = true; m_sourceType = std::move(value); }
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline PhysicalResource& WithSourceType(const ResourceSourceType& value) { SetSourceType(value); return *this;}
+
+    /**
+     * <p>The type of input source.</p>
+     */
+    inline PhysicalResource& WithSourceType(ResourceSourceType&& value) { SetSourceType(std::move(value)); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_additionalInfo;
@@ -420,6 +493,9 @@ namespace Model
     LogicalResourceId m_logicalResourceId;
     bool m_logicalResourceIdHasBeenSet = false;
 
+    Aws::String m_parentResourceName;
+    bool m_parentResourceNameHasBeenSet = false;
+
     PhysicalResourceId m_physicalResourceId;
     bool m_physicalResourceIdHasBeenSet = false;
 
@@ -428,6 +504,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    ResourceSourceType m_sourceType;
+    bool m_sourceTypeHasBeenSet = false;
   };
 
 } // namespace Model

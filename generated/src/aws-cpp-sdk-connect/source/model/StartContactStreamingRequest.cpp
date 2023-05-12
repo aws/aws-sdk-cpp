@@ -16,7 +16,7 @@ StartContactStreamingRequest::StartContactStreamingRequest() :
     m_instanceIdHasBeenSet(false),
     m_contactIdHasBeenSet(false),
     m_chatStreamingConfigurationHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

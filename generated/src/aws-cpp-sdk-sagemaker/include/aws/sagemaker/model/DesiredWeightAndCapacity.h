@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/model/ProductionVariantServerlessUpdateConfig.h>
 #include <utility>
 
 namespace Aws
@@ -120,6 +121,43 @@ namespace Model
      */
     inline DesiredWeightAndCapacity& WithDesiredInstanceCount(int value) { SetDesiredInstanceCount(value); return *this;}
 
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline const ProductionVariantServerlessUpdateConfig& GetServerlessUpdateConfig() const{ return m_serverlessUpdateConfig; }
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline bool ServerlessUpdateConfigHasBeenSet() const { return m_serverlessUpdateConfigHasBeenSet; }
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline void SetServerlessUpdateConfig(const ProductionVariantServerlessUpdateConfig& value) { m_serverlessUpdateConfigHasBeenSet = true; m_serverlessUpdateConfig = value; }
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline void SetServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig&& value) { m_serverlessUpdateConfigHasBeenSet = true; m_serverlessUpdateConfig = std::move(value); }
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline DesiredWeightAndCapacity& WithServerlessUpdateConfig(const ProductionVariantServerlessUpdateConfig& value) { SetServerlessUpdateConfig(value); return *this;}
+
+    /**
+     * <p>Specifies the serverless update concurrency configuration for an endpoint
+     * variant.</p>
+     */
+    inline DesiredWeightAndCapacity& WithServerlessUpdateConfig(ProductionVariantServerlessUpdateConfig&& value) { SetServerlessUpdateConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_variantName;
@@ -130,6 +168,9 @@ namespace Model
 
     int m_desiredInstanceCount;
     bool m_desiredInstanceCountHasBeenSet = false;
+
+    ProductionVariantServerlessUpdateConfig m_serverlessUpdateConfig;
+    bool m_serverlessUpdateConfigHasBeenSet = false;
   };
 
 } // namespace Model

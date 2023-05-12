@@ -79,44 +79,44 @@ namespace Model
 
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline const EstimatedMonthlySavings& GetEstimatedMonthlySavings() const{ return m_estimatedMonthlySavings; }
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline void SetEstimatedMonthlySavings(const EstimatedMonthlySavings& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = value; }
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline void SetEstimatedMonthlySavings(EstimatedMonthlySavings&& value) { m_estimatedMonthlySavingsHasBeenSet = true; m_estimatedMonthlySavings = std::move(value); }
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline SavingsOpportunity& WithEstimatedMonthlySavings(const EstimatedMonthlySavings& value) { SetEstimatedMonthlySavings(value); return *this;}
 
     /**
-     * <p>An object that describes the estimated monthly savings amount possible, based
-     * on On-Demand instance pricing, by adopting Compute Optimizer recommendations for
-     * a given resource.</p>
+     * <p>An object that describes the estimated monthly savings amount possible by
+     * adopting Compute Optimizer recommendations for a given resource. This is based
+     * on the On-Demand instance pricing..</p>
      */
     inline SavingsOpportunity& WithEstimatedMonthlySavings(EstimatedMonthlySavings&& value) { SetEstimatedMonthlySavings(std::move(value)); return *this;}
 

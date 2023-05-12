@@ -19,48 +19,43 @@ namespace Model
 {
 
 AnnotationImportJobItem::AnnotationImportJobItem() : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_destinationNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false),
+    m_runLeftNormalization(false),
+    m_runLeftNormalizationHasBeenSet(false),
+    m_annotationFieldsHasBeenSet(false)
 {
 }
 
 AnnotationImportJobItem::AnnotationImportJobItem(JsonView jsonValue) : 
-    m_completionTimeHasBeenSet(false),
-    m_creationTimeHasBeenSet(false),
-    m_destinationNameHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_destinationNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
-    m_runLeftNormalization(false),
-    m_runLeftNormalizationHasBeenSet(false),
     m_status(JobStatus::NOT_SET),
     m_statusHasBeenSet(false),
-    m_updateTimeHasBeenSet(false)
+    m_creationTimeHasBeenSet(false),
+    m_updateTimeHasBeenSet(false),
+    m_completionTimeHasBeenSet(false),
+    m_runLeftNormalization(false),
+    m_runLeftNormalizationHasBeenSet(false),
+    m_annotationFieldsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 AnnotationImportJobItem& AnnotationImportJobItem::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("completionTime"))
+  if(jsonValue.ValueExists("id"))
   {
-    m_completionTime = jsonValue.GetString("completionTime");
+    m_id = jsonValue.GetString("id");
 
-    m_completionTimeHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-    m_creationTimeHasBeenSet = true;
+    m_idHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("destinationName"))
@@ -70,25 +65,11 @@ AnnotationImportJobItem& AnnotationImportJobItem::operator =(JsonView jsonValue)
     m_destinationNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("id"))
-  {
-    m_id = jsonValue.GetString("id");
-
-    m_idHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("roleArn"))
   {
     m_roleArn = jsonValue.GetString("roleArn");
 
     m_roleArnHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("runLeftNormalization"))
-  {
-    m_runLeftNormalization = jsonValue.GetBool("runLeftNormalization");
-
-    m_runLeftNormalizationHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("status"))
@@ -98,11 +79,42 @@ AnnotationImportJobItem& AnnotationImportJobItem::operator =(JsonView jsonValue)
     m_statusHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+    m_creationTimeHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("updateTime"))
   {
     m_updateTime = jsonValue.GetString("updateTime");
 
     m_updateTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("completionTime"))
+  {
+    m_completionTime = jsonValue.GetString("completionTime");
+
+    m_completionTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("runLeftNormalization"))
+  {
+    m_runLeftNormalization = jsonValue.GetBool("runLeftNormalization");
+
+    m_runLeftNormalizationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("annotationFields"))
+  {
+    Aws::Map<Aws::String, JsonView> annotationFieldsJsonMap = jsonValue.GetObject("annotationFields").GetAllObjects();
+    for(auto& annotationFieldsItem : annotationFieldsJsonMap)
+    {
+      m_annotationFields[annotationFieldsItem.first] = annotationFieldsItem.second.AsString();
+    }
+    m_annotationFieldsHasBeenSet = true;
   }
 
   return *this;
@@ -112,25 +124,15 @@ JsonValue AnnotationImportJobItem::Jsonize() const
 {
   JsonValue payload;
 
-  if(m_completionTimeHasBeenSet)
+  if(m_idHasBeenSet)
   {
-   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
+   payload.WithString("id", m_id);
 
-  if(m_creationTimeHasBeenSet)
-  {
-   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if(m_destinationNameHasBeenSet)
   {
    payload.WithString("destinationName", m_destinationName);
-
-  }
-
-  if(m_idHasBeenSet)
-  {
-   payload.WithString("id", m_id);
 
   }
 
@@ -140,20 +142,41 @@ JsonValue AnnotationImportJobItem::Jsonize() const
 
   }
 
+  if(m_statusHasBeenSet)
+  {
+   payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
+  }
+
+  if(m_creationTimeHasBeenSet)
+  {
+   payload.WithString("creationTime", m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_updateTimeHasBeenSet)
+  {
+   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if(m_completionTimeHasBeenSet)
+  {
+   payload.WithString("completionTime", m_completionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
   if(m_runLeftNormalizationHasBeenSet)
   {
    payload.WithBool("runLeftNormalization", m_runLeftNormalization);
 
   }
 
-  if(m_statusHasBeenSet)
+  if(m_annotationFieldsHasBeenSet)
   {
-   payload.WithString("status", JobStatusMapper::GetNameForJobStatus(m_status));
-  }
+   JsonValue annotationFieldsJsonMap;
+   for(auto& annotationFieldsItem : m_annotationFields)
+   {
+     annotationFieldsJsonMap.WithString(annotationFieldsItem.first, annotationFieldsItem.second);
+   }
+   payload.WithObject("annotationFields", std::move(annotationFieldsJsonMap));
 
-  if(m_updateTimeHasBeenSet)
-  {
-   payload.WithString("updateTime", m_updateTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   return payload;

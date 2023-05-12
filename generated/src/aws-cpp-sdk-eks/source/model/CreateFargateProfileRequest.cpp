@@ -18,7 +18,7 @@ CreateFargateProfileRequest::CreateFargateProfileRequest() :
     m_podExecutionRoleArnHasBeenSet(false),
     m_subnetsHasBeenSet(false),
     m_selectorsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

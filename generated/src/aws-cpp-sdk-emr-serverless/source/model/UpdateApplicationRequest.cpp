@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateApplicationRequest::UpdateApplicationRequest() : 
     m_applicationIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_initialCapacityHasBeenSet(false),
     m_maximumCapacityHasBeenSet(false),

@@ -46,42 +46,114 @@ namespace Model
     AWS_S3CRT_API EndpointParameters GetEndpointContextParams() const override;
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline GetBucketLocationRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline GetBucketLocationRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the bucket for which to get the location.</p>
+     * <p>The name of the bucket for which to get the location.</p> <p>To use this API
+     * operation against an access point, provide the alias of the access point in
+     * place of the bucket name.</p> <p>To use this API operation against an Object
+     * Lambda access point, provide the alias of the Object Lambda access point in
+     * place of the bucket name. If the Object Lambda access point alias in a request
+     * is not valid, the error code <code>InvalidAccessPointAliasError</code> is
+     * returned. For more information about <code>InvalidAccessPointAliasError</code>,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p>
      */
     inline GetBucketLocationRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

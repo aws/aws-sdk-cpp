@@ -53,7 +53,8 @@ RestoreDBClusterFromS3Request::RestoreDBClusterFromS3Request() :
     m_networkTypeHasBeenSet(false),
     m_manageMasterUserPassword(false),
     m_manageMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false)
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_storageTypeHasBeenSet(false)
 {
 }
 
@@ -257,6 +258,11 @@ Aws::String RestoreDBClusterFromS3Request::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_storageTypeHasBeenSet)
+  {
+    ss << "StorageType=" << StringUtils::URLEncode(m_storageType.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

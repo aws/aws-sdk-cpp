@@ -31,6 +31,9 @@ namespace ResilienceHub
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ResilienceHubClientConfiguration ClientConfigurationType;
+      typedef ResilienceHubEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -109,15 +112,18 @@ namespace ResilienceHub
         /**
          * <p>Creates an Resilience Hub application. An Resilience Hub application is a
          * collection of Amazon Web Services resources structured to prevent and recover
-         * Amazon Web Services application disruptions. To describe a Resilience Hub
-         * application, you provide an application name, resources from one or more–up to
-         * 20–CloudFormation stacks, and an appropriate resiliency policy.</p> <p>After you
-         * create an Resilience Hub application, you publish it so that you can run a
-         * resiliency assessment on it. You can then use recommendations from the
-         * assessment to improve resiliency by running another assessment, comparing
-         * results, and then iterating the process until you achieve your goals for
-         * recovery time objective (RTO) and recovery point objective (RPO).</p><p><h3>See
-         * Also:</h3>   <a
+         * Amazon Web Services application disruptions. To describe an Resilience Hub
+         * application, you provide an application name, resources from one or more
+         * CloudFormation stacks, Resource Groups, Terraform state files, AppRegistry
+         * applications, and an appropriate resiliency policy. For more information about
+         * the number of resources supported per application, see <a
+         * href="https://docs.aws.amazon.com/general/latest/gr/resiliencehub.html#limits_resiliencehub">Service
+         * Quotas</a>.</p> <p>After you create an Resilience Hub application, you publish
+         * it so that you can run a resiliency assessment on it. You can then use
+         * recommendations from the assessment to improve resiliency by running another
+         * assessment, comparing results, and then iterating the process until you achieve
+         * your goals for recovery time objective (RTO) and recovery point objective
+         * (RPO).</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resiliencehub-2020-04-30/CreateApp">AWS
          * API Reference</a></p>
          */

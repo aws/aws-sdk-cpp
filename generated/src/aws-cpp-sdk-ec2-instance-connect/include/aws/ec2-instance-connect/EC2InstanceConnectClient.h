@@ -27,6 +27,9 @@ namespace EC2InstanceConnect
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef EC2InstanceConnectClientConfiguration ClientConfigurationType;
+      typedef EC2InstanceConnectEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.

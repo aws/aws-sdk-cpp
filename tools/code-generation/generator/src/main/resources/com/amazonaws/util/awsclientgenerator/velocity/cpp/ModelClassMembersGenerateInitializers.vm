@@ -23,7 +23,7 @@
 #elseif($memberShape.enum)
 #set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(${memberShape.name}::NOT_SET)")
 #elseif($entry.value.idempotencyToken)
-#set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(Aws::Utils::UUID::RandomUUID())")
+#set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(Aws::Utils::UUID::PseudoRandomUUID())")
 #end
 #if($index < $initializerCount)
 #set($initializers = "${initializers},")

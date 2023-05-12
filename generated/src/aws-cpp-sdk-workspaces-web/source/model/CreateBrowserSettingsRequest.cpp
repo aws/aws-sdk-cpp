@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateBrowserSettingsRequest::CreateBrowserSettingsRequest() : 
     m_additionalEncryptionContextHasBeenSet(false),
     m_browserPolicyHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_customerManagedKeyHasBeenSet(false),
     m_tagsHasBeenSet(false)

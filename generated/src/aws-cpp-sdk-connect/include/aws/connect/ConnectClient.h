@@ -38,6 +38,9 @@ namespace Connect
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef ConnectClientConfiguration ClientConfigurationType;
+      typedef ConnectEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -519,9 +522,8 @@ namespace Connect
         /**
          * <p>Creates an evaluation form in the specified Amazon Connect instance. The form
          * can be used to define questions related to agent performance, and create
-         * sections to organize such questions. An evaluation form must have a unique title
-         * within an instance. Question and section identifiers cannot be duplicated within
-         * the same evaluation form.</p><p><h3>See Also:</h3>   <a
+         * sections to organize such questions. Question and section identifiers cannot be
+         * duplicated within the same evaluation form.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreateEvaluationForm">AWS
          * API Reference</a></p>
          */
@@ -2419,7 +2421,7 @@ namespace Connect
          * the previous version of this API. It has new metrics, offers filtering at a
          * metric level, and offers the ability to filter and group data by channels,
          * queues, routing profiles, agents, and agent hierarchy levels. It can retrieve
-         * historical data for the last 14 days, in 24-hour intervals.</p> <p>For a
+         * historical data for the last 35 days, in 24-hour intervals.</p> <p>For a
          * description of the historical metrics that are supported by
          * <code>GetMetricDataV2</code> and <code>GetMetricData</code>, see <a
          * href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical
@@ -4523,10 +4525,10 @@ namespace Connect
 
         /**
          * <p>Updates details about a specific evaluation form version in the specified
-         * Amazon Connect instance. An evaluation form must have a unique title within an
-         * instance. Question and section identifiers cannot be duplicated within the same
-         * evaluation form.</p> <p>This operation does not support partial updates. Instead
-         * it does a full update of evaluation form content.</p><p><h3>See Also:</h3>   <a
+         * Amazon Connect instance. Question and section identifiers cannot be duplicated
+         * within the same evaluation form.</p> <p>This operation does not support partial
+         * updates. Instead it does a full update of evaluation form content.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateEvaluationForm">AWS
          * API Reference</a></p>
          */
@@ -4666,7 +4668,11 @@ namespace Connect
          * <p>Updates your claimed phone number from its current Amazon Connect instance or
          * traffic distribution group to another Amazon Connect instance or traffic
          * distribution group in the same Amazon Web Services Region.</p> 
-         * <p>You can call <a
+         * <p>After using this API, you must verify that the phone number is attached to
+         * the correct flow in the target instance or traffic distribution group. You need
+         * to do this because the API switches only the phone number to a new instance or
+         * traffic distribution group. It doesn't migrate the flow configuration of the
+         * phone number, too.</p> <p>You can call <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_DescribePhoneNumber.html">DescribePhoneNumber</a>
          * API to verify the status of a previous <a
          * href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a>

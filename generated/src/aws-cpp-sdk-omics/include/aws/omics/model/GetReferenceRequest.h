@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/omics/model/ReferenceFile.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/model/ReferenceFile.h>
 #include <utility>
 
 namespace Aws
@@ -39,37 +39,6 @@ namespace Model
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
     AWS_OMICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
-
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline const ReferenceFile& GetFile() const{ return m_file; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline void SetFile(const ReferenceFile& value) { m_fileHasBeenSet = true; m_file = value; }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline void SetFile(ReferenceFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline GetReferenceRequest& WithFile(const ReferenceFile& value) { SetFile(value); return *this;}
-
-    /**
-     * <p>The file to retrieve.</p>
-     */
-    inline GetReferenceRequest& WithFile(ReferenceFile&& value) { SetFile(std::move(value)); return *this;}
 
 
     /**
@@ -114,24 +83,44 @@ namespace Model
 
 
     /**
-     * <p>The part number to retrieve.</p>
+     * <p>The reference's store ID.</p>
      */
-    inline int GetPartNumber() const{ return m_partNumber; }
+    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
 
     /**
-     * <p>The part number to retrieve.</p>
+     * <p>The reference's store ID.</p>
      */
-    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
+    inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
 
     /**
-     * <p>The part number to retrieve.</p>
+     * <p>The reference's store ID.</p>
      */
-    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
+    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
 
     /**
-     * <p>The part number to retrieve.</p>
+     * <p>The reference's store ID.</p>
      */
-    inline GetReferenceRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
+
+    /**
+     * <p>The reference's store ID.</p>
+     */
+    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
+
+    /**
+     * <p>The reference's store ID.</p>
+     */
+    inline GetReferenceRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
+
+    /**
+     * <p>The reference's store ID.</p>
+     */
+    inline GetReferenceRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
+
+    /**
+     * <p>The reference's store ID.</p>
+     */
+    inline GetReferenceRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
 
 
     /**
@@ -176,61 +165,72 @@ namespace Model
 
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The part number to retrieve.</p>
      */
-    inline const Aws::String& GetReferenceStoreId() const{ return m_referenceStoreId; }
+    inline int GetPartNumber() const{ return m_partNumber; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The part number to retrieve.</p>
      */
-    inline bool ReferenceStoreIdHasBeenSet() const { return m_referenceStoreIdHasBeenSet; }
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The part number to retrieve.</p>
      */
-    inline void SetReferenceStoreId(const Aws::String& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = value; }
+    inline void SetPartNumber(int value) { m_partNumberHasBeenSet = true; m_partNumber = value; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The part number to retrieve.</p>
      */
-    inline void SetReferenceStoreId(Aws::String&& value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId = std::move(value); }
+    inline GetReferenceRequest& WithPartNumber(int value) { SetPartNumber(value); return *this;}
+
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The file to retrieve.</p>
      */
-    inline void SetReferenceStoreId(const char* value) { m_referenceStoreIdHasBeenSet = true; m_referenceStoreId.assign(value); }
+    inline const ReferenceFile& GetFile() const{ return m_file; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The file to retrieve.</p>
      */
-    inline GetReferenceRequest& WithReferenceStoreId(const Aws::String& value) { SetReferenceStoreId(value); return *this;}
+    inline bool FileHasBeenSet() const { return m_fileHasBeenSet; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The file to retrieve.</p>
      */
-    inline GetReferenceRequest& WithReferenceStoreId(Aws::String&& value) { SetReferenceStoreId(std::move(value)); return *this;}
+    inline void SetFile(const ReferenceFile& value) { m_fileHasBeenSet = true; m_file = value; }
 
     /**
-     * <p>The reference's store ID.</p>
+     * <p>The file to retrieve.</p>
      */
-    inline GetReferenceRequest& WithReferenceStoreId(const char* value) { SetReferenceStoreId(value); return *this;}
+    inline void SetFile(ReferenceFile&& value) { m_fileHasBeenSet = true; m_file = std::move(value); }
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline GetReferenceRequest& WithFile(const ReferenceFile& value) { SetFile(value); return *this;}
+
+    /**
+     * <p>The file to retrieve.</p>
+     */
+    inline GetReferenceRequest& WithFile(ReferenceFile&& value) { SetFile(std::move(value)); return *this;}
 
   private:
-
-    ReferenceFile m_file;
-    bool m_fileHasBeenSet = false;
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
 
-    int m_partNumber;
-    bool m_partNumberHasBeenSet = false;
+    Aws::String m_referenceStoreId;
+    bool m_referenceStoreIdHasBeenSet = false;
 
     Aws::String m_range;
     bool m_rangeHasBeenSet = false;
 
-    Aws::String m_referenceStoreId;
-    bool m_referenceStoreIdHasBeenSet = false;
+    int m_partNumber;
+    bool m_partNumberHasBeenSet = false;
+
+    ReferenceFile m_file;
+    bool m_fileHasBeenSet = false;
   };
 
 } // namespace Model

@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateStorageVirtualMachineRequest::UpdateStorageVirtualMachineRequest() : 
     m_activeDirectoryConfigurationHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_storageVirtualMachineIdHasBeenSet(false),
     m_svmAdminPasswordHasBeenSet(false)

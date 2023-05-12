@@ -6,8 +6,8 @@
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/RunExport.h>
 #include <utility>
 
@@ -38,47 +38,6 @@ namespace Model
     AWS_OMICS_API Aws::String SerializePayload() const override;
 
     AWS_OMICS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
-
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline const Aws::Vector<RunExport>& GetExport() const{ return m_export; }
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline void SetExport(const Aws::Vector<RunExport>& value) { m_exportHasBeenSet = true; m_export = value; }
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline void SetExport(Aws::Vector<RunExport>&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline GetRunRequest& WithExport(const Aws::Vector<RunExport>& value) { SetExport(value); return *this;}
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline GetRunRequest& WithExport(Aws::Vector<RunExport>&& value) { SetExport(std::move(value)); return *this;}
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline GetRunRequest& AddExport(const RunExport& value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
-
-    /**
-     * <p>The run's export format.</p>
-     */
-    inline GetRunRequest& AddExport(RunExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -121,13 +80,54 @@ namespace Model
      */
     inline GetRunRequest& WithId(const char* value) { SetId(value); return *this;}
 
-  private:
 
-    Aws::Vector<RunExport> m_export;
-    bool m_exportHasBeenSet = false;
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline const Aws::Vector<RunExport>& GetExport() const{ return m_export; }
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline bool ExportHasBeenSet() const { return m_exportHasBeenSet; }
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline void SetExport(const Aws::Vector<RunExport>& value) { m_exportHasBeenSet = true; m_export = value; }
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline void SetExport(Aws::Vector<RunExport>&& value) { m_exportHasBeenSet = true; m_export = std::move(value); }
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline GetRunRequest& WithExport(const Aws::Vector<RunExport>& value) { SetExport(value); return *this;}
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline GetRunRequest& WithExport(Aws::Vector<RunExport>&& value) { SetExport(std::move(value)); return *this;}
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline GetRunRequest& AddExport(const RunExport& value) { m_exportHasBeenSet = true; m_export.push_back(value); return *this; }
+
+    /**
+     * <p>The run's export format.</p>
+     */
+    inline GetRunRequest& AddExport(RunExport&& value) { m_exportHasBeenSet = true; m_export.push_back(std::move(value)); return *this; }
+
+  private:
 
     Aws::String m_id;
     bool m_idHasBeenSet = false;
+
+    Aws::Vector<RunExport> m_export;
+    bool m_exportHasBeenSet = false;
   };
 
 } // namespace Model

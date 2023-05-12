@@ -16,7 +16,7 @@ AssociateOriginationIdentityRequest::AssociateOriginationIdentityRequest() :
     m_poolIdHasBeenSet(false),
     m_originationIdentityHasBeenSet(false),
     m_isoCountryCodeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

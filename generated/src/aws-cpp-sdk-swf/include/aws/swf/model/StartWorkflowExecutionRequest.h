@@ -39,42 +39,74 @@ namespace Model
 
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetDomain() const{ return m_domain; }
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetDomain(Aws::String&& value) { m_domainHasBeenSet = true; m_domain = std::move(value); }
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetDomain(const char* value) { m_domainHasBeenSet = true; m_domain.assign(value); }
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithDomain(const Aws::String& value) { SetDomain(value); return *this;}
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithDomain(Aws::String&& value) { SetDomain(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the domain in which the workflow execution is created.</p>
+     * <p>The name of the domain in which the workflow execution is created.</p> <p>The
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithDomain(const char* value) { SetDomain(value); return *this;}
 
@@ -85,11 +117,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const Aws::String& GetWorkflowId() const{ return m_workflowId; }
 
@@ -99,11 +130,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
 
@@ -113,11 +143,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
@@ -127,11 +156,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(Aws::String&& value) { m_workflowIdHasBeenSet = true; m_workflowId = std::move(value); }
 
@@ -141,11 +169,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetWorkflowId(const char* value) { m_workflowIdHasBeenSet = true; m_workflowId.assign(value); }
 
@@ -155,11 +182,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(const Aws::String& value) { SetWorkflowId(value); return *this;}
 
@@ -169,11 +195,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(Aws::String&& value) { SetWorkflowId(std::move(value)); return *this;}
 
@@ -183,11 +208,10 @@ namespace Model
      * specify the same identifier if a workflow execution is logically a
      * <i>restart</i> of a previous execution. You cannot have two open workflow
      * executions with the same <code>workflowId</code> at the same time within the
-     * same domain.</p> <p>The specified string must not start or end with whitespace.
-     * It must not contain a <code>:</code> (colon), <code>/</code> (slash),
-     * <code>|</code> (vertical bar), or any control characters
-     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
-     * <i>be</i> the literal string <code>arn</code>.</p>
+     * same domain.</p> <p>The specified string must not contain a <code>:</code>
+     * (colon), <code>/</code> (slash), <code>|</code> (vertical bar), or any control
+     * characters (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it
+     * must <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithWorkflowId(const char* value) { SetWorkflowId(value); return *this;}
 
@@ -230,11 +254,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
@@ -245,11 +268,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
@@ -260,11 +282,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
@@ -275,11 +296,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
@@ -290,11 +310,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
@@ -305,11 +324,10 @@ namespace Model
      * execution must be specified either as a default for the workflow type or through
      * this parameter. If neither this parameter is set nor a default task list was
      * specified at registration time then a fault is returned.</p>  <p>The
-     * specified string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * specified string must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline StartWorkflowExecutionRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 

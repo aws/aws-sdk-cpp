@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 UpdateVpcEndpointRequest::UpdateVpcEndpointRequest() : 
     m_addSecurityGroupIdsHasBeenSet(false),
     m_addSubnetIdsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_idHasBeenSet(false),
     m_removeSecurityGroupIdsHasBeenSet(false),

@@ -5,8 +5,8 @@
 
 #pragma once
 #include <aws/omics/Omics_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/omics/model/ExportReadSetJobDetail.h>
 #include <utility>
 
@@ -32,42 +32,6 @@ namespace Model
     AWS_OMICS_API ListReadSetExportJobsResult();
     AWS_OMICS_API ListReadSetExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
     AWS_OMICS_API ListReadSetExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline const Aws::Vector<ExportReadSetJobDetail>& GetExportJobs() const{ return m_exportJobs; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetExportJobs(const Aws::Vector<ExportReadSetJobDetail>& value) { m_exportJobs = value; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline void SetExportJobs(Aws::Vector<ExportReadSetJobDetail>&& value) { m_exportJobs = std::move(value); }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetExportJobsResult& WithExportJobs(const Aws::Vector<ExportReadSetJobDetail>& value) { SetExportJobs(value); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetExportJobsResult& WithExportJobs(Aws::Vector<ExportReadSetJobDetail>&& value) { SetExportJobs(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetExportJobsResult& AddExportJobs(const ExportReadSetJobDetail& value) { m_exportJobs.push_back(value); return *this; }
-
-    /**
-     * <p>A list of jobs.</p>
-     */
-    inline ListReadSetExportJobsResult& AddExportJobs(ExportReadSetJobDetail&& value) { m_exportJobs.push_back(std::move(value)); return *this; }
 
 
     /**
@@ -106,6 +70,42 @@ namespace Model
     inline ListReadSetExportJobsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline const Aws::Vector<ExportReadSetJobDetail>& GetExportJobs() const{ return m_exportJobs; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetExportJobs(const Aws::Vector<ExportReadSetJobDetail>& value) { m_exportJobs = value; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline void SetExportJobs(Aws::Vector<ExportReadSetJobDetail>&& value) { m_exportJobs = std::move(value); }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetExportJobsResult& WithExportJobs(const Aws::Vector<ExportReadSetJobDetail>& value) { SetExportJobs(value); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetExportJobsResult& WithExportJobs(Aws::Vector<ExportReadSetJobDetail>&& value) { SetExportJobs(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetExportJobsResult& AddExportJobs(const ExportReadSetJobDetail& value) { m_exportJobs.push_back(value); return *this; }
+
+    /**
+     * <p>A list of jobs.</p>
+     */
+    inline ListReadSetExportJobsResult& AddExportJobs(ExportReadSetJobDetail&& value) { m_exportJobs.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -129,9 +129,9 @@ namespace Model
 
   private:
 
-    Aws::Vector<ExportReadSetJobDetail> m_exportJobs;
-
     Aws::String m_nextToken;
+
+    Aws::Vector<ExportReadSetJobDetail> m_exportJobs;
 
     Aws::String m_requestId;
   };

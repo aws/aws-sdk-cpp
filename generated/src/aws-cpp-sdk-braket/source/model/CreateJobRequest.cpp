@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateJobRequest::CreateJobRequest() : 
     m_algorithmSpecificationHasBeenSet(false),
     m_checkpointConfigHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_deviceConfigHasBeenSet(false),
     m_hyperParametersHasBeenSet(false),

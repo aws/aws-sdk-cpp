@@ -16,7 +16,7 @@ ImportStacksToStackSetRequest::ImportStacksToStackSetRequest() :
     m_stackIdsUrlHasBeenSet(false),
     m_organizationalUnitIdsHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
-    m_operationId(Aws::Utils::UUID::RandomUUID()),
+    m_operationId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_operationIdHasBeenSet(true),
     m_callAs(CallAs::NOT_SET),
     m_callAsHasBeenSet(false)

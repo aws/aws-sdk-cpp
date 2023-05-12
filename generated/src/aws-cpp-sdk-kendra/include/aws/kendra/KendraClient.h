@@ -25,6 +25,9 @@ namespace kendra
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef KendraClientConfiguration ClientConfigurationType;
+      typedef KendraEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.
@@ -516,7 +519,7 @@ namespace kendra
          * currently not supported in the Amazon Web Services GovCloud (US-West)
          * region.</p> <p>For an example of creating a block list for query suggestions
          * using the Python SDK, see <a
-         * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#suggestions-block-list">Query
+         * href="https://docs.aws.amazon.com/kendra/latest/dg/query-suggestions.html#query-suggestions-blocklist">Query
          * suggestions block list</a>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/CreateQuerySuggestionsBlockList">AWS
          * API Reference</a></p>
@@ -1943,14 +1946,14 @@ namespace kendra
         /**
          * <p>Updates the settings of query suggestions for an index.</p> <p>Amazon Kendra
          * supports partial updates, so you only need to provide the fields you want to
-         * update.</p> <p>If an update is currently processing (i.e. 'happening'), you need
-         * to wait for the update to finish before making another update.</p> <p>Updates to
-         * query suggestions settings might not take effect right away. The time for your
-         * updated settings to take effect depends on the updates made and the number of
-         * search queries in your index.</p> <p>You can still enable/disable query
-         * suggestions at any time.</p> <p> <code>UpdateQuerySuggestionsConfig</code> is
-         * currently not supported in the Amazon Web Services GovCloud (US-West)
-         * region.</p><p><h3>See Also:</h3>   <a
+         * update.</p> <p>If an update is currently processing, you need to wait for the
+         * update to finish before making another update.</p> <p>Updates to query
+         * suggestions settings might not take effect right away. The time for your updated
+         * settings to take effect depends on the updates made and the number of search
+         * queries in your index.</p> <p>You can still enable/disable query suggestions at
+         * any time.</p> <p> <code>UpdateQuerySuggestionsConfig</code> is currently not
+         * supported in the Amazon Web Services GovCloud (US-West) region.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-2019-02-03/UpdateQuerySuggestionsConfig">AWS
          * API Reference</a></p>
          */

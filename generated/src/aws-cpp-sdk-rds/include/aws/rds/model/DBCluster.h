@@ -1915,72 +1915,64 @@ namespace Model
 
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetEngineMode() const{ return m_engineMode; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline bool EngineModeHasBeenSet() const { return m_engineModeHasBeenSet; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const Aws::String& value) { m_engineModeHasBeenSet = true; m_engineMode = value; }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(Aws::String&& value) { m_engineModeHasBeenSet = true; m_engineMode = std::move(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline void SetEngineMode(const char* value) { m_engineModeHasBeenSet = true; m_engineMode.assign(value); }
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(const Aws::String& value) { SetEngineMode(value); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
     inline DBCluster& WithEngineMode(Aws::String&& value) { SetEngineMode(std::move(value)); return *this;}
 
     /**
-     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code>,
-     * <code>serverless</code>, <code>parallelquery</code>, <code>global</code>, or
-     * <code>multimaster</code>.</p> <p>For more information, see <a
+     * <p>The DB engine mode of the DB cluster, either <code>provisioned</code> or
+     * <code>serverless</code>.</p> <p>For more information, see <a
      * href="https://docs.aws.amazon.com/AmazonRDS/latest/APIReference/API_CreateDBCluster.html">
      * CreateDBCluster</a>.</p>
      */
@@ -2551,50 +2543,42 @@ namespace Model
 
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline DBCluster& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline DBCluster& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>The storage type associated with the DB cluster.</p> <p>This setting is only
-     * for non-Aurora Multi-AZ DB clusters.</p>
+     * <p>The storage type associated with the DB cluster.</p>
      */
     inline DBCluster& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 
@@ -3172,6 +3156,49 @@ namespace Model
      */
     inline DBCluster& WithMasterUserSecret(MasterUserSecret&& value) { SetMasterUserSecret(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline const Aws::Utils::DateTime& GetIOOptimizedNextAllowedModificationTime() const{ return m_iOOptimizedNextAllowedModificationTime; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline bool IOOptimizedNextAllowedModificationTimeHasBeenSet() const { return m_iOOptimizedNextAllowedModificationTimeHasBeenSet; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline void SetIOOptimizedNextAllowedModificationTime(const Aws::Utils::DateTime& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = value; }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline void SetIOOptimizedNextAllowedModificationTime(Aws::Utils::DateTime&& value) { m_iOOptimizedNextAllowedModificationTimeHasBeenSet = true; m_iOOptimizedNextAllowedModificationTime = std::move(value); }
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithIOOptimizedNextAllowedModificationTime(const Aws::Utils::DateTime& value) { SetIOOptimizedNextAllowedModificationTime(value); return *this;}
+
+    /**
+     * <p>The next time you can modify the DB cluster to use the
+     * <code>aurora-iopt1</code> storage type.</p> <p>This setting is only for Aurora
+     * DB clusters.</p>
+     */
+    inline DBCluster& WithIOOptimizedNextAllowedModificationTime(Aws::Utils::DateTime&& value) { SetIOOptimizedNextAllowedModificationTime(std::move(value)); return *this;}
+
   private:
 
     int m_allocatedStorage;
@@ -3386,6 +3413,9 @@ namespace Model
 
     MasterUserSecret m_masterUserSecret;
     bool m_masterUserSecretHasBeenSet = false;
+
+    Aws::Utils::DateTime m_iOOptimizedNextAllowedModificationTime;
+    bool m_iOOptimizedNextAllowedModificationTimeHasBeenSet = false;
   };
 
 } // namespace Model

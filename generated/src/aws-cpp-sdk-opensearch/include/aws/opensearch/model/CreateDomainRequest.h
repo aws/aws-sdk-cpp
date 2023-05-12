@@ -826,52 +826,52 @@ namespace Model
 
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline const Aws::Map<LogType, LogPublishingOption>& GetLogPublishingOptions() const{ return m_logPublishingOptions; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline bool LogPublishingOptionsHasBeenSet() const { return m_logPublishingOptionsHasBeenSet; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = value; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline void SetLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions = std::move(value); }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& WithLogPublishingOptions(const Aws::Map<LogType, LogPublishingOption>& value) { SetLogPublishingOptions(value); return *this;}
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& WithLogPublishingOptions(Aws::Map<LogType, LogPublishingOption>&& value) { SetLogPublishingOptions(std::move(value)); return *this;}
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, value); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, const LogPublishingOption& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(const LogType& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Key-value pairs to configure slow log publishing.</p>
+     * <p>Key-value pairs to configure log publishing.</p>
      */
     inline CreateDomainRequest& AddLogPublishingOptions(LogType&& key, LogPublishingOption&& value) { m_logPublishingOptionsHasBeenSet = true; m_logPublishingOptions.emplace(std::move(key), std::move(value)); return *this; }
 

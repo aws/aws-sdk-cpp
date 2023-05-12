@@ -7,8 +7,9 @@
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/OmicsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/omics/model/FormatOptions.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/omics/model/FormatOptions.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/omics/model/AnnotationImportItemSource.h>
 #include <utility>
 
@@ -77,34 +78,44 @@ namespace Model
 
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline const FormatOptions& GetFormatOptions() const{ return m_formatOptions; }
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline bool FormatOptionsHasBeenSet() const { return m_formatOptionsHasBeenSet; }
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline void SetFormatOptions(const FormatOptions& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = value; }
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline void SetFormatOptions(FormatOptions&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::move(value); }
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline StartAnnotationImportJobRequest& WithFormatOptions(const FormatOptions& value) { SetFormatOptions(value); return *this;}
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
 
     /**
-     * <p>Formatting options for the annotation file.</p>
+     * <p>A service role for the job.</p>
      */
-    inline StartAnnotationImportJobRequest& WithFormatOptions(FormatOptions&& value) { SetFormatOptions(std::move(value)); return *this;}
+    inline StartAnnotationImportJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>A service role for the job.</p>
+     */
+    inline StartAnnotationImportJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>A service role for the job.</p>
+     */
+    inline StartAnnotationImportJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
@@ -149,44 +160,34 @@ namespace Model
 
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+    inline const FormatOptions& GetFormatOptions() const{ return m_formatOptions; }
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+    inline bool FormatOptionsHasBeenSet() const { return m_formatOptionsHasBeenSet; }
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+    inline void SetFormatOptions(const FormatOptions& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = value; }
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+    inline void SetFormatOptions(FormatOptions&& value) { m_formatOptionsHasBeenSet = true; m_formatOptions = std::move(value); }
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+    inline StartAnnotationImportJobRequest& WithFormatOptions(const FormatOptions& value) { SetFormatOptions(value); return *this;}
 
     /**
-     * <p>A service role for the job.</p>
+     * <p>Formatting options for the annotation file.</p>
      */
-    inline StartAnnotationImportJobRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
-
-    /**
-     * <p>A service role for the job.</p>
-     */
-    inline StartAnnotationImportJobRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>A service role for the job.</p>
-     */
-    inline StartAnnotationImportJobRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+    inline StartAnnotationImportJobRequest& WithFormatOptions(FormatOptions&& value) { SetFormatOptions(std::move(value)); return *this;}
 
 
     /**
@@ -209,22 +210,91 @@ namespace Model
      */
     inline StartAnnotationImportJobRequest& WithRunLeftNormalization(bool value) { SetRunLeftNormalization(value); return *this;}
 
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetAnnotationFields() const{ return m_annotationFields; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline bool AnnotationFieldsHasBeenSet() const { return m_annotationFieldsHasBeenSet; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = value; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline void SetAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields = std::move(value); }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& WithAnnotationFields(const Aws::Map<Aws::String, Aws::String>& value) { SetAnnotationFields(value); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& WithAnnotationFields(Aws::Map<Aws::String, Aws::String>&& value) { SetAnnotationFields(std::move(value)); return *this;}
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(const Aws::String& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(Aws::String&& key, const Aws::String& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(const Aws::String& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(Aws::String&& key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(const char* key, Aws::String&& value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(Aws::String&& key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p> The annotation schema generated by the parsed annotation data. </p>
+     */
+    inline StartAnnotationImportJobRequest& AddAnnotationFields(const char* key, const char* value) { m_annotationFieldsHasBeenSet = true; m_annotationFields.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_destinationName;
     bool m_destinationNameHasBeenSet = false;
 
-    FormatOptions m_formatOptions;
-    bool m_formatOptionsHasBeenSet = false;
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Vector<AnnotationImportItemSource> m_items;
     bool m_itemsHasBeenSet = false;
 
-    Aws::String m_roleArn;
-    bool m_roleArnHasBeenSet = false;
+    FormatOptions m_formatOptions;
+    bool m_formatOptionsHasBeenSet = false;
 
     bool m_runLeftNormalization;
     bool m_runLeftNormalizationHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_annotationFields;
+    bool m_annotationFieldsHasBeenSet = false;
   };
 
 } // namespace Model

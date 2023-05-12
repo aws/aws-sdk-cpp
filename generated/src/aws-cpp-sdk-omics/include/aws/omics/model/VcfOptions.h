@@ -36,27 +36,6 @@ namespace Model
 
 
     /**
-     * <p>The file's ignore filter field setting.</p>
-     */
-    inline bool GetIgnoreFilterField() const{ return m_ignoreFilterField; }
-
-    /**
-     * <p>The file's ignore filter field setting.</p>
-     */
-    inline bool IgnoreFilterFieldHasBeenSet() const { return m_ignoreFilterFieldHasBeenSet; }
-
-    /**
-     * <p>The file's ignore filter field setting.</p>
-     */
-    inline void SetIgnoreFilterField(bool value) { m_ignoreFilterFieldHasBeenSet = true; m_ignoreFilterField = value; }
-
-    /**
-     * <p>The file's ignore filter field setting.</p>
-     */
-    inline VcfOptions& WithIgnoreFilterField(bool value) { SetIgnoreFilterField(value); return *this;}
-
-
-    /**
      * <p>The file's ignore qual field setting.</p>
      */
     inline bool GetIgnoreQualField() const{ return m_ignoreQualField; }
@@ -76,13 +55,34 @@ namespace Model
      */
     inline VcfOptions& WithIgnoreQualField(bool value) { SetIgnoreQualField(value); return *this;}
 
-  private:
 
-    bool m_ignoreFilterField;
-    bool m_ignoreFilterFieldHasBeenSet = false;
+    /**
+     * <p>The file's ignore filter field setting.</p>
+     */
+    inline bool GetIgnoreFilterField() const{ return m_ignoreFilterField; }
+
+    /**
+     * <p>The file's ignore filter field setting.</p>
+     */
+    inline bool IgnoreFilterFieldHasBeenSet() const { return m_ignoreFilterFieldHasBeenSet; }
+
+    /**
+     * <p>The file's ignore filter field setting.</p>
+     */
+    inline void SetIgnoreFilterField(bool value) { m_ignoreFilterFieldHasBeenSet = true; m_ignoreFilterField = value; }
+
+    /**
+     * <p>The file's ignore filter field setting.</p>
+     */
+    inline VcfOptions& WithIgnoreFilterField(bool value) { SetIgnoreFilterField(value); return *this;}
+
+  private:
 
     bool m_ignoreQualField;
     bool m_ignoreQualFieldHasBeenSet = false;
+
+    bool m_ignoreFilterField;
+    bool m_ignoreFilterFieldHasBeenSet = false;
   };
 
 } // namespace Model

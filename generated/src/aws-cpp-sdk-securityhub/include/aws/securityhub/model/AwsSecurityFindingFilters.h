@@ -188,56 +188,56 @@ namespace Model
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline const Aws::Vector<StringFilter>& GetGeneratorId() const{ return m_generatorId; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline bool GeneratorIdHasBeenSet() const { return m_generatorIdHasBeenSet; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(const Aws::Vector<StringFilter>& value) { m_generatorIdHasBeenSet = true; m_generatorId = value; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline void SetGeneratorId(Aws::Vector<StringFilter>&& value) { m_generatorIdHasBeenSet = true; m_generatorId = std::move(value); }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(const Aws::Vector<StringFilter>& value) { SetGeneratorId(value); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& WithGeneratorId(Aws::Vector<StringFilter>&& value) { SetGeneratorId(std::move(value)); return *this;}
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(const StringFilter& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(value); return *this; }
 
     /**
      * <p>The identifier for the solution-specific component (a discrete unit of logic)
-     * that generated a finding. In various security-findings providers' solutions,
+     * that generated a finding. In various security findings providers' solutions,
      * this generator can be called a rule, a check, a detector, a plugin, etc.</p>
      */
     inline AwsSecurityFindingFilters& AddGeneratorId(StringFilter&& value) { m_generatorIdHasBeenSet = true; m_generatorId.push_back(std::move(value)); return *this; }
@@ -334,7 +334,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -345,7 +345,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetFirstObservedAt() const{ return m_firstObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -356,7 +356,7 @@ namespace Model
     inline bool FirstObservedAtHasBeenSet() const { return m_firstObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -367,7 +367,7 @@ namespace Model
     inline void SetFirstObservedAt(const Aws::Vector<DateFilter>& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -378,7 +378,7 @@ namespace Model
     inline void SetFirstObservedAt(Aws::Vector<DateFilter>&& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -389,7 +389,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithFirstObservedAt(const Aws::Vector<DateFilter>& value) { SetFirstObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -400,7 +400,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithFirstObservedAt(Aws::Vector<DateFilter>&& value) { SetFirstObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -411,7 +411,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddFirstObservedAt(const DateFilter& value) { m_firstObservedAtHasBeenSet = true; m_firstObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider first observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -423,7 +423,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -434,7 +434,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetLastObservedAt() const{ return m_lastObservedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -445,7 +445,7 @@ namespace Model
     inline bool LastObservedAtHasBeenSet() const { return m_lastObservedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -456,7 +456,7 @@ namespace Model
     inline void SetLastObservedAt(const Aws::Vector<DateFilter>& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -467,7 +467,7 @@ namespace Model
     inline void SetLastObservedAt(Aws::Vector<DateFilter>&& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -478,7 +478,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithLastObservedAt(const Aws::Vector<DateFilter>& value) { SetLastObservedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -489,7 +489,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithLastObservedAt(Aws::Vector<DateFilter>&& value) { SetLastObservedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -500,7 +500,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddLastObservedAt(const DateFilter& value) { m_lastObservedAtHasBeenSet = true; m_lastObservedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider most recently observed the potential security issue that a finding
      * captured.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
@@ -512,7 +512,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -523,7 +523,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -534,7 +534,7 @@ namespace Model
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -545,7 +545,7 @@ namespace Model
     inline void SetCreatedAt(const Aws::Vector<DateFilter>& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -556,7 +556,7 @@ namespace Model
     inline void SetCreatedAt(Aws::Vector<DateFilter>&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -567,7 +567,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithCreatedAt(const Aws::Vector<DateFilter>& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -578,7 +578,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithCreatedAt(Aws::Vector<DateFilter>&& value) { SetCreatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -589,7 +589,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddCreatedAt(const DateFilter& value) { m_createdAtHasBeenSet = true; m_createdAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider captured the potential security issue that a finding captured.</p> <p>A
      * correctly formatted example is <code>2020-05-21T20:16:34.724Z</code>. The value
      * cannot contain spaces, and date and time should be separated by <code>T</code>.
@@ -601,7 +601,7 @@ namespace Model
 
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -611,7 +611,7 @@ namespace Model
     inline const Aws::Vector<DateFilter>& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -621,7 +621,7 @@ namespace Model
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -631,7 +631,7 @@ namespace Model
     inline void SetUpdatedAt(const Aws::Vector<DateFilter>& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -641,7 +641,7 @@ namespace Model
     inline void SetUpdatedAt(Aws::Vector<DateFilter>&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -651,7 +651,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithUpdatedAt(const Aws::Vector<DateFilter>& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -661,7 +661,7 @@ namespace Model
     inline AwsSecurityFindingFilters& WithUpdatedAt(Aws::Vector<DateFilter>&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -671,7 +671,7 @@ namespace Model
     inline AwsSecurityFindingFilters& AddUpdatedAt(const DateFilter& value) { m_updatedAtHasBeenSet = true; m_updatedAt.push_back(value); return *this; }
 
     /**
-     * <p>An ISO8601-formatted timestamp that indicates when the security-findings
+     * <p>An ISO8601-formatted timestamp that indicates when the security findings
      * provider last updated the finding record. </p> <p>A correctly formatted example
      * is <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and
      * date and time should be separated by <code>T</code>. For more information, see
@@ -968,105 +968,105 @@ namespace Model
 
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline const Aws::Vector<StringFilter>& GetSourceUrl() const{ return m_sourceUrl; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline bool SourceUrlHasBeenSet() const { return m_sourceUrlHasBeenSet; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline void SetSourceUrl(const Aws::Vector<StringFilter>& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = value; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline void SetSourceUrl(Aws::Vector<StringFilter>&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl = std::move(value); }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& WithSourceUrl(const Aws::Vector<StringFilter>& value) { SetSourceUrl(value); return *this;}
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& WithSourceUrl(Aws::Vector<StringFilter>&& value) { SetSourceUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& AddSourceUrl(const StringFilter& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(value); return *this; }
 
     /**
-     * <p>A URL that links to a page about the current finding in the security-findings
+     * <p>A URL that links to a page about the current finding in the security findings
      * provider's solution.</p>
      */
     inline AwsSecurityFindingFilters& AddSourceUrl(StringFilter&& value) { m_sourceUrlHasBeenSet = true; m_sourceUrl.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline const Aws::Vector<MapFilter>& GetProductFields() const{ return m_productFields; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline bool ProductFieldsHasBeenSet() const { return m_productFieldsHasBeenSet; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(const Aws::Vector<MapFilter>& value) { m_productFieldsHasBeenSet = true; m_productFields = value; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline void SetProductFields(Aws::Vector<MapFilter>&& value) { m_productFieldsHasBeenSet = true; m_productFields = std::move(value); }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(const Aws::Vector<MapFilter>& value) { SetProductFields(value); return *this;}
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& WithProductFields(Aws::Vector<MapFilter>&& value) { SetProductFields(std::move(value)); return *this;}
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */
     inline AwsSecurityFindingFilters& AddProductFields(const MapFilter& value) { m_productFieldsHasBeenSet = true; m_productFields.push_back(value); return *this; }
 
     /**
-     * <p>A data type where security-findings providers can include additional
+     * <p>A data type where security findings providers can include additional
      * solution-specific details that aren't part of the defined
      * <code>AwsSecurityFinding</code> format.</p>
      */

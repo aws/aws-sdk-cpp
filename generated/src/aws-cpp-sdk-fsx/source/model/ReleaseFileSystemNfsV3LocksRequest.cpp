@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 ReleaseFileSystemNfsV3LocksRequest::ReleaseFileSystemNfsV3LocksRequest() : 
     m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

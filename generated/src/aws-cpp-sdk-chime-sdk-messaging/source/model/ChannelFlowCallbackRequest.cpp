@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ChannelFlowCallbackRequest::ChannelFlowCallbackRequest() : 
-    m_callbackId(Aws::Utils::UUID::RandomUUID()),
+    m_callbackId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_callbackIdHasBeenSet(true),
     m_channelArnHasBeenSet(false),
     m_deleteResource(false),

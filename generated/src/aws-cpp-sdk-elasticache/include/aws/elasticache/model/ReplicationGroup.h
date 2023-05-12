@@ -18,6 +18,7 @@
 #include <aws/elasticache/model/NetworkType.h>
 #include <aws/elasticache/model/IpDiscovery.h>
 #include <aws/elasticache/model/TransitEncryptionMode.h>
+#include <aws/elasticache/model/ClusterMode.h>
 #include <aws/elasticache/model/NodeGroup.h>
 #include <aws/elasticache/model/LogDeliveryConfiguration.h>
 #include <utility>
@@ -1186,30 +1187,30 @@ namespace Model
 
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p>If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline bool GetAutoMinorVersionUpgrade() const{ return m_autoMinorVersionUpgrade; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p>If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p>If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
-     * <p> If you are running Redis engine version 6.0 or later, set this parameter to
+     * <p>If you are running Redis engine version 6.0 or later, set this parameter to
      * yes if you want to opt-in to the next auto minor version upgrade campaign. This
-     * parameter is disabled for previous versions.  </p>
+     * parameter is disabled for previous versions. </p>
      */
     inline ReplicationGroup& WithAutoMinorVersionUpgrade(bool value) { SetAutoMinorVersionUpgrade(value); return *this;}
 
@@ -1218,7 +1219,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline const NetworkType& GetNetworkType() const{ return m_networkType; }
 
@@ -1226,7 +1227,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline bool NetworkTypeHasBeenSet() const { return m_networkTypeHasBeenSet; }
 
@@ -1234,7 +1235,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline void SetNetworkType(const NetworkType& value) { m_networkTypeHasBeenSet = true; m_networkType = value; }
 
@@ -1242,7 +1243,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline void SetNetworkType(NetworkType&& value) { m_networkTypeHasBeenSet = true; m_networkType = std::move(value); }
 
@@ -1250,7 +1251,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline ReplicationGroup& WithNetworkType(const NetworkType& value) { SetNetworkType(value); return *this;}
 
@@ -1258,7 +1259,7 @@ namespace Model
      * <p>Must be either <code>ipv4</code> | <code>ipv6</code> |
      * <code>dual_stack</code>. IPv6 is supported for workloads using Redis engine
      * version 6.2 onward or Memcached engine version 1.6.6 on all instances built on
-     * the <a href="https://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
+     * the <a href="http://aws.amazon.com/ec2/nitro/">Nitro system</a>.</p>
      */
     inline ReplicationGroup& WithNetworkType(NetworkType&& value) { SetNetworkType(std::move(value)); return *this;}
 
@@ -1267,7 +1268,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
@@ -1276,7 +1277,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
@@ -1285,7 +1286,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
@@ -1294,7 +1295,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
@@ -1303,7 +1304,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ReplicationGroup& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
@@ -1312,7 +1313,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ReplicationGroup& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}
@@ -1353,6 +1354,61 @@ namespace Model
      * encryption, with no downtime.</p>
      */
     inline ReplicationGroup& WithTransitEncryptionMode(TransitEncryptionMode&& value) { SetTransitEncryptionMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline const ClusterMode& GetClusterMode() const{ return m_clusterMode; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline bool ClusterModeHasBeenSet() const { return m_clusterModeHasBeenSet; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(const ClusterMode& value) { m_clusterModeHasBeenSet = true; m_clusterMode = value; }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline void SetClusterMode(ClusterMode&& value) { m_clusterModeHasBeenSet = true; m_clusterMode = std::move(value); }
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ReplicationGroup& WithClusterMode(const ClusterMode& value) { SetClusterMode(value); return *this;}
+
+    /**
+     * <p>Enabled or Disabled. To modify cluster mode from Disabled to Enabled, you
+     * must first set the cluster mode to Compatible. Compatible mode allows your Redis
+     * clients to connect using both cluster mode enabled and cluster mode disabled.
+     * After you migrate all Redis clients to use cluster mode enabled, you can then
+     * complete cluster mode configuration and set the cluster mode to Enabled.</p>
+     */
+    inline ReplicationGroup& WithClusterMode(ClusterMode&& value) { SetClusterMode(std::move(value)); return *this;}
 
   private:
 
@@ -1445,6 +1501,9 @@ namespace Model
 
     TransitEncryptionMode m_transitEncryptionMode;
     bool m_transitEncryptionModeHasBeenSet = false;
+
+    ClusterMode m_clusterMode;
+    bool m_clusterModeHasBeenSet = false;
   };
 
 } // namespace Model

@@ -18,7 +18,7 @@ CreateVpcAttachmentRequest::CreateVpcAttachmentRequest() :
     m_subnetArnsHasBeenSet(false),
     m_optionsHasBeenSet(false),
     m_tagsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

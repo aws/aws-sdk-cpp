@@ -35,52 +35,44 @@ namespace Model
 
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
+    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
+    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
+    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline StartReadSetExportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
+    inline StartReadSetExportJobRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline StartReadSetExportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
+    inline StartReadSetExportJobRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
 
     /**
-     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
-     * job.</p>
+     * <p>The read set's sequence store ID.</p>
      */
-    inline StartReadSetExportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+    inline StartReadSetExportJobRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
 
 
     /**
@@ -166,44 +158,52 @@ namespace Model
 
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline const Aws::String& GetSequenceStoreId() const{ return m_sequenceStoreId; }
+    inline const Aws::String& GetClientToken() const{ return m_clientToken; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline bool SequenceStoreIdHasBeenSet() const { return m_sequenceStoreIdHasBeenSet; }
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline void SetSequenceStoreId(const Aws::String& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = value; }
+    inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline void SetSequenceStoreId(Aws::String&& value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId = std::move(value); }
+    inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline void SetSequenceStoreId(const char* value) { m_sequenceStoreIdHasBeenSet = true; m_sequenceStoreId.assign(value); }
+    inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline StartReadSetExportJobRequest& WithSequenceStoreId(const Aws::String& value) { SetSequenceStoreId(value); return *this;}
+    inline StartReadSetExportJobRequest& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline StartReadSetExportJobRequest& WithSequenceStoreId(Aws::String&& value) { SetSequenceStoreId(std::move(value)); return *this;}
+    inline StartReadSetExportJobRequest& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
 
     /**
-     * <p>The read set's sequence store ID.</p>
+     * <p>To ensure that jobs don't run multiple times, specify a unique token for each
+     * job.</p>
      */
-    inline StartReadSetExportJobRequest& WithSequenceStoreId(const char* value) { SetSequenceStoreId(value); return *this;}
+    inline StartReadSetExportJobRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
 
 
     /**
@@ -248,8 +248,8 @@ namespace Model
 
   private:
 
-    Aws::String m_clientToken;
-    bool m_clientTokenHasBeenSet = false;
+    Aws::String m_sequenceStoreId;
+    bool m_sequenceStoreIdHasBeenSet = false;
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet = false;
@@ -257,8 +257,8 @@ namespace Model
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet = false;
 
-    Aws::String m_sequenceStoreId;
-    bool m_sequenceStoreIdHasBeenSet = false;
+    Aws::String m_clientToken;
+    bool m_clientTokenHasBeenSet = false;
 
     Aws::Vector<ExportReadSet> m_sources;
     bool m_sourcesHasBeenSet = false;

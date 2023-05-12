@@ -18,7 +18,7 @@ PurchaseOfferingRequest::PurchaseOfferingRequest() :
     m_nameHasBeenSet(false),
     m_offeringIdHasBeenSet(false),
     m_renewalSettingsHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_requestIdHasBeenSet(true),
     m_startHasBeenSet(false),
     m_tagsHasBeenSet(false)

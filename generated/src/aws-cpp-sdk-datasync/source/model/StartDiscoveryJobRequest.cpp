@@ -16,7 +16,7 @@ StartDiscoveryJobRequest::StartDiscoveryJobRequest() :
     m_storageSystemArnHasBeenSet(false),
     m_collectionDurationMinutes(0),
     m_collectionDurationMinutesHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false)
 {

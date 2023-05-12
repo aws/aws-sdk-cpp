@@ -19,7 +19,7 @@ CreateIndexRequest::CreateIndexRequest() :
     m_roleArnHasBeenSet(false),
     m_serverSideEncryptionConfigurationHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_tagsHasBeenSet(false),
     m_userTokenConfigurationsHasBeenSet(false),

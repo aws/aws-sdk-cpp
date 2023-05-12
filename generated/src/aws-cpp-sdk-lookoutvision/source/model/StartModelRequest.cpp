@@ -18,7 +18,7 @@ StartModelRequest::StartModelRequest() :
     m_modelVersionHasBeenSet(false),
     m_minInferenceUnits(0),
     m_minInferenceUnitsHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_maxInferenceUnits(0),
     m_maxInferenceUnitsHasBeenSet(false)

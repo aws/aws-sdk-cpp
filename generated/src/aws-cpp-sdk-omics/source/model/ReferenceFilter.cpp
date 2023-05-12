@@ -19,24 +19,38 @@ namespace Model
 {
 
 ReferenceFilter::ReferenceFilter() : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_createdAfterHasBeenSet(false),
+    m_createdBeforeHasBeenSet(false)
 {
 }
 
 ReferenceFilter::ReferenceFilter(JsonView jsonValue) : 
-    m_createdAfterHasBeenSet(false),
-    m_createdBeforeHasBeenSet(false),
+    m_nameHasBeenSet(false),
     m_md5HasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_createdAfterHasBeenSet(false),
+    m_createdBeforeHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ReferenceFilter& ReferenceFilter::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
+
+    m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("md5"))
+  {
+    m_md5 = jsonValue.GetString("md5");
+
+    m_md5HasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("createdAfter"))
   {
     m_createdAfter = jsonValue.GetString("createdAfter");
@@ -51,26 +65,24 @@ ReferenceFilter& ReferenceFilter::operator =(JsonView jsonValue)
     m_createdBeforeHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("md5"))
-  {
-    m_md5 = jsonValue.GetString("md5");
-
-    m_md5HasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
-
-    m_nameHasBeenSet = true;
-  }
-
   return *this;
 }
 
 JsonValue ReferenceFilter::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_nameHasBeenSet)
+  {
+   payload.WithString("name", m_name);
+
+  }
+
+  if(m_md5HasBeenSet)
+  {
+   payload.WithString("md5", m_md5);
+
+  }
 
   if(m_createdAfterHasBeenSet)
   {
@@ -80,18 +92,6 @@ JsonValue ReferenceFilter::Jsonize() const
   if(m_createdBeforeHasBeenSet)
   {
    payload.WithString("createdBefore", m_createdBefore.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_md5HasBeenSet)
-  {
-   payload.WithString("md5", m_md5);
-
-  }
-
-  if(m_nameHasBeenSet)
-  {
-   payload.WithString("name", m_name);
-
   }
 
   return payload;

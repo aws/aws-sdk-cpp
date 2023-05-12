@@ -41,42 +41,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline MetricV2& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline MetricV2& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the metric.</p>
+     * <p>The name of the metric.</p>  <p>This parameter is required. The
+     * following Required = No is incorrect.</p> 
      */
     inline MetricV2& WithName(const char* value) { SetName(value); return *this;}
 

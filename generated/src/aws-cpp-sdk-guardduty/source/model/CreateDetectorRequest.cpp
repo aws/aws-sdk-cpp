@@ -15,7 +15,7 @@ using namespace Aws::Utils;
 CreateDetectorRequest::CreateDetectorRequest() : 
     m_enable(false),
     m_enableHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_findingPublishingFrequency(FindingPublishingFrequency::NOT_SET),
     m_findingPublishingFrequencyHasBeenSet(false),

@@ -16,23 +16,17 @@ using namespace Aws::Utils;
 using namespace Aws::Http;
 
 ListVariantImportJobsRequest::ListVariantImportJobsRequest() : 
-    m_filterHasBeenSet(false),
-    m_idsHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_idsHasBeenSet(false),
+    m_nextTokenHasBeenSet(false),
+    m_filterHasBeenSet(false)
 {
 }
 
 Aws::String ListVariantImportJobsRequest::SerializePayload() const
 {
   JsonValue payload;
-
-  if(m_filterHasBeenSet)
-  {
-   payload.WithObject("filter", m_filter.Jsonize());
-
-  }
 
   if(m_idsHasBeenSet)
   {
@@ -42,6 +36,12 @@ Aws::String ListVariantImportJobsRequest::SerializePayload() const
      idsJsonList[idsIndex].AsString(m_ids[idsIndex]);
    }
    payload.WithArray("ids", std::move(idsJsonList));
+
+  }
+
+  if(m_filterHasBeenSet)
+  {
+   payload.WithObject("filter", m_filter.Jsonize());
 
   }
 

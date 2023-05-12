@@ -32,7 +32,9 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues() :
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false)
 {
 }
 
@@ -48,7 +50,9 @@ ReplicationGroupPendingModifiedValues::ReplicationGroupPendingModifiedValues(con
     m_transitEncryptionEnabled(false),
     m_transitEncryptionEnabledHasBeenSet(false),
     m_transitEncryptionMode(TransitEncryptionMode::NOT_SET),
-    m_transitEncryptionModeHasBeenSet(false)
+    m_transitEncryptionModeHasBeenSet(false),
+    m_clusterMode(ClusterMode::NOT_SET),
+    m_clusterModeHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -113,6 +117,12 @@ ReplicationGroupPendingModifiedValues& ReplicationGroupPendingModifiedValues::op
       m_transitEncryptionMode = TransitEncryptionModeMapper::GetTransitEncryptionModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(transitEncryptionModeNode.GetText()).c_str()).c_str());
       m_transitEncryptionModeHasBeenSet = true;
     }
+    XmlNode clusterModeNode = resultNode.FirstChild("ClusterMode");
+    if(!clusterModeNode.IsNull())
+    {
+      m_clusterMode = ClusterModeMapper::GetClusterModeForName(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(clusterModeNode.GetText()).c_str()).c_str());
+      m_clusterModeHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -170,6 +180,11 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
       oStream << location << index << locationValue << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
   }
 
+  if(m_clusterModeHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
+  }
+
 }
 
 void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -215,6 +230,10 @@ void ReplicationGroupPendingModifiedValues::OutputToStream(Aws::OStream& oStream
   if(m_transitEncryptionModeHasBeenSet)
   {
       oStream << location << ".TransitEncryptionMode=" << TransitEncryptionModeMapper::GetNameForTransitEncryptionMode(m_transitEncryptionMode) << "&";
+  }
+  if(m_clusterModeHasBeenSet)
+  {
+      oStream << location << ".ClusterMode=" << ClusterModeMapper::GetNameForClusterMode(m_clusterMode) << "&";
   }
 }
 

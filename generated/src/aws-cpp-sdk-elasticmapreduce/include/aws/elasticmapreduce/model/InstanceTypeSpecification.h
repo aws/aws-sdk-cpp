@@ -29,7 +29,7 @@ namespace Model
   /**
    * <p>The configuration specification for each instance type in an instance
    * fleet.</p>  <p>The instance fleet configuration is available only in
-   * Amazon EMR versions 4.8.0 and later, excluding 5.0.x versions.</p>
+   * Amazon EMR releases 4.8.0 and later, excluding 5.0.x versions.</p>
    * <p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceTypeSpecification">AWS
    * API Reference</a></p>
@@ -44,42 +44,42 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline InstanceTypeSpecification& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline InstanceTypeSpecification& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
 
     /**
-     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     * <p>The Amazon EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline InstanceTypeSpecification& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
 
@@ -118,79 +118,79 @@ namespace Model
 
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(const Aws::String& value) { m_bidPriceHasBeenSet = true; m_bidPrice = value; }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(Aws::String&& value) { m_bidPriceHasBeenSet = true; m_bidPrice = std::move(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline void SetBidPrice(const char* value) { m_bidPriceHasBeenSet = true; m_bidPrice.assign(value); }
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(const Aws::String& value) { SetBidPrice(value); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(Aws::String&& value) { SetBidPrice(std::move(value)); return *this;}
 
     /**
-     * <p>The bid price for each EC2 Spot Instance type as defined by
+     * <p>The bid price for each Amazon EC2 Spot Instance type as defined by
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline InstanceTypeSpecification& WithBidPrice(const char* value) { SetBidPrice(value); return *this;}
 
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%).</p>
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%).</p>
      */
     inline double GetBidPriceAsPercentageOfOnDemandPrice() const{ return m_bidPriceAsPercentageOfOnDemandPrice; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%).</p>
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%).</p>
      */
     inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%).</p>
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%).</p>
      */
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
 
     /**
-     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot Instance
-     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
-     * specifies 20%).</p>
+     * <p>The bid price, as a percentage of On-Demand price, for each Amazon EC2 Spot
+     * Instance as defined by <code>InstanceType</code>. Expressed as a number (for
+     * example, 20 specifies 20%).</p>
      */
     inline InstanceTypeSpecification& WithBidPriceAsPercentageOfOnDemandPrice(double value) { SetBidPriceAsPercentageOfOnDemandPrice(value); return *this;}
 

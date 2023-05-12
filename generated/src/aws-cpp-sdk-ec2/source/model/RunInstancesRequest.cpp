@@ -32,7 +32,7 @@ RunInstancesRequest::RunInstancesRequest() :
     m_subnetIdHasBeenSet(false),
     m_userDataHasBeenSet(false),
     m_additionalInfoHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_disableApiTermination(false),
     m_disableApiTerminationHasBeenSet(false),

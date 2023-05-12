@@ -234,6 +234,52 @@ namespace Model
      */
     inline InstanceTypeDetails& AddInstanceRole(const char* value) { m_instanceRoleHasBeenSet = true; m_instanceRole.push_back(value); return *this; }
 
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline void SetAvailabilityZones(Aws::Vector<Aws::String>&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = std::move(value); }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline InstanceTypeDetails& WithAvailabilityZones(const Aws::Vector<Aws::String>& value) { SetAvailabilityZones(value); return *this;}
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline InstanceTypeDetails& WithAvailabilityZones(Aws::Vector<Aws::String>&& value) { SetAvailabilityZones(std::move(value)); return *this;}
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline InstanceTypeDetails& AddAvailabilityZones(const Aws::String& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline InstanceTypeDetails& AddAvailabilityZones(Aws::String&& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The supported Availability Zones for the instance type.</p>
+     */
+    inline InstanceTypeDetails& AddAvailabilityZones(const char* value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones.push_back(value); return *this; }
+
   private:
 
     OpenSearchPartitionInstanceType m_instanceType;
@@ -256,6 +302,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_instanceRole;
     bool m_instanceRoleHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_availabilityZones;
+    bool m_availabilityZonesHasBeenSet = false;
   };
 
 } // namespace Model

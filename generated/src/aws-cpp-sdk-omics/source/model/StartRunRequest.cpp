@@ -13,24 +13,24 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartRunRequest::StartRunRequest() : 
-    m_logLevel(RunLogLevel::NOT_SET),
-    m_logLevelHasBeenSet(false),
-    m_nameHasBeenSet(false),
-    m_outputUriHasBeenSet(false),
-    m_parametersHasBeenSet(false),
-    m_priority(0),
-    m_priorityHasBeenSet(false),
-    m_requestId(Aws::Utils::UUID::RandomUUID()),
-    m_requestIdHasBeenSet(true),
-    m_roleArnHasBeenSet(false),
-    m_runGroupIdHasBeenSet(false),
-    m_runIdHasBeenSet(false),
-    m_storageCapacity(0),
-    m_storageCapacityHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_workflowIdHasBeenSet(false),
     m_workflowType(WorkflowType::NOT_SET),
-    m_workflowTypeHasBeenSet(false)
+    m_workflowTypeHasBeenSet(false),
+    m_runIdHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
+    m_nameHasBeenSet(false),
+    m_runGroupIdHasBeenSet(false),
+    m_priority(0),
+    m_priorityHasBeenSet(false),
+    m_parametersHasBeenSet(false),
+    m_storageCapacity(0),
+    m_storageCapacityHasBeenSet(false),
+    m_outputUriHasBeenSet(false),
+    m_logLevel(RunLogLevel::NOT_SET),
+    m_logLevelHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_requestId(Aws::Utils::UUID::PseudoRandomUUID()),
+    m_requestIdHasBeenSet(true)
 {
 }
 
@@ -38,9 +38,27 @@ Aws::String StartRunRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_logLevelHasBeenSet)
+  if(m_workflowIdHasBeenSet)
   {
-   payload.WithString("logLevel", RunLogLevelMapper::GetNameForRunLogLevel(m_logLevel));
+   payload.WithString("workflowId", m_workflowId);
+
+  }
+
+  if(m_workflowTypeHasBeenSet)
+  {
+   payload.WithString("workflowType", WorkflowTypeMapper::GetNameForWorkflowType(m_workflowType));
+  }
+
+  if(m_runIdHasBeenSet)
+  {
+   payload.WithString("runId", m_runId);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
+
   }
 
   if(m_nameHasBeenSet)
@@ -49,9 +67,15 @@ Aws::String StartRunRequest::SerializePayload() const
 
   }
 
-  if(m_outputUriHasBeenSet)
+  if(m_runGroupIdHasBeenSet)
   {
-   payload.WithString("outputUri", m_outputUri);
+   payload.WithString("runGroupId", m_runGroupId);
+
+  }
+
+  if(m_priorityHasBeenSet)
+  {
+   payload.WithInteger("priority", m_priority);
 
   }
 
@@ -63,40 +87,21 @@ Aws::String StartRunRequest::SerializePayload() const
     }
   }
 
-  if(m_priorityHasBeenSet)
-  {
-   payload.WithInteger("priority", m_priority);
-
-  }
-
-  if(m_requestIdHasBeenSet)
-  {
-   payload.WithString("requestId", m_requestId);
-
-  }
-
-  if(m_roleArnHasBeenSet)
-  {
-   payload.WithString("roleArn", m_roleArn);
-
-  }
-
-  if(m_runGroupIdHasBeenSet)
-  {
-   payload.WithString("runGroupId", m_runGroupId);
-
-  }
-
-  if(m_runIdHasBeenSet)
-  {
-   payload.WithString("runId", m_runId);
-
-  }
-
   if(m_storageCapacityHasBeenSet)
   {
    payload.WithInteger("storageCapacity", m_storageCapacity);
 
+  }
+
+  if(m_outputUriHasBeenSet)
+  {
+   payload.WithString("outputUri", m_outputUri);
+
+  }
+
+  if(m_logLevelHasBeenSet)
+  {
+   payload.WithString("logLevel", RunLogLevelMapper::GetNameForRunLogLevel(m_logLevel));
   }
 
   if(m_tagsHasBeenSet)
@@ -110,15 +115,10 @@ Aws::String StartRunRequest::SerializePayload() const
 
   }
 
-  if(m_workflowIdHasBeenSet)
+  if(m_requestIdHasBeenSet)
   {
-   payload.WithString("workflowId", m_workflowId);
+   payload.WithString("requestId", m_requestId);
 
-  }
-
-  if(m_workflowTypeHasBeenSet)
-  {
-   payload.WithString("workflowType", WorkflowTypeMapper::GetNameForWorkflowType(m_workflowType));
   }
 
   return payload.View().WriteReadable();

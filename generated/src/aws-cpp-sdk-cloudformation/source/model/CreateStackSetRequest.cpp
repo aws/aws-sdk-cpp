@@ -26,7 +26,7 @@ CreateStackSetRequest::CreateStackSetRequest() :
     m_autoDeploymentHasBeenSet(false),
     m_callAs(CallAs::NOT_SET),
     m_callAsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_managedExecutionHasBeenSet(false)
 {

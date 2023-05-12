@@ -25,7 +25,8 @@ DynamicTransform::DynamicTransform() :
     m_parametersHasBeenSet(false),
     m_functionNameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_outputSchemasHasBeenSet(false)
 {
 }
 
@@ -36,7 +37,8 @@ DynamicTransform::DynamicTransform(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_functionNameHasBeenSet(false),
     m_pathHasBeenSet(false),
-    m_versionHasBeenSet(false)
+    m_versionHasBeenSet(false),
+    m_outputSchemasHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -98,6 +100,16 @@ DynamicTransform& DynamicTransform::operator =(JsonView jsonValue)
     m_versionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("OutputSchemas"))
+  {
+    Aws::Utils::Array<JsonView> outputSchemasJsonList = jsonValue.GetArray("OutputSchemas");
+    for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+    {
+      m_outputSchemas.push_back(outputSchemasJsonList[outputSchemasIndex].AsObject());
+    }
+    m_outputSchemasHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -154,6 +166,17 @@ JsonValue DynamicTransform::Jsonize() const
   if(m_versionHasBeenSet)
   {
    payload.WithString("Version", m_version);
+
+  }
+
+  if(m_outputSchemasHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> outputSchemasJsonList(m_outputSchemas.size());
+   for(unsigned outputSchemasIndex = 0; outputSchemasIndex < outputSchemasJsonList.GetLength(); ++outputSchemasIndex)
+   {
+     outputSchemasJsonList[outputSchemasIndex].AsObject(m_outputSchemas[outputSchemasIndex].Jsonize());
+   }
+   payload.WithArray("OutputSchemas", std::move(outputSchemasJsonList));
 
   }
 

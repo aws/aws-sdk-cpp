@@ -13,8 +13,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 StartReadSetActivationJobRequest::StartReadSetActivationJobRequest() : 
-    m_clientTokenHasBeenSet(false),
     m_sequenceStoreIdHasBeenSet(false),
+    m_clientTokenHasBeenSet(false),
     m_sourcesHasBeenSet(false)
 {
 }

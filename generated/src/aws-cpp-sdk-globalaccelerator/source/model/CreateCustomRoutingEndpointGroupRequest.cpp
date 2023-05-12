@@ -16,7 +16,7 @@ CreateCustomRoutingEndpointGroupRequest::CreateCustomRoutingEndpointGroupRequest
     m_listenerArnHasBeenSet(false),
     m_endpointGroupRegionHasBeenSet(false),
     m_destinationConfigurationsHasBeenSet(false),
-    m_idempotencyToken(Aws::Utils::UUID::RandomUUID()),
+    m_idempotencyToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_idempotencyTokenHasBeenSet(true)
 {
 }

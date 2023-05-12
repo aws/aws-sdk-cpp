@@ -33,27 +33,9 @@ UpdateAnnotationStoreResult::UpdateAnnotationStoreResult(const Aws::AmazonWebSer
 UpdateAnnotationStoreResult& UpdateAnnotationStoreResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
-  if(jsonValue.ValueExists("description"))
-  {
-    m_description = jsonValue.GetString("description");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
-
-  }
-
-  if(jsonValue.ValueExists("name"))
-  {
-    m_name = jsonValue.GetString("name");
 
   }
 
@@ -69,9 +51,27 @@ UpdateAnnotationStoreResult& UpdateAnnotationStoreResult::operator =(const Aws::
 
   }
 
-  if(jsonValue.ValueExists("storeFormat"))
+  if(jsonValue.ValueExists("name"))
   {
-    m_storeFormat = StoreFormatMapper::GetStoreFormatForName(jsonValue.GetString("storeFormat"));
+    m_name = jsonValue.GetString("name");
+
+  }
+
+  if(jsonValue.ValueExists("description"))
+  {
+    m_description = jsonValue.GetString("description");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
+
+  }
+
+  if(jsonValue.ValueExists("updateTime"))
+  {
+    m_updateTime = jsonValue.GetString("updateTime");
 
   }
 
@@ -81,9 +81,9 @@ UpdateAnnotationStoreResult& UpdateAnnotationStoreResult::operator =(const Aws::
 
   }
 
-  if(jsonValue.ValueExists("updateTime"))
+  if(jsonValue.ValueExists("storeFormat"))
   {
-    m_updateTime = jsonValue.GetString("updateTime");
+    m_storeFormat = StoreFormatMapper::GetStoreFormatForName(jsonValue.GetString("storeFormat"));
 
   }
 

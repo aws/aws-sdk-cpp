@@ -78,61 +78,55 @@ namespace Model
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline void SetTaskList(TaskList&& value) { m_taskListHasBeenSet = true; m_taskList = std::move(value); }
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline PollForDecisionTaskRequest& WithTaskList(const TaskList& value) { SetTaskList(value); return *this;}
 
     /**
      * <p>Specifies the task list to poll for decision tasks.</p> <p>The specified
-     * string must not start or end with whitespace. It must not contain a
-     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
-     * or any control characters (<code>\u0000-\u001f</code> |
-     * <code>\u007f-\u009f</code>). Also, it must not <i>be</i> the literal string
-     * <code>arn</code>.</p>
+     * string must not contain a <code>:</code> (colon), <code>/</code> (slash),
+     * <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must
+     * <i>not</i> be the literal string <code>arn</code>.</p>
      */
     inline PollForDecisionTaskRequest& WithTaskList(TaskList&& value) { SetTaskList(std::move(value)); return *this;}
 
@@ -198,8 +192,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -215,8 +209,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -232,8 +226,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -249,8 +243,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -266,8 +260,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -283,8 +277,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -300,8 +294,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -317,8 +311,8 @@ namespace Model
      * <p>If <code>NextPageToken</code> is returned there are more results available.
      * The value of <code>NextPageToken</code> is a unique pagination token for each
      * page. Make the call again using the returned token to retrieve the next page.
-     * Keep all other arguments unchanged. Each pagination token expires after 60
-     * seconds. Using an expired pagination token will return a <code>400</code> error:
+     * Keep all other arguments unchanged. Each pagination token expires after 24
+     * hours. Using an expired pagination token will return a <code>400</code> error:
      * "<code>Specified token has exceeded its maximum lifetime</code>". </p> <p>The
      * configured <code>maximumPageSize</code> determines how many results can be
      * returned in a single call. </p>  <p>The <code>nextPageToken</code>
@@ -392,6 +386,39 @@ namespace Model
      */
     inline PollForDecisionTaskRequest& WithReverseOrder(bool value) { SetReverseOrder(value); return *this;}
 
+
+    /**
+     * <p>When set to <code>true</code>, returns the events with
+     * <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code>
+     * of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     * parameter is set to <code>false</code>.</p>
+     */
+    inline bool GetStartAtPreviousStartedEvent() const{ return m_startAtPreviousStartedEvent; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the events with
+     * <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code>
+     * of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     * parameter is set to <code>false</code>.</p>
+     */
+    inline bool StartAtPreviousStartedEventHasBeenSet() const { return m_startAtPreviousStartedEventHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the events with
+     * <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code>
+     * of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     * parameter is set to <code>false</code>.</p>
+     */
+    inline void SetStartAtPreviousStartedEvent(bool value) { m_startAtPreviousStartedEventHasBeenSet = true; m_startAtPreviousStartedEvent = value; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the events with
+     * <code>eventTimestamp</code> greater than or equal to <code>eventTimestamp</code>
+     * of the most recent <code>DecisionTaskStarted</code> event. By default, this
+     * parameter is set to <code>false</code>.</p>
+     */
+    inline PollForDecisionTaskRequest& WithStartAtPreviousStartedEvent(bool value) { SetStartAtPreviousStartedEvent(value); return *this;}
+
   private:
 
     Aws::String m_domain;
@@ -411,6 +438,9 @@ namespace Model
 
     bool m_reverseOrder;
     bool m_reverseOrderHasBeenSet = false;
+
+    bool m_startAtPreviousStartedEvent;
+    bool m_startAtPreviousStartedEventHasBeenSet = false;
   };
 
 } // namespace Model

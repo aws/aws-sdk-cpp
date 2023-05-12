@@ -29,12 +29,6 @@ ListVariantStoresResult::ListVariantStoresResult(const Aws::AmazonWebServiceResu
 ListVariantStoresResult& ListVariantStoresResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("nextToken"))
-  {
-    m_nextToken = jsonValue.GetString("nextToken");
-
-  }
-
   if(jsonValue.ValueExists("variantStores"))
   {
     Aws::Utils::Array<JsonView> variantStoresJsonList = jsonValue.GetArray("variantStores");
@@ -42,6 +36,12 @@ ListVariantStoresResult& ListVariantStoresResult::operator =(const Aws::AmazonWe
     {
       m_variantStores.push_back(variantStoresJsonList[variantStoresIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("nextToken"))
+  {
+    m_nextToken = jsonValue.GetString("nextToken");
+
   }
 
 

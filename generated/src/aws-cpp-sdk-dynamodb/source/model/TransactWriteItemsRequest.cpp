@@ -18,7 +18,7 @@ TransactWriteItemsRequest::TransactWriteItemsRequest() :
     m_returnConsumedCapacityHasBeenSet(false),
     m_returnItemCollectionMetrics(ReturnItemCollectionMetrics::NOT_SET),
     m_returnItemCollectionMetricsHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
 }

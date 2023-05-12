@@ -54,15 +54,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
@@ -75,15 +82,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
 
@@ -96,15 +110,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
@@ -117,15 +138,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
@@ -138,15 +166,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
@@ -159,15 +194,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline HeadBucketRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
@@ -180,15 +222,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline HeadBucketRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
@@ -201,15 +250,22 @@ namespace Model
      * SDKs, you provide the access point ARN in place of the bucket name. For more
      * information about access point ARNs, see <a
      * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-access-points.html">Using
-     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When using this
-     * action with Amazon S3 on Outposts, you must direct requests to the S3 on
-     * Outposts hostname. The S3 on Outposts hostname takes the form <code>
+     * access points</a> in the <i>Amazon S3 User Guide</i>.</p> <p>When you use this
+     * action with an Object Lambda access point, provide the alias of the Object
+     * Lambda access point in place of the bucket name. If the Object Lambda access
+     * point alias in a request is not valid, the error code
+     * <code>InvalidAccessPointAliasError</code> is returned. For more information
+     * about <code>InvalidAccessPointAliasError</code>, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List
+     * of Error Codes</a>.</p> <p>When you use this action with Amazon S3 on Outposts,
+     * you must direct requests to the S3 on Outposts hostname. The S3 on Outposts
+     * hostname takes the form <code>
      * <i>AccessPointName</i>-<i>AccountId</i>.<i>outpostID</i>.s3-outposts.<i>Region</i>.amazonaws.com</code>.
-     * When using this action with S3 on Outposts through the Amazon Web Services SDKs,
-     * you provide the Outposts bucket ARN in place of the bucket name. For more
-     * information about S3 on Outposts ARNs, see <a
-     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using
-     * Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
+     * When you use this action with S3 on Outposts through the Amazon Web Services
+     * SDKs, you provide the Outposts access point ARN in place of the bucket name. For
+     * more information about S3 on Outposts ARNs, see <a
+     * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">What
+     * is S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>
      */
     inline HeadBucketRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 

@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 DeleteDatasetRequest::DeleteDatasetRequest() : 
     m_projectNameHasBeenSet(false),
     m_datasetTypeHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

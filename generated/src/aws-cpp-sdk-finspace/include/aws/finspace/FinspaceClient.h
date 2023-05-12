@@ -26,6 +26,9 @@ namespace finspace
       static const char* SERVICE_NAME;
       static const char* ALLOCATION_TAG;
 
+      typedef FinspaceClientConfiguration ClientConfigurationType;
+      typedef FinspaceEndpointProvider EndpointProviderType;
+
        /**
         * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client config
         * is not specified, it will be initialized to default values.

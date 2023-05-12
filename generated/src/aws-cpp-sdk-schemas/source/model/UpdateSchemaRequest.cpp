@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateSchemaRequest::UpdateSchemaRequest() : 
-    m_clientTokenId(Aws::Utils::UUID::RandomUUID()),
+    m_clientTokenId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenIdHasBeenSet(true),
     m_contentHasBeenSet(false),
     m_descriptionHasBeenSet(false),

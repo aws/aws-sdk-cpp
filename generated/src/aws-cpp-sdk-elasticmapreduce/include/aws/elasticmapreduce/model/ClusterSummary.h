@@ -154,8 +154,8 @@ namespace Model
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
-     * Larger instances are weighted more, so an EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
+     * Larger instances are weighted more, so an Amazon EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
@@ -164,8 +164,8 @@ namespace Model
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
-     * Larger instances are weighted more, so an EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
+     * Larger instances are weighted more, so an Amazon EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
@@ -174,8 +174,8 @@ namespace Model
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
-     * Larger instances are weighted more, so an EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
+     * Larger instances are weighted more, so an Amazon EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
@@ -184,8 +184,8 @@ namespace Model
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
      * This value is incremented one time for every hour an m1.small instance runs.
-     * Larger instances are weighted more, so an EC2 instance that is roughly four
-     * times more expensive would result in the normalized instance hours being
+     * Larger instances are weighted more, so an Amazon EC2 instance that is roughly
+     * four times more expensive would result in the normalized instance hours being
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */

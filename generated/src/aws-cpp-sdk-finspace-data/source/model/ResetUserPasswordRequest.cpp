@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 ResetUserPasswordRequest::ResetUserPasswordRequest() : 
     m_userIdHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true)
 {
 }

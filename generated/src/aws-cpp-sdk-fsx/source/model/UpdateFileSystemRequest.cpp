@@ -14,7 +14,7 @@ using namespace Aws::Utils;
 
 UpdateFileSystemRequest::UpdateFileSystemRequest() : 
     m_fileSystemIdHasBeenSet(false),
-    m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientRequestTokenHasBeenSet(true),
     m_storageCapacity(0),
     m_storageCapacityHasBeenSet(false),

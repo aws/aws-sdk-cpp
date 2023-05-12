@@ -658,7 +658,12 @@ namespace Model
     m6in_metal,
     m6idn_metal,
     r6in_metal,
-    r6idn_metal
+    r6idn_metal,
+    inf2_xlarge,
+    inf2_8xlarge,
+    inf2_24xlarge,
+    inf2_48xlarge,
+    trn1n_32xlarge
   };
 
 namespace InstanceTypeMapper

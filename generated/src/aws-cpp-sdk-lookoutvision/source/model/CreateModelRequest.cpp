@@ -16,7 +16,7 @@ using namespace Aws::Utils;
 CreateModelRequest::CreateModelRequest() : 
     m_projectNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_clientToken(Aws::Utils::UUID::RandomUUID()),
+    m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
     m_outputConfigHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),

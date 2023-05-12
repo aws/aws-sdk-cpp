@@ -17,7 +17,7 @@ CreateStackInstancesRequest::CreateStackInstancesRequest() :
     m_regionsHasBeenSet(false),
     m_parameterOverridesHasBeenSet(false),
     m_operationPreferencesHasBeenSet(false),
-    m_operationId(Aws::Utils::UUID::RandomUUID()),
+    m_operationId(Aws::Utils::UUID::PseudoRandomUUID()),
     m_operationIdHasBeenSet(true),
     m_callAs(CallAs::NOT_SET),
     m_callAsHasBeenSet(false)

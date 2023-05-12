@@ -73,35 +73,45 @@ namespace Model
     /**
      * <p>The plaintext copy of the private key. When you use the HTTP API or the
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
-     * Base64-encoded.</p>
+     * Base64-encoded.</p> <p>If the response includes the
+     * <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+     * field is null or empty.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPrivateKeyPlaintext() const{ return m_privateKeyPlaintext; }
 
     /**
      * <p>The plaintext copy of the private key. When you use the HTTP API or the
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
-     * Base64-encoded.</p>
+     * Base64-encoded.</p> <p>If the response includes the
+     * <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+     * field is null or empty.</p>
      */
     inline void SetPrivateKeyPlaintext(const Aws::Utils::CryptoBuffer& value) { m_privateKeyPlaintext = value; }
 
     /**
      * <p>The plaintext copy of the private key. When you use the HTTP API or the
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
-     * Base64-encoded.</p>
+     * Base64-encoded.</p> <p>If the response includes the
+     * <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+     * field is null or empty.</p>
      */
     inline void SetPrivateKeyPlaintext(Aws::Utils::CryptoBuffer&& value) { m_privateKeyPlaintext = std::move(value); }
 
     /**
      * <p>The plaintext copy of the private key. When you use the HTTP API or the
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
-     * Base64-encoded.</p>
+     * Base64-encoded.</p> <p>If the response includes the
+     * <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+     * field is null or empty.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyPlaintext(const Aws::Utils::CryptoBuffer& value) { SetPrivateKeyPlaintext(value); return *this;}
 
     /**
      * <p>The plaintext copy of the private key. When you use the HTTP API or the
      * Amazon Web Services CLI, the value is Base64-encoded. Otherwise, it is not
-     * Base64-encoded.</p>
+     * Base64-encoded.</p> <p>If the response includes the
+     * <code>CiphertextForRecipient</code> field, the <code>PrivateKeyPlaintext</code>
+     * field is null or empty.</p>
      */
     inline GenerateDataKeyPairResult& WithPrivateKeyPlaintext(Aws::Utils::CryptoBuffer&& value) { SetPrivateKeyPlaintext(std::move(value)); return *this;}
 
@@ -218,6 +228,72 @@ namespace Model
     inline GenerateDataKeyPairResult& WithKeyPairSpec(DataKeyPairSpec&& value) { SetKeyPairSpec(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The plaintext private data key encrypted with the public key from the Nitro
+     * enclave. This ciphertext can be decrypted only by using a private key in the
+     * Nitro enclave. </p> <p>This field is included in the response only when the
+     * <code>Recipient</code> parameter in the request includes a valid attestation
+     * document from an Amazon Web Services Nitro enclave. For information about the
+     * interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+     * Developer Guide</i>.</p>
+     */
+    inline const Aws::Utils::ByteBuffer& GetCiphertextForRecipient() const{ return m_ciphertextForRecipient; }
+
+    /**
+     * <p>The plaintext private data key encrypted with the public key from the Nitro
+     * enclave. This ciphertext can be decrypted only by using a private key in the
+     * Nitro enclave. </p> <p>This field is included in the response only when the
+     * <code>Recipient</code> parameter in the request includes a valid attestation
+     * document from an Amazon Web Services Nitro enclave. For information about the
+     * interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetCiphertextForRecipient(const Aws::Utils::ByteBuffer& value) { m_ciphertextForRecipient = value; }
+
+    /**
+     * <p>The plaintext private data key encrypted with the public key from the Nitro
+     * enclave. This ciphertext can be decrypted only by using a private key in the
+     * Nitro enclave. </p> <p>This field is included in the response only when the
+     * <code>Recipient</code> parameter in the request includes a valid attestation
+     * document from an Amazon Web Services Nitro enclave. For information about the
+     * interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+     * Developer Guide</i>.</p>
+     */
+    inline void SetCiphertextForRecipient(Aws::Utils::ByteBuffer&& value) { m_ciphertextForRecipient = std::move(value); }
+
+    /**
+     * <p>The plaintext private data key encrypted with the public key from the Nitro
+     * enclave. This ciphertext can be decrypted only by using a private key in the
+     * Nitro enclave. </p> <p>This field is included in the response only when the
+     * <code>Recipient</code> parameter in the request includes a valid attestation
+     * document from an Amazon Web Services Nitro enclave. For information about the
+     * interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+     * Developer Guide</i>.</p>
+     */
+    inline GenerateDataKeyPairResult& WithCiphertextForRecipient(const Aws::Utils::ByteBuffer& value) { SetCiphertextForRecipient(value); return *this;}
+
+    /**
+     * <p>The plaintext private data key encrypted with the public key from the Nitro
+     * enclave. This ciphertext can be decrypted only by using a private key in the
+     * Nitro enclave. </p> <p>This field is included in the response only when the
+     * <code>Recipient</code> parameter in the request includes a valid attestation
+     * document from an Amazon Web Services Nitro enclave. For information about the
+     * interaction between KMS and Amazon Web Services Nitro Enclaves, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/services-nitro-enclaves.html">How
+     * Amazon Web Services Nitro Enclaves uses KMS</a> in the <i>Key Management Service
+     * Developer Guide</i>.</p>
+     */
+    inline GenerateDataKeyPairResult& WithCiphertextForRecipient(Aws::Utils::ByteBuffer&& value) { SetCiphertextForRecipient(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -250,6 +326,8 @@ namespace Model
     Aws::String m_keyId;
 
     DataKeyPairSpec m_keyPairSpec;
+
+    Aws::Utils::ByteBuffer m_ciphertextForRecipient;
 
     Aws::String m_requestId;
   };

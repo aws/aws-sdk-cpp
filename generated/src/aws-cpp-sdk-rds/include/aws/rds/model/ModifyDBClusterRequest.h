@@ -1792,66 +1792,82 @@ namespace Model
 
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
     /**
-     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>Valid
-     * values: <code>io1</code> </p> <p>When specified, a value for the
-     * <code>Iops</code> parameter is required.</p> <p>Default: <code>io1</code> </p>
-     * <p>Valid for: Multi-AZ DB clusters only</p>
+     * <p>Specifies the storage type to be associated with the DB cluster.</p> <p>When
+     * specified for a Multi-AZ DB cluster, a value for the <code>Iops</code> parameter
+     * is required.</p> <p>Valid values: <code>aurora</code>, <code>aurora-iopt1</code>
+     * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
+     * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
+     * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
      */
     inline ModifyDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

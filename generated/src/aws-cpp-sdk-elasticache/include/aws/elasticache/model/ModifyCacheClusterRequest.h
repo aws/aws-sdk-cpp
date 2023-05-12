@@ -1701,7 +1701,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline const IpDiscovery& GetIpDiscovery() const{ return m_ipDiscovery; }
@@ -1710,7 +1710,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline bool IpDiscoveryHasBeenSet() const { return m_ipDiscoveryHasBeenSet; }
@@ -1719,7 +1719,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(const IpDiscovery& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = value; }
@@ -1728,7 +1728,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline void SetIpDiscovery(IpDiscovery&& value) { m_ipDiscoveryHasBeenSet = true; m_ipDiscovery = std::move(value); }
@@ -1737,7 +1737,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ModifyCacheClusterRequest& WithIpDiscovery(const IpDiscovery& value) { SetIpDiscovery(value); return *this;}
@@ -1746,7 +1746,7 @@ namespace Model
      * <p>The network type you choose when modifying a cluster, either
      * <code>ipv4</code> | <code>ipv6</code>. IPv6 is supported for workloads using
      * Redis engine version 6.2 onward or Memcached engine version 1.6.6 on all
-     * instances built on the <a href="https://aws.amazon.com/ec2/nitro/">Nitro
+     * instances built on the <a href="http://aws.amazon.com/ec2/nitro/">Nitro
      * system</a>.</p>
      */
     inline ModifyCacheClusterRequest& WithIpDiscovery(IpDiscovery&& value) { SetIpDiscovery(std::move(value)); return *this;}

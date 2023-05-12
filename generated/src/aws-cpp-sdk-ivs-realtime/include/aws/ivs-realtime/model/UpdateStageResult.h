@@ -34,27 +34,27 @@ namespace Model
 
 
     /**
-     * <p>The updated stage. </p>
+     * <p>The updated stage.</p>
      */
     inline const Stage& GetStage() const{ return m_stage; }
 
     /**
-     * <p>The updated stage. </p>
+     * <p>The updated stage.</p>
      */
     inline void SetStage(const Stage& value) { m_stage = value; }
 
     /**
-     * <p>The updated stage. </p>
+     * <p>The updated stage.</p>
      */
     inline void SetStage(Stage&& value) { m_stage = std::move(value); }
 
     /**
-     * <p>The updated stage. </p>
+     * <p>The updated stage.</p>
      */
     inline UpdateStageResult& WithStage(const Stage& value) { SetStage(value); return *this;}
 
     /**
-     * <p>The updated stage. </p>
+     * <p>The updated stage.</p>
      */
     inline UpdateStageResult& WithStage(Stage&& value) { SetStage(std::move(value)); return *this;}
 

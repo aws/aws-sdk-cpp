@@ -23,7 +23,8 @@ DestinationParameterValueConfiguration::DestinationParameterValueConfiguration()
     m_selectAllValueOptions(SelectAllValueOptions::NOT_SET),
     m_selectAllValueOptionsHasBeenSet(false),
     m_sourceParameterNameHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false)
+    m_sourceFieldHasBeenSet(false),
+    m_sourceColumnHasBeenSet(false)
 {
 }
 
@@ -32,7 +33,8 @@ DestinationParameterValueConfiguration::DestinationParameterValueConfiguration(J
     m_selectAllValueOptions(SelectAllValueOptions::NOT_SET),
     m_selectAllValueOptionsHasBeenSet(false),
     m_sourceParameterNameHasBeenSet(false),
-    m_sourceFieldHasBeenSet(false)
+    m_sourceFieldHasBeenSet(false),
+    m_sourceColumnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -67,6 +69,13 @@ DestinationParameterValueConfiguration& DestinationParameterValueConfiguration::
     m_sourceFieldHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SourceColumn"))
+  {
+    m_sourceColumn = jsonValue.GetObject("SourceColumn");
+
+    m_sourceColumnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +103,12 @@ JsonValue DestinationParameterValueConfiguration::Jsonize() const
   if(m_sourceFieldHasBeenSet)
   {
    payload.WithString("SourceField", m_sourceField);
+
+  }
+
+  if(m_sourceColumnHasBeenSet)
+  {
+   payload.WithObject("SourceColumn", m_sourceColumn.Jsonize());
 
   }
 

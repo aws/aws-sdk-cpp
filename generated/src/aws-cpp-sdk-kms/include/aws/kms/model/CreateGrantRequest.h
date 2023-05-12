@@ -466,22 +466,15 @@ namespace Model
 
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -491,28 +484,28 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -522,28 +515,28 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -553,28 +546,28 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline void SetConstraints(const GrantConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -584,28 +577,28 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline void SetConstraints(GrantConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -615,28 +608,28 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline CreateGrantRequest& WithConstraints(const GrantConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>Specifies a grant constraint. </p> <p>KMS supports the
+     * <p>Specifies a grant constraint.</p>  <p>Do not include confidential
+     * or sensitive information in this field. This field may be displayed in plaintext
+     * in CloudTrail logs and other output.</p>  <p>KMS supports the
      * <code>EncryptionContextEquals</code> and <code>EncryptionContextSubset</code>
-     * grant constraints. Each constraint value can include up to 8 encryption context
-     * pairs. The encryption context value in each constraint cannot exceed 384
-     * characters. For information about grant constraints, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
-     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
-     * more information about encryption context, see <a
-     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
-     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
-     * <p>The encryption context grant constraints allow the permissions in the grant
-     * only when the encryption context in the request matches
-     * (<code>EncryptionContextEquals</code>) or includes
-     * (<code>EncryptionContextSubset</code>) the encryption context specified in this
-     * structure. </p> <p>The encryption context grant constraints are supported only
-     * on <a
+     * grant constraints, which allow the permissions in the grant only when the
+     * encryption context in the request matches (<code>EncryptionContextEquals</code>)
+     * or includes (<code>EncryptionContextSubset</code>) the encryption context
+     * specified in the constraint. </p> <p>The encryption context grant constraints
+     * are supported only on <a
      * href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#terms-grant-operations">grant
      * operations</a> that include an <code>EncryptionContext</code> parameter, such as
      * cryptographic operations on symmetric encryption KMS keys. Grants with grant
@@ -646,8 +639,15 @@ namespace Model
      * constraint requires that any grants created with the <code>CreateGrant</code>
      * permission have an equally strict or stricter encryption context constraint.</p>
      * <p>You cannot use an encryption context grant constraint for cryptographic
-     * operations with asymmetric KMS keys or HMAC KMS keys. These keys don't support
-     * an encryption context. </p> <p/>
+     * operations with asymmetric KMS keys or HMAC KMS keys. Operations with these keys
+     * don't support an encryption context.</p> <p>Each constraint value can include up
+     * to 8 encryption context pairs. The encryption context value in each constraint
+     * cannot exceed 384 characters. For information about grant constraints, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/create-grant-overview.html#grant-constraints">Using
+     * grant constraints</a> in the <i>Key Management Service Developer Guide</i>. For
+     * more information about encryption context, see <a
+     * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">Encryption
+     * context</a> in the <i> <i>Key Management Service Developer Guide</i> </i>. </p>
      */
     inline CreateGrantRequest& WithConstraints(GrantConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
@@ -754,10 +754,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -770,10 +772,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -786,10 +790,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -802,10 +808,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -818,10 +826,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -834,10 +844,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -850,10 +862,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a
@@ -866,10 +880,12 @@ namespace Model
 
     /**
      * <p>A friendly name for the grant. Use this value to prevent the unintended
-     * creation of duplicate grants when retrying this request.</p> <p>When this value
-     * is absent, all <code>CreateGrant</code> requests result in a new grant with a
-     * unique <code>GrantId</code> even if all the supplied parameters are identical.
-     * This can result in unintended duplicates when you retry the
+     * creation of duplicate grants when retrying this request.</p>  <p>Do
+     * not include confidential or sensitive information in this field. This field may
+     * be displayed in plaintext in CloudTrail logs and other output.</p> 
+     * <p>When this value is absent, all <code>CreateGrant</code> requests result in a
+     * new grant with a unique <code>GrantId</code> even if all the supplied parameters
+     * are identical. This can result in unintended duplicates when you retry the
      * <code>CreateGrant</code> request.</p> <p>When this value is present, you can
      * retry a <code>CreateGrant</code> request with identical parameters; if the grant
      * already exists, the original <code>GrantId</code> is returned without creating a

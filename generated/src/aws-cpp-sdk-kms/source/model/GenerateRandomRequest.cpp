@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 GenerateRandomRequest::GenerateRandomRequest() : 
     m_numberOfBytes(0),
     m_numberOfBytesHasBeenSet(false),
-    m_customKeyStoreIdHasBeenSet(false)
+    m_customKeyStoreIdHasBeenSet(false),
+    m_recipientHasBeenSet(false)
 {
 }
 
@@ -32,6 +33,12 @@ Aws::String GenerateRandomRequest::SerializePayload() const
   if(m_customKeyStoreIdHasBeenSet)
   {
    payload.WithString("CustomKeyStoreId", m_customKeyStoreId);
+
+  }
+
+  if(m_recipientHasBeenSet)
+  {
+   payload.WithObject("Recipient", m_recipient.Jsonize());
 
   }
 

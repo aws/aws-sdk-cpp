@@ -19,15 +19,17 @@ using namespace Aws;
 
 GetRunGroupResult::GetRunGroupResult() : 
     m_maxCpus(0),
+    m_maxRuns(0),
     m_maxDuration(0),
-    m_maxRuns(0)
+    m_maxGpus(0)
 {
 }
 
 GetRunGroupResult::GetRunGroupResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_maxCpus(0),
+    m_maxRuns(0),
     m_maxDuration(0),
-    m_maxRuns(0)
+    m_maxGpus(0)
 {
   *this = result;
 }
@@ -41,15 +43,15 @@ GetRunGroupResult& GetRunGroupResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("creationTime"))
-  {
-    m_creationTime = jsonValue.GetString("creationTime");
-
-  }
-
   if(jsonValue.ValueExists("id"))
   {
     m_id = jsonValue.GetString("id");
+
+  }
+
+  if(jsonValue.ValueExists("name"))
+  {
+    m_name = jsonValue.GetString("name");
 
   }
 
@@ -59,21 +61,21 @@ GetRunGroupResult& GetRunGroupResult::operator =(const Aws::AmazonWebServiceResu
 
   }
 
-  if(jsonValue.ValueExists("maxDuration"))
-  {
-    m_maxDuration = jsonValue.GetInteger("maxDuration");
-
-  }
-
   if(jsonValue.ValueExists("maxRuns"))
   {
     m_maxRuns = jsonValue.GetInteger("maxRuns");
 
   }
 
-  if(jsonValue.ValueExists("name"))
+  if(jsonValue.ValueExists("maxDuration"))
   {
-    m_name = jsonValue.GetString("name");
+    m_maxDuration = jsonValue.GetInteger("maxDuration");
+
+  }
+
+  if(jsonValue.ValueExists("creationTime"))
+  {
+    m_creationTime = jsonValue.GetString("creationTime");
 
   }
 
@@ -84,6 +86,12 @@ GetRunGroupResult& GetRunGroupResult::operator =(const Aws::AmazonWebServiceResu
     {
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
+  }
+
+  if(jsonValue.ValueExists("maxGpus"))
+  {
+    m_maxGpus = jsonValue.GetInteger("maxGpus");
+
   }
 
 

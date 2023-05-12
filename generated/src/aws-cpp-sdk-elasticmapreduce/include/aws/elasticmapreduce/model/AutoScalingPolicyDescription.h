@@ -29,9 +29,9 @@ namespace Model
   /**
    * <p>An automatic scaling policy for a core instance group or task instance group
    * in an Amazon EMR cluster. The automatic scaling policy defines how an instance
-   * group dynamically adds and terminates EC2 instances in response to the value of
-   * a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p><p><h3>See Also:</h3>  
-   * <a
+   * group dynamically adds and terminates Amazon EC2 instances in response to the
+   * value of a CloudWatch metric. See <a>PutAutoScalingPolicy</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/AutoScalingPolicyDescription">AWS
    * API Reference</a></p>
    */
@@ -76,44 +76,44 @@ namespace Model
 
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline const ScalingConstraints& GetConstraints() const{ return m_constraints; }
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline void SetConstraints(const ScalingConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline void SetConstraints(ScalingConstraints&& value) { m_constraintsHasBeenSet = true; m_constraints = std::move(value); }
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline AutoScalingPolicyDescription& WithConstraints(const ScalingConstraints& value) { SetConstraints(value); return *this;}
 
     /**
-     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
-     * Automatic scaling activity will not cause an instance group to grow above or
-     * below these limits.</p>
+     * <p>The upper and lower Amazon EC2 instance limits for an automatic scaling
+     * policy. Automatic scaling activity will not cause an instance group to grow
+     * above or below these limits.</p>
      */
     inline AutoScalingPolicyDescription& WithConstraints(ScalingConstraints&& value) { SetConstraints(std::move(value)); return *this;}
 
