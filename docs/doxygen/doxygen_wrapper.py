@@ -115,6 +115,8 @@ class DoxygenWrapper(object):
                 print('{}'.format(line), end='')
 
     def _get_src_path(self, component_name):
+        if "root" == component_name:
+            return f"docs/"
         if component_name == "aws-cpp-sdk-core" or component_name in self.components_in_src:
             return f"src/{component_name}"
         else:
@@ -183,6 +185,8 @@ class DoxygenWrapper(object):
         self._create_layout_file(dependency_map)
 
         client_futures = {}
+        client_futures["root"] = self.process_one_client_async(dependency_map, "root",
+                                                               self.thread_pool, client_futures)
         client_futures["aws-cpp-sdk-core"] = self.process_one_client_async(dependency_map, "aws-cpp-sdk-core",
                                                                            self.thread_pool, client_futures)
 
