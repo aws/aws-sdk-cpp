@@ -192,3 +192,34 @@ TEST_F(AWSConfigTestSuite, TestNoEnvAndConfigSetToFalseSetsUseRequestCompression
   // cleanup
   Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
 }
+
+TEST_F(AWSConfigTestSuite, TestCLRFStyleLineEndings) {
+    // Create a config file CLRF line endings
+    Aws::OFStream configFileNew(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileNew << "[profile default]\r\n";  // profile keyword is mandatory per specification
+    configFileNew << "use_request_compression = disable\r\n";
+
+    configFileNew.flush();
+    configFileNew.close();
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration config;
+
+    EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, config.requestCompressionConfig.useRequestCompression);
+
+    // Test with mixed line endings
+    Aws::OFStream configFileMixed(m_configFileName.c_str(), Aws::OFStream::out | Aws::OFStream::trunc);
+    configFileMixed << "[profile default]\n";
+    configFileMixed << "use_request_compression = disable\r\n";
+
+    configFileMixed.flush();
+    configFileMixed.close();
+    Aws::Config::ReloadCachedConfigFile();
+
+    Aws::Client::ClientConfiguration configMixed;
+
+    EXPECT_EQ(Aws::Client::UseRequestCompression::DISABLE, configMixed.requestCompressionConfig.useRequestCompression);
+
+    // Cleanup
+    Aws::FileSystem::RemoveFileIfExists(m_configFileName.c_str());
+}
