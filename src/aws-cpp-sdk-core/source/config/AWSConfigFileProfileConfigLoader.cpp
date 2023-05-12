@@ -119,6 +119,11 @@ namespace Aws
                 Aws::String rawLine;
                 while(std::getline(stream, rawLine) && currentState != FAILURE)
                 {
+                    // Handle CR/LF line endings ("\r\n")
+                    if (!rawLine.empty() && rawLine.back() == '\r') {
+                        rawLine.pop_back(); // Remove carriage return character ('\r')
+                    }
+
                     Aws::String line = rawLine.substr(0, rawLine.find_first_of(COMMENT_START)); // ignore comments
                     if (line.empty() || line.length() < ASSUME_EMPTY_LEN || line.find_first_not_of(WHITESPACE_CHARACTERS) == Aws::String::npos)
                     {
