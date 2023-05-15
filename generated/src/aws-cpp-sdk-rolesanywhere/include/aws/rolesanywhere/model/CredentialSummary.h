@@ -25,8 +25,7 @@ namespace Model
 {
 
   /**
-   * <p>A record of a presented X509 credential to <a
-   * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>.
+   * <p>A record of a presented X509 credential from a temporary credential request.
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rolesanywhere-2018-05-10/CredentialSummary">AWS
    * API Reference</a></p>
@@ -62,30 +61,22 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful. </p>
+     * <p>Indicates whether the temporary credential request was successful. </p>
      */
     inline bool GetFailed() const{ return m_failed; }
 
     /**
-     * <p>Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful. </p>
+     * <p>Indicates whether the temporary credential request was successful. </p>
      */
     inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
 
     /**
-     * <p>Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful. </p>
+     * <p>Indicates whether the temporary credential request was successful. </p>
      */
     inline void SetFailed(bool value) { m_failedHasBeenSet = true; m_failed = value; }
 
     /**
-     * <p>Indicates whether the <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation was successful. </p>
+     * <p>Indicates whether the temporary credential request was successful. </p>
      */
     inline CredentialSummary& WithFailed(bool value) { SetFailed(value); return *this;}
 
@@ -140,44 +131,38 @@ namespace Model
 
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline const Aws::Utils::DateTime& GetSeenAt() const{ return m_seenAt; }
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline bool SeenAtHasBeenSet() const { return m_seenAtHasBeenSet; }
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline void SetSeenAt(const Aws::Utils::DateTime& value) { m_seenAtHasBeenSet = true; m_seenAt = value; }
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline void SetSeenAt(Aws::Utils::DateTime&& value) { m_seenAtHasBeenSet = true; m_seenAt = std::move(value); }
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline CredentialSummary& WithSeenAt(const Aws::Utils::DateTime& value) { SetSeenAt(value); return *this;}
 
     /**
-     * <p>The ISO-8601 time stamp of when the certificate was last used in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>The ISO-8601 time stamp of when the certificate was last used in a temporary
+     * credential request.</p>
      */
     inline CredentialSummary& WithSeenAt(Aws::Utils::DateTime&& value) { SetSeenAt(std::move(value)); return *this;}
 

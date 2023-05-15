@@ -33,44 +33,44 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline void SetServerId(const char* value) { m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline UpdateServerResult& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline UpdateServerResult& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server that the user account is
-     * assigned to.</p>
+     * <p>A system-assigned unique identifier for a server that the Transfer Family
+     * user is assigned to.</p>
      */
     inline UpdateServerResult& WithServerId(const char* value) { SetServerId(value); return *this;}
 

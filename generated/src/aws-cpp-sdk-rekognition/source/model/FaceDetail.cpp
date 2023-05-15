@@ -35,7 +35,8 @@ FaceDetail::FaceDetail() :
     m_qualityHasBeenSet(false),
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
-    m_faceOccludedHasBeenSet(false)
+    m_faceOccludedHasBeenSet(false),
+    m_eyeDirectionHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ FaceDetail::FaceDetail(JsonView jsonValue) :
     m_qualityHasBeenSet(false),
     m_confidence(0.0),
     m_confidenceHasBeenSet(false),
-    m_faceOccludedHasBeenSet(false)
+    m_faceOccludedHasBeenSet(false),
+    m_eyeDirectionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -181,6 +183,13 @@ FaceDetail& FaceDetail::operator =(JsonView jsonValue)
     m_faceOccludedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EyeDirection"))
+  {
+    m_eyeDirection = jsonValue.GetObject("EyeDirection");
+
+    m_eyeDirectionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -291,6 +300,12 @@ JsonValue FaceDetail::Jsonize() const
   if(m_faceOccludedHasBeenSet)
   {
    payload.WithObject("FaceOccluded", m_faceOccluded.Jsonize());
+
+  }
+
+  if(m_eyeDirectionHasBeenSet)
+  {
+   payload.WithObject("EyeDirection", m_eyeDirection.Jsonize());
 
   }
 

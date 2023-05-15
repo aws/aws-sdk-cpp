@@ -19,6 +19,7 @@
 #include <aws/rekognition/model/Pose.h>
 #include <aws/rekognition/model/ImageQuality.h>
 #include <aws/rekognition/model/FaceOccluded.h>
+#include <aws/rekognition/model/EyeDirection.h>
 #include <aws/rekognition/model/Emotion.h>
 #include <aws/rekognition/model/Landmark.h>
 #include <utility>
@@ -702,6 +703,43 @@ namespace Model
      */
     inline FaceDetail& WithFaceOccluded(FaceOccluded&& value) { SetFaceOccluded(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline const EyeDirection& GetEyeDirection() const{ return m_eyeDirection; }
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline bool EyeDirectionHasBeenSet() const { return m_eyeDirectionHasBeenSet; }
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline void SetEyeDirection(const EyeDirection& value) { m_eyeDirectionHasBeenSet = true; m_eyeDirection = value; }
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline void SetEyeDirection(EyeDirection&& value) { m_eyeDirectionHasBeenSet = true; m_eyeDirection = std::move(value); }
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline FaceDetail& WithEyeDirection(const EyeDirection& value) { SetEyeDirection(value); return *this;}
+
+    /**
+     * <p>Indicates the direction the eyes are gazing in, as defined by pitch and
+     * yaw.</p>
+     */
+    inline FaceDetail& WithEyeDirection(EyeDirection&& value) { SetEyeDirection(std::move(value)); return *this;}
+
   private:
 
     BoundingBox m_boundingBox;
@@ -751,6 +789,9 @@ namespace Model
 
     FaceOccluded m_faceOccluded;
     bool m_faceOccludedHasBeenSet = false;
+
+    EyeDirection m_eyeDirection;
+    bool m_eyeDirectionHasBeenSet = false;
   };
 
 } // namespace Model

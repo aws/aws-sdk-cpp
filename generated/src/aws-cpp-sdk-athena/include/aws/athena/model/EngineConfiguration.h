@@ -248,6 +248,85 @@ namespace Model
      */
     inline EngineConfiguration& AddAdditionalConfigs(const char* key, const char* value) { m_additionalConfigsHasBeenSet = true; m_additionalConfigs.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetSparkProperties() const{ return m_sparkProperties; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline bool SparkPropertiesHasBeenSet() const { return m_sparkPropertiesHasBeenSet; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline void SetSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = value; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline void SetSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties = std::move(value); }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& WithSparkProperties(const Aws::Map<Aws::String, Aws::String>& value) { SetSparkProperties(value); return *this;}
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& WithSparkProperties(Aws::Map<Aws::String, Aws::String>&& value) { SetSparkProperties(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(const Aws::String& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, const Aws::String& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(const Aws::String& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(const char* key, Aws::String&& value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(Aws::String&& key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Specifies custom jar files and Spark properties for use cases like cluster
+     * encryption, table formats, and general Spark tuning.</p>
+     */
+    inline EngineConfiguration& AddSparkProperties(const char* key, const char* value) { m_sparkPropertiesHasBeenSet = true; m_sparkProperties.emplace(key, value); return *this; }
+
   private:
 
     int m_coordinatorDpuSize;
@@ -261,6 +340,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_additionalConfigs;
     bool m_additionalConfigsHasBeenSet = false;
+
+    Aws::Map<Aws::String, Aws::String> m_sparkProperties;
+    bool m_sparkPropertiesHasBeenSet = false;
   };
 
 } // namespace Model

@@ -35,6 +35,7 @@
 #include <aws/codecatalyst/model/GetSubscriptionRequest.h>
 #include <aws/codecatalyst/model/GetUserDetailsRequest.h>
 #include <aws/codecatalyst/model/ListAccessTokensRequest.h>
+#include <aws/codecatalyst/model/ListDevEnvironmentSessionsRequest.h>
 #include <aws/codecatalyst/model/ListDevEnvironmentsRequest.h>
 #include <aws/codecatalyst/model/ListEventLogsRequest.h>
 #include <aws/codecatalyst/model/ListProjectsRequest.h>
@@ -360,6 +361,36 @@ ListAccessTokensOutcome CodeCatalystClient::ListAccessTokens(const ListAccessTok
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListAccessTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/v1/accessTokens");
   return ListAccessTokensOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::BEARER_SIGNER));
+}
+
+ListDevEnvironmentSessionsOutcome CodeCatalystClient::ListDevEnvironmentSessions(const ListDevEnvironmentSessionsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListDevEnvironmentSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SpaceNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDevEnvironmentSessions", "Required field: SpaceName, is not set");
+    return ListDevEnvironmentSessionsOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SpaceName]", false));
+  }
+  if (!request.ProjectNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDevEnvironmentSessions", "Required field: ProjectName, is not set");
+    return ListDevEnvironmentSessionsOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectName]", false));
+  }
+  if (!request.DevEnvironmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDevEnvironmentSessions", "Required field: DevEnvironmentId, is not set");
+    return ListDevEnvironmentSessionsOutcome(Aws::Client::AWSError<CodeCatalystErrors>(CodeCatalystErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DevEnvironmentId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListDevEnvironmentSessions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/spaces/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSpaceName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/projects/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetProjectName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/devEnvironments/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDevEnvironmentId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
+  return ListDevEnvironmentSessionsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::BEARER_SIGNER));
 }
 
 ListDevEnvironmentsOutcome CodeCatalystClient::ListDevEnvironments(const ListDevEnvironmentsRequest& request) const

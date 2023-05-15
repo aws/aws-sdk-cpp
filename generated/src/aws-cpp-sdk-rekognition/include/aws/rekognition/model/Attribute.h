@@ -21,6 +21,7 @@ namespace Model
     AGE_RANGE,
     BEARD,
     EMOTIONS,
+    EYE_DIRECTION,
     EYEGLASSES,
     EYES_OPEN,
     GENDER,

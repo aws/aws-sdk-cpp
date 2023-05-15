@@ -22,7 +22,9 @@ IdentityProviderDetails::IdentityProviderDetails() :
     m_urlHasBeenSet(false),
     m_invocationRoleHasBeenSet(false),
     m_directoryIdHasBeenSet(false),
-    m_functionHasBeenSet(false)
+    m_functionHasBeenSet(false),
+    m_sftpAuthenticationMethods(SftpAuthenticationMethods::NOT_SET),
+    m_sftpAuthenticationMethodsHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ IdentityProviderDetails::IdentityProviderDetails(JsonView jsonValue) :
     m_urlHasBeenSet(false),
     m_invocationRoleHasBeenSet(false),
     m_directoryIdHasBeenSet(false),
-    m_functionHasBeenSet(false)
+    m_functionHasBeenSet(false),
+    m_sftpAuthenticationMethods(SftpAuthenticationMethods::NOT_SET),
+    m_sftpAuthenticationMethodsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,13 @@ IdentityProviderDetails& IdentityProviderDetails::operator =(JsonView jsonValue)
     m_functionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SftpAuthenticationMethods"))
+  {
+    m_sftpAuthenticationMethods = SftpAuthenticationMethodsMapper::GetSftpAuthenticationMethodsForName(jsonValue.GetString("SftpAuthenticationMethods"));
+
+    m_sftpAuthenticationMethodsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +105,11 @@ JsonValue IdentityProviderDetails::Jsonize() const
   {
    payload.WithString("Function", m_function);
 
+  }
+
+  if(m_sftpAuthenticationMethodsHasBeenSet)
+  {
+   payload.WithString("SftpAuthenticationMethods", SftpAuthenticationMethodsMapper::GetNameForSftpAuthenticationMethods(m_sftpAuthenticationMethods));
   }
 
   return payload;
