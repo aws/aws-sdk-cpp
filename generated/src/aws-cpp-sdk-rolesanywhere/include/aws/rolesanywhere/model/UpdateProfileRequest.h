@@ -192,65 +192,56 @@ namespace Model
 
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRoleArns() const{ return m_roleArns; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline bool RoleArnsHasBeenSet() const { return m_roleArnsHasBeenSet; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline void SetRoleArns(const Aws::Vector<Aws::String>& value) { m_roleArnsHasBeenSet = true; m_roleArns = value; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline void SetRoleArns(Aws::Vector<Aws::String>&& value) { m_roleArnsHasBeenSet = true; m_roleArns = std::move(value); }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline UpdateProfileRequest& WithRoleArns(const Aws::Vector<Aws::String>& value) { SetRoleArns(value); return *this;}
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline UpdateProfileRequest& WithRoleArns(Aws::Vector<Aws::String>&& value) { SetRoleArns(std::move(value)); return *this;}
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline UpdateProfileRequest& AddRoleArns(const Aws::String& value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(value); return *this; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline UpdateProfileRequest& AddRoleArns(Aws::String&& value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of IAM roles that this profile can assume in a <a
-     * href="https://docs.aws.amazon.com/rolesanywhere/latest/APIReference/API_CreateSession.html">CreateSession</a>
-     * operation.</p>
+     * <p>A list of IAM roles that this profile can assume in a temporary credential
+     * request.</p>
      */
     inline UpdateProfileRequest& AddRoleArns(const char* value) { m_roleArnsHasBeenSet = true; m_roleArns.push_back(value); return *this; }
 

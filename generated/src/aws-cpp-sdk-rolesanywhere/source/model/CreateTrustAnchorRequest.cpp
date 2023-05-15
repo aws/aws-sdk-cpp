@@ -16,6 +16,7 @@ CreateTrustAnchorRequest::CreateTrustAnchorRequest() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_notificationSettingsHasBeenSet(false),
     m_sourceHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
@@ -34,6 +35,17 @@ Aws::String CreateTrustAnchorRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_notificationSettingsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> notificationSettingsJsonList(m_notificationSettings.size());
+   for(unsigned notificationSettingsIndex = 0; notificationSettingsIndex < notificationSettingsJsonList.GetLength(); ++notificationSettingsIndex)
+   {
+     notificationSettingsJsonList[notificationSettingsIndex].AsObject(m_notificationSettings[notificationSettingsIndex].Jsonize());
+   }
+   payload.WithArray("notificationSettings", std::move(notificationSettingsJsonList));
 
   }
 

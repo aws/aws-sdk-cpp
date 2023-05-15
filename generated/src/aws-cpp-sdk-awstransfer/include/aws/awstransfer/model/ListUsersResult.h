@@ -135,44 +135,44 @@ namespace Model
 
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline const Aws::Vector<ListedUser>& GetUsers() const{ return m_users; }
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline void SetUsers(const Aws::Vector<ListedUser>& value) { m_users = value; }
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline void SetUsers(Aws::Vector<ListedUser>&& value) { m_users = std::move(value); }
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline ListUsersResult& WithUsers(const Aws::Vector<ListedUser>& value) { SetUsers(value); return *this;}
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline ListUsersResult& WithUsers(Aws::Vector<ListedUser>&& value) { SetUsers(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline ListUsersResult& AddUsers(const ListedUser& value) { m_users.push_back(value); return *this; }
 
     /**
-     * <p>Returns the user accounts and their properties for the <code>ServerId</code>
-     * value that you specify.</p>
+     * <p>Returns the Transfer Family users and their properties for the
+     * <code>ServerId</code> value that you specify.</p>
      */
     inline ListUsersResult& AddUsers(ListedUser&& value) { m_users.push_back(std::move(value)); return *this; }
 

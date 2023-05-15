@@ -77,31 +77,31 @@ namespace Model
 
 
     /**
-     * <p>An array containing the properties of the user account for the
+     * <p>An array containing the properties of the Transfer Family user for the
      * <code>ServerID</code> value that you specified.</p>
      */
     inline const DescribedUser& GetUser() const{ return m_user; }
 
     /**
-     * <p>An array containing the properties of the user account for the
+     * <p>An array containing the properties of the Transfer Family user for the
      * <code>ServerID</code> value that you specified.</p>
      */
     inline void SetUser(const DescribedUser& value) { m_user = value; }
 
     /**
-     * <p>An array containing the properties of the user account for the
+     * <p>An array containing the properties of the Transfer Family user for the
      * <code>ServerID</code> value that you specified.</p>
      */
     inline void SetUser(DescribedUser&& value) { m_user = std::move(value); }
 
     /**
-     * <p>An array containing the properties of the user account for the
+     * <p>An array containing the properties of the Transfer Family user for the
      * <code>ServerID</code> value that you specified.</p>
      */
     inline DescribeUserResult& WithUser(const DescribedUser& value) { SetUser(value); return *this;}
 
     /**
-     * <p>An array containing the properties of the user account for the
+     * <p>An array containing the properties of the Transfer Family user for the
      * <code>ServerID</code> value that you specified.</p>
      */
     inline DescribeUserResult& WithUser(DescribedUser&& value) { SetUser(std::move(value)); return *this;}

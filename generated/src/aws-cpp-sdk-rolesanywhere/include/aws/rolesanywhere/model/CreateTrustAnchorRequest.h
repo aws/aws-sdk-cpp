@@ -7,8 +7,9 @@
 #include <aws/rolesanywhere/RolesAnywhere_EXPORTS.h>
 #include <aws/rolesanywhere/RolesAnywhereRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/rolesanywhere/model/Source.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/rolesanywhere/model/Source.h>
+#include <aws/rolesanywhere/model/NotificationSetting.h>
 #include <aws/rolesanywhere/model/Tag.h>
 #include <utility>
 
@@ -98,6 +99,47 @@ namespace Model
 
 
     /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline const Aws::Vector<NotificationSetting>& GetNotificationSettings() const{ return m_notificationSettings; }
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline bool NotificationSettingsHasBeenSet() const { return m_notificationSettingsHasBeenSet; }
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline void SetNotificationSettings(const Aws::Vector<NotificationSetting>& value) { m_notificationSettingsHasBeenSet = true; m_notificationSettings = value; }
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline void SetNotificationSettings(Aws::Vector<NotificationSetting>&& value) { m_notificationSettingsHasBeenSet = true; m_notificationSettings = std::move(value); }
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline CreateTrustAnchorRequest& WithNotificationSettings(const Aws::Vector<NotificationSetting>& value) { SetNotificationSettings(value); return *this;}
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline CreateTrustAnchorRequest& WithNotificationSettings(Aws::Vector<NotificationSetting>&& value) { SetNotificationSettings(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline CreateTrustAnchorRequest& AddNotificationSettings(const NotificationSetting& value) { m_notificationSettingsHasBeenSet = true; m_notificationSettings.push_back(value); return *this; }
+
+    /**
+     * <p>A list of notification settings to be associated to the trust anchor.</p>
+     */
+    inline CreateTrustAnchorRequest& AddNotificationSettings(NotificationSetting&& value) { m_notificationSettingsHasBeenSet = true; m_notificationSettings.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The trust anchor type and its related certificate data.</p>
      */
     inline const Source& GetSource() const{ return m_source; }
@@ -175,6 +217,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::Vector<NotificationSetting> m_notificationSettings;
+    bool m_notificationSettingsHasBeenSet = false;
 
     Source m_source;
     bool m_sourceHasBeenSet = false;

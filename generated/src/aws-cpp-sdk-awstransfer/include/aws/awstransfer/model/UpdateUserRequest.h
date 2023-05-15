@@ -643,50 +643,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline UpdateUserRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline UpdateUserRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a Transfer Family server instance
+     * that the user is assigned to.</p>
      */
     inline UpdateUserRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 

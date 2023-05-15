@@ -1269,50 +1269,50 @@ namespace Model
 
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline const Aws::String& GetServerId() const{ return m_serverId; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline bool ServerIdHasBeenSet() const { return m_serverIdHasBeenSet; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(const Aws::String& value) { m_serverIdHasBeenSet = true; m_serverId = value; }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(Aws::String&& value) { m_serverIdHasBeenSet = true; m_serverId = std::move(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline void SetServerId(const char* value) { m_serverIdHasBeenSet = true; m_serverId.assign(value); }
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const Aws::String& value) { SetServerId(value); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(Aws::String&& value) { SetServerId(std::move(value)); return *this;}
 
     /**
-     * <p>A system-assigned unique identifier for a server instance that the user
-     * account is assigned to.</p>
+     * <p>A system-assigned unique identifier for a server instance that the Transfer
+     * Family user is assigned to.</p>
      */
     inline UpdateServerRequest& WithServerId(const char* value) { SetServerId(value); return *this;}
 
@@ -1322,11 +1322,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
 
@@ -1335,11 +1335,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
 
@@ -1348,11 +1348,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
 
@@ -1361,11 +1361,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
 
@@ -1374,11 +1374,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline UpdateServerRequest& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
 
@@ -1387,11 +1387,11 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p> <p>To remove an associated workflow from a server, you can
-     * provide an empty <code>OnUpload</code> object, as in the following example.</p>
-     * <p> <code>aws transfer update-server --server-id s-01234567890abcdef
-     * --workflow-details '{"OnUpload":[]}'</code> </p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p> <p>To remove an associated workflow
+     * from a server, you can provide an empty <code>OnUpload</code> object, as in the
+     * following example.</p> <p> <code>aws transfer update-server --server-id
+     * s-01234567890abcdef --workflow-details '{"OnUpload":[]}'</code> </p>
      */
     inline UpdateServerRequest& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
 

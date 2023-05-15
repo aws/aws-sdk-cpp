@@ -125,42 +125,50 @@ namespace Model
 
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userNameHasBeenSet = true; m_userName = std::move(value); }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline void SetUserName(const char* value) { m_userNameHasBeenSet = true; m_userName.assign(value); }
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the user account that is assigned to one or more servers.</p>
+     * <p>The name of the Transfer Family user that is assigned to one or more
+     * servers.</p>
      */
     inline ImportSshPublicKeyRequest& WithUserName(const char* value) { SetUserName(value); return *this;}
 

@@ -31,6 +31,7 @@
 #include <aws/codecatalyst/model/GetSubscriptionResult.h>
 #include <aws/codecatalyst/model/GetUserDetailsResult.h>
 #include <aws/codecatalyst/model/ListAccessTokensResult.h>
+#include <aws/codecatalyst/model/ListDevEnvironmentSessionsResult.h>
 #include <aws/codecatalyst/model/ListDevEnvironmentsResult.h>
 #include <aws/codecatalyst/model/ListEventLogsResult.h>
 #include <aws/codecatalyst/model/ListProjectsResult.h>
@@ -95,6 +96,7 @@ namespace Aws
       class GetSubscriptionRequest;
       class GetUserDetailsRequest;
       class ListAccessTokensRequest;
+      class ListDevEnvironmentSessionsRequest;
       class ListDevEnvironmentsRequest;
       class ListEventLogsRequest;
       class ListProjectsRequest;
@@ -122,6 +124,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetSubscriptionResult, CodeCatalystError> GetSubscriptionOutcome;
       typedef Aws::Utils::Outcome<GetUserDetailsResult, CodeCatalystError> GetUserDetailsOutcome;
       typedef Aws::Utils::Outcome<ListAccessTokensResult, CodeCatalystError> ListAccessTokensOutcome;
+      typedef Aws::Utils::Outcome<ListDevEnvironmentSessionsResult, CodeCatalystError> ListDevEnvironmentSessionsOutcome;
       typedef Aws::Utils::Outcome<ListDevEnvironmentsResult, CodeCatalystError> ListDevEnvironmentsOutcome;
       typedef Aws::Utils::Outcome<ListEventLogsResult, CodeCatalystError> ListEventLogsOutcome;
       typedef Aws::Utils::Outcome<ListProjectsResult, CodeCatalystError> ListProjectsOutcome;
@@ -150,6 +153,7 @@ namespace Aws
       typedef std::future<GetSubscriptionOutcome> GetSubscriptionOutcomeCallable;
       typedef std::future<GetUserDetailsOutcome> GetUserDetailsOutcomeCallable;
       typedef std::future<ListAccessTokensOutcome> ListAccessTokensOutcomeCallable;
+      typedef std::future<ListDevEnvironmentSessionsOutcome> ListDevEnvironmentSessionsOutcomeCallable;
       typedef std::future<ListDevEnvironmentsOutcome> ListDevEnvironmentsOutcomeCallable;
       typedef std::future<ListEventLogsOutcome> ListEventLogsOutcomeCallable;
       typedef std::future<ListProjectsOutcome> ListProjectsOutcomeCallable;
@@ -181,6 +185,7 @@ namespace Aws
     typedef std::function<void(const CodeCatalystClient*, const Model::GetSubscriptionRequest&, const Model::GetSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriptionResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::GetUserDetailsRequest&, const Model::GetUserDetailsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetUserDetailsResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::ListAccessTokensRequest&, const Model::ListAccessTokensOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccessTokensResponseReceivedHandler;
+    typedef std::function<void(const CodeCatalystClient*, const Model::ListDevEnvironmentSessionsRequest&, const Model::ListDevEnvironmentSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEnvironmentSessionsResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::ListDevEnvironmentsRequest&, const Model::ListDevEnvironmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDevEnvironmentsResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::ListEventLogsRequest&, const Model::ListEventLogsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListEventLogsResponseReceivedHandler;
     typedef std::function<void(const CodeCatalystClient*, const Model::ListProjectsRequest&, const Model::ListProjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListProjectsResponseReceivedHandler;

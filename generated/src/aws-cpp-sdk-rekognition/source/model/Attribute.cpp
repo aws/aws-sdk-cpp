@@ -25,6 +25,7 @@ namespace Aws
         static const int AGE_RANGE_HASH = HashingUtils::HashString("AGE_RANGE");
         static const int BEARD_HASH = HashingUtils::HashString("BEARD");
         static const int EMOTIONS_HASH = HashingUtils::HashString("EMOTIONS");
+        static const int EYE_DIRECTION_HASH = HashingUtils::HashString("EYE_DIRECTION");
         static const int EYEGLASSES_HASH = HashingUtils::HashString("EYEGLASSES");
         static const int EYES_OPEN_HASH = HashingUtils::HashString("EYES_OPEN");
         static const int GENDER_HASH = HashingUtils::HashString("GENDER");
@@ -57,6 +58,10 @@ namespace Aws
           else if (hashCode == EMOTIONS_HASH)
           {
             return Attribute::EMOTIONS;
+          }
+          else if (hashCode == EYE_DIRECTION_HASH)
+          {
+            return Attribute::EYE_DIRECTION;
           }
           else if (hashCode == EYEGLASSES_HASH)
           {
@@ -114,6 +119,8 @@ namespace Aws
             return "BEARD";
           case Attribute::EMOTIONS:
             return "EMOTIONS";
+          case Attribute::EYE_DIRECTION:
+            return "EYE_DIRECTION";
           case Attribute::EYEGLASSES:
             return "EYEGLASSES";
           case Attribute::EYES_OPEN:

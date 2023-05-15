@@ -39,6 +39,8 @@
 #include <aws/rolesanywhere/model/ListSubjectsResult.h>
 #include <aws/rolesanywhere/model/ListTagsForResourceResult.h>
 #include <aws/rolesanywhere/model/ListTrustAnchorsResult.h>
+#include <aws/rolesanywhere/model/PutNotificationSettingsResult.h>
+#include <aws/rolesanywhere/model/ResetNotificationSettingsResult.h>
 #include <aws/rolesanywhere/model/TagResourceResult.h>
 #include <aws/rolesanywhere/model/UntagResourceResult.h>
 #include <aws/rolesanywhere/model/UpdateCrlResult.h>
@@ -105,6 +107,8 @@ namespace Aws
       class ListSubjectsRequest;
       class ListTagsForResourceRequest;
       class ListTrustAnchorsRequest;
+      class PutNotificationSettingsRequest;
+      class ResetNotificationSettingsRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
       class UpdateCrlRequest;
@@ -134,6 +138,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<ListSubjectsResult, RolesAnywhereError> ListSubjectsOutcome;
       typedef Aws::Utils::Outcome<ListTagsForResourceResult, RolesAnywhereError> ListTagsForResourceOutcome;
       typedef Aws::Utils::Outcome<ListTrustAnchorsResult, RolesAnywhereError> ListTrustAnchorsOutcome;
+      typedef Aws::Utils::Outcome<PutNotificationSettingsResult, RolesAnywhereError> PutNotificationSettingsOutcome;
+      typedef Aws::Utils::Outcome<ResetNotificationSettingsResult, RolesAnywhereError> ResetNotificationSettingsOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, RolesAnywhereError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, RolesAnywhereError> UntagResourceOutcome;
       typedef Aws::Utils::Outcome<UpdateCrlResult, RolesAnywhereError> UpdateCrlOutcome;
@@ -163,6 +169,8 @@ namespace Aws
       typedef std::future<ListSubjectsOutcome> ListSubjectsOutcomeCallable;
       typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
       typedef std::future<ListTrustAnchorsOutcome> ListTrustAnchorsOutcomeCallable;
+      typedef std::future<PutNotificationSettingsOutcome> PutNotificationSettingsOutcomeCallable;
+      typedef std::future<ResetNotificationSettingsOutcome> ResetNotificationSettingsOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
       typedef std::future<UpdateCrlOutcome> UpdateCrlOutcomeCallable;
@@ -195,6 +203,8 @@ namespace Aws
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListSubjectsRequest&, const Model::ListSubjectsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubjectsResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTagsForResourceResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::ListTrustAnchorsRequest&, const Model::ListTrustAnchorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTrustAnchorsResponseReceivedHandler;
+    typedef std::function<void(const RolesAnywhereClient*, const Model::PutNotificationSettingsRequest&, const Model::PutNotificationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutNotificationSettingsResponseReceivedHandler;
+    typedef std::function<void(const RolesAnywhereClient*, const Model::ResetNotificationSettingsRequest&, const Model::ResetNotificationSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetNotificationSettingsResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const RolesAnywhereClient*, const Model::UpdateCrlRequest&, const Model::UpdateCrlOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCrlResponseReceivedHandler;

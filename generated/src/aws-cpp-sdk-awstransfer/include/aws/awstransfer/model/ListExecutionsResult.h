@@ -121,86 +121,44 @@ namespace Model
 
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline const Aws::Vector<ListedExecution>& GetExecutions() const{ return m_executions; }
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline void SetExecutions(const Aws::Vector<ListedExecution>& value) { m_executions = value; }
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline void SetExecutions(Aws::Vector<ListedExecution>&& value) { m_executions = std::move(value); }
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline ListExecutionsResult& WithExecutions(const Aws::Vector<ListedExecution>& value) { SetExecutions(value); return *this;}
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline ListExecutionsResult& WithExecutions(Aws::Vector<ListedExecution>&& value) { SetExecutions(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline ListExecutionsResult& AddExecutions(const ListedExecution& value) { m_executions.push_back(value); return *this; }
 
     /**
-     * <p>Returns the details for each execution.</p> <ul> <li> <p> <b>NextToken</b>:
-     * returned from a call to several APIs, you can use pass it to a subsequent
-     * command to continue listing additional executions.</p> </li> <li> <p>
-     * <b>StartTime</b>: timestamp indicating when the execution began.</p> </li> <li>
-     * <p> <b>Executions</b>: details of the execution, including the execution ID,
-     * initial file location, and Service metadata.</p> </li> <li> <p> <b>Status</b>:
-     * one of the following values: <code>IN_PROGRESS</code>, <code>COMPLETED</code>,
-     * <code>EXCEPTION</code>, <code>HANDLING_EXEPTION</code>. </p> </li> </ul>
+     * <p>Returns the details for each execution, in a <code>ListedExecution</code>
+     * array.</p>
      */
     inline ListExecutionsResult& AddExecutions(ListedExecution&& value) { m_executions.push_back(std::move(value)); return *this; }
 

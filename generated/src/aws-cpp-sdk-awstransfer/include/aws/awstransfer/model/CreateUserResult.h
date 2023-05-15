@@ -69,37 +69,37 @@ namespace Model
 
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline void SetUserName(const Aws::String& value) { m_userName = value; }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline void SetUserName(Aws::String&& value) { m_userName = std::move(value); }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline void SetUserName(const char* value) { m_userName.assign(value); }
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline CreateUserResult& WithUserName(const Aws::String& value) { SetUserName(value); return *this;}
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline CreateUserResult& WithUserName(Aws::String&& value) { SetUserName(std::move(value)); return *this;}
 
     /**
-     * <p>A unique string that identifies a user account associated with a server.</p>
+     * <p>A unique string that identifies a Transfer Family user.</p>
      */
     inline CreateUserResult& WithUserName(const char* value) { SetUserName(value); return *this;}
 

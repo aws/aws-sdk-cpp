@@ -38,9 +38,11 @@ namespace CodeCatalyst
    * plan for the space.</p> </li> <li> <p> <a>GetUserDetails</a>, which returns
    * information about a user in Amazon CodeCatalyst.</p> </li> <li> <p>
    * <a>ListDevEnvironments</a>, which retrieves a list of Dev Environments in a
-   * project.</p> </li> <li> <p> <a>ListProjects</a>, which retrieves a list of
-   * projects in a space.</p> </li> <li> <p> <a>ListSourceRepositories</a>, which
-   * retrieves a list of source repositories in a project.</p> </li> <li> <p>
+   * project.</p> </li> <li> <p> <a>ListDevEnvironmentSessions</a>, which retrieves a
+   * list of active Dev Environment sessions in a project.</p> </li> <li> <p>
+   * <a>ListProjects</a>, which retrieves a list of projects in a space.</p> </li>
+   * <li> <p> <a>ListSourceRepositories</a>, which retrieves a list of source
+   * repositories in a project.</p> </li> <li> <p>
    * <a>ListSourceRepositoryBranches</a>, which retrieves a list of branches in a
    * source repository.</p> </li> <li> <p> <a>ListSpaces</a>, which retrieves a list
    * of spaces.</p> </li> <li> <p> <a>StartDevEnvironment</a>, which starts a
@@ -441,6 +443,32 @@ namespace CodeCatalyst
         void ListAccessTokensAsync(const ListAccessTokensRequestT& request, const ListAccessTokensResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&CodeCatalystClient::ListAccessTokens, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of active sessions for a Dev Environment in a
+         * project.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/codecatalyst-2022-09-28/ListDevEnvironmentSessions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListDevEnvironmentSessionsOutcome ListDevEnvironmentSessions(const Model::ListDevEnvironmentSessionsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListDevEnvironmentSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListDevEnvironmentSessionsRequestT = Model::ListDevEnvironmentSessionsRequest>
+        Model::ListDevEnvironmentSessionsOutcomeCallable ListDevEnvironmentSessionsCallable(const ListDevEnvironmentSessionsRequestT& request) const
+        {
+            return SubmitCallable(&CodeCatalystClient::ListDevEnvironmentSessions, request);
+        }
+
+        /**
+         * An Async wrapper for ListDevEnvironmentSessions that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListDevEnvironmentSessionsRequestT = Model::ListDevEnvironmentSessionsRequest>
+        void ListDevEnvironmentSessionsAsync(const ListDevEnvironmentSessionsRequestT& request, const ListDevEnvironmentSessionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&CodeCatalystClient::ListDevEnvironmentSessions, request, handler, context);
         }
 
         /**

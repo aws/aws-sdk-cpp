@@ -530,7 +530,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline const IdentityProviderType& GetIdentityProviderType() const{ return m_identityProviderType; }
@@ -550,7 +550,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline bool IdentityProviderTypeHasBeenSet() const { return m_identityProviderTypeHasBeenSet; }
@@ -570,7 +570,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(const IdentityProviderType& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = value; }
@@ -590,7 +590,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline void SetIdentityProviderType(IdentityProviderType&& value) { m_identityProviderTypeHasBeenSet = true; m_identityProviderType = std::move(value); }
@@ -610,7 +610,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(const IdentityProviderType& value) { SetIdentityProviderType(value); return *this;}
@@ -630,7 +630,7 @@ namespace Model
      * <code>IdentityProviderDetails</code> parameter.</p> <p>Use the
      * <code>AWS_LAMBDA</code> value to directly use an Lambda function as your
      * identity provider. If you choose this value, you must specify the ARN for the
-     * Lambda function in the <code>Function</code> parameter or the
+     * Lambda function in the <code>Function</code> parameter for the
      * <code>IdentityProviderDetails</code> data type.</p>
      */
     inline DescribedServer& WithIdentityProviderType(IdentityProviderType&& value) { SetIdentityProviderType(std::move(value)); return *this;}
@@ -1322,8 +1322,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline const WorkflowDetails& GetWorkflowDetails() const{ return m_workflowDetails; }
 
@@ -1332,8 +1332,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline bool WorkflowDetailsHasBeenSet() const { return m_workflowDetailsHasBeenSet; }
 
@@ -1342,8 +1342,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline void SetWorkflowDetails(const WorkflowDetails& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = value; }
 
@@ -1352,8 +1352,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline void SetWorkflowDetails(WorkflowDetails&& value) { m_workflowDetailsHasBeenSet = true; m_workflowDetails = std::move(value); }
 
@@ -1362,8 +1362,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline DescribedServer& WithWorkflowDetails(const WorkflowDetails& value) { SetWorkflowDetails(value); return *this;}
 
@@ -1372,8 +1372,8 @@ namespace Model
      * that's used for executing the workflow.</p> <p>In addition to a workflow to
      * execute when a file is uploaded completely, <code>WorkflowDetails</code> can
      * also contain a workflow ID (and execution role) for a workflow to execute on
-     * partial upload. A partial upload occurs when a file is open when the session
-     * disconnects.</p>
+     * partial upload. A partial upload occurs when the server session disconnects
+     * while the file is still being uploaded.</p>
      */
     inline DescribedServer& WithWorkflowDetails(WorkflowDetails&& value) { SetWorkflowDetails(std::move(value)); return *this;}
 

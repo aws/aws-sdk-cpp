@@ -80,42 +80,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline void SetTarget(Aws::String&& value) { m_targetHasBeenSet = true; m_target = std::move(value); }
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline void SetTarget(const char* value) { m_targetHasBeenSet = true; m_target.assign(value); }
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline CustomStepDetails& WithTarget(const Aws::String& value) { SetTarget(value); return *this;}
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline CustomStepDetails& WithTarget(Aws::String&& value) { SetTarget(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the lambda function that is being called.</p>
+     * <p>The ARN for the Lambda function that is being called.</p>
      */
     inline CustomStepDetails& WithTarget(const char* value) { SetTarget(value); return *this;}
 
