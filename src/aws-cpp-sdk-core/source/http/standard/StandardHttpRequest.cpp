@@ -11,9 +11,11 @@
 #include <algorithm>
 #include <cassert>
 
-using namespace Aws::Http;
-using namespace Aws::Http::Standard;
-using namespace Aws::Utils;
+using Aws::Http::Standard::StandardHttpRequest;
+using Aws::Http::HeaderValueCollection;
+using Aws::Http::Scheme;
+using Aws::Http::URI;
+using Aws::Utils::StringUtils;
 
 static const char* STANDARD_HTTP_REQUEST_LOG_TAG = "StandardHttpRequest";
 
