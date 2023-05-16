@@ -82,7 +82,9 @@ namespace Model
     CHALLENGE_CONFIG,
     TOKEN_DOMAIN,
     ATP_RULE_SET_RESPONSE_INSPECTION,
-    ASSOCIATED_RESOURCE_TYPE
+    ASSOCIATED_RESOURCE_TYPE,
+    SCOPE_DOWN,
+    CUSTOM_KEYS
   };
 
 namespace ParameterExceptionFieldMapper

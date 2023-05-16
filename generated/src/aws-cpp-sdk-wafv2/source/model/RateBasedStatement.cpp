@@ -25,7 +25,8 @@ RateBasedStatement::RateBasedStatement() :
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false)
+    m_forwardedIPConfigHasBeenSet(false),
+    m_customKeysHasBeenSet(false)
 {
 }
 
@@ -35,7 +36,8 @@ RateBasedStatement::RateBasedStatement(JsonView jsonValue) :
     m_aggregateKeyType(RateBasedStatementAggregateKeyType::NOT_SET),
     m_aggregateKeyTypeHasBeenSet(false),
     m_scopeDownStatementHasBeenSet(false),
-    m_forwardedIPConfigHasBeenSet(false)
+    m_forwardedIPConfigHasBeenSet(false),
+    m_customKeysHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -77,6 +79,16 @@ RateBasedStatement& RateBasedStatement::operator =(JsonView jsonValue)
     m_forwardedIPConfigHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CustomKeys"))
+  {
+    Aws::Utils::Array<JsonView> customKeysJsonList = jsonValue.GetArray("CustomKeys");
+    for(unsigned customKeysIndex = 0; customKeysIndex < customKeysJsonList.GetLength(); ++customKeysIndex)
+    {
+      m_customKeys.push_back(customKeysJsonList[customKeysIndex].AsObject());
+    }
+    m_customKeysHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -104,6 +116,17 @@ JsonValue RateBasedStatement::Jsonize() const
   if(m_forwardedIPConfigHasBeenSet)
   {
    payload.WithObject("ForwardedIPConfig", m_forwardedIPConfig.Jsonize());
+
+  }
+
+  if(m_customKeysHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> customKeysJsonList(m_customKeys.size());
+   for(unsigned customKeysIndex = 0; customKeysIndex < customKeysJsonList.GetLength(); ++customKeysIndex)
+   {
+     customKeysJsonList[customKeysIndex].AsObject(m_customKeys[customKeysIndex].Jsonize());
+   }
+   payload.WithArray("CustomKeys", std::move(customKeysJsonList));
 
   }
 

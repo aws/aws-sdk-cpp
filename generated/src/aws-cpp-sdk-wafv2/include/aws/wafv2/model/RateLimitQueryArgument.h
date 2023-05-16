@@ -6,7 +6,6 @@
 #pragma once
 #include <aws/wafv2/WAFV2_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/wafv2/model/FieldToMatch.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/wafv2/model/TextTransformation.h>
 #include <utility>
@@ -27,90 +26,62 @@ namespace Model
 {
 
   /**
-   * <p>A rule statement used to search web request components for a match against a
-   * single regular expression. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RegexMatchStatement">AWS
+   * <p>Specifies a query argument in the request as an aggregate key for a
+   * rate-based rule. Each distinct value for the named query argument contributes to
+   * the aggregation instance. If you use a single query argument as your custom key,
+   * then each value fully defines an aggregation instance. </p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/RateLimitQueryArgument">AWS
    * API Reference</a></p>
    */
-  class RegexMatchStatement
+  class RateLimitQueryArgument
   {
   public:
-    AWS_WAFV2_API RegexMatchStatement();
-    AWS_WAFV2_API RegexMatchStatement(Aws::Utils::Json::JsonView jsonValue);
-    AWS_WAFV2_API RegexMatchStatement& operator=(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RateLimitQueryArgument();
+    AWS_WAFV2_API RateLimitQueryArgument(Aws::Utils::Json::JsonView jsonValue);
+    AWS_WAFV2_API RateLimitQueryArgument& operator=(Aws::Utils::Json::JsonView jsonValue);
     AWS_WAFV2_API Aws::Utils::Json::JsonValue Jsonize() const;
 
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline const Aws::String& GetRegexString() const{ return m_regexString; }
+    inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline bool RegexStringHasBeenSet() const { return m_regexStringHasBeenSet; }
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline void SetRegexString(const Aws::String& value) { m_regexStringHasBeenSet = true; m_regexString = value; }
+    inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline void SetRegexString(Aws::String&& value) { m_regexStringHasBeenSet = true; m_regexString = std::move(value); }
+    inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline void SetRegexString(const char* value) { m_regexStringHasBeenSet = true; m_regexString.assign(value); }
+    inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline RegexMatchStatement& WithRegexString(const Aws::String& value) { SetRegexString(value); return *this;}
+    inline RateLimitQueryArgument& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline RegexMatchStatement& WithRegexString(Aws::String&& value) { SetRegexString(std::move(value)); return *this;}
+    inline RateLimitQueryArgument& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The string representing the regular expression.</p>
+     * <p>The name of the query argument to use. </p>
      */
-    inline RegexMatchStatement& WithRegexString(const char* value) { SetRegexString(value); return *this;}
-
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline const FieldToMatch& GetFieldToMatch() const{ return m_fieldToMatch; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline bool FieldToMatchHasBeenSet() const { return m_fieldToMatchHasBeenSet; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline void SetFieldToMatch(const FieldToMatch& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = value; }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline void SetFieldToMatch(FieldToMatch&& value) { m_fieldToMatchHasBeenSet = true; m_fieldToMatch = std::move(value); }
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline RegexMatchStatement& WithFieldToMatch(const FieldToMatch& value) { SetFieldToMatch(value); return *this;}
-
-    /**
-     * <p>The part of the web request that you want WAF to inspect. </p>
-     */
-    inline RegexMatchStatement& WithFieldToMatch(FieldToMatch&& value) { SetFieldToMatch(std::move(value)); return *this;}
+    inline RateLimitQueryArgument& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
@@ -171,7 +142,7 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the component contents. </p>
      */
-    inline RegexMatchStatement& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
+    inline RateLimitQueryArgument& WithTextTransformations(const Aws::Vector<TextTransformation>& value) { SetTextTransformations(value); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -183,7 +154,7 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the component contents. </p>
      */
-    inline RegexMatchStatement& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
+    inline RateLimitQueryArgument& WithTextTransformations(Aws::Vector<TextTransformation>&& value) { SetTextTransformations(std::move(value)); return *this;}
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -195,7 +166,7 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the component contents. </p>
      */
-    inline RegexMatchStatement& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
+    inline RateLimitQueryArgument& AddTextTransformations(const TextTransformation& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(value); return *this; }
 
     /**
      * <p>Text transformations eliminate some of the unusual formatting that attackers
@@ -207,15 +178,12 @@ namespace Model
      * performs all transformations on the specified content, starting from the lowest
      * priority setting, and then uses the component contents. </p>
      */
-    inline RegexMatchStatement& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
+    inline RateLimitQueryArgument& AddTextTransformations(TextTransformation&& value) { m_textTransformationsHasBeenSet = true; m_textTransformations.push_back(std::move(value)); return *this; }
 
   private:
 
-    Aws::String m_regexString;
-    bool m_regexStringHasBeenSet = false;
-
-    FieldToMatch m_fieldToMatch;
-    bool m_fieldToMatchHasBeenSet = false;
+    Aws::String m_name;
+    bool m_nameHasBeenSet = false;
 
     Aws::Vector<TextTransformation> m_textTransformations;
     bool m_textTransformationsHasBeenSet = false;

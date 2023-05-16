@@ -139,12 +139,14 @@ namespace Model
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline bool GetForceDeleteWithoutRecovery() const{ return m_forceDeleteWithoutRecovery; }
@@ -156,12 +158,14 @@ namespace Model
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline bool ForceDeleteWithoutRecoveryHasBeenSet() const { return m_forceDeleteWithoutRecoveryHasBeenSet; }
@@ -173,12 +177,14 @@ namespace Model
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline void SetForceDeleteWithoutRecovery(bool value) { m_forceDeleteWithoutRecoveryHasBeenSet = true; m_forceDeleteWithoutRecovery = value; }
@@ -190,12 +196,14 @@ namespace Model
      * window.</p> <p>Secrets Manager performs the actual deletion with an asynchronous
      * background process, so there might be a short delay before the secret is
      * permanently deleted. If you delete a secret and then immediately create a secret
-     * with the same name, use appropriate back off and retry logic.</p> 
-     * <p>Use this parameter with caution. This parameter causes the operation to skip
-     * the normal recovery window before the permanent deletion that Secrets Manager
-     * would normally impose with the <code>RecoveryWindowInDays</code> parameter. If
-     * you delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter,
-     * then you have no opportunity to recover the secret. You lose the secret
+     * with the same name, use appropriate back off and retry logic.</p> <p>If you
+     * forcibly delete an already deleted or nonexistent secret, the operation does not
+     * return <code>ResourceNotFoundException</code>.</p>  <p>Use this
+     * parameter with caution. This parameter causes the operation to skip the normal
+     * recovery window before the permanent deletion that Secrets Manager would
+     * normally impose with the <code>RecoveryWindowInDays</code> parameter. If you
+     * delete a secret with the <code>ForceDeleteWithoutRecovery</code> parameter, then
+     * you have no opportunity to recover the secret. You lose the secret
      * permanently.</p> 
      */
     inline DeleteSecretRequest& WithForceDeleteWithoutRecovery(bool value) { SetForceDeleteWithoutRecovery(value); return *this;}
