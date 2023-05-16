@@ -28,6 +28,7 @@ namespace WAFV2ErrorMapper
 
 static const int W_A_F_UNAVAILABLE_ENTITY_HASH = HashingUtils::HashString("WAFUnavailableEntityException");
 static const int W_A_F_LIMITS_EXCEEDED_HASH = HashingUtils::HashString("WAFLimitsExceededException");
+static const int W_A_F_UNSUPPORTED_AGGREGATE_KEY_TYPE_HASH = HashingUtils::HashString("WAFUnsupportedAggregateKeyTypeException");
 static const int W_A_F_INVALID_PARAMETER_HASH = HashingUtils::HashString("WAFInvalidParameterException");
 static const int W_A_F_INVALID_RESOURCE_HASH = HashingUtils::HashString("WAFInvalidResourceException");
 static const int W_A_F_INVALID_OPERATION_HASH = HashingUtils::HashString("WAFInvalidOperationException");
@@ -57,6 +58,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_LIMITS_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_LIMITS_EXCEEDED), false);
+  }
+  else if (hashCode == W_A_F_UNSUPPORTED_AGGREGATE_KEY_TYPE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFV2Errors::W_A_F_UNSUPPORTED_AGGREGATE_KEY_TYPE), false);
   }
   else if (hashCode == W_A_F_INVALID_PARAMETER_HASH)
   {

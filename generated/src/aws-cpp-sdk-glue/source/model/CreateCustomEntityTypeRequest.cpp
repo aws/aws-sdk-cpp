@@ -15,7 +15,8 @@ using namespace Aws::Utils;
 CreateCustomEntityTypeRequest::CreateCustomEntityTypeRequest() : 
     m_nameHasBeenSet(false),
     m_regexStringHasBeenSet(false),
-    m_contextWordsHasBeenSet(false)
+    m_contextWordsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,17 @@ Aws::String CreateCustomEntityTypeRequest::SerializePayload() const
      contextWordsJsonList[contextWordsIndex].AsString(m_contextWords[contextWordsIndex]);
    }
    payload.WithArray("ContextWords", std::move(contextWordsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

@@ -17,7 +17,9 @@ namespace Model
   {
     NOT_SET,
     IP,
-    FORWARDED_IP
+    FORWARDED_IP,
+    CUSTOM_KEYS,
+    CONSTANT
   };
 
 namespace RateBasedStatementAggregateKeyTypeMapper

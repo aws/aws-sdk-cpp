@@ -40,34 +40,34 @@ namespace Model
 
 
     /**
-     * <p>Sets the relative processing order for multiple transformations that are
-     * defined for a rule statement. WAF processes all transformations, from lowest
-     * priority to highest, before inspecting the transformed content. The priorities
-     * don't need to be consecutive, but they must all be different. </p>
+     * <p>Sets the relative processing order for multiple transformations. WAF
+     * processes all transformations, from lowest priority to highest, before
+     * inspecting the transformed content. The priorities don't need to be consecutive,
+     * but they must all be different. </p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>Sets the relative processing order for multiple transformations that are
-     * defined for a rule statement. WAF processes all transformations, from lowest
-     * priority to highest, before inspecting the transformed content. The priorities
-     * don't need to be consecutive, but they must all be different. </p>
+     * <p>Sets the relative processing order for multiple transformations. WAF
+     * processes all transformations, from lowest priority to highest, before
+     * inspecting the transformed content. The priorities don't need to be consecutive,
+     * but they must all be different. </p>
      */
     inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
 
     /**
-     * <p>Sets the relative processing order for multiple transformations that are
-     * defined for a rule statement. WAF processes all transformations, from lowest
-     * priority to highest, before inspecting the transformed content. The priorities
-     * don't need to be consecutive, but they must all be different. </p>
+     * <p>Sets the relative processing order for multiple transformations. WAF
+     * processes all transformations, from lowest priority to highest, before
+     * inspecting the transformed content. The priorities don't need to be consecutive,
+     * but they must all be different. </p>
      */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
-     * <p>Sets the relative processing order for multiple transformations that are
-     * defined for a rule statement. WAF processes all transformations, from lowest
-     * priority to highest, before inspecting the transformed content. The priorities
-     * don't need to be consecutive, but they must all be different. </p>
+     * <p>Sets the relative processing order for multiple transformations. WAF
+     * processes all transformations, from lowest priority to highest, before
+     * inspecting the transformed content. The priorities don't need to be consecutive,
+     * but they must all be different. </p>
      */
     inline TextTransformation& WithPriority(int value) { SetPriority(value); return *this;}
 
