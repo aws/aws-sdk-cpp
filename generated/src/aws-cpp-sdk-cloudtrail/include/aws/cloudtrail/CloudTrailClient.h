@@ -494,9 +494,9 @@ namespace CloudTrail
          * information about logging management and data events, see the following topics
          * in the <i>CloudTrail User Guide</i>:</p> <ul> <li> <p> <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-         * management events for trails </a> </p> </li> <li> <p> <a
+         * management events</a> </p> </li> <li> <p> <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails </a> </p> </li> </ul><p><h3>See Also:</h3>   <a
+         * data events</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/GetEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -950,29 +950,34 @@ namespace CloudTrail
         /**
          * <p>Configures an event selector or advanced event selectors for your trail. Use
          * event selectors or advanced event selectors to specify management and data event
-         * settings for your trail. By default, trails created without specific event
-         * selectors are configured to log all read and write management events, and no
-         * data events.</p> <p>When an event occurs in your account, CloudTrail evaluates
-         * the event selectors or advanced event selectors in all trails. For each trail,
-         * if the event matches any event selector, the trail processes and logs the event.
-         * If the event doesn't match any event selector, the trail doesn't log the
-         * event.</p> <p>Example</p> <ol> <li> <p>You create an event selector for a trail
-         * and specify that you want write-only events.</p> </li> <li> <p>The EC2
-         * <code>GetConsoleOutput</code> and <code>RunInstances</code> API operations occur
-         * in your account.</p> </li> <li> <p>CloudTrail evaluates whether the events match
-         * your event selectors.</p> </li> <li> <p>The <code>RunInstances</code> is a
-         * write-only event and it matches your event selector. The trail logs the
-         * event.</p> </li> <li> <p>The <code>GetConsoleOutput</code> is a read-only event
-         * that doesn't match your event selector. The trail doesn't log the event. </p>
-         * </li> </ol> <p>The <code>PutEventSelectors</code> operation must be called from
-         * the region in which the trail was created; otherwise, an
-         * <code>InvalidHomeRegionException</code> exception is thrown.</p> <p>You can
-         * configure up to five event selectors for each trail. For more information, see
-         * <a
+         * settings for your trail. If you want your trail to log Insights events, be sure
+         * the event selector enables logging of the Insights event types you want
+         * configured for your trail. For more information about logging Insights events,
+         * see <a
+         * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging
+         * Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default,
+         * trails created without specific event selectors are configured to log all read
+         * and write management events, and no data events.</p> <p>When an event occurs in
+         * your account, CloudTrail evaluates the event selectors or advanced event
+         * selectors in all trails. For each trail, if the event matches any event
+         * selector, the trail processes and logs the event. If the event doesn't match any
+         * event selector, the trail doesn't log the event.</p> <p>Example</p> <ol> <li>
+         * <p>You create an event selector for a trail and specify that you want write-only
+         * events.</p> </li> <li> <p>The EC2 <code>GetConsoleOutput</code> and
+         * <code>RunInstances</code> API operations occur in your account.</p> </li> <li>
+         * <p>CloudTrail evaluates whether the events match your event selectors.</p> </li>
+         * <li> <p>The <code>RunInstances</code> is a write-only event and it matches your
+         * event selector. The trail logs the event.</p> </li> <li> <p>The
+         * <code>GetConsoleOutput</code> is a read-only event that doesn't match your event
+         * selector. The trail doesn't log the event. </p> </li> </ol> <p>The
+         * <code>PutEventSelectors</code> operation must be called from the region in which
+         * the trail was created; otherwise, an <code>InvalidHomeRegionException</code>
+         * exception is thrown.</p> <p>You can configure up to five event selectors for
+         * each trail. For more information, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-management-events-with-cloudtrail.html">Logging
-         * management events for trails </a>, <a
+         * management events</a>, <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails </a>, and <a
+         * data events</a>, and <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/WhatIsCloudTrail-Limits.html">Quotas
          * in CloudTrail</a> in the <i>CloudTrail User Guide</i>.</p> <p>You can add
          * advanced event selectors, and conditions for your advanced event selectors, up
@@ -982,8 +987,8 @@ namespace CloudTrail
          * existing <code>EventSelectors</code> are overwritten. For more information about
          * advanced event selectors, see <a
          * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-         * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See
-         * Also:</h3>   <a
+         * data events</a> in the <i>CloudTrail User Guide</i>.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutEventSelectors">AWS
          * API Reference</a></p>
          */
@@ -1012,8 +1017,12 @@ namespace CloudTrail
          * that you want to enable on an existing trail. You also use
          * <code>PutInsightSelectors</code> to turn off Insights event logging, by passing
          * an empty list of insight types. The valid Insights event types in this release
-         * are <code>ApiErrorRateInsight</code> and
-         * <code>ApiCallRateInsight</code>.</p><p><h3>See Also:</h3>   <a
+         * are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>
+         * <p>To log CloudTrail Insights events on API call volume, the trail must log
+         * <code>write</code> management events. To log CloudTrail Insights events on API
+         * error rate, the trail must log <code>read</code> or <code>write</code>
+         * management events. You can call <code>GetEventSelectors</code> on a trail to
+         * check whether the trail logs management events.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/PutInsightSelectors">AWS
          * API Reference</a></p>
          */

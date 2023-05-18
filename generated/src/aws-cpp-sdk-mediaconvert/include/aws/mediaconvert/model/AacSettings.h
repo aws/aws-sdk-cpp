@@ -211,7 +211,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline const AacCodingMode& GetCodingMode() const{ return m_codingMode; }
@@ -223,7 +223,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
@@ -235,7 +235,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(const AacCodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
@@ -247,7 +247,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline void SetCodingMode(AacCodingMode&& value) { m_codingModeHasBeenSet = true; m_codingMode = std::move(value); }
@@ -259,7 +259,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(const AacCodingMode& value) { SetCodingMode(value); return *this;}
@@ -271,7 +271,7 @@ namespace Model
      * number of audio channels and channel layout for each coding mode. * 1.0 Audio
      * Description (Receiver Mix): One channel, C. Includes audio description data from
      * your stereo input. For more information see ETSI TS 101 154 Annex E. * 1.0 Mono:
-     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Five channels,
+     * One channel, C. * 2.0 Stereo: Two channels, L, R. * 5.1 Surround: Six channels,
      * C, L, R, Ls, Rs, LFE.
      */
     inline AacSettings& WithCodingMode(AacCodingMode&& value) { SetCodingMode(std::move(value)); return *this;}

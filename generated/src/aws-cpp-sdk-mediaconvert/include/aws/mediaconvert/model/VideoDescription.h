@@ -385,30 +385,38 @@ namespace Model
 
 
     /**
-     * Use the Height (Height) setting to define the video resolution height for this
-     * output. Specify in pixels. If you don't provide a value here, the service will
-     * use the input height.
+     * Use Height to define the video resolution height, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Height blank and enter a value
+     * for Width. For example, if your input is 1920x1080 and you set Width to 1280,
+     * your output will be 1280x720.
      */
     inline int GetHeight() const{ return m_height; }
 
     /**
-     * Use the Height (Height) setting to define the video resolution height for this
-     * output. Specify in pixels. If you don't provide a value here, the service will
-     * use the input height.
+     * Use Height to define the video resolution height, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Height blank and enter a value
+     * for Width. For example, if your input is 1920x1080 and you set Width to 1280,
+     * your output will be 1280x720.
      */
     inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
 
     /**
-     * Use the Height (Height) setting to define the video resolution height for this
-     * output. Specify in pixels. If you don't provide a value here, the service will
-     * use the input height.
+     * Use Height to define the video resolution height, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Height blank and enter a value
+     * for Width. For example, if your input is 1920x1080 and you set Width to 1280,
+     * your output will be 1280x720.
      */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
-     * Use the Height (Height) setting to define the video resolution height for this
-     * output. Specify in pixels. If you don't provide a value here, the service will
-     * use the input height.
+     * Use Height to define the video resolution height, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Height blank and enter a value
+     * for Width. For example, if your input is 1920x1080 and you set Width to 1280,
+     * your output will be 1280x720.
      */
     inline VideoDescription& WithHeight(int value) { SetHeight(value); return *this;}
 
@@ -762,26 +770,38 @@ namespace Model
 
 
     /**
-     * Use Width (Width) to define the video resolution width, in pixels, for this
-     * output. If you don't provide a value here, the service will use the input width.
+     * Use Width to define the video resolution width, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Width blank and enter a value for
+     * Height. For example, if your input is 1920x1080 and you set Height to 720, your
+     * output will be 1280x720.
      */
     inline int GetWidth() const{ return m_width; }
 
     /**
-     * Use Width (Width) to define the video resolution width, in pixels, for this
-     * output. If you don't provide a value here, the service will use the input width.
+     * Use Width to define the video resolution width, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Width blank and enter a value for
+     * Height. For example, if your input is 1920x1080 and you set Height to 720, your
+     * output will be 1280x720.
      */
     inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
-     * Use Width (Width) to define the video resolution width, in pixels, for this
-     * output. If you don't provide a value here, the service will use the input width.
+     * Use Width to define the video resolution width, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Width blank and enter a value for
+     * Height. For example, if your input is 1920x1080 and you set Height to 720, your
+     * output will be 1280x720.
      */
     inline void SetWidth(int value) { m_widthHasBeenSet = true; m_width = value; }
 
     /**
-     * Use Width (Width) to define the video resolution width, in pixels, for this
-     * output. If you don't provide a value here, the service will use the input width.
+     * Use Width to define the video resolution width, in pixels, for this output. To
+     * use the same resolution as your input: Leave both Width and Height blank. To
+     * evenly scale from your input resolution: Leave Width blank and enter a value for
+     * Height. For example, if your input is 1920x1080 and you set Height to 720, your
+     * output will be 1280x720.
      */
     inline VideoDescription& WithWidth(int value) { SetWidth(value); return *this;}
 

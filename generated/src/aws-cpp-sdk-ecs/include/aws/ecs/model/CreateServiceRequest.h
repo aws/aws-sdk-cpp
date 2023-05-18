@@ -727,7 +727,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -736,7 +736,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -745,7 +745,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>
@@ -754,7 +754,7 @@ namespace Model
 
     /**
      * <p>The number of instantiations of the specified task definition to place and
-     * keep running on your cluster.</p> <p>This is required if
+     * keep running in your service.</p> <p>This is required if
      * <code>schedulingStrategy</code> is <code>REPLICA</code> or isn't specified. If
      * <code>schedulingStrategy</code> is <code>DAEMON</code> then this isn't
      * required.</p>

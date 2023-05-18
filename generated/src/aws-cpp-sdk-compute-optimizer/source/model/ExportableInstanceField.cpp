@@ -75,6 +75,8 @@ namespace Aws
         static const int EffectiveRecommendationPreferencesExternalMetricsSource_HASH = HashingUtils::HashString("EffectiveRecommendationPreferencesExternalMetricsSource");
         static const int InstanceState_HASH = HashingUtils::HashString("InstanceState");
         static const int Tags_HASH = HashingUtils::HashString("Tags");
+        static const int ExternalMetricStatusCode_HASH = HashingUtils::HashString("ExternalMetricStatusCode");
+        static const int ExternalMetricStatusReason_HASH = HashingUtils::HashString("ExternalMetricStatusReason");
 
 
         ExportableInstanceField GetExportableInstanceFieldForName(const Aws::String& name)
@@ -300,6 +302,14 @@ namespace Aws
           {
             return ExportableInstanceField::Tags;
           }
+          else if (hashCode == ExternalMetricStatusCode_HASH)
+          {
+            return ExportableInstanceField::ExternalMetricStatusCode;
+          }
+          else if (hashCode == ExternalMetricStatusReason_HASH)
+          {
+            return ExportableInstanceField::ExternalMetricStatusReason;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -424,6 +434,10 @@ namespace Aws
             return "InstanceState";
           case ExportableInstanceField::Tags:
             return "Tags";
+          case ExportableInstanceField::ExternalMetricStatusCode:
+            return "ExternalMetricStatusCode";
+          case ExportableInstanceField::ExternalMetricStatusReason:
+            return "ExternalMetricStatusReason";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

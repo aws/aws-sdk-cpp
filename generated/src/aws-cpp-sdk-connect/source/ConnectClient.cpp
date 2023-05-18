@@ -41,6 +41,7 @@
 #include <aws/connect/model/CreateInstanceRequest.h>
 #include <aws/connect/model/CreateIntegrationAssociationRequest.h>
 #include <aws/connect/model/CreateParticipantRequest.h>
+#include <aws/connect/model/CreatePromptRequest.h>
 #include <aws/connect/model/CreateQueueRequest.h>
 #include <aws/connect/model/CreateQuickConnectRequest.h>
 #include <aws/connect/model/CreateRoutingProfileRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/connect/model/DeleteHoursOfOperationRequest.h>
 #include <aws/connect/model/DeleteInstanceRequest.h>
 #include <aws/connect/model/DeleteIntegrationAssociationRequest.h>
+#include <aws/connect/model/DeletePromptRequest.h>
 #include <aws/connect/model/DeleteQuickConnectRequest.h>
 #include <aws/connect/model/DeleteRuleRequest.h>
 #include <aws/connect/model/DeleteSecurityProfileRequest.h>
@@ -80,6 +82,7 @@
 #include <aws/connect/model/DescribeInstanceAttributeRequest.h>
 #include <aws/connect/model/DescribeInstanceStorageConfigRequest.h>
 #include <aws/connect/model/DescribePhoneNumberRequest.h>
+#include <aws/connect/model/DescribePromptRequest.h>
 #include <aws/connect/model/DescribeQueueRequest.h>
 #include <aws/connect/model/DescribeQuickConnectRequest.h>
 #include <aws/connect/model/DescribeRoutingProfileRequest.h>
@@ -106,6 +109,7 @@
 #include <aws/connect/model/GetFederationTokenRequest.h>
 #include <aws/connect/model/GetMetricDataRequest.h>
 #include <aws/connect/model/GetMetricDataV2Request.h>
+#include <aws/connect/model/GetPromptFileRequest.h>
 #include <aws/connect/model/GetTaskTemplateRequest.h>
 #include <aws/connect/model/GetTrafficDistributionRequest.h>
 #include <aws/connect/model/ListAgentStatusesRequest.h>
@@ -184,6 +188,7 @@
 #include <aws/connect/model/UpdateInstanceStorageConfigRequest.h>
 #include <aws/connect/model/UpdateParticipantRoleConfigRequest.h>
 #include <aws/connect/model/UpdatePhoneNumberRequest.h>
+#include <aws/connect/model/UpdatePromptRequest.h>
 #include <aws/connect/model/UpdateQueueHoursOfOperationRequest.h>
 #include <aws/connect/model/UpdateQueueMaxContactsRequest.h>
 #include <aws/connect/model/UpdateQueueNameRequest.h>
@@ -651,6 +656,21 @@ CreateParticipantOutcome ConnectClient::CreateParticipant(const CreateParticipan
   return CreateParticipantOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreatePromptOutcome ConnectClient::CreatePrompt(const CreatePromptRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePrompt", "Required field: InstanceId, is not set");
+    return CreatePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prompts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  return CreatePromptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateQueueOutcome ConnectClient::CreateQueue(const CreateQueueRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateQueue, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -981,6 +1001,27 @@ DeleteIntegrationAssociationOutcome ConnectClient::DeleteIntegrationAssociation(
   endpointResolutionOutcome.GetResult().AddPathSegments("/integration-associations/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIntegrationAssociationId());
   return DeleteIntegrationAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeletePromptOutcome ConnectClient::DeletePrompt(const DeletePromptRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrompt", "Required field: InstanceId, is not set");
+    return DeletePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.PromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePrompt", "Required field: PromptId, is not set");
+    return DeletePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PromptId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeletePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prompts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
+  return DeletePromptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteQuickConnectOutcome ConnectClient::DeleteQuickConnect(const DeleteQuickConnectRequest& request) const
@@ -1399,6 +1440,27 @@ DescribePhoneNumberOutcome ConnectClient::DescribePhoneNumber(const DescribePhon
   endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   return DescribePhoneNumberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+DescribePromptOutcome ConnectClient::DescribePrompt(const DescribePromptRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DescribePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePrompt", "Required field: InstanceId, is not set");
+    return DescribePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.PromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribePrompt", "Required field: PromptId, is not set");
+    return DescribePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PromptId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DescribePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prompts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
+  return DescribePromptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 DescribeQueueOutcome ConnectClient::DescribeQueue(const DescribeQueueRequest& request) const
@@ -1907,6 +1969,28 @@ GetMetricDataV2Outcome ConnectClient::GetMetricDataV2(const GetMetricDataV2Reque
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetMetricDataV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   endpointResolutionOutcome.GetResult().AddPathSegments("/metrics/data");
   return GetMetricDataV2Outcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetPromptFileOutcome ConnectClient::GetPromptFile(const GetPromptFileRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPromptFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPromptFile", "Required field: InstanceId, is not set");
+    return GetPromptFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.PromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPromptFile", "Required field: PromptId, is not set");
+    return GetPromptFileOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PromptId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetPromptFile, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prompts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/file");
+  return GetPromptFileOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetTaskTemplateOutcome ConnectClient::GetTaskTemplate(const GetTaskTemplateRequest& request) const
@@ -3132,6 +3216,27 @@ UpdatePhoneNumberOutcome ConnectClient::UpdatePhoneNumber(const UpdatePhoneNumbe
   endpointResolutionOutcome.GetResult().AddPathSegments("/phone-number/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPhoneNumberId());
   return UpdatePhoneNumberOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdatePromptOutcome ConnectClient::UpdatePrompt(const UpdatePromptRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.InstanceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePrompt", "Required field: InstanceId, is not set");
+    return UpdatePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.PromptIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdatePrompt", "Required field: PromptId, is not set");
+    return UpdatePromptOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PromptId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdatePrompt, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/prompts/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPromptId());
+  return UpdatePromptOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateQueueHoursOfOperationOutcome ConnectClient::UpdateQueueHoursOfOperation(const UpdateQueueHoursOfOperationRequest& request) const

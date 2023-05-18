@@ -19,7 +19,8 @@ namespace Model
     D_10,
     XDCAM,
     OP1A,
-    XAVC
+    XAVC,
+    XDCAM_RDD9
   };
 
 namespace MxfProfileMapper

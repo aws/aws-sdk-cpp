@@ -663,6 +663,35 @@ namespace Connect
         }
 
         /**
+         * <p>Creates a prompt. For more information about prompts, such as supported file
+         * types and maximum length, see <a
+         * href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create
+         * prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/CreatePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreatePromptOutcome CreatePrompt(const Model::CreatePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreatePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreatePromptRequestT = Model::CreatePromptRequest>
+        Model::CreatePromptOutcomeCallable CreatePromptCallable(const CreatePromptRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::CreatePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for CreatePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreatePromptRequestT = Model::CreatePromptRequest>
+        void CreatePromptAsync(const CreatePromptRequestT& request, const CreatePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::CreatePrompt, request, handler, context);
+        }
+
+        /**
          * <p>This API is in preview release for Amazon Connect and is subject to
          * change.</p> <p>Creates a new queue for the specified Amazon Connect
          * instance.</p>  <p>If the number being used in the input is claimed to
@@ -1186,6 +1215,31 @@ namespace Connect
         void DeleteIntegrationAssociationAsync(const DeleteIntegrationAssociationRequestT& request, const DeleteIntegrationAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DeleteIntegrationAssociation, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes a prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DeletePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeletePromptOutcome DeletePrompt(const Model::DeletePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeletePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeletePromptRequestT = Model::DeletePromptRequest>
+        Model::DeletePromptOutcomeCallable DeletePromptCallable(const DeletePromptRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DeletePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for DeletePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeletePromptRequestT = Model::DeletePromptRequest>
+        void DeletePromptAsync(const DeletePromptRequestT& request, const DeletePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DeletePrompt, request, handler, context);
         }
 
         /**
@@ -1733,6 +1787,31 @@ namespace Connect
         void DescribePhoneNumberAsync(const DescribePhoneNumberRequestT& request, const DescribePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::DescribePhoneNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Describes the prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribePromptOutcome DescribePrompt(const Model::DescribePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribePromptRequestT = Model::DescribePromptRequest>
+        Model::DescribePromptOutcomeCallable DescribePromptCallable(const DescribePromptRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::DescribePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for DescribePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribePromptRequestT = Model::DescribePromptRequest>
+        void DescribePromptAsync(const DescribePromptRequestT& request, const DescribePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::DescribePrompt, request, handler, context);
         }
 
         /**
@@ -2449,6 +2528,31 @@ namespace Connect
         void GetMetricDataV2Async(const GetMetricDataV2RequestT& request, const GetMetricDataV2ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::GetMetricDataV2, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the prompt file.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetPromptFile">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetPromptFileOutcome GetPromptFile(const Model::GetPromptFileRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetPromptFile that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetPromptFileRequestT = Model::GetPromptFileRequest>
+        Model::GetPromptFileOutcomeCallable GetPromptFileCallable(const GetPromptFileRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::GetPromptFile, request);
+        }
+
+        /**
+         * An Async wrapper for GetPromptFile that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetPromptFileRequestT = Model::GetPromptFileRequest>
+        void GetPromptFileAsync(const GetPromptFileRequestT& request, const GetPromptFileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::GetPromptFile, request, handler, context);
         }
 
         /**
@@ -4698,6 +4802,31 @@ namespace Connect
         void UpdatePhoneNumberAsync(const UpdatePhoneNumberRequestT& request, const UpdatePhoneNumberResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&ConnectClient::UpdatePhoneNumber, request, handler, context);
+        }
+
+        /**
+         * <p>Updates a prompt.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdatePrompt">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdatePromptOutcome UpdatePrompt(const Model::UpdatePromptRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdatePrompt that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdatePromptRequestT = Model::UpdatePromptRequest>
+        Model::UpdatePromptOutcomeCallable UpdatePromptCallable(const UpdatePromptRequestT& request) const
+        {
+            return SubmitCallable(&ConnectClient::UpdatePrompt, request);
+        }
+
+        /**
+         * An Async wrapper for UpdatePrompt that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdatePromptRequestT = Model::UpdatePromptRequest>
+        void UpdatePromptAsync(const UpdatePromptRequestT& request, const UpdatePromptResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&ConnectClient::UpdatePrompt, request, handler, context);
         }
 
         /**

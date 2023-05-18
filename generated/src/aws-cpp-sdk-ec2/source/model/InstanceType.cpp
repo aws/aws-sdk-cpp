@@ -668,6 +668,12 @@ namespace Aws
         static const int inf2_24xlarge_HASH = HashingUtils::HashString("inf2.24xlarge");
         static const int inf2_48xlarge_HASH = HashingUtils::HashString("inf2.48xlarge");
         static const int trn1n_32xlarge_HASH = HashingUtils::HashString("trn1n.32xlarge");
+        static const int i4g_large_HASH = HashingUtils::HashString("i4g.large");
+        static const int i4g_xlarge_HASH = HashingUtils::HashString("i4g.xlarge");
+        static const int i4g_2xlarge_HASH = HashingUtils::HashString("i4g.2xlarge");
+        static const int i4g_4xlarge_HASH = HashingUtils::HashString("i4g.4xlarge");
+        static const int i4g_8xlarge_HASH = HashingUtils::HashString("i4g.8xlarge");
+        static const int i4g_16xlarge_HASH = HashingUtils::HashString("i4g.16xlarge");
 
         /*
         The if-else chains in this file are converted into a jump table by the compiler,
@@ -3936,6 +3942,36 @@ namespace Aws
             enumValue = InstanceType::trn1n_32xlarge;
             return true;
           }
+          else if (hashCode == i4g_large_HASH)
+          {
+            enumValue = InstanceType::i4g_large;
+            return true;
+          }
+          else if (hashCode == i4g_xlarge_HASH)
+          {
+            enumValue = InstanceType::i4g_xlarge;
+            return true;
+          }
+          else if (hashCode == i4g_2xlarge_HASH)
+          {
+            enumValue = InstanceType::i4g_2xlarge;
+            return true;
+          }
+          else if (hashCode == i4g_4xlarge_HASH)
+          {
+            enumValue = InstanceType::i4g_4xlarge;
+            return true;
+          }
+          else if (hashCode == i4g_8xlarge_HASH)
+          {
+            enumValue = InstanceType::i4g_8xlarge;
+            return true;
+          }
+          else if (hashCode == i4g_16xlarge_HASH)
+          {
+            enumValue = InstanceType::i4g_16xlarge;
+            return true;
+          }
           return false;
         }
 
@@ -5926,6 +5962,24 @@ namespace Aws
             return true;
           case InstanceType::trn1n_32xlarge:
             value = "trn1n.32xlarge";
+            return true;
+          case InstanceType::i4g_large:
+            value = "i4g.large";
+            return true;
+          case InstanceType::i4g_xlarge:
+            value = "i4g.xlarge";
+            return true;
+          case InstanceType::i4g_2xlarge:
+            value = "i4g.2xlarge";
+            return true;
+          case InstanceType::i4g_4xlarge:
+            value = "i4g.4xlarge";
+            return true;
+          case InstanceType::i4g_8xlarge:
+            value = "i4g.8xlarge";
+            return true;
+          case InstanceType::i4g_16xlarge:
+            value = "i4g.16xlarge";
             return true;
           default:
             return false;

@@ -38,7 +38,8 @@ InstanceRecommendation::InstanceRecommendation() :
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
     m_instanceStateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_externalMetricStatusHasBeenSet(false)
 {
 }
 
@@ -62,7 +63,8 @@ InstanceRecommendation::InstanceRecommendation(JsonView jsonValue) :
     m_inferredWorkloadTypesHasBeenSet(false),
     m_instanceState(InstanceState::NOT_SET),
     m_instanceStateHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_externalMetricStatusHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -199,6 +201,13 @@ InstanceRecommendation& InstanceRecommendation::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("externalMetricStatus"))
+  {
+    m_externalMetricStatus = jsonValue.GetObject("externalMetricStatus");
+
+    m_externalMetricStatusHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -325,6 +334,12 @@ JsonValue InstanceRecommendation::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_externalMetricStatusHasBeenSet)
+  {
+   payload.WithObject("externalMetricStatus", m_externalMetricStatus.Jsonize());
 
   }
 

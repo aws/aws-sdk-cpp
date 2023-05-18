@@ -70,22 +70,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -98,66 +101,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -168,6 +166,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline const Aws::String& GetField() const{ return m_field; }
@@ -203,22 +221,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -231,66 +252,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -301,6 +317,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline bool FieldHasBeenSet() const { return m_fieldHasBeenSet; }
@@ -336,22 +372,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -364,66 +403,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -434,6 +468,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const Aws::String& value) { m_fieldHasBeenSet = true; m_field = value; }
@@ -469,22 +523,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -497,66 +554,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -567,6 +619,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(Aws::String&& value) { m_fieldHasBeenSet = true; m_field = std::move(value); }
@@ -602,22 +674,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -630,66 +705,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -700,6 +770,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline void SetField(const char* value) { m_fieldHasBeenSet = true; m_field.assign(value); }
@@ -735,22 +825,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -763,66 +856,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -833,6 +921,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const Aws::String& value) { SetField(value); return *this;}
@@ -868,22 +976,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -896,66 +1007,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -966,6 +1072,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(Aws::String&& value) { SetField(std::move(value)); return *this;}
@@ -1001,22 +1127,25 @@ namespace Model
      * </p> </li> </ul> </li> <li> <p> <b> <code>resources.type</code> </b> - This ﬁeld
      * is required for CloudTrail data events. <code>resources.type</code> can only use
      * the <code>Equals</code> operator, and the value can be one of the following:</p>
-     * <ul> <li> <p> <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
-     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <ul> <li> <p> <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
      * <code>AWS::Lambda::Function</code> </p> </li> <li> <p>
-     * <code>AWS::DynamoDB::Table</code> </p> </li> <li> <p>
-     * <code>AWS::S3Outposts::Object</code> </p> </li> <li> <p>
-     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
-     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
-     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
-     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3::Object</code> </p> </li> <li> <p>
+     * <code>AWS::CloudTrail::Channel</code> </p> </li> <li> <p>
+     * <code>AWS::Cognito::IdentityPool</code> </p> </li> <li> <p>
      * <code>AWS::DynamoDB::Stream</code> </p> </li> <li> <p>
-     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::EC2::Snapshot</code> </p> </li> <li> <p>
      * <code>AWS::FinSpace::Environment</code> </p> </li> <li> <p>
+     * <code>AWS::Glue::Table</code> </p> </li> <li> <p>
+     * <code>AWS::GuardDuty::Detector</code> </p> </li> <li> <p>
+     * <code>AWS::KendraRanking::ExecutionPlan</code> </p> </li> <li> <p>
+     * <code>AWS::ManagedBlockchain::Node</code> </p> </li> <li> <p>
      * <code>AWS::SageMaker::ExperimentTrialComponent</code> </p> </li> <li> <p>
-     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> </ul> <p> You can have only
-     * one <code>resources.type</code> ﬁeld per selector. To log data events on more
-     * than one resource type, add another selector.</p> </li> <li> <p> <b>
+     * <code>AWS::SageMaker::FeatureGroup</code> </p> </li> <li> <p>
+     * <code>AWS::S3::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3ObjectLambda::AccessPoint</code> </p> </li> <li> <p>
+     * <code>AWS::S3Outposts::Object</code> </p> </li> </ul> <p> You can have only one
+     * <code>resources.type</code> ﬁeld per selector. To log data events on more than
+     * one resource type, add another selector.</p> </li> <li> <p> <b>
      * <code>resources.ARN</code> </b> - You can use any operator with
      * <code>resources.ARN</code>, but if you use <code>Equals</code> or
      * <code>NotEquals</code>, the value must exactly match the ARN of a valid resource
@@ -1029,66 +1158,61 @@ namespace Model
      * (&lt;&gt;) with resource-specific information. </p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/</code> </p> </li> <li> <p>
      * <code>arn:&lt;partition&gt;:s3:::&lt;bucket_name&gt;/&lt;object_path&gt;/</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
-     * following formats. To log events on all objects in an S3 access point, we
-     * recommend that you use only the access point ARN, don’t include the object path,
-     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
-     * <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When resources.type equals
-     * <code>AWS::Lambda::Function</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::DynamoDB::Table</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;</code>
      * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Lambda::Function</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:lambda:&lt;region&gt;:&lt;account_ID&gt;:function:&lt;function_name&gt;</code>
+     * </p> </li> </ul> <p>When resources.type equals
      * <code>AWS::CloudTrail::Channel</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:cloudtrail:&lt;region&gt;:&lt;account_ID&gt;:channel/&lt;channel_UUID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * </p> </li> </ul> <p>When resources.type equals
+     * <code>AWS::Cognito::IdentityPool</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
-     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
-     * format:</p> <ul> <li> <p>
-     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
-     * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
-     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
-     * <li> <p>
-     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
+     * <code>arn:&lt;partition&gt;:cognito-identity:&lt;region&gt;:&lt;account_ID&gt;:identitypool/&lt;identity_pool_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::DynamoDB::Stream</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:dynamodb:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;table_name&gt;/stream/&lt;date_time&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
-     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
-     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
-     * <p>
-     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * <code>AWS::EC2::Snapshot</code>, and the operator is set to <code>Equals</code>
+     * or <code>NotEquals</code>, the ARN must be in the following format:</p> <ul>
+     * <li> <p>
+     * <code>arn:&lt;partition&gt;:ec2:&lt;region&gt;::snapshot/&lt;snapshot_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::FinSpace::Environment</code>, and the operator is set to
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:finspace:&lt;region&gt;:&lt;account_ID&gt;:environment/&lt;environment_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::Glue::Table</code>, and the operator is set to <code>Equals</code> or
+     * <code>NotEquals</code>, the ARN must be in the following format:</p> <ul> <li>
+     * <p>
+     * <code>arn:&lt;partition&gt;:glue:&lt;region&gt;:&lt;account_ID&gt;:table/&lt;database_name&gt;/&lt;table_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::GuardDuty::Detector</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:guardduty:&lt;region&gt;:&lt;account_ID&gt;:detector/&lt;detector_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::KendraRanking::ExecutionPlan</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:kendra-ranking:&lt;region&gt;:&lt;account_ID&gt;:rescore-execution-plan/&lt;rescore_execution_plan_ID&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::ManagedBlockchain::Node</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:managedblockchain:&lt;region&gt;:&lt;account_ID&gt;:nodes/&lt;node_ID&gt;</code>
      * </p> </li> </ul> <p>When <code>resources.type</code> equals
      * <code>AWS::SageMaker::ExperimentTrialComponent</code>, and the operator is set
      * to <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the
@@ -1099,6 +1223,26 @@ namespace Model
      * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
      * format:</p> <ul> <li> <p>
      * <code>arn:&lt;partition&gt;:sagemaker:&lt;region&gt;:&lt;account_ID&gt;:feature-group/&lt;feature_group_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in one of the
+     * following formats. To log events on all objects in an S3 access point, we
+     * recommend that you use only the access point ARN, don’t include the object path,
+     * and use the <code>StartsWith</code> or <code>NotStartsWith</code> operators.</p>
+     * <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;/object/&lt;object_path&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3ObjectLambda::AccessPoint</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-object-lambda:&lt;region&gt;:&lt;account_ID&gt;:accesspoint/&lt;access_point_name&gt;</code>
+     * </p> </li> </ul> <p>When <code>resources.type</code> equals
+     * <code>AWS::S3Outposts::Object</code>, and the operator is set to
+     * <code>Equals</code> or <code>NotEquals</code>, the ARN must be in the following
+     * format:</p> <ul> <li> <p>
+     * <code>arn:&lt;partition&gt;:s3-outposts:&lt;region&gt;:&lt;account_ID&gt;:&lt;object_path&gt;</code>
      * </p> </li> </ul> </li> </ul>
      */
     inline AdvancedFieldSelector& WithField(const char* value) { SetField(value); return *this;}

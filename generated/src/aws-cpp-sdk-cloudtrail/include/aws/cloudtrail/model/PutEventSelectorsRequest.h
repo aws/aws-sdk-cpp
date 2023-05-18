@@ -232,7 +232,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline const Aws::Vector<AdvancedEventSelector>& GetAdvancedEventSelectors() const{ return m_advancedEventSelectors; }
 
@@ -245,7 +245,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline bool AdvancedEventSelectorsHasBeenSet() const { return m_advancedEventSelectorsHasBeenSet; }
 
@@ -258,7 +258,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline void SetAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = value; }
 
@@ -271,7 +271,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline void SetAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors = std::move(value); }
 
@@ -284,7 +284,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(const Aws::Vector<AdvancedEventSelector>& value) { SetAdvancedEventSelectors(value); return *this;}
 
@@ -297,7 +297,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& WithAdvancedEventSelectors(Aws::Vector<AdvancedEventSelector>&& value) { SetAdvancedEventSelectors(std::move(value)); return *this;}
 
@@ -310,7 +310,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(const AdvancedEventSelector& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(value); return *this; }
 
@@ -323,7 +323,7 @@ namespace Model
      * existing <code>EventSelectors</code> are overwritten. For more information about
      * advanced event selectors, see <a
      * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-     * data events for trails</a> in the <i>CloudTrail User Guide</i>. </p>
+     * data events</a> in the <i>CloudTrail User Guide</i>. </p>
      */
     inline PutEventSelectorsRequest& AddAdvancedEventSelectors(AdvancedEventSelector&& value) { m_advancedEventSelectorsHasBeenSet = true; m_advancedEventSelectors.push_back(std::move(value)); return *this; }
 

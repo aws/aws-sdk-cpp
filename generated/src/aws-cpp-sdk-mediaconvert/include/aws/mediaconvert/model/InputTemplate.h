@@ -63,7 +63,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
@@ -78,7 +78,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
@@ -93,7 +93,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
@@ -108,7 +108,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
@@ -123,7 +123,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
@@ -138,7 +138,7 @@ namespace Model
      * increase the video quality of your output relative to its bitrate, since noisy
      * inputs are more complex and require more bits to encode. To help restore loss of
      * detail after applying the filter, you can optionally add texture or sharpening
-     * as an additional step.Jobs that use this feature incur pro-tier pricing. To not
+     * as an additional step. Jobs that use this feature incur pro-tier pricing. To not
      * apply advanced input filtering: Choose Disabled. Note that you can still apply
      * basic filtering with Deblock and Denoise.
      */
