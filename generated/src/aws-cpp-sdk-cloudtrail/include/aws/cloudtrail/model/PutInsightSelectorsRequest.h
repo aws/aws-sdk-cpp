@@ -88,56 +88,88 @@ namespace Model
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline const Aws::Vector<InsightSelector>& GetInsightSelectors() const{ return m_insightSelectors; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline bool InsightSelectorsHasBeenSet() const { return m_insightSelectorsHasBeenSet; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline void SetInsightSelectors(const Aws::Vector<InsightSelector>& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = value; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline void SetInsightSelectors(Aws::Vector<InsightSelector>&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors = std::move(value); }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline PutInsightSelectorsRequest& WithInsightSelectors(const Aws::Vector<InsightSelector>& value) { SetInsightSelectors(value); return *this;}
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline PutInsightSelectorsRequest& WithInsightSelectors(Aws::Vector<InsightSelector>&& value) { SetInsightSelectors(std::move(value)); return *this;}
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline PutInsightSelectorsRequest& AddInsightSelectors(const InsightSelector& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(value); return *this; }
 
     /**
      * <p>A JSON string that contains the insight types you want to log on a trail.
      * <code>ApiCallRateInsight</code> and <code>ApiErrorRateInsight</code> are valid
-     * insight types.</p>
+     * Insight types.</p> <p>The <code>ApiCallRateInsight</code> Insights type analyzes
+     * write-only management API calls that are aggregated per minute against a
+     * baseline API call volume.</p> <p>The <code>ApiErrorRateInsight</code> Insights
+     * type analyzes management API calls that result in error codes. The error is
+     * shown if the API call is unsuccessful.</p>
      */
     inline PutInsightSelectorsRequest& AddInsightSelectors(InsightSelector&& value) { m_insightSelectorsHasBeenSet = true; m_insightSelectors.push_back(std::move(value)); return *this; }
 

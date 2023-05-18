@@ -12,6 +12,7 @@
 #include <aws/compute-optimizer/model/CurrentPerformanceRisk.h>
 #include <aws/compute-optimizer/model/EffectiveRecommendationPreferences.h>
 #include <aws/compute-optimizer/model/InstanceState.h>
+#include <aws/compute-optimizer/model/ExternalMetricStatus.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationFindingReasonCode.h>
 #include <aws/compute-optimizer/model/UtilizationMetric.h>
 #include <aws/compute-optimizer/model/InstanceRecommendationOption.h>
@@ -1701,6 +1702,43 @@ namespace Model
      */
     inline InstanceRecommendation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline const ExternalMetricStatus& GetExternalMetricStatus() const{ return m_externalMetricStatus; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline bool ExternalMetricStatusHasBeenSet() const { return m_externalMetricStatusHasBeenSet; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline void SetExternalMetricStatus(const ExternalMetricStatus& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = value; }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline void SetExternalMetricStatus(ExternalMetricStatus&& value) { m_externalMetricStatusHasBeenSet = true; m_externalMetricStatus = std::move(value); }
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline InstanceRecommendation& WithExternalMetricStatus(const ExternalMetricStatus& value) { SetExternalMetricStatus(value); return *this;}
+
+    /**
+     * <p> An object that describes Compute Optimizer's integration status with your
+     * external metrics provider. </p>
+     */
+    inline InstanceRecommendation& WithExternalMetricStatus(ExternalMetricStatus&& value) { SetExternalMetricStatus(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_instanceArn;
@@ -1750,6 +1788,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    ExternalMetricStatus m_externalMetricStatus;
+    bool m_externalMetricStatusHasBeenSet = false;
   };
 
 } // namespace Model

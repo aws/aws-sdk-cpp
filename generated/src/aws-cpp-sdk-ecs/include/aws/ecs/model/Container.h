@@ -207,58 +207,42 @@ namespace Model
 
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline const Aws::String& GetImageDigest() const{ return m_imageDigest; }
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline void SetImageDigest(Aws::String&& value) { m_imageDigestHasBeenSet = true; m_imageDigest = std::move(value); }
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline void SetImageDigest(const char* value) { m_imageDigestHasBeenSet = true; m_imageDigest.assign(value); }
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline Container& WithImageDigest(const Aws::String& value) { SetImageDigest(value); return *this;}
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline Container& WithImageDigest(Aws::String&& value) { SetImageDigest(std::move(value)); return *this;}
 
     /**
-     * <p>The container image manifest digest.</p>  <p>The
-     * <code>imageDigest</code> is only returned if the container is using an image
-     * hosted in Amazon ECR, otherwise it is omitted.</p> 
+     * <p>The container image manifest digest.</p>
      */
     inline Container& WithImageDigest(const char* value) { SetImageDigest(value); return *this;}
 

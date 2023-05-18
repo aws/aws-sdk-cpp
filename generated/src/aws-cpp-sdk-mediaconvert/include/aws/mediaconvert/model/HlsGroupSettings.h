@@ -1236,26 +1236,30 @@ namespace Model
 
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one.
-     * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new
+     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * setting to have an effect.
      */
     inline int GetSegmentsPerSubdirectory() const{ return m_segmentsPerSubdirectory; }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one.
-     * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new
+     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * setting to have an effect.
      */
     inline bool SegmentsPerSubdirectoryHasBeenSet() const { return m_segmentsPerSubdirectoryHasBeenSet; }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one.
-     * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new
+     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * setting to have an effect.
      */
     inline void SetSegmentsPerSubdirectory(int value) { m_segmentsPerSubdirectoryHasBeenSet = true; m_segmentsPerSubdirectory = value; }
 
     /**
-     * Number of segments to write to a subdirectory before starting a new one.
-     * directoryStructure must be SINGLE_DIRECTORY for this setting to have an effect.
+     * Specify the number of segments to write to a subdirectory before starting a new
+     * one. You  must also set Directory structure to Subdirectory per stream for this
+     * setting to have an effect.
      */
     inline HlsGroupSettings& WithSegmentsPerSubdirectory(int value) { SetSegmentsPerSubdirectory(value); return *this;}
 

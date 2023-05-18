@@ -70,7 +70,9 @@ namespace Model
     RecommendationOptionsMigrationEffort,
     EffectiveRecommendationPreferencesExternalMetricsSource,
     InstanceState,
-    Tags
+    Tags,
+    ExternalMetricStatusCode,
+    ExternalMetricStatusReason
   };
 
 namespace ExportableInstanceFieldMapper

@@ -19,14 +19,12 @@ namespace Model
 {
 
 InputConfigOutput::InputConfigOutput() : 
-    m_dataSourceConfigHasBeenSet(false),
     m_previousEarthObservationJobArnHasBeenSet(false),
     m_rasterDataCollectionQueryHasBeenSet(false)
 {
 }
 
 InputConfigOutput::InputConfigOutput(JsonView jsonValue) : 
-    m_dataSourceConfigHasBeenSet(false),
     m_previousEarthObservationJobArnHasBeenSet(false),
     m_rasterDataCollectionQueryHasBeenSet(false)
 {
@@ -35,13 +33,6 @@ InputConfigOutput::InputConfigOutput(JsonView jsonValue) :
 
 InputConfigOutput& InputConfigOutput::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("DataSourceConfig"))
-  {
-    m_dataSourceConfig = jsonValue.GetObject("DataSourceConfig");
-
-    m_dataSourceConfigHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("PreviousEarthObservationJobArn"))
   {
     m_previousEarthObservationJobArn = jsonValue.GetString("PreviousEarthObservationJobArn");
@@ -62,12 +53,6 @@ InputConfigOutput& InputConfigOutput::operator =(JsonView jsonValue)
 JsonValue InputConfigOutput::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_dataSourceConfigHasBeenSet)
-  {
-   payload.WithObject("DataSourceConfig", m_dataSourceConfig.Jsonize());
-
-  }
 
   if(m_previousEarthObservationJobArnHasBeenSet)
   {

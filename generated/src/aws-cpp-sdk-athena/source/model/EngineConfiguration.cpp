@@ -25,8 +25,7 @@ EngineConfiguration::EngineConfiguration() :
     m_maxConcurrentDpusHasBeenSet(false),
     m_defaultExecutorDpuSize(0),
     m_defaultExecutorDpuSizeHasBeenSet(false),
-    m_additionalConfigsHasBeenSet(false),
-    m_sparkPropertiesHasBeenSet(false)
+    m_additionalConfigsHasBeenSet(false)
 {
 }
 
@@ -37,8 +36,7 @@ EngineConfiguration::EngineConfiguration(JsonView jsonValue) :
     m_maxConcurrentDpusHasBeenSet(false),
     m_defaultExecutorDpuSize(0),
     m_defaultExecutorDpuSizeHasBeenSet(false),
-    m_additionalConfigsHasBeenSet(false),
-    m_sparkPropertiesHasBeenSet(false)
+    m_additionalConfigsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -76,16 +74,6 @@ EngineConfiguration& EngineConfiguration::operator =(JsonView jsonValue)
     m_additionalConfigsHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("SparkProperties"))
-  {
-    Aws::Map<Aws::String, JsonView> sparkPropertiesJsonMap = jsonValue.GetObject("SparkProperties").GetAllObjects();
-    for(auto& sparkPropertiesItem : sparkPropertiesJsonMap)
-    {
-      m_sparkProperties[sparkPropertiesItem.first] = sparkPropertiesItem.second.AsString();
-    }
-    m_sparkPropertiesHasBeenSet = true;
-  }
-
   return *this;
 }
 
@@ -119,17 +107,6 @@ JsonValue EngineConfiguration::Jsonize() const
      additionalConfigsJsonMap.WithString(additionalConfigsItem.first, additionalConfigsItem.second);
    }
    payload.WithObject("AdditionalConfigs", std::move(additionalConfigsJsonMap));
-
-  }
-
-  if(m_sparkPropertiesHasBeenSet)
-  {
-   JsonValue sparkPropertiesJsonMap;
-   for(auto& sparkPropertiesItem : m_sparkProperties)
-   {
-     sparkPropertiesJsonMap.WithString(sparkPropertiesItem.first, sparkPropertiesItem.second);
-   }
-   payload.WithObject("SparkProperties", std::move(sparkPropertiesJsonMap));
 
   }
 

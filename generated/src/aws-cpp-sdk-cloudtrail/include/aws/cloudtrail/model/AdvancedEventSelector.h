@@ -31,13 +31,12 @@ namespace Model
    * only those events that are important to you. For more information about advanced
    * event selectors, see <a
    * href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-data-events-with-cloudtrail.html">Logging
-   * data events for trails</a> in the <i>CloudTrail User Guide</i>.</p> <ul> <li>
-   * <p> <code>readOnly</code> </p> </li> <li> <p> <code>eventSource</code> </p>
-   * </li> <li> <p> <code>eventName</code> </p> </li> <li> <p>
-   * <code>eventCategory</code> </p> </li> <li> <p> <code>resources.type</code> </p>
-   * </li> <li> <p> <code>resources.ARN</code> </p> </li> </ul> <p>You cannot apply
-   * both event selectors and advanced event selectors to a trail.</p><p><h3>See
-   * Also:</h3>   <a
+   * data events</a> in the <i>CloudTrail User Guide</i>.</p> <ul> <li> <p>
+   * <code>readOnly</code> </p> </li> <li> <p> <code>eventSource</code> </p> </li>
+   * <li> <p> <code>eventName</code> </p> </li> <li> <p> <code>eventCategory</code>
+   * </p> </li> <li> <p> <code>resources.type</code> </p> </li> <li> <p>
+   * <code>resources.ARN</code> </p> </li> </ul> <p>You cannot apply both event
+   * selectors and advanced event selectors to a trail.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cloudtrail-2013-11-01/AdvancedEventSelector">AWS
    * API Reference</a></p>
    */

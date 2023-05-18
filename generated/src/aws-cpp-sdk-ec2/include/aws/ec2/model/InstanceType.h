@@ -663,7 +663,13 @@ namespace Model
     inf2_8xlarge,
     inf2_24xlarge,
     inf2_48xlarge,
-    trn1n_32xlarge
+    trn1n_32xlarge,
+    i4g_large,
+    i4g_xlarge,
+    i4g_2xlarge,
+    i4g_4xlarge,
+    i4g_8xlarge,
+    i4g_16xlarge
   };
 
 namespace InstanceTypeMapper
