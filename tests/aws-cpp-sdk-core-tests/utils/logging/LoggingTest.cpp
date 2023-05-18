@@ -17,6 +17,8 @@
 
 #include <cstdarg>
 #include <thread>
+// Using regex in unit tests. However, regex are not used in the SDK for compatibility/performance reasons
+#include <regex>
 
 using namespace Aws::Utils;
 using namespace Aws::Utils::Logging;
@@ -114,12 +116,48 @@ void LogAllPossibilities(const char* tag)
     AWS_LOGSTREAM_FLUSH();
 }
 
+static const std::vector< std::regex > LOG_LINES_TO_IGNORE =
+{
+    std::regex(R"(^.*id=[0-9A-F]+: main loop started)"),
+    std::regex(R"(^.*id=[0-9A-F]+: default timeout 100000)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=[0-9A-F]+: default timeout 100000)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=[0-9A-F]+: waiting for a maximum of 100000 ms)"),
+    std::regex(R"(^id=[0-9A-F]+: waiting for a maximum of 100000 ms)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=0x[0-9a-f]+: main loop started)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=0x[0-9a-f]+: subscribing to events on fd \d+)"),
+};
+
+void FilterAdditionalSDKLogs(Aws::Vector<Aws::String>& logs)
+{
+    auto newLogsEnd = std::remove_if(logs.begin(), logs.end(),
+                                     [](const Aws::String& entry)
+                                     {
+                                         const auto foundIt = std::find_if(LOG_LINES_TO_IGNORE.begin(), LOG_LINES_TO_IGNORE.end(),
+                                                                           [&entry](const std::regex& regExp)
+                                                                           {
+                                                                               std::cmatch match;
+                                                                               return std::regex_match(entry.c_str(), match, regExp);
+                                                                           }
+                                         );
+                                         return foundIt != LOG_LINES_TO_IGNORE.end();
+                                     }
+    );
+
+    logs.erase(newLogsEnd, logs.end());
+}
+
 void VerifyAllLogsAtOrBelow(LogLevel logLevel, const Aws::String& tag, const Aws::Vector<Aws::String>& loggedStatements)
 {
     static const uint32_t STATEMENTS_PER_LEVEL = 3;
     uint32_t expectedLogLevels = static_cast<uint32_t>(logLevel);
     uint32_t expectedStatementCount = expectedLogLevels * STATEMENTS_PER_LEVEL;
-    ASSERT_EQ(expectedStatementCount, loggedStatements.size());
+    ASSERT_EQ(expectedStatementCount, loggedStatements.size()) << "Logged statements were:\n" <<
+                                                               [&loggedStatements]() -> Aws::String
+                                                               {
+                                                                   Aws::String s;
+                                                                   for (const auto& log : loggedStatements) s += log + Aws::String("\n");;
+                                                                   return s;
+                                                               }();
 
     for(uint32_t i = 0; i < expectedLogLevels; ++i)
     {
@@ -155,6 +193,7 @@ void DoLogTest(LogLevel logLevel, const char *testTag)
     }
 
     Aws::Vector<Aws::String> loggedStatements = StringUtils::SplitOnLine(ss->str());
+    FilterAdditionalSDKLogs(loggedStatements);
     VerifyAllLogsAtOrBelow(logLevel, testTag, loggedStatements);
 }
 
@@ -216,8 +255,21 @@ void VerifyAllCRTLogsAtOrBelow(LogLevel logLevel, const Aws::Vector<Aws::String>
     static const uint32_t STATEMENTS_PER_LEVEL = 2;
     uint32_t expectedLogLevels = static_cast<uint32_t>(logLevel);
     uint32_t expectedStatementCount = expectedLogLevels * STATEMENTS_PER_LEVEL;
-    ASSERT_EQ(expectedStatementCount, loggedStatements.size());
-    ASSERT_EQ(expectedStatementCount, crtLoggedStatements.size());
+    ASSERT_EQ(expectedStatementCount, loggedStatements.size()) << "Logged statements were:\n" <<
+                                                               [&loggedStatements]() -> Aws::String
+                                                               {
+                                                                   Aws::String s;
+                                                                   for (const auto& log : loggedStatements) s += log + Aws::String("\n");;
+                                                                   return s;
+                                                               }();
+
+    ASSERT_EQ(expectedStatementCount, crtLoggedStatements.size()) << "CRT Logged statements were:\n" <<
+                                                                  [&crtLoggedStatements]() -> Aws::String
+                                                                  {
+                                                                      Aws::String s;
+                                                                      for (const auto& log : crtLoggedStatements) s += log + Aws::String("\n");;
+                                                                      return s;
+                                                                  }();
 
     for(uint32_t i = 0; i < expectedLogLevels; ++i)
     {
@@ -254,6 +306,8 @@ void DoCRTLogTest(LogLevel logLevel)
 
     Aws::Vector<Aws::String> loggedStatements = StringUtils::SplitOnLine(logs->str());
     Aws::Vector<Aws::String> crtLoggedStatements = StringUtils::SplitOnLine(crtLogs->str());
+    FilterAdditionalSDKLogs(loggedStatements);
+    FilterAdditionalSDKLogs(crtLoggedStatements);
     VerifyAllCRTLogsAtOrBelow(logLevel, loggedStatements, crtLoggedStatements);
 }
 
