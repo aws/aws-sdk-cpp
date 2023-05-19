@@ -1938,6 +1938,33 @@ namespace SESV2
         }
 
         /**
+         * <p>Used to convert a dedicated IP pool to a different scaling mode.</p> 
+         * <p> <code>MANAGED</code> pools cannot be converted to <code>STANDARD</code>
+         * scaling mode.</p> <p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpPoolScalingAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutDedicatedIpPoolScalingAttributesOutcome PutDedicatedIpPoolScalingAttributes(const Model::PutDedicatedIpPoolScalingAttributesRequest& request) const;
+
+        /**
+         * A Callable wrapper for PutDedicatedIpPoolScalingAttributes that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename PutDedicatedIpPoolScalingAttributesRequestT = Model::PutDedicatedIpPoolScalingAttributesRequest>
+        Model::PutDedicatedIpPoolScalingAttributesOutcomeCallable PutDedicatedIpPoolScalingAttributesCallable(const PutDedicatedIpPoolScalingAttributesRequestT& request) const
+        {
+            return SubmitCallable(&SESV2Client::PutDedicatedIpPoolScalingAttributes, request);
+        }
+
+        /**
+         * An Async wrapper for PutDedicatedIpPoolScalingAttributes that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename PutDedicatedIpPoolScalingAttributesRequestT = Model::PutDedicatedIpPoolScalingAttributesRequest>
+        void PutDedicatedIpPoolScalingAttributesAsync(const PutDedicatedIpPoolScalingAttributesRequestT& request, const PutDedicatedIpPoolScalingAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&SESV2Client::PutDedicatedIpPoolScalingAttributes, request, handler, context);
+        }
+
+        /**
          * <p/><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutDedicatedIpWarmupAttributes">AWS
          * API Reference</a></p>

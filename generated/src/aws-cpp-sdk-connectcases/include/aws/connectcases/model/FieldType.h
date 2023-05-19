@@ -20,7 +20,8 @@ namespace Model
     Number,
     Boolean,
     DateTime,
-    SingleSelect
+    SingleSelect,
+    Url
   };
 
 namespace FieldTypeMapper

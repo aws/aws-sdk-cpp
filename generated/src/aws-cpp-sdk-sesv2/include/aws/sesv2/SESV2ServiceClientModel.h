@@ -84,6 +84,7 @@
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsResult.h>
 #include <aws/sesv2/model/PutConfigurationSetVdmOptionsResult.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolResult.h>
+#include <aws/sesv2/model/PutDedicatedIpPoolScalingAttributesResult.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesResult.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionResult.h>
 #include <aws/sesv2/model/PutEmailIdentityConfigurationSetAttributesResult.h>
@@ -210,6 +211,7 @@ namespace Aws
       class PutConfigurationSetTrackingOptionsRequest;
       class PutConfigurationSetVdmOptionsRequest;
       class PutDedicatedIpInPoolRequest;
+      class PutDedicatedIpPoolScalingAttributesRequest;
       class PutDedicatedIpWarmupAttributesRequest;
       class PutDeliverabilityDashboardOptionRequest;
       class PutEmailIdentityConfigurationSetAttributesRequest;
@@ -299,6 +301,7 @@ namespace Aws
       typedef Aws::Utils::Outcome<PutConfigurationSetTrackingOptionsResult, SESV2Error> PutConfigurationSetTrackingOptionsOutcome;
       typedef Aws::Utils::Outcome<PutConfigurationSetVdmOptionsResult, SESV2Error> PutConfigurationSetVdmOptionsOutcome;
       typedef Aws::Utils::Outcome<PutDedicatedIpInPoolResult, SESV2Error> PutDedicatedIpInPoolOutcome;
+      typedef Aws::Utils::Outcome<PutDedicatedIpPoolScalingAttributesResult, SESV2Error> PutDedicatedIpPoolScalingAttributesOutcome;
       typedef Aws::Utils::Outcome<PutDedicatedIpWarmupAttributesResult, SESV2Error> PutDedicatedIpWarmupAttributesOutcome;
       typedef Aws::Utils::Outcome<PutDeliverabilityDashboardOptionResult, SESV2Error> PutDeliverabilityDashboardOptionOutcome;
       typedef Aws::Utils::Outcome<PutEmailIdentityConfigurationSetAttributesResult, SESV2Error> PutEmailIdentityConfigurationSetAttributesOutcome;
@@ -388,6 +391,7 @@ namespace Aws
       typedef std::future<PutConfigurationSetTrackingOptionsOutcome> PutConfigurationSetTrackingOptionsOutcomeCallable;
       typedef std::future<PutConfigurationSetVdmOptionsOutcome> PutConfigurationSetVdmOptionsOutcomeCallable;
       typedef std::future<PutDedicatedIpInPoolOutcome> PutDedicatedIpInPoolOutcomeCallable;
+      typedef std::future<PutDedicatedIpPoolScalingAttributesOutcome> PutDedicatedIpPoolScalingAttributesOutcomeCallable;
       typedef std::future<PutDedicatedIpWarmupAttributesOutcome> PutDedicatedIpWarmupAttributesOutcomeCallable;
       typedef std::future<PutDeliverabilityDashboardOptionOutcome> PutDeliverabilityDashboardOptionOutcomeCallable;
       typedef std::future<PutEmailIdentityConfigurationSetAttributesOutcome> PutEmailIdentityConfigurationSetAttributesOutcomeCallable;
@@ -480,6 +484,7 @@ namespace Aws
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetTrackingOptionsRequest&, const Model::PutConfigurationSetTrackingOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetTrackingOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutConfigurationSetVdmOptionsRequest&, const Model::PutConfigurationSetVdmOptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutConfigurationSetVdmOptionsResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpInPoolRequest&, const Model::PutDedicatedIpInPoolOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpInPoolResponseReceivedHandler;
+    typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpPoolScalingAttributesRequest&, const Model::PutDedicatedIpPoolScalingAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpPoolScalingAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDedicatedIpWarmupAttributesRequest&, const Model::PutDedicatedIpWarmupAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDedicatedIpWarmupAttributesResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutDeliverabilityDashboardOptionRequest&, const Model::PutDeliverabilityDashboardOptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutDeliverabilityDashboardOptionResponseReceivedHandler;
     typedef std::function<void(const SESV2Client*, const Model::PutEmailIdentityConfigurationSetAttributesRequest&, const Model::PutEmailIdentityConfigurationSetAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEmailIdentityConfigurationSetAttributesResponseReceivedHandler;

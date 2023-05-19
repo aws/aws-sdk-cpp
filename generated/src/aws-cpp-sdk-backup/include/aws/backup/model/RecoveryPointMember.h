@@ -88,10 +88,166 @@ namespace Model
      */
     inline RecoveryPointMember& WithRecoveryPointArn(const char* value) { SetRecoveryPointArn(value); return *this;}
 
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline RecoveryPointMember& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline RecoveryPointMember& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the Amazon Resource Name (ARN) that uniquely identifies a saved
+     * resource.</p>
+     */
+    inline RecoveryPointMember& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
+
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline RecoveryPointMember& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline RecoveryPointMember& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the Amazon Web Services resource type that is saved as a recovery
+     * point.</p>
+     */
+    inline RecoveryPointMember& WithResourceType(const char* value) { SetResourceType(value); return *this;}
+
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline const Aws::String& GetBackupVaultName() const{ return m_backupVaultName; }
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline bool BackupVaultNameHasBeenSet() const { return m_backupVaultNameHasBeenSet; }
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline void SetBackupVaultName(const Aws::String& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = value; }
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline void SetBackupVaultName(Aws::String&& value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName = std::move(value); }
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline void SetBackupVaultName(const char* value) { m_backupVaultNameHasBeenSet = true; m_backupVaultName.assign(value); }
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline RecoveryPointMember& WithBackupVaultName(const Aws::String& value) { SetBackupVaultName(value); return *this;}
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline RecoveryPointMember& WithBackupVaultName(Aws::String&& value) { SetBackupVaultName(std::move(value)); return *this;}
+
+    /**
+     * <p>This is the name of the backup vault (the logical container in which backups
+     * are stored).</p>
+     */
+    inline RecoveryPointMember& WithBackupVaultName(const char* value) { SetBackupVaultName(value); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
     bool m_recoveryPointArnHasBeenSet = false;
+
+    Aws::String m_resourceArn;
+    bool m_resourceArnHasBeenSet = false;
+
+    Aws::String m_resourceType;
+    bool m_resourceTypeHasBeenSet = false;
+
+    Aws::String m_backupVaultName;
+    bool m_backupVaultNameHasBeenSet = false;
   };
 
 } // namespace Model
