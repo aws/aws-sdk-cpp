@@ -76,42 +76,42 @@ namespace Model
 
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline void SetEmailAddress(Aws::String&& value) { m_emailAddressHasBeenSet = true; m_emailAddress = std::move(value); }
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline void SetEmailAddress(const char* value) { m_emailAddressHasBeenSet = true; m_emailAddress.assign(value); }
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline UpdateContactRequest& WithEmailAddress(const Aws::String& value) { SetEmailAddress(value); return *this;}
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline UpdateContactRequest& WithEmailAddress(Aws::String&& value) { SetEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The contact's email addres.</p>
+     * <p>The contact's email address.</p>
      */
     inline UpdateContactRequest& WithEmailAddress(const char* value) { SetEmailAddress(value); return *this;}
 

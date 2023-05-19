@@ -87,6 +87,7 @@
 #include <aws/sesv2/model/PutConfigurationSetTrackingOptionsRequest.h>
 #include <aws/sesv2/model/PutConfigurationSetVdmOptionsRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpInPoolRequest.h>
+#include <aws/sesv2/model/PutDedicatedIpPoolScalingAttributesRequest.h>
 #include <aws/sesv2/model/PutDedicatedIpWarmupAttributesRequest.h>
 #include <aws/sesv2/model/PutDeliverabilityDashboardOptionRequest.h>
 #include <aws/sesv2/model/PutEmailIdentityConfigurationSetAttributesRequest.h>
@@ -1127,6 +1128,22 @@ PutDedicatedIpInPoolOutcome SESV2Client::PutDedicatedIpInPool(const PutDedicated
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetIp());
   endpointResolutionOutcome.GetResult().AddPathSegments("/pool");
   return PutDedicatedIpInPoolOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
+PutDedicatedIpPoolScalingAttributesOutcome SESV2Client::PutDedicatedIpPoolScalingAttributes(const PutDedicatedIpPoolScalingAttributesRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutDedicatedIpPoolScalingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PoolNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutDedicatedIpPoolScalingAttributes", "Required field: PoolName, is not set");
+    return PutDedicatedIpPoolScalingAttributesOutcome(Aws::Client::AWSError<SESV2Errors>(SESV2Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PoolName]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, PutDedicatedIpPoolScalingAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v2/email/dedicated-ip-pools/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPoolName());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/scaling");
+  return PutDedicatedIpPoolScalingAttributesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
 PutDedicatedIpWarmupAttributesOutcome SESV2Client::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
