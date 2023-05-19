@@ -2,6 +2,8 @@
 
 # Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
 # SPDX-License-Identifier: Apache-2.0.
+
+import base64
 import fileinput
 import os
 import re
@@ -18,6 +20,11 @@ DOXYGEN_OUTPUT_DIR = "docs/build/doxygen"
 
 
 class DoxygenWrapper(object):
+    SVG_IMAGE_PATTERN = re.compile(
+        """ src="(?P<svg_filename>[a-z0-9_]+\\.svg)" """
+    )
+    SVG_TO_KEEP = {"graph_legend.svg", "doxygen.svg", "mag_d.svg", "mag_seld.svg", "close.svg", "mag_sel.svg", "mag.svg"}
+
     def __init__(self, sdk_version, sdk_root, output_dir, thread_pool):
         if not DOXYGEN_EXE:
             raise FileNotFoundError("Doxygen executable is missing!")
@@ -167,6 +174,35 @@ class DoxygenWrapper(object):
         for future in cleanup_futures:
             future.result()
 
+    @staticmethod
+    def _get_base64_svg(svg_filename):
+        svg_content = "data:image/svg+xml;base64,"
+        with open(svg_filename) as svg_file:
+            file_content = svg_file.read()
+            svg_content += base64.b64encode(file_content.encode()).decode()
+        return svg_content
+
+    def _embed_svg_images(self, html_dir):
+        p = Path(html_dir)
+        html_files = p.glob(f"**/*.html")
+        files_to_remove = set()
+        for html_file_path in html_files:
+            html_file_content = str()
+            with open(html_file_path) as html_file:
+                html_file_content = html_file.read()
+            matches = [m.group("svg_filename") for m in re.finditer(self.SVG_IMAGE_PATTERN, html_file_content)
+                       if m.group("svg_filename") not in self.SVG_TO_KEEP]
+            for svg_filename in matches:
+                files_to_remove.add(svg_filename)
+                svg_base64 = self._get_base64_svg(f"{html_file_path.parent}/{svg_filename}")
+                html_file_content = html_file_content.replace(f"src=\"{svg_filename}\"",
+                                                              f"src=\"{svg_base64}\"")
+            if matches:
+                with open(html_file_path, "w") as html_file:
+                    html_file.write(html_file_content)
+        for file_to_remove in files_to_remove:
+            os.remove(f"{html_file_path.parent}/{file_to_remove}")
+
     def generate_component_xml(self, client_name, client_dir, output_dir, tagfiles):
         os.makedirs(output_dir, exist_ok=True)
 
@@ -187,7 +223,9 @@ class DoxygenWrapper(object):
                "DOXYGEN_LAYOUT": f"{self.output_dir}/DoxygenLayout.xml",
                "PREDEFINED": ""}
 
-        return self._call_doxygen(self.configuration_file, env, cwd=self.sdk_root)
+        doxy_output = self._call_doxygen(self.configuration_file, env, cwd=self.sdk_root)
+        self._embed_svg_images(output_dir)
+        return doxy_output
 
     def process_one_client_async(self, dependency_map, client_name, thread_pool, client_futures):
         # Wait for dependencies to be processed
