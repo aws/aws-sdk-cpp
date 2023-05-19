@@ -118,6 +118,18 @@ To build for Docker, ensure your container meets the [minimum requirements](#min
 ### Building and running an app on EC2
 Checkout this walk through on how to set up an environment and build the [AWS SDK for C++ on an EC2 instance](https://github.com/aws/aws-sdk-cpp/wiki/Building-the-SDK-from-source-on-EC2).
 
+### Building aws-sdk-cpp - Using vcpkg
+
+You can download and install aws-sdk-cpp using the [vcpkg](https://github.com/Microsoft/vcpkg) dependency manager:
+
+    git clone https://github.com/Microsoft/vcpkg.git
+    cd vcpkg
+    ./bootstrap-vcpkg.sh
+    ./vcpkg integrate install
+    ./vcpkg install aws-sdk-cpp
+
+The aws-sdk-cpp port in vcpkg is kept up to date by Microsoft team members and community contributors. If the version is out of date, please [create an issue or pull request](https://github.com/Microsoft/vcpkg) on the vcpkg repository.
+
 # Issues and Contributions
 We welcome all kinds of contributions, check [this guideline](./CONTRIBUTING.md) to learn how you can contribute or report issues.
 
