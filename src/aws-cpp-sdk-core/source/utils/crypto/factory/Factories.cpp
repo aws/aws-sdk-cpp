@@ -9,20 +9,17 @@
 #include <aws/core/utils/crypto/HMAC.h>
 #include <aws/core/utils/crypto/CRC32.h>
 
-#if ENABLE_BCRYPT_ENCRYPTION
-    #include <aws/core/utils/crypto/bcrypt/CryptoImpl.h>
-#elif ENABLE_OPENSSL_ENCRYPTION
-    #include <aws/core/utils/crypto/openssl/CryptoImpl.h>
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-    #include <aws/core/utils/crypto/commoncrypto/CryptoImpl.h>
-    #include <aws/core/utils/logging/LogMacros.h>
+#ifndef NO_ENCRYPTION
+#include <aws/core/utils/crypto/crt/CRTSymmetricCipher.h>
+#include <aws/core/utils/crypto/crt/CRTHash.h>
+#include <aws/core/utils/crypto/crt/CRTHMAC.h>
+#include <aws/core/utils/crypto/crt/CRTSecureRandom.h>
 #else
     // if you don't have any encryption you still need to pull in the interface definitions
     #include <aws/core/utils/crypto/Hash.h>
     #include <aws/core/utils/crypto/HMAC.h>
     #include <aws/core/utils/crypto/Cipher.h>
     #include <aws/core/utils/crypto/SecureRandom.h>
-    #define NO_ENCRYPTION
 #endif
 
 using namespace Aws::Utils;
@@ -109,15 +106,11 @@ class DefaultMD5Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<MD5BcryptImpl>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<MD5OpenSSLImpl>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<MD5CommonCryptoImpl>(s_allocationTag);
+#ifndef NO_ENCRYPTION
+        return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateMD5());
 #else
-    return nullptr;
-#endif
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -126,12 +119,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -140,12 +127,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -172,15 +153,11 @@ class DefaultSHA1Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<Sha1BcryptImpl>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<Sha1OpenSSLImpl>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<Sha1CommonCryptoImpl>(s_allocationTag);
+#ifndef NO_ENCRYPTION
+        return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA1());
 #else
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -189,12 +166,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -203,12 +174,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -217,15 +182,11 @@ class DefaultSHA256Factory : public HashFactory
 public:
     std::shared_ptr<Hash> CreateImplementation() const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<Sha256BcryptImpl>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<Sha256OpenSSLImpl>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<Sha256CommonCryptoImpl>(s_allocationTag);
+#ifndef NO_ENCRYPTION
+        return Aws::MakeShared<CRTHash>(s_allocationTag, Aws::Crt::Crypto::Hash::CreateSHA256());
 #else
-    return nullptr;
-#endif
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -234,12 +195,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -248,12 +203,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -262,15 +211,11 @@ class DefaultSHA256HmacFactory : public HMACFactory
 public:
     std::shared_ptr<Aws::Utils::Crypto::HMAC> CreateImplementation() const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<Sha256HMACBcryptImpl>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<Sha256HMACOpenSSLImpl>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<Sha256HMACCommonCryptoImpl>(s_allocationTag);
+#ifndef NO_ENCRYPTION
+        return Aws::MakeShared<CRT_SHA256HMAC>(s_allocationTag);
 #else
-    return nullptr;
-#endif
+        return nullptr;
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -279,12 +224,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -293,12 +232,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -308,52 +241,37 @@ class DefaultAES_CBCFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CBC_Cipher(keyCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
+        (void)key;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CBC_Cipher(keyCur, ivCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-
+        (void)key;
+        (void)iv;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
+
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&&aad) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_BCrypt>(s_allocationTag, key, iv);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_OpenSSL>(s_allocationTag, key, iv);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CBC_Cipher_CommonCrypto>(s_allocationTag, key, iv);
-#else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
+        return CreateImplementation(key, iv, tag, aad);
 
-        return nullptr;
-#endif
     }
 
     /**
@@ -362,12 +280,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -376,12 +288,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -390,52 +296,35 @@ class DefaultAES_CTRFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-       return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key);
+#ifndef NO_ENCRYPTION
+        Aws::Crt::ByteCursor keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CTR_Cipher(keyCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
+        (void)key;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer&, const CryptoBuffer&) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        auto ivCur = Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_CTR_Cipher(keyCur, ivCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-
+        (void)key;
+        (void)iv;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
     /**
      * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
      */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&&, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_BCrypt>(s_allocationTag, key, iv);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_OpenSSL>(s_allocationTag, key, iv);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_CTR_Cipher_CommonCrypto>(s_allocationTag, key, iv);
-#else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-
-        return nullptr;
-#endif
+        return CreateImplementation(key, iv, tag, aad);
     }
 
     /**
@@ -444,12 +333,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -458,12 +341,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -472,32 +349,32 @@ class DefaultAES_GCMFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
-
+        (void)key;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
 
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer* aad) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, aad);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, aad);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, aad);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+
+        if (aad)
+        {
+            auto aadCur = Aws::Crt::ByteCursorFromArray(aad->GetUnderlyingData(), aad->GetLength());
+            return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, Aws::Crt::Optional<Aws::Crt::ByteCursor>(), Aws::Crt::Optional<Aws::Crt::ByteCursor>(), aadCur));
+        }
+
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(aad);
+        (void)key;
+        (void)aad;
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
 
     /**
@@ -505,17 +382,18 @@ public:
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer& aad) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, key, iv, tag, aad);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, key, iv, tag, aad);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, key, iv, tag, aad);
+#ifndef NO_ENCRYPTION
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> keyCur = key.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> ivCur = iv.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(iv.GetUnderlyingData(), iv.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> tagCur = tag.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(tag.GetUnderlyingData(), tag.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+        Aws::Crt::Optional<Aws::Crt::ByteCursor> aadCur = aad.GetLength() > 0 ? Aws::Crt::ByteCursorFromArray(aad.GetUnderlyingData(), aad.GetLength()) : Aws::Crt::Optional<Aws::Crt::ByteCursor>();
+
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_GCM_Cipher(keyCur, ivCur, aadCur, tagCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        AWS_UNREFERENCED_PARAM(aad);
+        (void)key;
+        (void)iv;
+        (void)tag;
+        (void)aad;
         return nullptr;
 #endif
     }
@@ -524,19 +402,7 @@ public:
      */
     std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&& aad) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_BCrypt>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_OpenSSL>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_GCM_Cipher_CommonCrypto>(s_allocationTag, std::move(key), std::move(iv), std::move(tag), std::move(aad));
-#else
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
-        AWS_UNREFERENCED_PARAM(aad);
-        return nullptr;
-#endif
+        return CreateImplementation(key, iv, tag, aad);
     }
 
     /**
@@ -545,12 +411,6 @@ public:
      */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -559,12 +419,6 @@ public:
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -573,35 +427,25 @@ class DefaultAES_KeyWrapFactory : public SymmetricCipherFactory
 public:
     std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key) const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<AES_KeyWrap_Cipher_BCrypt>(s_allocationTag, key);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<AES_KeyWrap_Cipher_OpenSSL>(s_allocationTag, key);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<AES_KeyWrap_Cipher_CommonCrypto>(s_allocationTag, key);
+#ifndef NO_ENCRYPTION
+        auto keyCur = Aws::Crt::ByteCursorFromArray(key.GetUnderlyingData(), key.GetLength());
+        return Aws::MakeShared<CRTSymmetricCipher>(s_allocationTag, Aws::Crt::Crypto::SymmetricCipher::CreateAES_256_KeyWrap_Cipher(keyCur));
 #else
-        AWS_UNREFERENCED_PARAM(key);
         return nullptr;
-#endif
+#endif /* NO_ENCRYPTION */
     }
     /**
     * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
     */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer& key, const CryptoBuffer& iv, const CryptoBuffer& tag, const CryptoBuffer&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(const CryptoBuffer&, const CryptoBuffer&, const CryptoBuffer&, const CryptoBuffer&) const override
     {
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
         return nullptr;
     }
     /**
     * Factory method. Returns cipher implementation. See the SymmetricCipher class for more details.
     */
-    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&& key, CryptoBuffer&& iv, CryptoBuffer&& tag, CryptoBuffer&&) const override
+    std::shared_ptr<SymmetricCipher> CreateImplementation(CryptoBuffer&&, CryptoBuffer&&, CryptoBuffer&&, CryptoBuffer&&) const override
     {
-        AWS_UNREFERENCED_PARAM(key);
-        AWS_UNREFERENCED_PARAM(iv);
-        AWS_UNREFERENCED_PARAM(tag);
         return nullptr;
     }
 
@@ -611,12 +455,6 @@ public:
     */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if (s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -625,12 +463,6 @@ public:
     */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if (s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 
@@ -641,15 +473,7 @@ class DefaultSecureRandFactory : public SecureRandomFactory
      */
     std::shared_ptr<SecureRandomBytes> CreateImplementation() const override
     {
-#if ENABLE_BCRYPT_ENCRYPTION
-        return Aws::MakeShared<SecureRandomBytes_BCrypt>(s_allocationTag);
-#elif ENABLE_OPENSSL_ENCRYPTION
-        return Aws::MakeShared<SecureRandomBytes_OpenSSLImpl>(s_allocationTag);
-#elif ENABLE_COMMONCRYPTO_ENCRYPTION
-        return Aws::MakeShared<SecureRandomBytes_CommonCrypto>(s_allocationTag);
-#else
-        return nullptr;
-#endif
+        return Aws::MakeShared<CRTSecureRandomBytes>(s_allocationTag);
     }
 
     /**
@@ -658,12 +482,6 @@ class DefaultSecureRandFactory : public SecureRandomFactory
  */
     void InitStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.EnterRoom(&OpenSSL::init_static_state);
-        }
-#endif
     }
 
     /**
@@ -672,12 +490,6 @@ class DefaultSecureRandFactory : public SecureRandomFactory
      */
     void CleanupStaticState() override
     {
-#if ENABLE_OPENSSL_ENCRYPTION
-        if(s_InitCleanupOpenSSLFlag)
-        {
-            OpenSSL::getTheLights.LeaveRoom(&OpenSSL::cleanup_static_state);
-        }
-#endif
     }
 };
 

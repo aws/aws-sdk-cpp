@@ -22,20 +22,19 @@ using namespace Aws::Utils;
 using namespace Aws::Utils::Base64;
 using namespace Aws::Utils::Crypto;
 
-// internal buffers are fixed-size arrays, so this is harmless memory-management wise
-static Aws::Utils::Base64::Base64 s_base64;
-
 // Aws Glacier Tree Hash calculates hash value for each 1MB data
 const static size_t TREE_HASH_ONE_MB = 1024 * 1024;
 
 Aws::String HashingUtils::Base64Encode(const ByteBuffer& message)
 {
-    return s_base64.Encode(message);
+    Base64::Base64 base64Encoder;
+    return base64Encoder.Encode(message);
 }
 
 ByteBuffer HashingUtils::Base64Decode(const Aws::String& encodedMessage)
 {
-    return s_base64.Decode(encodedMessage);
+    Base64::Base64 base64Decoder;
+    return base64Decoder.Decode(encodedMessage);
 }
 
 ByteBuffer HashingUtils::CalculateSHA256HMAC(const ByteBuffer& toSign, const ByteBuffer& secret)
@@ -63,7 +62,6 @@ ByteBuffer HashingUtils::CalculateSHA256(Aws::IOStream& stream)
  */
 static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
 {
-    Sha256 hash;
     assert(input.size() != 0);
 
     // O(n) time complexity of merging (n + n/2 + n/4 + n/8 +...+ 1)
@@ -73,6 +71,7 @@ static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
         // if only one element left, just left it there
         while (std::next(iter) != input.end())
         {
+            Sha256 hash;
             // if >= two elements
             Aws::String str(reinterpret_cast<char*>(iter->GetUnderlyingData()), iter->GetLength());
             // list erase returns iterator of next element next to the erased element or end() if erased the last one
@@ -91,9 +90,9 @@ static ByteBuffer TreeHashFinalCompute(Aws::List<ByteBuffer>& input)
 
 ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
 {
-    Sha256 hash;
     if (str.size() == 0)
     {
+        Sha256 hash;
         return hash.Calculate(str).GetResult();
     }
 
@@ -101,6 +100,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
     size_t pos = 0;
     while (pos < str.size())
     {
+        Sha256 hash;
         input.push_back(hash.Calculate(Aws::String(str, pos, TREE_HASH_ONE_MB)).GetResult());
         pos += TREE_HASH_ONE_MB;
     }
@@ -110,7 +110,6 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(const Aws::String& str)
 
 ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
 {
-    Sha256 hash;
     Aws::List<ByteBuffer> input;
     auto currentPos = stream.tellg();
     if (currentPos == std::ios::pos_type(-1))
@@ -126,6 +125,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
         auto bytesRead = stream.gcount();
         if (bytesRead > 0)
         {
+            Sha256 hash;
             input.push_back(hash.Calculate(Aws::String(reinterpret_cast<char*>(streamBuffer.GetUnderlyingData()), static_cast<size_t>(bytesRead))).GetResult());
         }
     }
@@ -134,6 +134,7 @@ ByteBuffer HashingUtils::CalculateSHA256TreeHash(Aws::IOStream& stream)
 
     if (input.size() == 0)
     {
+        Sha256 hash;
         return hash.Calculate("").GetResult();
     }
     return TreeHashFinalCompute(input);

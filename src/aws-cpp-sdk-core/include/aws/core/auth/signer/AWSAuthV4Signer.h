@@ -194,8 +194,6 @@ namespace Aws
             std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
             const Aws::String m_serviceName;
             const Aws::String m_region;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256> m_hash;
-            Aws::UniquePtr<Aws::Utils::Crypto::Sha256HMAC> m_HMAC;
 
             Aws::Set<Aws::String> m_unsignedHeaders;
 

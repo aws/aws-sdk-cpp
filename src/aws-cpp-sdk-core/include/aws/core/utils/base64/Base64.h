@@ -5,18 +5,6 @@
 
 #pragma once
 
-#ifdef __APPLE__
-
-#ifdef __clang__
-#pragma clang diagnostic ignored "-Wdeprecated-declarations"
-#endif // __clang__
-
-#ifdef __GNUC__
-#pragma GCC diagnostic ignored "-Wdeprecated-declarations"
-#endif // __GNUC__
-
-#endif // __APPLE__
-
 #include <aws/core/Core_EXPORTS.h>
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -57,11 +45,6 @@ namespace Aws
                 * Calculates the length of an encoded base64 string based on the buffer being encoded
                 */
                 static size_t CalculateBase64EncodedLength(const ByteBuffer& buffer);
-
-            private:
-                char m_mimeBase64EncodingTable[64];
-                uint8_t m_mimeBase64DecodingTable[256];
-
             };
 
         } // namespace Base64

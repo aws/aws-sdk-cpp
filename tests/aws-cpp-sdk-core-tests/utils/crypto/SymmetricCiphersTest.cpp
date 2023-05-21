@@ -51,20 +51,23 @@ TEST(AES_CBC_TEST, LessThanOneBlockTest)
 
     auto cipher = CreateAES_CBCImplementation(key, iv);
     ASSERT_NE(cipher, nullptr);
+    ASSERT_TRUE(*cipher);
+
     auto encryptResult = cipher->EncryptBuffer(data);
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    ASSERT_TRUE(*cipher);
 
     CryptoBuffer encryptedResult({ &encryptResult, &finalEncryptedBuffer });
     ASSERT_EQ(16u, encryptedResult.GetLength());
-
     ASSERT_EQ(expected, encryptedResult);
+    ASSERT_FALSE(*cipher);
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
 
-    ASSERT_TRUE(*cipher);
+    ASSERT_FALSE(*cipher);
     CryptoBuffer fullDecryptResult({ &decryptResult, &finalDecryptBuffer });
     ASSERT_EQ(data.GetLength(), fullDecryptResult.GetLength());
     CryptoBuffer plainText(data.GetLength());
@@ -140,12 +143,15 @@ TEST(AES_CBC_TEST, Test_Generated_IV)
     auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
     auto part2 = cipher->FinalizeEncryption();
 
-    ASSERT_TRUE(*cipher);
+    ASSERT_FALSE(*cipher);
     CryptoBuffer finalEncryptionResult({ &part1, &part2 });
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
+    ASSERT_FALSE(*cipher);
     CryptoBuffer finalDecryptionResult({ &part1, &part2 });
 
     CryptoBuffer plainText(finalDecryptionResult.GetLength() + 1);
@@ -221,10 +227,11 @@ TEST(AES_CTR_TEST, Test_Generated_KEY_AND_IV)
     auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
     auto part2 = cipher->FinalizeEncryption();
 
-    ASSERT_TRUE(*cipher);
     CryptoBuffer finalEncryptionResult({&part1, &part2});
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
     CryptoBuffer finalDecryptionResult({&part1, &part2});
@@ -255,11 +262,12 @@ TEST(AES_GCM_TEST, TestBadTagCausesFailure)
     CryptoBuffer encryptedResult({ &encryptResult, &finalEncryptedBuffer });
     ASSERT_EQ(encryptedResult, expected);
     ASSERT_EQ(tag, cipher->GetTag());
-    ASSERT_TRUE(*cipher);
 
     const_cast<CryptoBuffer&>(cipher->GetTag())[8] = 0;
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
     ASSERT_EQ(0u, finalDecryptBuffer.GetLength());
@@ -353,10 +361,11 @@ TEST(AES_GCM_TEST, Test_Generated_IV)
     auto part1 = cipher->EncryptBuffer(CryptoBuffer((unsigned char*)data_raw.c_str(), data_raw.length()));
     auto part2 = cipher->FinalizeEncryption();
 
-    ASSERT_TRUE(*cipher);
     CryptoBuffer finalEncryptionResult({&part1, &part2});
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     part1 = cipher->DecryptBuffer(finalEncryptionResult);
     part2 = cipher->FinalizeDecryption();
     CryptoBuffer finalDecryptionResult({&part1, &part2});
@@ -382,18 +391,17 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey256CekTestVector)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
 
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeDecryptedResult({ &decryptResult, &decryptFinalizeResult });
     ASSERT_EQ(cek_raw.GetLength(), completeDecryptedResult.GetLength());
     //do this as a string to enhance test output readability.
@@ -415,14 +423,14 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestIntegrityCheckFailed)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     //alter the cipher text integrity check (any of the first 8 bytes) and make sure the decryption fails.
     expected_cipher_text_raw[1] = expected_cipher_text_raw[1] + expected_cipher_text_raw[2];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
@@ -448,14 +456,14 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKeyTestBadPayload)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     //alter data after the integrity register and make sure the decryption fails.
     expected_cipher_text_raw[14] = expected_cipher_text_raw[12] + expected_cipher_text_raw[13];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
@@ -481,18 +489,18 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekTestVector)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
 
-    ASSERT_TRUE(*cipher);
+    ASSERT_FALSE(*cipher);
     CryptoBuffer completeDecryptedResult({ &decryptResult, &decryptFinalizeResult });
     ASSERT_EQ(cek_raw.GetLength(), completeDecryptedResult.GetLength());
     //do this as a string to enhance test output readability.
@@ -514,14 +522,14 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekIntegrityCheckFailedTestVector)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     expected_cipher_text_raw[1] = expected_cipher_text_raw[1] + expected_cipher_text_raw[2];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
@@ -546,14 +554,14 @@ TEST(AES_KeyWrap_Test, RFC3394_256BitKey128BitCekPayloadCheckFailedTestVector)
     auto encryptResult = cipher->EncryptBuffer(cek_raw);
     auto encryptFinalizeResult = cipher->FinalizeEncryption();
 
-
-    ASSERT_TRUE(*cipher);
     CryptoBuffer completeEncryptedResult({ &encryptResult, &encryptFinalizeResult });
     ASSERT_EQ(expected_cipher_text_raw.GetLength(), completeEncryptedResult.GetLength());
     //do this as a string to enhance test output readability.
     ASSERT_STREQ(expected_cipher_text.c_str(), StringUtils::ToUpper(HashingUtils::HexEncode(completeEncryptedResult).c_str()).c_str());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     expected_cipher_text_raw[14] = expected_cipher_text_raw[13] + expected_cipher_text_raw[14];
     auto decryptResult = cipher->DecryptBuffer(expected_cipher_text_raw);
     auto decryptFinalizeResult = cipher->FinalizeDecryption();
@@ -575,7 +583,7 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    ASSERT_TRUE(*cipher);
+    ASSERT_FALSE(*cipher);
 
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
     //the test vectors don't include padding, we need to strip it out of the encrypted text
@@ -586,10 +594,12 @@ static void TestCBCSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_EQ(expected, encryptionMinusPadding);
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
 
-    ASSERT_TRUE(*cipher);
+    ASSERT_FALSE(*cipher);
     CryptoBuffer fullDecryptResult({&decryptResult, &finalDecryptBuffer});
 
     CryptoBuffer plainText(data.GetLength());
@@ -628,15 +638,15 @@ static void TestCTRSingleBlockBuffers(const Aws::String& iv_raw, const Aws::Stri
     ASSERT_NE(cipher, nullptr);
     auto encryptResult = cipher->EncryptBuffer(data);
     auto finalEncryptedBuffer = cipher->FinalizeEncryption();
-    ASSERT_TRUE(*cipher);
 
     CryptoBuffer encryptedResult({&encryptResult, &finalEncryptedBuffer});
     ASSERT_EQ(expected, encryptedResult);
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
-    ASSERT_TRUE(*cipher);
 
     CryptoBuffer totalDecryptedData({&decryptResult, &finalDecryptBuffer});
     CryptoBuffer plainText(data.GetLength());
@@ -665,13 +675,13 @@ static void TestGCMBuffers(const Aws::String& iv_raw, const Aws::String& key_raw
 
     //tag should be valid now
     ASSERT_EQ(tag, cipher->GetTag());
-    ASSERT_TRUE(*cipher);
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
+
     auto decryptResult = cipher->DecryptBuffer(encryptedResult);
     ASSERT_TRUE(*cipher);
     auto finalDecryptBuffer = cipher->FinalizeDecryption();
-    ASSERT_TRUE(*cipher);
 
     CryptoBuffer completeDecryptedMessage({&decryptResult, &finalDecryptBuffer});
     CryptoBuffer plainText(data.GetLength());
@@ -737,7 +747,6 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     encryptedStreams.push_back(buffer);
     auto encryptedStreamsCpy = encryptedStreams;
     CryptoBuffer encryptedResult(std::move(encryptedStreamsCpy));
-    ASSERT_TRUE(*cipher);
 
     for(ByteBuffer* toDelete : encryptedStreams)
     {
@@ -747,6 +756,7 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
     ASSERT_EQ(tag, cipher->GetTag());
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
 
     auto slicesToDecrypt = encryptedResult.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
@@ -766,7 +776,6 @@ static void TestGCMMultipleBuffers(const Aws::String& iv_raw, const Aws::String&
         decryptedStreams.push_back(buffer);
     }
 
-    ASSERT_TRUE(*cipher);
     auto buffersCpy = decryptedStreams;
     auto decryptResult = CryptoBuffer(std::move(buffersCpy));
 
@@ -807,7 +816,6 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     *buffer = cipher->FinalizeEncryption();
     encryptedStreams.push_back(buffer);
     CryptoBuffer encryptedResultWithPadding(std::move(encryptedStreams));
-    ASSERT_TRUE(*cipher);
     size_t blockSize = 16;
     ASSERT_EQ(0u, encryptedResultWithPadding.GetLength() % blockSize);
     size_t trimLength = encryptedResultWithPadding.GetLength() - blockSize;
@@ -820,6 +828,7 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     }
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
 
     auto slicesToDecrypt = encryptedResultWithPadding.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
@@ -839,7 +848,6 @@ static void TestCBCMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
         decryptedStreams.push_back(buffer);
     }
 
-    ASSERT_TRUE(*cipher);
     auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
 
     for (ByteBuffer* toDelete : decryptedStreams)
@@ -879,7 +887,6 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     *buffer = cipher->FinalizeEncryption();
     encryptedStreams.push_back(buffer);
     CryptoBuffer encryptedResult(std::move(encryptedStreams));
-    ASSERT_TRUE(*cipher);
     ASSERT_EQ(expected, encryptedResult);
 
     for (ByteBuffer* toDelete : encryptedStreams)
@@ -888,6 +895,7 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
     }
 
     cipher->Reset();
+    ASSERT_TRUE(*cipher);
 
     auto slicesToDecrypt = encryptedResult.Slice(24);
     Aws::Vector<ByteBuffer*> decryptedStreams;
@@ -907,7 +915,6 @@ static void TestCTRMultipleBlockBuffers(const Aws::String& iv_raw, const Aws::St
         decryptedStreams.push_back(buffer);
     }
 
-    ASSERT_TRUE(*cipher);
     auto decryptResult = CryptoBuffer(std::move(decryptedStreams));
 
     for (ByteBuffer* toDelete : decryptedStreams)

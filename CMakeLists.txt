@@ -77,6 +77,14 @@ if (LEGACY_BUILD)
         add_definitions(-DDISABLE_IMDSV1)
     endif ()
 
+    if (USE_CRT_HTTP_CLIENT)
+        set(ANDROID_BUILD_CURL OFF)
+        set(ANDROID_BUILD_OPENSSL OFF)
+        set(ANDROID_BUILD_ZLIB OFF)
+        set(FORCE_CURL OFF)
+        set(ENABLE_ZLIB_REQUEST_COMPRESSION OFF)
+    endif()
+
     #From https://stackoverflow.com/questions/18968979/how-to-get-colorized-output-with-cmake
     if (NOT WIN32)
         string(ASCII 27 Esc)
@@ -160,7 +168,7 @@ if (LEGACY_BUILD)
     set(PYTHON3_CMD ${PYTHON_EXECUTABLE})
 
     # ENABLE_ZLIB_REQUEST_COMPRESSION should be ON by default if ZLIB is available
-    if(ENABLE_ZLIB_REQUEST_COMPRESSION)
+    if(ENABLE_ZLIB_REQUEST_COMPRESSION AND NOT USE_CRT_HTTP_CLIENT)
         find_package(ZLIB QUIET)
         if ( NOT ZLIB_FOUND)
             set(ENABLE_ZLIB_REQUEST_COMPRESSION
@@ -232,10 +240,25 @@ if (LEGACY_BUILD)
             set(BUILD_SHARED_LIBS ${BUILD_SHARED_LIBS_PREV})
         endif ()
     else ()
+        # This is required in order to append /lib/cmake to each element in CMAKE_PREFIX_PATH
+        set(AWS_MODULE_DIR "/${CMAKE_INSTALL_LIBDIR}/cmake")
+        string(REPLACE ";" "${AWS_MODULE_DIR};" AWS_MODULE_PATH "${CMAKE_PREFIX_PATH}${AWS_MODULE_DIR}")
+        # Append that generated list to the module search path
+        list(APPEND CMAKE_MODULE_PATH ${AWS_MODULE_PATH})
         include(AwsFindPackage)
         set(IN_SOURCE_BUILD OFF)
     endif ()
-    set(AWS_COMMON_RUNTIME_LIBS "aws-crt-cpp;aws-c-auth;aws-c-cal;aws-c-common;aws-c-compression;aws-c-event-stream;aws-c-http;aws-c-io;aws-c-mqtt;aws-c-s3;aws-checksums;aws-c-sdkutils")
+    aws_use_package(aws-crt-cpp)
+    aws_use_package(aws-c-http)
+    aws_use_package(aws-c-mqtt)
+    aws_use_package(aws-c-cal)
+    aws_use_package(aws-c-auth)
+    aws_use_package(aws-c-common)
+    aws_use_package(aws-c-io)
+    aws_use_package(aws-checksums)
+    aws_use_package(aws-c-event-stream)
+    aws_use_package(aws-c-s3)
+    set(AWS_COMMON_RUNTIME_LIBS ${DEP_AWS_LIBS})
 
     include(compiler_settings)
     # Instead of calling functions/macros inside included cmake scripts, we should call them in our main CMakeList.txt
