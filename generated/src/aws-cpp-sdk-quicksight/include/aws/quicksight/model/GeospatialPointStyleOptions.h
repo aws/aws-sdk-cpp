@@ -7,6 +7,7 @@
 #include <aws/quicksight/QuickSight_EXPORTS.h>
 #include <aws/quicksight/model/GeospatialSelectedPointStyle.h>
 #include <aws/quicksight/model/ClusterMarkerConfiguration.h>
+#include <aws/quicksight/model/GeospatialHeatmapConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -99,6 +100,37 @@ namespace Model
      */
     inline GeospatialPointStyleOptions& WithClusterMarkerConfiguration(ClusterMarkerConfiguration&& value) { SetClusterMarkerConfiguration(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline const GeospatialHeatmapConfiguration& GetHeatmapConfiguration() const{ return m_heatmapConfiguration; }
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline bool HeatmapConfigurationHasBeenSet() const { return m_heatmapConfigurationHasBeenSet; }
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline void SetHeatmapConfiguration(const GeospatialHeatmapConfiguration& value) { m_heatmapConfigurationHasBeenSet = true; m_heatmapConfiguration = value; }
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline void SetHeatmapConfiguration(GeospatialHeatmapConfiguration&& value) { m_heatmapConfigurationHasBeenSet = true; m_heatmapConfiguration = std::move(value); }
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline GeospatialPointStyleOptions& WithHeatmapConfiguration(const GeospatialHeatmapConfiguration& value) { SetHeatmapConfiguration(value); return *this;}
+
+    /**
+     * <p>The heatmap configuration of the geospatial point style.</p>
+     */
+    inline GeospatialPointStyleOptions& WithHeatmapConfiguration(GeospatialHeatmapConfiguration&& value) { SetHeatmapConfiguration(std::move(value)); return *this;}
+
   private:
 
     GeospatialSelectedPointStyle m_selectedPointStyle;
@@ -106,6 +138,9 @@ namespace Model
 
     ClusterMarkerConfiguration m_clusterMarkerConfiguration;
     bool m_clusterMarkerConfigurationHasBeenSet = false;
+
+    GeospatialHeatmapConfiguration m_heatmapConfiguration;
+    bool m_heatmapConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

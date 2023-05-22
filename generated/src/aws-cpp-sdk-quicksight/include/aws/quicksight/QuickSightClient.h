@@ -1551,6 +1551,64 @@ namespace QuickSight
         }
 
         /**
+         * <p>Describes an existing export job.</p> <p>Poll job descriptions after a job
+         * starts to know the status of the job. When a job succeeds, a URL is provided to
+         * download the exported assets' data from. Download URLs are valid for five
+         * minutes after they are generated. You can call the
+         * <code>DescribeAssetBundleExportJob</code> API for a new download URL as
+         * needed.</p> <p>Job descriptions are available for 14 days after the job
+         * starts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAssetBundleExportJobOutcome DescribeAssetBundleExportJob(const Model::DescribeAssetBundleExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAssetBundleExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAssetBundleExportJobRequestT = Model::DescribeAssetBundleExportJobRequest>
+        Model::DescribeAssetBundleExportJobOutcomeCallable DescribeAssetBundleExportJobCallable(const DescribeAssetBundleExportJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeAssetBundleExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAssetBundleExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAssetBundleExportJobRequestT = Model::DescribeAssetBundleExportJobRequest>
+        void DescribeAssetBundleExportJobAsync(const DescribeAssetBundleExportJobRequestT& request, const DescribeAssetBundleExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeAssetBundleExportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Describes an existing import job.</p> <p>Poll job descriptions after starting
+         * a job to know when it has succeeded or failed. Job descriptions are available
+         * for 14 days after job starts.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeAssetBundleImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeAssetBundleImportJobOutcome DescribeAssetBundleImportJob(const Model::DescribeAssetBundleImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for DescribeAssetBundleImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DescribeAssetBundleImportJobRequestT = Model::DescribeAssetBundleImportJobRequest>
+        Model::DescribeAssetBundleImportJobOutcomeCallable DescribeAssetBundleImportJobCallable(const DescribeAssetBundleImportJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::DescribeAssetBundleImportJob, request);
+        }
+
+        /**
+         * An Async wrapper for DescribeAssetBundleImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DescribeAssetBundleImportJobRequestT = Model::DescribeAssetBundleImportJobRequest>
+        void DescribeAssetBundleImportJobAsync(const DescribeAssetBundleImportJobRequestT& request, const DescribeAssetBundleImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::DescribeAssetBundleImportJob, request, handler, context);
+        }
+
+        /**
          * <p>Provides a summary for a dashboard.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/DescribeDashboard">AWS
          * API Reference</a></p>
@@ -2552,6 +2610,64 @@ namespace QuickSight
         }
 
         /**
+         * <p>Lists all asset bundle export jobs that have been taken place in the last 14
+         * days. Jobs created more than 14 days ago are deleted forever and are not
+         * returned. If you are using the same job ID for multiple jobs,
+         * <code>ListAssetBundleExportJobs</code> only returns the most recent job that
+         * uses the repeated job ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleExportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetBundleExportJobsOutcome ListAssetBundleExportJobs(const Model::ListAssetBundleExportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetBundleExportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssetBundleExportJobsRequestT = Model::ListAssetBundleExportJobsRequest>
+        Model::ListAssetBundleExportJobsOutcomeCallable ListAssetBundleExportJobsCallable(const ListAssetBundleExportJobsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListAssetBundleExportJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssetBundleExportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssetBundleExportJobsRequestT = Model::ListAssetBundleExportJobsRequest>
+        void ListAssetBundleExportJobsAsync(const ListAssetBundleExportJobsRequestT& request, const ListAssetBundleExportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListAssetBundleExportJobs, request, handler, context);
+        }
+
+        /**
+         * <p>Lists all asset bundle import jobs that have taken place in the last 14 days.
+         * Jobs created more than 14 days ago are deleted forever and are not returned. If
+         * you are using the same job ID for multiple jobs,
+         * <code>ListAssetBundleImportJobs</code> only returns the most recent job that
+         * uses the repeated job ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListAssetBundleImportJobs">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListAssetBundleImportJobsOutcome ListAssetBundleImportJobs(const Model::ListAssetBundleImportJobsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListAssetBundleImportJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListAssetBundleImportJobsRequestT = Model::ListAssetBundleImportJobsRequest>
+        Model::ListAssetBundleImportJobsOutcomeCallable ListAssetBundleImportJobsCallable(const ListAssetBundleImportJobsRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::ListAssetBundleImportJobs, request);
+        }
+
+        /**
+         * An Async wrapper for ListAssetBundleImportJobs that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListAssetBundleImportJobsRequestT = Model::ListAssetBundleImportJobsRequest>
+        void ListAssetBundleImportJobsAsync(const ListAssetBundleImportJobsRequestT& request, const ListAssetBundleImportJobsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::ListAssetBundleImportJobs, request, handler, context);
+        }
+
+        /**
          * <p>Lists all the versions of the dashboards in the Amazon QuickSight
          * subscription.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/ListDashboardVersions">AWS
@@ -3439,6 +3555,74 @@ namespace QuickSight
         void SearchGroupsAsync(const SearchGroupsRequestT& request, const SearchGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&QuickSightClient::SearchGroups, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an Asset Bundle export job.</p> <p>An Asset Bundle export job exports
+         * specified Amazon QuickSight assets. You can also choose to export any asset
+         * dependencies in the same job. Export jobs run asynchronously and can be polled
+         * with a <code>DescribeAssetBundleExportJob</code> API call. When a job is
+         * successfully completed, a download URL that contains the exported assets is
+         * returned. The URL is valid for 5 minutes and can be refreshed with a
+         * <code>DescribeAssetBundleExportJob</code> API call. Each Amazon QuickSight
+         * account can run up to 10 export jobs concurrently.</p> <p>The API caller must
+         * have the necessary permissions in their IAM role to access each resource before
+         * the resources can be exported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleExportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAssetBundleExportJobOutcome StartAssetBundleExportJob(const Model::StartAssetBundleExportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAssetBundleExportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAssetBundleExportJobRequestT = Model::StartAssetBundleExportJobRequest>
+        Model::StartAssetBundleExportJobOutcomeCallable StartAssetBundleExportJobCallable(const StartAssetBundleExportJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::StartAssetBundleExportJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartAssetBundleExportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAssetBundleExportJobRequestT = Model::StartAssetBundleExportJobRequest>
+        void StartAssetBundleExportJobAsync(const StartAssetBundleExportJobRequestT& request, const StartAssetBundleExportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::StartAssetBundleExportJob, request, handler, context);
+        }
+
+        /**
+         * <p>Starts an Asset Bundle import job.</p> <p>An Asset Bundle import job imports
+         * specified Amazon QuickSight assets into an Amazon QuickSight account. You can
+         * also choose to import a naming prefix and specified configuration overrides. The
+         * assets that are contained in the bundle file that you provide are used to create
+         * or update a new or existing asset in your Amazon QuickSight account. Each Amazon
+         * QuickSight account can run up to 10 import jobs concurrently.</p> <p>The API
+         * caller must have the necessary <code>"create"</code>, <code>"describe"</code>,
+         * and <code>"update"</code> permissions in their IAM role to access each resource
+         * type that is contained in the bundle file before the resources can be
+         * imported.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/StartAssetBundleImportJob">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartAssetBundleImportJobOutcome StartAssetBundleImportJob(const Model::StartAssetBundleImportJobRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartAssetBundleImportJob that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartAssetBundleImportJobRequestT = Model::StartAssetBundleImportJobRequest>
+        Model::StartAssetBundleImportJobOutcomeCallable StartAssetBundleImportJobCallable(const StartAssetBundleImportJobRequestT& request) const
+        {
+            return SubmitCallable(&QuickSightClient::StartAssetBundleImportJob, request);
+        }
+
+        /**
+         * An Async wrapper for StartAssetBundleImportJob that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartAssetBundleImportJobRequestT = Model::StartAssetBundleImportJobRequest>
+        void StartAssetBundleImportJobAsync(const StartAssetBundleImportJobRequestT& request, const StartAssetBundleImportJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&QuickSightClient::StartAssetBundleImportJob, request, handler, context);
         }
 
         /**

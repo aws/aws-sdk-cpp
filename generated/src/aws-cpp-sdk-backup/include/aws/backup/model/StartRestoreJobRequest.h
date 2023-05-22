@@ -760,6 +760,35 @@ namespace Model
      */
     inline StartRestoreJobRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline bool GetCopySourceTagsToRestoredResource() const{ return m_copySourceTagsToRestoredResource; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline bool CopySourceTagsToRestoredResourceHasBeenSet() const { return m_copySourceTagsToRestoredResourceHasBeenSet; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline void SetCopySourceTagsToRestoredResource(bool value) { m_copySourceTagsToRestoredResourceHasBeenSet = true; m_copySourceTagsToRestoredResource = value; }
+
+    /**
+     * <p>This is an optional parameter. If this equals <code>True</code>, tags
+     * included in the backup will be copied to the restored resource.</p> <p>This can
+     * only be applied to backups created through Backup.</p>
+     */
+    inline StartRestoreJobRequest& WithCopySourceTagsToRestoredResource(bool value) { SetCopySourceTagsToRestoredResource(value); return *this;}
+
   private:
 
     Aws::String m_recoveryPointArn;
@@ -776,6 +805,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;
+
+    bool m_copySourceTagsToRestoredResource;
+    bool m_copySourceTagsToRestoredResourceHasBeenSet = false;
   };
 
 } // namespace Model
