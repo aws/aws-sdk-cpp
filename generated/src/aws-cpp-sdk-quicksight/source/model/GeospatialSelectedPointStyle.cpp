@@ -22,6 +22,7 @@ namespace Aws
 
         static const int POINT_HASH = HashingUtils::HashString("POINT");
         static const int CLUSTER_HASH = HashingUtils::HashString("CLUSTER");
+        static const int HEATMAP_HASH = HashingUtils::HashString("HEATMAP");
 
 
         GeospatialSelectedPointStyle GetGeospatialSelectedPointStyleForName(const Aws::String& name)
@@ -34,6 +35,10 @@ namespace Aws
           else if (hashCode == CLUSTER_HASH)
           {
             return GeospatialSelectedPointStyle::CLUSTER;
+          }
+          else if (hashCode == HEATMAP_HASH)
+          {
+            return GeospatialSelectedPointStyle::HEATMAP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -53,6 +58,8 @@ namespace Aws
             return "POINT";
           case GeospatialSelectedPointStyle::CLUSTER:
             return "CLUSTER";
+          case GeospatialSelectedPointStyle::HEATMAP:
+            return "HEATMAP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

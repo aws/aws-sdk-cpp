@@ -444,7 +444,10 @@ namespace Model
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
      * recovery point being created. The recovery points with STOPPED status do not
-     * need to be deleted.</p>
+     * need to be deleted.</p> <p>For SAP HANA on Amazon EC2 <code>STOPPED</code>
+     * status occurs due to user action, application misconfiguration, or backup
+     * failure. To ensure that future continuous backups succeed, refer to the recovery
+     * point status and check SAP HANA for details.</p>
      */
     inline const RecoveryPointStatus& GetStatus() const{ return m_status; }
 
@@ -470,7 +473,10 @@ namespace Model
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
      * recovery point being created. The recovery points with STOPPED status do not
-     * need to be deleted.</p>
+     * need to be deleted.</p> <p>For SAP HANA on Amazon EC2 <code>STOPPED</code>
+     * status occurs due to user action, application misconfiguration, or backup
+     * failure. To ensure that future continuous backups succeed, refer to the recovery
+     * point status and check SAP HANA for details.</p>
      */
     inline void SetStatus(const RecoveryPointStatus& value) { m_status = value; }
 
@@ -496,7 +502,10 @@ namespace Model
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
      * recovery point being created. The recovery points with STOPPED status do not
-     * need to be deleted.</p>
+     * need to be deleted.</p> <p>For SAP HANA on Amazon EC2 <code>STOPPED</code>
+     * status occurs due to user action, application misconfiguration, or backup
+     * failure. To ensure that future continuous backups succeed, refer to the recovery
+     * point status and check SAP HANA for details.</p>
      */
     inline void SetStatus(RecoveryPointStatus&& value) { m_status = std::move(value); }
 
@@ -522,7 +531,10 @@ namespace Model
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
      * recovery point being created. The recovery points with STOPPED status do not
-     * need to be deleted.</p>
+     * need to be deleted.</p> <p>For SAP HANA on Amazon EC2 <code>STOPPED</code>
+     * status occurs due to user action, application misconfiguration, or backup
+     * failure. To ensure that future continuous backups succeed, refer to the recovery
+     * point status and check SAP HANA for details.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(const RecoveryPointStatus& value) { SetStatus(value); return *this;}
 
@@ -548,50 +560,46 @@ namespace Model
      * and that versioning is enabled on the S3 bucket. Once these conditions are met,
      * the next instance of a backup rule running will result in a new continuous
      * recovery point being created. The recovery points with STOPPED status do not
-     * need to be deleted.</p>
+     * need to be deleted.</p> <p>For SAP HANA on Amazon EC2 <code>STOPPED</code>
+     * status occurs due to user action, application misconfiguration, or backup
+     * failure. To ensure that future continuous backups succeed, refer to the recovery
+     * point status and check SAP HANA for details.</p>
      */
     inline DescribeRecoveryPointResult& WithStatus(RecoveryPointStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline void SetStatusMessage(const Aws::String& value) { m_statusMessage = value; }
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline void SetStatusMessage(Aws::String&& value) { m_statusMessage = std::move(value); }
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline void SetStatusMessage(const char* value) { m_statusMessage.assign(value); }
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline DescribeRecoveryPointResult& WithStatusMessage(const Aws::String& value) { SetStatusMessage(value); return *this;}
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline DescribeRecoveryPointResult& WithStatusMessage(Aws::String&& value) { SetStatusMessage(std::move(value)); return *this;}
 
     /**
-     * <p>A status message explaining the reason for the recovery point deletion
-     * failure.</p>
+     * <p>A status message explaining the status of the recovery point.</p>
      */
     inline DescribeRecoveryPointResult& WithStatusMessage(const char* value) { SetStatusMessage(value); return *this;}
 

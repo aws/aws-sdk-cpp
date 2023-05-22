@@ -17,7 +17,9 @@ StartRestoreJobRequest::StartRestoreJobRequest() :
     m_metadataHasBeenSet(false),
     m_iamRoleArnHasBeenSet(false),
     m_idempotencyTokenHasBeenSet(false),
-    m_resourceTypeHasBeenSet(false)
+    m_resourceTypeHasBeenSet(false),
+    m_copySourceTagsToRestoredResource(false),
+    m_copySourceTagsToRestoredResourceHasBeenSet(false)
 {
 }
 
@@ -57,6 +59,12 @@ Aws::String StartRestoreJobRequest::SerializePayload() const
   if(m_resourceTypeHasBeenSet)
   {
    payload.WithString("ResourceType", m_resourceType);
+
+  }
+
+  if(m_copySourceTagsToRestoredResourceHasBeenSet)
+  {
+   payload.WithBool("CopySourceTagsToRestoredResource", m_copySourceTagsToRestoredResource);
 
   }
 

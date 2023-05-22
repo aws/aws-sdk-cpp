@@ -158,93 +158,197 @@ namespace Model
 
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A string-to-string map of key-value pairs that defines the tags to associate
-     * with the segment. Each tag consists of a required tag key and an associated tag
-     * value.</p>
+     * <p>As of <b>22-05-2023</b> tags has been deprecated for update operations.
+     * After this date any value in tags is not processed and an error code is not
+     * returned. To manage tags we recommend using either <a
+     * href="https://docs.aws.amazon.com/pinpoint/latest/apireference/tags-resource-arn.html">Tags</a>
+     * in the <i>API Reference for Amazon Pinpoint</i>, <a
+     * href="https://docs.aws.amazon.com/cli/latest/reference/resourcegroupstaggingapi/index.html">resourcegroupstaggingapi</a>
+     * commands in the <i>AWS Command Line Interface Documentation</i> or <a
+     * href="https://sdk.amazonaws.com/java/api/latest/software/amazon/awssdk/services/resourcegroupstaggingapi/package-summary.html">resourcegroupstaggingapi</a>
+     * in the <i>AWS SDK</i>.</p> <p>(Deprecated) A string-to-string map of
+     * key-value pairs that defines the tags to associate with the segment. Each tag
+     * consists of a required tag key and an associated tag value.</p>
      */
     inline WriteSegmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
