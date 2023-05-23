@@ -26,8 +26,8 @@ namespace Model
   /**
    * <p>Amazon Translate does not support translation from the language of the source
    * text into the requested target language. For more information, see <a
-   * href="https://docs.aws.amazon.com/translate/latest/dg/how-to-error-msg.html">Error
-   * messages</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+   * languages</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/UnsupportedLanguagePairException">AWS
    * API Reference</a></p>
    */

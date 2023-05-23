@@ -480,7 +480,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
@@ -496,7 +497,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
@@ -512,7 +514,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
@@ -528,7 +531,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
@@ -544,7 +548,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
@@ -560,7 +565,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
@@ -576,7 +582,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
@@ -592,7 +599,8 @@ namespace Model
      * mode that the algorithm supports, SageMaker either copies input data files from
      * an S3 bucket to a local directory in the Docker container, or makes it available
      * as input streams. For example, if you specify an EFS location, input data files
-     * are available as input streams. They do not need to be downloaded.</p>
+     * are available as input streams. They do not need to be downloaded.</p> <p>Your
+     * input must be in the same Amazon Web Services region as your training job.</p>
      */
     inline CreateTrainingJobRequest& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 

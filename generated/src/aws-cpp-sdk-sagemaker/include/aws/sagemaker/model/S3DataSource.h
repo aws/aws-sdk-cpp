@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the S3 data source.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the S3 data source.</p> <p>Your input bucket must be in the same
+   * Amazon Web Services region as your training job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/S3DataSource">AWS
    * API Reference</a></p>
    */
@@ -144,7 +145,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
 
@@ -173,7 +175,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
@@ -202,7 +205,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline void SetS3Uri(const Aws::String& value) { m_s3UriHasBeenSet = true; m_s3Uri = value; }
 
@@ -231,7 +235,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline void SetS3Uri(Aws::String&& value) { m_s3UriHasBeenSet = true; m_s3Uri = std::move(value); }
 
@@ -260,7 +265,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline void SetS3Uri(const char* value) { m_s3UriHasBeenSet = true; m_s3Uri.assign(value); }
 
@@ -289,7 +295,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline S3DataSource& WithS3Uri(const Aws::String& value) { SetS3Uri(value); return *this;}
 
@@ -318,7 +325,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline S3DataSource& WithS3Uri(Aws::String&& value) { SetS3Uri(std::move(value)); return *this;}
 
@@ -347,7 +355,8 @@ namespace Model
      * <p>The complete set of <code>S3Uri</code> in this manifest is the input data for
      * the channel for this data source. The object that each <code>S3Uri</code> points
      * to must be readable by the IAM role that SageMaker uses to perform tasks on your
-     * behalf. </p> </li> </ul>
+     * behalf. </p> </li> </ul> <p>Your input bucket must be located in same Amazon Web
+     * Services region as your training job.</p>
      */
     inline S3DataSource& WithS3Uri(const char* value) { SetS3Uri(value); return *this;}
 

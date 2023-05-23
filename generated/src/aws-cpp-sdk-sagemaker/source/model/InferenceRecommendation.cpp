@@ -22,7 +22,9 @@ InferenceRecommendation::InferenceRecommendation() :
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
+    m_recommendationIdHasBeenSet(false),
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
 }
 
@@ -30,7 +32,9 @@ InferenceRecommendation::InferenceRecommendation(JsonView jsonValue) :
     m_metricsHasBeenSet(false),
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
-    m_recommendationIdHasBeenSet(false)
+    m_recommendationIdHasBeenSet(false),
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -65,6 +69,20 @@ InferenceRecommendation& InferenceRecommendation::operator =(JsonView jsonValue)
     m_recommendationIdHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InvocationEndTime"))
+  {
+    m_invocationEndTime = jsonValue.GetDouble("InvocationEndTime");
+
+    m_invocationEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvocationStartTime"))
+  {
+    m_invocationStartTime = jsonValue.GetDouble("InvocationStartTime");
+
+    m_invocationStartTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -94,6 +112,16 @@ JsonValue InferenceRecommendation::Jsonize() const
   {
    payload.WithString("RecommendationId", m_recommendationId);
 
+  }
+
+  if(m_invocationEndTimeHasBeenSet)
+  {
+   payload.WithDouble("InvocationEndTime", m_invocationEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_invocationStartTimeHasBeenSet)
+  {
+   payload.WithDouble("InvocationStartTime", m_invocationStartTime.SecondsWithMSPrecision());
   }
 
   return payload;

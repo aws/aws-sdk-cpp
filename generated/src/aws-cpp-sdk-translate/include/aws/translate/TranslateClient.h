@@ -498,6 +498,41 @@ namespace Translate
         }
 
         /**
+         * <p>Translates the input document from the source language to the target
+         * language. This synchronous operation supports plain text or HTML for the input
+         * document. <code>TranslateDocument</code> supports translations from English to
+         * any supported language, and from any supported language to English. Therefore,
+         * specify either the source language code or the target language code as “en”
+         * (English). </p> <p> <code>TranslateDocument</code> does not support language
+         * auto-detection. </p> <p> If you set the <code>Formality</code> parameter, the
+         * request will fail if the target language does not support formality. For a list
+         * of target languages that support formality, see <a
+         * href="https://docs.aws.amazon.com/translate/latest/dg/customizing-translations-formality.html">Setting
+         * formality</a>. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/translate-2017-07-01/TranslateDocument">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TranslateDocumentOutcome TranslateDocument(const Model::TranslateDocumentRequest& request) const;
+
+        /**
+         * A Callable wrapper for TranslateDocument that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename TranslateDocumentRequestT = Model::TranslateDocumentRequest>
+        Model::TranslateDocumentOutcomeCallable TranslateDocumentCallable(const TranslateDocumentRequestT& request) const
+        {
+            return SubmitCallable(&TranslateClient::TranslateDocument, request);
+        }
+
+        /**
+         * An Async wrapper for TranslateDocument that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename TranslateDocumentRequestT = Model::TranslateDocumentRequest>
+        void TranslateDocumentAsync(const TranslateDocumentRequestT& request, const TranslateDocumentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&TranslateClient::TranslateDocument, request, handler, context);
+        }
+
+        /**
          * <p>Translates input text from the source language to the target language. For a
          * list of available languages and language codes, see <a
          * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported

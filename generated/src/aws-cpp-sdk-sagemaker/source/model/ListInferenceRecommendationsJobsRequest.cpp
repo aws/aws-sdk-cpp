@@ -26,7 +26,9 @@ ListInferenceRecommendationsJobsRequest::ListInferenceRecommendationsJobsRequest
     m_sortOrderHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_modelNameEqualsHasBeenSet(false),
+    m_modelPackageVersionArnEqualsHasBeenSet(false)
 {
 }
 
@@ -84,6 +86,18 @@ Aws::String ListInferenceRecommendationsJobsRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_modelNameEqualsHasBeenSet)
+  {
+   payload.WithString("ModelNameEquals", m_modelNameEquals);
+
+  }
+
+  if(m_modelPackageVersionArnEqualsHasBeenSet)
+  {
+   payload.WithString("ModelPackageVersionArnEquals", m_modelPackageVersionArnEquals);
 
   }
 

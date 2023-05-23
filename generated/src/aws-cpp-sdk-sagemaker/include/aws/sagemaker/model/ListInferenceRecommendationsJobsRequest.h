@@ -419,6 +419,96 @@ namespace Model
      */
     inline ListInferenceRecommendationsJobsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline const Aws::String& GetModelNameEquals() const{ return m_modelNameEquals; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline bool ModelNameEqualsHasBeenSet() const { return m_modelNameEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline void SetModelNameEquals(const Aws::String& value) { m_modelNameEqualsHasBeenSet = true; m_modelNameEquals = value; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline void SetModelNameEquals(Aws::String&& value) { m_modelNameEqualsHasBeenSet = true; m_modelNameEquals = std::move(value); }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline void SetModelNameEquals(const char* value) { m_modelNameEqualsHasBeenSet = true; m_modelNameEquals.assign(value); }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelNameEquals(const Aws::String& value) { SetModelNameEquals(value); return *this;}
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelNameEquals(Aws::String&& value) { SetModelNameEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only jobs that were created for this model.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelNameEquals(const char* value) { SetModelNameEquals(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArnEquals() const{ return m_modelPackageVersionArnEquals; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline bool ModelPackageVersionArnEqualsHasBeenSet() const { return m_modelPackageVersionArnEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline void SetModelPackageVersionArnEquals(const Aws::String& value) { m_modelPackageVersionArnEqualsHasBeenSet = true; m_modelPackageVersionArnEquals = value; }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline void SetModelPackageVersionArnEquals(Aws::String&& value) { m_modelPackageVersionArnEqualsHasBeenSet = true; m_modelPackageVersionArnEquals = std::move(value); }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline void SetModelPackageVersionArnEquals(const char* value) { m_modelPackageVersionArnEqualsHasBeenSet = true; m_modelPackageVersionArnEquals.assign(value); }
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelPackageVersionArnEquals(const Aws::String& value) { SetModelPackageVersionArnEquals(value); return *this;}
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelPackageVersionArnEquals(Aws::String&& value) { SetModelPackageVersionArnEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only jobs that were created for this versioned model
+     * package.</p>
+     */
+    inline ListInferenceRecommendationsJobsRequest& WithModelPackageVersionArnEquals(const char* value) { SetModelPackageVersionArnEquals(value); return *this;}
+
   private:
 
     Aws::Utils::DateTime m_creationTimeAfter;
@@ -450,6 +540,12 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    Aws::String m_modelNameEquals;
+    bool m_modelNameEqualsHasBeenSet = false;
+
+    Aws::String m_modelPackageVersionArnEquals;
+    bool m_modelPackageVersionArnEqualsHasBeenSet = false;
   };
 
 } // namespace Model
