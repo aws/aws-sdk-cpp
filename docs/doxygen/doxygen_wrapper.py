@@ -153,22 +153,22 @@ class DoxygenWrapper(object):
         def _cleanup_dir_by_extension(child_dir: Path, extension: str):
             files = child_dir.glob(f"**/*.{extension}")
             for file in files:
-                file.unlink(missing_ok=True)
+                os.remove(f"{file.parent}/{file.name}")
 
         cleanup_futures = set()
         p = Path(self.output_dir)
         for child in p.iterdir():
             # tags are no longer needed
-            self.thread_pool.submit(_cleanup_dir_by_extension,
-                                    child_dir=child,
-                                    extension="tag")
+            cleanup_futures.add(self.thread_pool.submit(_cleanup_dir_by_extension,
+                                                        child_dir=child,
+                                                        extension="tag"))
             # .map and .md5 are used by doxygen for _incremental_ docs build with SVG graphs
-            self.thread_pool.submit(_cleanup_dir_by_extension,
-                                    child_dir=child,
-                                    extension="map")
-            self.thread_pool.submit(_cleanup_dir_by_extension,
-                                    child_dir=child,
-                                    extension="md5")
+            cleanup_futures.add(self.thread_pool.submit(_cleanup_dir_by_extension,
+                                                        child_dir=child,
+                                                        extension="map"))
+            cleanup_futures.add(self.thread_pool.submit(_cleanup_dir_by_extension,
+                                                        child_dir=child,
+                                                        extension="md5"))
 
         # Wait for all generation to complete
         for future in cleanup_futures:
