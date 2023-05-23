@@ -1,0 +1,16 @@
+name: Block Merge During Daily Release
+on:
+  pull_request:
+    branches: [ main ]
+  merge_group:
+    branches: [ main ]
+jobs:
+  block:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: yykamei/block-merge-based-on-time@v2.1.37
+        with:
+          timezone: "UTC"
+          after: 18:00
+          before: 20:00
+          base-branches: "main"
