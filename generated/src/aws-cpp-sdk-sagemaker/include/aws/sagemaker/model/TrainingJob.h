@@ -764,49 +764,57 @@ namespace Model
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline const Aws::Vector<Channel>& GetInputDataConfig() const{ return m_inputDataConfig; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline void SetInputDataConfig(Aws::Vector<Channel>&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = std::move(value); }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& WithInputDataConfig(const Aws::Vector<Channel>& value) { SetInputDataConfig(value); return *this;}
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& WithInputDataConfig(Aws::Vector<Channel>&& value) { SetInputDataConfig(std::move(value)); return *this;}
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& AddInputDataConfig(const Channel& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(value); return *this; }
 
     /**
      * <p>An array of <code>Channel</code> objects that describes each data input
-     * channel.</p>
+     * channel.</p> <p>Your input must be in the same Amazon Web Services region as
+     * your training job.</p>
      */
     inline TrainingJob& AddInputDataConfig(Channel&& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig.push_back(std::move(value)); return *this; }
 

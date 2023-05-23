@@ -652,32 +652,32 @@ namespace Model
 
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline const TranslationSettings& GetSettings() const{ return m_settings; }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline void SetSettings(const TranslationSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline void SetSettings(TranslationSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline TextTranslationJobProperties& WithSettings(const TranslationSettings& value) { SetSettings(value); return *this;}
 
     /**
-     * <p>Settings that configure the translation output.</p>
+     * <p>Settings that modify the translation output.</p>
      */
     inline TextTranslationJobProperties& WithSettings(TranslationSettings&& value) { SetSettings(std::move(value)); return *this;}
 

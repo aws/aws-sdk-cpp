@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/EndpointOutputConfiguration.h>
 #include <aws/sagemaker/model/ModelConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -174,6 +175,68 @@ namespace Model
      */
     inline InferenceRecommendation& WithRecommendationId(const char* value) { SetRecommendationId(value); return *this;}
 
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline const Aws::Utils::DateTime& GetInvocationEndTime() const{ return m_invocationEndTime; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline bool InvocationEndTimeHasBeenSet() const { return m_invocationEndTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline void SetInvocationEndTime(const Aws::Utils::DateTime& value) { m_invocationEndTimeHasBeenSet = true; m_invocationEndTime = value; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline void SetInvocationEndTime(Aws::Utils::DateTime&& value) { m_invocationEndTimeHasBeenSet = true; m_invocationEndTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline InferenceRecommendation& WithInvocationEndTime(const Aws::Utils::DateTime& value) { SetInvocationEndTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that shows when the benchmark completed.</p>
+     */
+    inline InferenceRecommendation& WithInvocationEndTime(Aws::Utils::DateTime&& value) { SetInvocationEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline const Aws::Utils::DateTime& GetInvocationStartTime() const{ return m_invocationStartTime; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline bool InvocationStartTimeHasBeenSet() const { return m_invocationStartTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline void SetInvocationStartTime(const Aws::Utils::DateTime& value) { m_invocationStartTimeHasBeenSet = true; m_invocationStartTime = value; }
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline void SetInvocationStartTime(Aws::Utils::DateTime&& value) { m_invocationStartTimeHasBeenSet = true; m_invocationStartTime = std::move(value); }
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline InferenceRecommendation& WithInvocationStartTime(const Aws::Utils::DateTime& value) { SetInvocationStartTime(value); return *this;}
+
+    /**
+     * <p>A timestamp that shows when the benchmark started.</p>
+     */
+    inline InferenceRecommendation& WithInvocationStartTime(Aws::Utils::DateTime&& value) { SetInvocationStartTime(std::move(value)); return *this;}
+
   private:
 
     RecommendationMetrics m_metrics;
@@ -187,6 +250,12 @@ namespace Model
 
     Aws::String m_recommendationId;
     bool m_recommendationIdHasBeenSet = false;
+
+    Aws::Utils::DateTime m_invocationEndTime;
+    bool m_invocationEndTimeHasBeenSet = false;
+
+    Aws::Utils::DateTime m_invocationStartTime;
+    bool m_invocationStartTimeHasBeenSet = false;
   };
 
 } // namespace Model

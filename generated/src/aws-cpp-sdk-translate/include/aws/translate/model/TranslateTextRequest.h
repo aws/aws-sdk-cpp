@@ -86,72 +86,117 @@ namespace Model
 
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTerminologyNames() const{ return m_terminologyNames; }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline bool TerminologyNamesHasBeenSet() const { return m_terminologyNamesHasBeenSet; }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline void SetTerminologyNames(const Aws::Vector<Aws::String>& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = value; }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline void SetTerminologyNames(Aws::Vector<Aws::String>&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames = std::move(value); }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline TranslateTextRequest& WithTerminologyNames(const Aws::Vector<Aws::String>& value) { SetTerminologyNames(value); return *this;}
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline TranslateTextRequest& WithTerminologyNames(Aws::Vector<Aws::String>&& value) { SetTerminologyNames(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline TranslateTextRequest& AddTerminologyNames(const Aws::String& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline TranslateTextRequest& AddTerminologyNames(Aws::String&& value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The name of the terminology list file to be used in the TranslateText
-     * request. You can use 1 terminology list at most in a <code>TranslateText</code>
-     * request. Terminology lists can contain a maximum of 256 terms.</p>
+     * <p>The name of a terminology list file to add to the translation job. This file
+     * provides source terms and the desired translation for each term. A terminology
+     * list can contain a maximum of 256 terms. You can use one custom terminology
+     * resource in your translation request.</p> <p>Use the <a>ListTerminologies</a>
+     * operation to get the available terminology lists.</p> <p>For more information
+     * about custom terminology lists, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/how-custom-terminology.html">Custom
+     * terminology</a>.</p>
      */
     inline TranslateTextRequest& AddTerminologyNames(const char* value) { m_terminologyNamesHasBeenSet = true; m_terminologyNames.push_back(value); return *this; }
 
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -166,8 +211,8 @@ namespace Model
     inline const Aws::String& GetSourceLanguageCode() const{ return m_sourceLanguageCode; }
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -182,8 +227,8 @@ namespace Model
     inline bool SourceLanguageCodeHasBeenSet() const { return m_sourceLanguageCodeHasBeenSet; }
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -198,8 +243,8 @@ namespace Model
     inline void SetSourceLanguageCode(const Aws::String& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = value; }
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -214,8 +259,8 @@ namespace Model
     inline void SetSourceLanguageCode(Aws::String&& value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -230,8 +275,8 @@ namespace Model
     inline void SetSourceLanguageCode(const char* value) { m_sourceLanguageCodeHasBeenSet = true; m_sourceLanguageCode.assign(value); }
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -246,8 +291,8 @@ namespace Model
     inline TranslateTextRequest& WithSourceLanguageCode(const Aws::String& value) { SetSourceLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -262,8 +307,8 @@ namespace Model
     inline TranslateTextRequest& WithSourceLanguageCode(Aws::String&& value) { SetSourceLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code for the language of the source text. The language must be a
-     * language supported by Amazon Translate. For a list of language codes, see <a
+     * <p>The language code for the language of the source text. For a list of language
+     * codes, see <a
      * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
      * languages</a>.</p> <p>To have Amazon Translate determine the source language of
      * your text, you can specify <code>auto</code> in the
@@ -279,50 +324,66 @@ namespace Model
 
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline const Aws::String& GetTargetLanguageCode() const{ return m_targetLanguageCode; }
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline bool TargetLanguageCodeHasBeenSet() const { return m_targetLanguageCodeHasBeenSet; }
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetTargetLanguageCode(const Aws::String& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = value; }
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetTargetLanguageCode(Aws::String&& value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode = std::move(value); }
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline void SetTargetLanguageCode(const char* value) { m_targetLanguageCodeHasBeenSet = true; m_targetLanguageCode.assign(value); }
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(const Aws::String& value) { SetTargetLanguageCode(value); return *this;}
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(Aws::String&& value) { SetTargetLanguageCode(std::move(value)); return *this;}
 
     /**
-     * <p>The language code requested for the language of the target text. The language
-     * must be a language supported by Amazon Translate.</p>
+     * <p>The language code requested for the language of the target text. For a list
+     * of language codes, see <a
+     * href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported
+     * languages</a>.</p>
      */
     inline TranslateTextRequest& WithTargetLanguageCode(const char* value) { SetTargetLanguageCode(value); return *this;}
 

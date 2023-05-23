@@ -44,8 +44,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
 
@@ -53,8 +53,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
 
@@ -62,8 +62,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline void SetModelDataUrl(const Aws::String& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = value; }
 
@@ -71,8 +71,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline void SetModelDataUrl(Aws::String&& value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl = std::move(value); }
 
@@ -80,8 +80,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline void SetModelDataUrl(const char* value) { m_modelDataUrlHasBeenSet = true; m_modelDataUrl.assign(value); }
 
@@ -89,8 +89,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline SourceAlgorithm& WithModelDataUrl(const Aws::String& value) { SetModelDataUrl(value); return *this;}
 
@@ -98,8 +98,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline SourceAlgorithm& WithModelDataUrl(Aws::String&& value) { SetModelDataUrl(std::move(value)); return *this;}
 
@@ -107,8 +107,8 @@ namespace Model
      * <p>The Amazon S3 path where the model artifacts, which result from model
      * training, are stored. This path must point to a single <code>gzip</code>
      * compressed tar archive (<code>.tar.gz</code> suffix).</p>  <p>The model
-     * artifacts must be in an S3 bucket that is in the same region as the
-     * algorithm.</p> 
+     * artifacts must be in an S3 bucket that is in the same Amazon Web Services region
+     * as the algorithm.</p> 
      */
     inline SourceAlgorithm& WithModelDataUrl(const char* value) { SetModelDataUrl(value); return *this;}
 

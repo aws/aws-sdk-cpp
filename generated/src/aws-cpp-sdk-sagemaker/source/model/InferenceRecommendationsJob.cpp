@@ -30,7 +30,10 @@ InferenceRecommendationsJob::InferenceRecommendationsJob() :
     m_completionTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
+    m_samplePayloadUrlHasBeenSet(false),
+    m_modelPackageVersionArnHasBeenSet(false)
 {
 }
 
@@ -46,7 +49,10 @@ InferenceRecommendationsJob::InferenceRecommendationsJob(JsonView jsonValue) :
     m_completionTimeHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_failureReasonHasBeenSet(false)
+    m_failureReasonHasBeenSet(false),
+    m_modelNameHasBeenSet(false),
+    m_samplePayloadUrlHasBeenSet(false),
+    m_modelPackageVersionArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -123,6 +129,27 @@ InferenceRecommendationsJob& InferenceRecommendationsJob::operator =(JsonView js
     m_failureReasonHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelName"))
+  {
+    m_modelName = jsonValue.GetString("ModelName");
+
+    m_modelNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SamplePayloadUrl"))
+  {
+    m_samplePayloadUrl = jsonValue.GetString("SamplePayloadUrl");
+
+    m_samplePayloadUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ModelPackageVersionArn"))
+  {
+    m_modelPackageVersionArn = jsonValue.GetString("ModelPackageVersionArn");
+
+    m_modelPackageVersionArnHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -182,6 +209,24 @@ JsonValue InferenceRecommendationsJob::Jsonize() const
   if(m_failureReasonHasBeenSet)
   {
    payload.WithString("FailureReason", m_failureReason);
+
+  }
+
+  if(m_modelNameHasBeenSet)
+  {
+   payload.WithString("ModelName", m_modelName);
+
+  }
+
+  if(m_samplePayloadUrlHasBeenSet)
+  {
+   payload.WithString("SamplePayloadUrl", m_samplePayloadUrl);
+
+  }
+
+  if(m_modelPackageVersionArnHasBeenSet)
+  {
+   payload.WithString("ModelPackageVersionArn", m_modelPackageVersionArn);
 
   }
 

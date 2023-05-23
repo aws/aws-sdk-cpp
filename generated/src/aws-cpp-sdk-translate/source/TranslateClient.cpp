@@ -36,6 +36,7 @@
 #include <aws/translate/model/StartTextTranslationJobRequest.h>
 #include <aws/translate/model/StopTextTranslationJobRequest.h>
 #include <aws/translate/model/TagResourceRequest.h>
+#include <aws/translate/model/TranslateDocumentRequest.h>
 #include <aws/translate/model/TranslateTextRequest.h>
 #include <aws/translate/model/UntagResourceRequest.h>
 #include <aws/translate/model/UpdateParallelDataRequest.h>
@@ -285,6 +286,14 @@ TagResourceOutcome TranslateClient::TagResource(const TagResourceRequest& reques
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
   return TagResourceOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+TranslateDocumentOutcome TranslateClient::TranslateDocument(const TranslateDocumentRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TranslateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, TranslateDocument, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  return TranslateDocumentOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TranslateTextOutcome TranslateClient::TranslateText(const TranslateTextRequest& request) const

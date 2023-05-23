@@ -408,6 +408,145 @@ namespace Model
      */
     inline InferenceRecommendationsJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline const Aws::String& GetModelName() const{ return m_modelName; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(Aws::String&& value) { m_modelNameHasBeenSet = true; m_modelName = std::move(value); }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline void SetModelName(const char* value) { m_modelNameHasBeenSet = true; m_modelName.assign(value); }
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelName(const Aws::String& value) { SetModelName(value); return *this;}
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelName(Aws::String&& value) { SetModelName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the created model.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelName(const char* value) { SetModelName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline const Aws::String& GetSamplePayloadUrl() const{ return m_samplePayloadUrl; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline bool SamplePayloadUrlHasBeenSet() const { return m_samplePayloadUrlHasBeenSet; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const Aws::String& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = value; }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(Aws::String&& value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl = std::move(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline void SetSamplePayloadUrl(const char* value) { m_samplePayloadUrlHasBeenSet = true; m_samplePayloadUrl.assign(value); }
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline InferenceRecommendationsJob& WithSamplePayloadUrl(const Aws::String& value) { SetSamplePayloadUrl(value); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline InferenceRecommendationsJob& WithSamplePayloadUrl(Aws::String&& value) { SetSamplePayloadUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload
+     * is stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix).</p>
+     */
+    inline InferenceRecommendationsJob& WithSamplePayloadUrl(const char* value) { SetSamplePayloadUrl(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline const Aws::String& GetModelPackageVersionArn() const{ return m_modelPackageVersionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline bool ModelPackageVersionArnHasBeenSet() const { return m_modelPackageVersionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline void SetModelPackageVersionArn(const Aws::String& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline void SetModelPackageVersionArn(Aws::String&& value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline void SetModelPackageVersionArn(const char* value) { m_modelPackageVersionArnHasBeenSet = true; m_modelPackageVersionArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelPackageVersionArn(const Aws::String& value) { SetModelPackageVersionArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelPackageVersionArn(Aws::String&& value) { SetModelPackageVersionArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a versioned model package.</p>
+     */
+    inline InferenceRecommendationsJob& WithModelPackageVersionArn(const char* value) { SetModelPackageVersionArn(value); return *this;}
+
   private:
 
     Aws::String m_jobName;
@@ -439,6 +578,15 @@ namespace Model
 
     Aws::String m_failureReason;
     bool m_failureReasonHasBeenSet = false;
+
+    Aws::String m_modelName;
+    bool m_modelNameHasBeenSet = false;
+
+    Aws::String m_samplePayloadUrl;
+    bool m_samplePayloadUrlHasBeenSet = false;
+
+    Aws::String m_modelPackageVersionArn;
+    bool m_modelPackageVersionArnHasBeenSet = false;
   };
 
 } // namespace Model

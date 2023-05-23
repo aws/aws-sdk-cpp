@@ -23,7 +23,9 @@ RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark() :
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_endpointMetricsHasBeenSet(false)
+    m_endpointMetricsHasBeenSet(false),
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
 }
 
@@ -32,7 +34,9 @@ RecommendationJobInferenceBenchmark::RecommendationJobInferenceBenchmark(JsonVie
     m_endpointConfigurationHasBeenSet(false),
     m_modelConfigurationHasBeenSet(false),
     m_failureReasonHasBeenSet(false),
-    m_endpointMetricsHasBeenSet(false)
+    m_endpointMetricsHasBeenSet(false),
+    m_invocationEndTimeHasBeenSet(false),
+    m_invocationStartTimeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +78,20 @@ RecommendationJobInferenceBenchmark& RecommendationJobInferenceBenchmark::operat
     m_endpointMetricsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("InvocationEndTime"))
+  {
+    m_invocationEndTime = jsonValue.GetDouble("InvocationEndTime");
+
+    m_invocationEndTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InvocationStartTime"))
+  {
+    m_invocationStartTime = jsonValue.GetDouble("InvocationStartTime");
+
+    m_invocationStartTimeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -109,6 +127,16 @@ JsonValue RecommendationJobInferenceBenchmark::Jsonize() const
   {
    payload.WithObject("EndpointMetrics", m_endpointMetrics.Jsonize());
 
+  }
+
+  if(m_invocationEndTimeHasBeenSet)
+  {
+   payload.WithDouble("InvocationEndTime", m_invocationEndTime.SecondsWithMSPrecision());
+  }
+
+  if(m_invocationStartTimeHasBeenSet)
+  {
+   payload.WithDouble("InvocationStartTime", m_invocationStartTime.SecondsWithMSPrecision());
   }
 
   return payload;
