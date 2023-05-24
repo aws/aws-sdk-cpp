@@ -1,7 +1,9 @@
 name: Block Merge During Daily Release
 on:
+  pull_request:
+    branches: [ main, test-merge-queue ]
   merge_group:
-    types: [ checks_requested ]
+    branches: [ main, test-merge-queue ]
 jobs:
   block:
     runs-on: ubuntu-latest
@@ -11,4 +13,4 @@ jobs:
           timezone: "UTC"
           after: 18:00
           before: 20:00
-          base-branches: "test-merge-queue"
+          base-branches: "main,test-merge-queue"
