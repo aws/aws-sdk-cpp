@@ -25,7 +25,11 @@ CreateGraphqlApiRequest::CreateGraphqlApiRequest() :
     m_xrayEnabledHasBeenSet(false),
     m_lambdaAuthorizerConfigHasBeenSet(false),
     m_visibility(GraphQLApiVisibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+    m_visibilityHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerContactHasBeenSet(false)
 {
 }
 
@@ -99,6 +103,23 @@ Aws::String CreateGraphqlApiRequest::SerializePayload() const
   if(m_visibilityHasBeenSet)
   {
    payload.WithString("visibility", GraphQLApiVisibilityMapper::GetNameForGraphQLApiVisibility(m_visibility));
+  }
+
+  if(m_apiTypeHasBeenSet)
+  {
+   payload.WithString("apiType", GraphQLApiTypeMapper::GetNameForGraphQLApiType(m_apiType));
+  }
+
+  if(m_mergedApiExecutionRoleArnHasBeenSet)
+  {
+   payload.WithString("mergedApiExecutionRoleArn", m_mergedApiExecutionRoleArn);
+
+  }
+
+  if(m_ownerContactHasBeenSet)
+  {
+   payload.WithString("ownerContact", m_ownerContact);
+
   }
 
   return payload.View().WriteReadable();

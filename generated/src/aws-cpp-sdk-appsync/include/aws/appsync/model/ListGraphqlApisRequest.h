@@ -7,6 +7,8 @@
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/appsync/AppSyncRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/GraphQLApiType.h>
+#include <aws/appsync/model/Ownership.h>
 #include <utility>
 
 namespace Aws
@@ -107,6 +109,74 @@ namespace Model
      */
     inline ListGraphqlApisRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline const GraphQLApiType& GetApiType() const{ return m_apiType; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline bool ApiTypeHasBeenSet() const { return m_apiTypeHasBeenSet; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(const GraphQLApiType& value) { m_apiTypeHasBeenSet = true; m_apiType = value; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(GraphQLApiType&& value) { m_apiTypeHasBeenSet = true; m_apiType = std::move(value); }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline ListGraphqlApisRequest& WithApiType(const GraphQLApiType& value) { SetApiType(value); return *this;}
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline ListGraphqlApisRequest& WithApiType(GraphQLApiType&& value) { SetApiType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline const Ownership& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline void SetOwner(const Ownership& value) { m_ownerHasBeenSet = true; m_owner = value; }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline void SetOwner(Ownership&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline ListGraphqlApisRequest& WithOwner(const Ownership& value) { SetOwner(value); return *this;}
+
+    /**
+     * <p>The account owner of the GraphQL API.</p>
+     */
+    inline ListGraphqlApisRequest& WithOwner(Ownership&& value) { SetOwner(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -114,6 +184,12 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
+
+    GraphQLApiType m_apiType;
+    bool m_apiTypeHasBeenSet = false;
+
+    Ownership m_owner;
+    bool m_ownerHasBeenSet = false;
   };
 
 } // namespace Model

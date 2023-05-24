@@ -36,7 +36,12 @@ GraphqlApi::GraphqlApi() :
     m_lambdaAuthorizerConfigHasBeenSet(false),
     m_dnsHasBeenSet(false),
     m_visibility(GraphQLApiVisibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+    m_visibilityHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerContactHasBeenSet(false)
 {
 }
 
@@ -58,7 +63,12 @@ GraphqlApi::GraphqlApi(JsonView jsonValue) :
     m_lambdaAuthorizerConfigHasBeenSet(false),
     m_dnsHasBeenSet(false),
     m_visibility(GraphQLApiVisibility::NOT_SET),
-    m_visibilityHasBeenSet(false)
+    m_visibilityHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerHasBeenSet(false),
+    m_ownerContactHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -182,6 +192,34 @@ GraphqlApi& GraphqlApi::operator =(JsonView jsonValue)
     m_visibilityHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("apiType"))
+  {
+    m_apiType = GraphQLApiTypeMapper::GetGraphQLApiTypeForName(jsonValue.GetString("apiType"));
+
+    m_apiTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mergedApiExecutionRoleArn"))
+  {
+    m_mergedApiExecutionRoleArn = jsonValue.GetString("mergedApiExecutionRoleArn");
+
+    m_mergedApiExecutionRoleArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("owner"))
+  {
+    m_owner = jsonValue.GetString("owner");
+
+    m_ownerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ownerContact"))
+  {
+    m_ownerContact = jsonValue.GetString("ownerContact");
+
+    m_ownerContactHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -295,6 +333,29 @@ JsonValue GraphqlApi::Jsonize() const
   if(m_visibilityHasBeenSet)
   {
    payload.WithString("visibility", GraphQLApiVisibilityMapper::GetNameForGraphQLApiVisibility(m_visibility));
+  }
+
+  if(m_apiTypeHasBeenSet)
+  {
+   payload.WithString("apiType", GraphQLApiTypeMapper::GetNameForGraphQLApiType(m_apiType));
+  }
+
+  if(m_mergedApiExecutionRoleArnHasBeenSet)
+  {
+   payload.WithString("mergedApiExecutionRoleArn", m_mergedApiExecutionRoleArn);
+
+  }
+
+  if(m_ownerHasBeenSet)
+  {
+   payload.WithString("owner", m_owner);
+
+  }
+
+  if(m_ownerContactHasBeenSet)
+  {
+   payload.WithString("ownerContact", m_ownerContact);
+
   }
 
   return payload;

@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/InferenceExecutionConfig.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/sagemaker/model/DeploymentRecommendation.h>
 #include <utility>
 
 namespace Aws
@@ -351,6 +352,32 @@ namespace Model
     inline DescribeModelResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
 
 
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline const DeploymentRecommendation& GetDeploymentRecommendation() const{ return m_deploymentRecommendation; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(const DeploymentRecommendation& value) { m_deploymentRecommendation = value; }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline void SetDeploymentRecommendation(DeploymentRecommendation&& value) { m_deploymentRecommendation = std::move(value); }
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline DescribeModelResult& WithDeploymentRecommendation(const DeploymentRecommendation& value) { SetDeploymentRecommendation(value); return *this;}
+
+    /**
+     * <p>A set of recommended deployment configurations for the model.</p>
+     */
+    inline DescribeModelResult& WithDeploymentRecommendation(DeploymentRecommendation&& value) { SetDeploymentRecommendation(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -391,6 +418,8 @@ namespace Model
     Aws::String m_modelArn;
 
     bool m_enableNetworkIsolation;
+
+    DeploymentRecommendation m_deploymentRecommendation;
 
     Aws::String m_requestId;
   };

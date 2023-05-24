@@ -15,6 +15,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/appsync/model/LambdaAuthorizerConfig.h>
 #include <aws/appsync/model/GraphQLApiVisibility.h>
+#include <aws/appsync/model/GraphQLApiType.h>
 #include <aws/appsync/model/AdditionalAuthenticationProvider.h>
 #include <utility>
 
@@ -431,6 +432,157 @@ namespace Model
      */
     inline CreateGraphqlApiRequest& WithVisibility(GraphQLApiVisibility&& value) { SetVisibility(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline const GraphQLApiType& GetApiType() const{ return m_apiType; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline bool ApiTypeHasBeenSet() const { return m_apiTypeHasBeenSet; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(const GraphQLApiType& value) { m_apiTypeHasBeenSet = true; m_apiType = value; }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline void SetApiType(GraphQLApiType&& value) { m_apiTypeHasBeenSet = true; m_apiType = std::move(value); }
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline CreateGraphqlApiRequest& WithApiType(const GraphQLApiType& value) { SetApiType(value); return *this;}
+
+    /**
+     * <p>The value that indicates whether the GraphQL API is a standard API
+     * (<code>GRAPHQL</code>) or merged API (<code>MERGED</code>).</p>
+     */
+    inline CreateGraphqlApiRequest& WithApiType(GraphQLApiType&& value) { SetApiType(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline const Aws::String& GetMergedApiExecutionRoleArn() const{ return m_mergedApiExecutionRoleArn; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline bool MergedApiExecutionRoleArnHasBeenSet() const { return m_mergedApiExecutionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const Aws::String& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = value; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(Aws::String&& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const char* value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn.assign(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const Aws::String& value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(Aws::String&& value) { SetMergedApiExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline CreateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const char* value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline const Aws::String& GetOwnerContact() const{ return m_ownerContact; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline bool OwnerContactHasBeenSet() const { return m_ownerContactHasBeenSet; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const Aws::String& value) { m_ownerContactHasBeenSet = true; m_ownerContact = value; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(Aws::String&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::move(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const char* value) { m_ownerContactHasBeenSet = true; m_ownerContact.assign(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline CreateGraphqlApiRequest& WithOwnerContact(const Aws::String& value) { SetOwnerContact(value); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline CreateGraphqlApiRequest& WithOwnerContact(Aws::String&& value) { SetOwnerContact(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline CreateGraphqlApiRequest& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -462,6 +614,15 @@ namespace Model
 
     GraphQLApiVisibility m_visibility;
     bool m_visibilityHasBeenSet = false;
+
+    GraphQLApiType m_apiType;
+    bool m_apiTypeHasBeenSet = false;
+
+    Aws::String m_mergedApiExecutionRoleArn;
+    bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+
+    Aws::String m_ownerContact;
+    bool m_ownerContactHasBeenSet = false;
   };
 
 } // namespace Model
