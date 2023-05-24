@@ -23,7 +23,9 @@ UpdateGraphqlApiRequest::UpdateGraphqlApiRequest() :
     m_additionalAuthenticationProvidersHasBeenSet(false),
     m_xrayEnabled(false),
     m_xrayEnabledHasBeenSet(false),
-    m_lambdaAuthorizerConfigHasBeenSet(false)
+    m_lambdaAuthorizerConfigHasBeenSet(false),
+    m_mergedApiExecutionRoleArnHasBeenSet(false),
+    m_ownerContactHasBeenSet(false)
 {
 }
 
@@ -80,6 +82,18 @@ Aws::String UpdateGraphqlApiRequest::SerializePayload() const
   if(m_lambdaAuthorizerConfigHasBeenSet)
   {
    payload.WithObject("lambdaAuthorizerConfig", m_lambdaAuthorizerConfig.Jsonize());
+
+  }
+
+  if(m_mergedApiExecutionRoleArnHasBeenSet)
+  {
+   payload.WithString("mergedApiExecutionRoleArn", m_mergedApiExecutionRoleArn);
+
+  }
+
+  if(m_ownerContactHasBeenSet)
+  {
+   payload.WithString("ownerContact", m_ownerContact);
 
   }
 

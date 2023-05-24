@@ -29,7 +29,8 @@ Model::Model() :
     m_modelArnHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deploymentRecommendationHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ Model::Model(JsonView jsonValue) :
     m_modelArnHasBeenSet(false),
     m_enableNetworkIsolation(false),
     m_enableNetworkIsolationHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_deploymentRecommendationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -127,6 +129,13 @@ Model& Model::operator =(JsonView jsonValue)
     m_tagsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DeploymentRecommendation"))
+  {
+    m_deploymentRecommendation = jsonValue.GetObject("DeploymentRecommendation");
+
+    m_deploymentRecommendationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -200,6 +209,12 @@ JsonValue Model::Jsonize() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_deploymentRecommendationHasBeenSet)
+  {
+   payload.WithObject("DeploymentRecommendation", m_deploymentRecommendation.Jsonize());
 
   }
 

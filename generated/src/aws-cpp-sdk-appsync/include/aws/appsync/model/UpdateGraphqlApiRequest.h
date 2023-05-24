@@ -361,6 +361,120 @@ namespace Model
      */
     inline UpdateGraphqlApiRequest& WithLambdaAuthorizerConfig(LambdaAuthorizerConfig&& value) { SetLambdaAuthorizerConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline const Aws::String& GetMergedApiExecutionRoleArn() const{ return m_mergedApiExecutionRoleArn; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline bool MergedApiExecutionRoleArnHasBeenSet() const { return m_mergedApiExecutionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const Aws::String& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = value; }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(Aws::String&& value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn = std::move(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline void SetMergedApiExecutionRoleArn(const char* value) { m_mergedApiExecutionRoleArnHasBeenSet = true; m_mergedApiExecutionRoleArn.assign(value); }
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const Aws::String& value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(Aws::String&& value) { SetMergedApiExecutionRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Identity and Access Management service role ARN for a merged API. The
+     * AppSync service assumes this role on behalf of the Merged API to validate access
+     * to source APIs at runtime and to prompt the <code>AUTO_MERGE</code> to update
+     * the merged API endpoint with the source API changes automatically.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithMergedApiExecutionRoleArn(const char* value) { SetMergedApiExecutionRoleArn(value); return *this;}
+
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline const Aws::String& GetOwnerContact() const{ return m_ownerContact; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline bool OwnerContactHasBeenSet() const { return m_ownerContactHasBeenSet; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const Aws::String& value) { m_ownerContactHasBeenSet = true; m_ownerContact = value; }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(Aws::String&& value) { m_ownerContactHasBeenSet = true; m_ownerContact = std::move(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline void SetOwnerContact(const char* value) { m_ownerContactHasBeenSet = true; m_ownerContact.assign(value); }
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithOwnerContact(const Aws::String& value) { SetOwnerContact(value); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithOwnerContact(Aws::String&& value) { SetOwnerContact(std::move(value)); return *this;}
+
+    /**
+     * <p>The owner contact information for an API resource.</p> <p>This field accepts
+     * any string input with a length of 0 - 256 characters.</p>
+     */
+    inline UpdateGraphqlApiRequest& WithOwnerContact(const char* value) { SetOwnerContact(value); return *this;}
+
   private:
 
     Aws::String m_apiId;
@@ -389,6 +503,12 @@ namespace Model
 
     LambdaAuthorizerConfig m_lambdaAuthorizerConfig;
     bool m_lambdaAuthorizerConfigHasBeenSet = false;
+
+    Aws::String m_mergedApiExecutionRoleArn;
+    bool m_mergedApiExecutionRoleArnHasBeenSet = false;
+
+    Aws::String m_ownerContact;
+    bool m_ownerContactHasBeenSet = false;
   };
 
 } // namespace Model

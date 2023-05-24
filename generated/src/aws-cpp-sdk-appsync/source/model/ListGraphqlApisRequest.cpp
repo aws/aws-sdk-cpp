@@ -18,7 +18,11 @@ using namespace Aws::Http;
 ListGraphqlApisRequest::ListGraphqlApisRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_apiType(GraphQLApiType::NOT_SET),
+    m_apiTypeHasBeenSet(false),
+    m_owner(Ownership::NOT_SET),
+    m_ownerHasBeenSet(false)
 {
 }
 
@@ -41,6 +45,20 @@ void ListGraphqlApisRequest::AddQueryStringParameters(URI& uri) const
     {
       ss << m_maxResults;
       uri.AddQueryStringParameter("maxResults", ss.str());
+      ss.str("");
+    }
+
+    if(m_apiTypeHasBeenSet)
+    {
+      ss << GraphQLApiTypeMapper::GetNameForGraphQLApiType(m_apiType);
+      uri.AddQueryStringParameter("apiType", ss.str());
+      ss.str("");
+    }
+
+    if(m_ownerHasBeenSet)
+    {
+      ss << OwnershipMapper::GetNameForOwnership(m_owner);
+      uri.AddQueryStringParameter("owner", ss.str());
       ss.str("");
     }
 

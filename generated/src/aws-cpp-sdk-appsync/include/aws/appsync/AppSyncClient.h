@@ -103,6 +103,58 @@ namespace AppSync
         }
 
         /**
+         * <p>Creates an association between a Merged API and source API using the source
+         * API's identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateMergedGraphqlApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateMergedGraphqlApiOutcome AssociateMergedGraphqlApi(const Model::AssociateMergedGraphqlApiRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateMergedGraphqlApi that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateMergedGraphqlApiRequestT = Model::AssociateMergedGraphqlApiRequest>
+        Model::AssociateMergedGraphqlApiOutcomeCallable AssociateMergedGraphqlApiCallable(const AssociateMergedGraphqlApiRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::AssociateMergedGraphqlApi, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateMergedGraphqlApi that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateMergedGraphqlApiRequestT = Model::AssociateMergedGraphqlApiRequest>
+        void AssociateMergedGraphqlApiAsync(const AssociateMergedGraphqlApiRequestT& request, const AssociateMergedGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::AssociateMergedGraphqlApi, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an association between a Merged API and source API using the Merged
+         * API's identifier.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/AssociateSourceGraphqlApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateSourceGraphqlApiOutcome AssociateSourceGraphqlApi(const Model::AssociateSourceGraphqlApiRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateSourceGraphqlApi that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateSourceGraphqlApiRequestT = Model::AssociateSourceGraphqlApiRequest>
+        Model::AssociateSourceGraphqlApiOutcomeCallable AssociateSourceGraphqlApiCallable(const AssociateSourceGraphqlApiRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::AssociateSourceGraphqlApi, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateSourceGraphqlApi that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateSourceGraphqlApiRequestT = Model::AssociateSourceGraphqlApiRequest>
+        void AssociateSourceGraphqlApiAsync(const AssociateSourceGraphqlApiRequestT& request, const AssociateSourceGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::AssociateSourceGraphqlApi, request, handler, context);
+        }
+
+        /**
          * <p>Creates a cache for the GraphQL API.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateApiCache">AWS
          * API Reference</a></p>
@@ -536,6 +588,58 @@ namespace AppSync
         }
 
         /**
+         * <p>Deletes an association between a Merged API and source API using the source
+         * API's identifier and the association ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateMergedGraphqlApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateMergedGraphqlApiOutcome DisassociateMergedGraphqlApi(const Model::DisassociateMergedGraphqlApiRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateMergedGraphqlApi that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateMergedGraphqlApiRequestT = Model::DisassociateMergedGraphqlApiRequest>
+        Model::DisassociateMergedGraphqlApiOutcomeCallable DisassociateMergedGraphqlApiCallable(const DisassociateMergedGraphqlApiRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::DisassociateMergedGraphqlApi, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateMergedGraphqlApi that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateMergedGraphqlApiRequestT = Model::DisassociateMergedGraphqlApiRequest>
+        void DisassociateMergedGraphqlApiAsync(const DisassociateMergedGraphqlApiRequestT& request, const DisassociateMergedGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::DisassociateMergedGraphqlApi, request, handler, context);
+        }
+
+        /**
+         * <p>Deletes an association between a Merged API and source API using the Merged
+         * API's identifier and the association ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DisassociateSourceGraphqlApi">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateSourceGraphqlApiOutcome DisassociateSourceGraphqlApi(const Model::DisassociateSourceGraphqlApiRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateSourceGraphqlApi that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateSourceGraphqlApiRequestT = Model::DisassociateSourceGraphqlApiRequest>
+        Model::DisassociateSourceGraphqlApiOutcomeCallable DisassociateSourceGraphqlApiCallable(const DisassociateSourceGraphqlApiRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::DisassociateSourceGraphqlApi, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateSourceGraphqlApi that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateSourceGraphqlApiRequestT = Model::DisassociateSourceGraphqlApiRequest>
+        void DisassociateSourceGraphqlApiAsync(const DisassociateSourceGraphqlApiRequestT& request, const DisassociateSourceGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::DisassociateSourceGraphqlApi, request, handler, context);
+        }
+
+        /**
          * <p>Evaluates the given code and returns the response. The code definition
          * requirements depend on the specified runtime. For <code>APPSYNC_JS</code>
          * runtimes, the code defines the request and response functions. The request
@@ -852,6 +956,32 @@ namespace AppSync
         }
 
         /**
+         * <p>Retrieves a <code>SourceApiAssociation</code> object.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetSourceApiAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetSourceApiAssociationOutcome GetSourceApiAssociation(const Model::GetSourceApiAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetSourceApiAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetSourceApiAssociationRequestT = Model::GetSourceApiAssociationRequest>
+        Model::GetSourceApiAssociationOutcomeCallable GetSourceApiAssociationCallable(const GetSourceApiAssociationRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::GetSourceApiAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for GetSourceApiAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetSourceApiAssociationRequestT = Model::GetSourceApiAssociationRequest>
+        void GetSourceApiAssociationAsync(const GetSourceApiAssociationRequestT& request, const GetSourceApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::GetSourceApiAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Retrieves a <code>Type</code> object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetType">AWS API
          * Reference</a></p>
@@ -1057,6 +1187,32 @@ namespace AppSync
         }
 
         /**
+         * <p>Lists the <code>SourceApiAssociationSummary</code> data.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListSourceApiAssociations">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListSourceApiAssociationsOutcome ListSourceApiAssociations(const Model::ListSourceApiAssociationsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListSourceApiAssociations that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListSourceApiAssociationsRequestT = Model::ListSourceApiAssociationsRequest>
+        Model::ListSourceApiAssociationsOutcomeCallable ListSourceApiAssociationsCallable(const ListSourceApiAssociationsRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::ListSourceApiAssociations, request);
+        }
+
+        /**
+         * An Async wrapper for ListSourceApiAssociations that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListSourceApiAssociationsRequestT = Model::ListSourceApiAssociationsRequest>
+        void ListSourceApiAssociationsAsync(const ListSourceApiAssociationsRequestT& request, const ListSourceApiAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::ListSourceApiAssociations, request, handler, context);
+        }
+
+        /**
          * <p>Lists the tags for a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -1107,6 +1263,32 @@ namespace AppSync
         }
 
         /**
+         * <p>Lists <code>Type</code> objects by the source API association
+         * ID.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListTypesByAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListTypesByAssociationOutcome ListTypesByAssociation(const Model::ListTypesByAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListTypesByAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListTypesByAssociationRequestT = Model::ListTypesByAssociationRequest>
+        Model::ListTypesByAssociationOutcomeCallable ListTypesByAssociationCallable(const ListTypesByAssociationRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::ListTypesByAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for ListTypesByAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListTypesByAssociationRequestT = Model::ListTypesByAssociationRequest>
+        void ListTypesByAssociationAsync(const ListTypesByAssociationRequestT& request, const ListTypesByAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::ListTypesByAssociation, request, handler, context);
+        }
+
+        /**
          * <p>Adds a new schema to your GraphQL API.</p> <p>This operation is asynchronous.
          * Use to determine when it has completed.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaCreation">AWS
@@ -1130,6 +1312,32 @@ namespace AppSync
         void StartSchemaCreationAsync(const StartSchemaCreationRequestT& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppSyncClient::StartSchemaCreation, request, handler, context);
+        }
+
+        /**
+         * <p>Initiates a merge operation. Returns a status that shows the result of the
+         * merge operation.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/StartSchemaMerge">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartSchemaMergeOutcome StartSchemaMerge(const Model::StartSchemaMergeRequest& request) const;
+
+        /**
+         * A Callable wrapper for StartSchemaMerge that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename StartSchemaMergeRequestT = Model::StartSchemaMergeRequest>
+        Model::StartSchemaMergeOutcomeCallable StartSchemaMergeCallable(const StartSchemaMergeRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::StartSchemaMerge, request);
+        }
+
+        /**
+         * An Async wrapper for StartSchemaMerge that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename StartSchemaMergeRequestT = Model::StartSchemaMergeRequest>
+        void StartSchemaMergeAsync(const StartSchemaMergeRequestT& request, const StartSchemaMergeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::StartSchemaMerge, request, handler, context);
         }
 
         /**
@@ -1357,6 +1565,32 @@ namespace AppSync
         void UpdateResolverAsync(const UpdateResolverRequestT& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&AppSyncClient::UpdateResolver, request, handler, context);
+        }
+
+        /**
+         * <p>Updates some of the configuration choices of a particular source API
+         * association.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateSourceApiAssociation">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateSourceApiAssociationOutcome UpdateSourceApiAssociation(const Model::UpdateSourceApiAssociationRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateSourceApiAssociation that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateSourceApiAssociationRequestT = Model::UpdateSourceApiAssociationRequest>
+        Model::UpdateSourceApiAssociationOutcomeCallable UpdateSourceApiAssociationCallable(const UpdateSourceApiAssociationRequestT& request) const
+        {
+            return SubmitCallable(&AppSyncClient::UpdateSourceApiAssociation, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateSourceApiAssociation that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateSourceApiAssociationRequestT = Model::UpdateSourceApiAssociationRequest>
+        void UpdateSourceApiAssociationAsync(const UpdateSourceApiAssociationRequestT& request, const UpdateSourceApiAssociationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&AppSyncClient::UpdateSourceApiAssociation, request, handler, context);
         }
 
         /**

@@ -22,6 +22,8 @@
 #include <aws/appsync/AppSyncErrorMarshaller.h>
 #include <aws/appsync/AppSyncEndpointProvider.h>
 #include <aws/appsync/model/AssociateApiRequest.h>
+#include <aws/appsync/model/AssociateMergedGraphqlApiRequest.h>
+#include <aws/appsync/model/AssociateSourceGraphqlApiRequest.h>
 #include <aws/appsync/model/CreateApiCacheRequest.h>
 #include <aws/appsync/model/CreateApiKeyRequest.h>
 #include <aws/appsync/model/CreateDataSourceRequest.h>
@@ -39,6 +41,8 @@
 #include <aws/appsync/model/DeleteResolverRequest.h>
 #include <aws/appsync/model/DeleteTypeRequest.h>
 #include <aws/appsync/model/DisassociateApiRequest.h>
+#include <aws/appsync/model/DisassociateMergedGraphqlApiRequest.h>
+#include <aws/appsync/model/DisassociateSourceGraphqlApiRequest.h>
 #include <aws/appsync/model/EvaluateCodeRequest.h>
 #include <aws/appsync/model/EvaluateMappingTemplateRequest.h>
 #include <aws/appsync/model/FlushApiCacheRequest.h>
@@ -51,6 +55,7 @@
 #include <aws/appsync/model/GetIntrospectionSchemaRequest.h>
 #include <aws/appsync/model/GetResolverRequest.h>
 #include <aws/appsync/model/GetSchemaCreationStatusRequest.h>
+#include <aws/appsync/model/GetSourceApiAssociationRequest.h>
 #include <aws/appsync/model/GetTypeRequest.h>
 #include <aws/appsync/model/ListApiKeysRequest.h>
 #include <aws/appsync/model/ListDataSourcesRequest.h>
@@ -59,9 +64,12 @@
 #include <aws/appsync/model/ListGraphqlApisRequest.h>
 #include <aws/appsync/model/ListResolversRequest.h>
 #include <aws/appsync/model/ListResolversByFunctionRequest.h>
+#include <aws/appsync/model/ListSourceApiAssociationsRequest.h>
 #include <aws/appsync/model/ListTagsForResourceRequest.h>
 #include <aws/appsync/model/ListTypesRequest.h>
+#include <aws/appsync/model/ListTypesByAssociationRequest.h>
 #include <aws/appsync/model/StartSchemaCreationRequest.h>
+#include <aws/appsync/model/StartSchemaMergeRequest.h>
 #include <aws/appsync/model/TagResourceRequest.h>
 #include <aws/appsync/model/UntagResourceRequest.h>
 #include <aws/appsync/model/UpdateApiCacheRequest.h>
@@ -71,6 +79,7 @@
 #include <aws/appsync/model/UpdateFunctionRequest.h>
 #include <aws/appsync/model/UpdateGraphqlApiRequest.h>
 #include <aws/appsync/model/UpdateResolverRequest.h>
+#include <aws/appsync/model/UpdateSourceApiAssociationRequest.h>
 #include <aws/appsync/model/UpdateTypeRequest.h>
 
 using namespace Aws;
@@ -214,6 +223,38 @@ AssociateApiOutcome AppSyncClient::AssociateApi(const AssociateApiRequest& reque
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetDomainName());
   endpointResolutionOutcome.GetResult().AddPathSegments("/apiassociation");
   return AssociateApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateMergedGraphqlApiOutcome AppSyncClient::AssociateMergedGraphqlApi(const AssociateMergedGraphqlApiRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SourceApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateMergedGraphqlApi", "Required field: SourceApiIdentifier, is not set");
+    return AssociateMergedGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceApiIdentifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/mergedApiAssociations");
+  return AssociateMergedGraphqlApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+AssociateSourceGraphqlApiOutcome AppSyncClient::AssociateSourceGraphqlApi(const AssociateSourceGraphqlApiRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateSourceGraphqlApi", "Required field: MergedApiIdentifier, is not set");
+    return AssociateSourceGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations");
+  return AssociateSourceGraphqlApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 CreateApiCacheOutcome AppSyncClient::CreateApiCache(const CreateApiCacheRequest& request) const
@@ -516,6 +557,50 @@ DisassociateApiOutcome AppSyncClient::DisassociateApi(const DisassociateApiReque
   return DisassociateApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
+DisassociateMergedGraphqlApiOutcome AppSyncClient::DisassociateMergedGraphqlApi(const DisassociateMergedGraphqlApiRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.SourceApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMergedGraphqlApi", "Required field: SourceApiIdentifier, is not set");
+    return DisassociateMergedGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SourceApiIdentifier]", false));
+  }
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateMergedGraphqlApi", "Required field: AssociationId, is not set");
+    return DisassociateMergedGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateMergedGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/sourceApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSourceApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/mergedApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  return DisassociateMergedGraphqlApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateSourceGraphqlApiOutcome AppSyncClient::DisassociateSourceGraphqlApi(const DisassociateSourceGraphqlApiRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateSourceGraphqlApi", "Required field: MergedApiIdentifier, is not set");
+    return DisassociateSourceGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateSourceGraphqlApi", "Required field: AssociationId, is not set");
+    return DisassociateSourceGraphqlApiOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateSourceGraphqlApi, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  return DisassociateSourceGraphqlApiOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
 EvaluateCodeOutcome AppSyncClient::EvaluateCode(const EvaluateCodeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, EvaluateCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -722,6 +807,28 @@ GetSchemaCreationStatusOutcome AppSyncClient::GetSchemaCreationStatus(const GetS
   return GetSchemaCreationStatusOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+GetSourceApiAssociationOutcome AppSyncClient::GetSourceApiAssociation(const GetSourceApiAssociationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSourceApiAssociation", "Required field: MergedApiIdentifier, is not set");
+    return GetSourceApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSourceApiAssociation", "Required field: AssociationId, is not set");
+    return GetSourceApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  return GetSourceApiAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 GetTypeOutcome AppSyncClient::GetType(const GetTypeRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetType, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -861,6 +968,22 @@ ListResolversByFunctionOutcome AppSyncClient::ListResolversByFunction(const List
   return ListResolversByFunctionOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListSourceApiAssociationsOutcome AppSyncClient::ListSourceApiAssociations(const ListSourceApiAssociationsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListSourceApiAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.ApiIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSourceApiAssociations", "Required field: ApiId, is not set");
+    return ListSourceApiAssociationsOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApiId]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListSourceApiAssociations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/apis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations");
+  return ListSourceApiAssociationsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 ListTagsForResourceOutcome AppSyncClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -897,6 +1020,34 @@ ListTypesOutcome AppSyncClient::ListTypes(const ListTypesRequest& request) const
   return ListTypesOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
+ListTypesByAssociationOutcome AppSyncClient::ListTypesByAssociation(const ListTypesByAssociationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTypesByAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTypesByAssociation", "Required field: MergedApiIdentifier, is not set");
+    return ListTypesByAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTypesByAssociation", "Required field: AssociationId, is not set");
+    return ListTypesByAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  if (!request.FormatHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTypesByAssociation", "Required field: Format, is not set");
+    return ListTypesByAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Format]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListTypesByAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/types");
+  return ListTypesByAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
 StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaCreationRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSchemaCreation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -911,6 +1062,29 @@ StartSchemaCreationOutcome AppSyncClient::StartSchemaCreation(const StartSchemaC
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApiId());
   endpointResolutionOutcome.GetResult().AddPathSegments("/schemacreation");
   return StartSchemaCreationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+StartSchemaMergeOutcome AppSyncClient::StartSchemaMerge(const StartSchemaMergeRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartSchemaMerge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartSchemaMerge", "Required field: AssociationId, is not set");
+    return StartSchemaMergeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StartSchemaMerge", "Required field: MergedApiIdentifier, is not set");
+    return StartSchemaMergeOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, StartSchemaMerge, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/merge");
+  return StartSchemaMergeOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 TagResourceOutcome AppSyncClient::TagResource(const TagResourceRequest& request) const
@@ -1087,6 +1261,28 @@ UpdateResolverOutcome AppSyncClient::UpdateResolver(const UpdateResolverRequest&
   endpointResolutionOutcome.GetResult().AddPathSegments("/resolvers/");
   endpointResolutionOutcome.GetResult().AddPathSegment(request.GetFieldName());
   return UpdateResolverOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateSourceApiAssociationOutcome AppSyncClient::UpdateSourceApiAssociation(const UpdateSourceApiAssociationRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.AssociationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSourceApiAssociation", "Required field: AssociationId, is not set");
+    return UpdateSourceApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AssociationId]", false));
+  }
+  if (!request.MergedApiIdentifierHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSourceApiAssociation", "Required field: MergedApiIdentifier, is not set");
+    return UpdateSourceApiAssociationOutcome(Aws::Client::AWSError<AppSyncErrors>(AppSyncErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MergedApiIdentifier]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateSourceApiAssociation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/v1/mergedApis/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetMergedApiIdentifier());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/sourceApiAssociations/");
+  endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAssociationId());
+  return UpdateSourceApiAssociationOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateTypeOutcome AppSyncClient::UpdateType(const UpdateTypeRequest& request) const
