@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>Represents information about an error in AWS CodePipeline.</p><p><h3>See
+   * <p>Represents information about an error in CodePipeline.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ErrorDetails">AWS
    * API Reference</a></p>

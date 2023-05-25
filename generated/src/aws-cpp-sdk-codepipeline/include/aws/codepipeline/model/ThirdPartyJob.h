@@ -24,7 +24,7 @@ namespace Model
 {
 
   /**
-   * <p>A response to a <code>PollForThirdPartyJobs</code> request returned by AWS
+   * <p>A response to a <code>PollForThirdPartyJobs</code> request returned by
    * CodePipeline when there is a job to be worked on by a partner
    * action.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codepipeline-2015-07-09/ThirdPartyJob">AWS
@@ -97,42 +97,42 @@ namespace Model
 
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline void SetJobId(Aws::String&& value) { m_jobIdHasBeenSet = true; m_jobId = std::move(value); }
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline void SetJobId(const char* value) { m_jobIdHasBeenSet = true; m_jobId.assign(value); }
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline ThirdPartyJob& WithJobId(const Aws::String& value) { SetJobId(value); return *this;}
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline ThirdPartyJob& WithJobId(Aws::String&& value) { SetJobId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     * <p>The identifier used to identify the job in CodePipeline.</p>
      */
     inline ThirdPartyJob& WithJobId(const char* value) { SetJobId(value); return *this;}
 

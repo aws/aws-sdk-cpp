@@ -210,62 +210,80 @@ namespace Model
 
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline void SetOperatingSystem(OperatingSystem&& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = std::move(value); }
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline CreateBuildRequest& WithOperatingSystem(const OperatingSystem& value) { SetOperatingSystem(value); return *this;}
 
     /**
-     * <p>The operating system that you built the game server binaries to run on. This
-     * value determines the type of fleet resources that you can use for this build. If
-     * your game build contains multiple executables, they all must run on the same
-     * operating system. If an operating system isn't specified when creating a build,
-     * Amazon GameLift uses the default value (WINDOWS_2012). This value can't be
-     * changed later.</p>
+     * <p>The operating system that your game server binaries run on. This value
+     * determines the type of fleet resources that you use for this build. If your game
+     * build contains multiple executables, they all must run on the same operating
+     * system. You must specify a valid operating system in this request. There is no
+     * default value. You can't change a build's operating system later.</p> 
+     * <p>If you have active fleets using the Windows Server 2012 operating system, you
+     * can continue to create new builds using this OS until October 10, 2023, when
+     * Microsoft ends its support. All others must use Windows Server 2016 when
+     * creating new Windows-based builds.</p> 
      */
     inline CreateBuildRequest& WithOperatingSystem(OperatingSystem&& value) { SetOperatingSystem(std::move(value)); return *this;}
 

@@ -171,22 +171,23 @@ namespace GameLift
          * also specify a game server ID, although this approach bypasses Amazon GameLift
          * FleetIQ placement optimization. Optionally, include game data to pass to the
          * game server at the start of a game session, such as a game map or player
-         * information. </p> <p>When a game server is successfully claimed, connection
-         * information is returned. A claimed game server's utilization status remains
-         * <code>AVAILABLE</code> while the claim status is set to <code>CLAIMED</code> for
-         * up to 60 seconds. This time period gives the game server time to update its
-         * status to <code>UTILIZED</code> after players join. If the game server's status
-         * is not updated within 60 seconds, the game server reverts to unclaimed status
-         * and is available to be claimed by another request. The claim time period is a
-         * fixed value and is not configurable.</p> <p>If you try to claim a specific game
-         * server, this request will fail in the following cases:</p> <ul> <li> <p>If the
-         * game server utilization status is <code>UTILIZED</code>.</p> </li> <li> <p>If
-         * the game server claim status is <code>CLAIMED</code>.</p> </li> </ul> 
-         * <p>When claiming a specific game server, this request will succeed even if the
-         * game server is running on an instance in <code>DRAINING</code> status. To avoid
-         * this, first check the instance status by calling <a
-         * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameServerInstances.html">DescribeGameServerInstances</a>
-         * .</p>  <p> <b>Learn more</b> </p> <p> <a
+         * information. Filter options may be included to further restrict how a game
+         * server is chosen, such as only allowing game servers on <code>ACTIVE</code>
+         * instances to be claimed.</p> <p>When a game server is successfully claimed,
+         * connection information is returned. A claimed game server's utilization status
+         * remains <code>AVAILABLE</code> while the claim status is set to
+         * <code>CLAIMED</code> for up to 60 seconds. This time period gives the game
+         * server time to update its status to <code>UTILIZED</code> after players join. If
+         * the game server's status is not updated within 60 seconds, the game server
+         * reverts to unclaimed status and is available to be claimed by another request.
+         * The claim time period is a fixed value and is not configurable.</p> <p>If you
+         * try to claim a specific game server, this request will fail in the following
+         * cases:</p> <ul> <li> <p>If the game server utilization status is
+         * <code>UTILIZED</code>.</p> </li> <li> <p>If the game server claim status is
+         * <code>CLAIMED</code>.</p> </li> <li> <p>If the game server is running on an
+         * instance in <code>DRAINING</code> status and provided filter option does not
+         * allow placing on <code>DRAINING</code> instances.</p> </li> </ul> <p> <b>Learn
+         * more</b> </p> <p> <a
          * href="https://docs.aws.amazon.com/gamelift/latest/fleetiqguide/gsg-intro.html">Amazon
          * GameLift FleetIQ Guide</a> </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ClaimGameServer">AWS
@@ -259,18 +260,19 @@ namespace GameLift
          * GameLift, we recommend using the CLI command <b> <a
          * href="https://docs.aws.amazon.com/cli/latest/reference/gamelift/upload-build.html">upload-build</a>
          * </b>. This helper command combines two tasks: (1) it uploads your build files
-         * from a file directory to a Amazon GameLift Amazon S3 location, and (2) it
-         * creates a new build resource.</p>  <p>You can use the operation in
-         * the following scenarios:</p> <ul> <li> <p>To create a new game build with build
-         * files that are in an Amazon S3 location under an Amazon Web Services account
-         * that you control. To use this option, you give Amazon GameLift access to the
-         * Amazon S3 bucket. With permissions in place, specify a build name, operating
-         * system, and the Amazon S3 storage location of your game build.</p> </li> <li>
-         * <p>To directly upload your build files to a Amazon GameLift Amazon S3 location.
-         * To use this option, specify a build name and operating system. This operation
-         * creates a new build resource and also returns an Amazon S3 location with
-         * temporary access credentials. Use the credentials to manually upload your build
-         * files to the specified Amazon S3 location. For more information, see <a
+         * from a file directory to an Amazon GameLift Amazon S3 location, and (2) it
+         * creates a new build resource.</p>  <p>You can use the
+         * <code>CreateBuild</code> operation in the following scenarios:</p> <ul> <li>
+         * <p>Create a new game build with build files that are in an Amazon S3 location
+         * under an Amazon Web Services account that you control. To use this option, you
+         * give Amazon GameLift access to the Amazon S3 bucket. With permissions in place,
+         * specify a build name, operating system, and the Amazon S3 storage location of
+         * your game build.</p> </li> <li> <p>Upload your build files to a Amazon GameLift
+         * Amazon S3 location. To use this option, specify a build name and operating
+         * system. This operation creates a new build resource and also returns an Amazon
+         * S3 location with temporary access credentials. Use the credentials to manually
+         * upload your build files to the specified Amazon S3 location. For more
+         * information, see <a
          * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/UploadingObjects.html">Uploading
          * Objects</a> in the <i>Amazon S3 Developer Guide</i>. After you upload build
          * files to the Amazon GameLift Amazon S3 location, you can't update them. </p>
@@ -2556,9 +2558,9 @@ namespace GameLift
 
         /**
          * <p>Retrieves the location of stored game session logs for a specified game
-         * session. When a game session is terminated, Amazon GameLift automatically stores
-         * the logs in Amazon S3 and retains them for 14 days. Use this URL to download the
-         * logs.</p>  <p>See the <a
+         * session on Amazon GameLift managed fleets. When a game session is terminated,
+         * Amazon GameLift automatically stores the logs in Amazon S3 and retains them for
+         * 14 days. Use this URL to download the logs.</p>  <p>See the <a
          * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_gamelift">Amazon
          * Web Services Service Limits</a> page for maximum log file sizes. Log files that
          * exceed this limit are not saved.</p>  <p> <a

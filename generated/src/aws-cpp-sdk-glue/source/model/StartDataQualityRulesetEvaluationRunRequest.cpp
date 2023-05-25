@@ -21,7 +21,8 @@ StartDataQualityRulesetEvaluationRunRequest::StartDataQualityRulesetEvaluationRu
     m_timeoutHasBeenSet(false),
     m_clientTokenHasBeenSet(false),
     m_additionalRunOptionsHasBeenSet(false),
-    m_rulesetNamesHasBeenSet(false)
+    m_rulesetNamesHasBeenSet(false),
+    m_additionalDataSourcesHasBeenSet(false)
 {
 }
 
@@ -73,6 +74,17 @@ Aws::String StartDataQualityRulesetEvaluationRunRequest::SerializePayload() cons
      rulesetNamesJsonList[rulesetNamesIndex].AsString(m_rulesetNames[rulesetNamesIndex]);
    }
    payload.WithArray("RulesetNames", std::move(rulesetNamesJsonList));
+
+  }
+
+  if(m_additionalDataSourcesHasBeenSet)
+  {
+   JsonValue additionalDataSourcesJsonMap;
+   for(auto& additionalDataSourcesItem : m_additionalDataSources)
+   {
+     additionalDataSourcesJsonMap.WithObject(additionalDataSourcesItem.first, additionalDataSourcesItem.second.Jsonize());
+   }
+   payload.WithObject("AdditionalDataSources", std::move(additionalDataSourcesJsonMap));
 
   }
 

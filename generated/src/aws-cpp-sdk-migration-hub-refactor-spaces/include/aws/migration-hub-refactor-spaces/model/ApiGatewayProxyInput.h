@@ -45,8 +45,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline const ApiGatewayEndpointType& GetEndpointType() const{ return m_endpointType; }
 
@@ -56,8 +61,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
 
@@ -67,8 +77,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline void SetEndpointType(const ApiGatewayEndpointType& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
@@ -78,8 +93,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline void SetEndpointType(ApiGatewayEndpointType&& value) { m_endpointTypeHasBeenSet = true; m_endpointType = std::move(value); }
 
@@ -89,8 +109,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline ApiGatewayProxyInput& WithEndpointType(const ApiGatewayEndpointType& value) { SetEndpointType(value); return *this;}
 
@@ -100,8 +125,13 @@ namespace Model
      * default.</p> <p>If the value is set to <code>PRIVATE</code> in the request, this
      * creates a private API endpoint that is isolated from the public internet. The
      * private endpoint can only be accessed by using Amazon Virtual Private Cloud
-     * (Amazon VPC) endpoints for Amazon API Gateway that have been granted access.
-     * </p>
+     * (Amazon VPC) interface endpoints for the Amazon API Gateway that has been
+     * granted access. For more information about creating a private connection with
+     * Refactor Spaces and interface endpoint (Amazon Web Services PrivateLink)
+     * availability, see <a
+     * href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/vpc-interface-endpoints.html">Access
+     * Refactor Spaces using an interface endpoint (Amazon Web Services
+     * PrivateLink)</a>.</p>
      */
     inline ApiGatewayProxyInput& WithEndpointType(ApiGatewayEndpointType&& value) { SetEndpointType(std::move(value)); return *this;}
 

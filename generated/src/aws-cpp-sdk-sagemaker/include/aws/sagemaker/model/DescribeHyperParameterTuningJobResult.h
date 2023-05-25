@@ -17,6 +17,7 @@
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobCompletionDetails.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobConsumedResources.h>
+#include <aws/sagemaker/model/Autotune.h>
 #include <utility>
 
 namespace Aws
@@ -44,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline const Aws::String& GetHyperParameterTuningJobName() const{ return m_hyperParameterTuningJobName; }
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobName = value; }
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(Aws::String&& value) { m_hyperParameterTuningJobName = std::move(value); }
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline void SetHyperParameterTuningJobName(const char* value) { m_hyperParameterTuningJobName.assign(value); }
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobName(const Aws::String& value) { SetHyperParameterTuningJobName(value); return *this;}
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobName(Aws::String&& value) { SetHyperParameterTuningJobName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the tuning job.</p>
+     * <p>The name of the hyperparameter tuning job.</p>
      */
     inline DescribeHyperParameterTuningJobResult& WithHyperParameterTuningJobName(const char* value) { SetHyperParameterTuningJobName(value); return *this;}
 
@@ -664,6 +665,37 @@ namespace Model
     inline DescribeHyperParameterTuningJobResult& WithConsumedResources(HyperParameterTuningJobConsumedResources&& value) { SetConsumedResources(std::move(value)); return *this;}
 
 
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline const Autotune& GetAutotune() const{ return m_autotune; }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetAutotune(const Autotune& value) { m_autotune = value; }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline void SetAutotune(Autotune&& value) { m_autotune = std::move(value); }
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithAutotune(const Autotune& value) { SetAutotune(value); return *this;}
+
+    /**
+     * <p>A flag to indicate if autotune is enabled for the hyperparameter tuning
+     * job.</p>
+     */
+    inline DescribeHyperParameterTuningJobResult& WithAutotune(Autotune&& value) { SetAutotune(std::move(value)); return *this;}
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -720,6 +752,8 @@ namespace Model
     HyperParameterTuningJobCompletionDetails m_tuningJobCompletionDetails;
 
     HyperParameterTuningJobConsumedResources m_consumedResources;
+
+    Autotune m_autotune;
 
     Aws::String m_requestId;
   };

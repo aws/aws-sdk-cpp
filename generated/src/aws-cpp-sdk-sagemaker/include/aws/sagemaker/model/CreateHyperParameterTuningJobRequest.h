@@ -11,6 +11,7 @@
 #include <aws/sagemaker/model/HyperParameterTrainingJobDefinition.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/HyperParameterTuningJobWarmStartConfig.h>
+#include <aws/sagemaker/model/Autotune.h>
 #include <aws/sagemaker/model/Tag.h>
 #include <utility>
 
@@ -474,6 +475,157 @@ namespace Model
      */
     inline CreateHyperParameterTuningJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline const Autotune& GetAutotune() const{ return m_autotune; }
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline bool AutotuneHasBeenSet() const { return m_autotuneHasBeenSet; }
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline void SetAutotune(const Autotune& value) { m_autotuneHasBeenSet = true; m_autotune = value; }
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline void SetAutotune(Autotune&& value) { m_autotuneHasBeenSet = true; m_autotune = std::move(value); }
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline CreateHyperParameterTuningJobRequest& WithAutotune(const Autotune& value) { SetAutotune(value); return *this;}
+
+    /**
+     * <p>Configures SageMaker Automatic model tuning (AMT) to automatically find
+     * optimal parameters for the following fields:</p> <ul> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges">ParameterRanges</a>:
+     * The names and ranges of parameters that a hyperparameter tuning job can
+     * optimize.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html">ResourceLimits</a>:
+     * The maximum resources that can be used for a training job. These resources
+     * include the maximum number of training jobs, the maximum runtime of a tuning
+     * job, and the maximum number of training jobs to run at the same time.</p> </li>
+     * <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType">TrainingJobEarlyStoppingType</a>:
+     * A flag that specifies whether or not to use early stopping for training jobs
+     * launched by a hyperparameter tuning job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy">RetryStrategy</a>:
+     * The number of times to retry a training job.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html">Strategy</a>:
+     * Specifies how hyperparameter tuning chooses the combinations of hyperparameter
+     * values to use for the training jobs that it launches.</p> </li> <li> <p> <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html">ConvergenceDetected</a>:
+     * A flag to indicate that Automatic model tuning (AMT) has detected model
+     * convergence.</p> </li> </ul>
+     */
+    inline CreateHyperParameterTuningJobRequest& WithAutotune(Autotune&& value) { SetAutotune(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_hyperParameterTuningJobName;
@@ -493,6 +645,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Autotune m_autotune;
+    bool m_autotuneHasBeenSet = false;
   };
 
 } // namespace Model

@@ -83,7 +83,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode() :
     m_s3DeltaCatalogTargetHasBeenSet(false),
     m_s3DeltaDirectTargetHasBeenSet(false),
     m_amazonRedshiftSourceHasBeenSet(false),
-    m_amazonRedshiftTargetHasBeenSet(false)
+    m_amazonRedshiftTargetHasBeenSet(false),
+    m_evaluateDataQualityMultiFrameHasBeenSet(false)
 {
 }
 
@@ -152,7 +153,8 @@ CodeGenConfigurationNode::CodeGenConfigurationNode(JsonView jsonValue) :
     m_s3DeltaCatalogTargetHasBeenSet(false),
     m_s3DeltaDirectTargetHasBeenSet(false),
     m_amazonRedshiftSourceHasBeenSet(false),
-    m_amazonRedshiftTargetHasBeenSet(false)
+    m_amazonRedshiftTargetHasBeenSet(false),
+    m_evaluateDataQualityMultiFrameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -614,6 +616,13 @@ CodeGenConfigurationNode& CodeGenConfigurationNode::operator =(JsonView jsonValu
     m_amazonRedshiftTargetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EvaluateDataQualityMultiFrame"))
+  {
+    m_evaluateDataQualityMultiFrame = jsonValue.GetObject("EvaluateDataQualityMultiFrame");
+
+    m_evaluateDataQualityMultiFrameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1008,6 +1017,12 @@ JsonValue CodeGenConfigurationNode::Jsonize() const
   if(m_amazonRedshiftTargetHasBeenSet)
   {
    payload.WithObject("AmazonRedshiftTarget", m_amazonRedshiftTarget.Jsonize());
+
+  }
+
+  if(m_evaluateDataQualityMultiFrameHasBeenSet)
+  {
+   payload.WithObject("EvaluateDataQualityMultiFrame", m_evaluateDataQualityMultiFrame.Jsonize());
 
   }
 
