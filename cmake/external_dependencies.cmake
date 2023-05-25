@@ -12,6 +12,12 @@ elseif(NOT PLATFORM_WINDOWS AND NOT PLATFORM_CUSTOM)
     endif()
 endif()
 
+# Request Compression dependencies
+if (ENABLE_ZLIB_REQUEST_COMPRESSION)
+    find_package(ZLIB REQUIRED)
+endif()
+
+
 # Encryption control
 if(NOT NO_ENCRYPTION)
     if(PLATFORM_WINDOWS)
@@ -55,7 +61,7 @@ elseif(ENABLE_INJECTED_ENCRYPTION)
 endif()
 
 # Http client control
-if(NOT NO_HTTP_CLIENT)
+if(NOT NO_HTTP_CLIENT AND NOT USE_CRT_HTTP_CLIENT)
     if(PLATFORM_WINDOWS)
         if(FORCE_CURL)
             set(ENABLE_CURL_CLIENT 1)
@@ -114,6 +120,8 @@ if(NOT NO_HTTP_CLIENT)
     else()
         message(FATAL_ERROR "No http client available for target platform and client injection not enabled (-DNO_HTTP_CLIENT=ON)")
     endif()
+elseif(USE_CRT_HTTP_CLIENT)
+    add_definitions("-DAWS_SDK_USE_CRT_HTTP -DHAVE_H2_CLIENT")
 else()
     message(STATUS "You will need to inject an http client implementation before making any http requests!")
 endif()

@@ -1,0 +1,14 @@
+#foreach($operation in $serviceModel.operations)
+#if($operation.request.shape.hasEventStreamMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/JsonServiceEventStreamOperationsSource.vm")
+#else
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/JsonServiceOperationSource.vm")
+#end
+#end

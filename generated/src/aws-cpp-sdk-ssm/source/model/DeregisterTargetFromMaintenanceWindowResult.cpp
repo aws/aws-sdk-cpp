@@ -1,0 +1,54 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/ssm/model/DeregisterTargetFromMaintenanceWindowResult.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::SSM::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult()
+{
+}
+
+DeregisterTargetFromMaintenanceWindowResult::DeregisterTargetFromMaintenanceWindowResult(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  *this = result;
+}
+
+DeregisterTargetFromMaintenanceWindowResult& DeregisterTargetFromMaintenanceWindowResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
+{
+  JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("WindowId"))
+  {
+    m_windowId = jsonValue.GetString("WindowId");
+
+  }
+
+  if(jsonValue.ValueExists("WindowTargetId"))
+  {
+    m_windowTargetId = jsonValue.GetString("WindowTargetId");
+
+  }
+
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if(requestIdIter != headers.end())
+  {
+    m_requestId = requestIdIter->second;
+  }
+
+
+  return *this;
+}

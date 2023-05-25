@@ -1,0 +1,76 @@
+{
+    "version": "0.1",
+    "language": "en-US,en-GB",
+    "words": [
+        // C++ STL
+        "smatch",
+        // General
+        "SDK's", "sdks", "awssdk", "executables", "debuggable", "sdkutils", "presigning", "Presign", "queryxml",
+        "retryable", "payloadless", "Subclassing", "BASECLASS", "Millis", "hashcode", "LOGSTREAM", "timepoint",
+        "Bytebuf", "backbuf", "bitslen", "CLSCTX", "openrequest", "logtag", "stdext", "CPPRTTI", "backbuffer",
+        "Bodyless", "HTTPGET", "ratelimiter", "Ratelimiter", "STDMETHODCALLTYPE", "CANTSAVE", "OLECHAR", "DISPID",
+        "UNKNOWNNAME", "DISPPARAMS", "XMLHTTP", "comptr", "Metadataservice", "Streamfn", "HWAVEOUT", "matdesc",
+        "Presigner", "xindex", "errortype", "waveout", "WAVEOUTCAPSA", "ALLOWSYNC", "WAVEHDR", "MMSYSERR",
+        "WAVEFORMATEX", "Unprepare", "DDISABLE_IMDSV1",
+        // AWS general
+        "Arns", "AMZN", "amzn", "Paulo", "Ningxia", "ISOB", "isob", "AWSXML", "IMDSV",
+        // AWS Signature
+        "SIGV", "AUTHV",
+        // CMake
+        "cmake", "DCMAKE", "AUTORUN", "DEPS", "STREQUAL", "RPATH", "STREQUAL", "DTARGET", "TOOLCHAIN", "DANDROID",
+        "DBUILD", "DDEBUG","DGIT", "DLEGACY","SYSROOT", "DSTATIC", "BINDIR", "LIBDIR", "INCLUDEDIR", "DHAS",
+        "PythonInterp", "DWAVE", "Winmm", "DPULSE", "pulseaudio", "MSVC", "NOTFOUND", "libpulse", "COREAUDIO",
+        "devel", "AUDIOTOOLBOX", "DCORE", "CONCAT", "DNON", "FULLPATCH", "setopt", "CURLOPT", "SSLCERT",
+        "CROSSCOMPILING", "nullptr", "DWORD", "lpsz", "commoncrypto", "COMMONCRYPTO", "endforeach", "pkgconfig",
+        "MGMT", "DENABLED",
+        // Compiler and linker
+        "Wpedantic", "Wextra", "Werror", "xldscope", "Wtype", "Wunused", "RTTI", "ffunction", "fdata", "fsanitize",
+        "pathconf", "unistd", "umask", "GNUCXX", "libasan", "SUNPRO", "gnustl", "libgnustl", "Wmissing",
+        // Android NDK
+        "JNIEXPORT", "jint", "JNICALL", "jobject", "jclass", "jmethod", "Ljava", "Logcat",
+        // XML parser
+        "QNXNTO", "TIXMLASSERT", "TIXML", "Untracked", "TINYXML", "tinyxml", "xmltest", "gccxmltest", "debugbreak",
+        "grinliz", "endverbatim", "xmlcstr", "callfopen", "overengineered", "callfopen",
+        // Json parser
+        "Jsonize", "CJSON", "cjson", "valuestring", "valueint", "valuedouble", "prebuffer", "subentities", "newitem",
+        "printbuffer", "newbuffer", "cinput", "Predeclare", "newchild", "crosswire", "oneline",
+        // IXMLHTTPRequest2
+        "IXML", "IXMLHTTP", "HRESULT", "REFIID", "EXCEPINFO", "CLSID", "INPROC", "ONDATA",
+        // MSVC
+        "msvc", "MSFT", "LPDWORD", "DATAW", "mkgmtime", "vscprintf", "wtoi", "msxml", "runtimeobject", "winhttp",
+        "Wininet", "HINTERNET", "ADDREQ", "LPCSTR", "MAKELANGID", "SUBLANG", "WSADATA", "Initate", "ioctlsocket",
+        "dupenv", "USERPROFILE", "subblock", "LANGANDCODEPAGE",
+        // Crypto
+        "decryptor", "encryptor", "NTSTATUS", "PBYTE", "PUCHAR", "noconf", "HAMC", "PBCRYPT", "BCRYPT", "libcrypto",
+        "AWSLC", "CBCCTS", "tweaklen", "taglen", "blockcipher", "AESGCM", "compated", "outdata", "Decrypto", "GCMAAD",
+        "CEKGCM", "HMACRAII", "OSSL", "ossl", "ccrng", "KEYWRAP",
+        // EC2
+        "IMDS",
+        // Eventstream
+        "EVENTSTREAM", "eventstream", "signedmsg",
+        // Cognito
+        "cognito",
+        // SSO
+        "sso", "SSO", "oidc", "OIDC",
+        // License and Notice
+        "SPDX", "grinninglizard", "Thomason", "Lepilleur", "Sidebotham", "Rublee", "Andrey", "Kamaev",
+        // Dependencies
+        "openssl", "libcurl",
+        // Aws common runtime libraries
+        "mqtt",
+        // Aws common runtime API
+        "Mtls"
+    ],
+    "ignoreWords": [
+        // variables defined in ConcurrentStreamBuf
+        "pbegin", "gbegin",
+        // functions defined in UUID
+        "hexify",
+        // enums defined in HttpResponse
+        "UNPROC",
+        // in DefaultRateLimiter
+        "renormalize",
+        // parameters defined in tinyxml2
+        "uval"
+    ]
+}

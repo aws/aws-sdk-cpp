@@ -6,10 +6,6 @@
 #include <gtest/gtest.h>
 #include <aws/testing/AwsTestHelpers.h>
 
-#include <aws/core/auth/AWSCredentials.h>
-#include <aws/core/http/standard/StandardHttpResponse.h>
-#include <aws/core/http/HttpClientFactory.h>
-
 #include <aws/s3control/S3ControlEndpointProvider.h>
 
 
@@ -47,7 +43,7 @@ struct S3ControlEndpointProviderEndpointTestCase
         OperationParamsFromTest clientParams;
     };
 
-    std::string documentation;
+    Aws::String documentation;
     // Specification tells us it is Client Initialization parameters
     // At the same time, specification tells us to test EndpointProvider not the client itself
     // Hence params here will be set as a client params (just like a dedicated field above).
@@ -447,7 +443,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
   },
   /*TEST CASE 39*/
   {"vanilla bucket arn requires account id@us-west-2", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("__name", "apname"), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
@@ -504,7 +500,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
   },
   /*TEST CASE 45*/
   {"vanilla bucket arn requires account id@cn-north-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("__name", "apname"), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws-cn:s3-outposts:cn-north-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "cn-north-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.cn-north-1.amazonaws.com.cn",
@@ -561,7 +557,7 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
   },
   /*TEST CASE 51*/
   {"vanilla bucket arn requires account id@af-south-1", // documentation
-    {EpParam("RequiresAccountId", true), EpParam("__name", "apname"), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:af-south-1:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
      EpParam("Region", "af-south-1"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*epUrl*/"https://s3-outposts.af-south-1.amazonaws.com",
@@ -1027,6 +1023,16 @@ static const Aws::Vector<S3ControlEndpointProviderEndpointTestCase> TEST_CASES =
      EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
     {}, // tags
     {{/*No endpoint expected*/}, /*error*/"Invalid configuration: region from ARN `cn-north-1` does not match client region `us-west-2` and UseArnRegion is `false`"} // expect
+  },
+  /*TEST CASE 106*/
+  {"outpost bucket arn@us-west-2", // documentation
+    {EpParam("RequiresAccountId", true), EpParam("UseFIPS", false), EpParam("Bucket", "arn:aws:s3-outposts:us-west-2:123456789012:outpost:op-01234567890123456:bucket:mybucket"),
+     EpParam("Region", "us-west-2"), EpParam("UseDualStack", false)}, // params
+    {}, // tags
+    {{/*epUrl*/"https://s3-outposts.us-west-2.amazonaws.com",
+       {/*properties*/{"authSchemes", {EpProp("disableDoubleEncoding", true), EpProp("signingRegion", "us-west-2"), EpProp("name", "sigv4"),
+                                      EpProp("signingName", "s3-outposts")}}},
+       {/*headers*/{"x-amz-account-id", {"123456789012"}}, {"x-amz-outpost-id", {"op-01234567890123456"}}}}, {/*No error*/}} // expect
   }
 };
 

@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/ivs-realtime/Ivsrealtime_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+namespace ivsrealtime
+{
+namespace Model
+{
+  enum class ParticipantTokenCapability
+  {
+    NOT_SET,
+    PUBLISH,
+    SUBSCRIBE
+  };
+
+namespace ParticipantTokenCapabilityMapper
+{
+AWS_IVSREALTIME_API ParticipantTokenCapability GetParticipantTokenCapabilityForName(const Aws::String& name);
+
+AWS_IVSREALTIME_API Aws::String GetNameForParticipantTokenCapability(ParticipantTokenCapability value);
+} // namespace ParticipantTokenCapabilityMapper
+} // namespace Model
+} // namespace ivsrealtime
+} // namespace Aws

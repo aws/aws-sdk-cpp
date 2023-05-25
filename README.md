@@ -4,9 +4,13 @@ The AWS SDK for C++ provides a modern C++ (version C++ 11 or later) interface fo
 AWS SDK for C++ is in now in General Availability and recommended for production use. We invite our customers to join
 the development efforts by submitting pull requests and sending us feedback and ideas via GitHub Issues.
 
-## Version 1.10 is now Available!
+## Version 1.11 is now Available!
 
-This release introduces a new endpoint resolution based on client configuration and request input parameters.
+This release introduces a refactored Asynchronous API and restructures the File Hierarchy of the project source code. Additionally, the minimum required version of cmake was raised to 3.13.
+* Asynchronous API refactoring is a partially breaking, backward incompatible change: all client methods such as OperationAsync and OperationCallable are no longer virtual methods but instead are conditionally compiled template methods. Having these methods as templates reduces the total binary size of the SDK by 40%. Individual client binary size may vary. In addition, it reduces build time of the SDK by up to 50% (release, unity build, SDK clients only).
+  A code change may be required if your code inherits SDK’s Client classes and overrides the virtual async methods. Regular synchronous/blocking call methods are still available for override.
+  Code changes are not required and SDK API are backward compatible if virtual async methods were not overwritten before.
+* Scripts and IDE project files not using the provided cmake build infrastructure must be reviewed and updated to reflect source tree changes.
 
 All CRT libraries are git submodules of SDK for C++. It requires changes in git syntax to get all source code.
 * New users: If you haven't downloaded the source code for SDK for C++, you can get all git submodules recursively by:
@@ -24,6 +28,14 @@ All CRT libraries are git submodules of SDK for C++. It requires changes in git 
 
 
 See Wiki page [Improving S3 Throughput with AWS SDK for CPP v1.9](https://github.com/aws/aws-sdk-cpp/wiki/Improving-S3-Throughput-with-AWS-SDK-for-CPP-v1.9) for more details, and create a new [issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) or [pull request](https://github.com/aws/aws-sdk-cpp/compare) if you have any feedback on this new version.
+
+## API Reference Docs
+
+The AWS SDK C++ recently re-formatted their API docs to be more modularized for easier navigation. Please update any old bookmarks that you may have.
+
+The root index of the documents can be found at https://sdk.amazonaws.com/cpp/api/LATEST/index.html
+
+from here each service specific documentation can be found under the `modules` tab. Upon opening one of these, you will see the associated class list of the client, including a links to the `core` module.
 
 ## Upgrade Your SDK to Get Latest Security Patches
 The AWS SDK for C++ has a dependency on cJSON. This dependency was updated to version 1.7.14 in the recent SDK updates. We would recommend to upgrade your SDK to version 1.9.67 for 1.9.x or 1.8.187 for 1.8.x. Thank @dkalinowski for reporting this issue: https://github.com/aws/aws-sdk-cpp/issues/1594
@@ -118,7 +130,7 @@ For information about maintenance and support for SDK major versions and our und
 
 The best way to interact with our team is through GitHub. You can [open an issue](https://github.com/aws/aws-sdk-cpp/issues/new/choose) and choose from one of our templates for guidance, bug reports, or feature requests.
 
-You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-cli) or on the [AWS Discussion Forum for CPP](https://forums.aws.amazon.com/forum.jspa?forumID=245). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
+You may also find help on community resources such as [StackOverFlow](https://stackoverflow.com/) with the tag [#aws-sdk-cpp](https://stackoverflow.com/questions/tagged/aws-sdk-cpp). If you have a support plan with [AWS Support](https://aws.amazon.com/premiumsupport/), you can also create a new support case.
 
 Please make sure to check out our resources too before opening an issue:
 * Our [Developer Guide](https://docs.aws.amazon.com/sdk-for-cpp/v1/developer-guide/welcome.html) and [API reference](http://sdk.amazonaws.com/cpp/api/LATEST/index.html)
@@ -128,14 +140,14 @@ Please make sure to check out our resources too before opening an issue:
 
 
 # Using the SDK and Other Topics
-* [Using the SDK](./Docs/SDK_usage_guide.md)
-* [CMake Parameters](./Docs/CMake_Parameters.md)
-* [Credentials Providers](./Docs/Credentials_Providers.md)
-* [Client Configuration Parameters](./Docs/ClientConfiguration_Parameters.md)
-* [Service Client](./Docs/Service_Client.md)
-* [Memory Management](./Docs/Memory_Management.md)
-* [Advanced Topics](./Docs/Advanced_topics.md)
-* [Add as CMake external project](./Docs/CMake_External_Project.md)
-* [Coding Standards](./Docs/CODING_STANDARDS.md)
+* [Using the SDK](./docs/SDK_usage_guide.md)
+* [CMake Parameters](./docs/CMake_Parameters.md)
+* [Credentials Providers](./docs/Credentials_Providers.md)
+* [Client Configuration Parameters](./docs/ClientConfiguration_Parameters.md)
+* [Service Client](./docs/Service_Client.md)
+* [Memory Management](./docs/Memory_Management.md)
+* [Advanced Topics](./docs/Advanced_topics.md)
+* [Add as CMake external project](./docs/CMake_External_Project.md)
+* [Coding Standards](./docs/CODING_STANDARDS.md)
 * [License](./LICENSE)
 * [Code of Conduct](./CODE_OF_CONDUCT.md)

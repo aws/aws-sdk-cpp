@@ -1,0 +1,94 @@
+#set($virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($virtual = "virtual")
+#end
+
+#foreach($operation in $serviceModel.operations)
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#else
+#set($constText = "const ")
+#end
+#if(!$operation.documentation)
+#set($operation.documentation = '')
+#end
+#if($operation.request)
+#if($operation.request.shape.hasEventStreamMembers())
+        /**
+         * ${operation.documentation}
+         *
+         * Queues the request into a thread executor.
+         * The streamReadyHandler is triggered when the stream is ready to be written to.
+         * The handler is triggered when the request is finished.
+         */
+        $virtual void ${operation.name}Async(Model::${operation.request.shape.name}& request,
+                const ${operation.name}StreamReadyHandler& streamReadyHandler,
+                const ${operation.name}ResponseReceivedHandler& handler,
+                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& handlerContext = nullptr) const;
+
+#else##--#if($operation.request.shape.hasEventStreamMembers())
+        /**
+         * ${operation.documentation}
+         */
+        $virtual Model::${operation.name}Outcome ${operation.name}(${constText}Model::${operation.request.shape.name}& request) const;
+
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+##S3 CRT-backed Operations do not support Async Callable API
+        /**
+         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
+##S3 CRT-backed Operations are primarly based on Async implementation not sync blocking calls
+        $virtual Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}Model::${operation.request.shape.name}& request) const;
+#else
+        template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
+        Model::${operation.name}OutcomeCallable ${operation.name}Callable(${constText}${operation.name}RequestT& request) const
+        {
+            return SubmitCallable(&${className}::${operation.name}, request);
+        }
+#end##--#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
+#end##--#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+
+        /**
+         * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
+##S3 CRT-backed Operations are primarly based on Async implementation not sync blocking calls
+        $virtual void ${operation.name}Async(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+#else
+        template<typename ${operation.name}RequestT = Model::${operation.request.shape.name}>
+        void ${operation.name}Async(${constText}${operation.name}RequestT& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&${className}::${operation.name}, request, handler, context);
+        }
+#end##--#if($serviceModel.metadata.serviceId == "S3" && $operation.s3CrtEnabled)
+
+#end##--#if($operation.request.shape.hasEventStreamMembers())--#else
+#else##--#if($operation.request)
+        /**
+         * ${operation.documentation}
+         */
+        $virtual Model::${operation.name}Outcome ${operation.name}() const;
+
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+##S3 CRT-backed Operations do not support Async Callable API
+        /**
+         * A Callable wrapper for ${operation.name} that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename = void>
+        Model::${operation.name}OutcomeCallable ${operation.name}Callable() const
+        {
+            return SubmitCallable(&${className}::${operation.name});
+        }
+#end##--#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+
+        /**
+         * An Async wrapper for ${operation.name} that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename = void>
+        void ${operation.name}Async(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&${className}::${operation.name}, handler, context);
+        }
+#end##--#if($operation.request)
+#end##--#foreach($operation in $serviceModel.operations)

@@ -1,0 +1,156 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/workdocs/WorkDocs_EXPORTS.h>
+#include <aws/workdocs/model/FolderMetadata.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace WorkDocs
+{
+namespace Model
+{
+  class GetFolderResult
+  {
+  public:
+    AWS_WORKDOCS_API GetFolderResult();
+    AWS_WORKDOCS_API GetFolderResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_WORKDOCS_API GetFolderResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The metadata of the folder.</p>
+     */
+    inline const FolderMetadata& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>The metadata of the folder.</p>
+     */
+    inline void SetMetadata(const FolderMetadata& value) { m_metadata = value; }
+
+    /**
+     * <p>The metadata of the folder.</p>
+     */
+    inline void SetMetadata(FolderMetadata&& value) { m_metadata = std::move(value); }
+
+    /**
+     * <p>The metadata of the folder.</p>
+     */
+    inline GetFolderResult& WithMetadata(const FolderMetadata& value) { SetMetadata(value); return *this;}
+
+    /**
+     * <p>The metadata of the folder.</p>
+     */
+    inline GetFolderResult& WithMetadata(FolderMetadata&& value) { SetMetadata(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetCustomMetadata() const{ return m_customMetadata; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline void SetCustomMetadata(const Aws::Map<Aws::String, Aws::String>& value) { m_customMetadata = value; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline void SetCustomMetadata(Aws::Map<Aws::String, Aws::String>&& value) { m_customMetadata = std::move(value); }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& WithCustomMetadata(const Aws::Map<Aws::String, Aws::String>& value) { SetCustomMetadata(value); return *this;}
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& WithCustomMetadata(Aws::Map<Aws::String, Aws::String>&& value) { SetCustomMetadata(std::move(value)); return *this;}
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(const Aws::String& key, const Aws::String& value) { m_customMetadata.emplace(key, value); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(Aws::String&& key, const Aws::String& value) { m_customMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(const Aws::String& key, Aws::String&& value) { m_customMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(Aws::String&& key, Aws::String&& value) { m_customMetadata.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(const char* key, Aws::String&& value) { m_customMetadata.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(Aws::String&& key, const char* value) { m_customMetadata.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The custom metadata on the folder.</p>
+     */
+    inline GetFolderResult& AddCustomMetadata(const char* key, const char* value) { m_customMetadata.emplace(key, value); return *this; }
+
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline GetFolderResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline GetFolderResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline GetFolderResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    FolderMetadata m_metadata;
+
+    Aws::Map<Aws::String, Aws::String> m_customMetadata;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace WorkDocs
+} // namespace Aws

@@ -1,0 +1,153 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <utility>
+
+namespace Aws
+{
+template<typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils
+{
+namespace Json
+{
+  class JsonValue;
+} // namespace Json
+} // namespace Utils
+namespace Batch
+{
+namespace Model
+{
+  class UpdateComputeEnvironmentResult
+  {
+  public:
+    AWS_BATCH_API UpdateComputeEnvironmentResult();
+    AWS_BATCH_API UpdateComputeEnvironmentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+    AWS_BATCH_API UpdateComputeEnvironmentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline const Aws::String& GetComputeEnvironmentName() const{ return m_computeEnvironmentName; }
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline void SetComputeEnvironmentName(const Aws::String& value) { m_computeEnvironmentName = value; }
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline void SetComputeEnvironmentName(Aws::String&& value) { m_computeEnvironmentName = std::move(value); }
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline void SetComputeEnvironmentName(const char* value) { m_computeEnvironmentName.assign(value); }
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const Aws::String& value) { SetComputeEnvironmentName(value); return *this;}
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(Aws::String&& value) { SetComputeEnvironmentName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the compute environment. It can be up to 128 characters long. It
+     * can contain uppercase and lowercase letters, numbers, hyphens (-), and
+     * underscores (_).</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentName(const char* value) { SetComputeEnvironmentName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline const Aws::String& GetComputeEnvironmentArn() const{ return m_computeEnvironmentArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline void SetComputeEnvironmentArn(const Aws::String& value) { m_computeEnvironmentArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline void SetComputeEnvironmentArn(Aws::String&& value) { m_computeEnvironmentArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline void SetComputeEnvironmentArn(const char* value) { m_computeEnvironmentArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(const Aws::String& value) { SetComputeEnvironmentArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(Aws::String&& value) { SetComputeEnvironmentArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline UpdateComputeEnvironmentResult& WithComputeEnvironmentArn(const char* value) { SetComputeEnvironmentArn(value); return *this;}
+
+
+    
+    inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    
+    inline void SetRequestId(const Aws::String& value) { m_requestId = value; }
+
+    
+    inline void SetRequestId(Aws::String&& value) { m_requestId = std::move(value); }
+
+    
+    inline void SetRequestId(const char* value) { m_requestId.assign(value); }
+
+    
+    inline UpdateComputeEnvironmentResult& WithRequestId(const Aws::String& value) { SetRequestId(value); return *this;}
+
+    
+    inline UpdateComputeEnvironmentResult& WithRequestId(Aws::String&& value) { SetRequestId(std::move(value)); return *this;}
+
+    
+    inline UpdateComputeEnvironmentResult& WithRequestId(const char* value) { SetRequestId(value); return *this;}
+
+  private:
+
+    Aws::String m_computeEnvironmentName;
+
+    Aws::String m_computeEnvironmentArn;
+
+    Aws::String m_requestId;
+  };
+
+} // namespace Model
+} // namespace Batch
+} // namespace Aws
