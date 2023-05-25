@@ -18,6 +18,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 GetRouteResult::GetRouteResult() : 
+    m_appendSourcePath(false),
     m_includeChildPaths(false),
     m_routeType(RouteType::NOT_SET),
     m_state(RouteState::NOT_SET)
@@ -25,6 +26,7 @@ GetRouteResult::GetRouteResult() :
 }
 
 GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_appendSourcePath(false),
     m_includeChildPaths(false),
     m_routeType(RouteType::NOT_SET),
     m_state(RouteState::NOT_SET)
@@ -35,6 +37,12 @@ GetRouteResult::GetRouteResult(const Aws::AmazonWebServiceResult<JsonValue>& res
 GetRouteResult& GetRouteResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
+  if(jsonValue.ValueExists("AppendSourcePath"))
+  {
+    m_appendSourcePath = jsonValue.GetBool("AppendSourcePath");
+
+  }
+
   if(jsonValue.ValueExists("ApplicationId"))
   {
     m_applicationId = jsonValue.GetString("ApplicationId");

@@ -7,6 +7,7 @@
 #include <aws/gamelift/GameLift_EXPORTS.h>
 #include <aws/gamelift/GameLiftRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/gamelift/model/ClaimFilterOption.h>
 #include <utility>
 
 namespace Aws
@@ -212,6 +213,37 @@ namespace Model
      */
     inline ClaimGameServerRequest& WithGameServerData(const char* value) { SetGameServerData(value); return *this;}
 
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline const ClaimFilterOption& GetFilterOption() const{ return m_filterOption; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline bool FilterOptionHasBeenSet() const { return m_filterOptionHasBeenSet; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline void SetFilterOption(const ClaimFilterOption& value) { m_filterOptionHasBeenSet = true; m_filterOption = value; }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline void SetFilterOption(ClaimFilterOption&& value) { m_filterOptionHasBeenSet = true; m_filterOption = std::move(value); }
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline ClaimGameServerRequest& WithFilterOption(const ClaimFilterOption& value) { SetFilterOption(value); return *this;}
+
+    /**
+     * <p>Object that restricts how a claimed game server is chosen.</p>
+     */
+    inline ClaimGameServerRequest& WithFilterOption(ClaimFilterOption&& value) { SetFilterOption(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_gameServerGroupName;
@@ -222,6 +254,9 @@ namespace Model
 
     Aws::String m_gameServerData;
     bool m_gameServerDataHasBeenSet = false;
+
+    ClaimFilterOption m_filterOption;
+    bool m_filterOptionHasBeenSet = false;
   };
 
 } // namespace Model

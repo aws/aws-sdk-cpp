@@ -185,28 +185,32 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline int GetTimeoutInSeconds() const{ return m_timeoutInSeconds; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
 
     /**
      * <p>The maximum time, in seconds, that a new game session placement request
      * remains in the queue. When a request exceeds this time, the game session
-     * placement changes to a <code>TIMED_OUT</code> status.</p>
+     * placement changes to a <code>TIMED_OUT</code> status. By default, this property
+     * is set to <code>600</code>.</p>
      */
     inline GameSessionQueue& WithTimeoutInSeconds(int value) { SetTimeoutInSeconds(value); return *this;}
 

@@ -7,6 +7,7 @@
 #include <aws/glue/Glue_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/model/DataQualityRuleResultStatus.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -192,6 +193,52 @@ namespace Model
      */
     inline DataQualityRuleResult& WithResult(DataQualityRuleResultStatus&& value) { SetResult(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline const Aws::Map<Aws::String, double>& GetEvaluatedMetrics() const{ return m_evaluatedMetrics; }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline bool EvaluatedMetricsHasBeenSet() const { return m_evaluatedMetricsHasBeenSet; }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline void SetEvaluatedMetrics(const Aws::Map<Aws::String, double>& value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics = value; }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline void SetEvaluatedMetrics(Aws::Map<Aws::String, double>&& value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics = std::move(value); }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline DataQualityRuleResult& WithEvaluatedMetrics(const Aws::Map<Aws::String, double>& value) { SetEvaluatedMetrics(value); return *this;}
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline DataQualityRuleResult& WithEvaluatedMetrics(Aws::Map<Aws::String, double>&& value) { SetEvaluatedMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline DataQualityRuleResult& AddEvaluatedMetrics(const Aws::String& key, double value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline DataQualityRuleResult& AddEvaluatedMetrics(Aws::String&& key, double value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of metrics associated with the evaluation of the rule.</p>
+     */
+    inline DataQualityRuleResult& AddEvaluatedMetrics(const char* key, double value) { m_evaluatedMetricsHasBeenSet = true; m_evaluatedMetrics.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -205,6 +252,9 @@ namespace Model
 
     DataQualityRuleResultStatus m_result;
     bool m_resultHasBeenSet = false;
+
+    Aws::Map<Aws::String, double> m_evaluatedMetrics;
+    bool m_evaluatedMetricsHasBeenSet = false;
   };
 
 } // namespace Model

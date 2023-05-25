@@ -37,7 +37,8 @@ namespace Model
     ElastiCacheReplicaEngineCPUUtilization,
     ElastiCacheDatabaseMemoryUsageCountedForEvictPercentage,
     NeptuneReaderAverageCPUUtilization,
-    SageMakerVariantProvisionedConcurrencyUtilization
+    SageMakerVariantProvisionedConcurrencyUtilization,
+    ElastiCacheDatabaseCapacityUsageCountedForEvictPercentage
   };
 
 namespace MetricTypeMapper

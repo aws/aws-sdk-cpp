@@ -136,6 +136,12 @@ DescribeHyperParameterTuningJobResult& DescribeHyperParameterTuningJobResult::op
 
   }
 
+  if(jsonValue.ValueExists("Autotune"))
+  {
+    m_autotune = jsonValue.GetObject("Autotune");
+
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

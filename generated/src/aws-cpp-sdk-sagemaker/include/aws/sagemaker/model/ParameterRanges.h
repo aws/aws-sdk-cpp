@@ -9,6 +9,7 @@
 #include <aws/sagemaker/model/IntegerParameterRange.h>
 #include <aws/sagemaker/model/ContinuousParameterRange.h>
 #include <aws/sagemaker/model/CategoricalParameterRange.h>
+#include <aws/sagemaker/model/AutoParameter.h>
 #include <utility>
 
 namespace Aws
@@ -243,6 +244,55 @@ namespace Model
      */
     inline ParameterRanges& AddCategoricalParameterRanges(CategoricalParameterRange&& value) { m_categoricalParameterRangesHasBeenSet = true; m_categoricalParameterRanges.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline const Aws::Vector<AutoParameter>& GetAutoParameters() const{ return m_autoParameters; }
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline bool AutoParametersHasBeenSet() const { return m_autoParametersHasBeenSet; }
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline void SetAutoParameters(const Aws::Vector<AutoParameter>& value) { m_autoParametersHasBeenSet = true; m_autoParameters = value; }
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline void SetAutoParameters(Aws::Vector<AutoParameter>&& value) { m_autoParametersHasBeenSet = true; m_autoParameters = std::move(value); }
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline ParameterRanges& WithAutoParameters(const Aws::Vector<AutoParameter>& value) { SetAutoParameters(value); return *this;}
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline ParameterRanges& WithAutoParameters(Aws::Vector<AutoParameter>&& value) { SetAutoParameters(std::move(value)); return *this;}
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline ParameterRanges& AddAutoParameters(const AutoParameter& value) { m_autoParametersHasBeenSet = true; m_autoParameters.push_back(value); return *this; }
+
+    /**
+     * <p>A list containing hyperparameter names and example values to be used by
+     * Autotune to determine optimal ranges for your tuning job.</p>
+     */
+    inline ParameterRanges& AddAutoParameters(AutoParameter&& value) { m_autoParametersHasBeenSet = true; m_autoParameters.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<IntegerParameterRange> m_integerParameterRanges;
@@ -253,6 +303,9 @@ namespace Model
 
     Aws::Vector<CategoricalParameterRange> m_categoricalParameterRanges;
     bool m_categoricalParameterRangesHasBeenSet = false;
+
+    Aws::Vector<AutoParameter> m_autoParameters;
+    bool m_autoParametersHasBeenSet = false;
   };
 
 } // namespace Model

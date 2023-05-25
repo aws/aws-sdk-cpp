@@ -20,13 +20,15 @@ namespace Model
 
 DataQualityTargetTable::DataQualityTargetTable() : 
     m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
 }
 
 DataQualityTargetTable::DataQualityTargetTable(JsonView jsonValue) : 
     m_tableNameHasBeenSet(false),
-    m_databaseNameHasBeenSet(false)
+    m_databaseNameHasBeenSet(false),
+    m_catalogIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -47,6 +49,13 @@ DataQualityTargetTable& DataQualityTargetTable::operator =(JsonView jsonValue)
     m_databaseNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("CatalogId"))
+  {
+    m_catalogId = jsonValue.GetString("CatalogId");
+
+    m_catalogIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -63,6 +72,12 @@ JsonValue DataQualityTargetTable::Jsonize() const
   if(m_databaseNameHasBeenSet)
   {
    payload.WithString("DatabaseName", m_databaseName);
+
+  }
+
+  if(m_catalogIdHasBeenSet)
+  {
+   payload.WithString("CatalogId", m_catalogId);
 
   }
 

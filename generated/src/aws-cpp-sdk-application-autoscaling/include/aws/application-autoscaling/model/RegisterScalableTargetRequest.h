@@ -841,16 +841,16 @@ namespace Model
      * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
-     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
-     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
-     * specify a value greater than 0. A value greater than 0 means that data points
-     * are continuously reported to CloudWatch that scaling policies can use to scale
-     * on a metric like average CPU utilization.</p> <p>For all other resources, the
-     * minimum allowed value depends on the type of resource that you are using. If you
-     * provide a value that is lower than what a resource can accept, an error occurs.
-     * In which case, the error message will provide the minimum value that the
-     * resource can accept.</p>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker Serverless endpoint
+     * provisioned concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom
+     * resources</p> </li> </ul> <p>It's strongly recommended that you specify a value
+     * greater than 0. A value greater than 0 means that data points are continuously
+     * reported to CloudWatch that scaling policies can use to scale on a metric like
+     * average CPU utilization.</p> <p>For all other resources, the minimum allowed
+     * value depends on the type of resource that you are using. If you provide a value
+     * that is lower than what a resource can accept, an error occurs. In which case,
+     * the error message will provide the minimum value that the resource can
+     * accept.</p>
      */
     inline int GetMinCapacity() const{ return m_minCapacity; }
 
@@ -862,16 +862,16 @@ namespace Model
      * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
-     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
-     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
-     * specify a value greater than 0. A value greater than 0 means that data points
-     * are continuously reported to CloudWatch that scaling policies can use to scale
-     * on a metric like average CPU utilization.</p> <p>For all other resources, the
-     * minimum allowed value depends on the type of resource that you are using. If you
-     * provide a value that is lower than what a resource can accept, an error occurs.
-     * In which case, the error message will provide the minimum value that the
-     * resource can accept.</p>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker Serverless endpoint
+     * provisioned concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom
+     * resources</p> </li> </ul> <p>It's strongly recommended that you specify a value
+     * greater than 0. A value greater than 0 means that data points are continuously
+     * reported to CloudWatch that scaling policies can use to scale on a metric like
+     * average CPU utilization.</p> <p>For all other resources, the minimum allowed
+     * value depends on the type of resource that you are using. If you provide a value
+     * that is lower than what a resource can accept, an error occurs. In which case,
+     * the error message will provide the minimum value that the resource can
+     * accept.</p>
      */
     inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
 
@@ -883,16 +883,16 @@ namespace Model
      * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
-     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
-     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
-     * specify a value greater than 0. A value greater than 0 means that data points
-     * are continuously reported to CloudWatch that scaling policies can use to scale
-     * on a metric like average CPU utilization.</p> <p>For all other resources, the
-     * minimum allowed value depends on the type of resource that you are using. If you
-     * provide a value that is lower than what a resource can accept, an error occurs.
-     * In which case, the error message will provide the minimum value that the
-     * resource can accept.</p>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker Serverless endpoint
+     * provisioned concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom
+     * resources</p> </li> </ul> <p>It's strongly recommended that you specify a value
+     * greater than 0. A value greater than 0 means that data points are continuously
+     * reported to CloudWatch that scaling policies can use to scale on a metric like
+     * average CPU utilization.</p> <p>For all other resources, the minimum allowed
+     * value depends on the type of resource that you are using. If you provide a value
+     * that is lower than what a resource can accept, an error occurs. In which case,
+     * the error message will provide the minimum value that the resource can
+     * accept.</p>
      */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
@@ -904,16 +904,16 @@ namespace Model
      * minimum value allowed is 0.</p> <ul> <li> <p>AppStream 2.0 fleets</p> </li> <li>
      * <p> Aurora DB clusters</p> </li> <li> <p>ECS services</p> </li> <li> <p>EMR
      * clusters</p> </li> <li> <p>Lambda provisioned concurrency</p> </li> <li>
-     * <p>SageMaker Serverless endpoint provisioned concurrency</p> </li> <li>
-     * <p>SageMaker endpoint variants</p> </li> <li> <p>Spot Fleets</p> </li> <li>
-     * <p>custom resources</p> </li> </ul> <p>It's strongly recommended that you
-     * specify a value greater than 0. A value greater than 0 means that data points
-     * are continuously reported to CloudWatch that scaling policies can use to scale
-     * on a metric like average CPU utilization.</p> <p>For all other resources, the
-     * minimum allowed value depends on the type of resource that you are using. If you
-     * provide a value that is lower than what a resource can accept, an error occurs.
-     * In which case, the error message will provide the minimum value that the
-     * resource can accept.</p>
+     * <p>SageMaker endpoint variants</p> </li> <li> <p>SageMaker Serverless endpoint
+     * provisioned concurrency</p> </li> <li> <p>Spot Fleets</p> </li> <li> <p>custom
+     * resources</p> </li> </ul> <p>It's strongly recommended that you specify a value
+     * greater than 0. A value greater than 0 means that data points are continuously
+     * reported to CloudWatch that scaling policies can use to scale on a metric like
+     * average CPU utilization.</p> <p>For all other resources, the minimum allowed
+     * value depends on the type of resource that you are using. If you provide a value
+     * that is lower than what a resource can accept, an error occurs. In which case,
+     * the error message will provide the minimum value that the resource can
+     * accept.</p>
      */
     inline RegisterScalableTargetRequest& WithMinCapacity(int value) { SetMinCapacity(value); return *this;}
 

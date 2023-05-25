@@ -21,14 +21,16 @@ namespace Model
 PipelineMetadata::PipelineMetadata() : 
     m_pipelineArnHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_updatedHasBeenSet(false)
+    m_updatedHasBeenSet(false),
+    m_pollingDisabledAtHasBeenSet(false)
 {
 }
 
 PipelineMetadata::PipelineMetadata(JsonView jsonValue) : 
     m_pipelineArnHasBeenSet(false),
     m_createdHasBeenSet(false),
-    m_updatedHasBeenSet(false)
+    m_updatedHasBeenSet(false),
+    m_pollingDisabledAtHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -56,6 +58,13 @@ PipelineMetadata& PipelineMetadata::operator =(JsonView jsonValue)
     m_updatedHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pollingDisabledAt"))
+  {
+    m_pollingDisabledAt = jsonValue.GetDouble("pollingDisabledAt");
+
+    m_pollingDisabledAtHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -77,6 +86,11 @@ JsonValue PipelineMetadata::Jsonize() const
   if(m_updatedHasBeenSet)
   {
    payload.WithDouble("updated", m_updated.SecondsWithMSPrecision());
+  }
+
+  if(m_pollingDisabledAtHasBeenSet)
+  {
+   payload.WithDouble("pollingDisabledAt", m_pollingDisabledAt.SecondsWithMSPrecision());
   }
 
   return payload;

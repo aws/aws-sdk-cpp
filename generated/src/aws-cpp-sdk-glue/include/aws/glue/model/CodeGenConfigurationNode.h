@@ -70,6 +70,7 @@
 #include <aws/glue/model/S3DeltaDirectTarget.h>
 #include <aws/glue/model/AmazonRedshiftSource.h>
 #include <aws/glue/model/AmazonRedshiftTarget.h>
+#include <aws/glue/model/EvaluateDataQualityMultiFrame.h>
 #include <utility>
 
 namespace Aws
@@ -2315,6 +2316,43 @@ namespace Model
      */
     inline CodeGenConfigurationNode& WithAmazonRedshiftTarget(AmazonRedshiftTarget&& value) { SetAmazonRedshiftTarget(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline const EvaluateDataQualityMultiFrame& GetEvaluateDataQualityMultiFrame() const{ return m_evaluateDataQualityMultiFrame; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline bool EvaluateDataQualityMultiFrameHasBeenSet() const { return m_evaluateDataQualityMultiFrameHasBeenSet; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline void SetEvaluateDataQualityMultiFrame(const EvaluateDataQualityMultiFrame& value) { m_evaluateDataQualityMultiFrameHasBeenSet = true; m_evaluateDataQualityMultiFrame = value; }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline void SetEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame&& value) { m_evaluateDataQualityMultiFrameHasBeenSet = true; m_evaluateDataQualityMultiFrame = std::move(value); }
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQualityMultiFrame(const EvaluateDataQualityMultiFrame& value) { SetEvaluateDataQualityMultiFrame(value); return *this;}
+
+    /**
+     * <p>Specifies your data quality evaluation criteria. Allows multiple input data
+     * and returns a collection of Dynamic Frames.</p>
+     */
+    inline CodeGenConfigurationNode& WithEvaluateDataQualityMultiFrame(EvaluateDataQualityMultiFrame&& value) { SetEvaluateDataQualityMultiFrame(std::move(value)); return *this;}
+
   private:
 
     AthenaConnectorSource m_athenaConnectorSource;
@@ -2511,6 +2549,9 @@ namespace Model
 
     AmazonRedshiftTarget m_amazonRedshiftTarget;
     bool m_amazonRedshiftTargetHasBeenSet = false;
+
+    EvaluateDataQualityMultiFrame m_evaluateDataQualityMultiFrame;
+    bool m_evaluateDataQualityMultiFrameHasBeenSet = false;
   };
 
 } // namespace Model

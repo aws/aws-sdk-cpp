@@ -127,6 +127,15 @@ GetDataQualityRulesetEvaluationRunResult& GetDataQualityRulesetEvaluationRunResu
     }
   }
 
+  if(jsonValue.ValueExists("AdditionalDataSources"))
+  {
+    Aws::Map<Aws::String, JsonView> additionalDataSourcesJsonMap = jsonValue.GetObject("AdditionalDataSources").GetAllObjects();
+    for(auto& additionalDataSourcesItem : additionalDataSourcesJsonMap)
+    {
+      m_additionalDataSources[additionalDataSourcesItem.first] = additionalDataSourcesItem.second.AsObject();
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

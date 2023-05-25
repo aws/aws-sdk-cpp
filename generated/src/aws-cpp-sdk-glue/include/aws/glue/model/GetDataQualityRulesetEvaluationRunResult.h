@@ -11,6 +11,7 @@
 #include <aws/glue/model/TaskStatusType.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -445,6 +446,73 @@ namespace Model
     inline GetDataQualityRulesetEvaluationRunResult& AddResultIds(const char* value) { m_resultIds.push_back(value); return *this; }
 
 
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline const Aws::Map<Aws::String, DataSource>& GetAdditionalDataSources() const{ return m_additionalDataSources; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline void SetAdditionalDataSources(const Aws::Map<Aws::String, DataSource>& value) { m_additionalDataSources = value; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline void SetAdditionalDataSources(Aws::Map<Aws::String, DataSource>&& value) { m_additionalDataSources = std::move(value); }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& WithAdditionalDataSources(const Aws::Map<Aws::String, DataSource>& value) { SetAdditionalDataSources(value); return *this;}
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& WithAdditionalDataSources(Aws::Map<Aws::String, DataSource>&& value) { SetAdditionalDataSources(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(const Aws::String& key, const DataSource& value) { m_additionalDataSources.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(Aws::String&& key, const DataSource& value) { m_additionalDataSources.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(const Aws::String& key, DataSource&& value) { m_additionalDataSources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(Aws::String&& key, DataSource&& value) { m_additionalDataSources.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(const char* key, DataSource&& value) { m_additionalDataSources.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of reference strings to additional data sources you can specify for an
+     * evaluation run.</p>
+     */
+    inline GetDataQualityRulesetEvaluationRunResult& AddAdditionalDataSources(const char* key, const DataSource& value) { m_additionalDataSources.emplace(key, value); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -495,6 +563,8 @@ namespace Model
     Aws::Vector<Aws::String> m_rulesetNames;
 
     Aws::Vector<Aws::String> m_resultIds;
+
+    Aws::Map<Aws::String, DataSource> m_additionalDataSources;
 
     Aws::String m_requestId;
   };

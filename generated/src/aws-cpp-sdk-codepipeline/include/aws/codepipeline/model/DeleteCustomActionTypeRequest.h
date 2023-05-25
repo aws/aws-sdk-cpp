@@ -77,49 +77,49 @@ namespace Model
 
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline void SetProvider(const Aws::String& value) { m_providerHasBeenSet = true; m_provider = value; }
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline void SetProvider(Aws::String&& value) { m_providerHasBeenSet = true; m_provider = std::move(value); }
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline void SetProvider(const char* value) { m_providerHasBeenSet = true; m_provider.assign(value); }
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline DeleteCustomActionTypeRequest& WithProvider(const Aws::String& value) { SetProvider(value); return *this;}
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline DeleteCustomActionTypeRequest& WithProvider(Aws::String&& value) { SetProvider(std::move(value)); return *this;}
 
     /**
-     * <p>The provider of the service used in the custom action, such as AWS
+     * <p>The provider of the service used in the custom action, such as
      * CodeDeploy.</p>
      */
     inline DeleteCustomActionTypeRequest& WithProvider(const char* value) { SetProvider(value); return *this;}

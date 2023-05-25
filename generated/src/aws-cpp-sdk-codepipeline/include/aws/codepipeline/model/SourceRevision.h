@@ -138,8 +138,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -147,8 +147,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -156,8 +156,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -165,8 +165,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -174,8 +174,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -183,8 +183,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -192,8 +192,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -201,8 +201,8 @@ namespace Model
 
     /**
      * <p>Summary information about the most recent revision of the artifact. For
-     * GitHub and AWS CodeCommit repositories, the commit message. For Amazon S3
-     * buckets or actions, the user-provided content of a
+     * GitHub and CodeCommit repositories, the commit message. For Amazon S3 buckets or
+     * actions, the user-provided content of a
      * <code>codepipeline-artifact-revision-summary</code> key specified in the object
      * metadata.</p>
      */
@@ -211,57 +211,49 @@ namespace Model
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline const Aws::String& GetRevisionUrl() const{ return m_revisionUrl; }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline bool RevisionUrlHasBeenSet() const { return m_revisionUrlHasBeenSet; }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline void SetRevisionUrl(const Aws::String& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = value; }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline void SetRevisionUrl(Aws::String&& value) { m_revisionUrlHasBeenSet = true; m_revisionUrl = std::move(value); }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline void SetRevisionUrl(const char* value) { m_revisionUrlHasBeenSet = true; m_revisionUrl.assign(value); }
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline SourceRevision& WithRevisionUrl(const Aws::String& value) { SetRevisionUrl(value); return *this;}
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline SourceRevision& WithRevisionUrl(Aws::String&& value) { SetRevisionUrl(std::move(value)); return *this;}
 
     /**
      * <p>The commit ID for the artifact revision. For artifacts stored in GitHub or
-     * AWS CodeCommit repositories, the commit ID is linked to a commit details
-     * page.</p>
+     * CodeCommit repositories, the commit ID is linked to a commit details page.</p>
      */
     inline SourceRevision& WithRevisionUrl(const char* value) { SetRevisionUrl(value); return *this;}
 

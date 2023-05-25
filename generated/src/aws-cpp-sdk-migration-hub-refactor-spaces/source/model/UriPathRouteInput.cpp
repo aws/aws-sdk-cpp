@@ -21,6 +21,8 @@ namespace Model
 UriPathRouteInput::UriPathRouteInput() : 
     m_activationState(RouteActivationState::NOT_SET),
     m_activationStateHasBeenSet(false),
+    m_appendSourcePath(false),
+    m_appendSourcePathHasBeenSet(false),
     m_includeChildPaths(false),
     m_includeChildPathsHasBeenSet(false),
     m_methodsHasBeenSet(false),
@@ -31,6 +33,8 @@ UriPathRouteInput::UriPathRouteInput() :
 UriPathRouteInput::UriPathRouteInput(JsonView jsonValue) : 
     m_activationState(RouteActivationState::NOT_SET),
     m_activationStateHasBeenSet(false),
+    m_appendSourcePath(false),
+    m_appendSourcePathHasBeenSet(false),
     m_includeChildPaths(false),
     m_includeChildPathsHasBeenSet(false),
     m_methodsHasBeenSet(false),
@@ -46,6 +50,13 @@ UriPathRouteInput& UriPathRouteInput::operator =(JsonView jsonValue)
     m_activationState = RouteActivationStateMapper::GetRouteActivationStateForName(jsonValue.GetString("ActivationState"));
 
     m_activationStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AppendSourcePath"))
+  {
+    m_appendSourcePath = jsonValue.GetBool("AppendSourcePath");
+
+    m_appendSourcePathHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("IncludeChildPaths"))
@@ -82,6 +93,12 @@ JsonValue UriPathRouteInput::Jsonize() const
   if(m_activationStateHasBeenSet)
   {
    payload.WithString("ActivationState", RouteActivationStateMapper::GetNameForRouteActivationState(m_activationState));
+  }
+
+  if(m_appendSourcePathHasBeenSet)
+  {
+   payload.WithBool("AppendSourcePath", m_appendSourcePath);
+
   }
 
   if(m_includeChildPathsHasBeenSet)

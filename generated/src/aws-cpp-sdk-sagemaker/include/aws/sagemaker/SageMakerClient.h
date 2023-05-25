@@ -4007,8 +4007,9 @@ namespace SageMaker
         }
 
         /**
-         * <p>Gets a description of a hyperparameter tuning job.</p><p><h3>See Also:</h3>  
-         * <a
+         * <p>Returns a description of a hyperparameter tuning job, depending on the fields
+         * selected. These fields can include the name, Amazon Resource Name (ARN), job
+         * status of your tuning job and more.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DescribeHyperParameterTuningJob">AWS
          * API Reference</a></p>
          */
