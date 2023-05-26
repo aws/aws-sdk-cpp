@@ -7,6 +7,7 @@
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
 #include <aws/iotwireless/model/WirelessDeviceFrameInfo.h>
 #include <aws/iotwireless/model/LogLevel.h>
+#include <aws/iotwireless/model/MulticastFrameInfo.h>
 #include <utility>
 
 namespace Aws
@@ -76,6 +77,25 @@ namespace Model
     
     inline TraceContent& WithLogLevel(LogLevel&& value) { SetLogLevel(std::move(value)); return *this;}
 
+
+    
+    inline const MulticastFrameInfo& GetMulticastFrameInfo() const{ return m_multicastFrameInfo; }
+
+    
+    inline bool MulticastFrameInfoHasBeenSet() const { return m_multicastFrameInfoHasBeenSet; }
+
+    
+    inline void SetMulticastFrameInfo(const MulticastFrameInfo& value) { m_multicastFrameInfoHasBeenSet = true; m_multicastFrameInfo = value; }
+
+    
+    inline void SetMulticastFrameInfo(MulticastFrameInfo&& value) { m_multicastFrameInfoHasBeenSet = true; m_multicastFrameInfo = std::move(value); }
+
+    
+    inline TraceContent& WithMulticastFrameInfo(const MulticastFrameInfo& value) { SetMulticastFrameInfo(value); return *this;}
+
+    
+    inline TraceContent& WithMulticastFrameInfo(MulticastFrameInfo&& value) { SetMulticastFrameInfo(std::move(value)); return *this;}
+
   private:
 
     WirelessDeviceFrameInfo m_wirelessDeviceFrameInfo;
@@ -83,6 +103,9 @@ namespace Model
 
     LogLevel m_logLevel;
     bool m_logLevelHasBeenSet = false;
+
+    MulticastFrameInfo m_multicastFrameInfo;
+    bool m_multicastFrameInfoHasBeenSet = false;
   };
 
 } // namespace Model

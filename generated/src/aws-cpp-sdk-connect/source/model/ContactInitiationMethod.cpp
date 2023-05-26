@@ -28,6 +28,7 @@ namespace Aws
         static const int API_HASH = HashingUtils::HashString("API");
         static const int DISCONNECT_HASH = HashingUtils::HashString("DISCONNECT");
         static const int MONITOR_HASH = HashingUtils::HashString("MONITOR");
+        static const int EXTERNAL_OUTBOUND_HASH = HashingUtils::HashString("EXTERNAL_OUTBOUND");
 
 
         ContactInitiationMethod GetContactInitiationMethodForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return ContactInitiationMethod::MONITOR;
           }
+          else if (hashCode == EXTERNAL_OUTBOUND_HASH)
+          {
+            return ContactInitiationMethod::EXTERNAL_OUTBOUND;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -95,6 +100,8 @@ namespace Aws
             return "DISCONNECT";
           case ContactInitiationMethod::MONITOR:
             return "MONITOR";
+          case ContactInitiationMethod::EXTERNAL_OUTBOUND:
+            return "EXTERNAL_OUTBOUND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

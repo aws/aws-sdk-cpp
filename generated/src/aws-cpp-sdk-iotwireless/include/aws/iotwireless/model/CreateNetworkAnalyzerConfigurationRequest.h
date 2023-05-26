@@ -282,6 +282,70 @@ namespace Model
     
     inline CreateNetworkAnalyzerConfigurationRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetMulticastGroups() const{ return m_multicastGroups; }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline bool MulticastGroupsHasBeenSet() const { return m_multicastGroupsHasBeenSet; }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline void SetMulticastGroups(const Aws::Vector<Aws::String>& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups = value; }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline void SetMulticastGroups(Aws::Vector<Aws::String>&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups = std::move(value); }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline CreateNetworkAnalyzerConfigurationRequest& WithMulticastGroups(const Aws::Vector<Aws::String>& value) { SetMulticastGroups(value); return *this;}
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline CreateNetworkAnalyzerConfigurationRequest& WithMulticastGroups(Aws::Vector<Aws::String>&& value) { SetMulticastGroups(std::move(value)); return *this;}
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(const Aws::String& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(value); return *this; }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(Aws::String&& value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>Multicast Group resources to add to the network analyzer configruation.
+     * Provide the <code>MulticastGroupId</code> of the resource to add in the input
+     * array.</p>
+     */
+    inline CreateNetworkAnalyzerConfigurationRequest& AddMulticastGroups(const char* value) { m_multicastGroupsHasBeenSet = true; m_multicastGroups.push_back(value); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -304,6 +368,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_multicastGroups;
+    bool m_multicastGroupsHasBeenSet = false;
   };
 
 } // namespace Model
