@@ -71,6 +71,15 @@ GetNetworkAnalyzerConfigurationResult& GetNetworkAnalyzerConfigurationResult::op
 
   }
 
+  if(jsonValue.ValueExists("MulticastGroups"))
+  {
+    Aws::Utils::Array<JsonView> multicastGroupsJsonList = jsonValue.GetArray("MulticastGroups");
+    for(unsigned multicastGroupsIndex = 0; multicastGroupsIndex < multicastGroupsJsonList.GetLength(); ++multicastGroupsIndex)
+    {
+      m_multicastGroups.push_back(multicastGroupsJsonList[multicastGroupsIndex].AsString());
+    }
+  }
+
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

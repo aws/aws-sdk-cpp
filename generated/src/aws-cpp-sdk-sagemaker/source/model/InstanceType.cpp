@@ -89,6 +89,12 @@ namespace Aws
         static const int ml_g5_12xlarge_HASH = HashingUtils::HashString("ml.g5.12xlarge");
         static const int ml_g5_24xlarge_HASH = HashingUtils::HashString("ml.g5.24xlarge");
         static const int ml_g5_48xlarge_HASH = HashingUtils::HashString("ml.g5.48xlarge");
+        static const int ml_inf1_xlarge_HASH = HashingUtils::HashString("ml.inf1.xlarge");
+        static const int ml_inf1_2xlarge_HASH = HashingUtils::HashString("ml.inf1.2xlarge");
+        static const int ml_inf1_6xlarge_HASH = HashingUtils::HashString("ml.inf1.6xlarge");
+        static const int ml_inf1_24xlarge_HASH = HashingUtils::HashString("ml.inf1.24xlarge");
+        static const int ml_p4d_24xlarge_HASH = HashingUtils::HashString("ml.p4d.24xlarge");
+        static const int ml_p4de_24xlarge_HASH = HashingUtils::HashString("ml.p4de.24xlarge");
 
 
         InstanceType GetInstanceTypeForName(const Aws::String& name)
@@ -370,6 +376,30 @@ namespace Aws
           {
             return InstanceType::ml_g5_48xlarge;
           }
+          else if (hashCode == ml_inf1_xlarge_HASH)
+          {
+            return InstanceType::ml_inf1_xlarge;
+          }
+          else if (hashCode == ml_inf1_2xlarge_HASH)
+          {
+            return InstanceType::ml_inf1_2xlarge;
+          }
+          else if (hashCode == ml_inf1_6xlarge_HASH)
+          {
+            return InstanceType::ml_inf1_6xlarge;
+          }
+          else if (hashCode == ml_inf1_24xlarge_HASH)
+          {
+            return InstanceType::ml_inf1_24xlarge;
+          }
+          else if (hashCode == ml_p4d_24xlarge_HASH)
+          {
+            return InstanceType::ml_p4d_24xlarge;
+          }
+          else if (hashCode == ml_p4de_24xlarge_HASH)
+          {
+            return InstanceType::ml_p4de_24xlarge;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -522,6 +552,18 @@ namespace Aws
             return "ml.g5.24xlarge";
           case InstanceType::ml_g5_48xlarge:
             return "ml.g5.48xlarge";
+          case InstanceType::ml_inf1_xlarge:
+            return "ml.inf1.xlarge";
+          case InstanceType::ml_inf1_2xlarge:
+            return "ml.inf1.2xlarge";
+          case InstanceType::ml_inf1_6xlarge:
+            return "ml.inf1.6xlarge";
+          case InstanceType::ml_inf1_24xlarge:
+            return "ml.inf1.24xlarge";
+          case InstanceType::ml_p4d_24xlarge:
+            return "ml.p4d.24xlarge";
+          case InstanceType::ml_p4de_24xlarge:
+            return "ml.p4de.24xlarge";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)

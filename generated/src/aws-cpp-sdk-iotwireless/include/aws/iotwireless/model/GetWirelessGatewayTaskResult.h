@@ -106,37 +106,44 @@ namespace Model
 
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline const Aws::String& GetLastUplinkReceivedAt() const{ return m_lastUplinkReceivedAt; }
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline void SetLastUplinkReceivedAt(const Aws::String& value) { m_lastUplinkReceivedAt = value; }
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline void SetLastUplinkReceivedAt(Aws::String&& value) { m_lastUplinkReceivedAt = std::move(value); }
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline void SetLastUplinkReceivedAt(const char* value) { m_lastUplinkReceivedAt.assign(value); }
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline GetWirelessGatewayTaskResult& WithLastUplinkReceivedAt(const Aws::String& value) { SetLastUplinkReceivedAt(value); return *this;}
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline GetWirelessGatewayTaskResult& WithLastUplinkReceivedAt(Aws::String&& value) { SetLastUplinkReceivedAt(std::move(value)); return *this;}
 
     /**
-     * <p>The date and time when the most recent uplink was received.</p>
+     * <p>The date and time when the most recent uplink was received.</p> 
+     * <p>This value is only valid for 3 months.</p> 
      */
     inline GetWirelessGatewayTaskResult& WithLastUplinkReceivedAt(const char* value) { SetLastUplinkReceivedAt(value); return *this;}
 

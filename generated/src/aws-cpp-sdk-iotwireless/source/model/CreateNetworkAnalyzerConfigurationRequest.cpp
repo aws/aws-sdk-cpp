@@ -20,7 +20,8 @@ CreateNetworkAnalyzerConfigurationRequest::CreateNetworkAnalyzerConfigurationReq
     m_descriptionHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::PseudoRandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_multicastGroupsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,17 @@ Aws::String CreateNetworkAnalyzerConfigurationRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_multicastGroupsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> multicastGroupsJsonList(m_multicastGroups.size());
+   for(unsigned multicastGroupsIndex = 0; multicastGroupsIndex < multicastGroupsJsonList.GetLength(); ++multicastGroupsIndex)
+   {
+     multicastGroupsJsonList[multicastGroupsIndex].AsString(m_multicastGroups[multicastGroupsIndex]);
+   }
+   payload.WithArray("MulticastGroups", std::move(multicastGroupsJsonList));
 
   }
 
