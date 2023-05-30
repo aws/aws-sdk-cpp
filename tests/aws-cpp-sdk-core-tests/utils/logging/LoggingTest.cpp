@@ -8,6 +8,7 @@
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 
 #include <aws/core/utils/logging/DefaultLogSystem.h>
+#include <aws/core/utils/logging/DefaultCRTLogSystem.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/utils/logging/CRTLogging.h>
 #include <aws/core/utils/logging/CRTLogSystem.h>
@@ -49,6 +50,11 @@ public:
 
     void Log(LogLevel logLevel, const char* subjectName, const char* formatStr, va_list args) override
     {
+        if (m_stopLogging)
+        {
+            return;
+        }
+        m_logsProcessed++;
         va_list tmp_args;
         va_copy(tmp_args, args);
     #ifdef _WIN32
@@ -69,6 +75,11 @@ public:
         logStream << outputBuff.GetUnderlyingData();
         *m_localLogs << outputBuff.GetUnderlyingData() << std::endl;
         Logging::GetLogSystem()->LogStream(logLevel, subjectName, logStream);
+        m_logsProcessed--;
+        if(m_logsProcessed == 0 && m_stopLogging)
+        {
+            m_stopSignal.notify_all();
+        }
     }
 
 private:
@@ -116,15 +127,20 @@ void LogAllPossibilities(const char* tag)
     AWS_LOGSTREAM_FLUSH();
 }
 
+// CRT will log additional bunch of log lines on its own, ignore them in this test.
 static const std::vector< std::regex > LOG_LINES_TO_IGNORE =
 {
     std::regex(R"(^.*id=[0-9A-F]+: main loop started)"),
     std::regex(R"(^.*id=[0-9A-F]+: default timeout 100000)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=[0-9A-F]+: default timeout 100000)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=[0-9A-F]+: waiting for a maximum of 100000 ms)"),
-    std::regex(R"(^id=[0-9A-F]+: waiting for a maximum of 100000 ms)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=0x[0-9a-f]+: main loop started)"),
-    std::regex(R"(^.*event-loop \[\d+\] id=0x[0-9a-f]+: subscribing to events on fd \d+)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: default timeout \d+)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: waiting for a maximum of \d+ ms)"),
+    std::regex(R"(^id=[0-9A-F]+: waiting for a maximum of \d+ ms)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: .*)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: subscribing to events on fd \d+)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: wake up with 0 events to process.)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: no more scheduled tasks using default timeout.)"),
+    std::regex(R"(^.*event-loop \[\d+\] id=(0x)?[0-9A-Fa-f]+: .*)"),
+    std::regex(R"(^id=(0x)?[0-9A-Fa-f]+: .*)"),
 };
 
 void FilterAdditionalSDKLogs(Aws::Vector<Aws::String>& logs)
@@ -295,13 +311,18 @@ void VerifyAllCRTLogsAtOrBelow(LogLevel logLevel, const Aws::Vector<Aws::String>
 
 void DoCRTLogTest(LogLevel logLevel)
 {
+    SCOPED_TRACE(Aws::String("DoCRTLogTest logLevel: ") + GetLogLevelName(logLevel));
     auto logs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
     auto crtLogs = Aws::MakeShared<Aws::StringStream>(AllocationTag);
 
+
     {
+        // regular SDK logger must not Push/Pop logger implementation
         ScopedLogger loggingScope(Aws::MakeShared<DefaultLogSystem>(AllocationTag, logLevel, logs));
-        ScopedCRTLogger crtLoggingScope(Aws::MakeShared<MockCRTLogSystem>(AllocationTag, logLevel, crtLogs));
-        CRTLogAllPossibilities();
+        {
+            ScopedCRTLogger crtLoggingScope(Aws::MakeShared<MockCRTLogSystem>(AllocationTag, logLevel, crtLogs));
+            CRTLogAllPossibilities();
+        }
     }
 
     Aws::Vector<Aws::String> loggedStatements = StringUtils::SplitOnLine(logs->str());
