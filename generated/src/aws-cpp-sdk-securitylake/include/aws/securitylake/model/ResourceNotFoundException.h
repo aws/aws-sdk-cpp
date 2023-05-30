@@ -63,44 +63,44 @@ namespace Model
 
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline ResourceNotFoundException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline ResourceNotFoundException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline ResourceNotFoundException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+    inline ResourceNotFoundException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the resource for which the type of resource could not be found.</p>
+     * <p>The name of the resource that could not be found.</p>
      */
-    inline ResourceNotFoundException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline ResourceNotFoundException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
     /**
@@ -148,8 +148,8 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
+    Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;

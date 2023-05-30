@@ -102,7 +102,12 @@ ResourceDetails::ResourceDetails() :
     m_awsSageMakerNotebookInstanceHasBeenSet(false),
     m_awsWafv2WebAclHasBeenSet(false),
     m_awsWafv2RuleGroupHasBeenSet(false),
-    m_awsEc2RouteTableHasBeenSet(false)
+    m_awsEc2RouteTableHasBeenSet(false),
+    m_awsAmazonMqBrokerHasBeenSet(false),
+    m_awsAppSyncGraphQlApiHasBeenSet(false),
+    m_awsEventSchemasRegistryHasBeenSet(false),
+    m_awsGuardDutyDetectorHasBeenSet(false),
+    m_awsStepFunctionStateMachineHasBeenSet(false)
 {
 }
 
@@ -190,7 +195,12 @@ ResourceDetails::ResourceDetails(JsonView jsonValue) :
     m_awsSageMakerNotebookInstanceHasBeenSet(false),
     m_awsWafv2WebAclHasBeenSet(false),
     m_awsWafv2RuleGroupHasBeenSet(false),
-    m_awsEc2RouteTableHasBeenSet(false)
+    m_awsEc2RouteTableHasBeenSet(false),
+    m_awsAmazonMqBrokerHasBeenSet(false),
+    m_awsAppSyncGraphQlApiHasBeenSet(false),
+    m_awsEventSchemasRegistryHasBeenSet(false),
+    m_awsGuardDutyDetectorHasBeenSet(false),
+    m_awsStepFunctionStateMachineHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -788,6 +798,41 @@ ResourceDetails& ResourceDetails::operator =(JsonView jsonValue)
     m_awsEc2RouteTableHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AwsAmazonMqBroker"))
+  {
+    m_awsAmazonMqBroker = jsonValue.GetObject("AwsAmazonMqBroker");
+
+    m_awsAmazonMqBrokerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsAppSyncGraphQlApi"))
+  {
+    m_awsAppSyncGraphQlApi = jsonValue.GetObject("AwsAppSyncGraphQlApi");
+
+    m_awsAppSyncGraphQlApiHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsEventSchemasRegistry"))
+  {
+    m_awsEventSchemasRegistry = jsonValue.GetObject("AwsEventSchemasRegistry");
+
+    m_awsEventSchemasRegistryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsGuardDutyDetector"))
+  {
+    m_awsGuardDutyDetector = jsonValue.GetObject("AwsGuardDutyDetector");
+
+    m_awsGuardDutyDetectorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AwsStepFunctionStateMachine"))
+  {
+    m_awsStepFunctionStateMachine = jsonValue.GetObject("AwsStepFunctionStateMachine");
+
+    m_awsStepFunctionStateMachineHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -1301,6 +1346,36 @@ JsonValue ResourceDetails::Jsonize() const
   if(m_awsEc2RouteTableHasBeenSet)
   {
    payload.WithObject("AwsEc2RouteTable", m_awsEc2RouteTable.Jsonize());
+
+  }
+
+  if(m_awsAmazonMqBrokerHasBeenSet)
+  {
+   payload.WithObject("AwsAmazonMqBroker", m_awsAmazonMqBroker.Jsonize());
+
+  }
+
+  if(m_awsAppSyncGraphQlApiHasBeenSet)
+  {
+   payload.WithObject("AwsAppSyncGraphQlApi", m_awsAppSyncGraphQlApi.Jsonize());
+
+  }
+
+  if(m_awsEventSchemasRegistryHasBeenSet)
+  {
+   payload.WithObject("AwsEventSchemasRegistry", m_awsEventSchemasRegistry.Jsonize());
+
+  }
+
+  if(m_awsGuardDutyDetectorHasBeenSet)
+  {
+   payload.WithObject("AwsGuardDutyDetector", m_awsGuardDutyDetector.Jsonize());
+
+  }
+
+  if(m_awsStepFunctionStateMachineHasBeenSet)
+  {
+   payload.WithObject("AwsStepFunctionStateMachine", m_awsStepFunctionStateMachine.Jsonize());
 
   }
 

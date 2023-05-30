@@ -13,10 +13,10 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateSubscriberRequest::UpdateSubscriberRequest() : 
-    m_externalIdHasBeenSet(false),
-    m_idHasBeenSet(false),
-    m_sourceTypesHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
     m_subscriberDescriptionHasBeenSet(false),
+    m_subscriberIdHasBeenSet(false),
+    m_subscriberIdentityHasBeenSet(false),
     m_subscriberNameHasBeenSet(false)
 {
 }
@@ -25,26 +25,26 @@ Aws::String UpdateSubscriberRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_externalIdHasBeenSet)
+  if(m_sourcesHasBeenSet)
   {
-   payload.WithString("externalId", m_externalId);
-
-  }
-
-  if(m_sourceTypesHasBeenSet)
-  {
-   Aws::Utils::Array<JsonValue> sourceTypesJsonList(m_sourceTypes.size());
-   for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
    {
-     sourceTypesJsonList[sourceTypesIndex].AsObject(m_sourceTypes[sourceTypesIndex].Jsonize());
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
    }
-   payload.WithArray("sourceTypes", std::move(sourceTypesJsonList));
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 
   if(m_subscriberDescriptionHasBeenSet)
   {
    payload.WithString("subscriberDescription", m_subscriberDescription);
+
+  }
+
+  if(m_subscriberIdentityHasBeenSet)
+  {
+   payload.WithObject("subscriberIdentity", m_subscriberIdentity.Jsonize());
 
   }
 

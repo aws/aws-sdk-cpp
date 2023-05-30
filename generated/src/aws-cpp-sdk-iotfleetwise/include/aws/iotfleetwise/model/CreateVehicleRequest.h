@@ -163,79 +163,105 @@ namespace Model
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Static information about a vehicle in a key-value pair. For example:
-     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p>
+     * <code>"engineType"</code> : <code>"1.3 L R2"</code> </p> <p>A campaign must
+     * include the keys (attribute names) in <code>dataExtraDimensions</code> for them
+     * to display in Amazon Timestream.</p>
      */
     inline CreateVehicleRequest& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 

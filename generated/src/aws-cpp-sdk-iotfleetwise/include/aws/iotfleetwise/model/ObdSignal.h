@@ -121,22 +121,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates where data appears in the message.</p>
+     * <p>The offset used to calculate the signal value. Combined with scaling, the
+     * calculation is <code>value = raw_value * scaling + offset</code>.</p>
      */
     inline double GetOffset() const{ return m_offset; }
 
     /**
-     * <p>Indicates where data appears in the message.</p>
+     * <p>The offset used to calculate the signal value. Combined with scaling, the
+     * calculation is <code>value = raw_value * scaling + offset</code>.</p>
      */
     inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
-     * <p>Indicates where data appears in the message.</p>
+     * <p>The offset used to calculate the signal value. Combined with scaling, the
+     * calculation is <code>value = raw_value * scaling + offset</code>.</p>
      */
     inline void SetOffset(double value) { m_offsetHasBeenSet = true; m_offset = value; }
 
     /**
-     * <p>Indicates where data appears in the message.</p>
+     * <p>The offset used to calculate the signal value. Combined with scaling, the
+     * calculation is <code>value = raw_value * scaling + offset</code>.</p>
      */
     inline ObdSignal& WithOffset(double value) { SetOffset(value); return *this;}
 

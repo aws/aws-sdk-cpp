@@ -7,7 +7,7 @@
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/securitylake/model/LogSource.h>
 #include <utility>
 
 namespace Aws
@@ -78,39 +78,46 @@ namespace Model
 
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline const Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>& GetRegionSourceTypesAccountsList() const{ return m_regionSourceTypesAccountsList; }
+    inline const Aws::Vector<LogSource>& GetSources() const{ return m_sources; }
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline void SetRegionSourceTypesAccountsList(const Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>& value) { m_regionSourceTypesAccountsList = value; }
+    inline void SetSources(const Aws::Vector<LogSource>& value) { m_sources = value; }
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline void SetRegionSourceTypesAccountsList(Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>&& value) { m_regionSourceTypesAccountsList = std::move(value); }
+    inline void SetSources(Aws::Vector<LogSource>&& value) { m_sources = std::move(value); }
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline ListLogSourcesResult& WithRegionSourceTypesAccountsList(const Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>& value) { SetRegionSourceTypesAccountsList(value); return *this;}
+    inline ListLogSourcesResult& WithSources(const Aws::Vector<LogSource>& value) { SetSources(value); return *this;}
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline ListLogSourcesResult& WithRegionSourceTypesAccountsList(Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>>&& value) { SetRegionSourceTypesAccountsList(std::move(value)); return *this;}
+    inline ListLogSourcesResult& WithSources(Aws::Vector<LogSource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline ListLogSourcesResult& AddRegionSourceTypesAccountsList(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_regionSourceTypesAccountsList.push_back(value); return *this; }
+    inline ListLogSourcesResult& AddSources(const LogSource& value) { m_sources.push_back(value); return *this; }
 
     /**
-     * <p>Lists the log sources by Regions for enabled Security Lake accounts.</p>
+     * <p>The list of log sources in your organization that send data to the data
+     * lake.</p>
      */
-    inline ListLogSourcesResult& AddRegionSourceTypesAccountsList(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_regionSourceTypesAccountsList.push_back(std::move(value)); return *this; }
+    inline ListLogSourcesResult& AddSources(LogSource&& value) { m_sources.push_back(std::move(value)); return *this; }
 
 
     
@@ -138,7 +145,7 @@ namespace Model
 
     Aws::String m_nextToken;
 
-    Aws::Vector<Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>> m_regionSourceTypesAccountsList;
+    Aws::Vector<LogSource> m_sources;
 
     Aws::String m_requestId;
   };

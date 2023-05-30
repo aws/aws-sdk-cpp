@@ -28,7 +28,9 @@ Sensor::Sensor() :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
 }
 
@@ -42,7 +44,9 @@ Sensor::Sensor(JsonView jsonValue) :
     m_min(0.0),
     m_minHasBeenSet(false),
     m_max(0.0),
-    m_maxHasBeenSet(false)
+    m_maxHasBeenSet(false),
+    m_deprecationMessageHasBeenSet(false),
+    m_commentHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -101,6 +105,20 @@ Sensor& Sensor::operator =(JsonView jsonValue)
     m_maxHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("deprecationMessage"))
+  {
+    m_deprecationMessage = jsonValue.GetString("deprecationMessage");
+
+    m_deprecationMessageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("comment"))
+  {
+    m_comment = jsonValue.GetString("comment");
+
+    m_commentHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -151,6 +169,18 @@ JsonValue Sensor::Jsonize() const
   if(m_maxHasBeenSet)
   {
    payload.WithDouble("max", m_max);
+
+  }
+
+  if(m_deprecationMessageHasBeenSet)
+  {
+   payload.WithString("deprecationMessage", m_deprecationMessage);
+
+  }
+
+  if(m_commentHasBeenSet)
+  {
+   payload.WithString("comment", m_comment);
 
   }
 

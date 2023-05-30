@@ -51,7 +51,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -73,10 +73,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline const Aws::String& GetFontStack() const{ return m_fontStack; }
 
@@ -93,7 +100,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -115,10 +122,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline bool FontStackHasBeenSet() const { return m_fontStackHasBeenSet; }
 
@@ -135,7 +149,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -157,10 +171,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline void SetFontStack(const Aws::String& value) { m_fontStackHasBeenSet = true; m_fontStack = value; }
 
@@ -177,7 +198,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -199,10 +220,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline void SetFontStack(Aws::String&& value) { m_fontStackHasBeenSet = true; m_fontStack = std::move(value); }
 
@@ -219,7 +247,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -241,10 +269,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline void SetFontStack(const char* value) { m_fontStackHasBeenSet = true; m_fontStack.assign(value); }
 
@@ -261,7 +296,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -283,10 +318,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline GetMapGlyphsRequest& WithFontStack(const Aws::String& value) { SetFontStack(value); return *this;}
 
@@ -303,7 +345,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -325,10 +367,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline GetMapGlyphsRequest& WithFontStack(Aws::String&& value) { SetFontStack(std::move(value)); return *this;}
 
@@ -345,7 +394,7 @@ namespace Model
      * <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans
      * Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> |
      * <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets
-     * – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
+     * ��� <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial
      * Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code>
      * | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid
      * font stacks for <a
@@ -367,10 +416,17 @@ namespace Model
      * Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon
      * Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto
      * Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
-     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> </p>
-     * </li> </ul>  <p>The fonts used by the Open Data map styles are combined
-     * fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto
-     * Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> 
+     * Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> |
+     * <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> |
+     * <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed
+     * Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic
+     * Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans
+     * Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans
+     * Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember
+     * Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> 
+     * <p>The fonts used by the Open Data map styles are combined fonts that use
+     * <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs
+     * unsupported by <code>Amazon Ember</code>.</p> 
      */
     inline GetMapGlyphsRequest& WithFontStack(const char* value) { SetFontStack(value); return *this;}
 

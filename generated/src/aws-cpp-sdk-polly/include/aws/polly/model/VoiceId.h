@@ -103,7 +103,9 @@ namespace Model
     Ruth,
     Stephen,
     Kazuha,
-    Tomoko
+    Tomoko,
+    Niamh,
+    Sofie
   };
 
 namespace VoiceIdMapper

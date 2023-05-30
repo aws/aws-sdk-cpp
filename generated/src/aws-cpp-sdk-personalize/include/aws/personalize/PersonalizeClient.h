@@ -140,7 +140,11 @@ namespace Personalize
          * and <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetPersonalizedRanking.html">GetPersonalizedRanking</a>
          * APIs, a campaign is specified in the request.</p> <p> <b>Minimum Provisioned TPS
-         * and Auto-Scaling</b> </p> <p>A transaction is a single
+         * and Auto-Scaling</b> </p>  <p> A high <code>minProvisionedTPS</code>
+         * will increase your bill. We recommend starting with 1 for
+         * <code>minProvisionedTPS</code> (the default). Track your usage using Amazon
+         * CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+         * necessary.</p>  <p>A transaction is a single
          * <code>GetRecommendations</code> or <code>GetPersonalizedRanking</code> call.
          * Transactions per second (TPS) is the throughput and unit of billing for Amazon
          * Personalize. The minimum provisioned TPS (<code>minProvisionedTPS</code>)
@@ -496,8 +500,13 @@ namespace Personalize
          * specify. You create recommenders for a Domain dataset group and specify the
          * recommender's Amazon Resource Name (ARN) when you make a <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a>
-         * request. </p> <p> <b>Minimum recommendation requests per second</b> </p> <p>When
-         * you create a recommender, you can configure the recommender's minimum
+         * request. </p> <p> <b>Minimum recommendation requests per second</b> </p>
+         *  <p>A high <code>minRecommendationRequestsPerSecond</code> will
+         * increase your bill. We recommend starting with 1 for
+         * <code>minRecommendationRequestsPerSecond</code> (the default). Track your usage
+         * using Amazon CloudWatch metrics, and increase the
+         * <code>minRecommendationRequestsPerSecond</code> as necessary.</p> 
+         * <p>When you create a recommender, you can configure the recommender's minimum
          * recommendation requests per second. The minimum recommendation requests per
          * second (<code>minRecommendationRequestsPerSecond</code>) specifies the baseline
          * recommendation request throughput provisioned by Amazon Personalize. The default
@@ -598,8 +607,8 @@ namespace Personalize
 
         /**
          * <p>Creates the configuration for training a model. A trained model is known as a
-         * solution. After the configuration is created, you train the model (create a
-         * solution) by calling the <a
+         * solution version. After the configuration is created, you train the model
+         * (create a solution version) by calling the <a
          * href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a>
          * operation. Every time you call <code>CreateSolutionVersion</code>, a new version
          * of the solution is created.</p> <p>After creating a solution version, you check
@@ -613,9 +622,7 @@ namespace Personalize
          * recipe. The training data comes from the dataset group that you provide in the
          * request. A recipe specifies the training algorithm and a feature transformation.
          * You can specify one of the predefined recipes provided by Amazon Personalize.
-         * Alternatively, you can specify <code>performAutoML</code> and Amazon Personalize
-         * will analyze your data and select the optimum USER_PERSONALIZATION recipe for
-         * you.</p>  <p>Amazon Personalize doesn't support configuring the
+         * </p>  <p>Amazon Personalize doesn't support configuring the
          * <code>hpoObjective</code> for solution hyperparameter optimization at this
          * time.</p>  <p> <b>Status</b> </p> <p>A solution can be in one of the
          * following states:</p> <ul> <li> <p>CREATE PENDING &gt; CREATE IN_PROGRESS &gt;
@@ -1927,7 +1934,7 @@ namespace Personalize
 
         /**
          * <p>Get a list of <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
          * attached to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/ListTagsForResource">AWS
          * API Reference</a></p>
@@ -2064,7 +2071,7 @@ namespace Personalize
 
         /**
          * <p>Remove <a
-         * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
          * that are attached to a resource.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UntagResource">AWS
          * API Reference</a></p>
@@ -2151,8 +2158,15 @@ namespace Personalize
         }
 
         /**
-         * <p>Updates the recommender to modify the recommender
-         * configuration.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates the recommender to modify the recommender configuration. If you
+         * update the recommender to modify the columns used in training, Amazon
+         * Personalize automatically starts a full retraining of the models backing your
+         * recommender. While the update completes, you can still get recommendations from
+         * the recommender. The recommender uses the previous configuration until the
+         * update completes. To track the status of this update, use the
+         * <code>latestRecommenderUpdate</code> returned in the <a
+         * href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a>
+         * operation. </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/UpdateRecommender">AWS
          * API Reference</a></p>
          */

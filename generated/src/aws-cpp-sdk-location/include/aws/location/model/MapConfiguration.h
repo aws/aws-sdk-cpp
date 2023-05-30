@@ -39,6 +39,95 @@ namespace Model
 
 
     /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline const Aws::String& GetPoliticalView() const{ return m_politicalView; }
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline bool PoliticalViewHasBeenSet() const { return m_politicalViewHasBeenSet; }
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline void SetPoliticalView(const Aws::String& value) { m_politicalViewHasBeenSet = true; m_politicalView = value; }
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline void SetPoliticalView(Aws::String&& value) { m_politicalViewHasBeenSet = true; m_politicalView = std::move(value); }
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline void SetPoliticalView(const char* value) { m_politicalViewHasBeenSet = true; m_politicalView.assign(value); }
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline MapConfiguration& WithPoliticalView(const Aws::String& value) { SetPoliticalView(value); return *this;}
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline MapConfiguration& WithPoliticalView(Aws::String&& value) { SetPoliticalView(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the political view for the style. Leave unset to not use a
+     * political view, or, for styles that support specific political views, you can
+     * choose a view, such as <code>IND</code> for the Indian view.</p> <p>Default is
+     * unset.</p>  <p>Not all map resources or styles support political view
+     * styles. See <a
+     * href="https://docs.aws.amazon.com/location/latest/developerguide/map-concepts.html#political-views">Political
+     * views</a> for more information.</p> 
+     */
+    inline MapConfiguration& WithPoliticalView(const char* value) { SetPoliticalView(value); return *this;}
+
+
+    /**
      * <p>Specifies the map style selected from an available data provider.</p>
      * <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri
@@ -55,14 +144,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -134,14 +222,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -213,14 +300,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -292,14 +378,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -371,14 +456,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -450,14 +534,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -529,14 +612,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -608,14 +690,13 @@ namespace Model
      * attention to your thematic content. </p> </li> <li> <p>
      * <code>VectorEsriTopographic</code> – The Esri Light map style, which provides a
      * detailed vector basemap with a classic Esri map style.</p> </li> <li> <p>
-     * <code>VectorEsriStreets</code> – The Esri World Streets map style, which
-     * provides a detailed vector basemap for the world symbolized with a classic Esri
-     * street map style. The vector tile layer is similar in content and style to the
-     * World Street Map raster map.</p> </li> <li> <p>
-     * <code>VectorEsriNavigation</code> – The Esri World Navigation map style, which
-     * provides a detailed basemap for the world symbolized with a custom navigation
-     * map style that's designed for use during the day in mobile devices.</p> </li>
-     * </ul> <p>Valid <a
+     * <code>VectorEsriStreets</code> – The Esri Street Map style, which provides a
+     * detailed vector basemap for the world symbolized with a classic Esri street map
+     * style. The vector tile layer is similar in content and style to the World Street
+     * Map raster map.</p> </li> <li> <p> <code>VectorEsriNavigation</code> – The Esri
+     * Navigation map style, which provides a detailed basemap for the world symbolized
+     * with a custom navigation map style that's designed for use during the day in
+     * mobile devices.</p> </li> </ul> <p>Valid <a
      * href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE
      * Technologies map styles</a>:</p> <ul> <li> <p> <code>VectorHereContrast</code> –
      * The HERE Contrast (Berlin) map style is a high contrast detailed base map of the
@@ -671,6 +752,9 @@ namespace Model
     inline MapConfiguration& WithStyle(const char* value) { SetStyle(value); return *this;}
 
   private:
+
+    Aws::String m_politicalView;
+    bool m_politicalViewHasBeenSet = false;
 
     Aws::String m_style;
     bool m_styleHasBeenSet = false;

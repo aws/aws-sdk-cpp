@@ -7,9 +7,8 @@
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/securitylake/SecurityLakeRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
-#include <aws/securitylake/model/Dimension.h>
+#include <aws/securitylake/model/LogSourceResource.h>
 #include <utility>
 
 namespace Aws
@@ -36,265 +35,58 @@ namespace Model
 
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline const Aws::Vector<Dimension>& GetInputOrder() const{ return m_inputOrder; }
+    inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline bool InputOrderHasBeenSet() const { return m_inputOrderHasBeenSet; }
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline void SetInputOrder(const Aws::Vector<Dimension>& value) { m_inputOrderHasBeenSet = true; m_inputOrder = value; }
+    inline void SetAccounts(const Aws::Vector<Aws::String>& value) { m_accountsHasBeenSet = true; m_accounts = value; }
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline void SetInputOrder(Aws::Vector<Dimension>&& value) { m_inputOrderHasBeenSet = true; m_inputOrder = std::move(value); }
+    inline void SetAccounts(Aws::Vector<Aws::String>&& value) { m_accountsHasBeenSet = true; m_accounts = std::move(value); }
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline ListLogSourcesRequest& WithInputOrder(const Aws::Vector<Dimension>& value) { SetInputOrder(value); return *this;}
+    inline ListLogSourcesRequest& WithAccounts(const Aws::Vector<Aws::String>& value) { SetAccounts(value); return *this;}
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline ListLogSourcesRequest& WithInputOrder(Aws::Vector<Dimension>&& value) { SetInputOrder(std::move(value)); return *this;}
+    inline ListLogSourcesRequest& WithAccounts(Aws::Vector<Aws::String>&& value) { SetAccounts(std::move(value)); return *this;}
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline ListLogSourcesRequest& AddInputOrder(const Dimension& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(value); return *this; }
+    inline ListLogSourcesRequest& AddAccounts(const Aws::String& value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
     /**
-     * <p>Lists the log sources in input order, namely Region, source type, and member
-     * account.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline ListLogSourcesRequest& AddInputOrder(Dimension&& value) { m_inputOrderHasBeenSet = true; m_inputOrder.push_back(std::move(value)); return *this; }
-
+    inline ListLogSourcesRequest& AddAccounts(Aws::String&& value) { m_accountsHasBeenSet = true; m_accounts.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
+     * <p>The list of Amazon Web Services accounts for which log sources are
+     * displayed.</p>
      */
-    inline const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& GetListAllDimensions() const{ return m_listAllDimensions; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline bool ListAllDimensionsHasBeenSet() const { return m_listAllDimensionsHasBeenSet; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline void SetListAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions = value; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline void SetListAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions = std::move(value); }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListAllDimensions(const Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>& value) { SetListAllDimensions(value); return *this;}
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListAllDimensions(Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>>&& value) { SetListAllDimensions(std::move(value)); return *this;}
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(const Aws::String& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(key, value); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(Aws::String&& key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(const Aws::String& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(Aws::String&& key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(const char* key, Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Amazon Security Lake accounts for
-     * specific Amazon Web Services sources from specific accounts and specific
-     * Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListAllDimensions(const char* key, const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_listAllDimensionsHasBeenSet = true; m_listAllDimensions.emplace(key, value); return *this; }
-
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetListSingleDimension() const{ return m_listSingleDimension; }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline bool ListSingleDimensionHasBeenSet() const { return m_listSingleDimensionHasBeenSet; }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline void SetListSingleDimension(const Aws::Vector<Aws::String>& value) { m_listSingleDimensionHasBeenSet = true; m_listSingleDimension = value; }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline void SetListSingleDimension(Aws::Vector<Aws::String>&& value) { m_listSingleDimensionHasBeenSet = true; m_listSingleDimension = std::move(value); }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListSingleDimension(const Aws::Vector<Aws::String>& value) { SetListSingleDimension(value); return *this;}
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListSingleDimension(Aws::Vector<Aws::String>&& value) { SetListSingleDimension(std::move(value)); return *this;}
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListSingleDimension(const Aws::String& value) { m_listSingleDimensionHasBeenSet = true; m_listSingleDimension.push_back(value); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListSingleDimension(Aws::String&& value) { m_listSingleDimensionHasBeenSet = true; m_listSingleDimension.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>List the view of log sources for enabled Security Lake accounts for all
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListSingleDimension(const char* value) { m_listSingleDimensionHasBeenSet = true; m_listSingleDimension.push_back(value); return *this; }
-
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetListTwoDimensions() const{ return m_listTwoDimensions; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline bool ListTwoDimensionsHasBeenSet() const { return m_listTwoDimensionsHasBeenSet; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline void SetListTwoDimensions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions = value; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline void SetListTwoDimensions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions = std::move(value); }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListTwoDimensions(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetListTwoDimensions(value); return *this;}
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& WithListTwoDimensions(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetListTwoDimensions(std::move(value)); return *this;}
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(key, value); return *this; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(std::move(key), value); return *this; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(std::move(key), std::move(value)); return *this; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(const char* key, Aws::Vector<Aws::String>&& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(key, std::move(value)); return *this; }
-
-    /**
-     * <p>Lists the view of log sources for enabled Security Lake accounts for specific
-     * Amazon Web Services sources from specific accounts or specific Regions.</p>
-     */
-    inline ListLogSourcesRequest& AddListTwoDimensions(const char* key, const Aws::Vector<Aws::String>& value) { m_listTwoDimensionsHasBeenSet = true; m_listTwoDimensions.emplace(key, value); return *this; }
+    inline ListLogSourcesRequest& AddAccounts(const char* value) { m_accountsHasBeenSet = true; m_accounts.push_back(value); return *this; }
 
 
     /**
@@ -366,25 +158,109 @@ namespace Model
      */
     inline ListLogSourcesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetRegions() const{ return m_regions; }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline void SetRegions(Aws::Vector<Aws::String>&& value) { m_regionsHasBeenSet = true; m_regions = std::move(value); }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& WithRegions(const Aws::Vector<Aws::String>& value) { SetRegions(value); return *this;}
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& WithRegions(Aws::Vector<Aws::String>&& value) { SetRegions(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& AddRegions(const Aws::String& value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& AddRegions(Aws::String&& value) { m_regionsHasBeenSet = true; m_regions.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>The list of regions for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& AddRegions(const char* value) { m_regionsHasBeenSet = true; m_regions.push_back(value); return *this; }
+
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline const Aws::Vector<LogSourceResource>& GetSources() const{ return m_sources; }
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline void SetSources(const Aws::Vector<LogSourceResource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline void SetSources(Aws::Vector<LogSourceResource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& WithSources(const Aws::Vector<LogSourceResource>& value) { SetSources(value); return *this;}
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& WithSources(Aws::Vector<LogSourceResource>&& value) { SetSources(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& AddSources(const LogSourceResource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
+
+    /**
+     * <p>The list of sources for which log sources are displayed.</p>
+     */
+    inline ListLogSourcesRequest& AddSources(LogSourceResource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
   private:
 
-    Aws::Vector<Dimension> m_inputOrder;
-    bool m_inputOrderHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::Map<Aws::String, Aws::Vector<Aws::String>>> m_listAllDimensions;
-    bool m_listAllDimensionsHasBeenSet = false;
-
-    Aws::Vector<Aws::String> m_listSingleDimension;
-    bool m_listSingleDimensionHasBeenSet = false;
-
-    Aws::Map<Aws::String, Aws::Vector<Aws::String>> m_listTwoDimensions;
-    bool m_listTwoDimensionsHasBeenSet = false;
+    Aws::Vector<Aws::String> m_accounts;
+    bool m_accountsHasBeenSet = false;
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet = false;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet = false;
+
+    Aws::Vector<Aws::String> m_regions;
+    bool m_regionsHasBeenSet = false;
+
+    Aws::Vector<LogSourceResource> m_sources;
+    bool m_sourcesHasBeenSet = false;
   };
 
 } // namespace Model

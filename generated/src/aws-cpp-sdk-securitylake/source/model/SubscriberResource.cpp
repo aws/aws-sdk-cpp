@@ -20,46 +20,40 @@ namespace Model
 
 SubscriberResource::SubscriberResource() : 
     m_accessTypesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
     m_resourceShareArnHasBeenSet(false),
     m_resourceShareNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_s3BucketArnHasBeenSet(false),
-    m_snsArnHasBeenSet(false),
-    m_sourceTypesHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
+    m_subscriberArnHasBeenSet(false),
     m_subscriberDescriptionHasBeenSet(false),
+    m_subscriberEndpointHasBeenSet(false),
+    m_subscriberIdHasBeenSet(false),
+    m_subscriberIdentityHasBeenSet(false),
     m_subscriberNameHasBeenSet(false),
-    m_subscriptionEndpointHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_subscriptionProtocol(EndpointProtocol::NOT_SET),
-    m_subscriptionProtocolHasBeenSet(false),
-    m_subscriptionStatus(SubscriptionStatus::NOT_SET),
-    m_subscriptionStatusHasBeenSet(false),
+    m_subscriberStatus(SubscriberStatus::NOT_SET),
+    m_subscriberStatusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
 }
 
 SubscriberResource::SubscriberResource(JsonView jsonValue) : 
     m_accessTypesHasBeenSet(false),
-    m_accountIdHasBeenSet(false),
     m_createdAtHasBeenSet(false),
-    m_externalIdHasBeenSet(false),
     m_resourceShareArnHasBeenSet(false),
     m_resourceShareNameHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_s3BucketArnHasBeenSet(false),
-    m_snsArnHasBeenSet(false),
-    m_sourceTypesHasBeenSet(false),
+    m_sourcesHasBeenSet(false),
+    m_subscriberArnHasBeenSet(false),
     m_subscriberDescriptionHasBeenSet(false),
+    m_subscriberEndpointHasBeenSet(false),
+    m_subscriberIdHasBeenSet(false),
+    m_subscriberIdentityHasBeenSet(false),
     m_subscriberNameHasBeenSet(false),
-    m_subscriptionEndpointHasBeenSet(false),
-    m_subscriptionIdHasBeenSet(false),
-    m_subscriptionProtocol(EndpointProtocol::NOT_SET),
-    m_subscriptionProtocolHasBeenSet(false),
-    m_subscriptionStatus(SubscriptionStatus::NOT_SET),
-    m_subscriptionStatusHasBeenSet(false),
+    m_subscriberStatus(SubscriberStatus::NOT_SET),
+    m_subscriberStatusHasBeenSet(false),
     m_updatedAtHasBeenSet(false)
 {
   *this = jsonValue;
@@ -77,25 +71,11 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     m_accessTypesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("accountId"))
-  {
-    m_accountId = jsonValue.GetString("accountId");
-
-    m_accountIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("createdAt"))
   {
     m_createdAt = jsonValue.GetString("createdAt");
 
     m_createdAtHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("externalId"))
-  {
-    m_externalId = jsonValue.GetString("externalId");
-
-    m_externalIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceShareArn"))
@@ -126,21 +106,21 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     m_s3BucketArnHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("snsArn"))
+  if(jsonValue.ValueExists("sources"))
   {
-    m_snsArn = jsonValue.GetString("snsArn");
-
-    m_snsArnHasBeenSet = true;
+    Aws::Utils::Array<JsonView> sourcesJsonList = jsonValue.GetArray("sources");
+    for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+    {
+      m_sources.push_back(sourcesJsonList[sourcesIndex].AsObject());
+    }
+    m_sourcesHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("sourceTypes"))
+  if(jsonValue.ValueExists("subscriberArn"))
   {
-    Aws::Utils::Array<JsonView> sourceTypesJsonList = jsonValue.GetArray("sourceTypes");
-    for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
-    {
-      m_sourceTypes.push_back(sourceTypesJsonList[sourceTypesIndex].AsObject());
-    }
-    m_sourceTypesHasBeenSet = true;
+    m_subscriberArn = jsonValue.GetString("subscriberArn");
+
+    m_subscriberArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("subscriberDescription"))
@@ -150,6 +130,27 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     m_subscriberDescriptionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subscriberEndpoint"))
+  {
+    m_subscriberEndpoint = jsonValue.GetString("subscriberEndpoint");
+
+    m_subscriberEndpointHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subscriberId"))
+  {
+    m_subscriberId = jsonValue.GetString("subscriberId");
+
+    m_subscriberIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("subscriberIdentity"))
+  {
+    m_subscriberIdentity = jsonValue.GetObject("subscriberIdentity");
+
+    m_subscriberIdentityHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("subscriberName"))
   {
     m_subscriberName = jsonValue.GetString("subscriberName");
@@ -157,32 +158,11 @@ SubscriberResource& SubscriberResource::operator =(JsonView jsonValue)
     m_subscriberNameHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("subscriptionEndpoint"))
+  if(jsonValue.ValueExists("subscriberStatus"))
   {
-    m_subscriptionEndpoint = jsonValue.GetString("subscriptionEndpoint");
+    m_subscriberStatus = SubscriberStatusMapper::GetSubscriberStatusForName(jsonValue.GetString("subscriberStatus"));
 
-    m_subscriptionEndpointHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("subscriptionId"))
-  {
-    m_subscriptionId = jsonValue.GetString("subscriptionId");
-
-    m_subscriptionIdHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("subscriptionProtocol"))
-  {
-    m_subscriptionProtocol = EndpointProtocolMapper::GetEndpointProtocolForName(jsonValue.GetString("subscriptionProtocol"));
-
-    m_subscriptionProtocolHasBeenSet = true;
-  }
-
-  if(jsonValue.ValueExists("subscriptionStatus"))
-  {
-    m_subscriptionStatus = SubscriptionStatusMapper::GetSubscriptionStatusForName(jsonValue.GetString("subscriptionStatus"));
-
-    m_subscriptionStatusHasBeenSet = true;
+    m_subscriberStatusHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("updatedAt"))
@@ -210,21 +190,9 @@ JsonValue SubscriberResource::Jsonize() const
 
   }
 
-  if(m_accountIdHasBeenSet)
-  {
-   payload.WithString("accountId", m_accountId);
-
-  }
-
   if(m_createdAtHasBeenSet)
   {
    payload.WithString("createdAt", m_createdAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if(m_externalIdHasBeenSet)
-  {
-   payload.WithString("externalId", m_externalId);
-
   }
 
   if(m_resourceShareArnHasBeenSet)
@@ -251,20 +219,20 @@ JsonValue SubscriberResource::Jsonize() const
 
   }
 
-  if(m_snsArnHasBeenSet)
+  if(m_sourcesHasBeenSet)
   {
-   payload.WithString("snsArn", m_snsArn);
+   Aws::Utils::Array<JsonValue> sourcesJsonList(m_sources.size());
+   for(unsigned sourcesIndex = 0; sourcesIndex < sourcesJsonList.GetLength(); ++sourcesIndex)
+   {
+     sourcesJsonList[sourcesIndex].AsObject(m_sources[sourcesIndex].Jsonize());
+   }
+   payload.WithArray("sources", std::move(sourcesJsonList));
 
   }
 
-  if(m_sourceTypesHasBeenSet)
+  if(m_subscriberArnHasBeenSet)
   {
-   Aws::Utils::Array<JsonValue> sourceTypesJsonList(m_sourceTypes.size());
-   for(unsigned sourceTypesIndex = 0; sourceTypesIndex < sourceTypesJsonList.GetLength(); ++sourceTypesIndex)
-   {
-     sourceTypesJsonList[sourceTypesIndex].AsObject(m_sourceTypes[sourceTypesIndex].Jsonize());
-   }
-   payload.WithArray("sourceTypes", std::move(sourceTypesJsonList));
+   payload.WithString("subscriberArn", m_subscriberArn);
 
   }
 
@@ -274,32 +242,33 @@ JsonValue SubscriberResource::Jsonize() const
 
   }
 
+  if(m_subscriberEndpointHasBeenSet)
+  {
+   payload.WithString("subscriberEndpoint", m_subscriberEndpoint);
+
+  }
+
+  if(m_subscriberIdHasBeenSet)
+  {
+   payload.WithString("subscriberId", m_subscriberId);
+
+  }
+
+  if(m_subscriberIdentityHasBeenSet)
+  {
+   payload.WithObject("subscriberIdentity", m_subscriberIdentity.Jsonize());
+
+  }
+
   if(m_subscriberNameHasBeenSet)
   {
    payload.WithString("subscriberName", m_subscriberName);
 
   }
 
-  if(m_subscriptionEndpointHasBeenSet)
+  if(m_subscriberStatusHasBeenSet)
   {
-   payload.WithString("subscriptionEndpoint", m_subscriptionEndpoint);
-
-  }
-
-  if(m_subscriptionIdHasBeenSet)
-  {
-   payload.WithString("subscriptionId", m_subscriptionId);
-
-  }
-
-  if(m_subscriptionProtocolHasBeenSet)
-  {
-   payload.WithString("subscriptionProtocol", EndpointProtocolMapper::GetNameForEndpointProtocol(m_subscriptionProtocol));
-  }
-
-  if(m_subscriptionStatusHasBeenSet)
-  {
-   payload.WithString("subscriptionStatus", SubscriptionStatusMapper::GetNameForSubscriptionStatus(m_subscriptionStatus));
+   payload.WithString("subscriberStatus", SubscriberStatusMapper::GetNameForSubscriberStatus(m_subscriberStatus));
   }
 
   if(m_updatedAtHasBeenSet)

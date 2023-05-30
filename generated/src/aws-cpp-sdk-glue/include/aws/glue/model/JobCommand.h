@@ -41,7 +41,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
@@ -49,7 +50,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
@@ -57,7 +59,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
@@ -65,7 +68,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
@@ -73,7 +77,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
@@ -81,7 +86,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline JobCommand& WithName(const Aws::String& value) { SetName(value); return *this;}
 
@@ -89,7 +95,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline JobCommand& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
@@ -97,7 +104,8 @@ namespace Model
      * <p>The name of the job command. For an Apache Spark ETL job, this must be
      * <code>glueetl</code>. For a Python shell job, it must be
      * <code>pythonshell</code>. For an Apache Spark streaming ETL job, this must be
-     * <code>gluestreaming</code>.</p>
+     * <code>gluestreaming</code>. For a Ray job, this must be
+     * <code>glueray</code>.</p>
      */
     inline JobCommand& WithName(const char* value) { SetName(value); return *this;}
 
@@ -199,6 +207,79 @@ namespace Model
      */
     inline JobCommand& WithPythonVersion(const char* value) { SetPythonVersion(value); return *this;}
 
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline const Aws::String& GetRuntime() const{ return m_runtime; }
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline void SetRuntime(const Aws::String& value) { m_runtimeHasBeenSet = true; m_runtime = value; }
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline void SetRuntime(Aws::String&& value) { m_runtimeHasBeenSet = true; m_runtime = std::move(value); }
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline void SetRuntime(const char* value) { m_runtimeHasBeenSet = true; m_runtime.assign(value); }
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline JobCommand& WithRuntime(const Aws::String& value) { SetRuntime(value); return *this;}
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline JobCommand& WithRuntime(Aws::String&& value) { SetRuntime(std::move(value)); return *this;}
+
+    /**
+     * <p>In Ray jobs, Runtime is used to specify the versions of Ray, Python and
+     * additional libraries available in your environment. This field is not used in
+     * other job types. For supported runtime environment values, see <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-runtimes.html">Working
+     * with Ray jobs</a> in the Glue Developer Guide.</p>
+     */
+    inline JobCommand& WithRuntime(const char* value) { SetRuntime(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -209,6 +290,9 @@ namespace Model
 
     Aws::String m_pythonVersion;
     bool m_pythonVersionHasBeenSet = false;
+
+    Aws::String m_runtime;
+    bool m_runtimeHasBeenSet = false;
   };
 
 } // namespace Model

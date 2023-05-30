@@ -129,25 +129,41 @@ namespace Model
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support.</p>
+     * per second that Amazon Personalize will support. A high
+     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
+     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+     * necessary.</p>
      */
     inline int GetMinProvisionedTPS() const{ return m_minProvisionedTPS; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support.</p>
+     * per second that Amazon Personalize will support. A high
+     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
+     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+     * necessary.</p>
      */
     inline bool MinProvisionedTPSHasBeenSet() const { return m_minProvisionedTPSHasBeenSet; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support.</p>
+     * per second that Amazon Personalize will support. A high
+     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
+     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+     * necessary.</p>
      */
     inline void SetMinProvisionedTPS(int value) { m_minProvisionedTPSHasBeenSet = true; m_minProvisionedTPS = value; }
 
     /**
      * <p>Specifies the requested minimum provisioned transactions (recommendations)
-     * per second that Amazon Personalize will support.</p>
+     * per second that Amazon Personalize will support. A high
+     * <code>minProvisionedTPS</code> will increase your bill. We recommend starting
+     * with 1 for <code>minProvisionedTPS</code> (the default). Track your usage using
+     * Amazon CloudWatch metrics, and increase the <code>minProvisionedTPS</code> as
+     * necessary.</p>
      */
     inline CreateCampaignRequest& WithMinProvisionedTPS(int value) { SetMinProvisionedTPS(value); return *this;}
 
@@ -185,56 +201,56 @@ namespace Model
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline CreateCampaignRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline CreateCampaignRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline CreateCampaignRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the campaign.</p>
      */
     inline CreateCampaignRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

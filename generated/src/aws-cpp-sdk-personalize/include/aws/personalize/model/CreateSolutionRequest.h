@@ -112,50 +112,66 @@ namespace Model
 
 
     /**
-     * <p>Whether to perform automated machine learning (AutoML). The default is
-     * <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
-     * <p>When set to <code>true</code>, Amazon Personalize analyzes your training data
-     * and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this
-     * case, you must omit <code>recipeArn</code>. Amazon Personalize determines the
-     * optimal recipe by running tests with different values for the hyperparameters.
-     * AutoML lengthens the training process as compared to selecting a specific
-     * recipe.</p>
+     *  <p>We don't recommend enabling automated machine learning. Instead,
+     * match your use case to the available Amazon Personalize recipes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+     * your use case.</a> </p>  <p>Whether to perform automated machine
+     * learning (AutoML). The default is <code>false</code>. For this case, you must
+     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
+     * Personalize analyzes your training data and selects the optimal
+     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
+     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
+     * running tests with different values for the hyperparameters. AutoML lengthens
+     * the training process as compared to selecting a specific recipe.</p>
      */
     inline bool GetPerformAutoML() const{ return m_performAutoML; }
 
     /**
-     * <p>Whether to perform automated machine learning (AutoML). The default is
-     * <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
-     * <p>When set to <code>true</code>, Amazon Personalize analyzes your training data
-     * and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this
-     * case, you must omit <code>recipeArn</code>. Amazon Personalize determines the
-     * optimal recipe by running tests with different values for the hyperparameters.
-     * AutoML lengthens the training process as compared to selecting a specific
-     * recipe.</p>
+     *  <p>We don't recommend enabling automated machine learning. Instead,
+     * match your use case to the available Amazon Personalize recipes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+     * your use case.</a> </p>  <p>Whether to perform automated machine
+     * learning (AutoML). The default is <code>false</code>. For this case, you must
+     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
+     * Personalize analyzes your training data and selects the optimal
+     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
+     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
+     * running tests with different values for the hyperparameters. AutoML lengthens
+     * the training process as compared to selecting a specific recipe.</p>
      */
     inline bool PerformAutoMLHasBeenSet() const { return m_performAutoMLHasBeenSet; }
 
     /**
-     * <p>Whether to perform automated machine learning (AutoML). The default is
-     * <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
-     * <p>When set to <code>true</code>, Amazon Personalize analyzes your training data
-     * and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this
-     * case, you must omit <code>recipeArn</code>. Amazon Personalize determines the
-     * optimal recipe by running tests with different values for the hyperparameters.
-     * AutoML lengthens the training process as compared to selecting a specific
-     * recipe.</p>
+     *  <p>We don't recommend enabling automated machine learning. Instead,
+     * match your use case to the available Amazon Personalize recipes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+     * your use case.</a> </p>  <p>Whether to perform automated machine
+     * learning (AutoML). The default is <code>false</code>. For this case, you must
+     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
+     * Personalize analyzes your training data and selects the optimal
+     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
+     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
+     * running tests with different values for the hyperparameters. AutoML lengthens
+     * the training process as compared to selecting a specific recipe.</p>
      */
     inline void SetPerformAutoML(bool value) { m_performAutoMLHasBeenSet = true; m_performAutoML = value; }
 
     /**
-     * <p>Whether to perform automated machine learning (AutoML). The default is
-     * <code>false</code>. For this case, you must specify <code>recipeArn</code>.</p>
-     * <p>When set to <code>true</code>, Amazon Personalize analyzes your training data
-     * and selects the optimal USER_PERSONALIZATION recipe and hyperparameters. In this
-     * case, you must omit <code>recipeArn</code>. Amazon Personalize determines the
-     * optimal recipe by running tests with different values for the hyperparameters.
-     * AutoML lengthens the training process as compared to selecting a specific
-     * recipe.</p>
+     *  <p>We don't recommend enabling automated machine learning. Instead,
+     * match your use case to the available Amazon Personalize recipes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/determining-use-case.html">Determining
+     * your use case.</a> </p>  <p>Whether to perform automated machine
+     * learning (AutoML). The default is <code>false</code>. For this case, you must
+     * specify <code>recipeArn</code>.</p> <p>When set to <code>true</code>, Amazon
+     * Personalize analyzes your training data and selects the optimal
+     * USER_PERSONALIZATION recipe and hyperparameters. In this case, you must omit
+     * <code>recipeArn</code>. Amazon Personalize determines the optimal recipe by
+     * running tests with different values for the hyperparameters. AutoML lengthens
+     * the training process as compared to selecting a specific recipe.</p>
      */
     inline CreateSolutionRequest& WithPerformAutoML(bool value) { SetPerformAutoML(value); return *this;}
 
@@ -382,56 +398,56 @@ namespace Model
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline CreateSolutionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline CreateSolutionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline CreateSolutionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
 
     /**
      * <p>A list of <a
-     * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">tags</a>
+     * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">tags</a>
      * to apply to the solution.</p>
      */
     inline CreateSolutionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }

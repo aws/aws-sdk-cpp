@@ -38,15 +38,6 @@ DeleteAwsLogSourceResult& DeleteAwsLogSourceResult::operator =(const Aws::Amazon
     }
   }
 
-  if(jsonValue.ValueExists("processing"))
-  {
-    Aws::Utils::Array<JsonView> processingJsonList = jsonValue.GetArray("processing");
-    for(unsigned processingIndex = 0; processingIndex < processingJsonList.GetLength(); ++processingIndex)
-    {
-      m_processing.push_back(processingJsonList[processingIndex].AsString());
-    }
-  }
-
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
+#include <aws/securitylake/model/CustomLogSourceResource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -33,218 +34,29 @@ namespace Model
 
 
     /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+     * <p>The created third-party custom source.</p>
      */
-    inline const Aws::String& GetCustomDataLocation() const{ return m_customDataLocation; }
+    inline const CustomLogSourceResource& GetSource() const{ return m_source; }
 
     /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+     * <p>The created third-party custom source.</p>
      */
-    inline void SetCustomDataLocation(const Aws::String& value) { m_customDataLocation = value; }
+    inline void SetSource(const CustomLogSourceResource& value) { m_source = value; }
 
     /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+     * <p>The created third-party custom source.</p>
      */
-    inline void SetCustomDataLocation(Aws::String&& value) { m_customDataLocation = std::move(value); }
+    inline void SetSource(CustomLogSourceResource&& value) { m_source = std::move(value); }
 
     /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+     * <p>The created third-party custom source.</p>
      */
-    inline void SetCustomDataLocation(const char* value) { m_customDataLocation.assign(value); }
+    inline CreateCustomLogSourceResult& WithSource(const CustomLogSourceResource& value) { SetSource(value); return *this;}
 
     /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
+     * <p>The created third-party custom source.</p>
      */
-    inline CreateCustomLogSourceResult& WithCustomDataLocation(const Aws::String& value) { SetCustomDataLocation(value); return *this;}
-
-    /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-     */
-    inline CreateCustomLogSourceResult& WithCustomDataLocation(Aws::String&& value) { SetCustomDataLocation(std::move(value)); return *this;}
-
-    /**
-     * <p>The location of the partition in the Amazon S3 bucket for Security Lake.</p>
-     */
-    inline CreateCustomLogSourceResult& WithCustomDataLocation(const char* value) { SetCustomDataLocation(value); return *this;}
-
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline const Aws::String& GetGlueCrawlerName() const{ return m_glueCrawlerName; }
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline void SetGlueCrawlerName(const Aws::String& value) { m_glueCrawlerName = value; }
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline void SetGlueCrawlerName(Aws::String&& value) { m_glueCrawlerName = std::move(value); }
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline void SetGlueCrawlerName(const char* value) { m_glueCrawlerName.assign(value); }
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueCrawlerName(const Aws::String& value) { SetGlueCrawlerName(value); return *this;}
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueCrawlerName(Aws::String&& value) { SetGlueCrawlerName(std::move(value)); return *this;}
-
-    /**
-     * <p>The name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueCrawlerName(const char* value) { SetGlueCrawlerName(value); return *this;}
-
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline const Aws::String& GetGlueDatabaseName() const{ return m_glueDatabaseName; }
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline void SetGlueDatabaseName(const Aws::String& value) { m_glueDatabaseName = value; }
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline void SetGlueDatabaseName(Aws::String&& value) { m_glueDatabaseName = std::move(value); }
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline void SetGlueDatabaseName(const char* value) { m_glueDatabaseName.assign(value); }
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueDatabaseName(const Aws::String& value) { SetGlueDatabaseName(value); return *this;}
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueDatabaseName(Aws::String&& value) { SetGlueDatabaseName(std::move(value)); return *this;}
-
-    /**
-     * <p>The Glue database where results are written, such as:
-     * <code>arn:aws:daylight:us-east-1::database/sometable/ *</code>.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueDatabaseName(const char* value) { SetGlueDatabaseName(value); return *this;}
-
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline const Aws::String& GetGlueTableName() const{ return m_glueTableName; }
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline void SetGlueTableName(const Aws::String& value) { m_glueTableName = value; }
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline void SetGlueTableName(Aws::String&& value) { m_glueTableName = std::move(value); }
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline void SetGlueTableName(const char* value) { m_glueTableName.assign(value); }
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueTableName(const Aws::String& value) { SetGlueTableName(value); return *this;}
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueTableName(Aws::String&& value) { SetGlueTableName(std::move(value)); return *this;}
-
-    /**
-     * <p>The table name of the Glue crawler.</p>
-     */
-    inline CreateCustomLogSourceResult& WithGlueTableName(const char* value) { SetGlueTableName(value); return *this;}
-
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline const Aws::String& GetLogProviderAccessRoleArn() const{ return m_logProviderAccessRoleArn; }
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline void SetLogProviderAccessRoleArn(const Aws::String& value) { m_logProviderAccessRoleArn = value; }
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline void SetLogProviderAccessRoleArn(Aws::String&& value) { m_logProviderAccessRoleArn = std::move(value); }
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline void SetLogProviderAccessRoleArn(const char* value) { m_logProviderAccessRoleArn.assign(value); }
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(const Aws::String& value) { SetLogProviderAccessRoleArn(value); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(Aws::String&& value) { SetLogProviderAccessRoleArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN of the IAM role to be used by the entity putting logs into your
-     * custom source partition. Security Lake will apply the correct access policies to
-     * this role, but you must first manually create the trust policy for this role.
-     * The IAM role name must start with the text 'Security Lake'. The IAM role must
-     * trust the <code>logProviderAccountId</code> to assume the role.</p>
-     */
-    inline CreateCustomLogSourceResult& WithLogProviderAccessRoleArn(const char* value) { SetLogProviderAccessRoleArn(value); return *this;}
+    inline CreateCustomLogSourceResult& WithSource(CustomLogSourceResource&& value) { SetSource(std::move(value)); return *this;}
 
 
     
@@ -270,15 +82,7 @@ namespace Model
 
   private:
 
-    Aws::String m_customDataLocation;
-
-    Aws::String m_glueCrawlerName;
-
-    Aws::String m_glueDatabaseName;
-
-    Aws::String m_glueTableName;
-
-    Aws::String m_logProviderAccessRoleArn;
+    CustomLogSourceResource m_source;
 
     Aws::String m_requestId;
   };

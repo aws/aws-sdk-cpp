@@ -27,8 +27,8 @@ namespace Model
    * <p>The optional metadata that you apply to resources to help you categorize and
    * organize them. Each tag consists of a key and an optional value, both of which
    * you define. For more information see <a
-   * href="https://docs.aws.amazon.com/personalize/latest/dev/tagging-resources.html">Tagging
-   * Personalize resources</a>. </p><p><h3>See Also:</h3>   <a
+   * href="https://docs.aws.amazon.com/personalize/latest/dg/tagging-resources.html">Tagging
+   * Amazon Personalize recources</a>. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/personalize-2018-05-22/Tag">AWS API
    * Reference</a></p>
    */

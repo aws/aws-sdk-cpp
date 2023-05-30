@@ -20,14 +20,14 @@ namespace Model
 
 ResourceNotFoundException::ResourceNotFoundException() : 
     m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
 }
 
 ResourceNotFoundException::ResourceNotFoundException(JsonView jsonValue) : 
     m_messageHasBeenSet(false),
-    m_resourceIdHasBeenSet(false),
+    m_resourceNameHasBeenSet(false),
     m_resourceTypeHasBeenSet(false)
 {
   *this = jsonValue;
@@ -42,11 +42,11 @@ ResourceNotFoundException& ResourceNotFoundException::operator =(JsonView jsonVa
     m_messageHasBeenSet = true;
   }
 
-  if(jsonValue.ValueExists("resourceId"))
+  if(jsonValue.ValueExists("resourceName"))
   {
-    m_resourceId = jsonValue.GetString("resourceId");
+    m_resourceName = jsonValue.GetString("resourceName");
 
-    m_resourceIdHasBeenSet = true;
+    m_resourceNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("resourceType"))
@@ -69,9 +69,9 @@ JsonValue ResourceNotFoundException::Jsonize() const
 
   }
 
-  if(m_resourceIdHasBeenSet)
+  if(m_resourceNameHasBeenSet)
   {
-   payload.WithString("resourceId", m_resourceId);
+   payload.WithString("resourceName", m_resourceName);
 
   }
 

@@ -23,8 +23,8 @@ namespace Model
 
   /**
    * <p>Inspect the query string of the web request. This is the part of a URL that
-   * appears after a <code>?</code> character, if any.</p> <p>This is used only in
-   * the <a>FieldToMatch</a> specification for some web request component types. </p>
+   * appears after a <code>?</code> character, if any.</p> <p>This is used in the
+   * <a>FieldToMatch</a> specification for some web request component types. </p>
    * <p>JSON specification: <code>"QueryString": {}</code> </p><p><h3>See Also:</h3> 
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/wafv2-2019-07-29/QueryString">AWS

@@ -15,6 +15,7 @@
 #include <aws/iotfleetwise/model/CollectionScheme.h>
 #include <aws/iotfleetwise/model/SignalInformation.h>
 #include <aws/iotfleetwise/model/Tag.h>
+#include <aws/iotfleetwise/model/DataDestinationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -259,42 +260,42 @@ namespace Model
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline const Aws::Utils::DateTime& GetExpiryTime() const{ return m_expiryTime; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline bool ExpiryTimeHasBeenSet() const { return m_expiryTimeHasBeenSet; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline void SetExpiryTime(const Aws::Utils::DateTime& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = value; }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline void SetExpiryTime(Aws::Utils::DateTime&& value) { m_expiryTimeHasBeenSet = true; m_expiryTime = std::move(value); }
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline CreateCampaignRequest& WithExpiryTime(const Aws::Utils::DateTime& value) { SetExpiryTime(value); return *this;}
 
     /**
      * <p> (Optional) The time the campaign expires, in seconds since epoch (January 1,
-     * 1970 at midnight UTC time). Vehicle data won't be collected after the campaign
+     * 1970 at midnight UTC time). Vehicle data isn't collected after the campaign
      * expires. </p> <p>Default: 253402214400 (December 31, 9999, 00:00:00 UTC)</p>
      */
     inline CreateCampaignRequest& WithExpiryTime(Aws::Utils::DateTime&& value) { SetExpiryTime(std::move(value)); return *this;}
@@ -730,6 +731,95 @@ namespace Model
      */
     inline CreateCampaignRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const{ return m_dataDestinationConfigs; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline bool DataDestinationConfigsHasBeenSet() const { return m_dataDestinationConfigsHasBeenSet; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline void SetDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs = value; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline void SetDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs = std::move(value); }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline CreateCampaignRequest& WithDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { SetDataDestinationConfigs(value); return *this;}
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline CreateCampaignRequest& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline CreateCampaignRequest& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline CreateCampaignRequest& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigsHasBeenSet = true; m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -776,6 +866,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
+    bool m_dataDestinationConfigsHasBeenSet = false;
   };
 
 } // namespace Model

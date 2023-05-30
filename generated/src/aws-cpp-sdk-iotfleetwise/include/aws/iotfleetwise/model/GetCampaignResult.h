@@ -14,6 +14,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotfleetwise/model/CollectionScheme.h>
 #include <aws/iotfleetwise/model/SignalInformation.h>
+#include <aws/iotfleetwise/model/DataDestinationConfig.h>
 #include <utility>
 
 namespace Aws
@@ -627,6 +628,84 @@ namespace Model
     inline GetCampaignResult& WithLastModificationTime(Aws::Utils::DateTime&& value) { SetLastModificationTime(std::move(value)); return *this;}
 
 
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline const Aws::Vector<DataDestinationConfig>& GetDataDestinationConfigs() const{ return m_dataDestinationConfigs; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline void SetDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { m_dataDestinationConfigs = value; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline void SetDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { m_dataDestinationConfigs = std::move(value); }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline GetCampaignResult& WithDataDestinationConfigs(const Aws::Vector<DataDestinationConfig>& value) { SetDataDestinationConfigs(value); return *this;}
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline GetCampaignResult& WithDataDestinationConfigs(Aws::Vector<DataDestinationConfig>&& value) { SetDataDestinationConfigs(std::move(value)); return *this;}
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline GetCampaignResult& AddDataDestinationConfigs(const DataDestinationConfig& value) { m_dataDestinationConfigs.push_back(value); return *this; }
+
+    /**
+     * <p>The destination where the campaign sends data. You can choose to send data to
+     * be stored in Amazon S3 or Amazon Timestream.</p> <p>Amazon S3 optimizes the cost
+     * of data storage and provides additional mechanisms to use vehicle data, such as
+     * data lakes, centralized data storage, data processing pipelines, and analytics.
+     * </p> <p>You can use Amazon Timestream to access and analyze time series data,
+     * and Timestream to query vehicle data so that you can identify trends and
+     * patterns.</p>
+     */
+    inline GetCampaignResult& AddDataDestinationConfigs(DataDestinationConfig&& value) { m_dataDestinationConfigs.push_back(std::move(value)); return *this; }
+
+
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -685,6 +764,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::Utils::DateTime m_lastModificationTime;
+
+    Aws::Vector<DataDestinationConfig> m_dataDestinationConfigs;
 
     Aws::String m_requestId;
   };

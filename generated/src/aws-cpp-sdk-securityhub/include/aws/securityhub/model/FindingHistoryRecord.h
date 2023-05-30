@@ -64,8 +64,8 @@ namespace Model
 
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -74,8 +74,8 @@ namespace Model
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -84,8 +84,8 @@ namespace Model
     inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -94,8 +94,8 @@ namespace Model
     inline void SetUpdateTime(const Aws::Utils::DateTime& value) { m_updateTimeHasBeenSet = true; m_updateTime = value; }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -104,8 +104,8 @@ namespace Model
     inline void SetUpdateTime(Aws::Utils::DateTime&& value) { m_updateTimeHasBeenSet = true; m_updateTime = std::move(value); }
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,
@@ -114,8 +114,8 @@ namespace Model
     inline FindingHistoryRecord& WithUpdateTime(const Aws::Utils::DateTime& value) { SetUpdateTime(value); return *this;}
 
     /**
-     * <p> An ISO 8601-formatted timestamp that indicates when the security findings
-     * provider last updated the finding record. A correctly formatted example is
+     * <p> An ISO 8601-formatted timestamp that indicates when Security Hub processed
+     * the updated finding record.</p> <p>A correctly formatted example is
      * <code>2020-05-21T20:16:34.724Z</code>. The value cannot contain spaces, and date
      * and time should be separated by <code>T</code>. For more information, see <a
      * href="https://www.rfc-editor.org/rfc/rfc3339#section-5.6">RFC 3339 section 5.6,

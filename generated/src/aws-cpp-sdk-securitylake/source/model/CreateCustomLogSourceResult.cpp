@@ -29,33 +29,9 @@ CreateCustomLogSourceResult::CreateCustomLogSourceResult(const Aws::AmazonWebSer
 CreateCustomLogSourceResult& CreateCustomLogSourceResult::operator =(const Aws::AmazonWebServiceResult<JsonValue>& result)
 {
   JsonView jsonValue = result.GetPayload().View();
-  if(jsonValue.ValueExists("customDataLocation"))
+  if(jsonValue.ValueExists("source"))
   {
-    m_customDataLocation = jsonValue.GetString("customDataLocation");
-
-  }
-
-  if(jsonValue.ValueExists("glueCrawlerName"))
-  {
-    m_glueCrawlerName = jsonValue.GetString("glueCrawlerName");
-
-  }
-
-  if(jsonValue.ValueExists("glueDatabaseName"))
-  {
-    m_glueDatabaseName = jsonValue.GetString("glueDatabaseName");
-
-  }
-
-  if(jsonValue.ValueExists("glueTableName"))
-  {
-    m_glueTableName = jsonValue.GetString("glueTableName");
-
-  }
-
-  if(jsonValue.ValueExists("logProviderAccessRoleArn"))
-  {
-    m_logProviderAccessRoleArn = jsonValue.GetString("logProviderAccessRoleArn");
+    m_source = jsonValue.GetObject("source");
 
   }
 
