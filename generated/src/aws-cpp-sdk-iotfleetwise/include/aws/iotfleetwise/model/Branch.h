@@ -127,6 +127,96 @@ namespace Model
      */
     inline Branch& WithDescription(const char* value) { SetDescription(value); return *this;}
 
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline const Aws::String& GetDeprecationMessage() const{ return m_deprecationMessage; }
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline bool DeprecationMessageHasBeenSet() const { return m_deprecationMessageHasBeenSet; }
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline void SetDeprecationMessage(const Aws::String& value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage = value; }
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline void SetDeprecationMessage(Aws::String&& value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage = std::move(value); }
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline void SetDeprecationMessage(const char* value) { m_deprecationMessageHasBeenSet = true; m_deprecationMessage.assign(value); }
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline Branch& WithDeprecationMessage(const Aws::String& value) { SetDeprecationMessage(value); return *this;}
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline Branch& WithDeprecationMessage(Aws::String&& value) { SetDeprecationMessage(std::move(value)); return *this;}
+
+    /**
+     * <p>The deprecation message for the node or the branch that was moved or
+     * deleted.</p>
+     */
+    inline Branch& WithDeprecationMessage(const char* value) { SetDeprecationMessage(value); return *this;}
+
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline void SetComment(Aws::String&& value) { m_commentHasBeenSet = true; m_comment = std::move(value); }
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline void SetComment(const char* value) { m_commentHasBeenSet = true; m_comment.assign(value); }
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline Branch& WithComment(const Aws::String& value) { SetComment(value); return *this;}
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline Branch& WithComment(Aws::String&& value) { SetComment(std::move(value)); return *this;}
+
+    /**
+     * <p>A comment in addition to the description.</p>
+     */
+    inline Branch& WithComment(const char* value) { SetComment(value); return *this;}
+
   private:
 
     Aws::String m_fullyQualifiedName;
@@ -134,6 +224,12 @@ namespace Model
 
     Aws::String m_description;
     bool m_descriptionHasBeenSet = false;
+
+    Aws::String m_deprecationMessage;
+    bool m_deprecationMessageHasBeenSet = false;
+
+    Aws::String m_comment;
+    bool m_commentHasBeenSet = false;
   };
 
 } // namespace Model

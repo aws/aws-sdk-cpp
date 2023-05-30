@@ -6,12 +6,12 @@
 #pragma once
 #include <aws/securitylake/SecurityLake_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
-#include <aws/securitylake/model/EndpointProtocol.h>
-#include <aws/securitylake/model/SubscriptionStatus.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/securitylake/model/AwsIdentity.h>
+#include <aws/securitylake/model/SubscriberStatus.h>
 #include <aws/securitylake/model/AccessType.h>
-#include <aws/securitylake/model/SourceType.h>
+#include <aws/securitylake/model/LogSourceResource.h>
 #include <utility>
 
 namespace Aws
@@ -32,7 +32,7 @@ namespace Model
   /**
    * <p>Provides details about the Amazon Security Lake account subscription.
    * Subscribers are notified of new objects for a source as the data is written to
-   * your Amazon S3 bucket for Security Lake. </p><p><h3>See Also:</h3>   <a
+   * your Amazon S3 bucket for Security Lake.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/securitylake-2018-05-10/SubscriberResource">AWS
    * API Reference</a></p>
    */
@@ -48,227 +48,113 @@ namespace Model
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline const Aws::Vector<AccessType>& GetAccessTypes() const{ return m_accessTypes; }
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline bool AccessTypesHasBeenSet() const { return m_accessTypesHasBeenSet; }
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline void SetAccessTypes(const Aws::Vector<AccessType>& value) { m_accessTypesHasBeenSet = true; m_accessTypes = value; }
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline void SetAccessTypes(Aws::Vector<AccessType>&& value) { m_accessTypesHasBeenSet = true; m_accessTypes = std::move(value); }
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline SubscriberResource& WithAccessTypes(const Aws::Vector<AccessType>& value) { SetAccessTypes(value); return *this;}
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline SubscriberResource& WithAccessTypes(Aws::Vector<AccessType>&& value) { SetAccessTypes(std::move(value)); return *this;}
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline SubscriberResource& AddAccessTypes(const AccessType& value) { m_accessTypesHasBeenSet = true; m_accessTypes.push_back(value); return *this; }
 
     /**
      * <p>You can choose to notify subscribers of new objects with an Amazon Simple
      * Queue Service (Amazon SQS) queue or through messaging to an HTTPS endpoint
-     * provided by the subscriber. </p> <p> Subscribers can consume data by directly
+     * provided by the subscriber.</p> <p> Subscribers can consume data by directly
      * querying Lake Formation tables in your Amazon S3 bucket through services like
-     * Amazon Athena. This subscription type is defined as <code>LAKEFORMATION</code>.
-     * </p>
+     * Amazon Athena. This subscription type is defined as
+     * <code>LAKEFORMATION</code>.</p>
      */
     inline SubscriberResource& AddAccessTypes(AccessType&& value) { m_accessTypesHasBeenSet = true; m_accessTypes.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline const Aws::String& GetAccountId() const{ return m_accountId; }
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline SubscriberResource& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline SubscriberResource& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
-
-    /**
-     * <p>The Amazon Web Services account ID you are using to create your Amazon
-     * Security Lake account.</p>
-     */
-    inline SubscriberResource& WithAccountId(const char* value) { SetAccountId(value); return *this;}
-
-
-    /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline void SetCreatedAt(Aws::Utils::DateTime&& value) { m_createdAtHasBeenSet = true; m_createdAt = std::move(value); }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline SubscriberResource& WithCreatedAt(const Aws::Utils::DateTime& value) { SetCreatedAt(value); return *this;}
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was created.</p>
      */
     inline SubscriberResource& WithCreatedAt(Aws::Utils::DateTime&& value) { SetCreatedAt(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline const Aws::String& GetExternalId() const{ return m_externalId; }
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline void SetExternalId(Aws::String&& value) { m_externalIdHasBeenSet = true; m_externalId = std::move(value); }
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline void SetExternalId(const char* value) { m_externalIdHasBeenSet = true; m_externalId.assign(value); }
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline SubscriberResource& WithExternalId(const Aws::String& value) { SetExternalId(value); return *this;}
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline SubscriberResource& WithExternalId(Aws::String&& value) { SetExternalId(std::move(value)); return *this;}
-
-    /**
-     * <p>The external ID of the subscriber. The external ID lets the user that is
-     * assuming the role assert the circumstances in which they are operating. It also
-     * provides a way for the account owner to permit the role to be assumed only under
-     * specific circumstances.</p>
-     */
-    inline SubscriberResource& WithExternalId(const char* value) { SetExternalId(value); return *this;}
 
 
     /**
@@ -419,199 +305,312 @@ namespace Model
 
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3BucketArn() const{ return m_s3BucketArn; }
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline bool S3BucketArnHasBeenSet() const { return m_s3BucketArnHasBeenSet; }
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline void SetS3BucketArn(const Aws::String& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = value; }
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline void SetS3BucketArn(Aws::String&& value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn = std::move(value); }
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline void SetS3BucketArn(const char* value) { m_s3BucketArnHasBeenSet = true; m_s3BucketArn.assign(value); }
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline SubscriberResource& WithS3BucketArn(const Aws::String& value) { SetS3BucketArn(value); return *this;}
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline SubscriberResource& WithS3BucketArn(Aws::String&& value) { SetS3BucketArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN for the Amazon S3 bucket. </p>
+     * <p>The ARN for the Amazon S3 bucket.</p>
      */
     inline SubscriberResource& WithS3BucketArn(const char* value) { SetS3BucketArn(value); return *this;}
 
 
     /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
+     * <p>Amazon Security Lake supports log and event collection for natively supported
+     * Amazon Web Services. For more information, see the Amazon Security Lake User
+     * Guide.</p>
      */
-    inline const Aws::String& GetSnsArn() const{ return m_snsArn; }
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline bool SnsArnHasBeenSet() const { return m_snsArnHasBeenSet; }
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline void SetSnsArn(const Aws::String& value) { m_snsArnHasBeenSet = true; m_snsArn = value; }
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline void SetSnsArn(Aws::String&& value) { m_snsArnHasBeenSet = true; m_snsArn = std::move(value); }
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline void SetSnsArn(const char* value) { m_snsArnHasBeenSet = true; m_snsArn.assign(value); }
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline SubscriberResource& WithSnsArn(const Aws::String& value) { SetSnsArn(value); return *this;}
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline SubscriberResource& WithSnsArn(Aws::String&& value) { SetSnsArn(std::move(value)); return *this;}
-
-    /**
-     * <p>The ARN for the Amazon Simple Notification Service.</p>
-     */
-    inline SubscriberResource& WithSnsArn(const char* value) { SetSnsArn(value); return *this;}
-
+    inline const Aws::Vector<LogSourceResource>& GetSources() const{ return m_sources; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline const Aws::Vector<SourceType>& GetSourceTypes() const{ return m_sourceTypes; }
+    inline bool SourcesHasBeenSet() const { return m_sourcesHasBeenSet; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline bool SourceTypesHasBeenSet() const { return m_sourceTypesHasBeenSet; }
+    inline void SetSources(const Aws::Vector<LogSourceResource>& value) { m_sourcesHasBeenSet = true; m_sources = value; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline void SetSourceTypes(const Aws::Vector<SourceType>& value) { m_sourceTypesHasBeenSet = true; m_sourceTypes = value; }
+    inline void SetSources(Aws::Vector<LogSourceResource>&& value) { m_sourcesHasBeenSet = true; m_sources = std::move(value); }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline void SetSourceTypes(Aws::Vector<SourceType>&& value) { m_sourceTypesHasBeenSet = true; m_sourceTypes = std::move(value); }
+    inline SubscriberResource& WithSources(const Aws::Vector<LogSourceResource>& value) { SetSources(value); return *this;}
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline SubscriberResource& WithSourceTypes(const Aws::Vector<SourceType>& value) { SetSourceTypes(value); return *this;}
+    inline SubscriberResource& WithSources(Aws::Vector<LogSourceResource>&& value) { SetSources(std::move(value)); return *this;}
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline SubscriberResource& WithSourceTypes(Aws::Vector<SourceType>&& value) { SetSourceTypes(std::move(value)); return *this;}
+    inline SubscriberResource& AddSources(const LogSourceResource& value) { m_sourcesHasBeenSet = true; m_sources.push_back(value); return *this; }
 
     /**
      * <p>Amazon Security Lake supports log and event collection for natively supported
      * Amazon Web Services. For more information, see the Amazon Security Lake User
      * Guide.</p>
      */
-    inline SubscriberResource& AddSourceTypes(const SourceType& value) { m_sourceTypesHasBeenSet = true; m_sourceTypes.push_back(value); return *this; }
+    inline SubscriberResource& AddSources(LogSourceResource&& value) { m_sourcesHasBeenSet = true; m_sources.push_back(std::move(value)); return *this; }
+
 
     /**
-     * <p>Amazon Security Lake supports log and event collection for natively supported
-     * Amazon Web Services. For more information, see the Amazon Security Lake User
-     * Guide.</p>
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
      */
-    inline SubscriberResource& AddSourceTypes(SourceType&& value) { m_sourceTypesHasBeenSet = true; m_sourceTypes.push_back(std::move(value)); return *this; }
+    inline const Aws::String& GetSubscriberArn() const{ return m_subscriberArn; }
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline bool SubscriberArnHasBeenSet() const { return m_subscriberArnHasBeenSet; }
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberArn(const Aws::String& value) { m_subscriberArnHasBeenSet = true; m_subscriberArn = value; }
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberArn(Aws::String&& value) { m_subscriberArnHasBeenSet = true; m_subscriberArn = std::move(value); }
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberArn(const char* value) { m_subscriberArnHasBeenSet = true; m_subscriberArn.assign(value); }
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberArn(const Aws::String& value) { SetSubscriberArn(value); return *this;}
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberArn(Aws::String&& value) { SetSubscriberArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The subscriber ARN of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberArn(const char* value) { SetSubscriberArn(value); return *this;}
 
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline const Aws::String& GetSubscriberDescription() const{ return m_subscriberDescription; }
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline bool SubscriberDescriptionHasBeenSet() const { return m_subscriberDescriptionHasBeenSet; }
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline void SetSubscriberDescription(const Aws::String& value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription = value; }
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline void SetSubscriberDescription(Aws::String&& value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription = std::move(value); }
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline void SetSubscriberDescription(const char* value) { m_subscriberDescriptionHasBeenSet = true; m_subscriberDescription.assign(value); }
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline SubscriberResource& WithSubscriberDescription(const Aws::String& value) { SetSubscriberDescription(value); return *this;}
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline SubscriberResource& WithSubscriberDescription(Aws::String&& value) { SetSubscriberDescription(std::move(value)); return *this;}
 
     /**
      * <p>The subscriber descriptions for a subscriber account. The description for a
      * subscriber includes <code>subscriberName</code>, <code>accountID</code>,
-     * <code>externalID</code>, and <code>subscriptionId</code>.</p>
+     * <code>externalID</code>, and <code>subscriberId</code>.</p>
      */
     inline SubscriberResource& WithSubscriberDescription(const char* value) { SetSubscriberDescription(value); return *this;}
+
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline const Aws::String& GetSubscriberEndpoint() const{ return m_subscriberEndpoint; }
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline bool SubscriberEndpointHasBeenSet() const { return m_subscriberEndpointHasBeenSet; }
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline void SetSubscriberEndpoint(const Aws::String& value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint = value; }
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline void SetSubscriberEndpoint(Aws::String&& value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint = std::move(value); }
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline void SetSubscriberEndpoint(const char* value) { m_subscriberEndpointHasBeenSet = true; m_subscriberEndpoint.assign(value); }
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline SubscriberResource& WithSubscriberEndpoint(const Aws::String& value) { SetSubscriberEndpoint(value); return *this;}
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline SubscriberResource& WithSubscriberEndpoint(Aws::String&& value) { SetSubscriberEndpoint(std::move(value)); return *this;}
+
+    /**
+     * <p>The subscriber endpoint to which exception messages are posted.</p>
+     */
+    inline SubscriberResource& WithSubscriberEndpoint(const char* value) { SetSubscriberEndpoint(value); return *this;}
+
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline const Aws::String& GetSubscriberId() const{ return m_subscriberId; }
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline bool SubscriberIdHasBeenSet() const { return m_subscriberIdHasBeenSet; }
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberId(const Aws::String& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = value; }
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberId(Aws::String&& value) { m_subscriberIdHasBeenSet = true; m_subscriberId = std::move(value); }
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline void SetSubscriberId(const char* value) { m_subscriberIdHasBeenSet = true; m_subscriberId.assign(value); }
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberId(const Aws::String& value) { SetSubscriberId(value); return *this;}
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberId(Aws::String&& value) { SetSubscriberId(std::move(value)); return *this;}
+
+    /**
+     * <p>The subscriber ID of the Amazon Security Lake subscriber account.</p>
+     */
+    inline SubscriberResource& WithSubscriberId(const char* value) { SetSubscriberId(value); return *this;}
+
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline const AwsIdentity& GetSubscriberIdentity() const{ return m_subscriberIdentity; }
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline bool SubscriberIdentityHasBeenSet() const { return m_subscriberIdentityHasBeenSet; }
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline void SetSubscriberIdentity(const AwsIdentity& value) { m_subscriberIdentityHasBeenSet = true; m_subscriberIdentity = value; }
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline void SetSubscriberIdentity(AwsIdentity&& value) { m_subscriberIdentityHasBeenSet = true; m_subscriberIdentity = std::move(value); }
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline SubscriberResource& WithSubscriberIdentity(const AwsIdentity& value) { SetSubscriberIdentity(value); return *this;}
+
+    /**
+     * <p>The AWS identity used to access your data.</p>
+     */
+    inline SubscriberResource& WithSubscriberIdentity(AwsIdentity&& value) { SetSubscriberIdentity(std::move(value)); return *this;}
 
 
     /**
@@ -656,176 +655,63 @@ namespace Model
 
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline const Aws::String& GetSubscriptionEndpoint() const{ return m_subscriptionEndpoint; }
+    inline const SubscriberStatus& GetSubscriberStatus() const{ return m_subscriberStatus; }
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline bool SubscriptionEndpointHasBeenSet() const { return m_subscriptionEndpointHasBeenSet; }
+    inline bool SubscriberStatusHasBeenSet() const { return m_subscriberStatusHasBeenSet; }
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline void SetSubscriptionEndpoint(const Aws::String& value) { m_subscriptionEndpointHasBeenSet = true; m_subscriptionEndpoint = value; }
+    inline void SetSubscriberStatus(const SubscriberStatus& value) { m_subscriberStatusHasBeenSet = true; m_subscriberStatus = value; }
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline void SetSubscriptionEndpoint(Aws::String&& value) { m_subscriptionEndpointHasBeenSet = true; m_subscriptionEndpoint = std::move(value); }
+    inline void SetSubscriberStatus(SubscriberStatus&& value) { m_subscriberStatusHasBeenSet = true; m_subscriberStatus = std::move(value); }
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline void SetSubscriptionEndpoint(const char* value) { m_subscriptionEndpointHasBeenSet = true; m_subscriptionEndpoint.assign(value); }
+    inline SubscriberResource& WithSubscriberStatus(const SubscriberStatus& value) { SetSubscriberStatus(value); return *this;}
 
     /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
+     * <p>The subscriber status of the Amazon Security Lake subscriber account.</p>
      */
-    inline SubscriberResource& WithSubscriptionEndpoint(const Aws::String& value) { SetSubscriptionEndpoint(value); return *this;}
-
-    /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
-     */
-    inline SubscriberResource& WithSubscriptionEndpoint(Aws::String&& value) { SetSubscriptionEndpoint(std::move(value)); return *this;}
-
-    /**
-     * <p>The subscription endpoint to which exception messages are posted. </p>
-     */
-    inline SubscriberResource& WithSubscriptionEndpoint(const char* value) { SetSubscriptionEndpoint(value); return *this;}
+    inline SubscriberResource& WithSubscriberStatus(SubscriberStatus&& value) { SetSubscriberStatus(std::move(value)); return *this;}
 
 
     /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline const Aws::String& GetSubscriptionId() const{ return m_subscriptionId; }
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline bool SubscriptionIdHasBeenSet() const { return m_subscriptionIdHasBeenSet; }
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline void SetSubscriptionId(const Aws::String& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = value; }
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline void SetSubscriptionId(Aws::String&& value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId = std::move(value); }
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline void SetSubscriptionId(const char* value) { m_subscriptionIdHasBeenSet = true; m_subscriptionId.assign(value); }
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline SubscriberResource& WithSubscriptionId(const Aws::String& value) { SetSubscriptionId(value); return *this;}
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline SubscriberResource& WithSubscriptionId(Aws::String&& value) { SetSubscriptionId(std::move(value)); return *this;}
-
-    /**
-     * <p>The subscription ID of the Amazon Security Lake subscriber account.</p>
-     */
-    inline SubscriberResource& WithSubscriptionId(const char* value) { SetSubscriptionId(value); return *this;}
-
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline const EndpointProtocol& GetSubscriptionProtocol() const{ return m_subscriptionProtocol; }
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline bool SubscriptionProtocolHasBeenSet() const { return m_subscriptionProtocolHasBeenSet; }
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline void SetSubscriptionProtocol(const EndpointProtocol& value) { m_subscriptionProtocolHasBeenSet = true; m_subscriptionProtocol = value; }
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline void SetSubscriptionProtocol(EndpointProtocol&& value) { m_subscriptionProtocolHasBeenSet = true; m_subscriptionProtocol = std::move(value); }
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline SubscriberResource& WithSubscriptionProtocol(const EndpointProtocol& value) { SetSubscriptionProtocol(value); return *this;}
-
-    /**
-     * <p>The subscription protocol to which exception messages are posted. </p>
-     */
-    inline SubscriberResource& WithSubscriptionProtocol(EndpointProtocol&& value) { SetSubscriptionProtocol(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline const SubscriptionStatus& GetSubscriptionStatus() const{ return m_subscriptionStatus; }
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline bool SubscriptionStatusHasBeenSet() const { return m_subscriptionStatusHasBeenSet; }
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline void SetSubscriptionStatus(const SubscriptionStatus& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = value; }
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline void SetSubscriptionStatus(SubscriptionStatus&& value) { m_subscriptionStatusHasBeenSet = true; m_subscriptionStatus = std::move(value); }
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline SubscriberResource& WithSubscriptionStatus(const SubscriptionStatus& value) { SetSubscriptionStatus(value); return *this;}
-
-    /**
-     * <p>The subscription status of the Amazon Security Lake subscriber account.</p>
-     */
-    inline SubscriberResource& WithSubscriptionStatus(SubscriptionStatus&& value) { SetSubscriptionStatus(std::move(value)); return *this;}
-
-
-    /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline void SetUpdatedAt(const Aws::Utils::DateTime& value) { m_updatedAtHasBeenSet = true; m_updatedAt = value; }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline void SetUpdatedAt(Aws::Utils::DateTime&& value) { m_updatedAtHasBeenSet = true; m_updatedAt = std::move(value); }
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline SubscriberResource& WithUpdatedAt(const Aws::Utils::DateTime& value) { SetUpdatedAt(value); return *this;}
 
     /**
-     * <p>The date and time when the subscription was created. </p>
+     * <p>The date and time when the subscriber was last updated.</p>
      */
     inline SubscriberResource& WithUpdatedAt(Aws::Utils::DateTime&& value) { SetUpdatedAt(std::move(value)); return *this;}
 
@@ -834,14 +720,8 @@ namespace Model
     Aws::Vector<AccessType> m_accessTypes;
     bool m_accessTypesHasBeenSet = false;
 
-    Aws::String m_accountId;
-    bool m_accountIdHasBeenSet = false;
-
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet = false;
-
-    Aws::String m_externalId;
-    bool m_externalIdHasBeenSet = false;
 
     Aws::String m_resourceShareArn;
     bool m_resourceShareArnHasBeenSet = false;
@@ -855,29 +735,29 @@ namespace Model
     Aws::String m_s3BucketArn;
     bool m_s3BucketArnHasBeenSet = false;
 
-    Aws::String m_snsArn;
-    bool m_snsArnHasBeenSet = false;
+    Aws::Vector<LogSourceResource> m_sources;
+    bool m_sourcesHasBeenSet = false;
 
-    Aws::Vector<SourceType> m_sourceTypes;
-    bool m_sourceTypesHasBeenSet = false;
+    Aws::String m_subscriberArn;
+    bool m_subscriberArnHasBeenSet = false;
 
     Aws::String m_subscriberDescription;
     bool m_subscriberDescriptionHasBeenSet = false;
 
+    Aws::String m_subscriberEndpoint;
+    bool m_subscriberEndpointHasBeenSet = false;
+
+    Aws::String m_subscriberId;
+    bool m_subscriberIdHasBeenSet = false;
+
+    AwsIdentity m_subscriberIdentity;
+    bool m_subscriberIdentityHasBeenSet = false;
+
     Aws::String m_subscriberName;
     bool m_subscriberNameHasBeenSet = false;
 
-    Aws::String m_subscriptionEndpoint;
-    bool m_subscriptionEndpointHasBeenSet = false;
-
-    Aws::String m_subscriptionId;
-    bool m_subscriptionIdHasBeenSet = false;
-
-    EndpointProtocol m_subscriptionProtocol;
-    bool m_subscriptionProtocolHasBeenSet = false;
-
-    SubscriptionStatus m_subscriptionStatus;
-    bool m_subscriptionStatusHasBeenSet = false;
+    SubscriberStatus m_subscriberStatus;
+    bool m_subscriberStatusHasBeenSet = false;
 
     Aws::Utils::DateTime m_updatedAt;
     bool m_updatedAtHasBeenSet = false;

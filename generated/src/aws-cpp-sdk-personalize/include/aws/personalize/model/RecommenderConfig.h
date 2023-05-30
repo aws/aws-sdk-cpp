@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/personalize/Personalize_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/personalize/model/TrainingDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -171,27 +172,80 @@ namespace Model
 
     /**
      * <p>Specifies the requested minimum provisioned recommendation requests per
-     * second that Amazon Personalize will support.</p>
+     * second that Amazon Personalize will support. A high
+     * <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     * recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+     * (the default). Track your usage using Amazon CloudWatch metrics, and increase
+     * the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
      */
     inline int GetMinRecommendationRequestsPerSecond() const{ return m_minRecommendationRequestsPerSecond; }
 
     /**
      * <p>Specifies the requested minimum provisioned recommendation requests per
-     * second that Amazon Personalize will support.</p>
+     * second that Amazon Personalize will support. A high
+     * <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     * recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+     * (the default). Track your usage using Amazon CloudWatch metrics, and increase
+     * the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
      */
     inline bool MinRecommendationRequestsPerSecondHasBeenSet() const { return m_minRecommendationRequestsPerSecondHasBeenSet; }
 
     /**
      * <p>Specifies the requested minimum provisioned recommendation requests per
-     * second that Amazon Personalize will support.</p>
+     * second that Amazon Personalize will support. A high
+     * <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     * recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+     * (the default). Track your usage using Amazon CloudWatch metrics, and increase
+     * the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
      */
     inline void SetMinRecommendationRequestsPerSecond(int value) { m_minRecommendationRequestsPerSecondHasBeenSet = true; m_minRecommendationRequestsPerSecond = value; }
 
     /**
      * <p>Specifies the requested minimum provisioned recommendation requests per
-     * second that Amazon Personalize will support.</p>
+     * second that Amazon Personalize will support. A high
+     * <code>minRecommendationRequestsPerSecond</code> will increase your bill. We
+     * recommend starting with 1 for <code>minRecommendationRequestsPerSecond</code>
+     * (the default). Track your usage using Amazon CloudWatch metrics, and increase
+     * the <code>minRecommendationRequestsPerSecond</code> as necessary.</p>
      */
     inline RecommenderConfig& WithMinRecommendationRequestsPerSecond(int value) { SetMinRecommendationRequestsPerSecond(value); return *this;}
+
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline bool TrainingDataConfigHasBeenSet() const { return m_trainingDataConfigHasBeenSet; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = value; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = std::move(value); }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline RecommenderConfig& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a domain
+     * recommender. </p>
+     */
+    inline RecommenderConfig& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
 
   private:
 
@@ -200,6 +254,9 @@ namespace Model
 
     int m_minRecommendationRequestsPerSecond;
     bool m_minRecommendationRequestsPerSecondHasBeenSet = false;
+
+    TrainingDataConfig m_trainingDataConfig;
+    bool m_trainingDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

@@ -13,7 +13,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 GetSubscriberRequest::GetSubscriberRequest() : 
-    m_idHasBeenSet(false)
+    m_subscriberIdHasBeenSet(false)
 {
 }
 

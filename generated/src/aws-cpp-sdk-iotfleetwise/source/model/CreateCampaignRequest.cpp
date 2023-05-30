@@ -32,7 +32,8 @@ CreateCampaignRequest::CreateCampaignRequest() :
     m_signalsToCollectHasBeenSet(false),
     m_collectionSchemeHasBeenSet(false),
     m_dataExtraDimensionsHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_dataDestinationConfigsHasBeenSet(false)
 {
 }
 
@@ -137,6 +138,17 @@ Aws::String CreateCampaignRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_dataDestinationConfigsHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> dataDestinationConfigsJsonList(m_dataDestinationConfigs.size());
+   for(unsigned dataDestinationConfigsIndex = 0; dataDestinationConfigsIndex < dataDestinationConfigsJsonList.GetLength(); ++dataDestinationConfigsIndex)
+   {
+     dataDestinationConfigsJsonList[dataDestinationConfigsIndex].AsObject(m_dataDestinationConfigs[dataDestinationConfigsIndex].Jsonize());
+   }
+   payload.WithArray("dataDestinationConfigs", std::move(dataDestinationConfigsJsonList));
 
   }
 

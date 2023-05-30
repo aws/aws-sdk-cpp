@@ -89,6 +89,11 @@
 #include <aws/securityhub/model/AwsWafv2WebAclDetails.h>
 #include <aws/securityhub/model/AwsWafv2RuleGroupDetails.h>
 #include <aws/securityhub/model/AwsEc2RouteTableDetails.h>
+#include <aws/securityhub/model/AwsAmazonMqBrokerDetails.h>
+#include <aws/securityhub/model/AwsAppSyncGraphQlApiDetails.h>
+#include <aws/securityhub/model/AwsEventSchemasRegistryDetails.h>
+#include <aws/securityhub/model/AwsGuardDutyDetectorDetails.h>
+#include <aws/securityhub/model/AwsStepFunctionStateMachineDetails.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <utility>
 
@@ -2900,6 +2905,209 @@ namespace Model
      */
     inline ResourceDetails& WithAwsEc2RouteTable(AwsEc2RouteTableDetails&& value) { SetAwsEc2RouteTable(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline const AwsAmazonMqBrokerDetails& GetAwsAmazonMqBroker() const{ return m_awsAmazonMqBroker; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline bool AwsAmazonMqBrokerHasBeenSet() const { return m_awsAmazonMqBrokerHasBeenSet; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline void SetAwsAmazonMqBroker(const AwsAmazonMqBrokerDetails& value) { m_awsAmazonMqBrokerHasBeenSet = true; m_awsAmazonMqBroker = value; }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline void SetAwsAmazonMqBroker(AwsAmazonMqBrokerDetails&& value) { m_awsAmazonMqBrokerHasBeenSet = true; m_awsAmazonMqBroker = std::move(value); }
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline ResourceDetails& WithAwsAmazonMqBroker(const AwsAmazonMqBrokerDetails& value) { SetAwsAmazonMqBroker(value); return *this;}
+
+    /**
+     * <p> Provides details about AppSync message broker. A message broker allows
+     * software applications and components to communicate using various programming
+     * languages, operating systems, and formal messaging protocols. </p>
+     */
+    inline ResourceDetails& WithAwsAmazonMqBroker(AwsAmazonMqBrokerDetails&& value) { SetAwsAmazonMqBroker(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline const AwsAppSyncGraphQlApiDetails& GetAwsAppSyncGraphQlApi() const{ return m_awsAppSyncGraphQlApi; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline bool AwsAppSyncGraphQlApiHasBeenSet() const { return m_awsAppSyncGraphQlApiHasBeenSet; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline void SetAwsAppSyncGraphQlApi(const AwsAppSyncGraphQlApiDetails& value) { m_awsAppSyncGraphQlApiHasBeenSet = true; m_awsAppSyncGraphQlApi = value; }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline void SetAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails&& value) { m_awsAppSyncGraphQlApiHasBeenSet = true; m_awsAppSyncGraphQlApi = std::move(value); }
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline ResourceDetails& WithAwsAppSyncGraphQlApi(const AwsAppSyncGraphQlApiDetails& value) { SetAwsAppSyncGraphQlApi(value); return *this;}
+
+    /**
+     * <p> Provides details about an AppSync Graph QL API, which lets you query
+     * multiple databases, microservices, and APIs from a single GraphQL endpoint. </p>
+     */
+    inline ResourceDetails& WithAwsAppSyncGraphQlApi(AwsAppSyncGraphQlApiDetails&& value) { SetAwsAppSyncGraphQlApi(std::move(value)); return *this;}
+
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline const AwsEventSchemasRegistryDetails& GetAwsEventSchemasRegistry() const{ return m_awsEventSchemasRegistry; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline bool AwsEventSchemasRegistryHasBeenSet() const { return m_awsEventSchemasRegistryHasBeenSet; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline void SetAwsEventSchemasRegistry(const AwsEventSchemasRegistryDetails& value) { m_awsEventSchemasRegistryHasBeenSet = true; m_awsEventSchemasRegistry = value; }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline void SetAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails&& value) { m_awsEventSchemasRegistryHasBeenSet = true; m_awsEventSchemasRegistry = std::move(value); }
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline ResourceDetails& WithAwsEventSchemasRegistry(const AwsEventSchemasRegistryDetails& value) { SetAwsEventSchemasRegistry(value); return *this;}
+
+    /**
+     * <p> A schema defines the structure of events that are sent to Amazon
+     * EventBridge. Schema registries are containers for schemas. They collect and
+     * organize schemas so that your schemas are in logical groups. </p>
+     */
+    inline ResourceDetails& WithAwsEventSchemasRegistry(AwsEventSchemasRegistryDetails&& value) { SetAwsEventSchemasRegistry(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline const AwsGuardDutyDetectorDetails& GetAwsGuardDutyDetector() const{ return m_awsGuardDutyDetector; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline bool AwsGuardDutyDetectorHasBeenSet() const { return m_awsGuardDutyDetectorHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline void SetAwsGuardDutyDetector(const AwsGuardDutyDetectorDetails& value) { m_awsGuardDutyDetectorHasBeenSet = true; m_awsGuardDutyDetector = value; }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline void SetAwsGuardDutyDetector(AwsGuardDutyDetectorDetails&& value) { m_awsGuardDutyDetectorHasBeenSet = true; m_awsGuardDutyDetector = std::move(value); }
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline ResourceDetails& WithAwsGuardDutyDetector(const AwsGuardDutyDetectorDetails& value) { SetAwsGuardDutyDetector(value); return *this;}
+
+    /**
+     * <p> Provides details about an Amazon GuardDuty detector. A detector is an object
+     * that represents the GuardDuty service. A detector is required for GuardDuty to
+     * become operational. </p>
+     */
+    inline ResourceDetails& WithAwsGuardDutyDetector(AwsGuardDutyDetectorDetails&& value) { SetAwsGuardDutyDetector(std::move(value)); return *this;}
+
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline const AwsStepFunctionStateMachineDetails& GetAwsStepFunctionStateMachine() const{ return m_awsStepFunctionStateMachine; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline bool AwsStepFunctionStateMachineHasBeenSet() const { return m_awsStepFunctionStateMachineHasBeenSet; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline void SetAwsStepFunctionStateMachine(const AwsStepFunctionStateMachineDetails& value) { m_awsStepFunctionStateMachineHasBeenSet = true; m_awsStepFunctionStateMachine = value; }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline void SetAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails&& value) { m_awsStepFunctionStateMachineHasBeenSet = true; m_awsStepFunctionStateMachine = std::move(value); }
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline ResourceDetails& WithAwsStepFunctionStateMachine(const AwsStepFunctionStateMachineDetails& value) { SetAwsStepFunctionStateMachine(value); return *this;}
+
+    /**
+     * <p> Provides details about an Step Functions state machine, which is a workflow
+     * consisting of a series of event-driven steps. </p>
+     */
+    inline ResourceDetails& WithAwsStepFunctionStateMachine(AwsStepFunctionStateMachineDetails&& value) { SetAwsStepFunctionStateMachine(std::move(value)); return *this;}
+
   private:
 
     AwsAutoScalingAutoScalingGroupDetails m_awsAutoScalingAutoScalingGroup;
@@ -3153,6 +3361,21 @@ namespace Model
 
     AwsEc2RouteTableDetails m_awsEc2RouteTable;
     bool m_awsEc2RouteTableHasBeenSet = false;
+
+    AwsAmazonMqBrokerDetails m_awsAmazonMqBroker;
+    bool m_awsAmazonMqBrokerHasBeenSet = false;
+
+    AwsAppSyncGraphQlApiDetails m_awsAppSyncGraphQlApi;
+    bool m_awsAppSyncGraphQlApiHasBeenSet = false;
+
+    AwsEventSchemasRegistryDetails m_awsEventSchemasRegistry;
+    bool m_awsEventSchemasRegistryHasBeenSet = false;
+
+    AwsGuardDutyDetectorDetails m_awsGuardDutyDetector;
+    bool m_awsGuardDutyDetectorHasBeenSet = false;
+
+    AwsStepFunctionStateMachineDetails m_awsStepFunctionStateMachine;
+    bool m_awsStepFunctionStateMachineHasBeenSet = false;
   };
 
 } // namespace Model

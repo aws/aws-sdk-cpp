@@ -350,237 +350,354 @@ namespace Model
 
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDefaultArguments() const{ return m_defaultArguments; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline bool DefaultArgumentsHasBeenSet() const { return m_defaultArgumentsHasBeenSet; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline void SetDefaultArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments = value; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline void SetDefaultArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments = std::move(value); }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& WithDefaultArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetDefaultArguments(value); return *this;}
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& WithDefaultArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetDefaultArguments(std::move(value)); return *this;}
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const Aws::String& key, const Aws::String& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, const Aws::String& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const Aws::String& key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const char* key, Aws::String&& value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(Aws::String&& key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The default arguments for this job, specified as name-value pairs.</p> <p>You
-     * can specify arguments here that your own job-execution script consumes, as well
-     * as arguments that Glue itself consumes.</p> <p>For information about how to
-     * specify and consume your own Job arguments, see the <a
+     * <p>The default arguments for every run of this job, specified as name-value
+     * pairs.</p> <p>You can specify arguments here that your own job-execution script
+     * consumes, as well as arguments that Glue itself consumes.</p> <p>Job arguments
+     * may be logged. Do not pass plaintext secrets as arguments. Retrieve secrets from
+     * a Glue Connection, Secrets Manager or other secret management mechanism if you
+     * intend to keep them within the Job. </p> <p>For information about how to specify
+     * and consume your own Job arguments, see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling
      * Glue APIs in Python</a> topic in the developer guide.</p> <p>For information
-     * about the key-value pairs that Glue consumes to set up your job, see the <a
+     * about the arguments you can provide to this field when configuring Spark jobs,
+     * see the <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special
-     * Parameters Used by Glue</a> topic in the developer guide.</p>
+     * Parameters Used by Glue</a> topic in the developer guide.</p> <p>For information
+     * about the arguments you can provide to this field when configuring Ray jobs, see
+     * <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/author-job-ray-job-parameters.html">Using
+     * job parameters in Ray jobs</a> in the developer guide.</p>
      */
     inline Job& AddDefaultArguments(const char* key, const char* value) { m_defaultArgumentsHasBeenSet = true; m_defaultArguments.emplace(key, value); return *this; }
 
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetNonOverridableArguments() const{ return m_nonOverridableArguments; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline bool NonOverridableArgumentsHasBeenSet() const { return m_nonOverridableArgumentsHasBeenSet; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline void SetNonOverridableArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments = value; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline void SetNonOverridableArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments = std::move(value); }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& WithNonOverridableArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetNonOverridableArguments(value); return *this;}
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& WithNonOverridableArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetNonOverridableArguments(std::move(value)); return *this;}
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(const Aws::String& key, const Aws::String& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, value); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(Aws::String&& key, const Aws::String& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(const Aws::String& key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(Aws::String&& key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(const char* key, Aws::String&& value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(Aws::String&& key, const char* value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Non-overridable arguments for this job, specified as name-value pairs.</p>
+     * <p>Arguments for this job that are not overridden when providing job arguments
+     * in a job run, specified as name-value pairs.</p>
      */
     inline Job& AddNonOverridableArguments(const char* key, const char* value) { m_nonOverridableArgumentsHasBeenSet = true; m_nonOverridableArguments.emplace(key, value); return *this; }
 
@@ -671,7 +788,7 @@ namespace Model
      * number of Glue data processing units (DPUs) that can be allocated when this job
      * runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>For
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p> <p>For
      * Glue version 2.0 or later jobs, you cannot specify a <code>Maximum
      * capacity</code>. Instead, you should specify a <code>Worker type</code> and the
      * <code>Number of workers</code>.</p> <p>Do not set <code>MaxCapacity</code> if
@@ -693,7 +810,7 @@ namespace Model
      * number of Glue data processing units (DPUs) that can be allocated when this job
      * runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>For
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p> <p>For
      * Glue version 2.0 or later jobs, you cannot specify a <code>Maximum
      * capacity</code>. Instead, you should specify a <code>Worker type</code> and the
      * <code>Number of workers</code>.</p> <p>Do not set <code>MaxCapacity</code> if
@@ -715,7 +832,7 @@ namespace Model
      * number of Glue data processing units (DPUs) that can be allocated when this job
      * runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>For
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p> <p>For
      * Glue version 2.0 or later jobs, you cannot specify a <code>Maximum
      * capacity</code>. Instead, you should specify a <code>Worker type</code> and the
      * <code>Number of workers</code>.</p> <p>Do not set <code>MaxCapacity</code> if
@@ -737,7 +854,7 @@ namespace Model
      * number of Glue data processing units (DPUs) that can be allocated when this job
      * runs. A DPU is a relative measure of processing power that consists of 4 vCPUs
      * of compute capacity and 16 GB of memory. For more information, see the <a
-     * href="https://aws.amazon.com/glue/pricing/">Glue pricing page</a>.</p> <p>For
+     * href="https://aws.amazon.com/glue/pricing/"> Glue pricing page</a>.</p> <p>For
      * Glue version 2.0 or later jobs, you cannot specify a <code>Maximum
      * capacity</code>. Instead, you should specify a <code>Worker type</code> and the
      * <code>Number of workers</code>.</p> <p>Do not set <code>MaxCapacity</code> if
@@ -757,181 +874,223 @@ namespace Model
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline const WorkerType& GetWorkerType() const{ return m_workerType; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline bool WorkerTypeHasBeenSet() const { return m_workerTypeHasBeenSet; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline void SetWorkerType(const WorkerType& value) { m_workerTypeHasBeenSet = true; m_workerType = value; }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline void SetWorkerType(WorkerType&& value) { m_workerTypeHasBeenSet = true; m_workerType = std::move(value); }
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline Job& WithWorkerType(const WorkerType& value) { SetWorkerType(value); return *this;}
 
     /**
      * <p>The type of predefined worker that is allocated when a job runs. Accepts a
-     * value of Standard, G.1X, G.2X, or G.025X.</p> <ul> <li> <p>For the
-     * <code>Standard</code> worker type, each worker provides 4 vCPU, 16 GB of memory
-     * and a 50GB disk, and 2 executors per worker.</p> </li> <li> <p>For the
-     * <code>G.1X</code> worker type, each worker maps to 1 DPU (4 vCPU, 16 GB of
-     * memory, 64 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.2X</code> worker type, each worker maps to 2 DPU (8 vCPU, 32 GB of
-     * memory, 128 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for workloads such as data transforms, joins, and queries, to offers
-     * a scalable and cost effective way to run most jobs.</p> </li> <li> <p>For the
-     * <code>G.4X</code> worker type, each worker maps to 4 DPU (16 vCPU, 64 GB of
-     * memory, 256 GB disk), and provides 1 executor per worker. We recommend this
-     * worker type for jobs whose workloads contain your most demanding transforms,
-     * aggregations, joins, and queries. This worker type is available only for Glue
-     * version 3.0 or later jobs.</p> </li> <li> <p>For the <code>G.8X</code> worker
-     * type, each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and
-     * provides 1 executor per worker. We recommend this worker type for jobs whose
-     * workloads contain your most demanding transforms, aggregations, joins, and
-     * queries. This worker type is available only for Glue version 3.0 or later
-     * jobs.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each worker
-     * maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1 executor
-     * per worker. We recommend this worker type for low volume streaming jobs. This
-     * worker type is only available for Glue version 3.0 streaming jobs.</p> </li>
-     * </ul>
+     * value of Standard, G.1X, G.2X, G.4X, G.8X, or G.025X for Spark jobs. Accepts the
+     * value Z.2X for Ray jobs.</p> <ul> <li> <p>For the <code>Standard</code> worker
+     * type, each worker provides 4 vCPU, 16 GB of memory and a 50GB disk, and 2
+     * executors per worker.</p> </li> <li> <p>For the <code>G.1X</code> worker type,
+     * each worker maps to 1 DPU (4 vCPU, 16 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.2X</code> worker type, each
+     * worker maps to 2 DPU (8 vCPU, 32 GB of memory, 128 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for workloads such as data
+     * transforms, joins, and queries, to offers a scalable and cost effective way to
+     * run most jobs.</p> </li> <li> <p>For the <code>G.4X</code> worker type, each
+     * worker maps to 4 DPU (16 vCPU, 64 GB of memory, 256 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs in
+     * the following Amazon Web Services Regions: US East (Ohio), US East (N.
+     * Virginia), US West (Oregon), Asia Pacific (Singapore), Asia Pacific (Sydney),
+     * Asia Pacific (Tokyo), Canada (Central), Europe (Frankfurt), Europe (Ireland),
+     * and Europe (Stockholm).</p> </li> <li> <p>For the <code>G.8X</code> worker type,
+     * each worker maps to 8 DPU (32 vCPU, 128 GB of memory, 512 GB disk), and provides
+     * 1 executor per worker. We recommend this worker type for jobs whose workloads
+     * contain your most demanding transforms, aggregations, joins, and queries. This
+     * worker type is available only for Glue version 3.0 or later Spark ETL jobs, in
+     * the same Amazon Web Services Regions as supported for the <code>G.4X</code>
+     * worker type.</p> </li> <li> <p>For the <code>G.025X</code> worker type, each
+     * worker maps to 0.25 DPU (2 vCPU, 4 GB of memory, 64 GB disk), and provides 1
+     * executor per worker. We recommend this worker type for low volume streaming
+     * jobs. This worker type is only available for Glue version 3.0 streaming
+     * jobs.</p> </li> <li> <p>For the <code>Z.2X</code> worker type, each worker maps
+     * to 2 M-DPU (8vCPU, 64 GB of m emory, 128 GB disk), and provides a default of 8
+     * Ray workers (1 per vCPU).</p> </li> </ul>
      */
     inline Job& WithWorkerType(WorkerType&& value) { SetWorkerType(std::move(value)); return *this;}
 
@@ -1042,10 +1201,14 @@ namespace Model
 
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1053,10 +1216,14 @@ namespace Model
     inline const Aws::String& GetGlueVersion() const{ return m_glueVersion; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1064,10 +1231,14 @@ namespace Model
     inline bool GlueVersionHasBeenSet() const { return m_glueVersionHasBeenSet; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1075,10 +1246,14 @@ namespace Model
     inline void SetGlueVersion(const Aws::String& value) { m_glueVersionHasBeenSet = true; m_glueVersion = value; }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1086,10 +1261,14 @@ namespace Model
     inline void SetGlueVersion(Aws::String&& value) { m_glueVersionHasBeenSet = true; m_glueVersion = std::move(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1097,10 +1276,14 @@ namespace Model
     inline void SetGlueVersion(const char* value) { m_glueVersionHasBeenSet = true; m_glueVersion.assign(value); }
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1108,10 +1291,14 @@ namespace Model
     inline Job& WithGlueVersion(const Aws::String& value) { SetGlueVersion(value); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>
@@ -1119,10 +1306,14 @@ namespace Model
     inline Job& WithGlueVersion(Aws::String&& value) { SetGlueVersion(std::move(value)); return *this;}
 
     /**
-     * <p>Glue version determines the versions of Apache Spark and Python that Glue
-     * supports. The Python version indicates the version supported for jobs of type
-     * Spark. </p> <p>For more information about the available Glue versions and
-     * corresponding Spark and Python versions, see <a
+     * <p>In Spark jobs, <code>GlueVersion</code> determines the versions of Apache
+     * Spark and Python that Glue available in a job. The Python version indicates the
+     * version supported for jobs of type Spark. </p> <p>Ray jobs should set
+     * <code>GlueVersion</code> to <code>4.0</code> or greater. However, the versions
+     * of Ray, Python and additional libraries available in your Ray job are determined
+     * by the <code>Runtime</code> parameter of the Job command.</p> <p>For more
+     * information about the available Glue versions and corresponding Spark and Python
+     * versions, see <a
      * href="https://docs.aws.amazon.com/glue/latest/dg/add-job.html">Glue version</a>
      * in the developer guide.</p> <p>Jobs that are created without specifying a Glue
      * version default to Glue 0.9.</p>

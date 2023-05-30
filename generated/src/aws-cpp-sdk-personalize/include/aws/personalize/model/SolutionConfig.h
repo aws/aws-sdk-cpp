@@ -10,6 +10,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/personalize/model/AutoMLConfig.h>
 #include <aws/personalize/model/OptimizationObjective.h>
+#include <aws/personalize/model/TrainingDataConfig.h>
 #include <utility>
 
 namespace Aws
@@ -345,6 +346,43 @@ namespace Model
      */
     inline SolutionConfig& WithOptimizationObjective(OptimizationObjective&& value) { SetOptimizationObjective(std::move(value)); return *this;}
 
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline const TrainingDataConfig& GetTrainingDataConfig() const{ return m_trainingDataConfig; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline bool TrainingDataConfigHasBeenSet() const { return m_trainingDataConfigHasBeenSet; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline void SetTrainingDataConfig(const TrainingDataConfig& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = value; }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline void SetTrainingDataConfig(TrainingDataConfig&& value) { m_trainingDataConfigHasBeenSet = true; m_trainingDataConfig = std::move(value); }
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline SolutionConfig& WithTrainingDataConfig(const TrainingDataConfig& value) { SetTrainingDataConfig(value); return *this;}
+
+    /**
+     * <p> Specifies the training data configuration to use when creating a custom
+     * solution version (trained model). </p>
+     */
+    inline SolutionConfig& WithTrainingDataConfig(TrainingDataConfig&& value) { SetTrainingDataConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_eventValueThreshold;
@@ -364,6 +402,9 @@ namespace Model
 
     OptimizationObjective m_optimizationObjective;
     bool m_optimizationObjectiveHasBeenSet = false;
+
+    TrainingDataConfig m_trainingDataConfig;
+    bool m_trainingDataConfigHasBeenSet = false;
   };
 
 } // namespace Model

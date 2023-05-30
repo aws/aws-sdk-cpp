@@ -15,6 +15,7 @@
 #include <aws/wafv2/model/JsonBody.h>
 #include <aws/wafv2/model/Headers.h>
 #include <aws/wafv2/model/Cookies.h>
+#include <aws/wafv2/model/HeaderOrder.h>
 #include <utility>
 
 namespace Aws
@@ -616,6 +617,67 @@ namespace Model
      */
     inline FieldToMatch& WithCookies(Cookies&& value) { SetCookies(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline const HeaderOrder& GetHeaderOrder() const{ return m_headerOrder; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline bool HeaderOrderHasBeenSet() const { return m_headerOrderHasBeenSet; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline void SetHeaderOrder(const HeaderOrder& value) { m_headerOrderHasBeenSet = true; m_headerOrder = value; }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline void SetHeaderOrder(HeaderOrder&& value) { m_headerOrderHasBeenSet = true; m_headerOrder = std::move(value); }
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline FieldToMatch& WithHeaderOrder(const HeaderOrder& value) { SetHeaderOrder(value); return *this;}
+
+    /**
+     * <p>Inspect a string containing the list of the request's header names, ordered
+     * as they appear in the web request that WAF receives for inspection. WAF
+     * generates the string and then uses that as the field to match component in its
+     * inspection. WAF separates the header names in the string using commas and no
+     * added spaces.</p> <p>Matches against the header order string are case
+     * insensitive.</p>
+     */
+    inline FieldToMatch& WithHeaderOrder(HeaderOrder&& value) { SetHeaderOrder(std::move(value)); return *this;}
+
   private:
 
     SingleHeader m_singleHeader;
@@ -647,6 +709,9 @@ namespace Model
 
     Cookies m_cookies;
     bool m_cookiesHasBeenSet = false;
+
+    HeaderOrder m_headerOrder;
+    bool m_headerOrderHasBeenSet = false;
   };
 
 } // namespace Model

@@ -177,9 +177,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline const UpdateCampaignAction& GetAction() const{ return m_action; }
 
@@ -187,9 +190,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
@@ -197,9 +203,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline void SetAction(const UpdateCampaignAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
@@ -207,9 +216,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline void SetAction(UpdateCampaignAction&& value) { m_actionHasBeenSet = true; m_action = std::move(value); }
 
@@ -217,9 +229,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline UpdateCampaignRequest& WithAction(const UpdateCampaignAction& value) { SetAction(value); return *this;}
 
@@ -227,9 +242,12 @@ namespace Model
      * <p> Specifies how to update a campaign. The action can be one of the
      * following:</p> <ul> <li> <p> <code>APPROVE</code> - To approve delivering a data
      * collection scheme to vehicles. </p> </li> <li> <p> <code>SUSPEND</code> - To
-     * suspend collecting signal data. </p> </li> <li> <p> <code>RESUME</code> - To
-     * resume collecting signal data. </p> </li> <li> <p> <code>UPDATE</code> - To
-     * update a campaign. </p> </li> </ul>
+     * suspend collecting signal data. The campaign is deleted from vehicles and all
+     * vehicles in the suspended campaign will stop sending data.</p> </li> <li> <p>
+     * <code>RESUME</code> - To reactivate the <code>SUSPEND</code> campaign. The
+     * campaign is redeployed to all vehicles and the vehicles will resume sending
+     * data.</p> </li> <li> <p> <code>UPDATE</code> - To update a campaign. </p> </li>
+     * </ul>
      */
     inline UpdateCampaignRequest& WithAction(UpdateCampaignAction&& value) { SetAction(std::move(value)); return *this;}
 

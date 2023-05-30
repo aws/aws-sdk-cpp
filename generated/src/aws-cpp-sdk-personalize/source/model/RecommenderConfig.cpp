@@ -21,14 +21,16 @@ namespace Model
 RecommenderConfig::RecommenderConfig() : 
     m_itemExplorationConfigHasBeenSet(false),
     m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false)
+    m_minRecommendationRequestsPerSecondHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false)
 {
 }
 
 RecommenderConfig::RecommenderConfig(JsonView jsonValue) : 
     m_itemExplorationConfigHasBeenSet(false),
     m_minRecommendationRequestsPerSecond(0),
-    m_minRecommendationRequestsPerSecondHasBeenSet(false)
+    m_minRecommendationRequestsPerSecondHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -52,6 +54,13 @@ RecommenderConfig& RecommenderConfig::operator =(JsonView jsonValue)
     m_minRecommendationRequestsPerSecondHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingDataConfig"))
+  {
+    m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
+
+    m_trainingDataConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue RecommenderConfig::Jsonize() const
   if(m_minRecommendationRequestsPerSecondHasBeenSet)
   {
    payload.WithInteger("minRecommendationRequestsPerSecond", m_minRecommendationRequestsPerSecond);
+
+  }
+
+  if(m_trainingDataConfigHasBeenSet)
+  {
+   payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
 
   }
 

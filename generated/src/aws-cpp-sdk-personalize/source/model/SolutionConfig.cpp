@@ -24,7 +24,8 @@ SolutionConfig::SolutionConfig() :
     m_algorithmHyperParametersHasBeenSet(false),
     m_featureTransformationParametersHasBeenSet(false),
     m_autoMLConfigHasBeenSet(false),
-    m_optimizationObjectiveHasBeenSet(false)
+    m_optimizationObjectiveHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false)
 {
 }
 
@@ -34,7 +35,8 @@ SolutionConfig::SolutionConfig(JsonView jsonValue) :
     m_algorithmHyperParametersHasBeenSet(false),
     m_featureTransformationParametersHasBeenSet(false),
     m_autoMLConfigHasBeenSet(false),
-    m_optimizationObjectiveHasBeenSet(false)
+    m_optimizationObjectiveHasBeenSet(false),
+    m_trainingDataConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +91,13 @@ SolutionConfig& SolutionConfig::operator =(JsonView jsonValue)
     m_optimizationObjectiveHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("trainingDataConfig"))
+  {
+    m_trainingDataConfig = jsonValue.GetObject("trainingDataConfig");
+
+    m_trainingDataConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -139,6 +148,12 @@ JsonValue SolutionConfig::Jsonize() const
   if(m_optimizationObjectiveHasBeenSet)
   {
    payload.WithObject("optimizationObjective", m_optimizationObjective.Jsonize());
+
+  }
+
+  if(m_trainingDataConfigHasBeenSet)
+  {
+   payload.WithObject("trainingDataConfig", m_trainingDataConfig.Jsonize());
 
   }
 

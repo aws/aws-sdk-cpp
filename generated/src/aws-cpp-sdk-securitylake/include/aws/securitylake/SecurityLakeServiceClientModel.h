@@ -20,34 +20,32 @@
 /* Service model headers required in SecurityLakeClient header */
 #include <aws/securitylake/model/CreateAwsLogSourceResult.h>
 #include <aws/securitylake/model/CreateCustomLogSourceResult.h>
-#include <aws/securitylake/model/CreateDatalakeResult.h>
-#include <aws/securitylake/model/CreateDatalakeAutoEnableResult.h>
-#include <aws/securitylake/model/CreateDatalakeDelegatedAdminResult.h>
-#include <aws/securitylake/model/CreateDatalakeExceptionsSubscriptionResult.h>
+#include <aws/securitylake/model/CreateDataLakeResult.h>
+#include <aws/securitylake/model/CreateDataLakeExceptionSubscriptionResult.h>
+#include <aws/securitylake/model/CreateDataLakeOrganizationConfigurationResult.h>
 #include <aws/securitylake/model/CreateSubscriberResult.h>
-#include <aws/securitylake/model/CreateSubscriptionNotificationConfigurationResult.h>
+#include <aws/securitylake/model/CreateSubscriberNotificationResult.h>
 #include <aws/securitylake/model/DeleteAwsLogSourceResult.h>
 #include <aws/securitylake/model/DeleteCustomLogSourceResult.h>
-#include <aws/securitylake/model/DeleteDatalakeResult.h>
-#include <aws/securitylake/model/DeleteDatalakeAutoEnableResult.h>
-#include <aws/securitylake/model/DeleteDatalakeDelegatedAdminResult.h>
-#include <aws/securitylake/model/DeleteDatalakeExceptionsSubscriptionResult.h>
+#include <aws/securitylake/model/DeleteDataLakeResult.h>
+#include <aws/securitylake/model/DeleteDataLakeExceptionSubscriptionResult.h>
+#include <aws/securitylake/model/DeleteDataLakeOrganizationConfigurationResult.h>
 #include <aws/securitylake/model/DeleteSubscriberResult.h>
-#include <aws/securitylake/model/DeleteSubscriptionNotificationConfigurationResult.h>
-#include <aws/securitylake/model/GetDatalakeResult.h>
-#include <aws/securitylake/model/GetDatalakeAutoEnableResult.h>
-#include <aws/securitylake/model/GetDatalakeExceptionsExpiryResult.h>
-#include <aws/securitylake/model/GetDatalakeExceptionsSubscriptionResult.h>
-#include <aws/securitylake/model/GetDatalakeStatusResult.h>
+#include <aws/securitylake/model/DeleteSubscriberNotificationResult.h>
+#include <aws/securitylake/model/DeregisterDataLakeDelegatedAdministratorResult.h>
+#include <aws/securitylake/model/GetDataLakeExceptionSubscriptionResult.h>
+#include <aws/securitylake/model/GetDataLakeOrganizationConfigurationResult.h>
+#include <aws/securitylake/model/GetDataLakeSourcesResult.h>
 #include <aws/securitylake/model/GetSubscriberResult.h>
-#include <aws/securitylake/model/ListDatalakeExceptionsResult.h>
+#include <aws/securitylake/model/ListDataLakeExceptionsResult.h>
+#include <aws/securitylake/model/ListDataLakesResult.h>
 #include <aws/securitylake/model/ListLogSourcesResult.h>
 #include <aws/securitylake/model/ListSubscribersResult.h>
-#include <aws/securitylake/model/UpdateDatalakeResult.h>
-#include <aws/securitylake/model/UpdateDatalakeExceptionsExpiryResult.h>
-#include <aws/securitylake/model/UpdateDatalakeExceptionsSubscriptionResult.h>
+#include <aws/securitylake/model/RegisterDataLakeDelegatedAdministratorResult.h>
+#include <aws/securitylake/model/UpdateDataLakeResult.h>
+#include <aws/securitylake/model/UpdateDataLakeExceptionSubscriptionResult.h>
 #include <aws/securitylake/model/UpdateSubscriberResult.h>
-#include <aws/securitylake/model/UpdateSubscriptionNotificationConfigurationResult.h>
+#include <aws/securitylake/model/UpdateSubscriberNotificationResult.h>
 /* End of service model headers required in SecurityLakeClient header */
 
 namespace Aws
@@ -90,100 +88,94 @@ namespace Aws
       /* Service model forward declarations required in SecurityLakeClient header */
       class CreateAwsLogSourceRequest;
       class CreateCustomLogSourceRequest;
-      class CreateDatalakeRequest;
-      class CreateDatalakeAutoEnableRequest;
-      class CreateDatalakeDelegatedAdminRequest;
-      class CreateDatalakeExceptionsSubscriptionRequest;
+      class CreateDataLakeRequest;
+      class CreateDataLakeExceptionSubscriptionRequest;
+      class CreateDataLakeOrganizationConfigurationRequest;
       class CreateSubscriberRequest;
-      class CreateSubscriptionNotificationConfigurationRequest;
+      class CreateSubscriberNotificationRequest;
       class DeleteAwsLogSourceRequest;
       class DeleteCustomLogSourceRequest;
-      class DeleteDatalakeRequest;
-      class DeleteDatalakeAutoEnableRequest;
-      class DeleteDatalakeDelegatedAdminRequest;
-      class DeleteDatalakeExceptionsSubscriptionRequest;
+      class DeleteDataLakeRequest;
+      class DeleteDataLakeExceptionSubscriptionRequest;
+      class DeleteDataLakeOrganizationConfigurationRequest;
       class DeleteSubscriberRequest;
-      class DeleteSubscriptionNotificationConfigurationRequest;
-      class GetDatalakeRequest;
-      class GetDatalakeAutoEnableRequest;
-      class GetDatalakeExceptionsExpiryRequest;
-      class GetDatalakeExceptionsSubscriptionRequest;
-      class GetDatalakeStatusRequest;
+      class DeleteSubscriberNotificationRequest;
+      class DeregisterDataLakeDelegatedAdministratorRequest;
+      class GetDataLakeExceptionSubscriptionRequest;
+      class GetDataLakeOrganizationConfigurationRequest;
+      class GetDataLakeSourcesRequest;
       class GetSubscriberRequest;
-      class ListDatalakeExceptionsRequest;
+      class ListDataLakeExceptionsRequest;
+      class ListDataLakesRequest;
       class ListLogSourcesRequest;
       class ListSubscribersRequest;
-      class UpdateDatalakeRequest;
-      class UpdateDatalakeExceptionsExpiryRequest;
-      class UpdateDatalakeExceptionsSubscriptionRequest;
+      class RegisterDataLakeDelegatedAdministratorRequest;
+      class UpdateDataLakeRequest;
+      class UpdateDataLakeExceptionSubscriptionRequest;
       class UpdateSubscriberRequest;
-      class UpdateSubscriptionNotificationConfigurationRequest;
+      class UpdateSubscriberNotificationRequest;
       /* End of service model forward declarations required in SecurityLakeClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<CreateAwsLogSourceResult, SecurityLakeError> CreateAwsLogSourceOutcome;
       typedef Aws::Utils::Outcome<CreateCustomLogSourceResult, SecurityLakeError> CreateCustomLogSourceOutcome;
-      typedef Aws::Utils::Outcome<CreateDatalakeResult, SecurityLakeError> CreateDatalakeOutcome;
-      typedef Aws::Utils::Outcome<CreateDatalakeAutoEnableResult, SecurityLakeError> CreateDatalakeAutoEnableOutcome;
-      typedef Aws::Utils::Outcome<CreateDatalakeDelegatedAdminResult, SecurityLakeError> CreateDatalakeDelegatedAdminOutcome;
-      typedef Aws::Utils::Outcome<CreateDatalakeExceptionsSubscriptionResult, SecurityLakeError> CreateDatalakeExceptionsSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<CreateDataLakeResult, SecurityLakeError> CreateDataLakeOutcome;
+      typedef Aws::Utils::Outcome<CreateDataLakeExceptionSubscriptionResult, SecurityLakeError> CreateDataLakeExceptionSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<CreateDataLakeOrganizationConfigurationResult, SecurityLakeError> CreateDataLakeOrganizationConfigurationOutcome;
       typedef Aws::Utils::Outcome<CreateSubscriberResult, SecurityLakeError> CreateSubscriberOutcome;
-      typedef Aws::Utils::Outcome<CreateSubscriptionNotificationConfigurationResult, SecurityLakeError> CreateSubscriptionNotificationConfigurationOutcome;
+      typedef Aws::Utils::Outcome<CreateSubscriberNotificationResult, SecurityLakeError> CreateSubscriberNotificationOutcome;
       typedef Aws::Utils::Outcome<DeleteAwsLogSourceResult, SecurityLakeError> DeleteAwsLogSourceOutcome;
       typedef Aws::Utils::Outcome<DeleteCustomLogSourceResult, SecurityLakeError> DeleteCustomLogSourceOutcome;
-      typedef Aws::Utils::Outcome<DeleteDatalakeResult, SecurityLakeError> DeleteDatalakeOutcome;
-      typedef Aws::Utils::Outcome<DeleteDatalakeAutoEnableResult, SecurityLakeError> DeleteDatalakeAutoEnableOutcome;
-      typedef Aws::Utils::Outcome<DeleteDatalakeDelegatedAdminResult, SecurityLakeError> DeleteDatalakeDelegatedAdminOutcome;
-      typedef Aws::Utils::Outcome<DeleteDatalakeExceptionsSubscriptionResult, SecurityLakeError> DeleteDatalakeExceptionsSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataLakeResult, SecurityLakeError> DeleteDataLakeOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataLakeExceptionSubscriptionResult, SecurityLakeError> DeleteDataLakeExceptionSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<DeleteDataLakeOrganizationConfigurationResult, SecurityLakeError> DeleteDataLakeOrganizationConfigurationOutcome;
       typedef Aws::Utils::Outcome<DeleteSubscriberResult, SecurityLakeError> DeleteSubscriberOutcome;
-      typedef Aws::Utils::Outcome<DeleteSubscriptionNotificationConfigurationResult, SecurityLakeError> DeleteSubscriptionNotificationConfigurationOutcome;
-      typedef Aws::Utils::Outcome<GetDatalakeResult, SecurityLakeError> GetDatalakeOutcome;
-      typedef Aws::Utils::Outcome<GetDatalakeAutoEnableResult, SecurityLakeError> GetDatalakeAutoEnableOutcome;
-      typedef Aws::Utils::Outcome<GetDatalakeExceptionsExpiryResult, SecurityLakeError> GetDatalakeExceptionsExpiryOutcome;
-      typedef Aws::Utils::Outcome<GetDatalakeExceptionsSubscriptionResult, SecurityLakeError> GetDatalakeExceptionsSubscriptionOutcome;
-      typedef Aws::Utils::Outcome<GetDatalakeStatusResult, SecurityLakeError> GetDatalakeStatusOutcome;
+      typedef Aws::Utils::Outcome<DeleteSubscriberNotificationResult, SecurityLakeError> DeleteSubscriberNotificationOutcome;
+      typedef Aws::Utils::Outcome<DeregisterDataLakeDelegatedAdministratorResult, SecurityLakeError> DeregisterDataLakeDelegatedAdministratorOutcome;
+      typedef Aws::Utils::Outcome<GetDataLakeExceptionSubscriptionResult, SecurityLakeError> GetDataLakeExceptionSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<GetDataLakeOrganizationConfigurationResult, SecurityLakeError> GetDataLakeOrganizationConfigurationOutcome;
+      typedef Aws::Utils::Outcome<GetDataLakeSourcesResult, SecurityLakeError> GetDataLakeSourcesOutcome;
       typedef Aws::Utils::Outcome<GetSubscriberResult, SecurityLakeError> GetSubscriberOutcome;
-      typedef Aws::Utils::Outcome<ListDatalakeExceptionsResult, SecurityLakeError> ListDatalakeExceptionsOutcome;
+      typedef Aws::Utils::Outcome<ListDataLakeExceptionsResult, SecurityLakeError> ListDataLakeExceptionsOutcome;
+      typedef Aws::Utils::Outcome<ListDataLakesResult, SecurityLakeError> ListDataLakesOutcome;
       typedef Aws::Utils::Outcome<ListLogSourcesResult, SecurityLakeError> ListLogSourcesOutcome;
       typedef Aws::Utils::Outcome<ListSubscribersResult, SecurityLakeError> ListSubscribersOutcome;
-      typedef Aws::Utils::Outcome<UpdateDatalakeResult, SecurityLakeError> UpdateDatalakeOutcome;
-      typedef Aws::Utils::Outcome<UpdateDatalakeExceptionsExpiryResult, SecurityLakeError> UpdateDatalakeExceptionsExpiryOutcome;
-      typedef Aws::Utils::Outcome<UpdateDatalakeExceptionsSubscriptionResult, SecurityLakeError> UpdateDatalakeExceptionsSubscriptionOutcome;
+      typedef Aws::Utils::Outcome<RegisterDataLakeDelegatedAdministratorResult, SecurityLakeError> RegisterDataLakeDelegatedAdministratorOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataLakeResult, SecurityLakeError> UpdateDataLakeOutcome;
+      typedef Aws::Utils::Outcome<UpdateDataLakeExceptionSubscriptionResult, SecurityLakeError> UpdateDataLakeExceptionSubscriptionOutcome;
       typedef Aws::Utils::Outcome<UpdateSubscriberResult, SecurityLakeError> UpdateSubscriberOutcome;
-      typedef Aws::Utils::Outcome<UpdateSubscriptionNotificationConfigurationResult, SecurityLakeError> UpdateSubscriptionNotificationConfigurationOutcome;
+      typedef Aws::Utils::Outcome<UpdateSubscriberNotificationResult, SecurityLakeError> UpdateSubscriberNotificationOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<CreateAwsLogSourceOutcome> CreateAwsLogSourceOutcomeCallable;
       typedef std::future<CreateCustomLogSourceOutcome> CreateCustomLogSourceOutcomeCallable;
-      typedef std::future<CreateDatalakeOutcome> CreateDatalakeOutcomeCallable;
-      typedef std::future<CreateDatalakeAutoEnableOutcome> CreateDatalakeAutoEnableOutcomeCallable;
-      typedef std::future<CreateDatalakeDelegatedAdminOutcome> CreateDatalakeDelegatedAdminOutcomeCallable;
-      typedef std::future<CreateDatalakeExceptionsSubscriptionOutcome> CreateDatalakeExceptionsSubscriptionOutcomeCallable;
+      typedef std::future<CreateDataLakeOutcome> CreateDataLakeOutcomeCallable;
+      typedef std::future<CreateDataLakeExceptionSubscriptionOutcome> CreateDataLakeExceptionSubscriptionOutcomeCallable;
+      typedef std::future<CreateDataLakeOrganizationConfigurationOutcome> CreateDataLakeOrganizationConfigurationOutcomeCallable;
       typedef std::future<CreateSubscriberOutcome> CreateSubscriberOutcomeCallable;
-      typedef std::future<CreateSubscriptionNotificationConfigurationOutcome> CreateSubscriptionNotificationConfigurationOutcomeCallable;
+      typedef std::future<CreateSubscriberNotificationOutcome> CreateSubscriberNotificationOutcomeCallable;
       typedef std::future<DeleteAwsLogSourceOutcome> DeleteAwsLogSourceOutcomeCallable;
       typedef std::future<DeleteCustomLogSourceOutcome> DeleteCustomLogSourceOutcomeCallable;
-      typedef std::future<DeleteDatalakeOutcome> DeleteDatalakeOutcomeCallable;
-      typedef std::future<DeleteDatalakeAutoEnableOutcome> DeleteDatalakeAutoEnableOutcomeCallable;
-      typedef std::future<DeleteDatalakeDelegatedAdminOutcome> DeleteDatalakeDelegatedAdminOutcomeCallable;
-      typedef std::future<DeleteDatalakeExceptionsSubscriptionOutcome> DeleteDatalakeExceptionsSubscriptionOutcomeCallable;
+      typedef std::future<DeleteDataLakeOutcome> DeleteDataLakeOutcomeCallable;
+      typedef std::future<DeleteDataLakeExceptionSubscriptionOutcome> DeleteDataLakeExceptionSubscriptionOutcomeCallable;
+      typedef std::future<DeleteDataLakeOrganizationConfigurationOutcome> DeleteDataLakeOrganizationConfigurationOutcomeCallable;
       typedef std::future<DeleteSubscriberOutcome> DeleteSubscriberOutcomeCallable;
-      typedef std::future<DeleteSubscriptionNotificationConfigurationOutcome> DeleteSubscriptionNotificationConfigurationOutcomeCallable;
-      typedef std::future<GetDatalakeOutcome> GetDatalakeOutcomeCallable;
-      typedef std::future<GetDatalakeAutoEnableOutcome> GetDatalakeAutoEnableOutcomeCallable;
-      typedef std::future<GetDatalakeExceptionsExpiryOutcome> GetDatalakeExceptionsExpiryOutcomeCallable;
-      typedef std::future<GetDatalakeExceptionsSubscriptionOutcome> GetDatalakeExceptionsSubscriptionOutcomeCallable;
-      typedef std::future<GetDatalakeStatusOutcome> GetDatalakeStatusOutcomeCallable;
+      typedef std::future<DeleteSubscriberNotificationOutcome> DeleteSubscriberNotificationOutcomeCallable;
+      typedef std::future<DeregisterDataLakeDelegatedAdministratorOutcome> DeregisterDataLakeDelegatedAdministratorOutcomeCallable;
+      typedef std::future<GetDataLakeExceptionSubscriptionOutcome> GetDataLakeExceptionSubscriptionOutcomeCallable;
+      typedef std::future<GetDataLakeOrganizationConfigurationOutcome> GetDataLakeOrganizationConfigurationOutcomeCallable;
+      typedef std::future<GetDataLakeSourcesOutcome> GetDataLakeSourcesOutcomeCallable;
       typedef std::future<GetSubscriberOutcome> GetSubscriberOutcomeCallable;
-      typedef std::future<ListDatalakeExceptionsOutcome> ListDatalakeExceptionsOutcomeCallable;
+      typedef std::future<ListDataLakeExceptionsOutcome> ListDataLakeExceptionsOutcomeCallable;
+      typedef std::future<ListDataLakesOutcome> ListDataLakesOutcomeCallable;
       typedef std::future<ListLogSourcesOutcome> ListLogSourcesOutcomeCallable;
       typedef std::future<ListSubscribersOutcome> ListSubscribersOutcomeCallable;
-      typedef std::future<UpdateDatalakeOutcome> UpdateDatalakeOutcomeCallable;
-      typedef std::future<UpdateDatalakeExceptionsExpiryOutcome> UpdateDatalakeExceptionsExpiryOutcomeCallable;
-      typedef std::future<UpdateDatalakeExceptionsSubscriptionOutcome> UpdateDatalakeExceptionsSubscriptionOutcomeCallable;
+      typedef std::future<RegisterDataLakeDelegatedAdministratorOutcome> RegisterDataLakeDelegatedAdministratorOutcomeCallable;
+      typedef std::future<UpdateDataLakeOutcome> UpdateDataLakeOutcomeCallable;
+      typedef std::future<UpdateDataLakeExceptionSubscriptionOutcome> UpdateDataLakeExceptionSubscriptionOutcomeCallable;
       typedef std::future<UpdateSubscriberOutcome> UpdateSubscriberOutcomeCallable;
-      typedef std::future<UpdateSubscriptionNotificationConfigurationOutcome> UpdateSubscriptionNotificationConfigurationOutcomeCallable;
+      typedef std::future<UpdateSubscriberNotificationOutcome> UpdateSubscriberNotificationOutcomeCallable;
       /* End of service model Outcome callable definitions */
     } // namespace Model
 
@@ -192,34 +184,32 @@ namespace Aws
     /* Service model async handlers definitions */
     typedef std::function<void(const SecurityLakeClient*, const Model::CreateAwsLogSourceRequest&, const Model::CreateAwsLogSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateAwsLogSourceResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::CreateCustomLogSourceRequest&, const Model::CreateCustomLogSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCustomLogSourceResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDatalakeRequest&, const Model::CreateDatalakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatalakeResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDatalakeAutoEnableRequest&, const Model::CreateDatalakeAutoEnableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatalakeAutoEnableResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDatalakeDelegatedAdminRequest&, const Model::CreateDatalakeDelegatedAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatalakeDelegatedAdminResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDatalakeExceptionsSubscriptionRequest&, const Model::CreateDatalakeExceptionsSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDatalakeExceptionsSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDataLakeRequest&, const Model::CreateDataLakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataLakeResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDataLakeExceptionSubscriptionRequest&, const Model::CreateDataLakeExceptionSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataLakeExceptionSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::CreateDataLakeOrganizationConfigurationRequest&, const Model::CreateDataLakeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataLakeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::CreateSubscriberRequest&, const Model::CreateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriberResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::CreateSubscriptionNotificationConfigurationRequest&, const Model::CreateSubscriptionNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriptionNotificationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::CreateSubscriberNotificationRequest&, const Model::CreateSubscriberNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSubscriberNotificationResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::DeleteAwsLogSourceRequest&, const Model::DeleteAwsLogSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAwsLogSourceResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::DeleteCustomLogSourceRequest&, const Model::DeleteCustomLogSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCustomLogSourceResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDatalakeRequest&, const Model::DeleteDatalakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatalakeResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDatalakeAutoEnableRequest&, const Model::DeleteDatalakeAutoEnableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatalakeAutoEnableResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDatalakeDelegatedAdminRequest&, const Model::DeleteDatalakeDelegatedAdminOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatalakeDelegatedAdminResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDatalakeExceptionsSubscriptionRequest&, const Model::DeleteDatalakeExceptionsSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDatalakeExceptionsSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDataLakeRequest&, const Model::DeleteDataLakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataLakeResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDataLakeExceptionSubscriptionRequest&, const Model::DeleteDataLakeExceptionSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataLakeExceptionSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteDataLakeOrganizationConfigurationRequest&, const Model::DeleteDataLakeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataLakeOrganizationConfigurationResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::DeleteSubscriberRequest&, const Model::DeleteSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriberResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteSubscriptionNotificationConfigurationRequest&, const Model::DeleteSubscriptionNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriptionNotificationConfigurationResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::GetDatalakeRequest&, const Model::GetDatalakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatalakeResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::GetDatalakeAutoEnableRequest&, const Model::GetDatalakeAutoEnableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatalakeAutoEnableResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::GetDatalakeExceptionsExpiryRequest&, const Model::GetDatalakeExceptionsExpiryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatalakeExceptionsExpiryResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::GetDatalakeExceptionsSubscriptionRequest&, const Model::GetDatalakeExceptionsSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatalakeExceptionsSubscriptionResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::GetDatalakeStatusRequest&, const Model::GetDatalakeStatusOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDatalakeStatusResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::DeleteSubscriberNotificationRequest&, const Model::DeleteSubscriberNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSubscriberNotificationResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::DeregisterDataLakeDelegatedAdministratorRequest&, const Model::DeregisterDataLakeDelegatedAdministratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterDataLakeDelegatedAdministratorResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::GetDataLakeExceptionSubscriptionRequest&, const Model::GetDataLakeExceptionSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeExceptionSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::GetDataLakeOrganizationConfigurationRequest&, const Model::GetDataLakeOrganizationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeOrganizationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::GetDataLakeSourcesRequest&, const Model::GetDataLakeSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataLakeSourcesResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::GetSubscriberRequest&, const Model::GetSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSubscriberResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::ListDatalakeExceptionsRequest&, const Model::ListDatalakeExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDatalakeExceptionsResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::ListDataLakeExceptionsRequest&, const Model::ListDataLakeExceptionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataLakeExceptionsResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::ListDataLakesRequest&, const Model::ListDataLakesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataLakesResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::ListLogSourcesRequest&, const Model::ListLogSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListLogSourcesResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::ListSubscribersRequest&, const Model::ListSubscribersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListSubscribersResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDatalakeRequest&, const Model::UpdateDatalakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatalakeResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDatalakeExceptionsExpiryRequest&, const Model::UpdateDatalakeExceptionsExpiryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatalakeExceptionsExpiryResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDatalakeExceptionsSubscriptionRequest&, const Model::UpdateDatalakeExceptionsSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDatalakeExceptionsSubscriptionResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::RegisterDataLakeDelegatedAdministratorRequest&, const Model::RegisterDataLakeDelegatedAdministratorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterDataLakeDelegatedAdministratorResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDataLakeRequest&, const Model::UpdateDataLakeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataLakeResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateDataLakeExceptionSubscriptionRequest&, const Model::UpdateDataLakeExceptionSubscriptionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataLakeExceptionSubscriptionResponseReceivedHandler;
     typedef std::function<void(const SecurityLakeClient*, const Model::UpdateSubscriberRequest&, const Model::UpdateSubscriberOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriberResponseReceivedHandler;
-    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateSubscriptionNotificationConfigurationRequest&, const Model::UpdateSubscriptionNotificationConfigurationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriptionNotificationConfigurationResponseReceivedHandler;
+    typedef std::function<void(const SecurityLakeClient*, const Model::UpdateSubscriberNotificationRequest&, const Model::UpdateSubscriberNotificationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSubscriberNotificationResponseReceivedHandler;
     /* End of service model async handlers definitions */
   } // namespace SecurityLake
 } // namespace Aws

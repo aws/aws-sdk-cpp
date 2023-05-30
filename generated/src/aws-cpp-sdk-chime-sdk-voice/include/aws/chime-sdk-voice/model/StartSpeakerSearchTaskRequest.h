@@ -7,6 +7,7 @@
 #include <aws/chime-sdk-voice/ChimeSDKVoice_EXPORTS.h>
 #include <aws/chime-sdk-voice/ChimeSDKVoiceRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/chime-sdk-voice/model/CallLegType.h>
 #include <utility>
 
 namespace Aws
@@ -203,6 +204,37 @@ namespace Model
      */
     inline StartSpeakerSearchTaskRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline const CallLegType& GetCallLeg() const{ return m_callLeg; }
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline bool CallLegHasBeenSet() const { return m_callLegHasBeenSet; }
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline void SetCallLeg(const CallLegType& value) { m_callLegHasBeenSet = true; m_callLeg = value; }
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline void SetCallLeg(CallLegType&& value) { m_callLegHasBeenSet = true; m_callLeg = std::move(value); }
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline StartSpeakerSearchTaskRequest& WithCallLeg(const CallLegType& value) { SetCallLeg(value); return *this;}
+
+    /**
+     * <p>Specifies which call leg to stream for speaker search.</p>
+     */
+    inline StartSpeakerSearchTaskRequest& WithCallLeg(CallLegType&& value) { SetCallLeg(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_voiceConnectorId;
@@ -216,6 +248,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet = false;
+
+    CallLegType m_callLeg;
+    bool m_callLegHasBeenSet = false;
   };
 
 } // namespace Model

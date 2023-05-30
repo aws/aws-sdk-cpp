@@ -6,8 +6,6 @@
 #pragma once
 #include <aws/iotfleetwise/IoTFleetWise_EXPORTS.h>
 #include <aws/iotfleetwise/IoTFleetWiseRequest.h>
-#include <aws/iotfleetwise/model/TimestreamResources.h>
-#include <utility>
 
 namespace Aws
 {
@@ -33,29 +31,6 @@ namespace Model
 
     AWS_IOTFLEETWISE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
-
-    
-    inline const TimestreamResources& GetTimestreamResources() const{ return m_timestreamResources; }
-
-    
-    inline bool TimestreamResourcesHasBeenSet() const { return m_timestreamResourcesHasBeenSet; }
-
-    
-    inline void SetTimestreamResources(const TimestreamResources& value) { m_timestreamResourcesHasBeenSet = true; m_timestreamResources = value; }
-
-    
-    inline void SetTimestreamResources(TimestreamResources&& value) { m_timestreamResourcesHasBeenSet = true; m_timestreamResources = std::move(value); }
-
-    
-    inline RegisterAccountRequest& WithTimestreamResources(const TimestreamResources& value) { SetTimestreamResources(value); return *this;}
-
-    
-    inline RegisterAccountRequest& WithTimestreamResources(TimestreamResources&& value) { SetTimestreamResources(std::move(value)); return *this;}
-
-  private:
-
-    TimestreamResources m_timestreamResources;
-    bool m_timestreamResourcesHasBeenSet = false;
   };
 
 } // namespace Model

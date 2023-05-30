@@ -39,49 +39,101 @@ namespace Model
 
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline const Aws::String& GetCustomSourceName() const{ return m_customSourceName; }
+    inline const Aws::String& GetSourceName() const{ return m_sourceName; }
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline bool CustomSourceNameHasBeenSet() const { return m_customSourceNameHasBeenSet; }
+    inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline void SetCustomSourceName(const Aws::String& value) { m_customSourceNameHasBeenSet = true; m_customSourceName = value; }
+    inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline void SetCustomSourceName(Aws::String&& value) { m_customSourceNameHasBeenSet = true; m_customSourceName = std::move(value); }
+    inline void SetSourceName(Aws::String&& value) { m_sourceNameHasBeenSet = true; m_sourceName = std::move(value); }
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline void SetCustomSourceName(const char* value) { m_customSourceNameHasBeenSet = true; m_customSourceName.assign(value); }
+    inline void SetSourceName(const char* value) { m_sourceNameHasBeenSet = true; m_sourceName.assign(value); }
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline DeleteCustomLogSourceRequest& WithCustomSourceName(const Aws::String& value) { SetCustomSourceName(value); return *this;}
+    inline DeleteCustomLogSourceRequest& WithSourceName(const Aws::String& value) { SetSourceName(value); return *this;}
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline DeleteCustomLogSourceRequest& WithCustomSourceName(Aws::String&& value) { SetCustomSourceName(std::move(value)); return *this;}
+    inline DeleteCustomLogSourceRequest& WithSourceName(Aws::String&& value) { SetSourceName(std::move(value)); return *this;}
 
     /**
-     * <p>The custom source name for the custom log source.</p>
+     * <p>The source name of custom log source that you want to delete.</p>
      */
-    inline DeleteCustomLogSourceRequest& WithCustomSourceName(const char* value) { SetCustomSourceName(value); return *this;}
+    inline DeleteCustomLogSourceRequest& WithSourceName(const char* value) { SetSourceName(value); return *this;}
+
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline const Aws::String& GetSourceVersion() const{ return m_sourceVersion; }
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline bool SourceVersionHasBeenSet() const { return m_sourceVersionHasBeenSet; }
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline void SetSourceVersion(const Aws::String& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = value; }
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline void SetSourceVersion(Aws::String&& value) { m_sourceVersionHasBeenSet = true; m_sourceVersion = std::move(value); }
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline void SetSourceVersion(const char* value) { m_sourceVersionHasBeenSet = true; m_sourceVersion.assign(value); }
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline DeleteCustomLogSourceRequest& WithSourceVersion(const Aws::String& value) { SetSourceVersion(value); return *this;}
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline DeleteCustomLogSourceRequest& WithSourceVersion(Aws::String&& value) { SetSourceVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>The source version for the third-party custom source. You can limit the
+     * custom source removal to the specified source version.</p>
+     */
+    inline DeleteCustomLogSourceRequest& WithSourceVersion(const char* value) { SetSourceVersion(value); return *this;}
 
   private:
 
-    Aws::String m_customSourceName;
-    bool m_customSourceNameHasBeenSet = false;
+    Aws::String m_sourceName;
+    bool m_sourceNameHasBeenSet = false;
+
+    Aws::String m_sourceVersion;
+    bool m_sourceVersionHasBeenSet = false;
   };
 
 } // namespace Model

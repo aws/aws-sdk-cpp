@@ -19,11 +19,13 @@ namespace Model
 {
 
 MapConfiguration::MapConfiguration() : 
+    m_politicalViewHasBeenSet(false),
     m_styleHasBeenSet(false)
 {
 }
 
 MapConfiguration::MapConfiguration(JsonView jsonValue) : 
+    m_politicalViewHasBeenSet(false),
     m_styleHasBeenSet(false)
 {
   *this = jsonValue;
@@ -31,6 +33,13 @@ MapConfiguration::MapConfiguration(JsonView jsonValue) :
 
 MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("PoliticalView"))
+  {
+    m_politicalView = jsonValue.GetString("PoliticalView");
+
+    m_politicalViewHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Style"))
   {
     m_style = jsonValue.GetString("Style");
@@ -44,6 +53,12 @@ MapConfiguration& MapConfiguration::operator =(JsonView jsonValue)
 JsonValue MapConfiguration::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_politicalViewHasBeenSet)
+  {
+   payload.WithString("PoliticalView", m_politicalView);
+
+  }
 
   if(m_styleHasBeenSet)
   {

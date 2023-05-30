@@ -445,7 +445,8 @@ namespace GroundStation
         }
 
         /**
-         * <p>Returns the number of minutes used by account.</p><p><h3>See Also:</h3>   <a
+         * <p>Returns the number of reserved minutes used by account.</p><p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/GetMinuteUsage">AWS
          * API Reference</a></p>
          */

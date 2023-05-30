@@ -47,17 +47,9 @@ enum class SecurityLakeErrors
   UNKNOWN = 100,
   ///////////////////////////////////////////////////////////////////////////////////////////
 
-  ACCOUNT_NOT_FOUND= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  BUCKET_NOT_FOUND,
-  CONCURRENT_MODIFICATION,
+  BAD_REQUEST= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
   CONFLICT,
-  CONFLICT_SOURCE_NAMES,
-  CONFLICT_SUBSCRIPTION,
-  EVENT_BRIDGE,
-  INTERNAL_SERVER,
-  INVALID_INPUT,
-  S3,
-  SERVICE_QUOTA_EXCEEDED
+  INTERNAL_SERVER
 };
 
 class AWS_SECURITYLAKE_API SecurityLakeError : public Aws::Client::AWSError<SecurityLakeErrors>

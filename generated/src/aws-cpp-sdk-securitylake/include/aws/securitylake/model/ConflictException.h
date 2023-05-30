@@ -66,83 +66,83 @@ namespace Model
 
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+    inline const Aws::String& GetResourceName() const{ return m_resourceName; }
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
+    inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline void SetResourceId(Aws::String&& value) { m_resourceIdHasBeenSet = true; m_resourceId = std::move(value); }
+    inline void SetResourceName(Aws::String&& value) { m_resourceNameHasBeenSet = true; m_resourceName = std::move(value); }
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline void SetResourceId(const char* value) { m_resourceIdHasBeenSet = true; m_resourceId.assign(value); }
+    inline void SetResourceName(const char* value) { m_resourceNameHasBeenSet = true; m_resourceName.assign(value); }
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline ConflictException& WithResourceId(const Aws::String& value) { SetResourceId(value); return *this;}
+    inline ConflictException& WithResourceName(const Aws::String& value) { SetResourceName(value); return *this;}
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline ConflictException& WithResourceId(Aws::String&& value) { SetResourceId(std::move(value)); return *this;}
+    inline ConflictException& WithResourceName(Aws::String&& value) { SetResourceName(std::move(value)); return *this;}
 
     /**
-     * <p>A conflict occurred when prompting for the Resource ID.</p>
+     * <p>The resource name.</p>
      */
-    inline ConflictException& WithResourceId(const char* value) { SetResourceId(value); return *this;}
+    inline ConflictException& WithResourceName(const char* value) { SetResourceName(value); return *this;}
 
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline ConflictException& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline ConflictException& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The resource type. </p>
+     * <p>The resource type.</p>
      */
     inline ConflictException& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 
@@ -151,8 +151,8 @@ namespace Model
     Aws::String m_message;
     bool m_messageHasBeenSet = false;
 
-    Aws::String m_resourceId;
-    bool m_resourceIdHasBeenSet = false;
+    Aws::String m_resourceName;
+    bool m_resourceNameHasBeenSet = false;
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet = false;

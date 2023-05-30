@@ -28,7 +28,8 @@ FieldToMatch::FieldToMatch() :
     m_methodHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_headersHasBeenSet(false),
-    m_cookiesHasBeenSet(false)
+    m_cookiesHasBeenSet(false),
+    m_headerOrderHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ FieldToMatch::FieldToMatch(JsonView jsonValue) :
     m_methodHasBeenSet(false),
     m_jsonBodyHasBeenSet(false),
     m_headersHasBeenSet(false),
-    m_cookiesHasBeenSet(false)
+    m_cookiesHasBeenSet(false),
+    m_headerOrderHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -119,6 +121,13 @@ FieldToMatch& FieldToMatch::operator =(JsonView jsonValue)
     m_cookiesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("HeaderOrder"))
+  {
+    m_headerOrder = jsonValue.GetObject("HeaderOrder");
+
+    m_headerOrderHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +192,12 @@ JsonValue FieldToMatch::Jsonize() const
   if(m_cookiesHasBeenSet)
   {
    payload.WithObject("Cookies", m_cookies.Jsonize());
+
+  }
+
+  if(m_headerOrderHasBeenSet)
+  {
+   payload.WithObject("HeaderOrder", m_headerOrder.Jsonize());
 
   }
 

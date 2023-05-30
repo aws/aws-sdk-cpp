@@ -82,47 +82,6 @@ namespace Model
     inline DeleteAwsLogSourceResult& AddFailed(const char* value) { m_failed.push_back(value); return *this; }
 
 
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline const Aws::Vector<Aws::String>& GetProcessing() const{ return m_processing; }
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline void SetProcessing(const Aws::Vector<Aws::String>& value) { m_processing = value; }
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline void SetProcessing(Aws::Vector<Aws::String>&& value) { m_processing = std::move(value); }
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline DeleteAwsLogSourceResult& WithProcessing(const Aws::Vector<Aws::String>& value) { SetProcessing(value); return *this;}
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline DeleteAwsLogSourceResult& WithProcessing(Aws::Vector<Aws::String>&& value) { SetProcessing(std::move(value)); return *this;}
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline DeleteAwsLogSourceResult& AddProcessing(const Aws::String& value) { m_processing.push_back(value); return *this; }
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline DeleteAwsLogSourceResult& AddProcessing(Aws::String&& value) { m_processing.push_back(std::move(value)); return *this; }
-
-    /**
-     * <p>Deletion of the Amazon Web Services sources is in progress.</p>
-     */
-    inline DeleteAwsLogSourceResult& AddProcessing(const char* value) { m_processing.push_back(value); return *this; }
-
-
     
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
 
@@ -147,8 +106,6 @@ namespace Model
   private:
 
     Aws::Vector<Aws::String> m_failed;
-
-    Aws::Vector<Aws::String> m_processing;
 
     Aws::String m_requestId;
   };
