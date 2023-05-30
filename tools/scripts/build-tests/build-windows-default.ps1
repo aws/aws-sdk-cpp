@@ -13,3 +13,6 @@ cd "${PREFIX_DIR}/win-build"
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' ../aws-sdk-cpp -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/win-install"
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build . -j 8
 &'C:\\Program Files\\CMake\\bin\\cmake.exe' --build . --target install
+&cmd.exe /c "del /s /q *.pdb"
+&cmd.exe /c "del /s /q *.ilk"
+&cmd.exe /c "del /s /q *.obj"
