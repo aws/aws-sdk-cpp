@@ -9,6 +9,7 @@
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/CRTLogging.h>
 #include <aws/core/utils/logging/DefaultLogSystem.h>
+#include <aws/core/utils/logging/DefaultCRTLogSystem.h>
 #include <aws/core/Globals.h>
 #include <aws/core/external/cjson/cJSON.h>
 #include <aws/core/monitoring/MonitoringManager.h>
