@@ -126,37 +126,37 @@ namespace Model
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline const JobStatus& GetJobStatus() const{ return m_jobStatus; }
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline void SetJobStatus(JobStatus&& value) { m_jobStatusHasBeenSet = true; m_jobStatus = std::move(value); }
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline ImportJobProperties& WithJobStatus(const JobStatus& value) { SetJobStatus(value); return *this;}
 
     /**
      * <p>The job status for an Import job. Possible statuses are SUBMITTED,
-     * IN_PROGRESS, COMPLETED, FAILED.</p>
+     * IN_PROGRESS, COMPLETED_WITH_ERRORS, COMPLETED, FAILED.</p>
      */
     inline ImportJobProperties& WithJobStatus(JobStatus&& value) { SetJobStatus(std::move(value)); return *this;}
 

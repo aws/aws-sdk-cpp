@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/m2/MainframeModernization_EXPORTS.h>
 #include <aws/m2/model/GdgAttributes.h>
+#include <aws/m2/model/PoAttributes.h>
+#include <aws/m2/model/PsAttributes.h>
 #include <aws/m2/model/VsamAttributes.h>
 #include <utility>
 
@@ -72,6 +74,68 @@ namespace Model
 
 
     /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline const PoAttributes& GetPo() const{ return m_po; }
+
+    /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline bool PoHasBeenSet() const { return m_poHasBeenSet; }
+
+    /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline void SetPo(const PoAttributes& value) { m_poHasBeenSet = true; m_po = value; }
+
+    /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline void SetPo(PoAttributes&& value) { m_poHasBeenSet = true; m_po = std::move(value); }
+
+    /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline DatasetOrgAttributes& WithPo(const PoAttributes& value) { SetPo(value); return *this;}
+
+    /**
+     * <p>The details of a PO type data set.</p>
+     */
+    inline DatasetOrgAttributes& WithPo(PoAttributes&& value) { SetPo(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline const PsAttributes& GetPs() const{ return m_ps; }
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline bool PsHasBeenSet() const { return m_psHasBeenSet; }
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline void SetPs(const PsAttributes& value) { m_psHasBeenSet = true; m_ps = value; }
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline void SetPs(PsAttributes&& value) { m_psHasBeenSet = true; m_ps = std::move(value); }
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline DatasetOrgAttributes& WithPs(const PsAttributes& value) { SetPs(value); return *this;}
+
+    /**
+     * <p>The details of a PS type data set.</p>
+     */
+    inline DatasetOrgAttributes& WithPs(PsAttributes&& value) { SetPs(std::move(value)); return *this;}
+
+
+    /**
      * <p>The details of a VSAM data set.</p>
      */
     inline const VsamAttributes& GetVsam() const{ return m_vsam; }
@@ -105,6 +169,12 @@ namespace Model
 
     GdgAttributes m_gdg;
     bool m_gdgHasBeenSet = false;
+
+    PoAttributes m_po;
+    bool m_poHasBeenSet = false;
+
+    PsAttributes m_ps;
+    bool m_psHasBeenSet = false;
 
     VsamAttributes m_vsam;
     bool m_vsamHasBeenSet = false;

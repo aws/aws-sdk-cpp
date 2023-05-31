@@ -593,6 +593,49 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline GetApplicationResult& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline GetApplicationResult& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline GetApplicationResult& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
      * <p>The status of the application.</p>
      */
     inline const ApplicationLifecycle& GetStatus() const{ return m_status; }
@@ -816,6 +859,8 @@ namespace Model
     Aws::Vector<LogGroupSummary> m_logGroups;
 
     Aws::String m_name;
+
+    Aws::String m_roleArn;
 
     ApplicationLifecycle m_status;
 

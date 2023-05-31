@@ -109,6 +109,32 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Associates an IP access settings resource with a web portal.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateIpAccessSettingsOutcome AssociateIpAccessSettings(const Model::AssociateIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for AssociateIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename AssociateIpAccessSettingsRequestT = Model::AssociateIpAccessSettingsRequest>
+        Model::AssociateIpAccessSettingsOutcomeCallable AssociateIpAccessSettingsCallable(const AssociateIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::AssociateIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for AssociateIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename AssociateIpAccessSettingsRequestT = Model::AssociateIpAccessSettingsRequest>
+        void AssociateIpAccessSettingsAsync(const AssociateIpAccessSettingsRequestT& request, const AssociateIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::AssociateIpAccessSettings, request, handler, context);
+        }
+
+        /**
          * <p>Associates a network settings resource with a web portal.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/AssociateNetworkSettings">AWS
@@ -263,6 +289,32 @@ namespace WorkSpacesWeb
         void CreateIdentityProviderAsync(const CreateIdentityProviderRequestT& request, const CreateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::CreateIdentityProvider, request, handler, context);
+        }
+
+        /**
+         * <p>Creates an IP access settings resource that can be associated with a web
+         * portal.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/CreateIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateIpAccessSettingsOutcome CreateIpAccessSettings(const Model::CreateIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for CreateIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename CreateIpAccessSettingsRequestT = Model::CreateIpAccessSettingsRequest>
+        Model::CreateIpAccessSettingsOutcomeCallable CreateIpAccessSettingsCallable(const CreateIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::CreateIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for CreateIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename CreateIpAccessSettingsRequestT = Model::CreateIpAccessSettingsRequest>
+        void CreateIpAccessSettingsAsync(const CreateIpAccessSettingsRequestT& request, const CreateIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::CreateIpAccessSettings, request, handler, context);
         }
 
         /**
@@ -452,6 +504,31 @@ namespace WorkSpacesWeb
         }
 
         /**
+         * <p>Deletes IP access settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteIpAccessSettingsOutcome DeleteIpAccessSettings(const Model::DeleteIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DeleteIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DeleteIpAccessSettingsRequestT = Model::DeleteIpAccessSettingsRequest>
+        Model::DeleteIpAccessSettingsOutcomeCallable DeleteIpAccessSettingsCallable(const DeleteIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DeleteIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DeleteIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DeleteIpAccessSettingsRequestT = Model::DeleteIpAccessSettingsRequest>
+        void DeleteIpAccessSettingsAsync(const DeleteIpAccessSettingsRequestT& request, const DeleteIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DeleteIpAccessSettings, request, handler, context);
+        }
+
+        /**
          * <p>Deletes network settings.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DeleteNetworkSettings">AWS
          * API Reference</a></p>
@@ -600,6 +677,32 @@ namespace WorkSpacesWeb
         void DisassociateBrowserSettingsAsync(const DisassociateBrowserSettingsRequestT& request, const DisassociateBrowserSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::DisassociateBrowserSettings, request, handler, context);
+        }
+
+        /**
+         * <p>Disassociates IP access settings from a web portal.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/DisassociateIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateIpAccessSettingsOutcome DisassociateIpAccessSettings(const Model::DisassociateIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for DisassociateIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename DisassociateIpAccessSettingsRequestT = Model::DisassociateIpAccessSettingsRequest>
+        Model::DisassociateIpAccessSettingsOutcomeCallable DisassociateIpAccessSettingsCallable(const DisassociateIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::DisassociateIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for DisassociateIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename DisassociateIpAccessSettingsRequestT = Model::DisassociateIpAccessSettingsRequest>
+        void DisassociateIpAccessSettingsAsync(const DisassociateIpAccessSettingsRequestT& request, const DisassociateIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::DisassociateIpAccessSettings, request, handler, context);
         }
 
         /**
@@ -752,6 +855,31 @@ namespace WorkSpacesWeb
         void GetIdentityProviderAsync(const GetIdentityProviderRequestT& request, const GetIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::GetIdentityProvider, request, handler, context);
+        }
+
+        /**
+         * <p>Gets the IP access settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/GetIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetIpAccessSettingsOutcome GetIpAccessSettings(const Model::GetIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for GetIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename GetIpAccessSettingsRequestT = Model::GetIpAccessSettingsRequest>
+        Model::GetIpAccessSettingsOutcomeCallable GetIpAccessSettingsCallable(const GetIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::GetIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for GetIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename GetIpAccessSettingsRequestT = Model::GetIpAccessSettingsRequest>
+        void GetIpAccessSettingsAsync(const GetIpAccessSettingsRequestT& request, const GetIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::GetIpAccessSettings, request, handler, context);
         }
 
         /**
@@ -978,6 +1106,31 @@ namespace WorkSpacesWeb
         void ListIdentityProvidersAsync(const ListIdentityProvidersRequestT& request, const ListIdentityProvidersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::ListIdentityProviders, request, handler, context);
+        }
+
+        /**
+         * <p>Retrieves a list of IP access settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/ListIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListIpAccessSettingsOutcome ListIpAccessSettings(const Model::ListIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for ListIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename ListIpAccessSettingsRequestT = Model::ListIpAccessSettingsRequest>
+        Model::ListIpAccessSettingsOutcomeCallable ListIpAccessSettingsCallable(const ListIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::ListIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for ListIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename ListIpAccessSettingsRequestT = Model::ListIpAccessSettingsRequest>
+        void ListIpAccessSettingsAsync(const ListIpAccessSettingsRequestT& request, const ListIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::ListIpAccessSettings, request, handler, context);
         }
 
         /**
@@ -1256,6 +1409,31 @@ namespace WorkSpacesWeb
         void UpdateIdentityProviderAsync(const UpdateIdentityProviderRequestT& request, const UpdateIdentityProviderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
         {
             return SubmitAsync(&WorkSpacesWebClient::UpdateIdentityProvider, request, handler, context);
+        }
+
+        /**
+         * <p>Updates IP access settings.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-web-2020-07-08/UpdateIpAccessSettings">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateIpAccessSettingsOutcome UpdateIpAccessSettings(const Model::UpdateIpAccessSettingsRequest& request) const;
+
+        /**
+         * A Callable wrapper for UpdateIpAccessSettings that returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        template<typename UpdateIpAccessSettingsRequestT = Model::UpdateIpAccessSettingsRequest>
+        Model::UpdateIpAccessSettingsOutcomeCallable UpdateIpAccessSettingsCallable(const UpdateIpAccessSettingsRequestT& request) const
+        {
+            return SubmitCallable(&WorkSpacesWebClient::UpdateIpAccessSettings, request);
+        }
+
+        /**
+         * An Async wrapper for UpdateIpAccessSettings that queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        template<typename UpdateIpAccessSettingsRequestT = Model::UpdateIpAccessSettingsRequest>
+        void UpdateIpAccessSettingsAsync(const UpdateIpAccessSettingsRequestT& request, const UpdateIpAccessSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const
+        {
+            return SubmitAsync(&WorkSpacesWebClient::UpdateIpAccessSettings, request, handler, context);
         }
 
         /**

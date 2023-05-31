@@ -2931,6 +2931,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
 
@@ -2942,6 +2948,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
@@ -2953,6 +2965,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
@@ -2964,6 +2982,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline void SetStorageType(Aws::String&& value) { m_storageTypeHasBeenSet = true; m_storageType = std::move(value); }
 
@@ -2975,6 +2999,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline void SetStorageType(const char* value) { m_storageTypeHasBeenSet = true; m_storageType.assign(value); }
 
@@ -2986,6 +3016,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const Aws::String& value) { SetStorageType(value); return *this;}
 
@@ -2997,6 +3033,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline CreateDBClusterRequest& WithStorageType(Aws::String&& value) { SetStorageType(std::move(value)); return *this;}
 
@@ -3008,6 +3050,12 @@ namespace Model
      * (Aurora DB clusters); <code>io1</code> (Multi-AZ DB clusters)</p> <p>Default:
      * <code>aurora</code> (Aurora DB clusters); <code>io1</code> (Multi-AZ DB
      * clusters)</p> <p>Valid for: Aurora DB clusters and Multi-AZ DB clusters</p>
+     * <p>For more information on storage types for Aurora DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.StorageReliability.html#aurora-storage-type">Storage
+     * configurations for Amazon Aurora DB clusters</a>. For more information on
+     * storage types for Multi-AZ DB clusters, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/create-multi-az-db-cluster.html#create-multi-az-db-cluster-settings">Settings
+     * for creating Multi-AZ DB clusters</a>.</p>
      */
     inline CreateDBClusterRequest& WithStorageType(const char* value) { SetStorageType(value); return *this;}
 

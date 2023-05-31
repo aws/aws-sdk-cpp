@@ -215,7 +215,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
@@ -230,7 +230,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
@@ -245,7 +245,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
@@ -260,7 +260,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
@@ -275,7 +275,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This
@@ -290,7 +290,7 @@ namespace Model
      * recommended when the majority of the events in the dataset are labeled.</p>
      * </li> <li> <p>Use <code>FRAUD</code> if you want to categorize all unlabeled
      * events as “Fraud”. This is recommended when most of the events in your dataset
-     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> f you want to
+     * are fraudulent.</p> </li> <li> <p>Use <code>LEGIT</code> if you want to
      * categorize all unlabeled events as “Legit”. This is recommended when most of the
      * events in your dataset are legitimate.</p> </li> <li> <p>Use <code>AUTO</code>
      * if you want Amazon Fraud Detector to decide how to use the unlabeled data. This

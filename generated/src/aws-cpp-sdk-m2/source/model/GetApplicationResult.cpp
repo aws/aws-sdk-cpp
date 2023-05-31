@@ -132,6 +132,12 @@ GetApplicationResult& GetApplicationResult::operator =(const Aws::AmazonWebServi
 
   }
 
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ApplicationLifecycleMapper::GetApplicationLifecycleForName(jsonValue.GetString("status"));

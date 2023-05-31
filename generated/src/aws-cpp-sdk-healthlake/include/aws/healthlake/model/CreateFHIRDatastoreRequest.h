@@ -11,6 +11,7 @@
 #include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/healthlake/model/IdentityProviderConfiguration.h>
 #include <aws/healthlake/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
@@ -273,6 +274,43 @@ namespace Model
      */
     inline CreateFHIRDatastoreRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
+
+    /**
+     * <p>The configuration of the identity provider that you want to use for your Data
+     * Store.</p>
+     */
+    inline CreateFHIRDatastoreRequest& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreName;
@@ -292,6 +330,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet = false;
+
+    IdentityProviderConfiguration m_identityProviderConfiguration;
+    bool m_identityProviderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model

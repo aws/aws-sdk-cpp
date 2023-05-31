@@ -20,7 +20,8 @@ PutEventTypeRequest::PutEventTypeRequest() :
     m_entityTypesHasBeenSet(false),
     m_eventIngestion(EventIngestion::NOT_SET),
     m_eventIngestionHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_eventOrchestrationHasBeenSet(false)
 {
 }
 
@@ -86,6 +87,12 @@ Aws::String PutEventTypeRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_eventOrchestrationHasBeenSet)
+  {
+   payload.WithObject("eventOrchestration", m_eventOrchestration.Jsonize());
 
   }
 

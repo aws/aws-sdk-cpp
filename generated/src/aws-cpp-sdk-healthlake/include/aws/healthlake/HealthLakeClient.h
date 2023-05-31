@@ -363,7 +363,7 @@ namespace HealthLake
         }
 
         /**
-         * <p> Adds a user specifed key and value tag to a Data Store. </p><p><h3>See
+         * <p> Adds a user specified key and value tag to a Data Store. </p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/TagResource">AWS
          * API Reference</a></p>

@@ -27,12 +27,12 @@ namespace Model
 {
 
   /**
-   * <p>An object that specifies organization custom rule metadata such as resource
-   * type, resource ID of Amazon Web Services resource, Lambda function ARN, and
-   * organization trigger types that trigger Config to evaluate your Amazon Web
-   * Services resources against a rule. It also provides the frequency with which you
-   * want Config to run evaluations for the rule if the trigger type is
-   * periodic.</p><p><h3>See Also:</h3>   <a
+   * <p> organization custom rule metadata such as resource type, resource ID of
+   * Amazon Web Services resource, Lambda function ARN, and organization trigger
+   * types that trigger Config to evaluate your Amazon Web Services resources against
+   * a rule. It also provides the frequency with which you want Config to run
+   * evaluations for the rule if the trigger type is periodic.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/OrganizationCustomRuleMetadata">AWS
    * API Reference</a></p>
    */

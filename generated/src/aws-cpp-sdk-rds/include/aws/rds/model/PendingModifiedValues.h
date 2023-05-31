@@ -770,6 +770,47 @@ namespace Model
      */
     inline PendingModifiedValues& WithStorageThroughput(int value) { SetStorageThroughput(value); return *this;}
 
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+
+    /**
+     * <p>The database engine of the DB instance.</p>
+     */
+    inline PendingModifiedValues& WithEngine(const char* value) { SetEngine(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceClass;
@@ -828,6 +869,9 @@ namespace Model
 
     int m_storageThroughput;
     bool m_storageThroughputHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

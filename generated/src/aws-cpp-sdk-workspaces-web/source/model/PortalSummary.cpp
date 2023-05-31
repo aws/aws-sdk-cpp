@@ -26,6 +26,7 @@ PortalSummary::PortalSummary() :
     m_browserTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_ipAccessSettingsArnHasBeenSet(false),
     m_networkSettingsArnHasBeenSet(false),
     m_portalArnHasBeenSet(false),
     m_portalEndpointHasBeenSet(false),
@@ -47,6 +48,7 @@ PortalSummary::PortalSummary(JsonView jsonValue) :
     m_browserTypeHasBeenSet(false),
     m_creationDateHasBeenSet(false),
     m_displayNameHasBeenSet(false),
+    m_ipAccessSettingsArnHasBeenSet(false),
     m_networkSettingsArnHasBeenSet(false),
     m_portalArnHasBeenSet(false),
     m_portalEndpointHasBeenSet(false),
@@ -96,6 +98,13 @@ PortalSummary& PortalSummary::operator =(JsonView jsonValue)
     m_displayName = jsonValue.GetString("displayName");
 
     m_displayNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipAccessSettingsArn"))
+  {
+    m_ipAccessSettingsArn = jsonValue.GetString("ipAccessSettingsArn");
+
+    m_ipAccessSettingsArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("networkSettingsArn"))
@@ -185,6 +194,12 @@ JsonValue PortalSummary::Jsonize() const
   if(m_displayNameHasBeenSet)
   {
    payload.WithString("displayName", m_displayName);
+
+  }
+
+  if(m_ipAccessSettingsArnHasBeenSet)
+  {
+   payload.WithString("ipAccessSettingsArn", m_ipAccessSettingsArn);
 
   }
 

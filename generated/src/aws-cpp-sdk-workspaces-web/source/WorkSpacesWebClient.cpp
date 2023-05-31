@@ -22,12 +22,14 @@
 #include <aws/workspaces-web/WorkSpacesWebErrorMarshaller.h>
 #include <aws/workspaces-web/WorkSpacesWebEndpointProvider.h>
 #include <aws/workspaces-web/model/AssociateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/AssociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/AssociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/AssociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateIdentityProviderRequest.h>
+#include <aws/workspaces-web/model/CreateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/CreateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/CreatePortalRequest.h>
 #include <aws/workspaces-web/model/CreateTrustStoreRequest.h>
@@ -35,18 +37,21 @@
 #include <aws/workspaces-web/model/CreateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteIdentityProviderRequest.h>
+#include <aws/workspaces-web/model/DeleteIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DeletePortalRequest.h>
 #include <aws/workspaces-web/model/DeleteTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DeleteUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DeleteUserSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateBrowserSettingsRequest.h>
+#include <aws/workspaces-web/model/DisassociateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateTrustStoreRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserAccessLoggingSettingsRequest.h>
 #include <aws/workspaces-web/model/DisassociateUserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/GetIdentityProviderRequest.h>
+#include <aws/workspaces-web/model/GetIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/GetNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/GetPortalRequest.h>
 #include <aws/workspaces-web/model/GetPortalServiceProviderMetadataRequest.h>
@@ -56,6 +61,7 @@
 #include <aws/workspaces-web/model/GetUserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/ListIdentityProvidersRequest.h>
+#include <aws/workspaces-web/model/ListIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/ListNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/ListPortalsRequest.h>
 #include <aws/workspaces-web/model/ListTagsForResourceRequest.h>
@@ -67,6 +73,7 @@
 #include <aws/workspaces-web/model/UntagResourceRequest.h>
 #include <aws/workspaces-web/model/UpdateBrowserSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateIdentityProviderRequest.h>
+#include <aws/workspaces-web/model/UpdateIpAccessSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdateNetworkSettingsRequest.h>
 #include <aws/workspaces-web/model/UpdatePortalRequest.h>
 #include <aws/workspaces-web/model/UpdateTrustStoreRequest.h>
@@ -221,6 +228,27 @@ AssociateBrowserSettingsOutcome WorkSpacesWebClient::AssociateBrowserSettings(co
   return AssociateBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
 }
 
+AssociateIpAccessSettingsOutcome WorkSpacesWebClient::AssociateIpAccessSettings(const AssociateIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IpAccessSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
+    return AssociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
+  }
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateIpAccessSettings", "Required field: PortalArn, is not set");
+    return AssociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, AssociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
+  return AssociateIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER));
+}
+
 AssociateNetworkSettingsOutcome WorkSpacesWebClient::AssociateNetworkSettings(const AssociateNetworkSettingsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AssociateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -323,6 +351,15 @@ CreateIdentityProviderOutcome WorkSpacesWebClient::CreateIdentityProvider(const 
   return CreateIdentityProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
 }
 
+CreateIpAccessSettingsOutcome WorkSpacesWebClient::CreateIpAccessSettings(const CreateIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
+  return CreateIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER));
+}
+
 CreateNetworkSettingsOutcome WorkSpacesWebClient::CreateNetworkSettings(const CreateNetworkSettingsRequest& request) const
 {
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateNetworkSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -396,6 +433,21 @@ DeleteIdentityProviderOutcome WorkSpacesWebClient::DeleteIdentityProvider(const 
   endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders/");
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   return DeleteIdentityProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DeleteIpAccessSettingsOutcome WorkSpacesWebClient::DeleteIpAccessSettings(const DeleteIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IpAccessSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
+    return DeleteIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DeleteIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
+  return DeleteIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DeleteNetworkSettingsOutcome WorkSpacesWebClient::DeleteNetworkSettings(const DeleteNetworkSettingsRequest& request) const
@@ -487,6 +539,22 @@ DisassociateBrowserSettingsOutcome WorkSpacesWebClient::DisassociateBrowserSetti
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/browserSettings");
   return DisassociateBrowserSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
+}
+
+DisassociateIpAccessSettingsOutcome WorkSpacesWebClient::DisassociateIpAccessSettings(const DisassociateIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, DisassociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.PortalArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateIpAccessSettings", "Required field: PortalArn, is not set");
+    return DisassociateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PortalArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, DisassociateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/portals/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
+  return DisassociateIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER));
 }
 
 DisassociateNetworkSettingsOutcome WorkSpacesWebClient::DisassociateNetworkSettings(const DisassociateNetworkSettingsRequest& request) const
@@ -581,6 +649,21 @@ GetIdentityProviderOutcome WorkSpacesWebClient::GetIdentityProvider(const GetIde
   endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders/");
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   return GetIdentityProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+GetIpAccessSettingsOutcome WorkSpacesWebClient::GetIpAccessSettings(const GetIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IpAccessSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
+    return GetIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
+  return GetIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 GetNetworkSettingsOutcome WorkSpacesWebClient::GetNetworkSettings(const GetNetworkSettingsRequest& request) const
@@ -717,6 +800,15 @@ ListIdentityProvidersOutcome WorkSpacesWebClient::ListIdentityProviders(const Li
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetPortalArn());
   endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders");
   return ListIdentityProvidersOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
+}
+
+ListIpAccessSettingsOutcome WorkSpacesWebClient::ListIpAccessSettings(const ListIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings");
+  return ListIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER));
 }
 
 ListNetworkSettingsOutcome WorkSpacesWebClient::ListNetworkSettings(const ListNetworkSettingsRequest& request) const
@@ -858,6 +950,21 @@ UpdateIdentityProviderOutcome WorkSpacesWebClient::UpdateIdentityProvider(const 
   endpointResolutionOutcome.GetResult().AddPathSegments("/identityProviders/");
   endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIdentityProviderArn());
   return UpdateIdentityProviderOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
+}
+
+UpdateIpAccessSettingsOutcome WorkSpacesWebClient::UpdateIpAccessSettings(const UpdateIpAccessSettingsRequest& request) const
+{
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.IpAccessSettingsArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateIpAccessSettings", "Required field: IpAccessSettingsArn, is not set");
+    return UpdateIpAccessSettingsOutcome(Aws::Client::AWSError<WorkSpacesWebErrors>(WorkSpacesWebErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IpAccessSettingsArn]", false));
+  }
+  ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
+  AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, UpdateIpAccessSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+  endpointResolutionOutcome.GetResult().AddPathSegments("/ipAccessSettings/");
+  endpointResolutionOutcome.GetResult().AddPathSegments(request.GetIpAccessSettingsArn());
+  return UpdateIpAccessSettingsOutcome(MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER));
 }
 
 UpdateNetworkSettingsOutcome WorkSpacesWebClient::UpdateNetworkSettings(const UpdateNetworkSettingsRequest& request) const

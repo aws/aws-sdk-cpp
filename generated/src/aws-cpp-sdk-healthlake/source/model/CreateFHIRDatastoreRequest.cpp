@@ -20,7 +20,8 @@ CreateFHIRDatastoreRequest::CreateFHIRDatastoreRequest() :
     m_preloadDataConfigHasBeenSet(false),
     m_clientToken(Aws::Utils::UUID::PseudoRandomUUID()),
     m_clientTokenHasBeenSet(true),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_identityProviderConfigurationHasBeenSet(false)
 {
 }
 
@@ -65,6 +66,12 @@ Aws::String CreateFHIRDatastoreRequest::SerializePayload() const
      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
    }
    payload.WithArray("Tags", std::move(tagsJsonList));
+
+  }
+
+  if(m_identityProviderConfigurationHasBeenSet)
+  {
+   payload.WithObject("IdentityProviderConfiguration", m_identityProviderConfiguration.Jsonize());
 
   }
 

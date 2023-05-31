@@ -39,38 +39,38 @@ namespace Model
 
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline const ConfigurationRecorder& GetConfigurationRecorder() const{ return m_configurationRecorder; }
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline bool ConfigurationRecorderHasBeenSet() const { return m_configurationRecorderHasBeenSet; }
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline void SetConfigurationRecorder(const ConfigurationRecorder& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = value; }
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline void SetConfigurationRecorder(ConfigurationRecorder&& value) { m_configurationRecorderHasBeenSet = true; m_configurationRecorder = std::move(value); }
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline PutConfigurationRecorderRequest& WithConfigurationRecorder(const ConfigurationRecorder& value) { SetConfigurationRecorder(value); return *this;}
 
     /**
-     * <p>The configuration recorder object that records each configuration change made
-     * to the resources.</p>
+     * <p>An object for the configuration recorder to record configuration changes for
+     * specified resource types.</p>
      */
     inline PutConfigurationRecorderRequest& WithConfigurationRecorder(ConfigurationRecorder&& value) { SetConfigurationRecorder(std::move(value)); return *this;}
 

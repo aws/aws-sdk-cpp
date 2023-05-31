@@ -59,22 +59,22 @@ namespace Model
 
 
     /**
-     * <p> The lower bound value of the area under curve (auc). </p>
+     * <p> The upper bound value of the area under curve (auc). </p>
      */
     inline double GetUpperBoundValue() const{ return m_upperBoundValue; }
 
     /**
-     * <p> The lower bound value of the area under curve (auc). </p>
+     * <p> The upper bound value of the area under curve (auc). </p>
      */
     inline bool UpperBoundValueHasBeenSet() const { return m_upperBoundValueHasBeenSet; }
 
     /**
-     * <p> The lower bound value of the area under curve (auc). </p>
+     * <p> The upper bound value of the area under curve (auc). </p>
      */
     inline void SetUpperBoundValue(double value) { m_upperBoundValueHasBeenSet = true; m_upperBoundValue = value; }
 
     /**
-     * <p> The lower bound value of the area under curve (auc). </p>
+     * <p> The upper bound value of the area under curve (auc). </p>
      */
     inline UncertaintyRange& WithUpperBoundValue(double value) { SetUpperBoundValue(value); return *this;}
 
