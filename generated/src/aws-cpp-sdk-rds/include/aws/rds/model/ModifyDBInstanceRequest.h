@@ -4213,6 +4213,159 @@ namespace Model
      */
     inline ModifyDBInstanceRequest& WithMasterUserSecretKmsKeyId(const char* value) { SetMasterUserSecretKmsKeyId(value); return *this;}
 
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline void SetEngine(Aws::String&& value) { m_engineHasBeenSet = true; m_engine = std::move(value); }
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline void SetEngine(const char* value) { m_engineHasBeenSet = true; m_engine.assign(value); }
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline ModifyDBInstanceRequest& WithEngine(const Aws::String& value) { SetEngine(value); return *this;}
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline ModifyDBInstanceRequest& WithEngine(Aws::String&& value) { SetEngine(std::move(value)); return *this;}
+
+    /**
+     * <p>The target Oracle DB engine when you convert a non-CDB to a CDB. This
+     * intermediate step is necessary to upgrade an Oracle Database 19c non-CDB to an
+     * Oracle Database 21c CDB.</p> <p>Note the following requirements:</p> <ul> <li>
+     * <p>Make sure that you specify <code>oracle-ee-cdb</code> or
+     * <code>oracle-se2-cdb</code>.</p> </li> <li> <p>Make sure that your DB engine
+     * runs Oracle Database 19c with an April 2021 or later RU.</p> </li> </ul> <p>Note
+     * the following limitations:</p> <ul> <li> <p>You can't convert a CDB to a
+     * non-CDB.</p> </li> <li> <p>You can't convert a replica database.</p> </li> <li>
+     * <p>You can't convert a non-CDB to a CDB and upgrade the engine version in the
+     * same command.</p> </li> <li> <p>You can't convert the existing custom parameter
+     * or option group when it has options or parameters that are permanent or
+     * persistent. In this situation, the DB instance reverts to the default option and
+     * parameter group. To avoid reverting to the default, specify a new parameter
+     * group with <code>--db-parameter-group-name</code> and a new option group with
+     * <code>--option-group-name</code>.</p> </li> </ul>
+     */
+    inline ModifyDBInstanceRequest& WithEngine(const char* value) { SetEngine(value); return *this;}
+
   private:
 
     Aws::String m_dBInstanceIdentifier;
@@ -4370,6 +4523,9 @@ namespace Model
 
     Aws::String m_masterUserSecretKmsKeyId;
     bool m_masterUserSecretKmsKeyIdHasBeenSet = false;
+
+    Aws::String m_engine;
+    bool m_engineHasBeenSet = false;
   };
 
 } // namespace Model

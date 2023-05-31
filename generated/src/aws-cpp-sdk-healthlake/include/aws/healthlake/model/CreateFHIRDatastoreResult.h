@@ -77,43 +77,43 @@ namespace Model
 
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline const Aws::String& GetDatastoreArn() const{ return m_datastoreArn; }
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline void SetDatastoreArn(const Aws::String& value) { m_datastoreArn = value; }
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline void SetDatastoreArn(Aws::String&& value) { m_datastoreArn = std::move(value); }
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline void SetDatastoreArn(const char* value) { m_datastoreArn.assign(value); }
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreArn(const Aws::String& value) { SetDatastoreArn(value); return *this;}
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreArn(Aws::String&& value) { SetDatastoreArn(std::move(value)); return *this;}
 
     /**
-     * <p>The datastore ARN is generated during the creation of the Data Store and can
+     * <p>The Data Store ARN is generated during the creation of the Data Store and can
      * be found in the output from the initial Data Store creation call.</p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreArn(const char* value) { SetDatastoreArn(value); return *this;}
@@ -151,44 +151,37 @@ namespace Model
 
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline const Aws::String& GetDatastoreEndpoint() const{ return m_datastoreEndpoint; }
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline void SetDatastoreEndpoint(const Aws::String& value) { m_datastoreEndpoint = value; }
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline void SetDatastoreEndpoint(Aws::String&& value) { m_datastoreEndpoint = std::move(value); }
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline void SetDatastoreEndpoint(const char* value) { m_datastoreEndpoint.assign(value); }
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(const Aws::String& value) { SetDatastoreEndpoint(value); return *this;}
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(Aws::String&& value) { SetDatastoreEndpoint(std::move(value)); return *this;}
 
     /**
-     * <p>The AWS endpoint for the created Data Store. For preview, only US-east-1
-     * endpoints are supported.</p>
+     * <p>The AWS endpoint for the created Data Store. </p>
      */
     inline CreateFHIRDatastoreResult& WithDatastoreEndpoint(const char* value) { SetDatastoreEndpoint(value); return *this;}
 

@@ -309,6 +309,55 @@ namespace Model
 
 
     /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline CreateApplicationRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline CreateApplicationRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the role associated with the
+     * application.</p>
+     */
+    inline CreateApplicationRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
+
+
+    /**
      * <p>A list of tags to apply to the application.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
@@ -392,6 +441,9 @@ namespace Model
 
     Aws::String m_name;
     bool m_nameHasBeenSet = false;
+
+    Aws::String m_roleArn;
+    bool m_roleArnHasBeenSet = false;
 
     Aws::Map<Aws::String, Aws::String> m_tags;
     bool m_tagsHasBeenSet = false;

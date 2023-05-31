@@ -901,11 +901,11 @@ namespace ConfigService
          * <p>Returns the current status of the specified configuration recorder as well as
          * the status of the last recording event for the recorder. If a configuration
          * recorder is not specified, this action returns the status of all configuration
-         * recorders associated with the account.</p>  <p>Currently, you can specify
-         * only one configuration recorder per region in your account. For a detailed
-         * status of recording events over time, add your Config events to Amazon
-         * CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See Also:</h3> 
-         * <a
+         * recorders associated with the account.</p>  <p>&gt;You can specify only
+         * one configuration recorder for each Amazon Web Services Region for each account.
+         * For a detailed status of recording events over time, add your Config events to
+         * Amazon CloudWatch metrics and use CloudWatch metrics.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorderStatus">AWS
          * API Reference</a></p>
          */
@@ -932,9 +932,9 @@ namespace ConfigService
         /**
          * <p>Returns the details for the specified configuration recorders. If the
          * configuration recorder is not specified, this action returns the details for all
-         * configuration recorders associated with the account.</p>  <p>Currently,
-         * you can specify only one configuration recorder per region in your account.</p>
-         * <p><h3>See Also:</h3>   <a
+         * configuration recorders associated with the account.</p>  <p>You can
+         * specify only one configuration recorder for each Amazon Web Services Region for
+         * each account.</p> <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/DescribeConfigurationRecorders">AWS
          * API Reference</a></p>
          */
@@ -2265,15 +2265,17 @@ namespace ConfigService
         }
 
         /**
-         * <p>Creates a new configuration recorder to record the selected resource
-         * configurations.</p> <p>You can use this action to change the role
+         * <p>Creates a new configuration recorder to record configuration changes for
+         * specified resource types.</p> <p>You can also use this action to change the
          * <code>roleARN</code> or the <code>recordingGroup</code> of an existing recorder.
-         * To change the role, call the action on the existing configuration recorder and
-         * specify a role.</p>  <p>Currently, you can specify only one configuration
-         * recorder per region in your account.</p> <p>If
-         * <code>ConfigurationRecorder</code> does not have the <b>recordingGroup</b>
-         * parameter specified, the default is to record all supported resource types.</p>
-         * <p><h3>See Also:</h3>   <a
+         * For more information, see <a
+         * href="https://docs.aws.amazon.com/config/latest/developerguide/stop-start-recorder.html">
+         * <b>Managing the Configuration Recorder</b> </a> in the <i>Config Developer
+         * Guide</i>.</p>  <p>You can specify only one configuration recorder for
+         * each Amazon Web Services Region for each account.</p> <p>If the configuration
+         * recorder does not have the <code>recordingGroup</code> field specified, the
+         * default is to record all supported resource types.</p> <p><h3>See
+         * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutConfigurationRecorder">AWS
          * API Reference</a></p>
          */
@@ -2303,7 +2305,7 @@ namespace ConfigService
          * an organization. For information on how many conformance packs you can have per
          * account, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>This API
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>This API
          * creates a service-linked role <code>AWSServiceRoleForConfigConforms</code> in
          * your account. The service-linked role is created only when the role does not
          * exist in your account. </p>  <p>You must specify only one of the follow
@@ -2496,7 +2498,7 @@ namespace ConfigService
          * Organization. For information on how many organization conformance packs and how
          * many Config rules you can have per account, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html">
-         * <b>Service Limits</b> </a> in the Config Developer Guide.</p> <p>Only a
+         * <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p> <p>Only a
          * management account and a delegated administrator can call this API. When calling
          * this API with a delegated administrator, you must ensure Organizations
          * <code>ListDelegatedAdministrator</code> permissions are added. An organization
@@ -2603,7 +2605,7 @@ namespace ConfigService
          * more information on the conditions that initiate the possible Config evaluation
          * results, see <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/config-concepts.html#aws-config-rules">Concepts
-         * | Config Rules</a> in the Config Developer Guide.</p> <p><h3>See
+         * | Config Rules</a> in the <i>Config Developer Guide</i>.</p> <p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/PutRemediationExceptions">AWS
          * API Reference</a></p>
@@ -2735,17 +2737,17 @@ namespace ConfigService
          * configurations matching the properties.</p> <p>For more information about query
          * components, see the <a
          * href="https://docs.aws.amazon.com/config/latest/developerguide/query-components.html">
-         * <b>Query Components</b> </a> section in the Config Developer Guide.</p> 
-         * <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or using
-         * aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT resourceId,
-         * COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY resourceId</code>) and
-         * do not specify the <code>MaxResults</code> or the <code>Limit</code> query
-         * parameters, the default page size is set to 500.</p> <p>If you run a
-         * non-aggregation query (i.e., not using <code>GROUP BY</code> or aggregate
-         * function; e.g., <code>SELECT * WHERE resourceType = 'AWS::IAM::Role'</code>) and
-         * do not specify the <code>MaxResults</code> or the <code>Limit</code> query
-         * parameters, the default page size is set to 25.</p> <p><h3>See Also:</h3>
-         * <a
+         * <b>Query Components</b> </a> section in the <i>Config Developer Guide</i>.</p>
+         *  <p>If you run an aggregation query (i.e., using <code>GROUP BY</code> or
+         * using aggregate functions such as <code>COUNT</code>; e.g., <code>SELECT
+         * resourceId, COUNT(*) WHERE resourceType = 'AWS::IAM::Role' GROUP BY
+         * resourceId</code>) and do not specify the <code>MaxResults</code> or the
+         * <code>Limit</code> query parameters, the default page size is set to 500.</p>
+         * <p>If you run a non-aggregation query (i.e., not using <code>GROUP BY</code> or
+         * aggregate function; e.g., <code>SELECT * WHERE resourceType =
+         * 'AWS::IAM::Role'</code>) and do not specify the <code>MaxResults</code> or the
+         * <code>Limit</code> query parameters, the default page size is set to 25.</p>
+         * <p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/SelectAggregateResourceConfig">AWS
          * API Reference</a></p>
          */

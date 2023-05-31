@@ -88,7 +88,8 @@ ModifyDBInstanceRequest::ModifyDBInstanceRequest() :
     m_manageMasterUserPasswordHasBeenSet(false),
     m_rotateMasterUserPassword(false),
     m_rotateMasterUserPasswordHasBeenSet(false),
-    m_masterUserSecretKmsKeyIdHasBeenSet(false)
+    m_masterUserSecretKmsKeyIdHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
@@ -371,6 +372,11 @@ Aws::String ModifyDBInstanceRequest::SerializePayload() const
   if(m_masterUserSecretKmsKeyIdHasBeenSet)
   {
     ss << "MasterUserSecretKmsKeyId=" << StringUtils::URLEncode(m_masterUserSecretKmsKeyId.c_str()) << "&";
+  }
+
+  if(m_engineHasBeenSet)
+  {
+    ss << "Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 
   ss << "Version=2014-10-31";

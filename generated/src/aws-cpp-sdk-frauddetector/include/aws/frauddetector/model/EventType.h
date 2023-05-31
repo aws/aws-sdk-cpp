@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/frauddetector/model/EventIngestion.h>
 #include <aws/frauddetector/model/IngestedEventStatistics.h>
+#include <aws/frauddetector/model/EventOrchestration.h>
 #include <utility>
 
 namespace Aws
@@ -468,6 +469,37 @@ namespace Model
      */
     inline EventType& WithArn(const char* value) { SetArn(value); return *this;}
 
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline const EventOrchestration& GetEventOrchestration() const{ return m_eventOrchestration; }
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline bool EventOrchestrationHasBeenSet() const { return m_eventOrchestrationHasBeenSet; }
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline void SetEventOrchestration(const EventOrchestration& value) { m_eventOrchestrationHasBeenSet = true; m_eventOrchestration = value; }
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline void SetEventOrchestration(EventOrchestration&& value) { m_eventOrchestrationHasBeenSet = true; m_eventOrchestration = std::move(value); }
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline EventType& WithEventOrchestration(const EventOrchestration& value) { SetEventOrchestration(value); return *this;}
+
+    /**
+     * <p>The event orchestration status. </p>
+     */
+    inline EventType& WithEventOrchestration(EventOrchestration&& value) { SetEventOrchestration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -499,6 +531,9 @@ namespace Model
 
     Aws::String m_arn;
     bool m_arnHasBeenSet = false;
+
+    EventOrchestration m_eventOrchestration;
+    bool m_eventOrchestrationHasBeenSet = false;
   };
 
 } // namespace Model

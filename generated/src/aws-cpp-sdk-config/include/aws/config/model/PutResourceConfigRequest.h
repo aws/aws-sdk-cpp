@@ -38,64 +38,64 @@ namespace Model
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
      * <p>The type of the resource. The custom resource type must be registered with
      * CloudFormation. </p>  <p>You cannot use the organization names “amzn”,
-     * “amazon”, “alexa”, “custom” with custom resource types. It is the first part of
-     * the ResourceType up to the first ::.</p> 
+     * “amazon���, “alexa”, “custom” with custom resource types. It is the first part
+     * of the ResourceType up to the first ::.</p> 
      */
     inline PutResourceConfigRequest& WithResourceType(const char* value) { SetResourceType(value); return *this;}
 

@@ -21,6 +21,7 @@ CreateApplicationRequest::CreateApplicationRequest() :
     m_engineTypeHasBeenSet(false),
     m_kmsKeyIdHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -61,6 +62,12 @@ Aws::String CreateApplicationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

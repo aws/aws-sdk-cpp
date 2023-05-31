@@ -32,6 +32,7 @@ ApplicationSummary::ApplicationSummary() :
     m_environmentIdHasBeenSet(false),
     m_lastStartTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_status(ApplicationLifecycle::NOT_SET),
     m_statusHasBeenSet(false),
     m_versionStatus(ApplicationVersionLifecycle::NOT_SET),
@@ -53,6 +54,7 @@ ApplicationSummary::ApplicationSummary(JsonView jsonValue) :
     m_environmentIdHasBeenSet(false),
     m_lastStartTimeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_status(ApplicationLifecycle::NOT_SET),
     m_statusHasBeenSet(false),
     m_versionStatus(ApplicationVersionLifecycle::NOT_SET),
@@ -133,6 +135,13 @@ ApplicationSummary& ApplicationSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+    m_roleArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = ApplicationLifecycleMapper::GetApplicationLifecycleForName(jsonValue.GetString("status"));
@@ -207,6 +216,12 @@ JsonValue ApplicationSummary::Jsonize() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

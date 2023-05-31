@@ -47,7 +47,8 @@ PendingModifiedValues::PendingModifiedValues() :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
 }
 
@@ -78,7 +79,8 @@ PendingModifiedValues::PendingModifiedValues(const XmlNode& xmlNode) :
     m_automationModeHasBeenSet(false),
     m_resumeFullAutomationModeTimeHasBeenSet(false),
     m_storageThroughput(0),
-    m_storageThroughputHasBeenSet(false)
+    m_storageThroughputHasBeenSet(false),
+    m_engineHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -209,6 +211,12 @@ PendingModifiedValues& PendingModifiedValues::operator =(const XmlNode& xmlNode)
       m_storageThroughput = StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(storageThroughputNode.GetText()).c_str()).c_str());
       m_storageThroughputHasBeenSet = true;
     }
+    XmlNode engineNode = resultNode.FirstChild("Engine");
+    if(!engineNode.IsNull())
+    {
+      m_engine = Aws::Utils::Xml::DecodeEscapedXmlText(engineNode.GetText());
+      m_engineHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -319,6 +327,11 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
       oStream << location << index << locationValue << ".StorageThroughput=" << m_storageThroughput << "&";
   }
 
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
+  }
+
 }
 
 void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -406,6 +419,10 @@ void PendingModifiedValues::OutputToStream(Aws::OStream& oStream, const char* lo
   if(m_storageThroughputHasBeenSet)
   {
       oStream << location << ".StorageThroughput=" << m_storageThroughput << "&";
+  }
+  if(m_engineHasBeenSet)
+  {
+      oStream << location << ".Engine=" << StringUtils::URLEncode(m_engine.c_str()) << "&";
   }
 }
 

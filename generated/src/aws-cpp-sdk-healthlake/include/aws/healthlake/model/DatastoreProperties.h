@@ -11,6 +11,7 @@
 #include <aws/healthlake/model/FHIRVersion.h>
 #include <aws/healthlake/model/SseConfiguration.h>
 #include <aws/healthlake/model/PreloadDataConfig.h>
+#include <aws/healthlake/model/IdentityProviderConfiguration.h>
 #include <utility>
 
 namespace Aws
@@ -29,7 +30,7 @@ namespace Model
 {
 
   /**
-   * <p>Displays the properties of the Data Store, including the ID, Arn, name, and
+   * <p>Displays the properties of the Data Store, including the ID, ARN, name, and
    * the status of the Data Store.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/healthlake-2017-07-01/DatastoreProperties">AWS
    * API Reference</a></p>
@@ -387,6 +388,37 @@ namespace Model
      */
     inline DatastoreProperties& WithPreloadDataConfig(PreloadDataConfig&& value) { SetPreloadDataConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline const IdentityProviderConfiguration& GetIdentityProviderConfiguration() const{ return m_identityProviderConfiguration; }
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline bool IdentityProviderConfigurationHasBeenSet() const { return m_identityProviderConfigurationHasBeenSet; }
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline void SetIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = value; }
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline void SetIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { m_identityProviderConfigurationHasBeenSet = true; m_identityProviderConfiguration = std::move(value); }
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline DatastoreProperties& WithIdentityProviderConfiguration(const IdentityProviderConfiguration& value) { SetIdentityProviderConfiguration(value); return *this;}
+
+    /**
+     * <p>The identity provider that you selected when you created the Data Store.</p>
+     */
+    inline DatastoreProperties& WithIdentityProviderConfiguration(IdentityProviderConfiguration&& value) { SetIdentityProviderConfiguration(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_datastoreId;
@@ -415,6 +447,9 @@ namespace Model
 
     PreloadDataConfig m_preloadDataConfig;
     bool m_preloadDataConfigHasBeenSet = false;
+
+    IdentityProviderConfiguration m_identityProviderConfiguration;
+    bool m_identityProviderConfigurationHasBeenSet = false;
   };
 
 } // namespace Model
