@@ -172,6 +172,7 @@ ${className}::~${className}()
   aws_s3_client_release(m_s3CrtClient);
   m_clientShutdownSem->WaitOne(); // Wait aws_s3_client shutdown
 #end
+  ShutdownSdkClient(this, -1);
 }
 
 #if($serviceModel.endpointRules)

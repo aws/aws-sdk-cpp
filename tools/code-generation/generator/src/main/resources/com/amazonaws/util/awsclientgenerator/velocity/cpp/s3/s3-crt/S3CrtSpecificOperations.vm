@@ -308,6 +308,7 @@ void ${className}::${operation.name}Async(${constText}${operation.request.shape.
 
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+  AWS_OPERATION_GUARD(${operation.name});
   Aws::Utils::Threading::Semaphore sem(0, 1);
   ${operation.name}Outcome res;
 
@@ -378,6 +379,7 @@ void ${className}::${operation.name}Async(${constText}${operation.name}ResponseR
 
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+  AWS_OPERATION_GUARD(${operation.name});
   Aws::Utils::Threading::Semaphore sem(0, 1);
   ${operation.name}Outcome res;
 #if($operation.result && $operation.result.shape.hasStreamMembers())
