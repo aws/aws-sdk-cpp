@@ -41,6 +41,7 @@ const char* ${className}::ALLOCATION_TAG = "${className}";
 #foreach($operation in $serviceModel.operations)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
+  AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #if($serviceModel.endpointRules)
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")

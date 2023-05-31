@@ -65,6 +65,7 @@ file(GLOB UTILS_JSON_HEADERS "include/aws/core/utils/json/*.h")
 file(GLOB UTILS_THREADING_HEADERS "include/aws/core/utils/threading/*.h")
 file(GLOB UTILS_XML_HEADERS "include/aws/core/utils/xml/*.h")
 file(GLOB UTILS_MEMORY_HEADERS "include/aws/core/utils/memory/*.h")
+file(GLOB UTILS_COMPONENT_REGISTRY_HEADERS "include/aws/core/utils/component-registry/*.h")
 file(GLOB UTILS_STL_HEADERS "include/aws/core/utils/memory/stl/*.h")
 file(GLOB UTILS_LOGGING_HEADERS "include/aws/core/utils/logging/*.h")
 file(GLOB UTILS_RATE_LIMITER_HEADERS "include/aws/core/utils/ratelimiter/*.h")
@@ -100,6 +101,7 @@ file(GLOB UTILS_THREADING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/threa
 file(GLOB UTILS_XML_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/xml/*.cpp")
 file(GLOB UTILS_LOGGING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/logging/*.cpp")
 file(GLOB UTILS_MEMORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/*.cpp")
+file(GLOB UTILS_COMPONENT_REGISTRY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/component-registry/*.cpp")
 file(GLOB UTILS_MEMORY_STL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/memory/stl/*.cpp")
 file(GLOB UTILS_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/stream/*.cpp")
 file(GLOB UTILS_CRYPTO_FACTORY_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/factory/*.cpp")
@@ -249,6 +251,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${UTILS_STREAM_SOURCE}
     ${UTILS_LOGGING_SOURCE}
     ${UTILS_MEMORY_SOURCE}
+    ${UTILS_COMPONENT_REGISTRY_SOURCE}
     ${UTILS_MEMORY_STL_SOURCE}
     ${UTILS_CRYPTO_OPENSSL_SOURCE}
     ${UTILS_CRYPTO_COMMONCRYPTO_SOURCE}
@@ -284,6 +287,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_XML_HEADERS}
   ${UTILS_LOGGING_HEADERS}
   ${UTILS_MEMORY_HEADERS}
+  ${UTILS_COMPONENT_REGISTRY_HEADERS}
   ${UTILS_STL_HEADERS}
   ${UTILS_STREAM_HEADERS}
   ${UTILS_RATE_LIMITER_HEADERS}
@@ -402,6 +406,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\logging" FILES ${UTILS_LOGGING_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\memory" FILES ${UTILS_MEMORY_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\memory\\stl" FILES ${UTILS_STL_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\stream" FILES ${UTILS_STREAM_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\ratelimiter" FILES ${UTILS_RATE_LIMITER_HEADERS})
@@ -458,6 +463,7 @@ if(MSVC)
     source_group("Source Files\\utils\\stream" FILES ${UTILS_STREAM_SOURCE})
     source_group("Source Files\\utils\\logging" FILES ${UTILS_LOGGING_SOURCE})
     source_group("Source Files\\utils\\memory" FILES ${UTILS_MEMORY_SOURCE})
+    source_group("Source Files\\utils\\component-registry" FILES ${UTILS_COMPONENT_REGISTRY_SOURCE})
     source_group("Source Files\\utils\\memory\\stl" FILES ${UTILS_MEMORY_STL_SOURCE})
     source_group("Source Files\\smithy" FILES ${SMITHY_SOURCE})
     source_group("Source Files\\smithy\\tracing" FILES ${SMITHY_TRACING_SOURCE})
@@ -640,6 +646,7 @@ install (FILES ${UTILS_RETRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/
 install (FILES ${UTILS_XML_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/xml)
 install (FILES ${UTILS_LOGGING_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/logging)
 install (FILES ${UTILS_MEMORY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory)
+install (FILES ${UTILS_COMPONENT_REGISTRY_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/component-registry)
 install (FILES ${UTILS_STL_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/memory/stl)
 install (FILES ${UTILS_RATE_LIMITER_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/ratelimiter)
 install (FILES ${UTILS_STREAM_HEADERS} DESTINATION ${INCLUDE_DIRECTORY}/aws/core/utils/stream)

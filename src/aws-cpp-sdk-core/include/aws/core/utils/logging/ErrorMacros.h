@@ -11,6 +11,8 @@
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/LogMacros.h>
 
+#include <aws/core/utils/RAIICounter.h>
+
 #define AWS_OPERATION_CHECK_PTR(PTR, OPERATION, ERROR_TYPE, ERROR) \
 do { \
   if (PTR == nullptr) \
@@ -55,3 +57,12 @@ do { \
     return OPERATION##Outcome(Aws::Client::AWSError<CLIENT_NAMESPACE##Errors>(CLIENT_NAMESPACE##Errors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field ["#FIELD"]", false)); \
   } \
 } while (0)
+
+#define AWS_OPERATION_GUARD(OPERATION) \
+if(!m_isInitialized) \
+{ \
+  AWS_LOGSTREAM_ERROR(#OPERATION, "Unable to call " #OPERATION ": client is not initialized (or already terminated)"); \
+  return Aws::Client::AWSError<CoreErrors>(CoreErrors::NOT_INITIALIZED, "NOT_INITIALIZED", "Client is not initialized or already terminated", false); \
+} \
+Aws::Utils::RAIICounter(this->m_operationsProcessed, &this->m_shutdownSignal)
+

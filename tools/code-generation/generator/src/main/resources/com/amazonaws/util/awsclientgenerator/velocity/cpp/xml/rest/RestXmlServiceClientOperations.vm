@@ -28,6 +28,7 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+  AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
@@ -65,6 +66,7 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
 #else
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+  AWS_OPERATION_GUARD(${operation.name});
 #if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
 #if($virtualAddressingSupported || $arnEndpointSupported)
