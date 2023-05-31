@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <gtest/gtest.h>
+#include <aws/testing/AwsCppSdkGTestSuite.h>
 #include <aws/testing/AwsTestHelpers.h>
 #include <aws/testing/mocks/http/MockHttpClient.h>
 
@@ -20,7 +20,7 @@ static const char* ALLOCATION_TAG = "AWSEventBridgeTests";
 /*
  * Unit tests for EventBridge PutEvents multi-regional endpoint support
  */
-class EventBridgeTests : public ::testing::Test
+class EventBridgeTests : public Aws::Testing::AwsCppSdkGTestSuite
 {
 public:
     void SetUp()
@@ -47,7 +47,7 @@ protected:
 
 };
 
-Aws::EventBridge::Model::PutEventsRequest buildEventBridgeRequest()
+static Aws::EventBridge::Model::PutEventsRequest buildEventBridgeRequest()
 {
     Aws::EventBridge::Model::PutEventsRequest request;
     Aws::EventBridge::Model::PutEventsRequestEntry requestEntry;
@@ -60,7 +60,7 @@ Aws::EventBridge::Model::PutEventsRequest buildEventBridgeRequest()
     return request;
 }
 
-std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> buildEventBridgeGoodResponse(const Aws::String& eventIdToReply)
+static std::shared_ptr<Aws::Http::Standard::StandardHttpResponse> buildEventBridgeGoodResponse(const Aws::String& eventIdToReply)
 {
     const Aws::String goodReply = "{\"Entries\":[{\"EventId\":\"" + eventIdToReply + "\"}],\"FailedEntryCount\":0}";
     std::shared_ptr<Aws::Http::HttpRequest> requestTmp = CreateHttpRequest(Aws::Http::URI("dummy"), Aws::Http::HttpMethod::HTTP_GET, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);

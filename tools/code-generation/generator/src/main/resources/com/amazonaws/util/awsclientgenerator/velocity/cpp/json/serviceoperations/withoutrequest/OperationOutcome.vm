@@ -1,5 +1,6 @@
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
+AWS_OPERATION_GUARD(${operation.name});
 #if(!$serviceModel.endpointRules)
   Aws::StringStream ss;
 #if($metadata.hasEndpointTrait)

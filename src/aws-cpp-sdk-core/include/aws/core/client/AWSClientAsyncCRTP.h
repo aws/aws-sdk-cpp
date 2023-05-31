@@ -6,6 +6,8 @@
 #pragma once
 
 #include <aws/core/client/AWSAsyncOperationTemplate.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/component-registry/ComponentRegistry.h>
 
 namespace Aws
 {
@@ -40,6 +42,77 @@ namespace Client
     class ClientWithAsyncTemplateMethods
     {
     public:
+        ClientWithAsyncTemplateMethods()
+         : m_isInitialized(true),
+           m_operationsProcessed(0)
+        {
+            AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
+            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::SERVICE_NAME,
+                                                             pThis,
+                                                             &AwsServiceClientT::ShutdownSdkClient);
+
+        }
+
+        ClientWithAsyncTemplateMethods(const ClientWithAsyncTemplateMethods& other)
+         : m_isInitialized(other.m_isInitialized.load()),
+           m_operationsProcessed(0)
+        {
+            AwsServiceClientT* pThis = static_cast<AwsServiceClientT*>(this);
+            Aws::Utils::ComponentRegistry::RegisterComponent(AwsServiceClientT::SERVICE_NAME,
+                                                             pThis,
+                                                             &AwsServiceClientT::ShutdownSdkClient);
+        }
+
+        ClientWithAsyncTemplateMethods& operator=(const ClientWithAsyncTemplateMethods& other)
+        {
+            if (&other != this)
+            {
+                m_isInitialized = other.m_isInitialized.load();
+            }
+
+            return *this;
+        }
+
+        virtual ~ClientWithAsyncTemplateMethods()
+        {
+            AwsServiceClientT* pClient = static_cast<AwsServiceClientT*>(this);
+            Aws::Utils::ComponentRegistry::DeRegisterComponent(pClient);
+        }
+
+        /**
+         * A callback static method to terminate client (i.e. to free dynamic resources and prevent further processing)
+         * @param pThis, a void* pointer that points to AWS SDK Service Client, such as "Aws::S3::S3Client"
+         * @param timeoutMs, a timeout (in ms) that this method will wait for currently running operations to complete.
+         *                    "-1" represents "use clientConfiguration.requestTimeoutMs" value.
+         */
+        static void ShutdownSdkClient(void* pThis, int64_t timeoutMs = -1)
+        {
+            AwsServiceClientT* pClient = reinterpret_cast<AwsServiceClientT*>(pThis);
+            AWS_CHECK_PTR(AwsServiceClientT::SERVICE_NAME, pClient);
+            if(!pClient->m_isInitialized)
+            {
+                return;
+            }
+
+            std::unique_lock<std::mutex> lock(pClient->m_shutdownMutex);
+
+            pClient->m_isInitialized = false;
+
+
+            if (timeoutMs == -1)
+            {
+                timeoutMs = pClient->m_clientConfiguration.requestTimeoutMs;
+            }
+            pClient->m_shutdownSignal.wait_for(lock,
+                                      std::chrono::milliseconds(timeoutMs),
+                                      [&](){ return pClient->m_operationsProcessed.load() == 0; });
+
+            pClient->m_endpointProvider.reset();
+            pClient->m_executor.reset();
+            pClient->m_clientConfiguration.executor.reset();
+            pClient->m_clientConfiguration.retryStrategy.reset();
+        }
+
         /**
          * A template to submit a AwsServiceClient regular operation method for async execution.
          * This template method copies and queues the request into a thread executor and triggers associated callback when operation has finished.
@@ -120,6 +193,14 @@ namespace Client
             const AwsServiceClientT* clientThis = static_cast<const AwsServiceClientT*>(this);
             return Aws::Client::MakeCallableOperation(AwsServiceClientT::ALLOCATION_TAG, operationFunc, clientThis, clientThis->m_executor.get());
         }
+    protected:
+        std::atomic<bool> m_isInitialized;
+        mutable std::atomic<size_t> m_operationsProcessed;
+        mutable std::condition_variable m_shutdownSignal;
+        mutable std::mutex m_shutdownMutex;
+
+        // TODO: track scheduled tasks
+        // std::atomic<size_t> m_operationsScheduled;
     };
 } // namespace Client
 } // namespace Aws

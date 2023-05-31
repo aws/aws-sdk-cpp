@@ -265,6 +265,7 @@ ${clsWSpace}  ${clsWSpace} ${ctorArgument}#if( $foreach.hasNext ),#else) :#end
 #end
 ${className}::~${className}()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 #if($serviceModel.endpointRules)
