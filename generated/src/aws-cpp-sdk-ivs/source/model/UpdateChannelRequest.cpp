@@ -21,6 +21,8 @@ UpdateChannelRequest::UpdateChannelRequest() :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_preset(TranscodePreset::NOT_SET),
+    m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
     m_typeHasBeenSet(false)
@@ -58,6 +60,11 @@ Aws::String UpdateChannelRequest::SerializePayload() const
   {
    payload.WithString("name", m_name);
 
+  }
+
+  if(m_presetHasBeenSet)
+  {
+   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
   }
 
   if(m_recordingConfigurationArnHasBeenSet)

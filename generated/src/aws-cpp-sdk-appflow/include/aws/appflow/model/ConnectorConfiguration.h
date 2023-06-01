@@ -18,6 +18,8 @@
 #include <aws/appflow/model/ConnectorRuntimeSetting.h>
 #include <aws/appflow/model/Operators.h>
 #include <aws/appflow/model/WriteOperationType.h>
+#include <aws/appflow/model/SupportedDataTransferType.h>
+#include <aws/appflow/model/DataTransferApi.h>
 #include <utility>
 
 namespace Aws
@@ -997,6 +999,112 @@ namespace Model
      */
     inline ConnectorConfiguration& WithRegisteredBy(const char* value) { SetRegisteredBy(value); return *this;}
 
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline const Aws::Vector<SupportedDataTransferType>& GetSupportedDataTransferTypes() const{ return m_supportedDataTransferTypes; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline bool SupportedDataTransferTypesHasBeenSet() const { return m_supportedDataTransferTypesHasBeenSet; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline void SetSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = value; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline void SetSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = std::move(value); }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorConfiguration& WithSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { SetSupportedDataTransferTypes(value); return *this;}
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorConfiguration& WithSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { SetSupportedDataTransferTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorConfiguration& AddSupportedDataTransferTypes(const SupportedDataTransferType& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorConfiguration& AddSupportedDataTransferTypes(SupportedDataTransferType&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline const Aws::Vector<DataTransferApi>& GetSupportedDataTransferApis() const{ return m_supportedDataTransferApis; }
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline bool SupportedDataTransferApisHasBeenSet() const { return m_supportedDataTransferApisHasBeenSet; }
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline void SetSupportedDataTransferApis(const Aws::Vector<DataTransferApi>& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis = value; }
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline void SetSupportedDataTransferApis(Aws::Vector<DataTransferApi>&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis = std::move(value); }
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline ConnectorConfiguration& WithSupportedDataTransferApis(const Aws::Vector<DataTransferApi>& value) { SetSupportedDataTransferApis(value); return *this;}
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline ConnectorConfiguration& WithSupportedDataTransferApis(Aws::Vector<DataTransferApi>&& value) { SetSupportedDataTransferApis(std::move(value)); return *this;}
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline ConnectorConfiguration& AddSupportedDataTransferApis(const DataTransferApi& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis.push_back(value); return *this; }
+
+    /**
+     * <p>The APIs of the connector application that Amazon AppFlow can use to transfer
+     * your data.</p>
+     */
+    inline ConnectorConfiguration& AddSupportedDataTransferApis(DataTransferApi&& value) { m_supportedDataTransferApisHasBeenSet = true; m_supportedDataTransferApis.push_back(std::move(value)); return *this; }
+
   private:
 
     bool m_canUseAsSource;
@@ -1076,6 +1184,12 @@ namespace Model
 
     Aws::String m_registeredBy;
     bool m_registeredByHasBeenSet = false;
+
+    Aws::Vector<SupportedDataTransferType> m_supportedDataTransferTypes;
+    bool m_supportedDataTransferTypesHasBeenSet = false;
+
+    Aws::Vector<DataTransferApi> m_supportedDataTransferApis;
+    bool m_supportedDataTransferApisHasBeenSet = false;
   };
 
 } // namespace Model

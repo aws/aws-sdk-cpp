@@ -19,9 +19,11 @@
 
 /* Service model headers required in CustomerProfilesClient header */
 #include <aws/customer-profiles/model/AddProfileKeyResult.h>
+#include <aws/customer-profiles/model/CreateCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/CreateDomainResult.h>
 #include <aws/customer-profiles/model/CreateIntegrationWorkflowResult.h>
 #include <aws/customer-profiles/model/CreateProfileResult.h>
+#include <aws/customer-profiles/model/DeleteCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/DeleteDomainResult.h>
 #include <aws/customer-profiles/model/DeleteIntegrationResult.h>
 #include <aws/customer-profiles/model/DeleteProfileResult.h>
@@ -30,6 +32,8 @@
 #include <aws/customer-profiles/model/DeleteProfileObjectTypeResult.h>
 #include <aws/customer-profiles/model/DeleteWorkflowResult.h>
 #include <aws/customer-profiles/model/GetAutoMergingPreviewResult.h>
+#include <aws/customer-profiles/model/GetCalculatedAttributeDefinitionResult.h>
+#include <aws/customer-profiles/model/GetCalculatedAttributeForProfileResult.h>
 #include <aws/customer-profiles/model/GetDomainResult.h>
 #include <aws/customer-profiles/model/GetIdentityResolutionJobResult.h>
 #include <aws/customer-profiles/model/GetIntegrationResult.h>
@@ -39,6 +43,8 @@
 #include <aws/customer-profiles/model/GetWorkflowResult.h>
 #include <aws/customer-profiles/model/GetWorkflowStepsResult.h>
 #include <aws/customer-profiles/model/ListAccountIntegrationsResult.h>
+#include <aws/customer-profiles/model/ListCalculatedAttributeDefinitionsResult.h>
+#include <aws/customer-profiles/model/ListCalculatedAttributesForProfileResult.h>
 #include <aws/customer-profiles/model/ListDomainsResult.h>
 #include <aws/customer-profiles/model/ListIdentityResolutionJobsResult.h>
 #include <aws/customer-profiles/model/ListIntegrationsResult.h>
@@ -54,6 +60,7 @@
 #include <aws/customer-profiles/model/SearchProfilesResult.h>
 #include <aws/customer-profiles/model/TagResourceResult.h>
 #include <aws/customer-profiles/model/UntagResourceResult.h>
+#include <aws/customer-profiles/model/UpdateCalculatedAttributeDefinitionResult.h>
 #include <aws/customer-profiles/model/UpdateDomainResult.h>
 #include <aws/customer-profiles/model/UpdateProfileResult.h>
 /* End of service model headers required in CustomerProfilesClient header */
@@ -97,9 +104,11 @@ namespace Aws
     {
       /* Service model forward declarations required in CustomerProfilesClient header */
       class AddProfileKeyRequest;
+      class CreateCalculatedAttributeDefinitionRequest;
       class CreateDomainRequest;
       class CreateIntegrationWorkflowRequest;
       class CreateProfileRequest;
+      class DeleteCalculatedAttributeDefinitionRequest;
       class DeleteDomainRequest;
       class DeleteIntegrationRequest;
       class DeleteProfileRequest;
@@ -108,6 +117,8 @@ namespace Aws
       class DeleteProfileObjectTypeRequest;
       class DeleteWorkflowRequest;
       class GetAutoMergingPreviewRequest;
+      class GetCalculatedAttributeDefinitionRequest;
+      class GetCalculatedAttributeForProfileRequest;
       class GetDomainRequest;
       class GetIdentityResolutionJobRequest;
       class GetIntegrationRequest;
@@ -117,6 +128,8 @@ namespace Aws
       class GetWorkflowRequest;
       class GetWorkflowStepsRequest;
       class ListAccountIntegrationsRequest;
+      class ListCalculatedAttributeDefinitionsRequest;
+      class ListCalculatedAttributesForProfileRequest;
       class ListDomainsRequest;
       class ListIdentityResolutionJobsRequest;
       class ListIntegrationsRequest;
@@ -132,15 +145,18 @@ namespace Aws
       class SearchProfilesRequest;
       class TagResourceRequest;
       class UntagResourceRequest;
+      class UpdateCalculatedAttributeDefinitionRequest;
       class UpdateDomainRequest;
       class UpdateProfileRequest;
       /* End of service model forward declarations required in CustomerProfilesClient header */
 
       /* Service model Outcome class definitions */
       typedef Aws::Utils::Outcome<AddProfileKeyResult, CustomerProfilesError> AddProfileKeyOutcome;
+      typedef Aws::Utils::Outcome<CreateCalculatedAttributeDefinitionResult, CustomerProfilesError> CreateCalculatedAttributeDefinitionOutcome;
       typedef Aws::Utils::Outcome<CreateDomainResult, CustomerProfilesError> CreateDomainOutcome;
       typedef Aws::Utils::Outcome<CreateIntegrationWorkflowResult, CustomerProfilesError> CreateIntegrationWorkflowOutcome;
       typedef Aws::Utils::Outcome<CreateProfileResult, CustomerProfilesError> CreateProfileOutcome;
+      typedef Aws::Utils::Outcome<DeleteCalculatedAttributeDefinitionResult, CustomerProfilesError> DeleteCalculatedAttributeDefinitionOutcome;
       typedef Aws::Utils::Outcome<DeleteDomainResult, CustomerProfilesError> DeleteDomainOutcome;
       typedef Aws::Utils::Outcome<DeleteIntegrationResult, CustomerProfilesError> DeleteIntegrationOutcome;
       typedef Aws::Utils::Outcome<DeleteProfileResult, CustomerProfilesError> DeleteProfileOutcome;
@@ -149,6 +165,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<DeleteProfileObjectTypeResult, CustomerProfilesError> DeleteProfileObjectTypeOutcome;
       typedef Aws::Utils::Outcome<DeleteWorkflowResult, CustomerProfilesError> DeleteWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetAutoMergingPreviewResult, CustomerProfilesError> GetAutoMergingPreviewOutcome;
+      typedef Aws::Utils::Outcome<GetCalculatedAttributeDefinitionResult, CustomerProfilesError> GetCalculatedAttributeDefinitionOutcome;
+      typedef Aws::Utils::Outcome<GetCalculatedAttributeForProfileResult, CustomerProfilesError> GetCalculatedAttributeForProfileOutcome;
       typedef Aws::Utils::Outcome<GetDomainResult, CustomerProfilesError> GetDomainOutcome;
       typedef Aws::Utils::Outcome<GetIdentityResolutionJobResult, CustomerProfilesError> GetIdentityResolutionJobOutcome;
       typedef Aws::Utils::Outcome<GetIntegrationResult, CustomerProfilesError> GetIntegrationOutcome;
@@ -158,6 +176,8 @@ namespace Aws
       typedef Aws::Utils::Outcome<GetWorkflowResult, CustomerProfilesError> GetWorkflowOutcome;
       typedef Aws::Utils::Outcome<GetWorkflowStepsResult, CustomerProfilesError> GetWorkflowStepsOutcome;
       typedef Aws::Utils::Outcome<ListAccountIntegrationsResult, CustomerProfilesError> ListAccountIntegrationsOutcome;
+      typedef Aws::Utils::Outcome<ListCalculatedAttributeDefinitionsResult, CustomerProfilesError> ListCalculatedAttributeDefinitionsOutcome;
+      typedef Aws::Utils::Outcome<ListCalculatedAttributesForProfileResult, CustomerProfilesError> ListCalculatedAttributesForProfileOutcome;
       typedef Aws::Utils::Outcome<ListDomainsResult, CustomerProfilesError> ListDomainsOutcome;
       typedef Aws::Utils::Outcome<ListIdentityResolutionJobsResult, CustomerProfilesError> ListIdentityResolutionJobsOutcome;
       typedef Aws::Utils::Outcome<ListIntegrationsResult, CustomerProfilesError> ListIntegrationsOutcome;
@@ -173,15 +193,18 @@ namespace Aws
       typedef Aws::Utils::Outcome<SearchProfilesResult, CustomerProfilesError> SearchProfilesOutcome;
       typedef Aws::Utils::Outcome<TagResourceResult, CustomerProfilesError> TagResourceOutcome;
       typedef Aws::Utils::Outcome<UntagResourceResult, CustomerProfilesError> UntagResourceOutcome;
+      typedef Aws::Utils::Outcome<UpdateCalculatedAttributeDefinitionResult, CustomerProfilesError> UpdateCalculatedAttributeDefinitionOutcome;
       typedef Aws::Utils::Outcome<UpdateDomainResult, CustomerProfilesError> UpdateDomainOutcome;
       typedef Aws::Utils::Outcome<UpdateProfileResult, CustomerProfilesError> UpdateProfileOutcome;
       /* End of service model Outcome class definitions */
 
       /* Service model Outcome callable definitions */
       typedef std::future<AddProfileKeyOutcome> AddProfileKeyOutcomeCallable;
+      typedef std::future<CreateCalculatedAttributeDefinitionOutcome> CreateCalculatedAttributeDefinitionOutcomeCallable;
       typedef std::future<CreateDomainOutcome> CreateDomainOutcomeCallable;
       typedef std::future<CreateIntegrationWorkflowOutcome> CreateIntegrationWorkflowOutcomeCallable;
       typedef std::future<CreateProfileOutcome> CreateProfileOutcomeCallable;
+      typedef std::future<DeleteCalculatedAttributeDefinitionOutcome> DeleteCalculatedAttributeDefinitionOutcomeCallable;
       typedef std::future<DeleteDomainOutcome> DeleteDomainOutcomeCallable;
       typedef std::future<DeleteIntegrationOutcome> DeleteIntegrationOutcomeCallable;
       typedef std::future<DeleteProfileOutcome> DeleteProfileOutcomeCallable;
@@ -190,6 +213,8 @@ namespace Aws
       typedef std::future<DeleteProfileObjectTypeOutcome> DeleteProfileObjectTypeOutcomeCallable;
       typedef std::future<DeleteWorkflowOutcome> DeleteWorkflowOutcomeCallable;
       typedef std::future<GetAutoMergingPreviewOutcome> GetAutoMergingPreviewOutcomeCallable;
+      typedef std::future<GetCalculatedAttributeDefinitionOutcome> GetCalculatedAttributeDefinitionOutcomeCallable;
+      typedef std::future<GetCalculatedAttributeForProfileOutcome> GetCalculatedAttributeForProfileOutcomeCallable;
       typedef std::future<GetDomainOutcome> GetDomainOutcomeCallable;
       typedef std::future<GetIdentityResolutionJobOutcome> GetIdentityResolutionJobOutcomeCallable;
       typedef std::future<GetIntegrationOutcome> GetIntegrationOutcomeCallable;
@@ -199,6 +224,8 @@ namespace Aws
       typedef std::future<GetWorkflowOutcome> GetWorkflowOutcomeCallable;
       typedef std::future<GetWorkflowStepsOutcome> GetWorkflowStepsOutcomeCallable;
       typedef std::future<ListAccountIntegrationsOutcome> ListAccountIntegrationsOutcomeCallable;
+      typedef std::future<ListCalculatedAttributeDefinitionsOutcome> ListCalculatedAttributeDefinitionsOutcomeCallable;
+      typedef std::future<ListCalculatedAttributesForProfileOutcome> ListCalculatedAttributesForProfileOutcomeCallable;
       typedef std::future<ListDomainsOutcome> ListDomainsOutcomeCallable;
       typedef std::future<ListIdentityResolutionJobsOutcome> ListIdentityResolutionJobsOutcomeCallable;
       typedef std::future<ListIntegrationsOutcome> ListIntegrationsOutcomeCallable;
@@ -214,6 +241,7 @@ namespace Aws
       typedef std::future<SearchProfilesOutcome> SearchProfilesOutcomeCallable;
       typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
       typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
+      typedef std::future<UpdateCalculatedAttributeDefinitionOutcome> UpdateCalculatedAttributeDefinitionOutcomeCallable;
       typedef std::future<UpdateDomainOutcome> UpdateDomainOutcomeCallable;
       typedef std::future<UpdateProfileOutcome> UpdateProfileOutcomeCallable;
       /* End of service model Outcome callable definitions */
@@ -223,9 +251,11 @@ namespace Aws
 
     /* Service model async handlers definitions */
     typedef std::function<void(const CustomerProfilesClient*, const Model::AddProfileKeyRequest&, const Model::AddProfileKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddProfileKeyResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::CreateCalculatedAttributeDefinitionRequest&, const Model::CreateCalculatedAttributeDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCalculatedAttributeDefinitionResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::CreateDomainRequest&, const Model::CreateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDomainResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::CreateIntegrationWorkflowRequest&, const Model::CreateIntegrationWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateIntegrationWorkflowResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::CreateProfileRequest&, const Model::CreateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateProfileResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteCalculatedAttributeDefinitionRequest&, const Model::DeleteCalculatedAttributeDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteCalculatedAttributeDefinitionResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteDomainRequest&, const Model::DeleteDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDomainResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteIntegrationRequest&, const Model::DeleteIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteIntegrationResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileRequest&, const Model::DeleteProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileResponseReceivedHandler;
@@ -234,6 +264,8 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteProfileObjectTypeRequest&, const Model::DeleteProfileObjectTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteProfileObjectTypeResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::DeleteWorkflowRequest&, const Model::DeleteWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteWorkflowResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetAutoMergingPreviewRequest&, const Model::GetAutoMergingPreviewOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetAutoMergingPreviewResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetCalculatedAttributeDefinitionRequest&, const Model::GetCalculatedAttributeDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculatedAttributeDefinitionResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::GetCalculatedAttributeForProfileRequest&, const Model::GetCalculatedAttributeForProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCalculatedAttributeForProfileResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetDomainRequest&, const Model::GetDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDomainResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIdentityResolutionJobRequest&, const Model::GetIdentityResolutionJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIdentityResolutionJobResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetIntegrationRequest&, const Model::GetIntegrationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntegrationResponseReceivedHandler;
@@ -243,6 +275,8 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowRequest&, const Model::GetWorkflowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::GetWorkflowStepsRequest&, const Model::GetWorkflowStepsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetWorkflowStepsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListAccountIntegrationsRequest&, const Model::ListAccountIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountIntegrationsResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::ListCalculatedAttributeDefinitionsRequest&, const Model::ListCalculatedAttributeDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCalculatedAttributeDefinitionsResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::ListCalculatedAttributesForProfileRequest&, const Model::ListCalculatedAttributesForProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListCalculatedAttributesForProfileResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListDomainsRequest&, const Model::ListDomainsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDomainsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListIdentityResolutionJobsRequest&, const Model::ListIdentityResolutionJobsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIdentityResolutionJobsResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::ListIntegrationsRequest&, const Model::ListIntegrationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListIntegrationsResponseReceivedHandler;
@@ -258,6 +292,7 @@ namespace Aws
     typedef std::function<void(const CustomerProfilesClient*, const Model::SearchProfilesRequest&, const Model::SearchProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SearchProfilesResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
+    typedef std::function<void(const CustomerProfilesClient*, const Model::UpdateCalculatedAttributeDefinitionRequest&, const Model::UpdateCalculatedAttributeDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateCalculatedAttributeDefinitionResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::UpdateDomainRequest&, const Model::UpdateDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDomainResponseReceivedHandler;
     typedef std::function<void(const CustomerProfilesClient*, const Model::UpdateProfileRequest&, const Model::UpdateProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateProfileResponseReceivedHandler;
     /* End of service model async handlers definitions */

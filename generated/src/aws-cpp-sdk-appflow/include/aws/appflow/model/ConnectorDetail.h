@@ -10,6 +10,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/appflow/model/ConnectorProvisioningType.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/appflow/model/SupportedDataTransferType.h>
 #include <utility>
 
 namespace Aws
@@ -466,6 +467,63 @@ namespace Model
      */
     inline ConnectorDetail& AddConnectorModes(const char* value) { m_connectorModesHasBeenSet = true; m_connectorModes.push_back(value); return *this; }
 
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline const Aws::Vector<SupportedDataTransferType>& GetSupportedDataTransferTypes() const{ return m_supportedDataTransferTypes; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline bool SupportedDataTransferTypesHasBeenSet() const { return m_supportedDataTransferTypesHasBeenSet; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline void SetSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = value; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline void SetSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes = std::move(value); }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorDetail& WithSupportedDataTransferTypes(const Aws::Vector<SupportedDataTransferType>& value) { SetSupportedDataTransferTypes(value); return *this;}
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorDetail& WithSupportedDataTransferTypes(Aws::Vector<SupportedDataTransferType>&& value) { SetSupportedDataTransferTypes(std::move(value)); return *this;}
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorDetail& AddSupportedDataTransferTypes(const SupportedDataTransferType& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(value); return *this; }
+
+    /**
+     * <p>The data transfer types that the connector supports.</p> <dl> <dt>RECORD</dt>
+     * <dd> <p>Structured records.</p> </dd> <dt>FILE</dt> <dd> <p>Files or binary
+     * data.</p> </dd> </dl>
+     */
+    inline ConnectorDetail& AddSupportedDataTransferTypes(SupportedDataTransferType&& value) { m_supportedDataTransferTypesHasBeenSet = true; m_supportedDataTransferTypes.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_connectorDescription;
@@ -500,6 +558,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_connectorModes;
     bool m_connectorModesHasBeenSet = false;
+
+    Aws::Vector<SupportedDataTransferType> m_supportedDataTransferTypes;
+    bool m_supportedDataTransferTypesHasBeenSet = false;
   };
 
 } // namespace Model

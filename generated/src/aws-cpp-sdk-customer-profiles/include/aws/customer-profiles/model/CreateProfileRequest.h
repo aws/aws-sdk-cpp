@@ -689,42 +689,42 @@ namespace Model
 
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline const Aws::String& GetBusinessEmailAddress() const{ return m_businessEmailAddress; }
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline bool BusinessEmailAddressHasBeenSet() const { return m_businessEmailAddressHasBeenSet; }
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline void SetBusinessEmailAddress(const Aws::String& value) { m_businessEmailAddressHasBeenSet = true; m_businessEmailAddress = value; }
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline void SetBusinessEmailAddress(Aws::String&& value) { m_businessEmailAddressHasBeenSet = true; m_businessEmailAddress = std::move(value); }
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline void SetBusinessEmailAddress(const char* value) { m_businessEmailAddressHasBeenSet = true; m_businessEmailAddress.assign(value); }
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline CreateProfileRequest& WithBusinessEmailAddress(const Aws::String& value) { SetBusinessEmailAddress(value); return *this;}
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline CreateProfileRequest& WithBusinessEmailAddress(Aws::String&& value) { SetBusinessEmailAddress(std::move(value)); return *this;}
 
     /**
-     * <p>The customer’s business email address.</p>
+     * <p>The customer���s business email address.</p>
      */
     inline CreateProfileRequest& WithBusinessEmailAddress(const char* value) { SetBusinessEmailAddress(value); return *this;}
 

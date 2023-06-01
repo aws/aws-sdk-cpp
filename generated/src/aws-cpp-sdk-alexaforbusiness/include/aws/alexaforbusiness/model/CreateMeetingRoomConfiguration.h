@@ -8,6 +8,7 @@
 #include <aws/alexaforbusiness/model/CreateEndOfMeetingReminder.h>
 #include <aws/alexaforbusiness/model/CreateInstantBooking.h>
 #include <aws/alexaforbusiness/model/CreateRequireCheckIn.h>
+#include <aws/alexaforbusiness/model/CreateProactiveJoin.h>
 #include <utility>
 
 namespace Aws
@@ -165,6 +166,25 @@ namespace Model
      */
     inline CreateMeetingRoomConfiguration& WithRequireCheckIn(CreateRequireCheckIn&& value) { SetRequireCheckIn(std::move(value)); return *this;}
 
+
+    
+    inline const CreateProactiveJoin& GetProactiveJoin() const{ return m_proactiveJoin; }
+
+    
+    inline bool ProactiveJoinHasBeenSet() const { return m_proactiveJoinHasBeenSet; }
+
+    
+    inline void SetProactiveJoin(const CreateProactiveJoin& value) { m_proactiveJoinHasBeenSet = true; m_proactiveJoin = value; }
+
+    
+    inline void SetProactiveJoin(CreateProactiveJoin&& value) { m_proactiveJoinHasBeenSet = true; m_proactiveJoin = std::move(value); }
+
+    
+    inline CreateMeetingRoomConfiguration& WithProactiveJoin(const CreateProactiveJoin& value) { SetProactiveJoin(value); return *this;}
+
+    
+    inline CreateMeetingRoomConfiguration& WithProactiveJoin(CreateProactiveJoin&& value) { SetProactiveJoin(std::move(value)); return *this;}
+
   private:
 
     bool m_roomUtilizationMetricsEnabled;
@@ -178,6 +198,9 @@ namespace Model
 
     CreateRequireCheckIn m_requireCheckIn;
     bool m_requireCheckInHasBeenSet = false;
+
+    CreateProactiveJoin m_proactiveJoin;
+    bool m_proactiveJoinHasBeenSet = false;
   };
 
 } // namespace Model

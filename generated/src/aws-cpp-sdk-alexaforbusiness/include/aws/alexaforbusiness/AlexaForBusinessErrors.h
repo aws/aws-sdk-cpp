@@ -48,20 +48,7 @@ enum class AlexaForBusinessErrors
   ///////////////////////////////////////////////////////////////////////////////////////////
 
   ALREADY_EXISTS= static_cast<int>(Aws::Client::CoreErrors::SERVICE_EXTENSION_START_RANGE) + 1,
-  CONCURRENT_MODIFICATION,
-  DEVICE_NOT_REGISTERED,
-  INVALID_CERTIFICATE_AUTHORITY,
-  INVALID_DEVICE,
-  INVALID_SECRETS_MANAGER_RESOURCE,
-  INVALID_SERVICE_LINKED_ROLE_STATE,
-  INVALID_USER_STATUS,
-  LIMIT_EXCEEDED,
-  NAME_IN_USE,
-  NOT_FOUND,
-  RESOURCE_ASSOCIATED,
-  RESOURCE_IN_USE,
-  SKILL_NOT_LINKED,
-  UNAUTHORIZED
+  LIMIT_EXCEEDED
 };
 
 class AWS_ALEXAFORBUSINESS_API AlexaForBusinessError : public Aws::Client::AWSError<AlexaForBusinessErrors>

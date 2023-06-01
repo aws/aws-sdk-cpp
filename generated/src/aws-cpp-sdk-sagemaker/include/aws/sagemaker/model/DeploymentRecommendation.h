@@ -26,8 +26,10 @@ namespace Model
 {
 
   /**
-   * <p>A set of recommended deployment configurations for the model.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>A set of recommended deployment configurations for the model. To get more
+   * advanced recommendations, see <a
+   * href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html">CreateInferenceRecommendationsJob</a>
+   * to create an inference recommendation job.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/DeploymentRecommendation">AWS
    * API Reference</a></p>
    */
@@ -41,44 +43,56 @@ namespace Model
 
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline const RecommendationStatus& GetRecommendationStatus() const{ return m_recommendationStatus; }
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline bool RecommendationStatusHasBeenSet() const { return m_recommendationStatusHasBeenSet; }
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline void SetRecommendationStatus(const RecommendationStatus& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = value; }
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline void SetRecommendationStatus(RecommendationStatus&& value) { m_recommendationStatusHasBeenSet = true; m_recommendationStatus = std::move(value); }
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline DeploymentRecommendation& WithRecommendationStatus(const RecommendationStatus& value) { SetRecommendationStatus(value); return *this;}
 
     /**
-     * <p>Status of the deployment recommendation. <code>NOT_APPLICABLE</code> means
-     * that SageMaker is unable to provide a default recommendation for the model using
-     * the information provided.</p>
+     * <p>Status of the deployment recommendation. The status
+     * <code>NOT_APPLICABLE</code> means that SageMaker is unable to provide a default
+     * recommendation for the model using the information provided. If the deployment
+     * status is <code>IN_PROGRESS</code>, retry your API call after a few seconds to
+     * get a <code>COMPLETED</code> deployment recommendation.</p>
      */
     inline DeploymentRecommendation& WithRecommendationStatus(RecommendationStatus&& value) { SetRecommendationStatus(std::move(value)); return *this;}
 

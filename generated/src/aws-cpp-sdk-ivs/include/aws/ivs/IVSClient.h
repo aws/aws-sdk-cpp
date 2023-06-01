@@ -975,9 +975,9 @@ namespace IVS
         }
 
         /**
-         * <p>Updates a channel's configuration. This does not affect an ongoing stream of
-         * this channel. You must stop and restart the stream for the changes to take
-         * effect.</p><p><h3>See Also:</h3>   <a
+         * <p>Updates a channel's configuration. Live channels cannot be updated. You must
+         * stop the ongoing stream, update the channel, and restart the stream for the
+         * changes to take effect.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/UpdateChannel">AWS
          * API Reference</a></p>
          */

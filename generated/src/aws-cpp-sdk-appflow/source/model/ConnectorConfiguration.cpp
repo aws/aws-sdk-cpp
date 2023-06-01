@@ -50,7 +50,9 @@ ConnectorConfiguration::ConnectorConfiguration() :
     m_connectorProvisioningConfigHasBeenSet(false),
     m_logoURLHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false)
+    m_registeredByHasBeenSet(false),
+    m_supportedDataTransferTypesHasBeenSet(false),
+    m_supportedDataTransferApisHasBeenSet(false)
 {
 }
 
@@ -86,7 +88,9 @@ ConnectorConfiguration::ConnectorConfiguration(JsonView jsonValue) :
     m_connectorProvisioningConfigHasBeenSet(false),
     m_logoURLHasBeenSet(false),
     m_registeredAtHasBeenSet(false),
-    m_registeredByHasBeenSet(false)
+    m_registeredByHasBeenSet(false),
+    m_supportedDataTransferTypesHasBeenSet(false),
+    m_supportedDataTransferApisHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -299,6 +303,26 @@ ConnectorConfiguration& ConnectorConfiguration::operator =(JsonView jsonValue)
     m_registeredByHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("supportedDataTransferTypes"))
+  {
+    Aws::Utils::Array<JsonView> supportedDataTransferTypesJsonList = jsonValue.GetArray("supportedDataTransferTypes");
+    for(unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength(); ++supportedDataTransferTypesIndex)
+    {
+      m_supportedDataTransferTypes.push_back(SupportedDataTransferTypeMapper::GetSupportedDataTransferTypeForName(supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString()));
+    }
+    m_supportedDataTransferTypesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("supportedDataTransferApis"))
+  {
+    Aws::Utils::Array<JsonView> supportedDataTransferApisJsonList = jsonValue.GetArray("supportedDataTransferApis");
+    for(unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength(); ++supportedDataTransferApisIndex)
+    {
+      m_supportedDataTransferApis.push_back(supportedDataTransferApisJsonList[supportedDataTransferApisIndex].AsObject());
+    }
+    m_supportedDataTransferApisHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -496,6 +520,28 @@ JsonValue ConnectorConfiguration::Jsonize() const
   if(m_registeredByHasBeenSet)
   {
    payload.WithString("registeredBy", m_registeredBy);
+
+  }
+
+  if(m_supportedDataTransferTypesHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedDataTransferTypesJsonList(m_supportedDataTransferTypes.size());
+   for(unsigned supportedDataTransferTypesIndex = 0; supportedDataTransferTypesIndex < supportedDataTransferTypesJsonList.GetLength(); ++supportedDataTransferTypesIndex)
+   {
+     supportedDataTransferTypesJsonList[supportedDataTransferTypesIndex].AsString(SupportedDataTransferTypeMapper::GetNameForSupportedDataTransferType(m_supportedDataTransferTypes[supportedDataTransferTypesIndex]));
+   }
+   payload.WithArray("supportedDataTransferTypes", std::move(supportedDataTransferTypesJsonList));
+
+  }
+
+  if(m_supportedDataTransferApisHasBeenSet)
+  {
+   Aws::Utils::Array<JsonValue> supportedDataTransferApisJsonList(m_supportedDataTransferApis.size());
+   for(unsigned supportedDataTransferApisIndex = 0; supportedDataTransferApisIndex < supportedDataTransferApisJsonList.GetLength(); ++supportedDataTransferApisIndex)
+   {
+     supportedDataTransferApisJsonList[supportedDataTransferApisIndex].AsObject(m_supportedDataTransferApis[supportedDataTransferApisIndex].Jsonize());
+   }
+   payload.WithArray("supportedDataTransferApis", std::move(supportedDataTransferApisJsonList));
 
   }
 
