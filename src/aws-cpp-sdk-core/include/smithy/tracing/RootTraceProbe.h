@@ -28,6 +28,10 @@ namespace smithy {
 
                 void registerProbe(Aws::UniquePtr<TraceProbe> probe);
 
+                RootTraceProbe() = default;
+                RootTraceProbe(RootTraceProbe&) = delete;
+                RootTraceProbe& operator=(const RootTraceProbe&) = delete;
+
             private:
                 Aws::Vector<Aws::UniquePtr<TraceProbe>> traceProbes;
             };
