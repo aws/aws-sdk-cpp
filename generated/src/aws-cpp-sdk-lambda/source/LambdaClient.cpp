@@ -195,6 +195,7 @@ LambdaClient::LambdaClient(const std::shared_ptr<AWSCredentialsProvider>& creden
     /* End of legacy constructors due deprecation */
 LambdaClient::~LambdaClient()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<LambdaEndpointProviderBase>& LambdaClient::accessEndpointProvider()
@@ -217,6 +218,7 @@ void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)
 
 AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const AddLayerVersionPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddLayerVersionPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -240,6 +242,7 @@ AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const A
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(AddPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AddPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -256,6 +259,7 @@ AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& req
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -272,6 +276,7 @@ CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) 
 
 CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const CreateCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -281,6 +286,7 @@ CreateCodeSigningConfigOutcome LambdaClient::CreateCodeSigningConfig(const Creat
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateEventSourceMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -290,6 +296,7 @@ CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const Cre
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, CreateFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -299,6 +306,7 @@ CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& 
 
 CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const CreateFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateFunctionUrlConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -315,6 +323,7 @@ CreateFunctionUrlConfigOutcome LambdaClient::CreateFunctionUrlConfig(const Creat
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -337,6 +346,7 @@ DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) 
 
 DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const DeleteCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
@@ -352,6 +362,7 @@ DeleteCodeSigningConfigOutcome LambdaClient::DeleteCodeSigningConfig(const Delet
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteEventSourceMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
@@ -367,6 +378,7 @@ DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const Del
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -382,6 +394,7 @@ DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& 
 
 DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningConfig(const DeleteFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunctionCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -398,6 +411,7 @@ DeleteFunctionCodeSigningConfigOutcome LambdaClient::DeleteFunctionCodeSigningCo
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunctionConcurrency);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -414,6 +428,7 @@ DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const D
 
 DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeConfig(const DeleteFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunctionEventInvokeConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -430,6 +445,7 @@ DeleteFunctionEventInvokeConfigOutcome LambdaClient::DeleteFunctionEventInvokeCo
 
 DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const DeleteFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteFunctionUrlConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -446,6 +462,7 @@ DeleteFunctionUrlConfigOutcome LambdaClient::DeleteFunctionUrlConfig(const Delet
 
 DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteLayerVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -468,6 +485,7 @@ DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVers
 
 DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurrencyConfig(const DeleteProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteProvisionedConcurrencyConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -489,6 +507,7 @@ DeleteProvisionedConcurrencyConfigOutcome LambdaClient::DeleteProvisionedConcurr
 
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAccountSettings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, GetAccountSettings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -498,6 +517,7 @@ GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSetti
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -520,6 +540,7 @@ GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 
 GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
@@ -535,6 +556,7 @@ GetCodeSigningConfigOutcome LambdaClient::GetCodeSigningConfig(const GetCodeSign
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetEventSourceMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
@@ -550,6 +572,7 @@ GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventS
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -565,6 +588,7 @@ GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) 
 
 GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(const GetFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunctionCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -581,6 +605,7 @@ GetFunctionCodeSigningConfigOutcome LambdaClient::GetFunctionCodeSigningConfig(c
 
 GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunctionConcurrency);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -597,6 +622,7 @@ GetFunctionConcurrencyOutcome LambdaClient::GetFunctionConcurrency(const GetFunc
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunctionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -613,6 +639,7 @@ GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const Get
 
 GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(const GetFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunctionEventInvokeConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -629,6 +656,7 @@ GetFunctionEventInvokeConfigOutcome LambdaClient::GetFunctionEventInvokeConfig(c
 
 GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetFunctionUrlConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -645,6 +673,7 @@ GetFunctionUrlConfigOutcome LambdaClient::GetFunctionUrlConfig(const GetFunction
 
 GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLayerVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -667,6 +696,7 @@ GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionReques
 
 GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVersionByArnRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLayerVersionByArn);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersionByArn, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ArnHasBeenSet())
   {
@@ -684,6 +714,7 @@ GetLayerVersionByArnOutcome LambdaClient::GetLayerVersionByArn(const GetLayerVer
 
 GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetLayerVersionPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetLayerVersionPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -707,6 +738,7 @@ GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerV
 
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -723,6 +755,7 @@ GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 
 GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyConfig(const GetProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetProvisionedConcurrencyConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -744,6 +777,7 @@ GetProvisionedConcurrencyConfigOutcome LambdaClient::GetProvisionedConcurrencyCo
 
 GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const GetRuntimeManagementConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetRuntimeManagementConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -760,6 +794,7 @@ GetRuntimeManagementConfigOutcome LambdaClient::GetRuntimeManagementConfig(const
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
+  AWS_OPERATION_GUARD(Invoke);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, Invoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -776,6 +811,7 @@ InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 
 InvokeWithResponseStreamOutcome LambdaClient::InvokeWithResponseStream(InvokeWithResponseStreamRequest& request) const
 {
+  AWS_OPERATION_GUARD(InvokeWithResponseStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeWithResponseStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -795,6 +831,7 @@ InvokeWithResponseStreamOutcome LambdaClient::InvokeWithResponseStream(InvokeWit
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListAliases);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAliases, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -811,6 +848,7 @@ ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) 
 
 ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCodeSigningConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListCodeSigningConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListCodeSigningConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListCodeSigningConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -820,6 +858,7 @@ ListCodeSigningConfigsOutcome LambdaClient::ListCodeSigningConfigs(const ListCod
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListEventSourceMappings);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListEventSourceMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListEventSourceMappings, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -829,6 +868,7 @@ ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListE
 
 ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfigs(const ListFunctionEventInvokeConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctionEventInvokeConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionEventInvokeConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -845,6 +885,7 @@ ListFunctionEventInvokeConfigsOutcome LambdaClient::ListFunctionEventInvokeConfi
 
 ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFunctionUrlConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctionUrlConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionUrlConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -861,6 +902,7 @@ ListFunctionUrlConfigsOutcome LambdaClient::ListFunctionUrlConfigs(const ListFun
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListFunctions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -870,6 +912,7 @@ ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& req
 
 ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigningConfig(const ListFunctionsByCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListFunctionsByCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListFunctionsByCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
@@ -886,6 +929,7 @@ ListFunctionsByCodeSigningConfigOutcome LambdaClient::ListFunctionsByCodeSigning
 
 ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLayerVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLayerVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -902,6 +946,7 @@ ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersions
 
 ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListLayers);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListLayers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams());
   AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ListLayers, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
@@ -911,6 +956,7 @@ ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) con
 
 ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrencyConfigs(const ListProvisionedConcurrencyConfigsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListProvisionedConcurrencyConfigs);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListProvisionedConcurrencyConfigs, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -930,6 +976,7 @@ ListProvisionedConcurrencyConfigsOutcome LambdaClient::ListProvisionedConcurrenc
 
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListTags);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTags, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -945,6 +992,7 @@ ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListVersionsByFunction);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListVersionsByFunction, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -961,6 +1009,7 @@ ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVer
 
 PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishLayerVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishLayerVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -977,6 +1026,7 @@ PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerV
 
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PublishVersion);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PublishVersion, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -993,6 +1043,7 @@ PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& 
 
 PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(const PutFunctionCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFunctionCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1009,6 +1060,7 @@ PutFunctionCodeSigningConfigOutcome LambdaClient::PutFunctionCodeSigningConfig(c
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFunctionConcurrency);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionConcurrency, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1025,6 +1077,7 @@ PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunc
 
 PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(const PutFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutFunctionEventInvokeConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1041,6 +1094,7 @@ PutFunctionEventInvokeConfigOutcome LambdaClient::PutFunctionEventInvokeConfig(c
 
 PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyConfig(const PutProvisionedConcurrencyConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutProvisionedConcurrencyConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutProvisionedConcurrencyConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1062,6 +1116,7 @@ PutProvisionedConcurrencyConfigOutcome LambdaClient::PutProvisionedConcurrencyCo
 
 PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const PutRuntimeManagementConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutRuntimeManagementConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutRuntimeManagementConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1078,6 +1133,7 @@ PutRuntimeManagementConfigOutcome LambdaClient::PutRuntimeManagementConfig(const
 
 RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemoveLayerVersionPermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemoveLayerVersionPermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.LayerNameHasBeenSet())
   {
@@ -1107,6 +1163,7 @@ RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(c
 
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
+  AWS_OPERATION_GUARD(RemovePermission);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RemovePermission, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1129,6 +1186,7 @@ RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionReq
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(TagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -1144,6 +1202,7 @@ TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) 
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
 {
+  AWS_OPERATION_GUARD(UntagResource);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ResourceHasBeenSet())
   {
@@ -1164,6 +1223,7 @@ UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& req
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateAlias);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateAlias, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1186,6 +1246,7 @@ UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) 
 
 UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const UpdateCodeSigningConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateCodeSigningConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateCodeSigningConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.CodeSigningConfigArnHasBeenSet())
   {
@@ -1201,6 +1262,7 @@ UpdateCodeSigningConfigOutcome LambdaClient::UpdateCodeSigningConfig(const Updat
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateEventSourceMapping);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateEventSourceMapping, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.UUIDHasBeenSet())
   {
@@ -1216,6 +1278,7 @@ UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const Upd
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunctionCode);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionCode, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1232,6 +1295,7 @@ UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionC
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunctionConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1248,6 +1312,7 @@ UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(con
 
 UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeConfig(const UpdateFunctionEventInvokeConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunctionEventInvokeConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionEventInvokeConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
@@ -1264,6 +1329,7 @@ UpdateFunctionEventInvokeConfigOutcome LambdaClient::UpdateFunctionEventInvokeCo
 
 UpdateFunctionUrlConfigOutcome LambdaClient::UpdateFunctionUrlConfig(const UpdateFunctionUrlConfigRequest& request) const
 {
+  AWS_OPERATION_GUARD(UpdateFunctionUrlConfig);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UpdateFunctionUrlConfig, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.FunctionNameHasBeenSet())
   {
