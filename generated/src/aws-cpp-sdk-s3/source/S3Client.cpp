@@ -245,6 +245,7 @@ S3Client::S3Client(const std::shared_ptr<AWSCredentialsProvider>& credentialsPro
     /* End of legacy constructors due deprecation */
 S3Client::~S3Client()
 {
+  ShutdownSdkClient(this, -1);
 }
 
 std::shared_ptr<S3EndpointProviderBase>& S3Client::accessEndpointProvider()
@@ -267,6 +268,7 @@ void S3Client::OverrideEndpoint(const Aws::String& endpoint)
 
 AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(AbortMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, AbortMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -291,6 +293,7 @@ AbortMultipartUploadOutcome S3Client::AbortMultipartUpload(const AbortMultipartU
 
 CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CompleteMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CompleteMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -315,6 +318,7 @@ CompleteMultipartUploadOutcome S3Client::CompleteMultipartUpload(const CompleteM
 
 CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(CopyObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CopyObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -339,6 +343,7 @@ CopyObjectOutcome S3Client::CopyObject(const CopyObjectRequest& request) const
 
 CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -352,6 +357,7 @@ CreateBucketOutcome S3Client::CreateBucket(const CreateBucketRequest& request) c
 
 CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipartUploadRequest& request) const
 {
+  AWS_OPERATION_GUARD(CreateMultipartUpload);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, CreateMultipartUpload, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -374,6 +380,7 @@ CreateMultipartUploadOutcome S3Client::CreateMultipartUpload(const CreateMultipa
 
 DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -387,6 +394,7 @@ DeleteBucketOutcome S3Client::DeleteBucket(const DeleteBucketRequest& request) c
 
 DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfiguration(const DeleteBucketAnalyticsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketAnalyticsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketAnalyticsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -408,6 +416,7 @@ DeleteBucketAnalyticsConfigurationOutcome S3Client::DeleteBucketAnalyticsConfigu
 
 DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketCors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketCors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -424,6 +433,7 @@ DeleteBucketCorsOutcome S3Client::DeleteBucketCors(const DeleteBucketCorsRequest
 
 DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucketEncryptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketEncryption);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -440,6 +450,7 @@ DeleteBucketEncryptionOutcome S3Client::DeleteBucketEncryption(const DeleteBucke
 
 DeleteBucketIntelligentTieringConfigurationOutcome S3Client::DeleteBucketIntelligentTieringConfiguration(const DeleteBucketIntelligentTieringConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketIntelligentTieringConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketIntelligentTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -461,6 +472,7 @@ DeleteBucketIntelligentTieringConfigurationOutcome S3Client::DeleteBucketIntelli
 
 DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfiguration(const DeleteBucketInventoryConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketInventoryConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketInventoryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -482,6 +494,7 @@ DeleteBucketInventoryConfigurationOutcome S3Client::DeleteBucketInventoryConfigu
 
 DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketLifecycleRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketLifecycle);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketLifecycle, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -498,6 +511,7 @@ DeleteBucketLifecycleOutcome S3Client::DeleteBucketLifecycle(const DeleteBucketL
 
 DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfiguration(const DeleteBucketMetricsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketMetricsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -519,6 +533,7 @@ DeleteBucketMetricsConfigurationOutcome S3Client::DeleteBucketMetricsConfigurati
 
 DeleteBucketOwnershipControlsOutcome S3Client::DeleteBucketOwnershipControls(const DeleteBucketOwnershipControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketOwnershipControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketOwnershipControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -535,6 +550,7 @@ DeleteBucketOwnershipControlsOutcome S3Client::DeleteBucketOwnershipControls(con
 
 DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -551,6 +567,7 @@ DeleteBucketPolicyOutcome S3Client::DeleteBucketPolicy(const DeleteBucketPolicyR
 
 DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -567,6 +584,7 @@ DeleteBucketReplicationOutcome S3Client::DeleteBucketReplication(const DeleteBuc
 
 DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -583,6 +601,7 @@ DeleteBucketTaggingOutcome S3Client::DeleteBucketTagging(const DeleteBucketTaggi
 
 DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteBucketWebsite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteBucketWebsite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -599,6 +618,7 @@ DeleteBucketWebsiteOutcome S3Client::DeleteBucketWebsite(const DeleteBucketWebsi
 
 DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -618,6 +638,7 @@ DeleteObjectOutcome S3Client::DeleteObject(const DeleteObjectRequest& request) c
 
 DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObjectTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObjectTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -640,6 +661,7 @@ DeleteObjectTaggingOutcome S3Client::DeleteObjectTagging(const DeleteObjectTaggi
 
 DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeleteObjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeleteObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -656,6 +678,7 @@ DeleteObjectsOutcome S3Client::DeleteObjects(const DeleteObjectsRequest& request
 
 DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(DeletePublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, DeletePublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -672,6 +695,7 @@ DeletePublicAccessBlockOutcome S3Client::DeletePublicAccessBlock(const DeletePub
 
 GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfiguration(const GetBucketAccelerateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketAccelerateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketAccelerateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -688,6 +712,7 @@ GetBucketAccelerateConfigurationOutcome S3Client::GetBucketAccelerateConfigurati
 
 GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketAcl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketAcl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -704,6 +729,7 @@ GetBucketAclOutcome S3Client::GetBucketAcl(const GetBucketAclRequest& request) c
 
 GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration(const GetBucketAnalyticsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketAnalyticsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketAnalyticsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -725,6 +751,7 @@ GetBucketAnalyticsConfigurationOutcome S3Client::GetBucketAnalyticsConfiguration
 
 GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketCors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketCors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -741,6 +768,7 @@ GetBucketCorsOutcome S3Client::GetBucketCors(const GetBucketCorsRequest& request
 
 GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncryptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketEncryption);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -757,6 +785,7 @@ GetBucketEncryptionOutcome S3Client::GetBucketEncryption(const GetBucketEncrypti
 
 GetBucketIntelligentTieringConfigurationOutcome S3Client::GetBucketIntelligentTieringConfiguration(const GetBucketIntelligentTieringConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketIntelligentTieringConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketIntelligentTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -778,6 +807,7 @@ GetBucketIntelligentTieringConfigurationOutcome S3Client::GetBucketIntelligentTi
 
 GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration(const GetBucketInventoryConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketInventoryConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketInventoryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -799,6 +829,7 @@ GetBucketInventoryConfigurationOutcome S3Client::GetBucketInventoryConfiguration
 
 GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration(const GetBucketLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -815,6 +846,7 @@ GetBucketLifecycleConfigurationOutcome S3Client::GetBucketLifecycleConfiguration
 
 GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketLocation);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketLocation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -831,6 +863,7 @@ GetBucketLocationOutcome S3Client::GetBucketLocation(const GetBucketLocationRequ
 
 GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketLogging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -847,6 +880,7 @@ GetBucketLoggingOutcome S3Client::GetBucketLogging(const GetBucketLoggingRequest
 
 GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(const GetBucketMetricsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketMetricsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -868,6 +902,7 @@ GetBucketMetricsConfigurationOutcome S3Client::GetBucketMetricsConfiguration(con
 
 GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfiguration(const GetBucketNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -884,6 +919,7 @@ GetBucketNotificationConfigurationOutcome S3Client::GetBucketNotificationConfigu
 
 GetBucketOwnershipControlsOutcome S3Client::GetBucketOwnershipControls(const GetBucketOwnershipControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketOwnershipControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketOwnershipControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -900,6 +936,7 @@ GetBucketOwnershipControlsOutcome S3Client::GetBucketOwnershipControls(const Get
 
 GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -916,6 +953,7 @@ GetBucketPolicyOutcome S3Client::GetBucketPolicy(const GetBucketPolicyRequest& r
 
 GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPolicyStatusRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketPolicyStatus);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketPolicyStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -932,6 +970,7 @@ GetBucketPolicyStatusOutcome S3Client::GetBucketPolicyStatus(const GetBucketPoli
 
 GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -948,6 +987,7 @@ GetBucketReplicationOutcome S3Client::GetBucketReplication(const GetBucketReplic
 
 GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucketRequestPaymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketRequestPayment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketRequestPayment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -964,6 +1004,7 @@ GetBucketRequestPaymentOutcome S3Client::GetBucketRequestPayment(const GetBucket
 
 GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -980,6 +1021,7 @@ GetBucketTaggingOutcome S3Client::GetBucketTagging(const GetBucketTaggingRequest
 
 GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioningRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketVersioning);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -996,6 +1038,7 @@ GetBucketVersioningOutcome S3Client::GetBucketVersioning(const GetBucketVersioni
 
 GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetBucketWebsite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetBucketWebsite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1012,6 +1055,7 @@ GetBucketWebsiteOutcome S3Client::GetBucketWebsite(const GetBucketWebsiteRequest
 
 GetObjectOutcome S3Client::GetObject(const GetObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1047,6 +1091,7 @@ void S3Client::GetObjectAsync(const GetObjectRequest& request, const GetObjectRe
 
 GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectAcl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectAcl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1069,6 +1114,7 @@ GetObjectAclOutcome S3Client::GetObjectAcl(const GetObjectAclRequest& request) c
 
 GetObjectAttributesOutcome S3Client::GetObjectAttributes(const GetObjectAttributesRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectAttributes);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectAttributes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1096,6 +1142,7 @@ GetObjectAttributesOutcome S3Client::GetObjectAttributes(const GetObjectAttribut
 
 GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1118,6 +1165,7 @@ GetObjectLegalHoldOutcome S3Client::GetObjectLegalHold(const GetObjectLegalHoldR
 
 GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const GetObjectLockConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectLockConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectLockConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1134,6 +1182,7 @@ GetObjectLockConfigurationOutcome S3Client::GetObjectLockConfiguration(const Get
 
 GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectRetention);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1156,6 +1205,7 @@ GetObjectRetentionOutcome S3Client::GetObjectRetention(const GetObjectRetentionR
 
 GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1178,6 +1228,7 @@ GetObjectTaggingOutcome S3Client::GetObjectTagging(const GetObjectTaggingRequest
 
 GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetObjectTorrent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetObjectTorrent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1200,6 +1251,7 @@ GetObjectTorrentOutcome S3Client::GetObjectTorrent(const GetObjectTorrentRequest
 
 GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(GetPublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1216,6 +1268,7 @@ GetPublicAccessBlockOutcome S3Client::GetPublicAccessBlock(const GetPublicAccess
 
 HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
 {
+  AWS_OPERATION_GUARD(HeadBucket);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, HeadBucket, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1229,6 +1282,7 @@ HeadBucketOutcome S3Client::HeadBucket(const HeadBucketRequest& request) const
 
 HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(HeadObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, HeadObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1248,6 +1302,7 @@ HeadObjectOutcome S3Client::HeadObject(const HeadObjectRequest& request) const
 
 ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurations(const ListBucketAnalyticsConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBucketAnalyticsConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBucketAnalyticsConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1264,6 +1319,7 @@ ListBucketAnalyticsConfigurationsOutcome S3Client::ListBucketAnalyticsConfigurat
 
 ListBucketIntelligentTieringConfigurationsOutcome S3Client::ListBucketIntelligentTieringConfigurations(const ListBucketIntelligentTieringConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBucketIntelligentTieringConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBucketIntelligentTieringConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1280,6 +1336,7 @@ ListBucketIntelligentTieringConfigurationsOutcome S3Client::ListBucketIntelligen
 
 ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurations(const ListBucketInventoryConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBucketInventoryConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBucketInventoryConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1296,6 +1353,7 @@ ListBucketInventoryConfigurationsOutcome S3Client::ListBucketInventoryConfigurat
 
 ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations(const ListBucketMetricsConfigurationsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListBucketMetricsConfigurations);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBucketMetricsConfigurations, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1312,6 +1370,7 @@ ListBucketMetricsConfigurationsOutcome S3Client::ListBucketMetricsConfigurations
 
 ListBucketsOutcome S3Client::ListBuckets() const
 {
+  AWS_OPERATION_GUARD(ListBuckets);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListBuckets, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
   ResolveEndpointOutcome endpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(staticEndpointParameters);
@@ -1321,6 +1380,7 @@ ListBucketsOutcome S3Client::ListBuckets() const
 
 ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListMultipartUploads);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListMultipartUploads, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1337,6 +1397,7 @@ ListMultipartUploadsOutcome S3Client::ListMultipartUploads(const ListMultipartUp
 
 ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectVersions);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectVersions, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1353,6 +1414,7 @@ ListObjectVersionsOutcome S3Client::ListObjectVersions(const ListObjectVersionsR
 
 ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListObjects);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjects, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1366,6 +1428,7 @@ ListObjectsOutcome S3Client::ListObjects(const ListObjectsRequest& request) cons
 
 ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request) const
 {
+  AWS_OPERATION_GUARD(ListObjectsV2);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListObjectsV2, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1382,6 +1445,7 @@ ListObjectsV2Outcome S3Client::ListObjectsV2(const ListObjectsV2Request& request
 
 ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
 {
+  AWS_OPERATION_GUARD(ListParts);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListParts, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1406,6 +1470,7 @@ ListPartsOutcome S3Client::ListParts(const ListPartsRequest& request) const
 
 PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfiguration(const PutBucketAccelerateConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketAccelerateConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketAccelerateConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1422,6 +1487,7 @@ PutBucketAccelerateConfigurationOutcome S3Client::PutBucketAccelerateConfigurati
 
 PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketAcl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketAcl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1438,6 +1504,7 @@ PutBucketAclOutcome S3Client::PutBucketAcl(const PutBucketAclRequest& request) c
 
 PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration(const PutBucketAnalyticsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketAnalyticsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketAnalyticsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1459,6 +1526,7 @@ PutBucketAnalyticsConfigurationOutcome S3Client::PutBucketAnalyticsConfiguration
 
 PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketCors);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketCors, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1475,6 +1543,7 @@ PutBucketCorsOutcome S3Client::PutBucketCors(const PutBucketCorsRequest& request
 
 PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncryptionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketEncryption);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketEncryption, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1491,6 +1560,7 @@ PutBucketEncryptionOutcome S3Client::PutBucketEncryption(const PutBucketEncrypti
 
 PutBucketIntelligentTieringConfigurationOutcome S3Client::PutBucketIntelligentTieringConfiguration(const PutBucketIntelligentTieringConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketIntelligentTieringConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketIntelligentTieringConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1512,6 +1582,7 @@ PutBucketIntelligentTieringConfigurationOutcome S3Client::PutBucketIntelligentTi
 
 PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration(const PutBucketInventoryConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketInventoryConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketInventoryConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1533,6 +1604,7 @@ PutBucketInventoryConfigurationOutcome S3Client::PutBucketInventoryConfiguration
 
 PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration(const PutBucketLifecycleConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketLifecycleConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketLifecycleConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1549,6 +1621,7 @@ PutBucketLifecycleConfigurationOutcome S3Client::PutBucketLifecycleConfiguration
 
 PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketLogging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketLogging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1565,6 +1638,7 @@ PutBucketLoggingOutcome S3Client::PutBucketLogging(const PutBucketLoggingRequest
 
 PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(const PutBucketMetricsConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketMetricsConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketMetricsConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1586,6 +1660,7 @@ PutBucketMetricsConfigurationOutcome S3Client::PutBucketMetricsConfiguration(con
 
 PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfiguration(const PutBucketNotificationConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketNotificationConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketNotificationConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1602,6 +1677,7 @@ PutBucketNotificationConfigurationOutcome S3Client::PutBucketNotificationConfigu
 
 PutBucketOwnershipControlsOutcome S3Client::PutBucketOwnershipControls(const PutBucketOwnershipControlsRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketOwnershipControls);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketOwnershipControls, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1618,6 +1694,7 @@ PutBucketOwnershipControlsOutcome S3Client::PutBucketOwnershipControls(const Put
 
 PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketPolicy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketPolicy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1634,6 +1711,7 @@ PutBucketPolicyOutcome S3Client::PutBucketPolicy(const PutBucketPolicyRequest& r
 
 PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplicationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketReplication);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketReplication, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1650,6 +1728,7 @@ PutBucketReplicationOutcome S3Client::PutBucketReplication(const PutBucketReplic
 
 PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucketRequestPaymentRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketRequestPayment);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketRequestPayment, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1666,6 +1745,7 @@ PutBucketRequestPaymentOutcome S3Client::PutBucketRequestPayment(const PutBucket
 
 PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1682,6 +1762,7 @@ PutBucketTaggingOutcome S3Client::PutBucketTagging(const PutBucketTaggingRequest
 
 PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioningRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketVersioning);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketVersioning, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1698,6 +1779,7 @@ PutBucketVersioningOutcome S3Client::PutBucketVersioning(const PutBucketVersioni
 
 PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutBucketWebsite);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutBucketWebsite, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1714,6 +1796,7 @@ PutBucketWebsiteOutcome S3Client::PutBucketWebsite(const PutBucketWebsiteRequest
 
 PutObjectOutcome S3Client::PutObject(const PutObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1749,6 +1832,7 @@ void S3Client::PutObjectAsync(const PutObjectRequest& request, const PutObjectRe
 
 PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObjectAcl);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObjectAcl, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1771,6 +1855,7 @@ PutObjectAclOutcome S3Client::PutObjectAcl(const PutObjectAclRequest& request) c
 
 PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObjectLegalHold);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObjectLegalHold, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1793,6 +1878,7 @@ PutObjectLegalHoldOutcome S3Client::PutObjectLegalHold(const PutObjectLegalHoldR
 
 PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const PutObjectLockConfigurationRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObjectLockConfiguration);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObjectLockConfiguration, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1809,6 +1895,7 @@ PutObjectLockConfigurationOutcome S3Client::PutObjectLockConfiguration(const Put
 
 PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObjectRetention);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObjectRetention, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1831,6 +1918,7 @@ PutObjectRetentionOutcome S3Client::PutObjectRetention(const PutObjectRetentionR
 
 PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutObjectTagging);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutObjectTagging, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1853,6 +1941,7 @@ PutObjectTaggingOutcome S3Client::PutObjectTagging(const PutObjectTaggingRequest
 
 PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
+  AWS_OPERATION_GUARD(PutPublicAccessBlock);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, PutPublicAccessBlock, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1869,6 +1958,7 @@ PutPublicAccessBlockOutcome S3Client::PutPublicAccessBlock(const PutPublicAccess
 
 RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request) const
 {
+  AWS_OPERATION_GUARD(RestoreObject);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, RestoreObject, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1891,6 +1981,7 @@ RestoreObjectOutcome S3Client::RestoreObject(const RestoreObjectRequest& request
 
 SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequest& request) const
 {
+  AWS_OPERATION_GUARD(SelectObjectContent);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, SelectObjectContent, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1916,6 +2007,7 @@ SelectObjectContentOutcome S3Client::SelectObjectContent(SelectObjectContentRequ
 
 UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadPart);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadPart, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1945,6 +2037,7 @@ UploadPartOutcome S3Client::UploadPart(const UploadPartRequest& request) const
 
 UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& request) const
 {
+  AWS_OPERATION_GUARD(UploadPartCopy);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, UploadPartCopy, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.BucketHasBeenSet())
   {
@@ -1979,6 +2072,7 @@ UploadPartCopyOutcome S3Client::UploadPartCopy(const UploadPartCopyRequest& requ
 
 WriteGetObjectResponseOutcome S3Client::WriteGetObjectResponse(const WriteGetObjectResponseRequest& request) const
 {
+  AWS_OPERATION_GUARD(WriteGetObjectResponse);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, WriteGetObjectResponse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.RequestRouteHasBeenSet())
   {
