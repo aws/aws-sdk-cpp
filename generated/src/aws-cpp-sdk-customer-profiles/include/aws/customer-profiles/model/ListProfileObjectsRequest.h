@@ -226,43 +226,37 @@ namespace Model
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline const ObjectFilter& GetObjectFilter() const{ return m_objectFilter; }
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline bool ObjectFilterHasBeenSet() const { return m_objectFilterHasBeenSet; }
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline void SetObjectFilter(const ObjectFilter& value) { m_objectFilterHasBeenSet = true; m_objectFilter = value; }
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline void SetObjectFilter(ObjectFilter&& value) { m_objectFilterHasBeenSet = true; m_objectFilter = std::move(value); }
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline ListProfileObjectsRequest& WithObjectFilter(const ObjectFilter& value) { SetObjectFilter(value); return *this;}
 
     /**
      * <p>Applies a filter to the response to include profile objects with the
-     * specified index values. This filter is only supported for ObjectTypeName _asset,
-     * _case and _order.</p>
+     * specified index values.</p>
      */
     inline ListProfileObjectsRequest& WithObjectFilter(ObjectFilter&& value) { SetObjectFilter(std::move(value)); return *this;}
 

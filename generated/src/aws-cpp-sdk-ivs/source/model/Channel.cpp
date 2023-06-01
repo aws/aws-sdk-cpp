@@ -29,6 +29,8 @@ Channel::Channel() :
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
+    m_preset(TranscodePreset::NOT_SET),
+    m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
@@ -47,6 +49,8 @@ Channel::Channel(JsonView jsonValue) :
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_playbackUrlHasBeenSet(false),
+    m_preset(TranscodePreset::NOT_SET),
+    m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_type(ChannelType::NOT_SET),
@@ -104,6 +108,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_playbackUrl = jsonValue.GetString("playbackUrl");
 
     m_playbackUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("preset"))
+  {
+    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
+
+    m_presetHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("recordingConfigurationArn"))
@@ -176,6 +187,11 @@ JsonValue Channel::Jsonize() const
   {
    payload.WithString("playbackUrl", m_playbackUrl);
 
+  }
+
+  if(m_presetHasBeenSet)
+  {
+   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
   }
 
   if(m_recordingConfigurationArnHasBeenSet)

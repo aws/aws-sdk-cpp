@@ -27,8 +27,12 @@ ChannelSummary::ChannelSummary() :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_preset(TranscodePreset::NOT_SET),
+    m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
 }
 
@@ -41,8 +45,12 @@ ChannelSummary::ChannelSummary(JsonView jsonValue) :
     m_latencyMode(ChannelLatencyMode::NOT_SET),
     m_latencyModeHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_preset(TranscodePreset::NOT_SET),
+    m_presetHasBeenSet(false),
     m_recordingConfigurationArnHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_type(ChannelType::NOT_SET),
+    m_typeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -84,6 +92,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("preset"))
+  {
+    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
+
+    m_presetHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("recordingConfigurationArn"))
   {
     m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
@@ -99,6 +114,13 @@ ChannelSummary& ChannelSummary::operator =(JsonView jsonValue)
       m_tags[tagsItem.first] = tagsItem.second.AsString();
     }
     m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("type"))
+  {
+    m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
+
+    m_typeHasBeenSet = true;
   }
 
   return *this;
@@ -137,6 +159,11 @@ JsonValue ChannelSummary::Jsonize() const
 
   }
 
+  if(m_presetHasBeenSet)
+  {
+   payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  }
+
   if(m_recordingConfigurationArnHasBeenSet)
   {
    payload.WithString("recordingConfigurationArn", m_recordingConfigurationArn);
@@ -152,6 +179,11 @@ JsonValue ChannelSummary::Jsonize() const
    }
    payload.WithObject("tags", std::move(tagsJsonMap));
 
+  }
+
+  if(m_typeHasBeenSet)
+  {
+   payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
   return payload;
